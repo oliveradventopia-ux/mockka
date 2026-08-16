@@ -1,5 +1,873 @@
 {
-  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 per methodology/02-master-inventory.md; schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) and surfaced by the validator concept-convergence WARN check; divergence is allowed as documented authoring judgment.",
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-16) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning, merge log and split log in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) with zero hand-tuned divergences in this build. sources[].items for gcp-cdl-guide are the b-x.y-z concept rows in derivation/source-gcp-cdl-guide.md; for the practice sources they are item rows in the respective Artefact A, omitted where the attestation lives in a coverage note rather than an item row. CAVEAT carried from the artefacts: every practice attestation predates the 2026-08-12 blueprint — three concepts (C-041, C-043, C-056) are attested through items keyed to superseded product names (Natural Language AI, Vertex AI, Cloud Functions); the CONCEPT is corroborated, the product vocabulary comes from the guide alone.",
   "version": "0.1.0",
-  "concepts": []
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "Telling the foundational terms apart — cloud as the consumption model, infrastructure as the underlying capability, digital transformation as the organisational change they enable — and what each term does not cover",
+      "vocabulary": ["cloud", "infrastructure", "digital transformation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-1"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "What makes an AI system agentic — pursuing a goal through multiple steps and actions — as opposed to a single model call that answers and stops",
+      "vocabulary": ["agentic AI"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-2"] }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Openness as two distinct commitments an organisation can hold a vendor to: open source is inspectable, modifiable code, while an open standard is a shared specification anyone may implement",
+      "vocabulary": ["open source", "open standard"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-3"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Matching a stated business pain to the named cloud property that relieves it — capacity pressure to scalability, spend structure to cost-effectiveness, slow change to agility and speed, shifting demands to flexibility",
+      "vocabulary": ["scalability", "cost-effectiveness", "agility", "speed", "flexibility"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-4"] },
+        { "artefact": "gcp-cdl-samples", "items": ["1.3"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Reach and resilience as a benefit pair distinct from raw capacity: serving users everywhere and staying up through failures are what global footprint buys, not just more machines",
+      "vocabulary": ["global reach and high availability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-5"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "The cloud benefits that are not about cost or capacity at all — a stronger security baseline, insight drawn from data, and freeing the organisation to focus on strategic work",
+      "vocabulary": ["enhanced security", "data-driven insights", "strategic value and focus"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-6"] },
+        { "artefact": "gcp-cdl-samples", "items": ["1.3"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Recognising what actually compels an organisation to transform — competitive, customer and market drivers — as distinct from the technology that transformation happens to use",
+      "vocabulary": ["factors that motivate organizations to transform"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-7"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Naming the hurdle that stalled a transformation programme whose technology worked — skills, culture, legacy entanglement, unclear ownership — from a description of the stall",
+      "vocabulary": ["common hurdles that can affect transformation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-8"] }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "The cost of standing still stated as risk: when declining to adopt cloud looks prudent, what the organisation is actually accepting — compounding disadvantage, not avoided spend",
+      "vocabulary": ["implications and risks of not adopting cloud"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-9"] }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Which of Google's claimed differentiators answers which question — AI leadership, openness and interoperability, AI Hypercomputer, the data platform, security, the global network — matched to the concern a stakeholder raises",
+      "vocabulary": ["world-leading AI", "deep commitment to openness and interoperability", "AI Hypercomputer", "AI-ready data platform", "security", "global network"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.1-10"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "Choosing a deployment model from a stated constraint — sole tenancy or internal hosting points private, a compliance-pinned split points hybrid, deliberate use of multiple providers points multicloud, unconstrained elasticity points public",
+      "vocabulary": ["private cloud", "hybrid cloud", "multicloud"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.2-1"] },
+        { "artefact": "gcp-cdl-samples", "items": ["1.1", "1.2"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["1.1"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "The networking primitives a non-engineer must still name correctly: what an IP address identifies and what DNS resolves, at the level of purpose rather than configuration",
+      "vocabulary": ["IP address", "domain name service (DNS)", "basic IP addresses"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.2-2"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "Latency and bandwidth told apart by the question each answers — how long one round trip takes versus how much can move at once — and which one a described performance complaint implicates",
+      "vocabulary": ["latency", "bandwidth"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.2-3"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "The tiers of Google's physical geography and what each guarantees: regions are collections of zones, zones are the deployment areas within them, and edge locations bring content closer to users",
+      "vocabulary": ["regions", "zones", "edge locations"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.2-4"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["1.4", "1.5"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d1",
+      "statement": "Reading a service model from the responsibility boundary — who patches, who provisions, who operates — and the trade-off each model strikes between control retained and operational burden carried",
+      "vocabulary": ["Infrastructure as a Service (IaaS)", "Platform as a Service (PaaS)", "Software as a Service (SaaS)", "benefits and tradeoffs"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-1.2-5", "b-1.2-6"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["1.2", "1.3"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d2",
+      "statement": "Why data has business value, expressed as four distinct outcomes — real-time insight, trend identification, informed strategic decisions, and fuel for AI — and which outcome a described initiative is actually after",
+      "vocabulary": ["generating real-time business insights", "identifying trends", "informing strategic decision making", "fueling AI"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.1-1"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "Telling the storage archetypes apart by the shape of data each accepts and the question each answers: databases for operational records, warehouses for structured analysis, lakes for structured, semi-structured and unstructured data in native form",
+      "vocabulary": ["databases", "data warehouses", "data lakes", "structured", "unstructured", "semi-structured"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.1-2", "b-2.1-4"] },
+        { "artefact": "gcp-cdl-samples", "items": ["2.2"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "Classifying data by where it came from — collected by the organisation itself, shared by a partner, or acquired from an external aggregator — and what each origin implies about control and reliability",
+      "vocabulary": ["first-party", "second-party", "third-party"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.1-3"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "The data supply chain as an ordered sequence — genesis, collection, processing, storage, analysis, activation — and telling adjacent stages apart from a description of the work being done",
+      "vocabulary": ["data supply chain", "data genesis", "data collection", "data processing", "data storage", "data analysis", "data activation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.1-5"] }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "Data governance as an ongoing process that decides who may do what with which data — and the consequence of not having one: unowned quality, uncontrolled access, unusable data",
+      "vocabulary": ["data governance process"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.1-6"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "Openness and interoperability as the antidote to two named failure modes — data silos that trap value inside teams, and vendor lock-in that traps it inside a platform",
+      "vocabulary": ["openness and interoperability", "data silos", "vendor lock-in"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.1-7"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "Matching a workload shape to the managed data product built for it — objects to Cloud Storage, globally consistent transactions to Spanner, regional relational to Cloud SQL or AlloyDB, wide-column scale to Bigtable, analytics to BigQuery, documents to Firestore",
+      "vocabulary": ["Cloud Storage", "Spanner", "Cloud SQL", "AlloyDB", "Bigtable", "BigQuery", "Firestore"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.2-1"] },
+        { "artefact": "gcp-cdl-samples", "items": ["2.4", "2.5"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["2.1"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "The data-model vocabulary that decides which products are even eligible — relational versus non-relational, object storage as its own category, SQL versus NoSQL — applied before any product name is considered",
+      "vocabulary": ["relational", "non-relational", "object storage", "structured query language [SQL]", "NoSQL"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.2-2"] },
+        { "artefact": "gcp-cdl-samples", "items": ["2.4", "2.5"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["2.1"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "Choosing a Cloud Storage class from access frequency rather than data size — Standard for hot data, Nearline and Coldline for progressively rarer access, Archive for retention",
+      "vocabulary": ["Standard", "Nearline", "Coldline", "Archive"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.2-3"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "Letting the platform pick the storage class when access patterns are unknown or shifting — what Autoclass automates and when configuring classes manually is the wrong effort",
+      "vocabulary": ["Autoclass"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.2-4"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "The routes a database takes into the cloud — move it as it is, or modernize onto a managed or cloud-native product — and which route a stated constraint on change, cost or capability forces",
+      "vocabulary": ["migrate or modernize their current database"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.2-5"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "What democratising access to data means as a business outcome — analysis reaching people who are not analysts — and Looker as the product whose value is that reach, not storage or access control",
+      "vocabulary": ["Looker", "democratizes access to data"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.3-1"] },
+        { "artefact": "gcp-cdl-samples", "items": ["2.3"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "What putting BI on top of the warehouse buys over running it beside one — real-time reports and dashboards fed directly by BigQuery, and analysis integrated into working workflows",
+      "vocabulary": ["real-time reports", "dashboards", "integrating data into workflows", "BigQuery"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.3-2"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d2",
+      "statement": "Why a business needs streaming analytics: some answers lose their value before a batch window closes, and recognising which described decisions have that shape",
+      "vocabulary": ["real-time streaming analytics"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.3-3"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d2",
+      "statement": "Which product occupies which stage of a modern data pipeline — Pub/Sub ingests and distributes events, Dataflow processes them, Managed Service for Apache Spark runs Spark workloads — and why adjacent stages are not interchangeable",
+      "vocabulary": ["Pub/Sub", "Dataflow", "Managed Service for Apache Spark"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-2.3-4"] },
+        { "artefact": "gcp-cdl-samples", "items": ["2.1"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d3",
+      "statement": "How the AI field nests — machine learning as a subset of artificial intelligence, generative AI as a newer branch producing novel content — and which term a described capability actually belongs to",
+      "vocabulary": ["artificial intelligence (AI)", "machine learning (ML)", "generative AI (gen AI)"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-1"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d3",
+      "statement": "Telling analysis of the past from generation of the new: data analytics and business intelligence describe and explain what happened, while generative AI produces content that did not exist",
+      "vocabulary": ["data analytics", "business intelligence"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-2"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d3",
+      "statement": "Where agentic AI changes the work, function by function — productivity, customer support, sales, product innovation, operations, research — and matching a described change to the function it transforms",
+      "vocabulary": ["workforce productivity", "customer support", "sales experiences", "product innovation", "operations", "research"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-3"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d3",
+      "statement": "Google's claimed AI advantages and which claim answers which question — infrastructure strength, the AI-ready data cloud, first-party models, the all-in-one developer platform, pre-built agents and applications",
+      "vocabulary": ["best infrastructure for AI", "AI-ready data cloud", "sophisticated 1P models", "all-in-one AI developer platform", "pre-built AI agents and applications"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-4"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d3",
+      "statement": "Recognising the business problems ML is the right tool for — replacing or simplifying rule-based systems, deriving insight from datasets too large to inspect, scaling decisions humans cannot make one at a time — and the problems it is not",
+      "vocabulary": ["replacing or simplifying rule-based systems", "deriving business insights from large datasets", "scaling business decisions"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-5"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d3",
+      "statement": "Naming the dimension of data quality a described defect violates — missing values break completeness, duplicates break uniqueness, stale records break timeliness, malformed entries break validity, wrong values break accuracy, contradictions break consistency",
+      "vocabulary": ["completeness", "uniqueness", "timeliness", "validity", "accuracy", "consistency"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-6"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d3",
+      "statement": "Explainability as a deployment condition: why an organisation cannot ship an AI system whose decisions it cannot explain or defend, and what that blocks in regulated or customer-facing use",
+      "vocabulary": ["explainable and responsible AI", "business implications"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-7"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d3",
+      "statement": "Responsible use as a legitimacy judgment: telling an application with accountable business purpose from one that produces scale or volume without it, when both are technically feasible",
+      "vocabulary": ["explainable and responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.1-7"] },
+        { "artefact": "gcp-cdl-samples", "items": ["3.2"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d3",
+      "statement": "Choosing an AI approach against the constraint that dominates — implementation speed, development effort, potential for differentiation, available expertise, need for choice and flexibility — rather than defaulting to the most capable option",
+      "vocabulary": ["implementation speed", "development effort", "potential for business differentiation", "technical expertise requirements", "choice and flexibility"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-1"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d3",
+      "statement": "What the Gemini Enterprise Agent Platform is for in business terms — building, deploying and governing AI agents across the organisation — as distinct from calling a model or buying a finished application",
+      "vocabulary": ["Gemini Enterprise Agent Platform"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-2"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d3",
+      "statement": "Matching a task-specific pre-trained API to the modality the use case needs — images to the Vision API, language pairs to the Cloud Translation API, audio to the Speech-to-Text API — instead of building a model for a solved task",
+      "vocabulary": ["Vision API", "Cloud Translation API", "Speech-to-Text API"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-3"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["3.1"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d3",
+      "statement": "Gemini as the general-purpose model and the Agent Platform API as the programmatic route to it — when the job needs broad generative capability rather than a single-task perception API",
+      "vocabulary": ["Gemini", "Agent Platform API"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-3"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d3",
+      "statement": "Building on your own data, matched to expertise: Agent Studio on Agent Platform for assembling agents with low code, AutoML on Agent Platform for training custom models without deep ML skills",
+      "vocabulary": ["Agent Studio on Agent Platform", "AutoML on Agent Platform"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-4"] },
+        { "artefact": "gcp-cdl-samples", "items": ["3.1"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d3",
+      "statement": "What the AI infrastructure layer is made of and what it buys — AI Hypercomputer integrating GPUs and TPUs with leading software and open standards, with cost controlled through flexible consumption models",
+      "vocabulary": ["AI Hypercomputer", "GPUs and TPUs", "industry-leading software and open standards", "cost control with flexible consumption models"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-5"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d3",
+      "statement": "Running ML where the data already lives, in the language analysts already speak: BigQuery ML trains and serves models with standard SQL queries, without moving data to a separate platform",
+      "vocabulary": ["BigQuery ML", "standard SQL queries"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-3.2-6"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d4",
+      "statement": "What actually gets migrated — workloads — and why discovery and assessment come first: an organisation cannot choose a path for an estate it has not inventoried",
+      "vocabulary": ["workload", "discovery and assessment"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.1-1"] }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d4",
+      "statement": "Choosing a migration path from what the organisation will and will not change — retire, retain, rehost when code must not change, replatform for modest improvement, refactor and reimagine when the application itself is the target",
+      "vocabulary": ["retire", "retain", "rehost [lift and shift]", "replatform [move and improve]", "refactor", "reimagine"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.1-2"] },
+        { "artefact": "gcp-cdl-samples", "items": ["4.3"] }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d4",
+      "statement": "The compute abstractions ordered by how much the customer still operates — virtual machines, containers, serverless, managed services — and reading the right rung from how much operational involvement a scenario tolerates",
+      "vocabulary": ["virtual machines (VMs)", "containerization and containers", "serverless computing", "managed services"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.1-3"] },
+        { "artefact": "gcp-cdl-samples", "items": ["4.2", "4.4", "4.5"] },
+        { "artefact": "whizlabs-cdl-free" }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d4",
+      "statement": "How an application is decomposed into microservices and why: independently deployable parts that let teams change one capability without redeploying the whole",
+      "vocabulary": ["applications and microservices"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.1-4"] }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d4",
+      "statement": "The orchestration and elasticity vocabulary told apart by job: Kubernetes coordinates containers across machines, autoscaling adjusts capacity to demand, load balancing spreads traffic across what is running",
+      "vocabulary": ["Kubernetes", "autoscaling and load balancing"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.1-5"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d4",
+      "statement": "Interruptible capacity as a workload-fit judgment: spot VMs cut compute cost sharply in exchange for possible preemption — right for tolerant batch work, wrong for anything that cannot stop mid-task",
+      "vocabulary": ["spot VMs"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.1-6"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d4",
+      "statement": "When running your own virtual machines is still the right answer — existing VM estates, full OS control, lift-and-shift landings — and Compute Engine as the product that answers it",
+      "vocabulary": ["Compute Engine"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.2-1"] },
+        { "artefact": "gcp-cdl-samples", "items": ["4.5"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d4",
+      "statement": "What modern application development buys the business, stated as outcomes — flexible microservice architectures, faster deployment through managed services, cost optimization, scalability and resilience, operational efficiency — and which outcome a scenario is actually pursuing",
+      "vocabulary": ["flexible architectures like microservices", "accelerated deployment processes through managed services", "cost optimization", "enhanced scalability and resilience", "improved operational efficiency"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.2-2"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d4",
+      "statement": "When managed Kubernetes is the right level of abstraction: GKE for containerised estates that need orchestration control without operating the control plane",
+      "vocabulary": ["GKE"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.2-3"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d4",
+      "statement": "When you should not be thinking about servers at all and the container is the unit: Cloud Run for teams that want their own language and tools with minimal infrastructure management",
+      "vocabulary": ["Cloud Run"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.2-4"] },
+        { "artefact": "gcp-cdl-samples", "items": ["4.2"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d4",
+      "statement": "Small pieces of code that run in response to events — notifications, uploads, triggers — belong on Cloud Run functions, not on a cluster or a VM kept running for them",
+      "vocabulary": ["Cloud Run functions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.2-4"] },
+        { "artefact": "gcp-cdl-samples", "items": ["4.4"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["4.1"] }
+      ]
+    },
+    {
+      "id": "C-057",
+      "domain": "d4",
+      "statement": "Which products follow you off Google Cloud — AlloyDB Omni and BigQuery Omni run against other environments, GKE Enterprise spans fleets, Cloud SQL and Looker connect across clouds — and why that reach matters to a multicloud strategy",
+      "vocabulary": ["AlloyDB Omni", "BigQuery Omni", "GKE Enterprise", "Cloud SQL", "Looker"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.2-5"] }
+      ]
+    },
+    {
+      "id": "C-058",
+      "domain": "d4",
+      "statement": "What an API is at a level a non-engineer can use: the agreed way one system asks another for something — the connector between a new application and an existing system, not a data mover or a hardware manager",
+      "vocabulary": ["application programming interface (API)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.3-1"] },
+        { "artefact": "gcp-cdl-samples", "items": ["4.1"] }
+      ]
+    },
+    {
+      "id": "C-059",
+      "domain": "d4",
+      "statement": "APIs as revenue rather than plumbing: exposing and monetizing public-facing APIs turns internal capability into a product and opens new business opportunities",
+      "vocabulary": ["exposing and monetizing public-facing APIs", "new business opportunities"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.3-2"] }
+      ]
+    },
+    {
+      "id": "C-060",
+      "domain": "d4",
+      "statement": "What an API management layer adds beyond the API itself — publishing, securing, metering and analysing usage at scale — and Apigee API Management as the product that carries that layer",
+      "vocabulary": ["Apigee API Management"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-4.3-3"] }
+      ]
+    },
+    {
+      "id": "C-061",
+      "domain": "d5",
+      "statement": "Naming the threat class from how it behaves — ransomware announces itself and demands payment, malware and cryptomining steal silently, DDoS overwhelms, phishing deceives — and recognising the exposures that are self-inflicted rather than attacks: misconfiguration, unsecured third-party systems, physical damage",
+      "vocabulary": ["DDoS", "ransomware", "cryptomining", "malware", "viruses", "phishing", "misconfiguration", "unsecured third party systems", "physical damage"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-1", "b-5.1-2"] },
+        { "artefact": "gcp-cdl-samples", "items": ["5.2"] }
+      ]
+    },
+    {
+      "id": "C-062",
+      "domain": "d5",
+      "statement": "The threat class the AI era added and where it lands: LLM attacks reach systems through untrusted input to models, and defending them means securing the right layer of the AI stack — infrastructure, data, models, platform or agents",
+      "vocabulary": ["LLM attacks", "infrastructure", "data", "models", "platform", "agents"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-3", "b-5.2-1"] }
+      ]
+    },
+    {
+      "id": "C-063",
+      "domain": "d5",
+      "statement": "What genuinely differs between securing the cloud and securing a data centre — shared responsibility, provider-operated baseline, configuration as the customer's main exposure — and what stays the same",
+      "vocabulary": ["cloud security", "on-premises security"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-4"] }
+      ]
+    },
+    {
+      "id": "C-064",
+      "domain": "d5",
+      "statement": "The properties a security model is judged against, told apart by the question each answers: control over decisions, compliance with obligations, confidentiality of secrets, integrity of data, availability of service",
+      "vocabulary": ["control", "compliance", "confidentiality", "integrity", "availability"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-5"] },
+        { "artefact": "gcp-cdl-samples", "items": ["5.1", "5.5"] }
+      ]
+    },
+    {
+      "id": "C-065",
+      "domain": "d5",
+      "statement": "The access-discipline vocabulary told apart by what each actually restricts: privileged access is the exception to manage, least privilege grants only what the task needs, zero-trust architecture verifies every request regardless of origin",
+      "vocabulary": ["privileged access", "least privilege", "zero-trust architecture"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-6"] }
+      ]
+    },
+    {
+      "id": "C-066",
+      "domain": "d5",
+      "statement": "Posture as the state of a system rather than a control on it — security by default, security posture, cyber resilience — and security operations as the discipline that keeps posture honest through threat intelligence and threat response",
+      "vocabulary": ["security by default", "security posture", "cyber resilience", "threat intelligence", "threat response"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-7", "b-5.1-12"] }
+      ]
+    },
+    {
+      "id": "C-067",
+      "domain": "d5",
+      "statement": "The baseline protection mechanisms and what the platform gives without being asked: data loss prevention, firewalls, encryption and decryption as distinct jobs — with encryption at rest the default state of data on Google Cloud, inherited from secure-by-design core infrastructure rather than switched on",
+      "vocabulary": ["data loss prevention", "firewall", "encryption", "decryption", "secure-by-design", "core infrastructure", "proprietary data centers", "purpose-built servers and networking", "custom security hardware and software"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-8", "b-5.2-6"] },
+        { "artefact": "gcp-cdl-samples", "items": ["5.4"] }
+      ]
+    },
+    {
+      "id": "C-068",
+      "domain": "d5",
+      "statement": "Matching an encryption control to the state the data is in — at rest on disk, in transit between systems, in use during processing — and which state a described exposure concerns",
+      "vocabulary": ["in use", "in transit", "at rest"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-9"] }
+      ]
+    },
+    {
+      "id": "C-069",
+      "domain": "d5",
+      "statement": "The three A's told apart by the question each answers — authentication proves who you are, authorization decides what you may do, auditing records what you did — and the controls that implement them: multi-factor authentication, two-step verification, IAM granting access through roles",
+      "vocabulary": ["authentication", "authorization", "auditing", "multi-factor authentication", "two-step verification [2SV]", "IAM"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.1-10", "b-5.1-11"] },
+        { "artefact": "gcp-cdl-samples", "items": ["5.3", "5.5"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["5.1"] }
+      ]
+    },
+    {
+      "id": "C-070",
+      "domain": "d5",
+      "statement": "What threat intelligence is for — proactive insight into threats before they land, as opposed to detecting them in progress — and why Google Threat Intelligence's three sources differ in kind: Google's global visibility, Mandiant's frontline incident-response expertise, VirusTotal's crowd-sourced detection",
+      "vocabulary": ["Google Threat Intelligence", "proactive insights into cyber threats", "Google's vast global visibility", "Mandiant's frontline incident response expertise", "VirusTotal's crowd sourced threat detection"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.2-2", "b-5.2-3"] }
+      ]
+    },
+    {
+      "id": "C-071",
+      "domain": "d5",
+      "statement": "Security operations product selection: Security Command Center discovers, prioritizes and remediates misconfigurations before an attacker finds them, while Google Security Operations unifies telemetry ingestion with threat detection and response — adjacent jobs, not one product",
+      "vocabulary": ["Security Command Center", "discover, prioritize, and remediate", "misconfigurations", "unified security operations platform", "Google Security Operations", "ingest telemetry", "threat detection and response"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.2-4", "b-5.2-5"] }
+      ]
+    },
+    {
+      "id": "C-072",
+      "domain": "d5",
+      "statement": "Securing AI and securing with AI as two different offerings: AI Protection and Model Armor defend AI systems themselves, while Gemini in Google Security Operations puts AI to work defending everything else",
+      "vocabulary": ["Gemini in Google Security Operations", "AI Protection", "Model Armor"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.2-7"] }
+      ]
+    },
+    {
+      "id": "C-073",
+      "domain": "d5",
+      "statement": "Matching a stated security obligation to the product that meets it, from the guide's named family — network isolation to Cloud VPC, private connection to Cloud VPN or Cloud Interconnect, edge defence to Cloud Armor, sensitive-data discovery to Sensitive Data Protection, in-use protection to Confidential Computing, identity-gated access to Identity-Aware Proxy",
+      "vocabulary": ["Cloud VPC", "Cloud VPN", "Cloud Interconnect", "firewalls", "Cloud Armor", "Cloud Logging", "IAM", "Sensitive Data Protection", "Confidential Computing", "Certificate Manager", "Identity-Aware Proxy"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.2-8"] }
+      ]
+    },
+    {
+      "id": "C-074",
+      "domain": "d5",
+      "statement": "How trust is evidenced rather than asserted: transparency reports, third-party audits and the compliance resource manager give a customer proof, where a vendor claim alone gives none",
+      "vocabulary": ["transparency reports", "third-party audits", "compliance resource manager"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.2-9"] }
+      ]
+    },
+    {
+      "id": "C-075",
+      "domain": "d5",
+      "statement": "Digital sovereignty and data residency as jurisdictional questions — where data physically lives, which law reaches it, who can be compelled to hand it over — distinct from any threat actor",
+      "vocabulary": ["digital sovereignty", "data residency"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-5.2-10"] }
+      ]
+    },
+    {
+      "id": "C-076",
+      "domain": "d6",
+      "statement": "The expenditure shift and the honest total: cloud adoption moves spend from capital expenditure toward operational expenditure, and a real TCO comparison counts hardware investment, operational overhead and opportunity cost together — never one alone",
+      "vocabulary": ["capital expenditures (CapEx)", "operational expenditures (OpEx)", "total cost of ownership (TCO)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.1-1"] },
+        { "artefact": "gcp-cdl-samples", "items": ["6.3", "6.4", "6.7"] }
+      ]
+    },
+    {
+      "id": "C-077",
+      "domain": "d6",
+      "statement": "Who is accountable for cloud spend and why it cannot be nobody: cloud financial governance pairs project ownership with financial accountability, and works through people, process and technology together — not tooling alone",
+      "vocabulary": ["cloud financial governance", "identify who manages cloud costs", "people, process, and technology"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.1-2", "b-6.1-3"] },
+        { "artefact": "gcp-cdl-samples", "items": ["6.5", "6.6"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["6.3"] }
+      ]
+    },
+    {
+      "id": "C-078",
+      "domain": "d6",
+      "statement": "The resource hierarchy in order — resources in projects, projects in folders, folders under the organization node, each with exactly one parent — and what the tree buys once it exists: inherited access control, propagated policy, compliance visibility and auditability",
+      "vocabulary": ["resources", "projects", "folders", "organization node", "access control", "inheritance and propagation rules", "security and compliance", "visibility and auditing capabilities"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.1-4", "b-6.1-5"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["6.2", "6.5", "6.6"] }
+      ]
+    },
+    {
+      "id": "C-079",
+      "domain": "d6",
+      "statement": "The controls that act on consumption before the money is spent — resource quota policies and budget threshold rules cap it, while Dynamic Workload Scheduler and Spot VMs buy capacity on the platform's terms to pay less for it",
+      "vocabulary": ["resource quota policies", "budget threshold rules", "Dynamic Workload Scheduler", "Spot VMs"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.1-6", "b-6.1-8"] }
+      ]
+    },
+    {
+      "id": "C-080",
+      "domain": "d6",
+      "statement": "Seeing what was spent and where: Cloud Billing reports answer the analysis question — distinct from the controls that cap consumption and the mechanisms that discount it",
+      "vocabulary": ["Cloud Billing reports"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.1-7"] },
+        { "artefact": "gcp-cdl-samples", "items": ["6.2"] }
+      ]
+    },
+    {
+      "id": "C-081",
+      "domain": "d6",
+      "statement": "Which observability product answers which operational question — Cloud Monitoring for metrics, Cloud Logging for log search and alerting, Cloud Trace for request paths, Cloud Profiler for resource consumption in code, Error Reporting for surfaced failures",
+      "vocabulary": ["Google Cloud's Observability", "operations suite", "Cloud Monitoring", "Cloud Logging", "Cloud Trace", "Cloud Profiler", "Error Reporting"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.2-1"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["6.7"] }
+      ]
+    },
+    {
+      "id": "C-082",
+      "domain": "d6",
+      "statement": "What makes a system survive failure and the promises the vocabulary makes: redundancy, replication, scalable infrastructure and backups are the design moves; operational excellence, reliability and high availability are the distinct commitments they deliver — and a design that never leaves one zone survives nothing regional",
+      "vocabulary": ["redundancy", "replication", "scalable infrastructure", "backups", "operational excellence", "reliability", "high availability"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.2-2", "b-6.2-3"] },
+        { "artefact": "whizlabs-cdl-free", "items": ["6.1", "6.4"] }
+      ]
+    },
+    {
+      "id": "C-083",
+      "domain": "d6",
+      "statement": "Measuring a running service: the four signals — latency, traffic, saturation, errors — each reveal a different failure mode, and the three service-level terms are told apart by who they bind: indicators measure, objectives commit the team, agreements commit the business to the customer",
+      "vocabulary": ["latency", "traffic", "saturation", "errors", "service level indicators", "service level objectives", "service level agreements"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "gcp-cdl-guide", "items": ["b-6.2-4", "b-6.2-5"] },
+        { "artefact": "gcp-cdl-samples", "items": ["6.1"] }
+      ]
+    }
+  ]
 }

@@ -50,8 +50,12 @@ evidence attached — it is the working paper for [Gate 2](00-pipeline.md#pipeli
      are discharged** exactly as the licence demands — attribution text present where required,
      recorded in the registry entry ([the lane](01-source-distillation.md#licensed-import)).
      *[machine: `licensed-import-license` — attribution discharge quality is examiner checklist]*
-7. **`format_coverage` disclosure present when required** — see [below](#format-coverage).
-   *[examiner checklist — the Artefact A format analysis is not machine-readable]*
+7. **Intro page complete.** The manifest's `intro` block is present with all five fields
+   ([below](#intro)) — and the `format_coverage` disclosure is present when required
+   ([below](#format-coverage)). *[machine: `publication-preflight` (block present at
+   `published`) + `intro-presence` (field shape; warns when missing from `in_review`) —
+   whether format_coverage is required is examiner checklist: the Artefact A format analysis
+   is not machine-readable]*
 8. **Gate 2 sign-off recorded** in `derivation/signoff.md` ([template](#signoff-template)) —
    last, after Oliver's review, never before. *[machine: `publication-preflight` checks the file
    exists non-empty — its content is the human half]*
@@ -112,6 +116,33 @@ Content: CC BY 4.0 · Code: MIT.
 
 Contribution rules (never submit real exam content; corrections welcome) live once, in the
 repo-level `CONTRIBUTING.md` — the README links there rather than restating.
+
+---
+
+## The exam intro block {#intro}
+
+Every exam carries a candidate-facing introduction page — the player's intro tab and the
+standalone export render it identically, from `manifest.intro` (shape:
+`methodology/schema/manifest.schema.json`). Five fields, all required once the block exists:
+
+- **`about`** — executive summary: what the certification validates and the domains covered.
+- **`audience`** — who the certification is for, as roles.
+- **`materials[]`** — what THIS mock provides (`title` + `description` each): bank size,
+  formats, dashboard and review depth. Facts about the mock, never marketing.
+- **`official_resources[]`** — links (`label` + https-only `url`) to the vendor's certification
+  portal / exam guide, so a candidate can always reach the authoritative source.
+- **`disclaimer`** — the attribution / independence / personal-use notice: independent study
+  tool, unaffiliated with the vendor, provenance statement (original and/or licensed, with
+  prior-art credit where the derivation records it), NDA reminder. Exam-specific wording that
+  must **cite, never contradict** the package README's trust section
+  ([above](#readme-template)); the renders show it as the intro page's closing banner in place
+  of the raw `nda_statement` colophon.
+
+Presence is a ratchet tied to `status`: **optional at `draft`** (a scaffolded package has
+nothing to say yet — `tools/new-exam.mjs` emits the TODO skeleton), **warn at `in_review`**
+(the `intro-presence` check), **error at `published`** (`publication-preflight`, preflight
+item 7 above). Field shape when the block exists is enforced by `intro-presence` at every
+status — a half-filled intro must never render as a finished page.
 
 ---
 

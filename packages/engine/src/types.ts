@@ -48,6 +48,36 @@ export interface ProvenanceSource {
   attribution?: string;
 }
 
+/** One "what this mock provides" entry on the intro page. */
+export interface IntroMaterial {
+  title: string;
+  description: string;
+}
+
+/** One official-vendor link on the intro page. https only. */
+export interface IntroResource {
+  label: string;
+  url: string;
+}
+
+/** The per-exam introduction page block (methodology/06-provenance-publishing.md#intro).
+ *  Rendered by the player intro tab and the standalone export. Optional for
+ *  draft; `intro-presence` warns when missing on in_review; the publication
+ *  preflight errors when missing on published. */
+export interface ExamIntro {
+  /** Executive summary: what the certification validates, domains covered. */
+  about: string;
+  /** Who the certification is for (roles). */
+  audience: string;
+  /** What THIS mock provides (bank size, formats, dashboard, review depth). */
+  materials: IntroMaterial[];
+  /** Official cert portal / guide links. */
+  official_resources: IntroResource[];
+  /** Attribution / independence / personal-use notice — exam-specific wording,
+   *  aligned with the package README (cite, don't contradict). */
+  disclaimer: string;
+}
+
 export interface ExamManifest {
   slug: string;
   title: string;
@@ -96,6 +126,8 @@ export interface ExamManifest {
     /** When true, syllabus-rules.json must exist and coverage checks run. */
     syllabus_rules: boolean;
   };
+  /** Introduction page content. Presence rules: see ExamIntro. */
+  intro?: ExamIntro;
   /** Disclosure rendered on the intro page when the real exam's format profile
    *  exceeds the supported formats (plan Decision 7). */
   format_coverage?: string;

@@ -329,6 +329,13 @@ export function ExamPlayer({ slug, manifest, paper, syllabusRules }: ExamPlayerP
                 content may still be refined before publication.
               </p>
             ) : null}
+            {manifest.intro ? (
+              <>
+                <p>{manifest.intro.about}</p>
+                <h3>Who this certification is for</h3>
+                <p>{manifest.intro.audience}</p>
+              </>
+            ) : null}
             <ul className="overview">
               <li>
                 <strong>{manifest.exam.item_count} questions</strong> weighted to the
@@ -357,6 +364,28 @@ export function ExamPlayer({ slug, manifest, paper, syllabusRules }: ExamPlayerP
                 uploaded.
               </li>
             </ul>
+            {manifest.intro ? (
+              <>
+                <h3>What this mock provides</h3>
+                <ul className="tight">
+                  {manifest.intro.materials.map((m) => (
+                    <li key={m.title}>
+                      <strong>{m.title}.</strong> {m.description}
+                    </li>
+                  ))}
+                </ul>
+                <h3>Official resources</h3>
+                <ul className="tight">
+                  {manifest.intro.official_resources.map((r) => (
+                    <li key={r.url}>
+                      <a href={r.url} target="_blank" rel="noopener noreferrer">
+                        {r.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
             {manifest.format_coverage ? (
               <div className="notice info">
                 <strong>Format coverage</strong>
@@ -392,9 +421,20 @@ export function ExamPlayer({ slug, manifest, paper, syllabusRules }: ExamPlayerP
                 </button>
               )}
             </div>
-            <div className="colophon">
-              <p className="fineprint">{manifest.provenance.nda_statement}</p>
-            </div>
+            {manifest.intro ? (
+              // The base .notice style (warn-toned) keeps the disclaimer
+              // visually distinct from the .info notices above. The disclaimer
+              // covers the NDA/independence ground per 06#intro, so the raw
+              // nda_statement colophon is skipped — no duplicated fine print.
+              <div className="notice" role="note">
+                <strong>Disclaimer</strong>
+                {manifest.intro.disclaimer}
+              </div>
+            ) : (
+              <div className="colophon">
+                <p className="fineprint">{manifest.provenance.nda_statement}</p>
+              </div>
+            )}
           </div>
         </div>
 

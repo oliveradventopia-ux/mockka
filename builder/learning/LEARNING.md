@@ -142,3 +142,15 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: methodology/06 §readme-template defines the README's content but no S-stage produces it; aif-c01 reached S6 preflight with `content/<slug>/README.md` simply absent, and the examiner cannot author it (outside the eval/selection surface).
 - why: every preflight item needs an upstream producer; item 5 is the only one whose artifact no stage owns (ccar-p, the only prior package, never went through S5/S6 so the gap was invisible).
 - how to apply: assign README authorship to a stage (natural fit: exam-author at S4-exit, from the §readme-template + manifest provenance block); until the methodology names an owner, the S6 checklist records it OPEN with owner exam-author, blocking the published flip only.
+
+## L-0023 · Content for an import-generated package goes into the import script, never the output
+- date: 2026-08-16 · agent: tech-manager · scope: local · tier: content-migration
+- lesson: any block added to a package that an import script owns (ccar-p ← import-ccar-p.mjs) must be emitted by the script — hand-editing the committed output silently breaks the same-input → byte-identical re-run contract that L-0003 relies on as the fidelity proof.
+- why: the intro block landed in the script and two consecutive re-runs produced the identical single-block diff (`git diff --stat` stable at +25 lines, no other files touched) — proof the contract held; a hand edit would have been reverted by the next re-run.
+- how to apply: before editing any file under `content/ccar-p/`, check whether import-ccar-p.mjs writes it; if yes, edit the script and re-run twice, requiring a stable diff.
+
+## L-0024 · Numbered preflight items are frozen into downstream artifacts — extend, never renumber
+- date: 2026-08-16 · agent: tech-manager · scope: local · tier: methodology/publishing
+- lesson: gate2-checklist.md, signoff.md and LEARNING entries reference 06's preflight items by number ("item 5", "item 6"), so inserting a new item mid-list would silently misalign every frozen artifact; the intro requirement was folded into existing item 7 (already the intro-page item via format_coverage) instead of renumbering 7→8→9.
+- why: sign-off must stay last, so a pure append was impossible; the fold keeps historical references valid and the intro + format_coverage requirements are the same surface (the intro page) anyway.
+- how to apply: when a stage manual's ordered checklist needs a new requirement, first look for the existing item owning the same artifact/surface and extend it; renumbering needs a sweep of every frozen reference and is almost never worth it.

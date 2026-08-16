@@ -98,6 +98,26 @@ const manifest = {
   layers: {
     syllabus_rules: false,
   },
+  // Intro page block — optional while status is draft; the validator's
+  // intro-presence check warns from in_review and the publication preflight
+  // errors without it. Rules + field guide: methodology/06-provenance-publishing.md#intro.
+  intro: {
+    about: `${TODO} — executive summary: what the certification validates, domains covered`,
+    audience: `${TODO} — who the certification is for, as roles`,
+    materials: [
+      {
+        title: `${TODO} — e.g. "<N>-question practice exam"`,
+        description: `${TODO} — what THIS mock provides: bank size, formats, dashboard, review depth`,
+      },
+    ],
+    official_resources: [
+      {
+        label: `${TODO} — official cert portal / exam guide link text`,
+        url: `https://${TODO}`,
+      },
+    ],
+    disclaimer: `${TODO} — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)`,
+  },
   format_coverage: `${TODO} — disclosure per methodology/06-provenance-publishing.md#format-coverage`,
   provenance: {
     sources: [],

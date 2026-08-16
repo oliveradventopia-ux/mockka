@@ -101,6 +101,41 @@ const manifest = {
     near_duplicate_jaccard: 0.4,
   },
   layers: { syllabus_rules: true },
+  // Intro page block (methodology/06-provenance-publishing.md#intro). Emitted
+  // here — not hand-edited in content/ — so re-runs stay byte-identical with
+  // the committed manifest. Wording is original; facts from this package's
+  // derivation docs and the archived single-file build.
+  intro: {
+    about:
+      'The Claude Certified Architect – Professional (CCAR-P) certification attests architect-level command of building enterprise systems on Anthropic’s Claude platform: selecting solution patterns, engineering prompts and context, integrating through APIs and the Model Context Protocol, evaluating and optimising what ships, and governing it — safety, risk, stakeholder communication and lifecycle — through production. The exam is weighted across seven blueprint domains, from Solution Design & Architecture (17%) to Developer Productivity & Operational Enablement (7%), and the syllabus behind this mock distils to 24 numbered architectural rules.',
+    audience:
+      'Built for the people accountable for Claude deployments end to end: enterprise and solution architects, AI systems engineers and technical leads designing for production, and technology consultants who must defend pattern choices and guardrails to clients. The exam rewards deciding how a system should be built, not just building it.',
+    materials: [
+      {
+        title: '63-question practice exam',
+        description:
+          'Drawn from an originally-authored 85-item bank, weighted to the official blueprint across all seven domains.',
+      },
+      {
+        title: 'Three question formats',
+        description:
+          'Single choice, multiple response (pick two of five) and scenario matching — multiple response and matching are graded all-or-nothing.',
+      },
+      {
+        title: 'Rule-level results dashboard',
+        description:
+          'Per-domain scores against the 75% pass threshold, a rationale for every option, and a weak-area report keyed to the 24 architectural rules, so revision starts from the specific rules you missed.',
+      },
+    ],
+    official_resources: [
+      {
+        label: 'Anthropic certification portal — scheduling, policies and exam FAQs',
+        url: 'https://anthropic-partners.skilljar.com/page/faq-certifications',
+      },
+    ],
+    disclaimer:
+      'An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Anthropic, PBC or Pearson VUE. "Claude" and "Anthropic" are trademarks of Anthropic, PBC. Every question was written from the documented derivation artefacts in this package, with concept coverage informed by Matthew Purcell’s freely published CCAR-P practice set (analytical classification only — no text reused; credited in derivation/purcell-distillation.md). Nothing here is drawn from the live CCAR-P item bank: real exam content is confidential and protected by NDA, and that NDA binds you too once you sit the exam — please never share live questions here.',
+  },
   provenance: {
     sources: [
       {

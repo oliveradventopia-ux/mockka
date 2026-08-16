@@ -242,6 +242,57 @@ const CHECKS: Check[] = [
   },
 
   {
+    name: 'intro-presence',
+    run({ pkg, report }) {
+      // The per-exam introduction page block (methodology/06-provenance-
+      // publishing.md#intro). Presence ratchet: optional at draft, WARN when
+      // missing at in_review, ERROR at the publication preflight (owned by
+      // `publication-preflight` so the published-state rules stay in one
+      // check). A present-but-malformed intro is an error at any status — a
+      // half-filled intro page must never look like a finished one.
+      const intro = pkg.manifest.intro;
+      if (intro === undefined) {
+        if (pkg.manifest.status === 'in_review') {
+          report(
+            'intro-presence',
+            'warn',
+            'manifest.intro is missing — the exam intro page has no content; ' +
+              'required before publication (methodology/06-provenance-publishing.md#intro)',
+          );
+        }
+        return;
+      }
+      const err = (msg: string) => report('intro-presence', 'error', msg);
+      for (const key of ['about', 'audience', 'disclaimer'] as const) {
+        if (typeof intro[key] !== 'string' || intro[key].trim().length === 0) {
+          err(`manifest.intro.${key} is missing or empty`);
+        }
+      }
+      if (!Array.isArray(intro.materials) || intro.materials.length === 0) {
+        err('manifest.intro.materials must list at least one entry — what does this mock provide?');
+      } else {
+        intro.materials.forEach((m, i) => {
+          if (!m?.title?.trim()) err(`manifest.intro.materials[${i}].title is missing or empty`);
+          if (!m?.description?.trim()) err(`manifest.intro.materials[${i}].description is missing or empty`);
+        });
+      }
+      if (!Array.isArray(intro.official_resources) || intro.official_resources.length === 0) {
+        err('manifest.intro.official_resources must link at least one official vendor resource');
+      } else {
+        intro.official_resources.forEach((r, i) => {
+          if (!r?.label?.trim()) err(`manifest.intro.official_resources[${i}].label is missing or empty`);
+          if (typeof r?.url !== 'string' || !r.url.startsWith('https://')) {
+            err(
+              `manifest.intro.official_resources[${i}].url "${r?.url ?? '(none)'}" must be an https:// URL — ` +
+                'these render as external links on the intro page',
+            );
+          }
+        });
+      }
+    },
+  },
+
+  {
     name: 'concept-inventory',
     run({ pkg, report }) {
       const err = (msg: string) => report('concept-inventory', 'error', msg);
@@ -1062,6 +1113,16 @@ const CHECKS: Check[] = [
     when: (pkg) => pkg.manifest.status === 'published',
     run({ pkg, report }) {
       const err = (msg: string) => report('publication-preflight', 'error', msg);
+
+      // The intro page block is a publication requirement (preflight item 7,
+      // methodology/06-provenance-publishing.md#intro). Shape when present is
+      // owned by `intro-presence`; absence at published is the error here.
+      if (pkg.manifest.intro === undefined) {
+        err(
+          'manifest.intro is missing — a published exam must carry its introduction page block ' +
+            '(methodology/06-provenance-publishing.md#intro)',
+        );
+      }
 
       // Artifact shapes are the contract in methodology/05-eval-rubric.md#artifact-shapes.
       const readEval = (rel: string): unknown => {

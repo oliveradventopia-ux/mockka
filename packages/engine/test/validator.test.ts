@@ -22,6 +22,7 @@ const registry = JSON.parse(
  *  added/removed/renamed check is a deliberate, reviewed change. */
 const ALL_CHECKS = [
   'manifest-shape',
+  'intro-presence',
   'concept-inventory',
   'concept-convergence',
   'concept-syllabus-rules',
@@ -101,6 +102,74 @@ test('ccar-p runs every check except the publication preflight (status is in_rev
     result.checksRun,
     ALL_CHECKS.filter((c) => c !== 'publication-preflight'),
   );
+});
+
+test('intro presence ratchet: silent on draft, warn on in_review, error at the published preflight', () => {
+  const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
+  const stripIntro = (status: 'draft' | 'in_review' | 'published') => ({
+    ...pkg,
+    manifest: { ...pkg.manifest, status, intro: undefined },
+  });
+
+  // draft: intro is optional — no finding at all.
+  const draft = validateExam(stripIntro('draft'), registry);
+  assert.deepEqual(draft.findings.filter((f) => f.check === 'intro-presence'), []);
+
+  // in_review: a warn, never an error.
+  const inReview = validateExam(stripIntro('in_review'), registry);
+  const warns = inReview.findings.filter((f) => f.check === 'intro-presence');
+  assert.equal(warns.length, 1);
+  assert.equal(warns[0]!.level, 'warn');
+  assert.match(warns[0]!.message, /manifest\.intro is missing/);
+
+  // published: the preflight errors on the missing block.
+  const published = validateExam(stripIntro('published'), registry);
+  const preflight = published.findings
+    .filter((f) => f.check === 'publication-preflight')
+    .map((f) => f.message)
+    .join('\n');
+  assert.match(preflight, /manifest\.intro is missing — a published exam must carry its introduction page block/);
+});
+
+test('a present-but-malformed intro errors at any status', () => {
+  const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
+  const broken = {
+    ...pkg,
+    manifest: {
+      ...pkg.manifest,
+      status: 'draft' as const, // even a draft must not carry a half-filled intro
+      intro: {
+        about: '   ',
+        audience: 'Practitioners.',
+        materials: [],
+        official_resources: [{ label: 'Portal', url: 'http://insecure.example.com' }],
+        disclaimer: '',
+      },
+    },
+  };
+  const result = validateExam(broken, registry);
+  const messages = result.findings
+    .filter((f) => f.check === 'intro-presence' && f.level === 'error')
+    .map((f) => f.message)
+    .join('\n');
+  assert.match(messages, /intro\.about is missing or empty/);
+  assert.match(messages, /intro\.disclaimer is missing or empty/);
+  assert.match(messages, /intro\.materials must list at least one entry/);
+  assert.match(messages, /official_resources\[0\]\.url "http:\/\/insecure\.example\.com" must be an https:\/\/ URL/);
+  assert.equal(result.ok, false);
+});
+
+test('the committed ccar-p and aif-c01 intros satisfy intro-presence with zero findings', () => {
+  for (const slug of ['ccar-p', 'aif-c01']) {
+    const pkg = loadExam(join(ROOT, 'content'), slug);
+    assert.ok(pkg.manifest.intro, `${slug}: manifest.intro missing`);
+    const result = validateExam(pkg, registry);
+    assert.deepEqual(
+      result.findings.filter((f) => f.check === 'intro-presence'),
+      [],
+      `${slug}: unexpected intro-presence findings`,
+    );
+  }
 });
 
 test('a missing theme fails when authoring.json declares a theme set', () => {

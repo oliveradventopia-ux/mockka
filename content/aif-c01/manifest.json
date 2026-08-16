@@ -108,6 +108,35 @@
   "layers": {
     "syllabus_rules": false
   },
+  "intro": {
+    "about": "The AWS Certified AI Practitioner (AIF-C01) validates practitioner-level understanding of AI, machine learning and generative AI concepts and the judgment to apply them on AWS — without being expected to build models or pipelines. Exam guide version 1.1 defines five content domains: Fundamentals of AI and ML (20%), Fundamentals of GenAI (24%), Applications of Foundation Models (28%), Guidelines for Responsible AI (14%), and Security, Compliance, and Governance for AI Solutions (14%).",
+    "audience": "Aimed at people who use, select and make decisions about AI solutions rather than build them — the exam guide targets candidates with up to about six months of exposure to AI/ML on AWS. That fits business, product and operations roles adopting AI on AWS, and engineers who want their conceptual ground checked: items reward selection, recognition and judgment, never implementation.",
+    "materials": [
+      {
+        "title": "50-question practice form",
+        "description": "Weighted to exam guide v1.1 across all five domains and drawn from a 67-item originally-authored bank — the same size as the real exam's scored portion (AWS adds 15 unscored pretest questions this mock does not simulate)."
+      },
+      {
+        "title": "Three question formats, with a disclosed approximation",
+        "description": "Single choice and multiple response (pick two of five) match the real item mechanics; matching is approximated as scenario matching and ordering concepts are tested as single-choice items — the format coverage note below carries the full disclosure."
+      },
+      {
+        "title": "Review dashboard and rationales",
+        "description": "Per-domain scoring against a 70% threshold (a raw-score proxy for the real exam's scaled 700-of-1,000 pass mark), plus an explanation for the key and every distractor on submission."
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "AWS Certified AI Practitioner — official certification page",
+        "url": "https://aws.amazon.com/certification/certified-ai-practitioner/"
+      },
+      {
+        "label": "AWS Skill Builder — official AIF-C01 practice question set (free, sign-in required)",
+        "url": "https://skillbuilder.aws/learn/4URFGY63KV/official-practice-question-set-aws-certified-ai-practitioner--aifc01--english/FVG43Y1PAX"
+      }
+    ],
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Amazon Web Services, Inc. or Pearson VUE. AWS, Amazon Web Services and AWS Certified AI Practitioner are trademarks of Amazon.com, Inc. or its affiliates. Every question was written clean-room from documented derivation artefacts against the public exam guide, with prior practice sets analyzed for classification only, exactly as this package's README records. Nothing here is drawn from the live AIF-C01 item bank: real exam content is confidential and protected by the AWS Certification NDA, which binds you too once you sit the exam — please never share live questions here."
+  },
   "format_coverage": "The real AIF-C01 exam uses four item types: multiple choice (one correct response, three distractors), multiple response (two or more correct responses among five or more options), ordering (place 3-5 responses in the correct sequence), and matching (pair responses against 3-7 prompts). All three are all-or-nothing scored where more than one selection is required. This mock supports three formats and approximates as follows. Multiple choice maps exactly to single_choice. Multiple response maps to multiple_response, all-or-nothing, same as the real exam. Matching is approximated by scenario_matching: you map scenarios onto a reused option set, which exercises the same discrimination, but the real item form pairs a fixed response list against a prompt list. Ordering is NOT supported: concepts that the real exam may test as an ordering item — pipeline and FM-lifecycle stage sequences, and ranking customization approaches by cost or complexity — are authored here as single-choice items over candidate sequences. You will meet ordering and true matching item mechanics for the first time in the real exam; the underlying concepts are covered, the interaction is not rehearsed. Note also that the real exam presents 65 questions in 90 minutes, of which 50 are scored and 15 are unscored pretest items that are not identified; this mock contains only scored-equivalent items.",
   "provenance": {
     "sources": [

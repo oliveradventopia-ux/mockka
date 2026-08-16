@@ -266,6 +266,9 @@ main { max-width: var(--maxw); margin: 28px auto; padding: 0 20px; }
 .card h3 { font-size: 1.05rem; margin: 20px 0 8px; }
 
 /* intro */
+.intro-copy { margin: 4px 0 12px; max-width: 88ch; }
+.intro-list { padding-left: 20px; margin: 6px 0 4px; display: flex; flex-direction: column; gap: 6px; }
+.intro-list a { color: var(--primary); }
 .fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 14px 0 4px; }
 .fact { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
 .fact .k { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
@@ -626,6 +629,15 @@ function renderIntro() {
   var card = el('div', 'card');
   card.appendChild(el('h2', null, 'Exam overview'));
 
+  // Intro page block (methodology/06-provenance-publishing.md#intro) — same
+  // content and order as the player's intro tab.
+  var intro = manifest.intro || null;
+  if (intro) {
+    card.appendChild(el('p', 'intro-copy', intro.about));
+    card.appendChild(el('h3', null, 'Who this certification is for'));
+    card.appendChild(el('p', 'intro-copy', intro.audience));
+  }
+
   var facts = el('div', 'fact-grid');
   [['Scored items', String(manifest.exam.item_count)],
    ['Time limit', manifest.exam.time_limit_minutes + ' min (optional)'],
@@ -657,13 +669,45 @@ function renderIntro() {
   table.appendChild(tbody);
   card.appendChild(table);
 
+  if (intro) {
+    card.appendChild(el('h3', null, 'What this mock provides'));
+    var mats = el('ul', 'intro-list');
+    intro.materials.forEach(function (m) {
+      var mLi = el('li');
+      mLi.appendChild(el('strong', null, m.title + '.'));
+      mLi.appendChild(document.createTextNode(' ' + m.description));
+      mats.appendChild(mLi);
+    });
+    card.appendChild(mats);
+
+    card.appendChild(el('h3', null, 'Official resources'));
+    var resources = el('ul', 'intro-list');
+    intro.official_resources.forEach(function (r) {
+      var rLi = el('li');
+      var link = el('a', null, r.label);
+      link.href = r.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      rLi.appendChild(link);
+      resources.appendChild(rLi);
+    });
+    card.appendChild(resources);
+  }
+
   if (manifest.format_coverage) {
     var cov = el('div', 'callout callout-warn');
     cov.appendChild(el('div', 'callout-title', 'Format coverage disclosure'));
     cov.appendChild(el('div', 'callout-body', manifest.format_coverage));
     card.appendChild(cov);
   }
-  if (manifest.provenance && manifest.provenance.nda_statement) {
+  if (intro) {
+    // The disclaimer covers the NDA/independence ground (06#intro), so the raw
+    // nda_statement callout is skipped — no duplicated fine print.
+    var disc = el('div', 'callout callout-warn');
+    disc.appendChild(el('div', 'callout-title', 'Disclaimer'));
+    disc.appendChild(el('div', 'callout-body', intro.disclaimer));
+    card.appendChild(disc);
+  } else if (manifest.provenance && manifest.provenance.nda_statement) {
     var nda = el('div', 'callout callout-muted');
     nda.appendChild(el('div', 'callout-title', 'Provenance and independence'));
     nda.appendChild(el('div', null, manifest.provenance.nda_statement));

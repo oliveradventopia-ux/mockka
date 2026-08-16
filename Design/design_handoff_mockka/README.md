@@ -57,7 +57,8 @@ a badge; anchors work (`#2a`). Turns are newest-first.
 | `2b` | **CCAR-P dashboard, in-progress state** (hi-fi) |
 | `2c` | **Dashboard template anatomy** — 6 named slots, data + rules (read this before building any dashboard) |
 | `1a` `1b` `1c` | Logo directions: Aperture / Bank grid / Colophon wordmark |
-| `1d` `1e` | Colour identity: light ("paper") and dark ("lamplight") themes |
+| `3a` `3b` `3c` | **Lamplight (dark theme)** on real screens: player, CCAR-P dashboard, landing |
+| `1d` `1e` | Colour identity swatches: Paper (light) and Lamplight (dark) |
 | `1f` `1g` `1h` | Wireframes: player desktop, player mobile, dashboard (lo-fi) |
 | `1i` | Landing page |
 | `1j` | Exam catalog |
@@ -111,20 +112,11 @@ palette** — treat accent-2 as the same role and don't introduce it as a second
    paragraph-size text in gold use `--color-accent-700`.
 4. Muted text = `color-mix(in srgb, var(--color-text) 55%, transparent)` (`.text-muted`).
 
-### Colour — dark theme ("lamplight", option `1e`)
+### Colour — dark theme ("Lamplight")
 
-Same token names, overridden on a `[data-theme="dark"]` root:
-
-| Token | Value |
-|---|---|
-| `--color-bg` | `#1a1918` |
-| `--color-surface` | `#242220` |
-| `--color-text` | `#efece7` |
-| `--color-accent` | `#e1ad66` (accent-400 — one step lighter to hold 3:1 on ink) |
-| `--color-divider` | `rgba(239,236,231,.18)` |
-
-Implement as a class/attribute on `<html>` with `prefers-color-scheme` as the initial
-default and a user override persisted locally.
+See **Theming: the light/dark switch** below for the complete scheme, the derived values,
+the three places dark is *not* a straight inversion, and the toggle spec. Shown on real
+screens in options `3a` (player), `3b` (CCAR-P dashboard) and `3c` (landing); swatches in `1e`.
 
 ### Typography
 
@@ -176,11 +168,141 @@ a 1px border and no shadow at all.
 - Selection: `::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent) }`.
 - Disabled: `opacity: .45; cursor: not-allowed`.
 
+### A CSS gotcha worth knowing
+
+The `font:` **shorthand resets `font-feature-settings` and `font-variant-numeric` to
+`normal`.** If you set type with the shorthand and rely on a `.num { font-feature-settings:
+"tnum" }` utility, your display figures silently lose their tabular numerals while table
+cells keep them — the same screen ends up internally inconsistent. Use longhand properties
+for anything that renders a figure, or declare the tabular rule with enough specificity to
+win. (The prototype hit exactly this; it is fixed there with an `!important` on the
+`.num, .mono` rule.)
+
 ### Icons
 
 Lucide (https://lucide.dev), 1px-feel stroke, sized to the text they sit with. The
 prototype omits most icons deliberately — the system is type- and rule-led. Add icons only
 where an action is ambiguous without one.
+
+---
+
+## Theming: the light/dark switch
+
+The user chooses the theme. Two named themes ship: **Paper** (light, default) and
+**Lamplight** (dark). There is no third "dim" variant and no per-screen theming.
+
+### The complete scheme
+
+Same token names in both themes — only the values change. Everything else in the system
+(type, spacing, radius, the ramps) is shared. **Nothing in a component should branch on
+theme;** if a component needs an `if (dark)`, a token is missing.
+
+| Token | Paper (light) | Lamplight (dark) | Notes |
+|---|---|---|---|
+| `--color-bg` | `#f3f2f2` | `#1a1918` | page ground |
+| `--color-surface` | `#eae9e9` | `#242220` | raised card fills, image mats, the dark footer band |
+| `--color-text` | `#201f1d` | `#efece7` | |
+| `--color-accent` | `#b68235` | `#e1ad66` | dark uses accent-**400**, one step lighter, to keep ≥3:1 on ink |
+| `--color-divider` | `rgba(32,31,29,.16)` | `rgba(239,236,231,.18)` | all hairlines |
+| `--color-text-muted` | `rgba(32,31,29,.55)` | `rgba(239,236,231,.55)` | labels, metadata |
+| `--color-text-body` | `rgba(32,31,29,.82)` | `rgba(239,236,231,.75)` | long-form prose — **not** full-strength text |
+| `--color-text-subtle` | `rgba(32,31,29,.42)` | `rgba(239,236,231,.42)` | keyboard hints, disabled labels |
+| `--color-track` | `#eae7e7` (neutral-200) | `rgba(239,236,231,.14)` | every progress/score bar track |
+| `--color-accent-text` | `#7d5411` (accent-700) | `#e1ad66` (= accent) | **gold at paragraph size**; on light it must darken, on dark it must not |
+| `--color-accent-tint` | `color-mix(in srgb, var(--color-accent) 6%, transparent)` | `rgba(225,173,102,.09)` | selected-option fill |
+| `--color-accent-tint-strong` | `color-mix(in srgb, var(--color-accent) 14%, transparent)` | `rgba(225,173,102,.16)` | active segmented option, answered map cell |
+| `--color-accent-edge` | `var(--color-accent-300)` `#facb8d` | `rgba(225,173,102,.45)` | answered map-cell border, faded bar |
+| `--color-rule-marker` | `#201f1d` | `#efece7` | the 1px threshold rule drawn **on top of** a gold bar |
+| `--color-inverse-bg` | `#2d2b2b` (neutral-900) | `#242220` (surface) | the colophon band — see "not an inversion" below |
+| `--color-inverse-text` | `#f8f4f4` (neutral-100) | `rgba(239,236,231,.85)` | |
+| `--color-inverse-accent` | `#facb8d` (accent-300) | `#e1ad66` | |
+| `--shadow-sm/md/lg` | ink-tinted, per the stylesheet | replace with a hairline border + no shadow | shadows read as smudges on ink |
+
+The four tokens after `--color-text` (`-muted`, `-body`, `-subtle`) and everything from
+`--color-track` down are **new named tokens I am asking you to add**. They exist because
+those exact alpha values recur across every screen; without names they get re-derived by
+hand in each component and drift.
+
+The **ramps are unchanged between themes** (`--color-neutral-100…900`,
+`--color-accent-100…900` — values in the Design tokens section). In dark, reach for the
+*light* accent steps (300/400) where light reached for the dark ones (600/700), which is
+precisely what `--color-accent-text` and `--color-accent-edge` encode. `--color-accent-100`
+(`#fff3e4`) is the one ramp step that cannot be used as a fill in dark — the NDA attestation
+block in `1r` needs `#2a2317` there instead (a dark tint of the same hue).
+
+### Three places dark is not a straight inversion
+
+These are deliberate; a mechanical inversion gets all three wrong.
+
+1. **The colophon band.** The light landing page closes on a near-black band
+   (`--color-neutral-900`). On ink that band disappears, so in dark it **lifts** to
+   `--color-surface` `#242220` with a top hairline. Same for the `1r` dialog header band.
+   That's why `--color-inverse-bg` is a token and not `neutral-900` inline.
+2. **The selected exam option.** In light, the 6% gold tint plus a gold border reads clearly.
+   On ink the tint is nearly invisible, so the **`box-shadow: inset 2px 0 0 var(--color-accent)`
+   left edge carries the state** — keep it in both themes (it is already in the light design)
+   and never let the tint be the only signal.
+3. **Gold at paragraph size.** Light darkens gold to accent-700 for readable body text; dark
+   must *not* darken it. Use `--color-accent-text` and the branch disappears.
+
+Also: the **threshold rule** on a dashboard bar is drawn over a gold fill, so it flips with
+the text colour (`--color-rule-marker`), and the "too few items to trust" bar goes from
+`accent-300` (light) to `rgba(225,173,102,.45)` (dark) — a fade, not a lighter step.
+
+### Contrast — verify, don't assume
+
+The repo already runs contrast tests (`pnpm test` — "engine + contrast tests" per
+`CLAUDE.md`). **Extend them to cover both themes** and assert:
+
+- body text on ground ≥ 4.5:1 — Paper `#201f1d` on `#f3f2f2` ≈ 15.1:1; Lamplight `#efece7`
+  on `#1a1918` ≈ 14.5:1; the `--color-text-body` alphas ≈ 11:1 and ≈ 10:1.
+- accent on ground ≥ 3:1 (chrome, rules, large text only) — Paper `#b68235` ≈ 3.1:1;
+  Lamplight `#e1ad66` ≈ 7.6:1.
+- `--color-accent-text` at paragraph size ≥ 4.5:1 — Paper `#7d5411` ≈ 6.7:1; Lamplight
+  `#e1ad66` ≈ 7.6:1.
+- the focus ring against both grounds ≥ 3:1.
+
+If a value fails, move one ramp step — do not introduce a new hex.
+
+### The toggle (in the UI)
+
+A two-option segmented control in the nav, right-aligned, immediately left of "Sign in"
+(see `1i` for Paper and `3c` for Lamplight). It matches the player's Practice/Exam control
+so the app has one switch idiom:
+
+- Container: `1px solid var(--color-divider)`, `border-radius: var(--radius-md)`, `overflow: hidden`.
+- Each option: `padding: 4px 10px`, JetBrains Mono `9px`, weight `500`,
+  `letter-spacing: .12em`, uppercase. Labels: **Paper** and **Lamp**.
+- Active option: `background: var(--color-accent-tint-strong)`, `color: var(--color-accent-text)`.
+- Inactive: `color: var(--color-text-muted)`.
+- Accessible name "Theme"; implement as a `role="radiogroup"` with two radios (not a
+  checkbox — there are three states once System is counted, see below), keyboard-operable,
+  with the standard `:focus-visible` ring.
+- On mobile the control moves into the nav sheet as a labelled row ("Theme · Paper / Lamp"),
+  keeping 44px targets. It does **not** appear in the player header during a sitting —
+  changing theme mid-question is a distraction; it lives in the sheet there.
+
+**Three-state truth, two-state control.** Stored preference is `'light' | 'dark' | 'system'`;
+default is `'system'`. The control shows the *resolved* theme, so a system user still sees
+which one they are in; touching it sets an explicit preference. Offer "Match system" as a
+reset in settings (or a long-press/right-click affordance) rather than a third segment.
+
+### Implementation notes (Next.js on Vercel)
+
+- Tokens live in one stylesheet: `:root` = Paper, `:root[data-theme="dark"]` = Lamplight,
+  plus `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { … } }` so the
+  system case needs no JS.
+- Set `data-theme` on `<html>` in a **blocking inline script** before first paint, reading
+  `localStorage.getItem('mockka-theme')` — otherwise dark users get a white flash. Keep it
+  tiny and inline; do not defer it.
+- Add `<meta name="color-scheme" content="light dark">` and set `color-scheme` on `:root` per
+  theme so native form controls, scrollbars and the mobile URL bar follow.
+- Signed-in users: persist the preference server-side too and hydrate it into the initial
+  HTML, so it follows them across devices (the whole stated reason `1q` exists).
+- Respect `prefers-reduced-motion`: no cross-fade on theme change — swap instantly.
+- Print always uses Paper regardless of preference (`@media print` forces the light tokens).
+- One test worth having: render every screen in both themes and assert **no component emits
+  a literal hex** — every colour resolves through a token.
 
 ---
 
@@ -227,7 +349,8 @@ the visitor to a paper.
 1. **Nav** — `padding: var(--space-3) var(--space-6)`, `border-bottom: 1px solid var(--color-divider)`.
    Left: 22px mark + "Mockka" 20px/400/.04em. Then nav links (Exams, Methodology,
    Contribute) at 12.5px body, `color: var(--color-text)`, no underline until hover.
-   Right: ghost "Sign in" + primary outline "Browse exams".
+   Right, in order: the **theme toggle** (spec in "Theming" above), ghost "Sign in",
+   primary outline "Browse exams", `gap: 10px`, vertically centred.
 2. **Hero** — `grid-template-columns: 1.15fr .85fr`, `gap: var(--space-8)`,
    `padding: 64px var(--space-8) 52px`.
    - Kicker: mono 9px/.2em/uppercase, `--color-accent-700`: "Original · blueprint-weighted · provenance-checked".
@@ -590,8 +713,9 @@ validator/tests can check the same functions. Global: theme (light/dark/system),
 1. **Logo** — `1a` is the working default; `1b`/`1c` are live alternatives.
 2. **Blueprint weights** — currently derived from item counts; needs a real `weight` field
    in `manifest.json`.
-3. **Readiness score** — shown in `1n`/`1p` but its formula is undefined. Either define it
+3. **Theme default** — shipped as `system`. If you'd rather Mockka open on Paper for everyone, that's a product call, not a design one.
+4. **Readiness score** — shown in `1n`/`1p` but its formula is undefined. Either define it
    in the engine with a documented method or drop it; do not ship an unexplained number.
-4. **Second catalog exam** — invented for layout. Real slugs come from `content/`.
-5. **Distractor-pattern glosses** — the plain-words names for D01–D20 need a canonical table
+5. **Second catalog exam** — invented for layout. Real slugs come from `content/`.
+6. **Distractor-pattern glosses** — the plain-words names for D01–D20 need a canonical table
    in `methodology/`; the dashboard reads it rather than hard-coding strings.

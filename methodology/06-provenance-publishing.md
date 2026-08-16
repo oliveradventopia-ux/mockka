@@ -3,7 +3,10 @@
 Stage manual for S6 in [`00-pipeline.md`](00-pipeline.md). Owner: exam-examiner, executing
 `/exam-publish`. This is where the anti-dumps posture gets *proven* rather than promised: an exam
 ships only when its provenance chain resolves end-to-end and a human has signed off on the
-evidence. The validator enforces the preflight; the sign-off is the recorded human half.
+evidence. The validator's `publication-preflight` check enforces the machine half of the
+preflight; the sign-off is the recorded human half. Each item below is tagged with what
+enforces it: **[machine: <check-name>]** (a named check in
+`packages/engine/src/validate/index.ts`) or **[examiner checklist]** (human-verified at Gate 2).
 
 ---
 
@@ -16,29 +19,42 @@ evidence attached — it is the working paper for [Gate 2](00-pipeline.md#pipeli
    carries type, author, URL, date accessed, and its licence/permission basis
    ([registry format](01-source-distillation.md#registry)). No unregistered source is referenced
    anywhere downstream; no excluded source type appears at all.
+   *[machine: `provenance-sources`, `concept-source-registry`, `source-derivation-link` —
+   registry-field completeness (author/URL/date) is examiner checklist]*
 2. **Every concept source-attributed.** The join chain resolves for the whole bank:
    question → `primary_concept` → `concept.sources[]` → registry entry → derivation doc — or,
-   for imported items, question → registered `licensed_import` source. This is the
-   validator's provenance check ([`04-validation.md`](04-validation.md#invariants)); the
-   preflight re-runs it on the exact tree being published.
+   for imported items, question → registered `licensed_import` source. These are the validator's
+   `concept-source-registry` + `source-derivation-link` checks
+   ([`04-validation.md`](04-validation.md#invariants)); the preflight re-runs them on the exact
+   tree being published. *[machine: `concept-source-registry`, `source-derivation-link`]*
 3. **Validator green.** `pnpm validate <slug>` clean — errors zero, reports read and dispositioned.
+   *[machine: the full check inventory — reading the warn-level reports is examiner checklist]*
 4. **Eval artifacts present and thresholds met.** `eval/blind-solve.json` (with the Codex
    advisory matrix or the recorded note that Codex was unavailable), `eval/judge-scores.json`,
    `eval/overlap-report.md` all exist for this bank revision; no dimension ≤2 anywhere; every
    confident miss adjudicated; bounce cap respected; the Gate 2 sample list assembled
    ([`05-eval-rubric.md`](05-eval-rubric.md#handoff)).
+   *[machine: `publication-preflight` — existence, parseability, the
+   [artifact shapes](05-eval-rubric.md#artifact-shapes), no dimension ≤2, every miss
+   adjudicated; bounce cap + Gate 2 sample assembly are examiner checklist]*
 5. **Per-exam README statements present** — see the [template](#readme-template) below: provenance,
-   independence, NDA, non-affiliation, licence.
+   independence, NDA, non-affiliation, licence. *[examiner checklist — the manifest-level
+   `nda_statement` is machine-checked by `provenance-sources`]*
 6. **Licences recorded, both directions.**
    - **Outbound:** content ships under **CC BY 4.0** (code under MIT), stated in the README and
-     the repo's `LICENSE-CONTENT`.
+     the repo's `LICENSE-CONTENT`. *[examiner checklist]*
    - **Inbound:** every `licensed_import` source's licence is on the commercial-compatible
-     allowlist (CC BY / MIT / Apache-2.0 / author agreement), and its **attribution obligations
+     allowlist — the exact manifest literals are `CC-BY-4.0`, `MIT`, `Apache-2.0`,
+     `author-agreement` (`LICENSE_ALLOWLIST` in the validator; "CC BY 4.0" is the licence's
+     display name, `CC-BY-4.0` is the machine literal) — and its **attribution obligations
      are discharged** exactly as the licence demands — attribution text present where required,
      recorded in the registry entry ([the lane](01-source-distillation.md#licensed-import)).
+     *[machine: `licensed-import-license` — attribution discharge quality is examiner checklist]*
 7. **`format_coverage` disclosure present when required** — see [below](#format-coverage).
+   *[examiner checklist — the Artefact A format analysis is not machine-readable]*
 8. **Gate 2 sign-off recorded** in `derivation/signoff.md` ([template](#signoff-template)) —
-   last, after Oliver's review, never before.
+   last, after Oliver's review, never before. *[machine: `publication-preflight` checks the file
+   exists non-empty — its content is the human half]*
 
 ---
 

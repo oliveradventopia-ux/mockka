@@ -1,5 +1,5 @@
 {
-  "$comment": "Deliberately broken fixture — the negative test proving the gate gates. Planted defects: bad answer key (b1), rationale naming a letter (b2), missing distractor entry (b2), unregistered pattern D99 (b2), concept double-primary (b2+b3 both test C-2, leaving C-3 uncovered), selection format mix mismatch (two single_choice picked, manifest wants one of each), empty provenance, and no derivation/ directory.",
+  "$comment": "Deliberately broken fixture — the negative test proving the gate gates. Planted defects: bad answer key (b1), rationale naming a letter (b2), missing distractor entry (b2), unregistered pattern D99 (b2), concept double-primary (b2+b3 both test C-2, leaving C-3 uncovered), selection format mix mismatch (two single_choice picked, manifest wants one of each), empty provenance, no derivation/ directory, empty pattern_caps while the bank declares distractor_patterns (the author-operated off-switch), and near_duplicate_jaccard 1.5 outside (0,1] (the silently-disabled threshold).",
   "slug": "broken-exam",
   "title": "Broken Fixture Exam",
   "vendor": "Fixture Vendor",
@@ -23,7 +23,7 @@
     "scenario_matching": { "min_options": 3, "min_scenarios": 4, "require_option_reuse": true }
   },
   "style": { "locale": "en-GB", "emoji": false },
-  "validation": { "pattern_caps": {}, "near_duplicate_jaccard": 0.4 },
+  "validation": { "pattern_caps": {}, "near_duplicate_jaccard": 1.5 },
   "layers": { "syllabus_rules": false },
   "provenance": { "sources": [], "nda_statement": "" }
 }

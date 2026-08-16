@@ -149,9 +149,24 @@ const CHECKS: Check[] = [
       }
       if (!m.validation || typeof m.validation.near_duplicate_jaccard !== 'number') {
         err('manifest.validation.near_duplicate_jaccard missing');
+      } else if (!(m.validation.near_duplicate_jaccard > 0 && m.validation.near_duplicate_jaccard <= 1)) {
+        err(
+          `manifest.validation.near_duplicate_jaccard ${m.validation.near_duplicate_jaccard} is outside (0,1] — ` +
+            'an out-of-range threshold silently disables the near-duplicate check',
+        );
       }
       if (!m.validation || typeof m.validation.pattern_caps !== 'object' || m.validation.pattern_caps === null) {
         err('manifest.validation.pattern_caps missing');
+      } else if (
+        Object.keys(m.validation.pattern_caps).length === 0 &&
+        (pkg.bank.questions ?? []).some(
+          (q) => q.type !== 'scenario_matching' && Object.keys(q.distractor_patterns ?? {}).length > 0,
+        )
+      ) {
+        err(
+          'manifest.validation.pattern_caps is empty while the bank declares distractor_patterns — ' +
+            'empty caps are an author-operated off-switch; declare the caps this exam enforces',
+        );
       }
       if (typeof m.layers?.syllabus_rules !== 'boolean') err('manifest.layers.syllabus_rules missing');
       if (!m.provenance) err('manifest.provenance missing');
@@ -805,18 +820,67 @@ const CHECKS: Check[] = [
     when: (pkg) => pkg.manifest.status === 'published',
     run({ pkg, report }) {
       const err = (msg: string) => report('publication-preflight', 'error', msg);
-      for (const rel of ['eval/blind-solve.json', 'eval/judge-scores.json']) {
+
+      // Artifact shapes are the contract in methodology/05-eval-rubric.md#artifact-shapes.
+      const readEval = (rel: string): unknown => {
         const path = join(pkg.dir, rel);
         if (!existsSync(path)) {
           err(`${rel} is missing — publication requires the eval artifacts`);
-          continue;
+          return undefined;
         }
         try {
-          JSON.parse(readFileSync(path, 'utf8'));
+          return JSON.parse(readFileSync(path, 'utf8'));
         } catch {
           err(`${rel} is not parseable JSON`);
+          return undefined;
+        }
+      };
+
+      // blind-solve: every recorded miss carries an adjudication verdict.
+      const blind = readEval('eval/blind-solve.json') as
+        | { items?: { id?: string; match?: boolean; adjudication?: string }[] }
+        | undefined;
+      if (blind !== undefined) {
+        if (!Array.isArray(blind.items) || blind.items.length === 0) {
+          err('eval/blind-solve.json has no items[] — an empty blind-solve proves nothing was solved');
+        } else {
+          for (const item of blind.items) {
+            if (item?.match === false && !item?.adjudication?.trim()) {
+              err(
+                `eval/blind-solve.json: ${item?.id ?? '(no id)'} misses the key with no adjudication verdict`,
+              );
+            }
+          }
         }
       }
+
+      // judge-scores: every item scored on all six dimensions, none <= 2.
+      const judge = readEval('eval/judge-scores.json') as
+        | { items?: { id?: string; scores?: Record<string, unknown> }[] }
+        | undefined;
+      if (judge !== undefined) {
+        if (!Array.isArray(judge.items) || judge.items.length === 0) {
+          err('eval/judge-scores.json has no items[] — an empty judge record proves no thresholds');
+        } else {
+          for (const item of judge.items) {
+            const id = item?.id ?? '(no id)';
+            for (const dim of ['1', '2', '3', '4', '5', '6']) {
+              const score = item?.scores?.[dim];
+              if (typeof score !== 'number') {
+                err(`eval/judge-scores.json: ${id} is missing dimension ${dim}`);
+              } else if (score <= 2) {
+                err(`eval/judge-scores.json: ${id} dimension ${dim} scored ${score} — no dimension <=2 ships`);
+              }
+            }
+          }
+        }
+      }
+
+      const overlap = join(pkg.dir, 'eval', 'overlap-report.md');
+      if (!existsSync(overlap) || readFileSync(overlap, 'utf8').trim().length === 0) {
+        err('eval/overlap-report.md is missing or empty — publication requires the originality-screen record');
+      }
+
       const signoff = join(pkg.dir, 'derivation', 'signoff.md');
       if (!existsSync(signoff) || readFileSync(signoff, 'utf8').trim().length === 0) {
         err('derivation/signoff.md is missing or empty — publication requires recorded Gate 2 sign-off');

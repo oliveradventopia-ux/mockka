@@ -4,7 +4,8 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadExam } from '../src/load.ts';
@@ -99,6 +100,65 @@ test('a published package without eval artifacts fails the preflight', () => {
   assert.match(messages, /signoff\.md/);
 });
 
+/** Scratch package dir for on-disk preflight-artifact tests; auto-removed. */
+function scratchEvalDir(t: { after(fn: () => void): void }, files: Record<string, string>): string {
+  const dir = mkdtempSync(join(tmpdir(), 'mockka-preflight-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  mkdirSync(join(dir, 'eval'), { recursive: true });
+  for (const [rel, content] of Object.entries(files)) {
+    writeFileSync(join(dir, rel), content);
+  }
+  return dir;
+}
+
+test('the preflight rejects below-threshold judge scores and unadjudicated misses', (t) => {
+  const pkg = loadExam(join(HERE, 'fixtures'), 'broken-exam');
+  const dir = scratchEvalDir(t, {
+    'eval/blind-solve.json': JSON.stringify({
+      items: [
+        { id: 'b1', chosen: 'B', keyed: 'B', confidence: 'high', reasoning: 'clean', match: true },
+        { id: 'b2', chosen: 'A', keyed: 'C', confidence: 'high', reasoning: 'confident miss', match: false },
+      ],
+    }),
+    'eval/judge-scores.json': JSON.stringify({
+      items: [
+        { id: 'b1', scores: { '1': 4, '2': 2, '3': 4, '4': 4, '5': 4, '6': 5 } },
+        { id: 'b2', scores: { '1': 4, '2': 4, '3': 4, '4': 4, '5': 4 } },
+      ],
+    }),
+    // no eval/overlap-report.md, no derivation/signoff.md
+  });
+  const published = { ...pkg, dir, manifest: { ...pkg.manifest, status: 'published' as const } };
+  const result = validateExam(published, registry);
+
+  const messages = result.findings
+    .filter((f) => f.check === 'publication-preflight')
+    .map((f) => f.message)
+    .join('\n');
+  assert.match(messages, /b2 misses the key with no adjudication verdict/);
+  assert.match(messages, /b1 dimension 2 scored 2 — no dimension <=2 ships/);
+  assert.match(messages, /b2 is missing dimension 6/);
+  assert.match(messages, /overlap-report\.md is missing or empty/);
+  assert.match(messages, /signoff\.md is missing or empty/);
+});
+
+test('empty {} eval artifacts fail the preflight for published exams', (t) => {
+  const pkg = loadExam(join(HERE, 'fixtures'), 'broken-exam');
+  const dir = scratchEvalDir(t, {
+    'eval/blind-solve.json': '{}',
+    'eval/judge-scores.json': '{}',
+  });
+  const published = { ...pkg, dir, manifest: { ...pkg.manifest, status: 'published' as const } };
+  const result = validateExam(published, registry);
+
+  const messages = result.findings
+    .filter((f) => f.check === 'publication-preflight')
+    .map((f) => f.message)
+    .join('\n');
+  assert.match(messages, /blind-solve\.json has no items\[\]/);
+  assert.match(messages, /judge-scores\.json has no items\[\]/);
+});
+
 test('a registered source with no derivation artefact fails the derivation-doc link', () => {
   // The fixture ships no derivation/ directory, so a registered non-blueprint
   // source cannot resolve to source-<id>.md or a sources.md entry.
@@ -172,6 +232,8 @@ test('the broken fixture bank fails with the expected findings — the gate gate
   assert.match(messages('concept-coverage'), /C-3: no bank item tests this concept as primary/);
   assert.match(messages('selection-format-mix'), /d1 has 2 single_choice items, expected 1/);
   assert.match(messages('selection-format-mix'), /d1 has 0 multiple_response items, expected 1/);
+  assert.match(messages('manifest-shape'), /near_duplicate_jaccard 1\.5 is outside \(0,1\]/);
+  assert.match(messages('manifest-shape'), /pattern_caps is empty while the bank declares distractor_patterns/);
   assert.match(messages('provenance-sources'), /at least one source/);
   assert.match(messages('provenance-sources'), /nda_statement is empty/);
   assert.match(messages('derivation-present'), /missing or empty/);
@@ -179,7 +241,6 @@ test('the broken fixture bank fails with the expected findings — the gate gate
 
   // The fixture is otherwise well-formed: its defects are planted, not noise.
   for (const clean of [
-    'manifest-shape',
     'concept-inventory',
     'blueprint-arithmetic',
     'bank-shape',

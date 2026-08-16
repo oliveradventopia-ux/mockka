@@ -39,7 +39,10 @@ The examiner sits the exam without the key:
    - **legitimately hard** — the key stands; the item is difficult in the intended way → record
      and keep
 5. Low-confidence misses are recorded as difficulty signal (they inform pitch review, dimension
-   5) but do not require adjudication.
+   5) but do not require human adjudication — they carry the recorded verdict
+   `difficulty_signal` so the artifact stays machine-checkable
+   ([shape](#artifact-shapes)): every miss carries *an* adjudication verdict; only confident
+   misses need a human behind theirs.
 
 ## 2 · Codex advisory cross-solve {#codex}
 
@@ -142,6 +145,55 @@ The originality check → `eval/overlap-report.md`:
   rather than pretending a scan happened.
 - Canonical **vocabulary terms** ([Artefact B's bounded exception](01-source-distillation.md#artefact-b))
   are expected shared strings and are excluded from overlap findings.
+
+## Artifact shapes — the machine-checked contract {#artifact-shapes}
+
+The `publication-preflight` check parses both JSON artifacts against these exact shapes; an
+empty or `{}` file fails a published exam. This section is the authoritative shape definition —
+the validator reads it as its spec.
+
+`eval/blind-solve.json`:
+
+```jsonc
+{
+  "items": [                       // REQUIRED, non-empty — one entry per bank item
+    {
+      "id": "3.07",                // bank item id
+      "chosen": "B",               // the examiner's blind answer
+      "keyed": "C",                // the answer key
+      "confidence": "high",        // high | medium | low
+      "reasoning": "…",            // the pre-key one-liner
+      "match": false,              // REQUIRED boolean: chosen === keyed
+      "codex": { "chosen": "B" },  // optional: the advisory cross-solve matrix entry
+      "adjudication": "miskeyed"   // REQUIRED when match is false:
+                                   // miskeyed | co_correct | legitimately_hard | difficulty_signal
+    }
+  ]
+}
+```
+
+Machine assertions: `items[]` present and non-empty; every entry with `match: false` carries a
+non-empty `adjudication`. (`difficulty_signal` is the recorded verdict for low-confidence
+misses; the three human verdicts are for confident misses — the machine checks presence, Gate 2
+checks substance.)
+
+`eval/judge-scores.json`:
+
+```jsonc
+{
+  "items": [                       // REQUIRED, non-empty — one entry per bank item
+    {
+      "id": "3.07",
+      "scores": { "1": 4, "2": 3, "3": 5, "4": 4, "5": 4, "6": 5 }  // ALL six dimensions, 1–5
+    }
+  ],
+  "bounces": [ /* bounce records, shape in §4 above */ ]            // optional
+}
+```
+
+Machine assertions: `items[]` present and non-empty; every item's `scores` carries all six
+dimension keys `"1"`–`"6"` as numbers; **no dimension ≤2** anywhere. `eval/overlap-report.md`
+must exist and be non-empty (its content is process evidence, judged at Gate 2, not parsed).
 
 ## What S5 hands forward {#handoff}
 

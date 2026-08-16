@@ -1,0 +1,128 @@
+{
+  "$comment": "S1/S2 pass (research-manager, 2026-08-16): every field below that is filled is a hard fact from the official exam guide v1.1 (derivation/source-aif-blueprint.md) or exact arithmetic from it. Remaining TODOs are S3/Gate-1 decisions, not missing research: (a) pass_threshold_pct — AWS scores AIF-C01 as a SCALED 100-1,000 with a 700 minimum, which is NOT a raw percentage, so no percent may be invented here; (b) bank sizing, per-domain bank_items and format_mix, near_duplicate_jaccard and pattern_caps — S3 per methodology/02-master-inventory.md; (c) multiple_response/scenario_matching shape — the guide's constraints are: multiple response has 2+ keys among 5+ options, matching pairs responses to 3-7 prompts, both all-or-nothing. exam.item_count is the 50 SCORED items (the 15 unscored pretest items AWS adds are not modellable and are excluded); per-domain exam_items are weight_pct x 50, exact with no rounding. time_limit_minutes is the vendor's 90 for the 65-item sitting - see the Gate 1 note on pacing if the mock keeps 50 items. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "aif-c01",
+  "title": "AWS Certified AI Practitioner (AIF-C01)",
+  "vendor": "Amazon Web Services",
+  "status": "draft",
+  "version": "0.1.0",
+  "blueprint_version": "1.1 (2026-04-30)",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": 50,
+    "time_limit_minutes": 90,
+    "pass_threshold_pct": "TODO — real exam is scaled 100-1,000, pass 700, compensatory; pick a raw-percent proxy at Gate 1"
+  },
+  "bank": {
+    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Fundamentals of AI and ML",
+      "weight_pct": 20,
+      "exam_items": 10,
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Fundamentals of GenAI",
+      "weight_pct": 24,
+      "exam_items": 12,
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Applications of Foundation Models",
+      "weight_pct": 28,
+      "exam_items": 14,
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Guidelines for Responsible AI",
+      "weight_pct": 14,
+      "exam_items": 7,
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Security, Compliance, and Governance for AI Solutions",
+      "weight_pct": 14,
+      "exam_items": 7,
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": "TODO — guide floor is 5",
+      "select_count": [
+        "TODO — guide floor is 2"
+      ]
+    },
+    "scenario_matching": {
+      "min_options": "TODO",
+      "min_scenarios": "TODO — guide's matching items use 3-7 prompts",
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {},
+    "near_duplicate_jaccard": "TODO"
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "format_coverage": "The real AIF-C01 exam uses four item types: multiple choice (one correct response, three distractors), multiple response (two or more correct responses among five or more options), ordering (place 3-5 responses in the correct sequence), and matching (pair responses against 3-7 prompts). All three are all-or-nothing scored where more than one selection is required. This mock supports three formats and approximates as follows. Multiple choice maps exactly to single_choice. Multiple response maps to multiple_response, all-or-nothing, same as the real exam. Matching is approximated by scenario_matching: you map scenarios onto a reused option set, which exercises the same discrimination, but the real item form pairs a fixed response list against a prompt list. Ordering is NOT supported: concepts that the real exam may test as an ordering item — pipeline and FM-lifecycle stage sequences, and ranking customization approaches by cost or complexity — are authored here as single-choice items over candidate sequences. You will meet ordering and true matching item mechanics for the first time in the real exam; the underlying concepts are covered, the interaction is not rehearsed. Note also that the real exam presents 65 questions in 90 minutes, of which 50 are scored and 15 are unscored pretest items that are not identified; this mock contains only scored-equivalent items.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "aif-blueprint",
+        "type": "public_blueprint",
+        "citation": "Official AWS Certified AI Practitioner (AIF-C01) Exam Guide, version 1.1, published 2026-04-30 by Amazon Web Services (docs.aws.amazon.com). Public document, read in full 2026-08-16. Supplies the domain list and weights, item types, scoring model, item counts, task statements and objectives, canonical vocabulary, and the in-scope/out-of-scope AWS service lists. Distilled to derivation/source-aif-blueprint.md."
+      },
+      {
+        "id": "declute-serverside",
+        "type": "public_practice_set",
+        "citation": "Darcy DeClute (Scrumtuous Inc.), 35 AIF-C01 practice questions published free on TheServerSide, 2026-07-20. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-declute-serverside.md. No text reused."
+      },
+      {
+        "id": "jwalsh-aif",
+        "type": "public_practice_set",
+        "citation": "Jason Walsh, AIF-C01 practice tests in the MIT-licensed GitHub repository jwalsh/aif-c01 (40 items). Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-jwalsh-aif.md. No text reused."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the AIF-C01 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the AWS Certification NDA; sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Amazon Web Services, Inc. or Pearson VUE. \"AWS\", \"Amazon Web Services\" and \"AWS Certified AI Practitioner\" are trademarks of Amazon.com, Inc. or its affiliates."
+  }
+}

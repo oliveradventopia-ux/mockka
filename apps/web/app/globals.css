@@ -837,18 +837,25 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
 .opt input:disabled { cursor: default; }
 .opt:has(input:disabled) { cursor: default; }
 .opt:has(input:disabled:not(:checked)) { opacity: 0.6; }
-/* Graded: the key holds the gold; a wrong pick drops to neutral. */
-.opt.is-answer {
+/* Graded: the key holds the gold; a wrong pick drops to neutral. The
+   :has() variants out-rank the live checked/disabled selectors above —
+   without them the wrong pick keeps its selected-gold dress and the key
+   row inherits the 0.6 disabled fade (a cascade tie, not an override). */
+.opt.is-answer,
+.opt.is-answer:has(input:checked),
+.opt.is-answer:has(input:disabled:not(:checked)) {
   border-color: var(--color-accent-500);
   background: var(--color-accent-100);
   box-shadow: inset 2px 0 0 var(--color-accent);
   opacity: 1;
 }
-.opt.is-chosen-wrong {
+.opt.is-chosen-wrong,
+.opt.is-chosen-wrong:has(input:checked) {
   border-color: var(--color-neutral-500);
   background: var(--color-neutral-100);
   box-shadow: none;
 }
+.opt.is-chosen-wrong:has(input:checked) .key { color: var(--color-text-muted); }
 .opt .key {
   font-family: var(--font-mono);
   font-weight: 500;

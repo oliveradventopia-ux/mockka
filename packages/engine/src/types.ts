@@ -78,6 +78,19 @@ export interface ExamManifest {
     pattern_caps: Record<string, number>;
     /** Jaccard similarity threshold for the near-duplicate stem check. */
     near_duplicate_jaccard: number;
+    /** BD-1 knob (`key-position-distribution`): max share of single_choice
+     *  items any one key letter may carry. Optional — defaults to 0.4;
+     *  manifest-shape bounds it to [0.25, 0.6] (an unbounded knob is an
+     *  author-operated off-switch — the near_duplicate_jaccard lesson). */
+    key_letter_max_share?: number;
+    /** BD-1 knob: max share of multiple_response items sharing one exact key
+     *  set. Optional — defaults to 0.5; bounded to [0.25, 0.75]. */
+    mr_key_set_max_share?: number;
+    /** BD-2 knobs (`answer-length-cue`): keyed-option vs longest-distractor
+     *  length-ratio tiers. Optional — default 1.25 (warn tier) / 1.5 (error
+     *  tier); bounded to [1.05, 1.5] and [1.2, 2.0], warn <= error. */
+    answer_length_ratio_warn?: number;
+    answer_length_ratio_error?: number;
   };
   layers: {
     /** When true, syllabus-rules.json must exist and coverage checks run. */
@@ -259,6 +272,12 @@ export interface AttemptState {
   endsAt: number | null;
   startedAt: number | null;
   finishedAt: number | null;
+  /** Per-attempt display-shuffle seed (BD-1 render hardening, S5 eval-report
+   *  §8). Null until the client mints one at hydration — the server render
+   *  keeps JSON order, so first paint never mismatches. Persisted so option
+   *  order is stable across refresh within an attempt and varies between
+   *  attempts. Display-only: grading and stored answers stay letter-keyed. */
+  seed: number | null;
 }
 
 // ---------------------------------------------------------------- grading

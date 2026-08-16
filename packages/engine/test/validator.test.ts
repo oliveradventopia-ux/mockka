@@ -36,6 +36,8 @@ const ALL_CHECKS = [
   'rationale-letter-reference',
   'distractor-patterns',
   'pattern-frequency-caps',
+  'key-position-distribution',
+  'answer-length-cue',
   'concept-coverage',
   'syllabus-rule-bank-coverage',
   'syllabus-rule-form-coverage',

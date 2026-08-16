@@ -130,6 +130,41 @@ const MOJIBAKE = /[ÂâÃ][-¿]|�/;
 const domainIds = (pkg: ExamPackage) => new Set((pkg.manifest.domains ?? []).map((d) => d.id));
 const rulesLayerOn = (pkg: ExamPackage) => pkg.manifest.layers?.syllabus_rules === true;
 
+// ---------------------------------------------- structural answer-cue knobs
+//
+// BD-1/BD-2 ratchet (aif-c01 S5 round 1 — content/aif-c01/eval/judge-scores.json
+// -> bank_defects): the numbers are manifest-data because the right value is
+// exam-shape judgment; the DEFAULTS and BOUNDS are code because an unbounded
+// knob is an author-operated off-switch (the L-0002 / near_duplicate_jaccard
+// lesson). `manifest-shape` errors on an out-of-range knob, and `knobOr`
+// additionally falls back to the default so an out-of-range value can never
+// loosen a check even within the failing run.
+
+interface Knob {
+  default: number;
+  min: number;
+  max: number;
+}
+const KEY_LETTER_MAX_SHARE: Knob = { default: 0.4, min: 0.25, max: 0.6 };
+const MR_KEY_SET_MAX_SHARE: Knob = { default: 0.5, min: 0.25, max: 0.75 };
+const ANSWER_LENGTH_RATIO_WARN: Knob = { default: 1.25, min: 1.05, max: 1.5 };
+const ANSWER_LENGTH_RATIO_ERROR: Knob = { default: 1.5, min: 1.2, max: 2 };
+
+/** Below these counts a share bound is sampling noise, not a signal. */
+const MIN_SC_ITEMS_FOR_SHARE = 8;
+const MIN_MR_ITEMS_FOR_SHARE = 4;
+/** A listed-order prefix shorter than this is a coin flip, not a pattern. */
+const MIN_SM_LISTED_ORDER_PREFIX = 3;
+/** Keyed options shorter than this skip the length-ratio test — at phrase
+ *  length the ratio is noise (ccar-p calibration 2026-08-16: zero items with
+ *  ratio > 1.5 and a keyed option under 50 chars). */
+const MIN_KEY_LENGTH_FOR_RATIO = 40;
+/** Justification riders that stylistically mark a keyed option (BD-2). */
+const RIDER = /\b(?:since|because|rather than)\b/i;
+
+const knobOr = (val: number | undefined, k: Knob): number =>
+  typeof val === 'number' && val >= k.min && val <= k.max ? val : k.default;
+
 // ---------------------------------------------------------------- checks
 
 const CHECKS: Check[] = [
@@ -174,6 +209,29 @@ const CHECKS: Check[] = [
         err(
           'manifest.validation.pattern_caps is empty while the bank declares distractor_patterns — ' +
             'empty caps are an author-operated off-switch; declare the caps this exam enforces',
+        );
+      }
+      const cueKnobs: [string, number | undefined, Knob][] = [
+        ['key_letter_max_share', m.validation?.key_letter_max_share, KEY_LETTER_MAX_SHARE],
+        ['mr_key_set_max_share', m.validation?.mr_key_set_max_share, MR_KEY_SET_MAX_SHARE],
+        ['answer_length_ratio_warn', m.validation?.answer_length_ratio_warn, ANSWER_LENGTH_RATIO_WARN],
+        ['answer_length_ratio_error', m.validation?.answer_length_ratio_error, ANSWER_LENGTH_RATIO_ERROR],
+      ];
+      for (const [key, val, k] of cueKnobs) {
+        if (val === undefined) continue; // optional — the coded default applies
+        if (typeof val !== 'number' || val < k.min || val > k.max) {
+          err(
+            `manifest.validation.${key} ${val} is outside [${k.min}, ${k.max}] — ` +
+              'an out-of-range structural-cue knob neuters its check (the default applies instead)',
+          );
+        }
+      }
+      const alw = m.validation?.answer_length_ratio_warn;
+      const ale = m.validation?.answer_length_ratio_error;
+      if (typeof alw === 'number' && typeof ale === 'number' && alw > ale) {
+        err(
+          `manifest.validation.answer_length_ratio_warn ${alw} exceeds answer_length_ratio_error ${ale} — ` +
+            'the warn tier must sit at or below the error tier',
         );
       }
       if (typeof m.layers?.syllabus_rules !== 'boolean') err('manifest.layers.syllabus_rules missing');
@@ -524,6 +582,143 @@ const CHECKS: Check[] = [
             'pattern-frequency-caps',
             'error',
             `pattern ${p} is ${Math.round(share * 100)}% of distractors — cap is ${Math.round(cap * 100)}%, it is too easy to eliminate`,
+          );
+        }
+      }
+    },
+  },
+
+  {
+    name: 'key-position-distribution',
+    run({ pkg, report }) {
+      // BD-1 key-position-constant (aif-c01 S5 round 1): a constant key
+      // position/letter lets test-wiseness beat the bank — aif-c01 shipped 67/67
+      // items keyed first. WARN level this wave, deliberately: calibrated
+      // 2026-08-16 against shipped ccar-p, which carries the same latent defect
+      // (SC key "B" = 53/59 = 90% share, MR set A+B = 15/21 = 71%, 5/5 SM items
+      // in listed order) — an error level would redline a shipped bank whose
+      // content is outside this lane's ownership. Promote to error once the
+      // key-rebalance content waves land (04-validation.md#adding-a-check
+      // step 4); never weaken or remove — the ratchet turns one way.
+      const warn = (msg: string) => report('key-position-distribution', 'warn', msg);
+      const v = pkg.manifest.validation;
+      const questions = pkg.bank.questions ?? [];
+
+      // Single choice: no letter may carry an outsized share of the keys.
+      const sc = questions.filter(
+        (q) => q.type === 'single_choice' && typeof q.answer === 'string',
+      );
+      if (sc.length >= MIN_SC_ITEMS_FOR_SHARE) {
+        const bound = knobOr(v?.key_letter_max_share, KEY_LETTER_MAX_SHARE);
+        const hist = new Map<string, number>();
+        for (const q of sc) hist.set(q.answer as string, (hist.get(q.answer as string) ?? 0) + 1);
+        for (const [letter, n] of [...hist.entries()].sort()) {
+          const share = n / sc.length;
+          if (share > bound) {
+            warn(
+              `key letter ${letter} carries ${n}/${sc.length} single-choice items ` +
+                `(${Math.round(share * 100)}%, bound ${Math.round(bound * 100)}%) — a candidate who ` +
+                'spots the favourite letter scores without knowledge; permute option letters ' +
+                '(answer, distractor_patterns and rationale.distractors keys move together)',
+            );
+          }
+        }
+      }
+
+      // Multiple response: the exact key set must vary across items.
+      const mr = questions.filter(
+        (q) => q.type === 'multiple_response' && Array.isArray(q.answer),
+      );
+      if (mr.length >= MIN_MR_ITEMS_FOR_SHARE) {
+        const bound = knobOr(v?.mr_key_set_max_share, MR_KEY_SET_MAX_SHARE);
+        const hist = new Map<string, number>();
+        for (const q of mr) {
+          const set = [...(q.answer as string[])].sort().join('+');
+          hist.set(set, (hist.get(set) ?? 0) + 1);
+        }
+        for (const [set, n] of [...hist.entries()].sort()) {
+          const share = n / mr.length;
+          if (share > bound) {
+            warn(
+              `multiple-response key set {${set}} carries ${n}/${mr.length} items ` +
+                `(${Math.round(share * 100)}%, bound ${Math.round(bound * 100)}%) — vary which ` +
+                'letters key multiple-response items',
+            );
+          }
+        }
+      }
+
+      // Scenario matching: detect the listed-order mapping (scenario i answers
+      // matching_options[i]) — the SM face of the same constant-position leak.
+      for (const q of questions) {
+        if (q.type !== 'scenario_matching') continue;
+        const opts = q.matching_options ?? [];
+        const scen = q.scenarios ?? [];
+        const n = Math.min(scen.length, opts.length);
+        if (n < MIN_SM_LISTED_ORDER_PREFIX) continue;
+        const listed = scen.slice(0, n).every((s, i) => (q.answer ?? {})[s.id] === opts[i]);
+        if (listed) {
+          warn(
+            `${q.id}: the first ${n} scenarios map to matching options in listed order — ` +
+              'permute the matching_options list or the scenario order',
+          );
+        }
+      }
+    },
+  },
+
+  {
+    name: 'answer-length-cue',
+    run({ pkg, report }) {
+      // BD-2 answer-surface-cue (aif-c01 S5 round 1): "pick the longest, most
+      // hedged option" solved 51/57 SC items with zero domain knowledge. Both
+      // tiers report WARN this wave, deliberately: ccar-p calibration
+      // 2026-08-16 — keyed option longest in 55/59 SC items, median ratio 1.56,
+      // 33 items above the 1.5 tier — the shipped bank has the same latent
+      // defect and its content is outside this lane's ownership. Promote the
+      // tiers to warn/error once the shape-parallelism content waves land;
+      // never weaken the thresholds to fit content.
+      const v = pkg.manifest.validation;
+      const warnR = knobOr(v?.answer_length_ratio_warn, ANSWER_LENGTH_RATIO_WARN);
+      const errR = Math.max(knobOr(v?.answer_length_ratio_error, ANSWER_LENGTH_RATIO_ERROR), warnR);
+
+      for (const q of pkg.bank.questions ?? []) {
+        if (q.type !== 'single_choice' || typeof q.answer !== 'string') continue;
+        const key = q.options?.[q.answer];
+        if (!key) continue; // single-choice-shape owns the unresolvable answer
+        const keyLen = key.trim().length;
+        const maxD = Math.max(
+          0,
+          ...nonAnswerKeys(q).map((k) => (q.options?.[k] ?? '').trim().length),
+        );
+
+        if (maxD > 0 && keyLen >= MIN_KEY_LENGTH_FOR_RATIO) {
+          const ratio = keyLen / maxD;
+          const pct = Math.round(ratio * 100);
+          if (ratio > errR) {
+            report(
+              'answer-length-cue',
+              'warn',
+              `${q.id}: keyed option is ${pct}% the length of the longest distractor ` +
+                `(error-tier bound ${Math.round(errR * 100)}%) — trim the key's justification ` +
+                'riders into rationale.correct, or argue the distractors up to parity',
+            );
+          } else if (ratio > warnR) {
+            report(
+              'answer-length-cue',
+              'warn',
+              `${q.id}: keyed option is ${pct}% the length of the longest distractor ` +
+                `(warn-tier bound ${Math.round(warnR * 100)}%) — keep option shapes parallel within the item`,
+            );
+          }
+        }
+
+        if (RIDER.test(key) && !nonAnswerKeys(q).some((k) => RIDER.test(q.options?.[k] ?? ''))) {
+          report(
+            'answer-length-cue',
+            'warn',
+            `${q.id}: only the keyed option carries a justification rider (since/because/rather than) — ` +
+              'a reliable key marker; the argument belongs in rationale.correct',
           );
         }
       }

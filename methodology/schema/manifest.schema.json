@@ -114,7 +114,23 @@
           "type": "object",
           "additionalProperties": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
         },
-        "near_duplicate_jaccard": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+        "near_duplicate_jaccard": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "key_letter_max_share": {
+          "$comment": "BD-1 knob (key-position-distribution): max share of single_choice items any one key letter may carry. Default 0.4; bounds mirror the validator's.",
+          "type": "number", "minimum": 0.25, "maximum": 0.6
+        },
+        "mr_key_set_max_share": {
+          "$comment": "BD-1 knob: max share of multiple_response items sharing one exact key set. Default 0.5.",
+          "type": "number", "minimum": 0.25, "maximum": 0.75
+        },
+        "answer_length_ratio_warn": {
+          "$comment": "BD-2 knob (answer-length-cue): warn-tier keyed-option/longest-distractor length ratio. Default 1.25; must not exceed the error tier.",
+          "type": "number", "minimum": 1.05, "maximum": 1.5
+        },
+        "answer_length_ratio_error": {
+          "$comment": "BD-2 knob: error-tier length ratio. Default 1.5.",
+          "type": "number", "minimum": 1.2, "maximum": 2
+        }
       }
     },
     "layers": {

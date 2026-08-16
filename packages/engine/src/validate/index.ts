@@ -5,11 +5,12 @@
 // option counts, option-reuse, spelling/emoji policy all come from the
 // package's manifest/authoring config. The invariants themselves stay code.
 //
-// The check that matters most is still `rationale-anti-drift`: distractor
-// rationales must hold exactly one entry per non-answer option, and the
-// correct rationale must never name an option letter. That combination makes
-// it structurally impossible to ship a rationale that argues against its own
-// answer key.
+// The checks that matter most are still the `rationale-anti-drift` +
+// `rationale-letter-reference` pair: distractor rationales must hold exactly
+// one entry per non-answer option, and no rationale text (correct or
+// distractor values) may name an option letter. Enforced by validation on
+// every gate run — a rationale that argues against its own answer key cannot
+// pass the validator.
 //
 // New over CCAR-P: the provenance chain (question -> concept -> derivation
 // doc -> registered source), the licensed-import allowlist, and the
@@ -107,9 +108,15 @@ function shingles(s: string): Set<string> {
   );
 }
 
-/** Catches "Correct: C.", "unlike B,", "the answer is C" — ported verbatim. */
+/** Catches "Correct: C.", "unlike B,", "Answer is C rather than", "option c," while leaving
+ *  prose letters alone ("e.g.", "the answer is a narrower prompt", "gives the option a wider
+ *  scope"). Case-insensitive keywords + word boundaries; a bare letter must be uppercase A–E
+ *  followed by punctuation, a letter after "option" may be lowercase only with punctuation
+ *  (the article-"a" trap), and the letter after "is" stays uppercase-only for the same reason.
+ *  Trialled against the full ccar-p bank (correct + distractor rationales, 2026-08-16):
+ *  zero false positives. */
 const LETTER_REF =
-  /(?:^|[^A-Za-z])(?:option\s+)?[A-E][.),:]|(?:^|\s)(?:answer|correct|choice)\s+is\s+[A-E]\b/;
+  /(?:^|[^A-Za-z])[A-E][.),:]|\b[Oo]ption\s+(?:[A-E]\b|[a-e][.),:])|\b(?:[Aa]nswer|[Cc]orrect|[Cc]hoice)\s+is\s+[A-E]\b/;
 
 const AMERICANISMS =
   /\b(analyze|organize|prioritize|optimize[sd]?|recognize|summarize|behavior|labeled|modeling|fulfill|catalog)\b/i;
@@ -454,13 +461,21 @@ const CHECKS: Check[] = [
   {
     name: 'rationale-letter-reference',
     run({ pkg, report }) {
+      const err = (id: string, where: string) =>
+        report(
+          'rationale-letter-reference',
+          'error',
+          `${id}: ${where} rationale references an option letter — it must describe the reasoning, not the position`,
+        );
       for (const q of pkg.bank.questions ?? []) {
-        if (LETTER_REF.test(q.rationale?.correct ?? '')) {
-          report(
-            'rationale-letter-reference',
-            'error',
-            `${q.id}: correct rationale references an option letter — it must describe the reasoning, not the position`,
-          );
+        if (LETTER_REF.test(q.rationale?.correct ?? '')) err(q.id, 'correct');
+        if (q.type === 'scenario_matching') continue;
+        // Distractor values are scanned too: trialled against ccar-p
+        // (85 items, 2026-08-16) with zero false positives, so the scan is
+        // scoped in. If a future exam's legitimate prose trips it, tighten
+        // the regex — never scope the scan back out silently.
+        for (const [k, text] of Object.entries(q.rationale?.distractors ?? {})) {
+          if (LETTER_REF.test(text)) err(q.id, `distractor ${k}`);
         }
       }
     },

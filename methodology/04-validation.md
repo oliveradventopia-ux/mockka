@@ -16,33 +16,50 @@ package reproduces every check of the original hardcoded CCAR-P validator with i
 
 ## Universal invariants (code — the same for every exam) {#invariants}
 
-These hold for any exam, so they are not configurable:
+These hold for any exam, so they are not configurable. Each claim below names the check
+function(s) in `packages/engine/src/validate/index.ts` that enforce it — a project rule: an
+enforcement claim without a named check is a claim, not a fact.
 
-- **Referential integrity.** Every id unique; every reference resolves: `primary_concept` →
-  `concepts.json`, syllabus-rule tags → the rules file (when the layer is on), theme tags → the
-  declared theme set, pattern tags → the shared registry or the exam's declared extensions;
-  every answer key resolves to a real option; every selection entry resolves to a bank item.
-- **The anti-drift rationale check.** `rationale.correct` never names an option letter;
-  `rationale.distractors` has exactly one entry per non-answer option. Structurally, a rationale
-  cannot argue against its own answer key
-  ([why](03-authoring-guide.md#procedure)).
-- **Distractor-pattern completeness.** `distractor_patterns` keys == exactly the non-answer
-  options, and no pattern repeats within one item.
-- **Coverage contract.** Every concept in the inventory is the `primary_concept` of exactly one
-  bank item ([the contract](02-master-inventory.md#contract)); with the `syllabus_rules` layer
-  on, every rule is referenced by at least one selected item, and concepts covered only by
-  reserve items are reported as blind spots.
-- **Selection composition.** Each form in `selection.json` matches the manifest's exam total,
-  per-domain counts, and per-domain format mix; `select_count` matches the key size on
-  multiple-response items.
-- **Text hygiene.** Near-duplicate scenario detection (shingle comparison across stems); the
-  keyword-presence check (each item's declared `keywords` actually appear in its stem/rationale —
-  the tie to canonical vocabulary); number-drift (figures cited in a rationale match the stem);
-  no mojibake.
-- **Provenance chain.** Every question resolves to a concept whose `sources[]` resolve to
-  registered sources with derivation docs — or to a registered `licensed_import` source;
-  `derivation/` is non-empty; import licences sit on the commercial-compatible allowlist. (The
-  publication-preflight half of this list is in
+- **Referential integrity** — `manifest-shape`, `concept-inventory`, `item-metadata`,
+  `bank-shape`, `blueprint-arithmetic`. Every id unique; every reference resolves:
+  `primary_concept` → `concepts.json`, syllabus-rule tags → the rules file (when the layer is
+  on: `concept-syllabus-rules`), theme tags → the declared theme set, pattern tags → the shared
+  registry or the exam's declared extensions (`distractor-patterns`); every answer key resolves
+  to a real option (`single-choice-shape`, `multiple-response-shape`, `scenario-matching-shape`);
+  every selection entry resolves to a bank item (`selection-shape`).
+- **The anti-drift rationale invariant** — `rationale-anti-drift` + `rationale-letter-reference`.
+  `rationale.correct` never names an option letter (checked case-insensitively, in
+  `rationale.distractors` values too); `rationale.distractors` has exactly one entry per
+  non-answer option. Together the two checks reject any bank whose rationale argues against its
+  own answer key ([why](03-authoring-guide.md#procedure)).
+- **Distractor-pattern completeness** — `distractor-patterns` (+ `pattern-frequency-caps` for
+  the histogram caps). `distractor_patterns` keys == exactly the non-answer options, and no
+  pattern repeats within one item.
+- **Coverage contract** — `concept-coverage`, `syllabus-rule-bank-coverage`,
+  `syllabus-rule-form-coverage`. Every concept in the inventory is the `primary_concept` of
+  exactly one bank item ([the contract](02-master-inventory.md#contract)); with the
+  `syllabus_rules` layer on, every rule is referenced by at least one selected item, and concepts
+  covered only by reserve items are reported as blind spots.
+- **Convergence surfaced** — `concept-convergence` (warn-level, never fails the gate). Computes
+  `sources.length >= 2` per concept and warns where the authored `priority` diverges from the
+  computed signal — divergence is allowed as documented authoring judgment, but it is always
+  visible, never silent.
+- **Selection composition** — `selection-shape`, `selection-format-mix`,
+  `selection-concept-uniqueness`. Each form in `selection.json` matches the manifest's exam
+  total, per-domain counts, and per-domain format mix; `select_count` matches the key size on
+  multiple-response items (`multiple-response-shape`).
+- **Text hygiene** — `near-duplicate-stems` (shingle comparison across stems),
+  `keyword-presence` (each item's declared `keywords` actually appear in its stem/rationale —
+  the tie to canonical vocabulary), `number-drift` (figures cited in a rationale match the
+  stem), `mojibake`, `style-policy` (locale spelling + emoji policy).
+- **Provenance chain** — `provenance-sources`, `concept-source-registry`,
+  `source-derivation-link`, `derivation-present`, `licensed-import-license`. Every question
+  resolves to a concept whose `sources[]` resolve to registered sources; every registered
+  non-`public_blueprint` source resolves to a derivation artefact on disk
+  (`derivation/source-<id>.md`, or its id appearing in `derivation/sources.md`) —
+  `source-derivation-link`; `derivation/` is non-empty; import licences sit on the
+  commercial-compatible allowlist. (The publication-preflight half of this list —
+  `publication-preflight` — is in
   [`06-provenance-publishing.md`](06-provenance-publishing.md).)
 
 ## Manifest-driven data (per exam) {#manifest-data}

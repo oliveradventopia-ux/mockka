@@ -1,0 +1,149 @@
+{
+  "$comment": "S1/S2 facts only (research-manager, 2026-08-16). Remaining TODOs are S3/Gate-1 material. READ derivation/sources.md FIRST: (a) ⚑ AI-900 was RETIRED 2026-06-30 and replaced by AI-901 — whether this package proceeds at all is a Gate-1 decision, not a pipeline one; (b) Microsoft publishes domain weights as RANGES (15-20/15-20/15-20/15-20/20-25), which sum to 80-105, never to 100 — the weight_pct values here are DERIVED, not vendor-stated: range midpoints (17.5/17.5/17.5/17.5/22.5, sum 92.5) normalised to 100 and rounded to the tie-free allocation 19/19/19/19/24. Gate 1 must ratify that normalisation; (c) exam.item_count is NOT published per exam — Microsoft states only that most exams 'typically contain between 40-60 questions', so the count is a documented choice (band midpoint 50 recommended) left TODO rather than invented; (d) pass_threshold_pct has no honest raw-percentage value — the real exam is scaled 1-1,000 with a 700 pass mark that Microsoft says 'may not equal 70% of the points', and multi-part items earn partial credit, so any percentage here is a disclosed proxy. time_limit_minutes 45 IS a hard vendor fact (Fundamentals exam type; 65 min seat time). Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "ai-900",
+  "title": "Microsoft Azure AI Fundamentals (AI-900)",
+  "vendor": "Microsoft",
+  "status": "draft",
+  "version": "0.1.0",
+  "blueprint_version": "skills measured as of 2025-05-02 (study-guide page last updated 2026-06-30; exam retired 2026-06-30)",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": "TODO — vendor publishes no per-exam count; choose from the documented 40-60 band and disclose (recommend 50)",
+    "time_limit_minutes": 45,
+    "pass_threshold_pct": "TODO — real pass mark is scaled 700/1000, not a raw percent; any value here is a disclosed proxy (Gate-1 ratification)"
+  },
+  "bank": {
+    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Describe Artificial Intelligence workloads and considerations",
+      "weight_pct": 19,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Describe fundamental principles of machine learning on Azure",
+      "weight_pct": 19,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Describe features of computer vision workloads on Azure",
+      "weight_pct": 19,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Describe features of Natural Language Processing (NLP) workloads on Azure",
+      "weight_pct": 19,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Describe features of generative AI workloads on Azure",
+      "weight_pct": 24,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": "TODO",
+      "select_count": [
+        "TODO"
+      ]
+    },
+    "scenario_matching": {
+      "min_options": "TODO",
+      "min_scenarios": "TODO",
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {},
+    "near_duplicate_jaccard": "TODO"
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "intro": {
+    "about": "TODO — executive summary: what the certification validates, domains covered. MUST state that AI-900 was retired 2026-06-30 and replaced by AI-901 (derivation/sources.md §Retirement)",
+    "audience": "TODO — who the certification is for, as roles",
+    "materials": [
+      {
+        "title": "TODO — e.g. \"<N>-question practice exam\"",
+        "description": "TODO — what THIS mock provides: bank size, formats, dashboard, review depth"
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "Study guide for Exam AI-900: Microsoft Azure AI Fundamentals (official, retired exam)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900"
+      },
+      {
+        "label": "Microsoft Certified: Azure AI Fundamentals — current certification (now requires AI-901)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
+      }
+    ],
+    "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
+  },
+  "format_coverage": "TODO — disclosure per methodology/06-provenance-publishing.md#format-coverage. The format profile is already researched: see derivation/sources.md §'Format profile vs Mockka's supported formats'. Must disclose that multiple choice maps exactly; multi-part items map to multiple_response but Mockka scores all-or-nothing where Microsoft awards one point per correct component; drag-and-drop is approximated by scenario_matching; and build list, hot area, active screen, case studies and problem-solution sets are NOT rehearsed. Labs do not apply (excluded from Fundamentals exams). Also disclose that the real paper mixes unidentified unscored pilot items and reports a scaled 1-1,000 score, so no raw percentage converts.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "ms-ai900-blueprint",
+        "type": "public_blueprint",
+        "citation": "Study guide for Exam AI-900: Microsoft Azure AI Fundamentals, skills measured as of 2025-05-02, published by Microsoft (learn.microsoft.com). Public document, read in full 2026-08-16. Supplies the skill areas and weight ranges, objective bullets, audience profile, change log, and canonical vocabulary. Scoring, duration and item-type facts come from the vendor-wide exam-scoring and exam-duration pages cited in derivation/sources.md. Distilled to derivation/source-ms-ai900-blueprint.md."
+      },
+      {
+        "id": "warner-ai900",
+        "type": "public_practice_set",
+        "citation": "Tim Warner (Microsoft MVP), AI-900 practice items in the MIT-licensed GitHub repository timothywarner/ai900 (25 items across five domain files). Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-warner-ai900.md. No text reused."
+      },
+      {
+        "id": "wrieden-ai900",
+        "type": "public_practice_set",
+        "citation": "Olaf Wrieden, 29 freely published AI-900 practice questions in the GitHub repository olafwrieden/Azure-AI-900-Practice-Questions. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-wrieden-ai900.md. No text reused. 2021 vintage: 76% of its items are off the final blueprint, recorded item by item."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the AI-900 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the Microsoft Certification Exam Candidate Agreement; sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Microsoft Corporation or Pearson VUE. \"Microsoft\", \"Azure\" and \"Microsoft Certified: Azure AI Fundamentals\" are trademarks of the Microsoft group of companies."
+  }
+}

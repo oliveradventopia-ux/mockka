@@ -52,3 +52,15 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: a React effect that resets its own trigger state re-fires its cleanup mid-sequence; do the DOM work synchronously in the post-commit effect before resetting the trigger (the jump-scroll bug class).
 - why: the navigator jump effect scrolls to a question and then clears `jumpTarget`; clearing first re-fired the effect and killed the scroll — same shape as the F3 timer loop (an effect whose deps change as a consequence of its own run).
 - how to apply: in any effect, order = read trigger → do DOM work → reset trigger; and never put identity-unstable objects (fresh per render) in effect deps — memoize at the source.
+
+## L-0008 · Pick bank size by tie-free largest-remainder rounding within the 1.3–1.4× band
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: when sizing a bank, choose the size in the 1.3–1.4× band whose largest-remainder per-domain allocation is tie-free (aif-c01: 67 unique vs 68's d4/d5 tie); per-domain counts are validator-enforced, so an arbitrary tiebreak is indefensible at Gate 1.
+- why: the validator pins bank_items per domain; a tied allocation forces an undocumented judgment call into a machine-checked number.
+- how to apply: candidate rule for methodology/02 §contract (enforce: note → rule); compute allocations for each candidate size before committing the contract.
+
+## L-0009 · Blueprint-as-syllabus inverts source-composition stats — interpret convergence accordingly
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: when the blueprint IS the syllabus (no course-recap layer), practice-only share drops to ~0% (aif-c01) vs CCAR-P's 30%, and convergence measures corroboration of the blueprint rather than union breadth.
+- why: every concept necessarily traces to the blueprint source, so composition percentages shift meaning between exam shapes.
+- how to apply: read the source-composition table against layers.syllabus_rules; candidate explanatory line for methodology/02. (Stellar-promotion candidate from the same run — "check schemas' designed-in slots like sources[].items before proposing schema changes" — held for Oliver's named promotion confirmation per the loop gate.)

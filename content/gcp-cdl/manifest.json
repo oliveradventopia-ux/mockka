@@ -1,5 +1,5 @@
 {
-  "$comment": "S1-S2 pass (research-manager) has filled the fields that are hard vendor facts: vendor, blueprint_version, source_checked_date, exam.item_count, exam.time_limit_minutes, the six domains with their weights, format_coverage, and provenance. Remaining TODOs are S3's contract (bank sizing, per-domain exam/bank counts and format mix, format shapes, style, pattern caps, intro) plus two that have no vendor answer at all. (1) exam.item_count: Google publishes a RANGE, 50-60 questions, not a scalar; 60 is the published upper bound, chosen so a Mockka form is never shorter than a real sitting — reversible presentation choice, listed as a Gate 1 confirmation item. (2) exam.pass_threshold_pct: Google publishes NO passing score for any Google Cloud certification (pass/fail results only, per the Google Cloud Certification FAQ, checked 2026-08-16) — Mockka must choose one and record it as a Mockka standard, not a vendor fact. Evidence and citations: derivation/sources.md. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "$comment": "S1-S2 facts (research-manager) + S3 authoring contract (exam-author, 2026-08-16, derivation/master-inventory.md). Blueprint facts are from the official exam guide (footer 'launched on August 12, 2026' - Google publishes no version number; that footer string is the revision marker) and the certification page. THREE GATE-1 RATIFICATIONS PENDING: (a) exam.item_count 60 - Google publishes a RANGE (50-60); 60 is the upper bound so a Mockka form is never shorter than a real sitting, BUT 60 is not tie-free under largest-remainder (five equal ~18% domains, 4 leftover seats among 5 tied) - the documented tiebreak gives the short seat to d1 (fewest blueprint bullets, 8/69); tie-free alternatives: 50 (exact, 9x5+5) or 55 (10x5+5). (b) exam.pass_threshold_pct 70 is a Mockka standard, NOT a vendor fact - Google publishes no passing score for any Google Cloud certification (pass/fail results only, Google Cloud Certification FAQ, checked 2026-08-16). (c) multiple_response share ~10% (6 items, one per domain) is S3 judgment - the real multiple-select share is unpublished and unobserved (official sample set is 29/29 single choice; sole datapoint whizlabs ~7%, stale, both items choose-2-of-5) [UNVERIFIED]. S3 decisions: bank 83 = 1.38x exam - the tie-free largest-remainder size nearest the 1.35 target in the 1.3-1.4x band (L-0008; 79-82 all strand seats in a 5-way tie among the equal-weight domains), per-domain 15/15/15/15/15/8; exam form 10/11/11/11/11/6 with the bullet-count tiebreak; scenario_matching 0 throughout (no real-exam counterpart - the real paper uses exactly two formats, both supported; see format_coverage); single_choice 4 options (vendor sample calibration, 29/29); pattern caps E01 0.30 (observed 34%/28% of wrong options - forces scenarios over product trivia) and E08 0.10 (invented-name padding), D03/D04 0.10 registry-standard; near_duplicate_jaccard 0.4 (ccar-p/aif-c01 precedent); layers.syllabus_rules false - the guide IS the syllabus (1:1 domain mapping, Artefact B); the only syllabus-grade alternative (google-skills-cdl-path) is registered but account-walled and unread. Authoritative schema: methodology/schema/manifest.schema.json.",
   "slug": "gcp-cdl",
   "title": "Google Cloud Digital Leader",
   "vendor": "Google Cloud",
@@ -10,130 +10,151 @@
   "exam": {
     "item_count": 60,
     "time_limit_minutes": 90,
-    "pass_threshold_pct": "TODO — Google publishes no passing score (pass/fail only). Mockka standard, Gate 1 decision."
+    "pass_threshold_pct": 70
   },
   "bank": {
-    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+    "item_count": 83
   },
   "domains": [
     {
       "id": "d1",
       "title": "Digital Transformation with Google Cloud",
       "weight_pct": 18,
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "exam_items": 10,
+      "bank_items": 15,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 9,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     },
     {
       "id": "d2",
       "title": "Exploring Data Transformation with Google Cloud",
       "weight_pct": 18,
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "exam_items": 11,
+      "bank_items": 15,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 10,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     },
     {
       "id": "d3",
       "title": "Innovating with Google Cloud Artificial Intelligence",
       "weight_pct": 18,
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "exam_items": 11,
+      "bank_items": 15,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 10,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     },
     {
       "id": "d4",
       "title": "Modernize Infrastructure and Applications with Google Cloud",
       "weight_pct": 18,
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "exam_items": 11,
+      "bank_items": 15,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 10,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     },
     {
       "id": "d5",
       "title": "Trust and Security with Google Cloud",
       "weight_pct": 18,
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "exam_items": 11,
+      "bank_items": 15,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 10,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     },
     {
       "id": "d6",
       "title": "Scaling with Google Cloud Operations",
       "weight_pct": 10,
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "exam_items": 6,
+      "bank_items": 8,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 5,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     }
   ],
   "formats": {
     "single_choice": {
-      "options": "TODO"
+      "options": 4
     },
     "multiple_response": {
-      "options": "TODO",
+      "options": 5,
       "select_count": [
-        "TODO"
+        2
       ]
     },
     "scenario_matching": {
-      "min_options": "TODO",
-      "min_scenarios": "TODO",
+      "min_options": 3,
+      "min_scenarios": 3,
       "require_option_reuse": true
     }
   },
   "style": {
-    "locale": "TODO e.g. en-GB",
+    "locale": "en-US",
     "emoji": false
   },
   "validation": {
-    "pattern_caps": {},
-    "near_duplicate_jaccard": "TODO"
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1,
+      "E01": 0.3,
+      "E08": 0.1
+    },
+    "near_duplicate_jaccard": 0.4
   },
   "layers": {
     "syllabus_rules": false
   },
   "intro": {
-    "about": "TODO — executive summary: what the certification validates, domains covered",
-    "audience": "TODO — who the certification is for, as roles",
+    "about": "The Google Cloud Digital Leader certification validates that you can articulate the capabilities of Google Cloud's core products and services and explain how they benefit an organization — the judgment of a leader who shapes cloud decisions, not the hands of an engineer who implements them. The exam guide in force (launched August 12, 2026) defines six weighted sections: Digital Transformation with Google Cloud (~18%), Exploring Data Transformation (~18%), Innovating with Google Cloud Artificial Intelligence (~18%), Modernize Infrastructure and Applications (~18%), Trust and Security (~18%), and Scaling with Google Cloud Operations (~10%).",
+    "audience": "Aimed at people who collaborate on, sponsor or steer cloud adoption rather than build it — business leaders, program and project managers, product owners, sales and partner roles, analysts, and anyone whose job is to connect a business problem to what Google Cloud can do about it. Google states no prerequisites and no hands-on requirement: every objective asks you to explain, describe, identify or differentiate, never to configure or deploy.",
     "materials": [
       {
-        "title": "TODO — e.g. \"<N>-question practice exam\"",
-        "description": "TODO — what THIS mock provides: bank size, formats, dashboard, review depth"
+        "title": "60-question practice form",
+        "description": "Built to the published upper bound of the real exam's 50-60 question range and weighted to the six sections of the 2026-08-12 exam guide, drawn from an 83-item originally-authored bank."
+      },
+      {
+        "title": "The real exam's two formats, and only those",
+        "description": "Single choice (four options) and multiple select (choose two of five), matching the two item formats Google names for this exam. Google publishes no per-format split, so the roughly one-in-ten multiple-select share here is this mock's documented judgment — see the format coverage note."
+      },
+      {
+        "title": "Review dashboard and rationales",
+        "description": "Per-section scoring against a 70% threshold — a Mockka study standard, since Google reports only pass/fail and publishes no passing score — plus an explanation for the key and every distractor on submission."
       }
     ],
     "official_resources": [
       {
-        "label": "TODO — official cert portal / exam guide link text",
-        "url": "https://TODO"
+        "label": "Cloud Digital Leader — official certification page",
+        "url": "https://cloud.google.com/learn/certification/cloud-digital-leader"
+      },
+      {
+        "label": "Cloud Digital Leader exam guide (official PDF)",
+        "url": "https://services.google.com/fh/files/misc/cloud_digital_leader_exam_guide_english.pdf"
+      },
+      {
+        "label": "Official sample questions (free, no sign-in required)",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSedAmf77MGS7FGEaylFzY51KtBd7kkIZJIMDsV5zSRSmpKIOA/viewform"
       }
     ],
-    "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Google LLC or its testing partners. \"Google Cloud\", \"Google\" and \"Cloud Digital Leader\" are trademarks of Google LLC. Every question was written clean-room from documented derivation artefacts against the public exam guide, with prior practice sets analyzed for classification only — and no answer key was taken from any source — exactly as this package's README records. Nothing here is drawn from the live Cloud Digital Leader item bank: real exam content is confidential under the Google Cloud certification exam terms, which bind you too once you sit the exam — please never share live questions here."
   },
-  "format_coverage": "The real Cloud Digital Leader exam uses two item formats: multiple choice and multiple select. Mockka supports three, so this exam's format profile is a SUBSET of what the player can render rather than an excess — nothing about the real paper goes unrepresented. Multiple choice maps exactly to single_choice; multiple select maps to multiple_response, and Mockka scores it all-or-nothing. Mockka's third format, scenario_matching, has NO counterpart on the real exam and is set to zero throughout: you will not be asked to map scenarios onto a reused option set when you sit the real paper. Two limits you should know about. First, Google publishes no per-format count, and its own free sample-question set is 100% single choice — so the real share of multiple-select items is unpublished and unobserved, and the split used here is Mockka's judgment, not a vendor figure. Second, the real exam is delivered as 50-60 questions in 90 minutes and Google does not publish a passing score (results are pass/fail only); this mock is built to the published upper bound of 60 items and applies a Mockka-chosen pass threshold, which is a study aid and not a prediction of the real result.",
+  "format_coverage": "The real Cloud Digital Leader exam uses two item formats: multiple choice and multiple select. Mockka supports three, so this exam's format profile is a SUBSET of what the player can render rather than an excess — nothing about the real paper goes unrepresented. Multiple choice maps exactly to single_choice; multiple select maps to multiple_response, and Mockka scores it all-or-nothing. Mockka's third format, scenario_matching, has NO counterpart on the real exam and is set to zero throughout: you will not be asked to map scenarios onto a reused option set when you sit the real paper. Two limits you should know about. First, Google publishes no per-format count, and its own free sample-question set is 100% single choice — so the real share of multiple-select items is unpublished and unobserved, and the roughly 10% split used here (one choose-2-of-5 item per section) is Mockka's judgment, not a vendor figure. Second, the real exam is delivered as 50-60 questions in 90 minutes and Google does not publish a passing score (results are pass/fail only); this mock is built to the published upper bound of 60 items and applies a Mockka-chosen 70% pass threshold, which is a study aid and not a prediction of the real result.",
   "provenance": {
     "sources": [
       {

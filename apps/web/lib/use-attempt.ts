@@ -11,6 +11,7 @@ import {
   localStorageAttemptStore,
   type AttemptStore,
 } from './attempt-store.ts';
+import { newShuffleSeed } from './shuffle.ts';
 
 export interface UseAttempt {
   state: AttemptState;
@@ -38,7 +39,16 @@ export function useAttempt(
 
   useEffect(() => {
     const stored = store.load(slug);
-    if (stored) setState(stored);
+    if (stored && stored.seed !== null) {
+      setState(stored);
+    } else {
+      // New attempt (or one saved before shuffle seeds existed): mint the
+      // display-shuffle seed and persist immediately, so option order is
+      // stable across refresh from the very first paint of this attempt.
+      const seeded = { ...(stored ?? emptyAttempt()), seed: newShuffleSeed() };
+      setState(seeded);
+      store.save(slug, seeded);
+    }
     setHydrated(true);
   }, [slug, store]);
 
@@ -93,9 +103,14 @@ export function useAttempt(
 
   const reset = useCallback(() => {
     store.clear(slug);
-    const fresh = emptyAttempt();
+    // A reset starts a new attempt, so it gets a new shuffle seed (options
+    // land in a different order — BD-1 hardening); persisted so the new order
+    // also survives refresh. clear-then-save keeps storage empty, not stale,
+    // if the save fails (private browsing).
+    const fresh = { ...emptyAttempt(), seed: newShuffleSeed() };
     setState(fresh);
     stateRef.current = fresh;
+    store.save(slug, fresh);
   }, [slug, store]);
 
   // Memoized: consumers hold this object in effect/callback deps (e.g. the

@@ -461,6 +461,7 @@ export function ExamPlayer({ slug, manifest, paper, syllabusRules }: ExamPlayerP
                   submitted={submitted}
                   domainLabel={domainLabel(q.domain)}
                   rule={q.syllabus_rule ? ruleById.get(q.syllabus_rule) : undefined}
+                  shuffleSeed={state.seed}
                   onAnswer={attempt.setAnswer}
                   onToggleFlag={attempt.toggleFlag}
                 />

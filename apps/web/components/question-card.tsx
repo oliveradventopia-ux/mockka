@@ -12,6 +12,7 @@ import type {
   SingleChoiceQuestion,
   SyllabusRule,
 } from '@mockka/engine';
+import { seededOrder } from '../lib/shuffle.ts';
 
 const TYPE_LABEL: Record<Question['type'], string> = {
   single_choice: 'Multiple choice',
@@ -30,6 +31,10 @@ export interface QuestionCardProps {
   submitted: boolean;
   domainLabel: string;
   rule: SyllabusRule | undefined;
+  /** Per-attempt display-shuffle seed (BD-1 hardening); null = JSON order.
+   *  Options are reordered for display only — keys, letters and grading are
+   *  untouched, so the rationale's letters still match the options shown. */
+  shuffleSeed: number | null;
   onAnswer(questionId: string, value: AnswerValue): void;
   onToggleFlag(questionId: string): void;
 }
@@ -93,7 +98,7 @@ function SingleChoice(
     <fieldset>
       <legend>{q.question}</legend>
       <div className="opts">
-        {Object.entries(q.options).map(([key, text]) => {
+        {seededOrder(Object.entries(q.options), props.shuffleSeed, q.id).map(([key, text]) => {
           const picked = chosen === key;
           let cls = 'opt';
           if (submitted) {
@@ -144,7 +149,7 @@ function MultipleResponse(
       <fieldset>
         <legend>{q.question}</legend>
         <div className="opts">
-          {Object.entries(q.options).map(([key, text]) => {
+          {seededOrder(Object.entries(q.options), props.shuffleSeed, q.id).map(([key, text]) => {
             const picked = chosen.includes(key);
             // At the selection limit the remaining boxes disable (with the hint
             // below) instead of the reference build's silent revert / alert().
@@ -190,6 +195,9 @@ function ScenarioMatching(
   const { question: q, submitted, answer } = props;
   const chosen: Record<string, string> =
     answer && typeof answer === 'object' && !Array.isArray(answer) ? answer : {};
+  // One order per item (salted by q.id), shared by every scenario's dropdown —
+  // a per-scenario order would read as different option lists.
+  const orderedOptions = seededOrder(q.matching_options, props.shuffleSeed, q.id);
 
   return (
     <>
@@ -214,7 +222,7 @@ function ScenarioMatching(
                 }
               >
                 <option value="">Select…</option>
-                {q.matching_options.map((opt) => (
+                {orderedOptions.map((opt) => (
                   <option value={opt} key={opt}>
                     {opt}
                   </option>

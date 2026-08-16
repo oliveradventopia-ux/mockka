@@ -19,6 +19,10 @@ export function emptyAttempt(): AttemptState {
     endsAt: null,
     startedAt: null,
     finishedAt: null,
+    // Null (identity option order) on purpose: the server render and the
+    // pre-hydration client must paint identically. useAttempt mints the real
+    // per-attempt shuffle seed at hydration/reset.
+    seed: null,
   };
 }
 
@@ -44,6 +48,7 @@ function normalize(raw: unknown): AttemptState {
     endsAt: typeof s.endsAt === 'number' ? s.endsAt : null,
     startedAt: typeof s.startedAt === 'number' ? s.startedAt : null,
     finishedAt: typeof s.finishedAt === 'number' ? s.finishedAt : null,
+    seed: typeof s.seed === 'number' ? s.seed : null,
   };
 }
 

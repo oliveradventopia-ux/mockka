@@ -1,5 +1,5 @@
 {
-  "$comment": "S1/S2 pass (research-manager, 2026-08-16): every field below that is filled is a hard fact from the official exam guide v1.1 (derivation/source-aif-blueprint.md) or exact arithmetic from it. Remaining TODOs are S3/Gate-1 decisions, not missing research: (a) pass_threshold_pct — AWS scores AIF-C01 as a SCALED 100-1,000 with a 700 minimum, which is NOT a raw percentage, so no percent may be invented here; (b) bank sizing, per-domain bank_items and format_mix, near_duplicate_jaccard and pattern_caps — S3 per methodology/02-master-inventory.md; (c) multiple_response/scenario_matching shape — the guide's constraints are: multiple response has 2+ keys among 5+ options, matching pairs responses to 3-7 prompts, both all-or-nothing. exam.item_count is the 50 SCORED items (the 15 unscored pretest items AWS adds are not modellable and are excluded); per-domain exam_items are weight_pct x 50, exact with no rounding. time_limit_minutes is the vendor's 90 for the 65-item sitting - see the Gate 1 note on pacing if the mock keeps 50 items. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "$comment": "S1/S2 facts (research-manager) + S3 authoring contract (exam-author, 2026-08-16, derivation/master-inventory.md). Blueprint facts are from exam guide v1.1 (derivation/source-aif-blueprint.md); exam.item_count is the 50 SCORED items (AWS adds 15 unscored pretest items, not modellable); per-domain exam_items are weight_pct x 50 exact. TWO GATE-1 RATIFICATIONS PENDING: (a) pass_threshold_pct 70 is a raw-score PROXY - the real exam is scaled 100-1,000, minimum 700, compensatory, and the scale is not publicly convertible to a raw percent; (b) time_limit_minutes 90 is the vendor number for the 65-question sitting kept for this 50-item mock (~28% generous; the scaled alternative would be ~69 min) - disclose-vs-scale is a Gate 1 decision. S3 decisions: bank 67 = 1.34x exam (largest-remainder rounding of weights lands 14/16/19/9/9); format_mix reflects accessible calibration (MC-dominant, ~14% multiple response all choose-2-of-5, one scenario_matching item in each of the 3 largest domains approximating the real exam's matching type; ordering concepts authored as single_choice per format_coverage); pattern cap E01 0.30 from the Artefact A frequency analysis (observed 21-33% of wrong options), D03/D04 0.10 registry-standard; near_duplicate_jaccard 0.4 (ccar-p precedent); layers.syllabus_rules false because the blueprint IS the syllabus (1:1 domain mapping, Artefact B) and a rules layer would duplicate concepts.json. Authoritative schema: methodology/schema/manifest.schema.json.",
   "slug": "aif-c01",
   "title": "AWS Certified AI Practitioner (AIF-C01)",
   "vendor": "Amazon Web Services",
@@ -10,10 +10,10 @@
   "exam": {
     "item_count": 50,
     "time_limit_minutes": 90,
-    "pass_threshold_pct": "TODO — real exam is scaled 100-1,000, pass 700, compensatory; pick a raw-percent proxy at Gate 1"
+    "pass_threshold_pct": 70
   },
   "bank": {
-    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+    "item_count": 67
   },
   "domains": [
     {
@@ -21,11 +21,11 @@
       "title": "Fundamentals of AI and ML",
       "weight_pct": 20,
       "exam_items": 10,
-      "bank_items": "TODO",
+      "bank_items": 14,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 8,
+        "multiple_response": 1,
+        "scenario_matching": 1
       }
     },
     {
@@ -33,11 +33,11 @@
       "title": "Fundamentals of GenAI",
       "weight_pct": 24,
       "exam_items": 12,
-      "bank_items": "TODO",
+      "bank_items": 16,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 9,
+        "multiple_response": 2,
+        "scenario_matching": 1
       }
     },
     {
@@ -45,11 +45,11 @@
       "title": "Applications of Foundation Models",
       "weight_pct": 28,
       "exam_items": 14,
-      "bank_items": "TODO",
+      "bank_items": 19,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 11,
+        "multiple_response": 2,
+        "scenario_matching": 1
       }
     },
     {
@@ -57,11 +57,11 @@
       "title": "Guidelines for Responsible AI",
       "weight_pct": 14,
       "exam_items": 7,
-      "bank_items": "TODO",
+      "bank_items": 9,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 6,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     },
     {
@@ -69,11 +69,11 @@
       "title": "Security, Compliance, and Governance for AI Solutions",
       "weight_pct": 14,
       "exam_items": 7,
-      "bank_items": "TODO",
+      "bank_items": 9,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": 6,
+        "multiple_response": 1,
+        "scenario_matching": 0
       }
     }
   ],
@@ -82,14 +82,14 @@
       "options": 4
     },
     "multiple_response": {
-      "options": "TODO — guide floor is 5",
+      "options": 5,
       "select_count": [
-        "TODO — guide floor is 2"
+        2
       ]
     },
     "scenario_matching": {
-      "min_options": "TODO",
-      "min_scenarios": "TODO — guide's matching items use 3-7 prompts",
+      "min_options": 3,
+      "min_scenarios": 3,
       "require_option_reuse": true
     }
   },
@@ -98,8 +98,12 @@
     "emoji": false
   },
   "validation": {
-    "pattern_caps": {},
-    "near_duplicate_jaccard": "TODO"
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1,
+      "E01": 0.3
+    },
+    "near_duplicate_jaccard": 0.4
   },
   "layers": {
     "syllabus_rules": false

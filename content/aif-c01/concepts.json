@@ -1,5 +1,743 @@
 {
-  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 per methodology/02-master-inventory.md; schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) and surfaced by the validator concept-convergence WARN check; divergence is allowed as documented authoring judgment.",
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-16) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning and merge log in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) with zero hand-tuned divergences in this build; the validator concept-convergence check surfaces any future divergence as WARN. sources[].items for aif-blueprint are the b-x.y-z concept rows in derivation/source-aif-blueprint.md; for the practice sources they are item rows in the respective Artefact A, omitted where the attestation lives in a task-statement coverage note rather than an item row.",
   "version": "0.1.0",
-  "concepts": []
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "How the field nests: machine learning is a subset of AI, deep learning a subset of ML built on neural networks; generative AI and agentic AI are newer branches, and a language model earns 'large' through parameter and training-data scale",
+      "vocabulary": ["AI", "ML", "deep learning", "neural networks", "generative AI [GenAI]", "agentic AI", "large language model [LLM]"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.1-1", "b-1.1-6"] },
+        { "artefact": "jwalsh-aif", "items": ["1.01"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "Telling the working parts apart: the algorithm is the procedure that learns, the model is the artifact it produces; training is the phase that learns from data, inferencing is the phase that predicts on new input",
+      "vocabulary": ["model", "algorithm", "training", "inferencing"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.1-3", "b-1.1-4"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif" }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Matching a problem to a learning approach using two signals: whether the data carries labels (supervised vs unsupervised vs reinforcement) and what shape the output takes — a number for regression, a class for classification, groups for clustering",
+      "vocabulary": ["supervised learning", "unsupervised learning", "reinforcement learning methods", "labeled", "unlabeled", "regression", "classification", "clustering"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.1-9", "b-1.1-12", "b-1.2-3"] },
+        { "artefact": "declute-serverside", "items": ["1.1", "1.10", "1.11"] },
+        { "artefact": "jwalsh-aif", "items": ["1.02"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Choosing how a model is served: inference mode (batch, real-time, asynchronous, serverless) follows the workload's latency and volume shape, and managed API versus self-hosted decides who carries the operational responsibility",
+      "vocabulary": ["batch", "real-time", "asynchronous", "serverless", "managed API service", "self-hosted API"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.1-8", "b-1.3-3"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Recognizing a dataset's type from its description — tabular, time-series, image, or text — and separately whether it is structured or unstructured, since structure and modality are different properties",
+      "vocabulary": ["tabular", "time-series", "image", "text", "structured", "unstructured"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.1-10", "b-1.1-11"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "Judging whether AI is the right tool at all: it earns its cost where it assists human decisions, scales a solution, or automates work — and is the wrong choice when a deterministic answer is required or the cost-benefit analysis fails",
+      "vocabulary": ["assist human decision making", "solution scalability", "automation", "cost-benefit analyses", "prediction"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.2-1", "b-1.2-2"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Naming the AI application category behind a described product capability — computer vision, NLP, speech recognition, recommendation, fraud detection, forecasting — before any service is chosen",
+      "vocabulary": ["computer vision", "natural language processing [NLP]", "speech recognition", "recommendation systems", "fraud detection", "forecasting"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.2-4", "b-1.1-2"] },
+        { "artefact": "declute-serverside", "items": ["1.3"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Selecting the AWS AI service that performs the required job — task-level managed services against stack-level platforms — with each candidate separated from near neighbors that perform adjacent jobs",
+      "vocabulary": ["Amazon SageMaker AI", "Amazon Transcribe", "Amazon Translate", "Amazon Comprehend", "Amazon Lex", "Amazon Polly", "Amazon Bedrock", "Amazon Q"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.2-5", "b-1.3-4"] },
+        { "artefact": "declute-serverside", "items": ["1.5", "1.6"] },
+        { "artefact": "jwalsh-aif", "items": ["1.03", "1.06", "1.07", "1.11", "1.12"] }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "Preferring traditional ML or a small model over a foundation model when regulation, explainability requirements, or operational constraints such as edge or offline deployment dominate the decision",
+      "vocabulary": ["regulatory concerns", "explainability requirements", "operational constraints", "foundation models [FMs]"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.2-6"] },
+        { "artefact": "declute-serverside" }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Placing work at the right stage of the AI/ML pipeline — EDA, data pre-processing, feature engineering, training, hyperparameter tuning, evaluation, deployment, monitoring — and telling adjacent stages apart",
+      "vocabulary": ["AI/ML pipeline", "exploratory data analysis [EDA]", "data pre-processing", "feature engineering", "model training", "hyperparameter tuning", "evaluation", "deployment", "monitoring"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.3-1"] },
+        { "artefact": "declute-serverside", "items": ["1.8"] },
+        { "artefact": "jwalsh-aif", "items": ["1.04", "1.08"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "Where a model comes from: reusing an open source pre-trained model saves the time, data, and compute of training a custom model, at the price of less task fit and less control",
+      "vocabulary": ["open source pre-trained models", "training custom models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.3-2"] },
+        { "artefact": "jwalsh-aif", "items": ["1.09"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "MLOps as a discipline of repeatability — experimentation, repeatable processes, scalable systems, managed technical debt, production readiness — rather than a particular toolchain",
+      "vocabulary": ["MLOps", "experimentation", "repeatable processes", "scalable systems", "managing technical debt", "production readiness"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.3-5"] },
+        { "artefact": "jwalsh-aif", "items": ["1.05"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "Why a deployed model degrades as production data drifts from what it was trained on, and why the response is model monitoring feeding scheduled or triggered re-training",
+      "vocabulary": ["model monitoring", "model re-training"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.3-6"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["1.10"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "Evaluating a model on both halves: pick the model-performance metric (accuracy, precision, recall, F1) that fits the task and its error costs, and pair it with the business metrics (ROI, cost per user, customer feedback) that measure value",
+      "vocabulary": ["accuracy", "precision", "recall", "F1 score", "cost per user", "return on investment [ROI]", "customer feedback"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-1.3-7", "b-1.3-8"] },
+        { "artefact": "declute-serverside", "items": ["1.2"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d2",
+      "statement": "A token is the unit of text a language model reads and generates; context windows and usage are counted in tokens, not words or characters",
+      "vocabulary": ["tokens"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-1"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["2.06"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d2",
+      "statement": "Retrieval foundations: an embedding encodes meaning as a vector so similarity becomes geometric distance, and chunking splits documents into retrievable pieces whose size shapes what can be found",
+      "vocabulary": ["embeddings", "vectors", "chunking"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-2", "b-2.1-3"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "Prompt engineering shapes model behavior through the input alone — no weights change — which is what separates it from every form of tuning",
+      "vocabulary": ["prompt engineering"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-4"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["2.02"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "What makes a model a foundation model — broad pre-training adaptable to many tasks, transformer-based for language — and choosing a family by modality: multi-modal models span input types, diffusion models generate images",
+      "vocabulary": ["foundation models [FMs]", "transformer-based large language models [LLMs]", "multi-modal models", "diffusion models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-5", "b-2.1-6", "b-2.1-7"] },
+        { "artefact": "declute-serverside", "items": ["2.4"] },
+        { "artefact": "jwalsh-aif", "items": ["2.01"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "Recognizing a GenAI use case by the new artifact it produces — summaries, code, conversation, images — and the capabilities behind the fit: adaptability, responsiveness, and content generation where rule systems would need rewriting",
+      "vocabulary": ["summarization", "code generation", "customer service agents", "adaptability", "responsiveness", "ability to generate content"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-8", "b-2.2-1"] },
+        { "artefact": "declute-serverside" }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "The FM lifecycle in order — data selection, model selection, pre-training, fine-tuning, evaluation, deployment, feedback — and which activities belong to which stage",
+      "vocabulary": ["data selection", "model selection", "pre-training", "fine-tuning", "evaluation", "deployment", "feedback"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-9"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "GenAI economics as a design input: token-based pricing makes prompt and output length a cost decision, and provisioned throughput versus on-demand inference is the lever when load, not model quality, is the problem",
+      "vocabulary": ["token-based pricing model", "provisioned throughput", "inference"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-10", "b-2.3-4"] },
+        { "artefact": "declute-serverside", "items": ["2.3"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "Context engineering assembles and prioritizes what goes into a model call — retrieved content, history, instructions — distinct from wording a prompt and from changing weights by fine-tuning",
+      "vocabulary": ["context engineering"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-11"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "What an agent adds beyond a single FM call: tool usage to act, memory management to persist state, and workflow orchestration to sequence multi-step work",
+      "vocabulary": ["tool usage", "memory management", "workflow orchestration"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-12"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "Structuring more than one agent: multi-agent system patterns divide work among specialized agents, and communication patterns govern how they coordinate and hand off",
+      "vocabulary": ["multi-agent system patterns", "multi-agent communication patterns"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-13"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "Model Context Protocol (MCP) as the open protocol that connects agents and assistants to external tools and data sources through a standard interface",
+      "vocabulary": ["Model Context Protocol [MCP]"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.1-14"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "Hallucination: fluent, confident output that is wrong — a first-class GenAI failure mode to plan controls around, not an occasional bug",
+      "vocabulary": ["hallucinations", "inaccuracy"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.2-2"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["2.04"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "Nondeterminism: the same prompt need not return the same answer, which breaks workflows that assume repeatability and has to be designed for rather than discovered in production",
+      "vocabulary": ["nondeterminism"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.2-3"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "Selecting a foundation model against competing constraints — capability, cost, latency, compliance, model complexity — where no single score decides and the binding constraint does",
+      "vocabulary": ["performance requirements", "capabilities", "constraints", "compliance", "cost", "latency", "model complexity"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.2-5"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d2",
+      "statement": "Choosing the AWS GenAI building block for the job: Amazon Bedrock as the managed FM platform, SageMaker AI and JumpStart for custom work, Amazon Q as the packaged assistant, Strands Agents and Bedrock AgentCore for agents",
+      "vocabulary": ["Amazon Bedrock", "Amazon SageMaker AI", "SageMaker JumpStart", "Amazon Q", "Strands Agents", "Amazon Bedrock AgentCore"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.3-1"] },
+        { "artefact": "declute-serverside", "items": ["2.1", "2.2"] },
+        { "artefact": "jwalsh-aif", "items": ["2.03", "2.07"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d2",
+      "statement": "Why a managed GenAI service beats self-assembly for a team without ML infrastructure: lower barrier to entry and speed to market, plus platform-inherited security, compliance, and safety a self-built stack would have to earn",
+      "vocabulary": ["lower barrier to entry", "speed to market", "cost-effectiveness", "security", "compliance", "safety"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-2.3-2", "b-2.3-3"] },
+        { "artefact": "jwalsh-aif", "items": ["2.05"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d3",
+      "statement": "Selecting an FM by the requirement that dominates the workload — cost, modality, latency, multi-lingual support, model size and complexity, customization options, input/output length",
+      "vocabulary": ["cost", "modality", "latency", "multi-lingual", "model size", "model complexity", "customization", "input/output length"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-1"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d3",
+      "statement": "Prompt caching reuses a repeated prompt prefix across calls, cutting cost and latency exactly when many requests share the same leading context",
+      "vocabulary": ["prompt caching"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-2"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d3",
+      "statement": "Which inference parameter moves which property of the output: temperature widens or narrows sampling randomness, candidate-set limits trim what can be sampled, and length settings cap the response — none of them changes what the model knows",
+      "vocabulary": ["temperature", "input/output length"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-3"] },
+        { "artefact": "declute-serverside", "items": ["3.8", "3.10"] },
+        { "artefact": "jwalsh-aif", "items": ["3.03", "3.07"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d3",
+      "statement": "Retrieval Augmented Generation grounds answers in documents retrieved at question time — the fix for private or fast-changing knowledge, because the weights never contained it and retraining cannot keep up",
+      "vocabulary": ["Retrieval Augmented Generation (RAG)", "Amazon Bedrock Knowledge Bases"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-4"] },
+        { "artefact": "declute-serverside", "items": ["3.1", "3.2", "3.4"] },
+        { "artefact": "jwalsh-aif", "items": ["3.01", "3.08"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d3",
+      "statement": "Where embeddings are stored and searched on AWS — Amazon OpenSearch Service, Aurora, Neptune, RDS for PostgreSQL — a vector-store decision separate from choosing the embedding model",
+      "vocabulary": ["Amazon OpenSearch Service", "Amazon Aurora", "Amazon Neptune", "Amazon RDS for PostgreSQL"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-5"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["3.02"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d3",
+      "statement": "Ranking customization approaches by cost and effort: in-context learning is cheapest, then RAG, then fine-tuning, then pre-training — with model distillation as the route to a smaller, cheaper model",
+      "vocabulary": ["pre-training", "fine-tuning", "in-context learning", "RAG", "model distillation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-6"] },
+        { "artefact": "declute-serverside", "items": ["3.5", "3.6"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d3",
+      "statement": "What an AI agent is for in business terms: completing a multi-step task by orchestrating tool and API calls — a coordinator of actions, not a better model",
+      "vocabulary": ["AI agents", "agentic AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.1-7", "b-1.1-7"] },
+        { "artefact": "declute-serverside", "items": ["3.7"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d3",
+      "statement": "The anatomy of a working prompt — context, instruction, and negative prompts — and the craft that improves it: specificity and concision, refined through experimentation and discovery",
+      "vocabulary": ["context", "instruction", "negative prompts", "specificity and concision", "response quality improvement"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.2-1", "b-3.2-3"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d3",
+      "statement": "Naming the prompting technique from a described setup: zero-shot, single-shot, or few-shot by the number of in-prompt examples; chain-of-thought when reasoning is asked to be shown; prompt templates for reuse",
+      "vocabulary": ["chain-of-thought", "zero-shot", "single-shot", "few-shot", "prompt templates"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.2-2"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["3.04", "3.09"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d3",
+      "statement": "Telling adversarial prompt risks apart by the attacker's objective: exposure leaks data, poisoning corrupts training or retrieval content, hijacking repurposes the system, jailbreaking defeats its safety policy",
+      "vocabulary": ["exposure", "poisoning", "hijacking", "jailbreaking"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.2-5"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d3",
+      "statement": "Treating prompts as versioned, managed artifacts — tracked, compared, and rolled back like code — with Amazon Bedrock Prompt Management as the AWS home for it",
+      "vocabulary": ["prompt versioning", "Amazon Bedrock Prompt Management"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.2-6"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d3",
+      "statement": "The four ways a model's weights change, told apart by purpose: pre-training builds general capability, fine-tuning adapts to a task, continuous pre-training extends domain knowledge, distillation compresses into a smaller model",
+      "vocabulary": ["pre-training", "fine-tuning", "continuous pre-training", "distillation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.3-1"] },
+        { "artefact": "declute-serverside", "items": ["3.3"] },
+        { "artefact": "jwalsh-aif", "items": ["3.06"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d3",
+      "statement": "Fine-tuning variants named by objective: instruction tuning teaches a model to follow directions, domain adaptation specializes it to a field's language, transfer learning reuses learned capability on a new task",
+      "vocabulary": ["instruction tuning", "adapting models for specific domains", "transfer learning"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.3-2"] },
+        { "artefact": "declute-serverside", "items": ["3.9"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d3",
+      "statement": "What fine-tuning data must look like before quality can follow: curated, governed, sufficiently sized, labeled, and representative of the traffic the model will actually see",
+      "vocabulary": ["data curation", "governance", "size", "labeling", "representativeness"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.3-3"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["3.05"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d3",
+      "statement": "Reinforcement learning from human feedback aligns model behavior with human preference rankings, used where no labeled right answer exists to train against",
+      "vocabulary": ["reinforcement learning from human feedback [RLHF]"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.3-4"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d3",
+      "statement": "Choosing an FM evaluation approach to fit the quality criterion: human-in-the-loop when the bar is subjective, benchmark datasets for comparability, LLM-as-a-judge for scale — with Amazon Bedrock Model Evaluation as tooling",
+      "vocabulary": ["human-in-the-loop evaluation", "benchmark datasets", "LLM-as-a-judge", "Amazon Bedrock Model Evaluation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.4-1", "b-3.4-3"] },
+        { "artefact": "declute-serverside" }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d3",
+      "statement": "Matching a generation metric to what it actually measures: ROUGE for summarization overlap, BLEU for translation quality, BERTScore for semantic similarity — none of them certifies factual correctness",
+      "vocabulary": ["Recall-Oriented Understudy for Gisting Evaluation [ROUGE]", "Bilingual Evaluation Understudy [BLEU]", "BERTScore"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.4-2"] },
+        { "artefact": "declute-serverside" }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d3",
+      "statement": "Evaluating the application rather than the model: a RAG pipeline, agent, or workflow is judged end-to-end, because component quality does not compose into system quality",
+      "vocabulary": ["RAG", "agents", "workflows"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.4-5"] }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d3",
+      "statement": "Measuring whether the AI application serves the business: task completion rate, user satisfaction, cost per interaction, conversion — the alignment metrics that decide value where benchmark scores cannot",
+      "vocabulary": ["task completion rate", "user satisfaction", "cost per interaction", "productivity", "user engagement", "conversion rate", "average revenue per user", "customer lifetime value"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-3.4-4", "b-3.4-6", "b-2.2-6"] },
+        { "artefact": "declute-serverside" }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d4",
+      "statement": "The named dimensions of responsible AI — bias, fairness, inclusivity, robustness, safety, veracity — and the dataset characteristics that deliver them: diverse, curated, balanced data",
+      "vocabulary": ["bias", "fairness", "inclusivity", "robustness", "safety", "veracity", "diversity", "balanced datasets", "curated data sources"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.1-1", "b-4.1-5"] },
+        { "artefact": "declute-serverside", "items": ["4.5"] },
+        { "artefact": "jwalsh-aif", "items": ["4.01", "4.04"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d4",
+      "statement": "Amazon Bedrock Guardrails as the control that enforces content and topic policy on model interactions — constraining behavior at the boundary of the prompt and the output rather than by retraining the model",
+      "vocabulary": ["Amazon Bedrock Guardrails", "guardrails"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.1-2", "b-3.2-4"] },
+        { "artefact": "declute-serverside", "items": ["4.2"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d4",
+      "statement": "Model choice as an environmental decision: larger models cost more energy to train and to run, so sustainability is a legitimate selection criterion rather than an afterthought",
+      "vocabulary": ["environmental considerations", "sustainability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.1-3"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d4",
+      "statement": "The legal and business exposure GenAI creates: intellectual property infringement claims from generated output, biased outputs, end user risk, and the loss of customer trust that follows",
+      "vocabulary": ["intellectual property infringement claims", "biased model outputs", "end user risk", "loss of customer trust"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.1-4"] },
+        { "artefact": "jwalsh-aif", "items": ["4.08"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d4",
+      "statement": "Reading a model's fit from its scores: strong training but weak validation or production performance means overfitting, weak on both means underfitting — and either failure can fall unevenly across demographic groups",
+      "vocabulary": ["overfitting", "underfitting", "fit", "effects on demographic groups", "inaccuracy"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.1-6", "b-1.3-9", "b-1.1-5"] },
+        { "artefact": "declute-serverside", "items": ["1.4"] },
+        { "artefact": "jwalsh-aif", "items": ["4.05"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d4",
+      "statement": "How bias is actually found in practice: subgroup analysis of per-group accuracy, analysis of label quality, and human audits — with Amazon A2I bringing human review into the loop",
+      "vocabulary": ["subgroup analysis", "analyzing label quality", "human audits", "Amazon Augmented AI [Amazon A2I]"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.1-7"] },
+        { "artefact": "declute-serverside", "items": ["4.3"] },
+        { "artefact": "jwalsh-aif", "items": ["4.02"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d4",
+      "statement": "Transparent and explainable are different properties: transparency exposes what the system is and how it was built; explainability accounts for why a particular output happened",
+      "vocabulary": ["transparent", "explainable"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.2-1"] },
+        { "artefact": "declute-serverside", "items": ["4.1"] },
+        { "artefact": "jwalsh-aif", "items": ["4.03", "4.06"] }
+      ]
+    },
+    {
+      "id": "C-057",
+      "domain": "d4",
+      "statement": "The artifacts and mechanisms that carry explainability to people: SageMaker Model Cards documenting purpose and limitations, SageMaker Clarify surfacing bias and attributions, open source and licensing disclosure, and human-centered design with user feedback loops",
+      "vocabulary": ["Amazon SageMaker Model Cards", "SageMaker Clarify", "open source models", "licensing", "human-centered design", "user-feedback mechanisms"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.2-2", "b-4.2-4"] },
+        { "artefact": "declute-serverside", "items": ["4.4"] },
+        { "artefact": "jwalsh-aif", "items": ["4.07"] }
+      ]
+    },
+    {
+      "id": "C-058",
+      "domain": "d4",
+      "statement": "The safety-transparency trade-off: the models that perform best are often the hardest to interpret, so a regulated or high-stakes decision can force a more interpretable, lower-performing choice",
+      "vocabulary": ["interpretability", "performance"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-4.2-3", "b-2.2-4"] }
+      ]
+    },
+    {
+      "id": "C-059",
+      "domain": "d5",
+      "statement": "Access control as the first AI security control: least-privilege IAM roles, policies, and permissions on data, models, and endpoints — extended to agents specifically through Bedrock AgentCore Identity and Policy",
+      "vocabulary": ["IAM roles, policies, and permissions", "Amazon Bedrock AgentCore Identity", "Policy in AgentCore"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-1", "b-5.1-6"] },
+        { "artefact": "declute-serverside", "items": ["5.2", "5.3"] }
+      ]
+    },
+    {
+      "id": "C-060",
+      "domain": "d5",
+      "statement": "Protecting data and model artifacts in place and in motion: encryption at rest and in transit with managed keys, and AWS PrivateLink to keep model traffic off the public internet",
+      "vocabulary": ["encryption", "encryption at rest and in transit", "AWS PrivateLink"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-2", "b-5.1-4"] },
+        { "artefact": "declute-serverside", "items": ["5.3"] }
+      ]
+    },
+    {
+      "id": "C-061",
+      "domain": "d5",
+      "statement": "Secure data engineering before the model sees anything: discover sensitive data with Amazon Macie, apply privacy-enhancing technologies and data access control, and preserve data quality and integrity",
+      "vocabulary": ["Amazon Macie", "data quality", "privacy-enhancing technologies", "data access control", "data integrity"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-3", "b-5.1-9"] },
+        { "artefact": "declute-serverside" },
+        { "artefact": "jwalsh-aif", "items": ["5.03"] }
+      ]
+    },
+    {
+      "id": "C-062",
+      "domain": "d5",
+      "statement": "Who is responsible for what: the AWS shared responsibility model, and the Generative AI Security Scoping Matrix that adjusts the split by how much of the GenAI stack you own",
+      "vocabulary": ["AWS shared responsibility model", "Generative AI Security Scoping Matrix"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-5", "b-5.2-3"] }
+      ]
+    },
+    {
+      "id": "C-063",
+      "domain": "d5",
+      "statement": "Stopping bad output before the user sees it: data leakage prevention, output filtering and validation, toxicity controls, and hallucination detection through grounding and confidence scoring",
+      "vocabulary": ["data leakage prevention", "output filtering and validation", "toxicity", "hallucination detection", "grounding", "confidence scoring"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-7", "b-5.1-12", "b-5.1-14"] }
+      ]
+    },
+    {
+      "id": "C-064",
+      "domain": "d5",
+      "statement": "Prompt injection: untrusted text carrying instructions the model obeys — the GenAI-native attack, countered at the input boundary rather than by retraining",
+      "vocabulary": ["prompt injection"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-11"] },
+        { "artefact": "jwalsh-aif", "items": ["5.04"] }
+      ]
+    },
+    {
+      "id": "C-065",
+      "domain": "d5",
+      "statement": "Knowing where an answer came from and proving it later: source citation and data lineage on the way in, audit trails and logging of AI interactions on the way out",
+      "vocabulary": ["source citation", "data lineage", "data cataloging", "audit trail and logging requirements for AI interactions"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.1-8", "b-5.1-13"] }
+      ]
+    },
+    {
+      "id": "C-066",
+      "domain": "d5",
+      "statement": "Which AWS service answers which governance and security-posture question: Config for resource compliance, Inspector for vulnerabilities, Artifact for compliance reports, CloudTrail for API history, Trusted Advisor for best-practice checks",
+      "vocabulary": ["AWS Config", "Amazon Inspector", "AWS Artifact", "AWS CloudTrail", "AWS Trusted Advisor", "threat detection", "vulnerability management"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.2-1", "b-5.1-10"] },
+        { "artefact": "declute-serverside", "items": ["5.1"] }
+      ]
+    },
+    {
+      "id": "C-067",
+      "domain": "d5",
+      "statement": "Data governance as an operated lifecycle: residency, retention, logging, and monitoring obligations, kept working through policies, review cadence, and team training",
+      "vocabulary": ["data lifecycles", "residency", "retention", "monitoring", "policies", "review cadence", "team training requirements"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "aif-blueprint", "items": ["b-5.2-2", "b-5.2-4"] },
+        { "artefact": "declute-serverside", "items": ["5.4"] },
+        { "artefact": "jwalsh-aif", "items": ["5.02"] }
+      ]
+    }
+  ]
 }

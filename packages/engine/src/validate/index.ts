@@ -300,6 +300,9 @@ const CHECKS: Check[] = [
         if (q.theme !== undefined) {
           if (!themes) err(`${q.id}: theme "${q.theme}" declared but authoring.json defines no themes`);
           else if (!themes.has(q.theme)) err(`${q.id}: unknown theme "${q.theme}"`);
+        } else if (themes && themes.size > 0) {
+          // Parity with verticals: a declared theme set makes the tag required.
+          err(`${q.id}: missing theme — authoring.json declares a theme set`);
         }
         if (verticalsDeclared && !q.vertical?.length) err(`${q.id}: missing vertical`);
         if (layerOn) {

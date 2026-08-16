@@ -101,6 +101,25 @@ test('ccar-p runs every check except the publication preflight (status is in_rev
   );
 });
 
+test('a missing theme fails when authoring.json declares a theme set', () => {
+  const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
+  const first = pkg.bank.questions[0]!;
+  const stripped = {
+    ...pkg,
+    bank: {
+      ...pkg.bank,
+      questions: pkg.bank.questions.map((q) => (q === first ? { ...q, theme: undefined } : q)),
+    },
+  };
+  const result = validateExam(stripped, registry);
+
+  const messages = result.findings
+    .filter((f) => f.check === 'item-metadata' && f.level === 'error')
+    .map((f) => f.message)
+    .join('\n');
+  assert.match(messages, new RegExp(`${first.id.replace('.', '\\.')}: missing theme`));
+});
+
 test('a published package without eval artifacts fails the preflight', () => {
   const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
   const published = { ...pkg, manifest: { ...pkg.manifest, status: 'published' as const } };

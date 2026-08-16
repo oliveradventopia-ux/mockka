@@ -61,10 +61,11 @@ pnpm validate <exam-slug>   # must pass
 }
 ```
 
-**The invariant that matters most:** `rationale.correct` must never reference an option
-letter, and `rationale.distractors` must have exactly one entry per non-answer option.
-This makes it structurally impossible to ship an explanation that argues against its
-own answer key. The validator enforces it.
+**The invariant that matters most:** no rationale text — `rationale.correct` or any
+`rationale.distractors` value — may reference an option letter, and `rationale.distractors`
+must have exactly one entry per non-answer option. The validator's `rationale-anti-drift`
+and `rationale-letter-reference` checks enforce this on every run, so an explanation that
+argues against its own answer key cannot pass the gate.
 
 ## Authoring a new question
 

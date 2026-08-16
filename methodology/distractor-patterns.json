@@ -1,0 +1,26 @@
+{
+  "$comment": "Shared distractor-pattern registry. D01–D20 are failure patterns of professional judgment, not exam-specific — ids and names derive from the CCAR-P purcell-distillation frequency table. Per-exam extensions (E01…) are declared in the exam's authoring.json pattern_extensions and merged by the validator. Longer definitions and authoring guidance live in methodology/03-authoring-guide.md.",
+  "version": "1.0.0",
+  "patterns": [
+    { "id": "D01", "name": "over-engineering" },
+    { "id": "D02", "name": "under-structuring" },
+    { "id": "D03", "name": "capacity-for-structure" },
+    { "id": "D04", "name": "knob-twiddling" },
+    { "id": "D05", "name": "symptom-treatment" },
+    { "id": "D06", "name": "wrong-layer" },
+    { "id": "D07", "name": "detective-for-preventative" },
+    { "id": "D08", "name": "lagging-for-leading" },
+    { "id": "D09", "name": "disclosure-instead-of-fix" },
+    { "id": "D10", "name": "interval-shrink" },
+    { "id": "D11", "name": "non-architectural-criteria" },
+    { "id": "D12", "name": "anecdote-for-measurement" },
+    { "id": "D13", "name": "blast-radius-expansion" },
+    { "id": "D14", "name": "dogma" },
+    { "id": "D15", "name": "deferral" },
+    { "id": "D16", "name": "refuse-the-mandate" },
+    { "id": "D17", "name": "deception-silent-absorption" },
+    { "id": "D18", "name": "push-failure-to-users" },
+    { "id": "D19", "name": "false-technical-claim" },
+    { "id": "D20", "name": "self-review-anchoring" }
+  ]
+}

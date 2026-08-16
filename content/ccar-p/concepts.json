@@ -1,0 +1,1759 @@
+{
+  "version": "1.0.0",
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "Decomposition precedes architecture: work splits into three buckets — what Claude handles, what existing systems handle, what humans handle — before any pattern is chosen",
+      "vocabulary": [
+        "three buckets",
+        "decomposition precedes architecture"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.01"
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "The three-bucket split is driven by how the model behaves on each piece of work; skipping it forces Claude into deterministic system logic another component would do at lower cost",
+      "vocabulary": [
+        "forcing Claude into system logic",
+        "belongs somewhere else in the stack"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.01"
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Choosing a pattern is choosing how much autonomy to grant: the spectrum runs augmented LLM to workflow to agent",
+      "vocabulary": [
+        "autonomy spectrum",
+        "augmented LLM",
+        "workflow",
+        "agent"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.1",
+            "1.2",
+            "1.11"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Five factors decide the pattern — predictability, error cost, observability, latency, cost — and the tightest constraint is the factor that decides",
+      "vocabulary": [
+        "five factors",
+        "predictability",
+        "error cost",
+        "observability",
+        "the tightest constraint decides"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "When error cost is the binding constraint, error cost picks the pattern; granting autonomy beyond what error cost tolerates is over-granting agentic autonomy",
+      "vocabulary": [
+        "error cost as binding constraint",
+        "over-granting agentic autonomy"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.4"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "A fixed workflow is warranted when the processing steps are known in advance and identical per request, and when each step must be individually auditable and reproducible",
+      "vocabulary": [
+        "fixed workflow",
+        "per-step auditability",
+        "reproducible"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.1",
+            "1.9"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Retrieval is built for static documents and stale snapshots and must never be used as a substitute for live transactional state",
+      "vocabulary": [
+        "live state",
+        "static documents and stale snapshots",
+        "reference architectures"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Reference material that changes frequently but is genuinely documentary is the canonical case for retrieval augmentation rather than retraining or full-context loading",
+      "vocabulary": [
+        "retrieval augmentation",
+        "RAG"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.7"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "Reference architectures are combined when different parts of a system break differently, and a single one is chosen while the failure surface is still uncertain",
+      "vocabulary": [
+        "reference architectures",
+        "Agent",
+        "RAG",
+        "Evaluator-optimizer",
+        "Routing",
+        "Coding agent"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Multi-agent designs earn their coordination overhead when sub-tasks need genuinely different specialisations, tools and context, and when independent sub-tasks can run in parallel",
+      "vocabulary": [
+        "multi-agent",
+        "specialisation",
+        "parallel sub-tasks"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.10"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "A supervisor or orchestrator provides central sequencing, a single point for an ordered audit trail, and the ability to halt a chain on an exception",
+      "vocabulary": [
+        "supervisor",
+        "orchestrator",
+        "ordered audit trail",
+        "halt on exception"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.4"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "A long multi-part task that drops coverage and reasons shallowly is a decomposition problem: sequence it into subtasks passing structured output between steps",
+      "vocabulary": [
+        "decomposition",
+        "sequenced subtasks",
+        "structured output between steps"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.3"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.01"
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "Declining tool-selection accuracy as an agent's breadth grows signals overload; the remedy is domain-specific agents behind a router with focused toolsets and prompts",
+      "vocabulary": [
+        "router",
+        "focused toolset",
+        "agent overload"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.8"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "An initial use case is selected on measurable business value balanced against feasible data access and manageable risk, not on sophistication, politics or speed",
+      "vocabulary": [
+        "measurable business value",
+        "feasibility",
+        "risk"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.5"
+          ]
+        }
+      ],
+      "syllabus_rule": "2.03"
+    },
+    {
+      "id": "C-015",
+      "domain": "d1",
+      "statement": "A production system without a correctness signal is missing the feedback stage: downstream corrections and user signals must route into a labelled evaluation set",
+      "vocabulary": [
+        "feedback loop",
+        "labelled evaluation set"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "1.6"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-016",
+      "domain": "d2",
+      "statement": "Sonnet is the default tier because it balances intelligence, speed and cost for most production workloads",
+      "vocabulary": [
+        "Sonnet default",
+        "default tier"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "Every model swap is a release and gets the same gate: an eval set that defines what better means for this workload, and a rollback criterion set before the swap rather than after",
+      "vocabulary": [
+        "swap as a release",
+        "eval set",
+        "rollback criterion set before"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.1"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "Where accuracy is comparable across the family, the disciplined choice is the smallest model that meets the target, validated by ongoing evaluation",
+      "vocabulary": [
+        "smallest model meeting the target",
+        "ongoing evaluation"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.1"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "Progressive context, where the model receives only what it needs at each step, holds up over a long-lived deployment better than monolithic context that grows until it breaks",
+      "vocabulary": [
+        "progressive context",
+        "monolithic context"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "Prompt caching matches on the prompt prefix, so dynamic values placed before the static block make every prefix unique and drive the hit rate to zero",
+      "vocabulary": [
+        "prompt caching",
+        "cacheable static prefix",
+        "cache hit rate"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.2"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "Chain-of-thought earns its tokens on multi-step reasoning and adds cost and latency without benefit on simple extraction; it is applied selectively per task",
+      "vocabulary": [
+        "chain-of-thought",
+        "applied selectively"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.3"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "Critical rules buried mid-context suffer positional attention effects; they belong at a prompt boundary, structurally separated from reference material",
+      "vocabulary": [
+        "positional attention",
+        "prompt boundary",
+        "structural separation"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.4"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "For precise format compliance, complete few-shot exemplars outperform prose descriptions — and unrepresentative exemplars narrow behaviour toward what they demonstrate",
+      "vocabulary": [
+        "few-shot exemplars",
+        "format fidelity"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.5"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "Loading a large collection into context on every request degrades mid-document recall and inflates cost; retrieving only the relevant sections addresses both",
+      "vocabulary": [
+        "mid-context recall",
+        "retrieve relevant sections"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.6"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "Loading specialised instructions on demand — modular prompts or Skills — means each request pays only for the instructions it needs",
+      "vocabulary": [
+        "on-demand loading",
+        "modular prompts",
+        "Skills"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.7"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "Instruction adherence improves with clearly delimited sections carrying explicit priority when rules conflict, plus concrete examples of the cases the model gets wrong",
+      "vocabulary": [
+        "delimited sections",
+        "explicit priority",
+        "conflicting instructions"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "2.8"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-027",
+      "domain": "d3",
+      "statement": "Identity is enforced at the server side; authorisation carried by prompt instruction is a prompt-based auth bypass waiting to happen, because instructions are not a security boundary",
+      "vocabulary": [
+        "server-side identity",
+        "prompt-based auth bypass",
+        "access-control layer"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.3"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-028",
+      "domain": "d3",
+      "statement": "Only the minimum necessary data is passed into the context window",
+      "vocabulary": [
+        "minimum necessary data"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-029",
+      "domain": "d3",
+      "statement": "Observability instrumentation is built at design time, not added after the first incident",
+      "vocabulary": [
+        "observability at design time"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.7"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-030",
+      "domain": "d3",
+      "statement": "At scale, observability means structured traces with correlation IDs and metrics on every session, with expensive full-payload capture sampled and triggered on error conditions",
+      "vocabulary": [
+        "structured traces",
+        "correlation IDs",
+        "sampled payload capture"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.7"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-031",
+      "domain": "d3",
+      "statement": "Per-request observability and aggregate dashboards answer different questions and are kept separate at scale",
+      "vocabulary": [
+        "per-request observability",
+        "aggregate dashboards"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-032",
+      "domain": "d3",
+      "statement": "MCP fits many systems consumed by many applications under decentralised ownership with frequent tool churn: each team maintains its server once and every application reuses it",
+      "vocabulary": [
+        "MCP",
+        "Model Context Protocol",
+        "standardised reusable access"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.1",
+            "3.12"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.05"
+    },
+    {
+      "id": "C-033",
+      "domain": "d3",
+      "statement": "Entry points — Claude.ai, the direct API, the SDK, Claude Code and MCP — each carry a different core trade-off, and the right recommendation is the one whose trade-off can be named out loud when it is made",
+      "vocabulary": [
+        "entry point",
+        "name the tradeoff",
+        "speed of setup versus depth of control"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "1.05"
+    },
+    {
+      "id": "C-034",
+      "domain": "d3",
+      "statement": "Coordination across an organisational trust boundary uses agent-to-agent communication, with each agent mediating access to its own organisation's systems",
+      "vocabulary": [
+        "agent-to-agent",
+        "trust boundary"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.8",
+            "3.12"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.05"
+    },
+    {
+      "id": "C-035",
+      "domain": "d3",
+      "statement": "A deterministic, tightly scoped call inside a pipeline you own needs direct API integration, not a discovery layer",
+      "vocabulary": [
+        "direct API integration"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.12"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.05"
+    },
+    {
+      "id": "C-036",
+      "domain": "d3",
+      "statement": "Tool-catalogue bloat degrades selection accuracy; the fix is auditing and removing unused or overlapping tools, then progressive discovery so only relevant tools are presented per request",
+      "vocabulary": [
+        "progressive discovery",
+        "capability bloat",
+        "tool catalogue"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.2",
+            "3.11"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-037",
+      "domain": "d3",
+      "statement": "Selection errors between related tools come from overlap and ambiguity: each tool's purpose, inputs and boundaries must be explicit and non-overlapping",
+      "vocabulary": [
+        "tool descriptions",
+        "non-overlapping boundaries"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.10"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-038",
+      "domain": "d3",
+      "statement": "Fixed-size chunking severs clauses from the definitions and cross-references that give them meaning; structure-aware chunking with linkage metadata preserves interpretive context",
+      "vocabulary": [
+        "structure-aware chunking",
+        "cross-reference metadata"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.4"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-039",
+      "domain": "d3",
+      "statement": "Exact identifiers are where lexical matching wins and embeddings blur; hybrid retrieval matches the strategy to the shape of the query",
+      "vocabulary": [
+        "hybrid retrieval",
+        "lexical matching",
+        "semantic search"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.5"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-040",
+      "domain": "d3",
+      "statement": "Index freshness needs a validated re-indexing pipeline plus version-aware retrieval that filters out superseded content",
+      "vocabulary": [
+        "re-indexing pipeline",
+        "version metadata",
+        "superseded versions"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.9"
+          ]
+        }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-041",
+      "domain": "d3",
+      "statement": "Retries, fallback chains and circuit breakers belong in the initial design, and the failure mode specific to the architecture type is named with a documented mitigation",
+      "vocabulary": [
+        "retries",
+        "fallback chain",
+        "circuit breaker",
+        "named failure mode"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.02"
+    },
+    {
+      "id": "C-042",
+      "domain": "d3",
+      "statement": "A latency-for-accuracy trade-off is decided by quantifying both sides against the SLA budget and the current p95, then adopting and monitoring",
+      "vocabulary": [
+        "SLA budget",
+        "p95 latency",
+        "headroom"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "3.6"
+          ]
+        }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-043",
+      "domain": "d4",
+      "statement": "The eval suite is written before the production code",
+      "vocabulary": [
+        "evals as acceptance criteria",
+        "eval suite before production code"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-044",
+      "domain": "d4",
+      "statement": "A golden dataset is expert-labelled, kept current with every system change, and composed of real production-like queries augmented with deliberately constructed edge cases",
+      "vocabulary": [
+        "golden dataset",
+        "expert-labelled",
+        "edge cases"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.2",
+            "4.8"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-045",
+      "domain": "d4",
+      "statement": "The eval is the gate for every model swap and every prompt revision; an unevaluated prompt change is an ungated release",
+      "vocabulary": [
+        "eval as gate",
+        "unevaluated prompt changes"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.6"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-046",
+      "domain": "d4",
+      "statement": "Good enough to launch means nothing without task-specific metrics tied to business outcomes and agreed thresholds set before the launch decision",
+      "vocabulary": [
+        "task-specific metrics",
+        "agreed thresholds"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.1"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-047",
+      "domain": "d4",
+      "statement": "Subjective quality at volume calls for an LLM-as-judge rubric applied to every output, periodically calibrated against a sample of human expert ratings",
+      "vocabulary": [
+        "LLM-as-judge",
+        "human calibration",
+        "rubric"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.3"
+          ]
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-048",
+      "domain": "d4",
+      "statement": "An offline gain is confirmed by a controlled production experiment whose primary metric and sample size were identified before it ran",
+      "vocabulary": [
+        "A/B test",
+        "primary metric",
+        "sample size before"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.4"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-049",
+      "domain": "d4",
+      "statement": "A model version change is a regression risk: run the full suite, then roll out gradually behind a canary with regression monitoring before full cutover",
+      "vocabulary": [
+        "canary",
+        "regression monitoring",
+        "cutover"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.6"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-050",
+      "domain": "d4",
+      "statement": "Cost reduction is driven by trace-level analysis identifying the dominant cost driver, then applying the lever that targets it, with quality evaluated at each step",
+      "vocabulary": [
+        "trace-level cost analysis",
+        "dominant cost driver"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.5"
+          ]
+        }
+      ],
+      "syllabus_rule": "2.02"
+    },
+    {
+      "id": "C-051",
+      "domain": "d4",
+      "statement": "Cost and latency are estimated at production volume before committing to an architecture",
+      "vocabulary": [
+        "cost and latency at production volume"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.02"
+    },
+    {
+      "id": "C-052",
+      "domain": "d4",
+      "statement": "Leading indicators of quality degradation are pipeline-internal — retrieval relevance, grounding rates — and move before user-visible signals such as complaints or churn",
+      "vocabulary": [
+        "leading indicator",
+        "lagging indicator",
+        "grounding rate"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.7"
+          ]
+        }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-053",
+      "domain": "d4",
+      "statement": "Adversarial test cases probing safety boundaries, injection and policy-violating requests are a required component of pre-production evaluation in a regulated domain",
+      "vocabulary": [
+        "adversarial test suite",
+        "safety boundaries"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.8"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-054",
+      "domain": "d4",
+      "statement": "Failures are classified before they are treated: a prompt failure, a hallucination and a model mismatch have different causes and different remedies",
+      "vocabulary": [
+        "prompt failure",
+        "hallucination",
+        "model mismatch"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.10"
+          ]
+        }
+      ],
+      "syllabus_rule": "5.04"
+    },
+    {
+      "id": "C-055",
+      "domain": "d4",
+      "statement": "When code, model and prompts are unchanged, degradation is diagnosed from end-to-end traces of affected sessions and from input-distribution drift analysis",
+      "vocabulary": [
+        "end-to-end traces",
+        "input distribution drift"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "4.9"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "5.04"
+    },
+    {
+      "id": "C-056",
+      "domain": "d5",
+      "statement": "Safety is a stack of layers, not a setting: training never saw your domain policy, data rules or authorization model, and the dangerous failure is silent — assuming Claude enforces a rule that lives in no layer",
+      "vocabulary": [
+        "stack of layers",
+        "the dangerous failure is silent",
+        "draw the boundary explicitly"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.01"
+    },
+    {
+      "id": "C-057",
+      "domain": "d5",
+      "statement": "A guarded path has three control points — input screening, output screening and tool-call authorization — which answer different questions, so one filter at the end does not cover the other two; and it fails closed where a wrong pass causes harm",
+      "vocabulary": [
+        "three control points",
+        "input screening",
+        "output screening",
+        "tool-call authorization",
+        "fail closed",
+        "silent guardrail bypass"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.5",
+            "5.7",
+            "5.8"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-058",
+      "domain": "d5",
+      "statement": "Retrieved content is untrusted input: it must be structurally delimited as data and never granted instruction-level authority",
+      "vocabulary": [
+        "untrusted input",
+        "instruction-level authority",
+        "delimited as data"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.5",
+            "5.8"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-059",
+      "domain": "d5",
+      "statement": "Least-privilege tool scoping caps the damage a successful injection can do, so that even a control that is bypassed cannot trigger destructive or data-exfiltrating actions",
+      "vocabulary": [
+        "least privilege",
+        "tool privileges",
+        "blast radius"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.8"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-060",
+      "domain": "d5",
+      "statement": "Layered controls apply to a single risk: a preventative guardrail constrains what can be produced and mandatory human approval catches what the guardrail misses",
+      "vocabulary": [
+        "preventative guardrail",
+        "defence in depth",
+        "human approval"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.7",
+            "5.9"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-061",
+      "domain": "d5",
+      "statement": "Review is routed by stakes, not by volume: confidence, reversibility and the cost of a wrong answer decide which decisions reach a human, and routing everything produces reviewer queue fatigue",
+      "vocabulary": [
+        "route by stakes",
+        "confidence",
+        "reversibility",
+        "reviewer queue fatigue"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.1",
+            "5.9"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.04"
+    },
+    {
+      "id": "C-062",
+      "domain": "d5",
+      "statement": "A human-in-the-loop gate sits before irreversible or high-impact external actions while low-risk internal steps proceed automatically",
+      "vocabulary": [
+        "human-in-the-loop",
+        "irreversible action"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.1"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.04"
+    },
+    {
+      "id": "C-063",
+      "domain": "d5",
+      "statement": "Fairness and transparency are instrumented, not assumed: unequal outcomes arise at points you control — the corpus, prompt framing, examples, routing — and every decision is logged so an explanation can be reconstructed",
+      "vocabulary": [
+        "instrumented not assumed",
+        "corpus",
+        "prompt framing",
+        "routing",
+        "reconstruct an explanation"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.4"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.03"
+    },
+    {
+      "id": "C-064",
+      "domain": "d5",
+      "statement": "Removing explicit protected attributes does not remove bias, because correlated proxy variables carry the same signal; the response is structured evaluation across demographic slices with ongoing fairness monitoring",
+      "vocabulary": [
+        "proxy variables",
+        "demographic slices",
+        "fairness monitoring"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.4"
+          ]
+        }
+      ],
+      "syllabus_rule": "3.03"
+    },
+    {
+      "id": "C-065",
+      "domain": "d5",
+      "statement": "Data minimisation is applied architecturally: personal data is redacted or pseudonymised before it crosses a system boundary, and only what the purpose requires is retained",
+      "vocabulary": [
+        "data minimisation",
+        "pseudonymise",
+        "system boundary"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.2"
+          ]
+        }
+      ],
+      "syllabus_rule": "3.05"
+    },
+    {
+      "id": "C-066",
+      "domain": "d5",
+      "statement": "A compliant entry point is a prerequisite: the whole data path must meet its obligations before regulated data flows, because retrofitting after the fact is a violation rather than an enhancement",
+      "vocabulary": [
+        "compliant entry point",
+        "data path",
+        "subprocessors"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "5.3"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.05"
+    },
+    {
+      "id": "C-067",
+      "domain": "d5",
+      "statement": "Each regulatory obligation becomes a specific control, a named owner and a living evidence artifact; a control with no owner and no evidence goes non-operational and fails at audit, because reviewers accept proof the control is live rather than the control itself",
+      "vocabulary": [
+        "obligation to control to owner to evidence",
+        "living evidence artifact",
+        "unowned compliance failure"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "3.05"
+    },
+    {
+      "id": "C-068",
+      "domain": "d6",
+      "statement": "Discovery runs as a four-category process, and a stated solution is not a problem statement — the proposed solution may or may not survive discovery",
+      "vocabulary": [
+        "four-category discovery",
+        "structured discovery",
+        "problem statement"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.2"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-069",
+      "domain": "d6",
+      "statement": "Every preference is translated into a constraint and written as a requirement row with its assumption labelled, so the design traces back to the business case",
+      "vocabulary": [
+        "preference into a constraint",
+        "requirement row",
+        "labelled assumption"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-070",
+      "domain": "d6",
+      "statement": "Design cannot begin without two anchors: agreed measurable success criteria with acceptance thresholds, and an assessment of data availability, quality, access constraints and compliance obligations",
+      "vocabulary": [
+        "success criteria",
+        "acceptance thresholds",
+        "data landscape"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.7"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-071",
+      "domain": "d6",
+      "statement": "Every use case runs through the four AI properties before a feasibility verdict, stated as feasible as scoped, feasible with constraints, or not feasible — with the load-bearing boundary condition documented for every constrained verdict",
+      "vocabulary": [
+        "four AI properties",
+        "feasible as scoped",
+        "feasible with constraints",
+        "not feasible",
+        "load-bearing boundary condition"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.03"
+    },
+    {
+      "id": "C-072",
+      "domain": "d6",
+      "statement": "An unachievable absolute is converted into an achievable agreement: LLM systems are probabilistic, so the architect defines measurable acceptance criteria and an error-handling strategy proportionate to business risk",
+      "vocabulary": [
+        "probabilistic",
+        "acceptance criteria",
+        "error-handling strategy"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.1"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.02"
+    },
+    {
+      "id": "C-073",
+      "domain": "d6",
+      "statement": "Every trade-off is presented in three elements including the reversal cost, and the accountable stakeholder decides with full information rather than being complied with silently or deceived",
+      "vocabulary": [
+        "three elements",
+        "reversal cost",
+        "accountable stakeholder"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.3"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.02"
+    },
+    {
+      "id": "C-074",
+      "domain": "d6",
+      "statement": "Expectation management is grounded in the pipeline's real engineering envelope: show the latency budget, negotiate an SLA it can honour, and improve perceived speed with streaming and progress feedback",
+      "vocabulary": [
+        "latency budget",
+        "SLA",
+        "committing to unfeasible SLAs"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.4"
+          ]
+        }
+      ],
+      "syllabus_rule": "4.03"
+    },
+    {
+      "id": "C-075",
+      "domain": "d6",
+      "statement": "A decision layer maps signals to trigger actions to owners, SLA thresholds are set from their real sources, and regulated checkpoints run on a schedule",
+      "vocabulary": [
+        "signals to trigger actions to owners",
+        "SLA thresholds from their real sources",
+        "regulated checkpoints on a schedule"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.03"
+    },
+    {
+      "id": "C-076",
+      "domain": "d6",
+      "statement": "Reporting leads with the business success criteria agreed at discovery, with technical metrics as supporting detail, via a translation layer mapping technical measures to business ones",
+      "vocabulary": [
+        "translation layer",
+        "business success criteria"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.6"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-077",
+      "domain": "d6",
+      "statement": "Handoff documentation records the decision, the rejected alternatives and the trade-off each resolved while the reasoning is still held, alongside runbooks and re-runnable evaluation baselines",
+      "vocabulary": [
+        "ADR",
+        "rejected alternatives",
+        "runbook",
+        "evaluation baseline"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.5"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.04"
+    },
+    {
+      "id": "C-078",
+      "domain": "d6",
+      "statement": "The control register is carried forward as evidence a reviewer will accept, and the outcome document captures the before metric, the auditable control and the reuse note so expansion is justified",
+      "vocabulary": [
+        "control register",
+        "before metric",
+        "auditable control",
+        "reuse note",
+        "entry-point-responsibility map"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "4.05"
+    },
+    {
+      "id": "C-079",
+      "domain": "d6",
+      "statement": "Scope changes are assessed against the agreed success criteria and baseline with their impact made visible before acceptance, and the plan is formally re-baselined with sponsor sign-off when accepted changes materially alter it",
+      "vocabulary": [
+        "scope baseline",
+        "re-baseline",
+        "scope creep"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "6.8"
+          ]
+        }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-080",
+      "domain": "d7",
+      "statement": "A team environment is a shared, version-controlled baseline that every member's tooling inherits, with personal configuration reserved for individual preference",
+      "vocabulary": [
+        "shared baseline",
+        "version-controlled configuration"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "7.1",
+            "7.4"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "5.01"
+    },
+    {
+      "id": "C-081",
+      "domain": "d7",
+      "statement": "Skills are distributed by scope — org-provisioned for everyone, plugins for group and org targeting with versioned updates and rollback, project Skills for one team, API Skills for programmatic reuse — all bounded by model and budget guardrails",
+      "vocabulary": [
+        "org-provisioned",
+        "plugins",
+        "project Skills",
+        "API Skills",
+        "model and budget guardrails"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "5.01"
+    },
+    {
+      "id": "C-082",
+      "domain": "d7",
+      "statement": "Adoption is engineered through champions and batches: a champion per team proves the workflow and seeds adoption, because access without enablement stalls at basic chat and lumpy adoption never standardises the gain",
+      "vocabulary": [
+        "champion per team",
+        "access without enablement",
+        "lumpy adoption"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "5.02"
+    },
+    {
+      "id": "C-083",
+      "domain": "d7",
+      "statement": "AI-generated code is held to correctness, security and maintainability standards; review is performed independently of the authoring context, the author must be able to explain what shipped, and a verification checklist gates before production",
+      "vocabulary": [
+        "correctness, security, maintainability",
+        "explain what shipped",
+        "verification checklist",
+        "merge authority"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "7.2"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "5.03"
+    },
+    {
+      "id": "C-084",
+      "domain": "d7",
+      "statement": "What automated tooling may execute is constrained — allowed commands, protected branches, approval gates for destructive actions — so that scaling adds capability without adding blast radius",
+      "vocabulary": [
+        "allowed commands",
+        "protected branches",
+        "approval gates"
+      ],
+      "priority": "normal",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "7.4"
+          ]
+        }
+      ],
+      "syllabus_rule": "5.01"
+    },
+    {
+      "id": "C-085",
+      "domain": "d7",
+      "statement": "Operational support is translation plus self-sufficiency: connect symptoms to architecture causes rather than guessing, and leave behind runbooks and escalation paths so the team needs you for the new problem, not the familiar one",
+      "vocabulary": [
+        "symptoms to architecture causes",
+        "runbooks",
+        "escalation paths"
+      ],
+      "priority": "high",
+      "sources": [
+        {
+          "artefact": "purcell-practice-set",
+          "items": [
+            "7.3"
+          ]
+        },
+        {
+          "artefact": "ccar-p-course-recap"
+        }
+      ],
+      "syllabus_rule": "5.04"
+    }
+  ]
+}

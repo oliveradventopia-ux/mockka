@@ -1,0 +1,7 @@
+{
+  "$comment": "Ships EMPTY. A project registers agentic paths + regression dimensions here as it locks behaviors. An empty registry is valid for a new project (regression discipline is scale-gated).",
+  "agenticPaths": [],
+  "harnessPaths": ["templates/harness/**"],
+  "dimensions": [],
+  "r6Exclusions": []
+}

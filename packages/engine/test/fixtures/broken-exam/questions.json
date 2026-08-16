@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "questions": [
+    {
+      "id": "b1",
+      "domain": "d1",
+      "primary_concept": "C-1",
+      "secondary_concepts": [],
+      "keywords": ["digitisation", "processing queue"],
+      "type": "single_choice",
+      "question": "A regional archive service routes incoming digitisation requests to a processing queue. Which approach keeps the routing auditable?",
+      "options": {
+        "A": "Infer the request category from the attachment contents at intake",
+        "B": "Route on the category the requester declared on the submission form",
+        "C": "Send every request to a shared queue and let operators pull work",
+        "D": "Hold requests until a supervisor assigns each one by hand"
+      },
+      "answer": "E",
+      "distractor_patterns": { "A": "D01", "B": "D02", "C": "D05", "D": "D06" },
+      "rationale": {
+        "correct": "Routing on the declared category keeps every queue assignment deterministic and auditable, which is the stated requirement for the archive service.",
+        "distractors": {
+          "A": "Inferring the category from attachments makes routing depend on model behaviour nobody can audit afterwards.",
+          "B": "Declared categories alone are auditable, yet this option is marked wrong only because the fixture's key is broken.",
+          "C": "A shared queue removes the routing decision instead of making it auditable, so nothing can be traced.",
+          "D": "Manual assignment by a supervisor does not scale and leaves no structured record of the routing rule applied."
+        }
+      }
+    },
+    {
+      "id": "b2",
+      "domain": "d1",
+      "primary_concept": "C-2",
+      "secondary_concepts": [],
+      "keywords": ["claim summaries"],
+      "type": "single_choice",
+      "question": "An insurance back office verifies claim summaries before release. What should the reviewing team examine first?",
+      "options": {
+        "A": "The source claim record the summary was produced from",
+        "B": "The formatting of the released summary document",
+        "C": "The throughput of the summarisation pipeline",
+        "D": "The reviewer rota for the coming fortnight"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D99", "C": "D03", "D": "D04" },
+      "rationale": {
+        "correct": "Checking the source claim record first catches transcription drift before release, and in this fixture the answer is B on purpose to trip the letter check.",
+        "distractors": {
+          "B": "Formatting review cannot reveal whether the summary states facts absent from the claim record.",
+          "C": "Pipeline throughput says nothing about whether an individual summary is faithful to its record."
+        }
+      }
+    },
+    {
+      "id": "b3",
+      "domain": "d1",
+      "primary_concept": "C-2",
+      "secondary_concepts": [],
+      "keywords": ["delivery exceptions"],
+      "type": "single_choice",
+      "question": "A logistics coordinator decides which delivery exceptions need a human decision rather than an automated retry. Which rule applies?",
+      "options": {
+        "A": "Escalate when the outcome of a retry cannot be predicted from the exception code",
+        "B": "Retry everything and escalate only after repeated failures",
+        "C": "Escalate every exception so nothing is missed",
+        "D": "Suppress exceptions during peak periods to protect throughput"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D05", "C": "D13", "D": "D18" },
+      "rationale": {
+        "correct": "Escalation belongs where an automated retry has no deterministic outcome; predictable exception codes can safely stay automated.",
+        "distractors": {
+          "B": "Blind retries defer the human decision until damage has accumulated instead of routing it early.",
+          "C": "Escalating everything buries the genuinely ambiguous cases under noise and removes the value of triage.",
+          "D": "Suppressing exceptions pushes the failure onto recipients who never learn their delivery went wrong."
+        }
+      }
+    }
+  ]
+}

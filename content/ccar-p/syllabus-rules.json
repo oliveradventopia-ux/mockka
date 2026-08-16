@@ -1,0 +1,157 @@
+{
+  "$comment": "Generalized from ccar-p data/recap-rules.json (recap_rule -> syllabus_rule). The 24 architectural rules behind the weak-rule report.",
+  "version": "1.0.0",
+  "modules": {
+    "1": "Claude Platform & Solution Design",
+    "2": "Enterprise Integration & Production",
+    "3": "Responsible AI, Safety and Risk",
+    "4": "Stakeholder Engagement, Lifecycle & Go-to-Market",
+    "5": "Team Enablement and Operational Productivity"
+  },
+  "rules": [
+    {
+      "id": "1.01",
+      "module": "1",
+      "title": "Decomposition is the move that comes before architecture",
+      "gloss": "Split the work into what Claude handles, what existing systems handle, and what humans handle — before choosing any pattern."
+    },
+    {
+      "id": "1.02",
+      "module": "1",
+      "title": "Choosing a pattern is choosing how much autonomy to grant",
+      "gloss": "Augmented LLM, workflow and agent sit on an autonomy spectrum; five factors decide, and the tightest constraint is the one that picks."
+    },
+    {
+      "id": "1.03",
+      "module": "1",
+      "title": "Reach for the tested reference architectures before inventing your own",
+      "gloss": "Five documented architectures exist because teams already learned what breaks in each. Never use retrieval as a substitute for live state."
+    },
+    {
+      "id": "1.04",
+      "module": "1",
+      "title": "Choosing a model: start with Sonnet and treat every swap as a release",
+      "gloss": "Sonnet is the default tier. Any swap needs an eval set defining better and a rollback criterion fixed beforehand. Progressive context outlasts monolithic context."
+    },
+    {
+      "id": "1.05",
+      "module": "1",
+      "title": "Pick the entry point by the work it has to do, not by what is already on the shelf",
+      "gloss": "Claude.ai, the API, the SDK, Claude Code and MCP each trade something different. Name the trade-off when you recommend one."
+    },
+    {
+      "id": "2.01",
+      "module": "2",
+      "title": "Evals as acceptance criteria",
+      "gloss": "Write the eval suite before the production code, keep the golden dataset current, and gate every model swap or prompt revision on it."
+    },
+    {
+      "id": "2.02",
+      "module": "2",
+      "title": "POC to production",
+      "gloss": "Estimate cost and latency at production volume, build retries, fallback chains and circuit breakers in from the start, and name your architecture's failure mode with its mitigation."
+    },
+    {
+      "id": "2.03",
+      "module": "2",
+      "title": "Use-case sizing and feasibility",
+      "gloss": "Run each use case through the four AI properties, then state a verdict: feasible as scoped, feasible with constraints, or not feasible — documenting the load-bearing boundary condition."
+    },
+    {
+      "id": "2.04",
+      "module": "2",
+      "title": "Enterprise integration patterns",
+      "gloss": "Enforce identity server-side, pass only the minimum necessary data into context, and instrument observability at design time."
+    },
+    {
+      "id": "2.05",
+      "module": "2",
+      "title": "A/B testing and observability",
+      "gloss": "Fix the primary metric and sample size before running anything, separate per-request traces from aggregate dashboards, and translate technical metrics into business ones."
+    },
+    {
+      "id": "3.01",
+      "module": "3",
+      "title": "Safety is a stack of layers, not a setting",
+      "gloss": "Training never saw your domain policy, data rules or authorization model. The dangerous failure is silent: assuming a rule is enforced when it lives in no layer."
+    },
+    {
+      "id": "3.02",
+      "module": "3",
+      "title": "A guarded path has three control points and a chosen failure direction",
+      "gloss": "Input screening, output screening and tool-call authorization answer different questions, so one filter at the end covers none of the others. Fail closed where a wrong pass causes harm."
+    },
+    {
+      "id": "3.03",
+      "module": "3",
+      "title": "Fairness and transparency are instrumented, not assumed",
+      "gloss": "Unequal outcomes arise at points you control — corpus, prompt framing, examples, routing. Log every decision, because an explanation you cannot reconstruct you cannot give."
+    },
+    {
+      "id": "3.04",
+      "module": "3",
+      "title": "Route review by stakes, not by volume",
+      "gloss": "Confidence, reversibility and the cost of a wrong answer decide what a human sees. Route everything and the queue floods until reviewers stop reading."
+    },
+    {
+      "id": "3.05",
+      "module": "3",
+      "title": "A compliant entry point is a prerequisite, and an evidenced control set is the proof",
+      "gloss": "Turn each obligation into a specific control, a named owner and a living evidence artifact. A control with neither goes non-operational and fails the audit."
+    },
+    {
+      "id": "4.01",
+      "module": "4",
+      "title": "Structured discovery",
+      "gloss": "Run discovery as a four-category process, translate every preference into a constraint, and write requirement rows with their assumptions labelled."
+    },
+    {
+      "id": "4.02",
+      "module": "4",
+      "title": "Communicating tradeoffs",
+      "gloss": "Present every trade-off in three elements, including the reversal cost, and let the accountable stakeholder decide informed."
+    },
+    {
+      "id": "4.03",
+      "module": "4",
+      "title": "Feedback loops and SLA management",
+      "gloss": "Build the decision layer mapping signals to trigger actions to owners, set SLA thresholds from their real sources, and schedule regulated checkpoints."
+    },
+    {
+      "id": "4.04",
+      "module": "4",
+      "title": "Documentation for handoff and audit",
+      "gloss": "Record the decision, the rejected alternatives and the trade-off each resolved while you still hold the reasoning, and carry the control register forward."
+    },
+    {
+      "id": "4.05",
+      "module": "4",
+      "title": "Entry point selection and outcomes",
+      "gloss": "Choose the route on latency, compliance and cost, map responsibility across multi-entry-point designs, and capture the before metric, the auditable control and the reuse note."
+    },
+    {
+      "id": "5.01",
+      "module": "5",
+      "title": "Team setup is shared configuration, distribution, and spend posture decided up front",
+      "gloss": "A shared baseline plus a Skills distribution approach — org-provisioned, plugins, project Skills, API Skills — all bounded by model and budget guardrails."
+    },
+    {
+      "id": "5.02",
+      "module": "5",
+      "title": "Adoption is engineered through champions and batches",
+      "gloss": "A champion per team proves the workflow and seeds adoption. Access without enablement stalls at basic chat; lumpy adoption never standardises the gain."
+    },
+    {
+      "id": "5.03",
+      "module": "5",
+      "title": "Diligence keeps AI-assisted work trustworthy",
+      "gloss": "Hold AI-generated code to correctness, security and maintainability, require the author to explain what shipped, and gate on a verification checklist."
+    },
+    {
+      "id": "5.04",
+      "module": "5",
+      "title": "Operational support is translation plus self-sufficiency",
+      "gloss": "Connect symptoms to architecture causes, and leave runbooks and escalation paths so the team needs you for the new problem, not the familiar one."
+    }
+  ]
+}

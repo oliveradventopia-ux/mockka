@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="_ds/classical-3ffeba61-195e-42ba-96a2-e792fe33e2a7/styles.css">
+<script src="_ds/classical-3ffeba61-195e-42ba-96a2-e792fe33e2a7/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:#e8e6e2}
+.dv-turn{padding:44px 48px 36px;border-bottom:1px solid rgba(0,0,0,.1);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}
+.dv-tid{font:500 10px "JetBrains Mono",monospace;padding:3px 7px;background:#201f1d;color:#f3f2f2;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 14px/1.2 "Cormorant Garamond",serif;color:#201f1d;letter-spacing:.01em}
+.dv-grp{font:500 10px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:rgba(32,31,29,.45);margin:34px 0 14px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,.12)}
+.dv-opts{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px;max-width:100%}
+.dv-oid{font:500 10.5px "JetBrains Mono",monospace;padding:3px 7px;background:rgba(32,31,29,.09);color:#201f1d;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11.5px/1.35 "Lora",serif;color:rgba(32,31,29,.6);max-width:640px}
+.dv-card{max-width:100%;background:#f3f2f2;border:1px solid rgba(0,0,0,.1);border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.07);overflow:hidden}
+.dv-opt:target .dv-oid{background:#b68235;color:#fff}
+.dv-next{margin:26px 0 0;font:400 12px/1.6 "Lora",serif;color:rgba(32,31,29,.5)}
+.mono{font-family:"JetBrains Mono",monospace;font-feature-settings:"tnum"}
+.num{font-feature-settings:"tnum"}
+.num,.mono{font-feature-settings:"tnum" !important}
+.wf{background:#f6f5f3;font-family:"JetBrains Mono",monospace;color:#8a8683}
+.wfb{border:1px dashed rgba(32,31,29,.28);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:rgba(32,31,29,.42);text-align:center;padding:4px}
+.wfs{background:rgba(32,31,29,.1);border-radius:2px}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Lamplight — the dark theme on real screens</span></div>
+<p style="margin:0 0 4px;max-width:800px;font:400 13px/1.7 var(--font-body);color:rgba(32,31,29,.72)">Same token names, five overridden values — no separate design. Gold steps up to accent-400 (<span class="mono" style="font-size:10.5px">#e1ad66</span>) so it still holds its 3:1 against ink, body text drops to 70% rather than pure paper, and the neutral track that carries every progress bar becomes <span class="mono" style="font-size:10.5px">rgba(239,236,231,.14)</span>. Two things I'd flag: the colophon footer that anchored the light landing page loses its job on a dark ground, so on dark it inverts to paper-on-ink-lighter (<a class="dv-oid" href="#3c">3c</a>); and the "correct" tag needs its border, not just its tint, to stay legible.</p>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Exam player, dark. The gold left-edge on the chosen option does more work here than in the light theme — on ink, a 6% tint alone is nearly invisible, so the inset rule carries the state.</div>
+<div class="dv-card" style="width:1080px;--color-bg:#1a1918;--color-surface:#242220;--color-text:#efece7;--color-accent:#e1ad66;--color-divider:rgba(239,236,231,.18);--color-neutral-200:rgba(239,236,231,.14);--color-neutral-400:rgba(239,236,231,.4);--color-accent-300:#f5cd96;--color-accent-700:#e1ad66;background:#1a1918;color:#efece7;border-color:rgba(239,236,231,.14)">
+  <div style="display:flex;align-items:center;gap:var(--space-4);padding:var(--space-3) var(--space-6);border-bottom:1px solid var(--color-divider)">
+    <div style="width:20px;height:20px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid #efece7"></div><div style="position:absolute;inset:4px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div>
+    <span style="font:600 14px var(--font-heading);letter-spacing:.02em">CCAR-P</span>
+    <span class="mono num" style="font-size:10px;color:rgba(239,236,231,.55);letter-spacing:.1em">QUESTION 14 / 60</span>
+    <div style="flex:1;height:1px;background:var(--color-divider);position:relative"><div style="position:absolute;left:0;top:-1px;height:3px;width:23%;background:var(--color-accent)"></div></div>
+    <div style="display:flex;border:1px solid var(--color-divider);border-radius:var(--radius-md);overflow:hidden"><span style="padding:5px 12px;font:600 11px var(--font-heading);background:rgba(225,173,102,.16);color:var(--color-accent)">Practice</span><span style="padding:5px 12px;font:400 11px var(--font-heading);color:rgba(239,236,231,.55)">Exam</span></div>
+    <span class="mono num" style="font-size:11px;color:rgba(239,236,231,.55)">41:20</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 268px">
+    <div style="padding:var(--space-8) var(--space-8) var(--space-6)">
+      <div style="display:flex;align-items:baseline;gap:var(--space-3)"><span class="mono" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent)">Domain 2 · Resilient design</span><span class="mono" style="font-size:9px;letter-spacing:.12em;color:rgba(239,236,231,.42)">single choice</span></div>
+      <h2 style="font:400 27px/1.35 var(--font-heading);margin:16px 0 var(--space-4);max-width:32em;text-wrap:pretty;color:#efece7">A regional utility runs a real-time grid balancer whose agents hold live state in memory. During a regional failover, operators find the replacement agents answer confidently from stale positions. What should the architecture change?</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:44em">
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);align-items:flex-start"><span style="width:15px;height:15px;border:1px solid rgba(239,236,231,.4);border-radius:50%;flex:none;margin-top:3px"></span><span style="font:400 14px/1.7 var(--font-body);color:rgba(239,236,231,.86)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:rgba(239,236,231,.5)">A</b>Increase the failover replica count so a warm agent is always available in the secondary region.</span></label>
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-accent);border-radius:var(--radius-md);align-items:flex-start;background:rgba(225,173,102,.09);box-shadow:inset 2px 0 0 var(--color-accent)"><span style="width:15px;height:15px;border:1px solid var(--color-accent);border-radius:50%;flex:none;margin-top:3px;display:flex;align-items:center;justify-content:center"><span style="width:7px;height:7px;border-radius:50%;background:var(--color-accent)"></span></span><span style="font:400 14px/1.7 var(--font-body);color:#efece7"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:var(--color-accent)">B</b>Treat live grid state as an external system of record the agent reads at decision time, rather than state the agent carries.</span></label>
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);align-items:flex-start"><span style="width:15px;height:15px;border:1px solid rgba(239,236,231,.4);border-radius:50%;flex:none;margin-top:3px"></span><span style="font:400 14px/1.7 var(--font-body);color:rgba(239,236,231,.86)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:rgba(239,236,231,.5)">C</b>Shorten the agent's context window so stale positions age out of memory faster.</span></label>
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);align-items:flex-start"><span style="width:15px;height:15px;border:1px solid rgba(239,236,231,.4);border-radius:50%;flex:none;margin-top:3px"></span><span style="font:400 14px/1.7 var(--font-body);color:rgba(239,236,231,.86)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:rgba(239,236,231,.5)">D</b>Add a confidence threshold below which the agent declines to answer.</span></label>
+      </div>
+      <div style="height:1px;background:var(--color-divider);margin:var(--space-6) 0 var(--space-4)"></div>
+      <div style="display:flex;gap:10px;align-items:center"><button class="btn" style="border-color:var(--color-divider);color:#efece7">Flag for review</button><span class="mono" style="font-size:9.5px;color:rgba(239,236,231,.4);margin-left:4px">⏎ check · → next · F flag</span><div style="margin-left:auto;display:flex;gap:8px"><button class="btn" style="color:rgba(239,236,231,.75)">Previous</button><button class="btn" style="color:var(--color-accent);border-color:var(--color-accent)">Check answer</button></div></div>
+    </div>
+    <aside style="border-left:1px solid var(--color-divider);padding:var(--space-6) var(--space-4)">
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,236,231,.5)">Question map</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:var(--space-3)">
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">1</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">2</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px dashed var(--color-accent);border-radius:2px;color:#efece7">3</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">4</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">5</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">6</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">7</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">8</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">9</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">10</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px dashed var(--color-accent);border-radius:2px;color:#efece7">11</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">12</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid rgba(225,173,102,.45);background:rgba(225,173,102,.16);border-radius:2px;color:#efece7">13</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;background:#efece7;color:#1a1918;border:1px solid #efece7;border-radius:2px">14</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(239,236,231,.42)">15</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(239,236,231,.42)">16</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(239,236,231,.42)">17</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(239,236,231,.42)">18</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--space-3)"><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">▪ answered</span><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">▫ unseen</span><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">⌐ flagged</span></div>
+      <div style="height:1px;background:var(--color-divider);margin:var(--space-4) 0"></div>
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,236,231,.5)">This sitting</div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:var(--space-3)">
+        <div><div style="display:flex;justify-content:space-between;font:400 11.5px var(--font-body);color:rgba(239,236,231,.82)"><span>D1 Foundations</span><span class="num">6/6</span></div><div style="height:3px;background:var(--color-neutral-200);margin-top:4px"><div style="height:3px;width:100%;background:var(--color-accent)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 11.5px var(--font-body);color:rgba(239,236,231,.82)"><span>D2 Resilience</span><span class="num">4/7</span></div><div style="height:3px;background:var(--color-neutral-200);margin-top:4px"><div style="height:3px;width:57%;background:var(--color-accent)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 11.5px var(--font-body);color:rgba(239,236,231,.82)"><span>D3 Evaluation</span><span class="num">3/12</span></div><div style="height:3px;background:var(--color-neutral-200);margin-top:4px"><div style="height:3px;width:25%;background:var(--color-accent)"></div></div></div>
+      </div>
+    </aside>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>CCAR-P dashboard, dark. The threshold rule flips to paper so it still reads against a gold bar, and the pale "too few items" bar becomes a 45%-opacity gold rather than a lighter step.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8);--color-bg:#1a1918;--color-surface:#242220;--color-text:#efece7;--color-accent:#e1ad66;--color-divider:rgba(239,236,231,.18);--color-neutral-200:rgba(239,236,231,.14);--color-accent-700:#e1ad66;background:#1a1918;color:#efece7;border-color:rgba(239,236,231,.14)">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap">
+    <div><div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(239,236,231,.5)">CCAR-P · 63 items · submitted 16 Aug 2026</div><h2 style="font:300 38px/1.1 var(--font-heading);margin:12px 0 0;color:#efece7">Two questions short</h2></div>
+    <div style="display:flex;gap:var(--space-6);align-items:flex-end">
+      <div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(239,236,231,.5)">SCORE</div><div class="num" style="font:300 54px/.95 var(--font-heading);color:#efece7">73<span style="font-size:22px;color:rgba(239,236,231,.45)">%</span></div></div>
+      <div style="padding-bottom:8px"><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(239,236,231,.5)">THRESHOLD</div><div class="num" style="font:400 24px/1 var(--font-heading);color:rgba(239,236,231,.6)">75%</div></div>
+      <div style="padding-bottom:8px"><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(239,236,231,.5)">CORRECT</div><div class="num" style="font:400 24px/1 var(--font-heading);color:#efece7">46 / 63</div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-accent);margin:var(--space-4) 0 0;padding-top:var(--space-3)">
+    <p style="font:400 14.5px/1.85 var(--font-body);text-align:justify;margin:0;max-width:66em;color:rgba(239,236,231,.78)">You are two correct answers from the line — close enough that where you study matters more than how long. Integration and Evaluation together hold 22 of the 63 questions and account for nine of your seventeen misses; Governance and Solution Design are already carrying you.</p>
+  </div>
+  <div style="height:1px;background:var(--color-divider);margin:var(--space-6) 0"></div>
+  <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4);color:#efece7">Domain performance <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(239,236,231,.5)">bar = your score · rule = 75% threshold · figure = share of paper</span></h4>
+  <div style="display:flex;flex-direction:column;gap:0">
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:9px 0;border-bottom:1px solid var(--color-divider)"><span class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,236,231,.5)">Domain</span><span class="mono" style="font-size:9px;text-align:right;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,236,231,.5)">Items</span><span class="mono" style="font-size:9px;text-align:right;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,236,231,.5)">Share</span><span class="mono" style="font-size:9px;text-align:right;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,236,231,.5)">Score</span><span class="mono" style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,236,231,.5)">Against the 75% line</span><span class="mono" style="font-size:9px;text-align:right;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,236,231,.5)">To the line</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--color-divider);font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D1 Solution Design &amp; Architecture</span><span class="num" style="text-align:right">9 / 11</span><span class="num" style="text-align:right">17.5%</span><span class="num" style="text-align:right">82%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:82%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:var(--color-accent)">clear</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--color-divider);font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D2 Claude Models, Prompting &amp; Context</span><span class="num" style="text-align:right">5 / 8</span><span class="num" style="text-align:right">12.7%</span><span class="num" style="text-align:right">63%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:63%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:rgba(239,236,231,.7)">+1 item</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--color-divider);font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D3 Integration</span><span class="num" style="text-align:right">9 / 12</span><span class="num" style="text-align:right">19.0%</span><span class="num" style="text-align:right">75%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:75%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:rgba(239,236,231,.7)">at the line</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--color-divider);font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D4 Evaluation, Testing &amp; Optimization</span><span class="num" style="text-align:right">6 / 10</span><span class="num" style="text-align:right">15.9%</span><span class="num" style="text-align:right">60%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:60%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:rgba(239,236,231,.7)">+2 items</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--color-divider);font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D5 Governance, Safety &amp; Risk</span><span class="num" style="text-align:right">8 / 9</span><span class="num" style="text-align:right">14.3%</span><span class="num" style="text-align:right">89%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:89%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:var(--color-accent)">clear</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--color-divider);font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D6 Stakeholder Communication &amp; Lifecycle</span><span class="num" style="text-align:right">7 / 9</span><span class="num" style="text-align:right">14.3%</span><span class="num" style="text-align:right">78%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:78%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:var(--color-accent)">clear</span></div>
+    <div style="display:grid;grid-template-columns:1fr 70px 80px 70px 34% 96px;gap:var(--space-3);align-items:center;padding:11px 0;font:400 13.5px var(--font-body);color:rgba(239,236,231,.86)"><span>D7 Developer Productivity &amp; Operations</span><span class="num" style="text-align:right">2 / 4</span><span class="num" style="text-align:right">6.3%</span><span class="num" style="text-align:right">50%</span><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:50%;background:rgba(225,173,102,.45)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:#efece7"></div></div><span class="mono num" style="text-align:right;font-size:10.5px;color:rgba(239,236,231,.7)">+1 item</span></div>
+  </div>
+  <p class="mono" style="font-size:9px;color:rgba(239,236,231,.5);margin:var(--space-3) 0 0">Faded bar = fewer than 5 items in the domain; the percentage is too coarse to act on alone.</p>
+  <div style="height:1px;background:var(--color-divider);margin:var(--space-6) 0"></div>
+  <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-8)">
+    <div>
+      <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4);color:#efece7">Why you missed them <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(239,236,231,.5)">17 misses, categorised</span></h4>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body);color:rgba(239,236,231,.86)"><span>Reached for a scaling or capacity knob</span><span class="mono num" style="font-size:11px">6</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:86%;background:var(--color-accent)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">D3 ×3 · D4 ×2 · D7 ×1</span></div>
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body);color:rgba(239,236,231,.86)"><span>Missed a stated constraint in the scenario</span><span class="mono num" style="font-size:11px">4</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:57%;background:var(--color-accent)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">D1 ×2 · D4 ×2</span></div>
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body);color:rgba(239,236,231,.86)"><span>Chose a defensible but outdated practice</span><span class="mono num" style="font-size:11px">4</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:57%;background:var(--color-accent)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">D2 ×3 · D6 ×1</span></div>
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body);color:rgba(239,236,231,.86)"><span>Followed a keyword the stem pointed away from</span><span class="mono num" style="font-size:11px">3</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:43%;background:var(--color-accent)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(239,236,231,.5)">D3 ×2 · D6 ×1</span></div>
+      </div>
+    </div>
+    <div>
+      <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4);color:#efece7">What to do next <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(239,236,231,.5)">ordered by weight × gap</span></h4>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="padding:var(--space-4);border:1px solid var(--color-divider);border-left:2px solid var(--color-accent);border-radius:var(--radius-md);background:#242220">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent)">First · D4 Evaluation</div><span class="mono num" style="font-size:9.5px;color:rgba(239,236,231,.5)">worth 3.2 pts</span></div>
+          <p style="font:400 13px/1.75 var(--font-body);margin:8px 0 10px;text-align:justify;color:rgba(239,236,231,.8)">Four misses, all in multiple-response. Drill the eight items that test eval-suite design and read the rationale before answering, not after.</p>
+          <div style="display:flex;gap:8px"><button class="btn" style="font-size:12px;padding:5px 12px;color:var(--color-accent);border-color:var(--color-accent)">Drill 8 items</button><button class="btn" style="font-size:12px;padding:5px 10px;color:rgba(239,236,231,.75)">See the 4 misses</button></div>
+        </div>
+        <div style="padding:var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);background:#242220">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(239,236,231,.5)">Then · D3 Integration</div><span class="mono num" style="font-size:9.5px;color:rgba(239,236,231,.5)">worth 2.9 pts</span></div>
+          <p style="font:400 13px/1.75 var(--font-body);margin:8px 0 0;text-align:justify;color:rgba(239,236,231,.8)">You sit exactly on the line in the paper's heaviest domain — one bad item flips it. Three of your misses here were scaling reflexes.</p>
+        </div>
+        <div style="padding:var(--space-3) var(--space-4);border:1px dashed var(--color-divider);border-radius:var(--radius-md)"><p class="mono" style="font-size:10px;line-height:1.8;margin:0;color:rgba(239,236,231,.5)">Deprioritised · D7 Developer productivity — 4 items, worth 0.8 pts. Real but cheap.</p></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--space-4)"><button class="btn" style="color:var(--color-accent);border-color:var(--color-accent)">Build a 17-item retry set</button><button class="btn" style="border-color:var(--color-divider);color:#efece7">Export report</button></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="3c">
+<div class="dv-olabel"><a class="dv-oid" href="#3c">3c</a>Landing, dark. The one place the theme is not a straight inversion: the light page ends on an ink colophon, so here the footer lifts to <span class="mono" style="font-size:10.5px">#242220</span> instead — a dark band on a dark ground would just disappear.</div>
+<div class="dv-card" style="width:1080px;--color-bg:#1a1918;--color-surface:#242220;--color-text:#efece7;--color-accent:#e1ad66;--color-divider:rgba(239,236,231,.18);--color-accent-700:#e1ad66;background:#1a1918;color:#efece7;border-color:rgba(239,236,231,.14)">
+  <div style="display:flex;align-items:center;gap:var(--space-6);padding:var(--space-3) var(--space-6);border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:22px;height:22px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid #efece7"></div><div style="position:absolute;inset:4px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div><span style="font:400 20px/1 var(--font-heading);letter-spacing:.04em">Mockka</span></div>
+    <nav style="display:flex;gap:var(--space-4);margin-left:var(--space-4);font:400 12.5px var(--font-body)"><span style="color:rgba(239,236,231,.82)">Exams</span><span style="color:rgba(239,236,231,.82)">Methodology</span><span style="color:rgba(239,236,231,.82)">Contribute</span></nav>
+    <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+      <div title="Theme" style="display:flex;border:1px solid var(--color-divider);border-radius:var(--radius-md);overflow:hidden"><span style="padding:4px 10px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,236,231,.5)">Paper</span><span style="padding:4px 10px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:rgba(225,173,102,.16);color:var(--color-accent)">Lamp</span></div>
+      <button class="btn" style="color:rgba(239,236,231,.8)">Sign in</button><button class="btn" style="color:var(--color-accent);border-color:var(--color-accent)">Browse exams</button>
+    </div>
+  </div>
+  <div style="padding:64px var(--space-8) 52px;display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-8);align-items:start">
+    <div>
+      <div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Original · blueprint-weighted · provenance-checked</div>
+      <h1 style="font:300 58px/1.06 var(--font-heading);letter-spacing:-.02em;margin:18px 0 20px;max-width:19em;color:#efece7">Practice papers written from the blueprint, not lifted from the exam.</h1>
+      <p style="font:400 15px/1.8 var(--font-body);text-align:justify;max-width:34em;margin:0 0 26px;color:rgba(239,236,231,.75)">Every question here was authored against a documented concept inventory, keyed rationale by rationale, and refused publication until its provenance chain resolved to a named public source. You get papers that behave like the real thing and explanations that never argue against their own answer key.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" style="color:var(--color-accent);border-color:var(--color-accent)">Start a paper</button><button class="btn" style="border-color:var(--color-divider);color:#efece7">Read the methodology</button></div>
+    </div>
+    <div style="padding:var(--space-6);border:1px solid var(--color-divider);border-radius:var(--radius-md);background:#242220">
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,236,231,.5)">Live bank</div>
+      <div style="height:1px;background:var(--color-divider);margin:var(--space-3) 0"></div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:400 13px var(--font-body);color:rgba(239,236,231,.82)">Items published</span><span class="num" style="font:400 26px/1 var(--font-heading)">240</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:400 13px var(--font-body);color:rgba(239,236,231,.82)">Concepts covered</span><span class="num" style="font:400 26px/1 var(--font-heading)">186</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:400 13px var(--font-body);color:rgba(239,236,231,.82)">Provenance chains complete</span><span class="num" style="font:400 26px/1 var(--font-heading);color:var(--color-accent)">100%</span></div>
+      </div>
+      <div style="height:1px;background:var(--color-divider);margin:var(--space-3) 0"></div>
+      <p class="mono" style="font-size:9.5px;line-height:1.7;color:rgba(239,236,231,.5);margin:0">Validator · blind solve · cross-model check · judge rubric · human sign-off</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(3,1fr)">
+    <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)"><div class="mono" style="font-size:9px;letter-spacing:.16em;color:var(--color-accent)">STAGE 01</div><h4 style="font:600 19px/1.2 var(--font-heading);margin:10px 0 8px;color:#efece7">Distil</h4><p style="font:400 12.5px/1.75 var(--font-body);text-align:justify;margin:0;color:rgba(239,236,231,.72)">Public blueprints and syllabi are read once, in a clean room, and reduced to a concept inventory. No source text is ever carried forward.</p></div>
+    <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)"><div class="mono" style="font-size:9px;letter-spacing:.16em;color:var(--color-accent)">STAGE 02</div><h4 style="font:600 19px/1.2 var(--font-heading);margin:10px 0 8px;color:#efece7">Author</h4><p style="font:400 12.5px/1.75 var(--font-body);text-align:justify;margin:0;color:rgba(239,236,231,.72)">Items are written from the inventory alone. Each distractor comes from a different numbered failure pattern, so a paper teaches you how you are wrong.</p></div>
+    <div style="padding:var(--space-6)"><div class="mono" style="font-size:9px;letter-spacing:.16em;color:var(--color-accent)">STAGE 03</div><h4 style="font:600 19px/1.2 var(--font-heading);margin:10px 0 8px;color:#efece7">Gate</h4><p style="font:400 12.5px/1.75 var(--font-body);text-align:justify;margin:0;color:rgba(239,236,231,.72)">A bank cannot publish until the validator, the blind solve, the cross-model check and a human sign-off all pass. Failures stay unpublished.</p></div>
+  </div>
+  <div style="background:#242220;padding:var(--space-6) var(--space-8);display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;justify-content:space-between;border-top:1px solid var(--color-divider)">
+    <p class="mono" style="font-size:10px;line-height:1.8;margin:0;max-width:52em;color:rgba(239,236,231,.6)">Mockka contains no live exam content from any certification programme. Items from actual sittings are NDA-protected and are rejected on contribution. Independent project, unaffiliated with any vendor or delivery provider.</p>
+    <div style="display:flex;gap:var(--space-4);align-items:center"><span class="mono" style="font-size:10px;color:var(--color-accent)">Code MIT</span><span class="mono" style="font-size:10px;color:var(--color-accent)">Content CC BY 4.0</span></div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<p class="dv-next">Try next: "add the dark mobile screens" · "make dark the default" · "the dark gold is too warm — try it cooler" · "add a theme toggle to the nav"</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">CCAR-P dashboard — the initial build's own data, redesigned, plus a reusable template</span></div>
+<p style="margin:0 0 4px;max-width:800px;font:400 13px/1.7 var(--font-body);color:rgba(32,31,29,.72)">I took the real numbers out of your build — 63 questions across 7 domains (11 · 8 · 12 · 10 · 9 · 9 · 4), a 75% threshold, the score circle, the domain grid, the mistake analysis and the study recommendations — and rebuilt them. Three critiques drove the redesign. First, the old dashboard was gated behind <em>Submit</em> and showed nothing until then; a dashboard that is blank most of the time is a report, not an instrument, so <a class="dv-oid" href="#2b">2b</a> earns its keep before submission. Second, question counts were presented as domain scores with no weight, so Domain 7 (4 questions) looked as consequential as Domain 3 (12) — every bar here carries its share of the paper. Third, "you scored 73%" is not advice: the verdict states the gap in <em>questions</em>, because two items is a study plan and seven points is a mood.</p>
+
+<div class="dv-grp">Dashboard — CCAR-P, after submission</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Full report. Verdict in words and questions, domains ruled at the 75% line and weighted by share of paper, mistakes categorised by why they were missed, study plan ordered by what it is worth.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap">
+    <div><div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5)">CCAR-P · 63 items · submitted 16 Aug 2026</div><h2 style="font:300 38px/1.1 var(--font-heading);margin:12px 0 0">Two questions short</h2></div>
+    <div style="display:flex;gap:var(--space-6);align-items:flex-end">
+      <div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">SCORE</div><div class="num" style="font:300 54px/.95 var(--font-heading)">73<span style="font-size:22px;color:rgba(32,31,29,.45)">%</span></div></div>
+      <div style="padding-bottom:8px"><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">THRESHOLD</div><div class="num" style="font:400 24px/1 var(--font-heading);color:rgba(32,31,29,.55)">75%</div></div>
+      <div style="padding-bottom:8px"><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">CORRECT</div><div class="num" style="font:400 24px/1 var(--font-heading)">46 / 63</div></div>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-accent);margin:var(--space-4) 0 0;padding-top:var(--space-3)">
+    <p style="font:400 14.5px/1.85 var(--font-body);text-align:justify;margin:0;max-width:66em">You are two correct answers from the line — close enough that where you study matters more than how long. Integration and Evaluation together hold 22 of the 63 questions and account for nine of your seventeen misses; Governance and Solution Design are already carrying you. Developer Productivity looks alarming at 50% but it is four questions, so treat it last.</p>
+  </div>
+  <div class="hr" style="margin:var(--space-6) 0"></div>
+  <div style="display:flex;align-items:baseline;justify-content:space-between"><h4 style="font:600 15px var(--font-heading);margin:0">Domain performance <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(32,31,29,.5)">bar = your score · rule = 75% threshold · figure = share of paper</span></h4><a href="#2c" class="mono" style="font-size:9px">template anatomy →</a></div>
+  <table class="table" style="width:100%;margin-top:var(--space-4)">
+    <thead><tr><th style="text-align:left">Domain</th><th style="text-align:right;width:70px">Items</th><th style="text-align:right;width:80px">Share</th><th style="text-align:right;width:70px">Score</th><th style="width:34%">Against the 75% line</th><th style="text-align:right;width:96px">To the line</th></tr></thead>
+    <tbody>
+      <tr><td>D1 Solution Design &amp; Architecture</td><td class="num" style="text-align:right">9 / 11</td><td class="num" style="text-align:right">17.5%</td><td class="num" style="text-align:right">82%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:82%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px;color:var(--color-accent-700)">clear</td></tr>
+      <tr><td>D2 Claude Models, Prompting &amp; Context</td><td class="num" style="text-align:right">5 / 8</td><td class="num" style="text-align:right">12.7%</td><td class="num" style="text-align:right">63%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:63%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px">+1 item</td></tr>
+      <tr><td>D3 Integration</td><td class="num" style="text-align:right">9 / 12</td><td class="num" style="text-align:right">19.0%</td><td class="num" style="text-align:right">75%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:75%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px">at the line</td></tr>
+      <tr><td>D4 Evaluation, Testing &amp; Optimization</td><td class="num" style="text-align:right">6 / 10</td><td class="num" style="text-align:right">15.9%</td><td class="num" style="text-align:right">60%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:60%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px">+2 items</td></tr>
+      <tr><td>D5 Governance, Safety &amp; Risk</td><td class="num" style="text-align:right">8 / 9</td><td class="num" style="text-align:right">14.3%</td><td class="num" style="text-align:right">89%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:89%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px;color:var(--color-accent-700)">clear</td></tr>
+      <tr><td>D6 Stakeholder Communication &amp; Lifecycle</td><td class="num" style="text-align:right">7 / 9</td><td class="num" style="text-align:right">14.3%</td><td class="num" style="text-align:right">78%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:78%;background:var(--color-accent)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px;color:var(--color-accent-700)">clear</td></tr>
+      <tr><td>D7 Developer Productivity &amp; Operations</td><td class="num" style="text-align:right">2 / 4</td><td class="num" style="text-align:right">6.3%</td><td class="num" style="text-align:right">50%</td><td><div style="height:7px;background:var(--color-neutral-200);position:relative"><div style="height:7px;width:50%;background:var(--color-accent-300)"></div><div style="position:absolute;left:75%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td><td class="mono num" style="text-align:right;font-size:10.5px">+1 item</td></tr>
+    </tbody>
+  </table>
+  <p class="mono" style="font-size:9px;color:rgba(32,31,29,.5);margin:var(--space-3) 0 0">Pale bar = fewer than 5 items in the domain; the percentage is too coarse to act on alone.</p>
+  <div class="hr" style="margin:var(--space-6) 0"></div>
+  <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-8)">
+    <div>
+      <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4)">Why you missed them <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(32,31,29,.5)">17 misses, categorised</span></h4>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body)"><span>Reached for a scaling or capacity knob</span><span class="mono num" style="font-size:11px">6</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:86%;background:var(--color-accent-700)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">D3 ×3 · D4 ×2 · D7 ×1</span></div>
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body)"><span>Missed a stated constraint in the scenario</span><span class="mono num" style="font-size:11px">4</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:57%;background:var(--color-accent-700)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">D1 ×2 · D4 ×2</span></div>
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body)"><span>Chose a defensible but outdated practice</span><span class="mono num" style="font-size:11px">4</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:57%;background:var(--color-accent-700)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">D2 ×3 · D6 ×1</span></div>
+        <div><div style="display:flex;justify-content:space-between;align-items:baseline;font:400 13px var(--font-body)"><span>Followed a keyword the stem pointed away from</span><span class="mono num" style="font-size:11px">3</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:43%;background:var(--color-accent-700)"></div></div><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">D3 ×2 · D6 ×1</span></div>
+      </div>
+      <div class="hr" style="margin:var(--space-4) 0"></div>
+      <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+        <div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">BY QUESTION TYPE</div><div style="font:400 12.5px/1.9 var(--font-body);margin-top:6px"><span class="num">41 / 48</span> single choice<br><span class="num">4 / 10</span> multiple response<br><span class="num">1 / 5</span> scenario matching</div></div>
+        <div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">ARCHITECTURAL RULES</div><div style="font:400 12.5px/1.9 var(--font-body);margin-top:6px"><span class="num">19 / 24</span> rules tested correctly<br><span class="num">3</span> rules missed twice or more<br><span class="num">5</span> rules untested this sitting</div></div>
+      </div>
+      <p style="font:400 13px/1.8 var(--font-body);text-align:justify;margin:var(--space-4) 0 0">Multiple-response is your real weakness: four of ten, against 85% on single choice. Those questions punish partial credit thinking — you are selecting the first defensible option and stopping.</p>
+    </div>
+    <div>
+      <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4)">What to do next <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(32,31,29,.5)">ordered by weight × gap</span></h4>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div class="card" style="padding:var(--space-4);border-radius:var(--radius-md);border-left:2px solid var(--color-accent)">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700)">First · D4 Evaluation</div><span class="mono num" style="font-size:9.5px;color:rgba(32,31,29,.5)">worth 3.2 pts</span></div>
+          <p style="font:400 13px/1.75 var(--font-body);margin:8px 0 10px;text-align:justify">Four misses, all in multiple-response. Drill the eight items that test eval-suite design and read the rationale before answering, not after.</p>
+          <div style="display:flex;gap:8px"><a class="btn btn-primary" href="#1k" style="font-size:12px;padding:5px 12px">Drill 8 items</a><a class="btn btn-ghost" href="#1o" style="font-size:12px;padding:5px 10px">See the 4 misses</a></div>
+        </div>
+        <div class="card" style="padding:var(--space-4);border-radius:var(--radius-md)">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Then · D3 Integration</div><span class="mono num" style="font-size:9.5px;color:rgba(32,31,29,.5)">worth 2.9 pts</span></div>
+          <p style="font:400 13px/1.75 var(--font-body);margin:8px 0 10px;text-align:justify">You sit exactly on the line in the paper's heaviest domain — one bad item flips it. Three of your misses here were scaling reflexes.</p>
+          <div style="display:flex;gap:8px"><a class="btn btn-secondary" href="#1k" style="font-size:12px;padding:5px 12px">Drill 12 items</a></div>
+        </div>
+        <div class="card" style="padding:var(--space-4);border-radius:var(--radius-md)">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Then · D2 Prompting &amp; context</div><span class="mono num" style="font-size:9.5px;color:rgba(32,31,29,.5)">worth 1.5 pts</span></div>
+          <p style="font:400 13px/1.75 var(--font-body);margin:8px 0 0;text-align:justify">Three misses were outdated practice rather than misunderstanding — a reading problem, not a reasoning one.</p>
+        </div>
+        <div style="padding:var(--space-3) var(--space-4);border:1px dashed var(--color-divider);border-radius:var(--radius-md)"><p class="mono" style="font-size:10px;line-height:1.8;margin:0;color:rgba(32,31,29,.55)">Deprioritised · D7 Developer productivity — 4 items, worth 0.8 pts. Real but cheap.</p></div>
+      </div>
+      <div class="hr" style="margin:var(--space-4) 0"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#1o">Build a 17-item retry set</a><button class="btn btn-secondary">Export report</button></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Before submission. The old build showed an empty panel and a Submit prompt here. This state is honest about what it can't know yet, but still gives back the two things it can: what's answered, and what's untouched.</div>
+<div class="dv-card" style="width:520px;padding:var(--space-8)">
+  <div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5)">CCAR-P · in progress</div>
+  <h3 style="font:300 30px/1.15 var(--font-heading);margin:12px 0 var(--space-3)">41 of 63 answered</h3>
+  <p style="font:400 13.5px/1.8 var(--font-body);margin:0 0 var(--space-4);text-align:justify;color:rgba(32,31,29,.78)">Scoring stays sealed until you submit — a score built on 41 answers would flatter you. What we can show is where the gaps are, so you don't finish the paper and discover you skipped a whole domain.</p>
+  <div style="display:flex;flex-direction:column;gap:11px">
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body)"><span>D1 Solution Design</span><span class="num mono" style="font-size:11px">11 / 11</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"><div style="height:5px;width:100%;background:var(--color-accent)"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body)"><span>D2 Models &amp; prompting</span><span class="num mono" style="font-size:11px">8 / 8</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"><div style="height:5px;width:100%;background:var(--color-accent)"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body)"><span>D3 Integration</span><span class="num mono" style="font-size:11px">12 / 12</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"><div style="height:5px;width:100%;background:var(--color-accent)"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body)"><span>D4 Evaluation &amp; testing</span><span class="num mono" style="font-size:11px">7 / 10</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"><div style="height:5px;width:70%;background:var(--color-accent)"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body)"><span>D5 Governance &amp; risk</span><span class="num mono" style="font-size:11px">3 / 9</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"><div style="height:5px;width:33%;background:var(--color-accent)"></div></div></div>
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body);color:rgba(32,31,29,.55)"><span>D6 Stakeholder &amp; lifecycle</span><span class="num mono" style="font-size:11px">0 / 9</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"></div></div>
+    <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body);color:rgba(32,31,29,.55)"><span>D7 Developer productivity</span><span class="num mono" style="font-size:11px">0 / 4</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px"></div></div>
+  </div>
+  <div class="hr" style="margin:var(--space-6) 0 var(--space-4)"></div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a class="btn btn-primary" href="#1k">Continue · Q42</a><button class="btn btn-secondary">Submit 41 answers</button><span class="mono" style="font-size:9px;color:rgba(32,31,29,.45);margin-left:auto">auto-saved 12:04</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="dv-grp">The template — what to hand Claude Code</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Dashboard template anatomy. Six named slots, each with the data it needs from the content package and the rule that governs it — so <a class="dv-oid" href="#2a">2a</a> can be rebuilt for any exam slug without redesigning it.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:grid;grid-template-columns:280px minmax(0,1fr);gap:var(--space-6);align-items:start">
+    <div class="wf" style="border:1px solid var(--color-divider);border-radius:var(--radius-md);padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--color-neutral-100)">
+      <div class="wfb" style="height:44px">① verdict · score · threshold · gap in items</div>
+      <div class="wfb" style="height:26px">② coaching paragraph — words, not badges</div>
+      <div class="wfb" style="height:98px">③ domain table · items · share · score · threshold rule</div>
+      <div style="display:flex;gap:8px"><div class="wfb" style="flex:1;height:74px">④ miss taxonomy<br>+ type / rules cuts</div><div class="wfb" style="flex:1;height:74px">⑤ study plan<br>weight × gap</div></div>
+      <div class="wfb" style="height:26px">⑥ actions · retry set · export</div>
+    </div>
+    <div>
+      <table class="table" style="width:100%">
+        <thead><tr><th style="text-align:left;width:34px">#</th><th style="text-align:left;width:150px">Slot</th><th style="text-align:left">Data it needs</th><th style="text-align:left">Rule it must obey</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">1</td><td>Verdict header</td><td class="mono" style="font-size:10.5px">attempt.score · manifest.threshold · attempt.correct / total</td><td>Headline states the gap in questions. Never a pass/fail badge alone.</td></tr>
+          <tr><td class="mono">2</td><td>Coaching note</td><td class="mono" style="font-size:10.5px">weakest 2 domains by weight × gap · strongest 2</td><td>Three sentences: where you stand, what is costing you, what is already safe.</td></tr>
+          <tr><td class="mono">3</td><td>Domain table</td><td class="mono" style="font-size:10.5px">manifest.domains[] · selection counts · per-domain correct</td><td>Share of paper is shown beside every score; the threshold is a rule on the bar, not a colour. Domains under 5 items get the pale bar and a coarseness note.</td></tr>
+          <tr><td class="mono">4</td><td>Miss taxonomy</td><td class="mono" style="font-size:10.5px">item.distractor_patterns[chosen] · item.type · syllabus_rule</td><td>Categories are the numbered patterns (D01–D20) restated in plain words. Counts link to the items.</td></tr>
+          <tr><td class="mono">5</td><td>Study plan</td><td class="mono" style="font-size:10.5px">domain share × (threshold − score) · bank items per concept</td><td>Ranked by points recoverable, capped at three, with one deprioritised entry named so the omission is deliberate.</td></tr>
+          <tr><td class="mono">6</td><td>Actions</td><td class="mono" style="font-size:10.5px">missed + flagged item ids</td><td>One primary action only: build the retry set. Export is secondary.</td></tr>
+        </tbody>
+      </table>
+      <div class="hr" style="margin:var(--space-4) 0"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)">
+        <div><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-bottom:8px">Responsive rules</div><p style="font:400 12.5px/1.8 var(--font-body);margin:0;text-align:justify">Under 900px the domain table drops its Share and To-the-line columns into the row's second line; slots ④ and ⑤ stack; ⑥ becomes a pinned bar. Bars never fall below 5px, figures never below 12px.</p></div>
+        <div><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-bottom:8px">Carried over from the initial build</div><p style="font:400 12.5px/1.8 var(--font-body);margin:0;text-align:justify">Kept: 7 domains and their counts, the 75% threshold, mistake analysis, study recommendations, auto-save. Dropped: the score circle (a figure reads better than a dial), the coral/slate palette, the tab bar, and the fully-gated empty state — replaced by <a class="dv-oid" href="#2b">2b</a>.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<p class="dv-next">Try next: "make <a class="dv-oid" href="#2a">2a</a> the mobile layout too" · "swap the domain table for a radar chart" · "wire <a class="dv-oid" href="#2a">2a</a> to real localStorage answers from the initial build" · "show <a class="dv-oid" href="#2a">2a</a> in the dark theme"</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Mockka — ground-up identity, wireframes and responsive screens</span></div>
+<p style="margin:0 0 4px;max-width:760px;font:400 13px/1.7 var(--font-body);color:rgba(32,31,29,.72)">Built on the Classical system, not on the CCAR-P prototype. Read as a junior designer's rationale: the old page was a coral-on-slate quiz widget — tab bar, filled buttons, badge soup — which signalled "quiz app", not "an exam compiler with a provenance chain". Classical's book grammar suits a project whose differentiator is scholarship: hairlines carry structure, gold is stroke-only, and the provenance line reads like a colophon. Two answers you left to me are locked below: the player keeps a question map (calm during a question, data one tap away) and the rationale reveal is a mode chosen at start — Practice reveals instantly, Exam holds to the end.</p>
+
+<div class="dv-grp">Identity — wordmark + geometric mark</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Aperture. Concentric squares, opened on one side — a blueprint being read through. Reduces to a single glyph at 16px.</div>
+<div class="dv-card" style="width:340px;padding:34px 30px;display:flex;flex-direction:column;gap:26px">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div style="width:38px;height:38px;position:relative;flex:none">
+      <div style="position:absolute;inset:0;border:1.5px solid var(--color-text)"></div>
+      <div style="position:absolute;inset:7px;border:1.5px solid var(--color-accent);border-right-color:transparent"></div>
+      <div style="position:absolute;left:19px;top:16px;width:12px;height:6px;background:var(--color-bg)"></div>
+    </div>
+    <div>
+      <div style="font:400 30px/1 var(--font-heading);letter-spacing:.03em;color:var(--color-text)">Mockka</div>
+      <div class="mono" style="font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-top:5px">exam compiler</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:flex-end;gap:18px;padding-top:20px;border-top:1px solid var(--color-divider)">
+    <div style="width:22px;height:22px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid var(--color-text)"></div><div style="position:absolute;inset:4px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div>
+    <div style="width:14px;height:14px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid var(--color-text)"></div><div style="position:absolute;inset:3px;background:var(--color-accent)"></div></div>
+    <div style="font:400 15px/1 var(--font-heading);letter-spacing:.04em">Mockka</div>
+    <div class="mono" style="font-size:8px;color:rgba(32,31,29,.4);margin-left:auto">38 / 22 / 14 px</div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Bank. A 3×3 concept grid with one cell struck in gold — the covered concept in an inventory. Doubles as the coverage heatmap's atom.</div>
+<div class="dv-card" style="width:340px;padding:34px 30px;display:flex;flex-direction:column;gap:26px">
+  <div style="display:flex;align-items:center;gap:15px">
+    <div style="display:grid;grid-template-columns:repeat(3,10px);grid-template-rows:repeat(3,10px);gap:3px;flex:none">
+      <div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div>
+      <div style="border:1px solid rgba(32,31,29,.35)"></div><div style="background:var(--color-accent)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div>
+      <div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div>
+    </div>
+    <div style="font:400 30px/1 var(--font-heading);letter-spacing:.03em">Mockka</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;padding-top:20px;border-top:1px solid var(--color-divider)">
+    <div style="display:grid;grid-template-columns:repeat(3,6px);grid-template-rows:repeat(3,6px);gap:2px;flex:none">
+      <div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div>
+      <div style="border:1px solid rgba(32,31,29,.35)"></div><div style="background:var(--color-accent)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div>
+      <div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div><div style="border:1px solid rgba(32,31,29,.35)"></div>
+    </div>
+    <div style="font:400 15px/1 var(--font-heading);letter-spacing:.04em">Mockka</div>
+    <div class="mono" style="font-size:8px;color:rgba(32,31,29,.4);margin-left:auto">favicon-safe</div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Colophon. No mark at all — a ruled block with the wordmark and its imprint line, set like a title page. Strongest fit for the system, weakest as an app icon.</div>
+<div class="dv-card" style="width:340px;padding:34px 30px;display:flex;flex-direction:column;gap:26px">
+  <div style="border-top:2px solid var(--color-text);border-bottom:1px solid var(--color-accent);padding:14px 0 11px">
+    <div style="font:300 34px/1 var(--font-heading);letter-spacing:.06em">MOCKKA</div>
+    <div class="mono" style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-top:8px;display:flex;justify-content:space-between"><span>original · blueprint-weighted</span><span>mmxxvi</span></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--color-divider)">
+    <div style="border-top:1.5px solid var(--color-text);border-bottom:1px solid var(--color-accent);padding:5px 0 3px"><div style="font:300 15px/1 var(--font-heading);letter-spacing:.09em">MOCKKA</div></div>
+    <div class="mono" style="font-size:8px;color:rgba(32,31,29,.4);margin-left:auto">needs 1a mark for icons</div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="dv-grp">Color identity &amp; theme</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Light — paper. Classical's ground untouched; gold is stroke, never fill. Result states borrow the ramps rather than adding a green/red pair: correct is gold, incorrect is deep ink, neutral is hairline.</div>
+<div class="dv-card" style="width:520px;padding:28px">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+    <div><div style="height:48px;background:var(--color-bg);border:1px solid var(--color-divider);border-radius:var(--radius-sm)"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(32,31,29,.6)">bg f3f2f2</div></div>
+    <div><div style="height:48px;background:var(--color-surface);border:1px solid var(--color-divider);border-radius:var(--radius-sm)"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(32,31,29,.6)">surface eae9e9</div></div>
+    <div><div style="height:48px;background:var(--color-text);border-radius:var(--radius-sm)"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(32,31,29,.6)">ink 201f1d</div></div>
+    <div><div style="height:48px;background:var(--color-accent);border-radius:var(--radius-sm)"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(32,31,29,.6)">gold b68235</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:0;margin-top:18px">
+    <div style="height:20px;background:var(--color-accent-100)"></div><div style="height:20px;background:var(--color-accent-200)"></div><div style="height:20px;background:var(--color-accent-300)"></div><div style="height:20px;background:var(--color-accent-400)"></div><div style="height:20px;background:var(--color-accent-500)"></div><div style="height:20px;background:var(--color-accent-600)"></div><div style="height:20px;background:var(--color-accent-700)"></div><div style="height:20px;background:var(--color-accent-800)"></div><div style="height:20px;background:var(--color-accent-900)"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:0;margin-top:2px">
+    <div style="height:20px;background:var(--color-neutral-100)"></div><div style="height:20px;background:var(--color-neutral-200)"></div><div style="height:20px;background:var(--color-neutral-300)"></div><div style="height:20px;background:var(--color-neutral-400)"></div><div style="height:20px;background:var(--color-neutral-500)"></div><div style="height:20px;background:var(--color-neutral-600)"></div><div style="height:20px;background:var(--color-neutral-700)"></div><div style="height:20px;background:var(--color-neutral-800)"></div><div style="height:20px;background:var(--color-neutral-900)"></div>
+  </div>
+  <div class="hr"></div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+    <span class="tag tag-outline">unanswered</span>
+    <span class="tag tag-accent">keyed correct</span>
+    <span class="tag tag-neutral">missed</span>
+    <span class="tag tag-outline" style="border-style:dashed">flagged</span>
+    <span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.45);margin-left:auto">no green/red — value, not hue</span>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Dark — lamplight. Same tokens inverted for late-night sittings: ink ground, paper text, gold one step lighter (accent-400) so it holds its 3:1 on the dark ground.</div>
+<div class="dv-card" style="width:520px;padding:28px;--color-bg:#1a1918;--color-surface:#242220;--color-text:#efece7;--color-accent:#e1ad66;--color-divider:rgba(239,236,231,.18);background:#1a1918;color:#efece7">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+    <div><div style="height:48px;background:#1a1918;border:1px solid rgba(239,236,231,.22);border-radius:2px"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(239,236,231,.55)">bg 1a1918</div></div>
+    <div><div style="height:48px;background:#242220;border:1px solid rgba(239,236,231,.16);border-radius:2px"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(239,236,231,.55)">surface 242220</div></div>
+    <div><div style="height:48px;background:#efece7;border-radius:2px"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(239,236,231,.55)">paper efece7</div></div>
+    <div><div style="height:48px;background:#e1ad66;border-radius:2px"></div><div class="mono" style="font-size:8.5px;margin-top:6px;color:rgba(239,236,231,.55)">gold e1ad66</div></div>
+  </div>
+  <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(239,236,231,.18)">
+    <div class="mono" style="font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:#e1ad66">domain 2 · resilience</div>
+    <h3 style="font:400 26px/1.15 var(--font-heading);margin:10px 0 8px;color:#efece7">A regional failover keeps the last known state.</h3>
+    <p style="margin:0;font:400 12.5px/1.75 var(--font-body);color:rgba(239,236,231,.7);max-width:44em">Body copy holds at this value; the gold stays reserved for the kicker, the rule and the chosen option's edge. Buttons are still outlines.</p>
+    <div style="display:flex;gap:10px;margin-top:16px">
+      <button class="btn btn-primary" style="color:#e1ad66;border-color:#e1ad66">Reveal rationale</button>
+      <button class="btn btn-secondary" style="color:#efece7;border-color:rgba(239,236,231,.28)">Flag</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="dv-grp">Wireframes — structure before surface</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Player, desktop. Question column at a reading measure; the map is a right rail, collapsible. Mode switch lives in the header so reveal behaviour is never ambiguous.</div>
+<div class="dv-card wf" style="width:520px;height:330px;padding:14px;display:flex;flex-direction:column;gap:10px">
+  <div style="display:flex;gap:8px;align-items:center"><div class="wfb" style="width:70px;height:22px">brand</div><div class="wfb" style="flex:1;height:22px">exam title · q 14/60 · 41:20</div><div class="wfb" style="width:88px;height:22px">mode: practice</div></div>
+  <div style="display:flex;gap:10px;flex:1;min-height:0">
+    <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+      <div class="wfb" style="height:16px;width:120px">domain kicker</div>
+      <div class="wfs" style="height:12px"></div><div class="wfs" style="height:12px;width:82%"></div>
+      <div class="wfb" style="height:34px">option A</div><div class="wfb" style="height:34px;border-color:#b68235;color:#8a6a2a">option B · chosen</div><div class="wfb" style="height:34px">option C</div><div class="wfb" style="height:34px">option D</div>
+      <div style="display:flex;gap:8px;margin-top:auto"><div class="wfb" style="width:64px;height:26px">flag</div><div class="wfb" style="flex:1;height:26px">check answer</div><div class="wfb" style="width:64px;height:26px">next</div></div>
+    </div>
+    <div style="width:132px;display:flex;flex-direction:column;gap:8px">
+      <div class="wfb" style="height:14px">question map</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:3px">
+        <div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px;background:#b68235"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div>
+        <div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px;background:#b68235"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div>
+        <div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div>
+        <div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div><div class="wfs" style="height:16px"></div>
+      </div>
+      <div class="wfb" style="height:52px;margin-top:auto">domain progress</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1g">
+<div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Player, mobile. The rail becomes a one-line progress strip; the map is a sheet. Actions pin to a bar with 48px targets.</div>
+<div class="dv-card wf" style="width:200px;height:330px;padding:12px;display:flex;flex-direction:column;gap:8px">
+  <div class="wfb" style="height:20px">q 14/60 · 41:20 · map</div>
+  <div style="display:flex;gap:2px">
+    <div class="wfs" style="height:4px;flex:1"></div><div class="wfs" style="height:4px;flex:1"></div><div class="wfs" style="height:4px;flex:1;background:#b68235"></div><div class="wfs" style="height:4px;flex:1;background:rgba(32,31,29,.05)"></div><div class="wfs" style="height:4px;flex:1;background:rgba(32,31,29,.05)"></div>
+  </div>
+  <div class="wfb" style="height:14px;width:96px">domain kicker</div>
+  <div class="wfs" style="height:10px"></div><div class="wfs" style="height:10px;width:78%"></div>
+  <div class="wfb" style="height:36px">option A</div><div class="wfb" style="height:36px;border-color:#b68235;color:#8a6a2a">option B</div><div class="wfb" style="height:36px">option C</div>
+  <div class="wfb" style="height:44px;margin-top:auto">check answer</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1h">
+<div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Dashboard. Blueprint-weighted domain bars lead; the concept grid is the second read; distractor traps close the page. Every figure links to the items behind it.</div>
+<div class="dv-card wf" style="width:520px;height:330px;padding:14px;display:flex;flex-direction:column;gap:9px">
+  <div style="display:flex;gap:8px"><div class="wfb" style="flex:1;height:40px">readiness</div><div class="wfb" style="flex:1;height:40px">attempts</div><div class="wfb" style="flex:1;height:40px">avg time / q</div></div>
+  <div class="wfb" style="height:13px;width:200px">score vs. blueprint weight</div>
+  <div style="display:flex;flex-direction:column;gap:5px">
+    <div style="display:flex;gap:6px;align-items:center"><div class="wfs" style="height:9px;width:62%;background:#b68235"></div><div class="wfs" style="height:9px;width:14%"></div></div>
+    <div style="display:flex;gap:6px;align-items:center"><div class="wfs" style="height:9px;width:44%;background:#b68235"></div><div class="wfs" style="height:9px;width:28%"></div></div>
+    <div style="display:flex;gap:6px;align-items:center"><div class="wfs" style="height:9px;width:71%;background:#b68235"></div><div class="wfs" style="height:9px;width:9%"></div></div>
+    <div style="display:flex;gap:6px;align-items:center"><div class="wfs" style="height:9px;width:33%;background:#b68235"></div><div class="wfs" style="height:9px;width:36%"></div></div>
+  </div>
+  <div style="display:flex;gap:10px;flex:1;min-height:0">
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px"><div class="wfb" style="height:13px">concept coverage</div><div style="display:grid;grid-template-columns:repeat(12,1fr);gap:2px">
+      <div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#e1ad66"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#e1ad66"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#e1ad66"></div>
+      <div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#e1ad66"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#e1ad66"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div>
+      <div class="wfs" style="height:11px;background:#e1ad66"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#b68235"></div><div class="wfs" style="height:11px;background:#e1ad66"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px"></div><div class="wfs" style="height:11px;background:#b68235"></div>
+    </div></div>
+    <div style="width:150px;display:flex;flex-direction:column;gap:6px"><div class="wfb" style="height:13px">traps that catch you</div><div class="wfs" style="height:9px;width:88%"></div><div class="wfs" style="height:9px;width:66%"></div><div class="wfs" style="height:9px;width:52%"></div><div class="wfs" style="height:9px;width:38%"></div></div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="dv-grp">Screens — desktop</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1i">
+<div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Landing. The hero states the wager in one sentence; the three-column band is the compiler pipeline, not feature bragging; the provenance strip is the proof, set as a colophon.</div>
+<div class="dv-card" style="width:1080px">
+  <div class="nav" style="display:flex;align-items:center;gap:var(--space-6);padding:var(--space-3) var(--space-6);border-bottom:1px solid var(--color-divider)">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:22px;height:22px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid var(--color-text)"></div><div style="position:absolute;inset:4px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div>
+      <span style="font:400 20px/1 var(--font-heading);letter-spacing:.04em">Mockka</span>
+    </div>
+    <nav style="display:flex;gap:var(--space-4);margin-left:var(--space-4);font:400 12.5px var(--font-body)"><a href="#1j" style="color:var(--color-text);text-decoration:none">Exams</a><a href="#1i" style="color:var(--color-text);text-decoration:none">Methodology</a><a href="#1p" style="color:var(--color-text);text-decoration:none">Contribute</a></nav>
+    <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+      <div title="Theme" style="display:flex;border:1px solid var(--color-divider);border-radius:var(--radius-md);overflow:hidden"><span style="padding:4px 10px;font:500 9px var(--font-body);letter-spacing:.12em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;background:color-mix(in srgb,var(--color-accent) 14%,transparent);color:var(--color-accent-700)">Paper</span><span style="padding:4px 10px;font:500 9px var(--font-body);letter-spacing:.12em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;color:rgba(32,31,29,.5)">Lamp</span></div>
+      <a class="btn btn-ghost" href="#1q">Sign in</a><a class="btn btn-primary" href="#1j">Browse exams</a>
+    </div>
+  </div>
+  <div style="padding:64px var(--space-8) 52px;display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-8);align-items:start">
+    <div>
+      <div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent-700)">Original · blueprint-weighted · provenance-checked</div>
+      <h1 style="font:300 58px/1.06 var(--font-heading);letter-spacing:-.02em;margin:18px 0 20px;max-width:19em">Practice papers written from the blueprint, not lifted from the exam.</h1>
+      <p style="font:400 15px/1.8 var(--font-body);text-align:justify;max-width:34em;margin:0 0 26px;color:rgba(32,31,29,.82)">Every question here was authored against a documented concept inventory, keyed rationale by rationale, and refused publication until its provenance chain resolved to a named public source. You get papers that behave like the real thing and explanations that never argue against their own answer key.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="#1j">Start a paper</a><a class="btn btn-secondary" href="#1i">Read the methodology</a></div>
+    </div>
+    <div class="card" style="padding:var(--space-6);border-radius:var(--radius-md)">
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(32,31,29,.5)">Live bank</div>
+      <div class="hr" style="margin:var(--space-3) 0"></div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:400 13px var(--font-body)">Items published</span><span class="num" style="font:400 26px/1 var(--font-heading)">240</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:400 13px var(--font-body)">Concepts covered</span><span class="num" style="font:400 26px/1 var(--font-heading)">186</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:400 13px var(--font-body)">Provenance chains complete</span><span class="num" style="font:400 26px/1 var(--font-heading);color:var(--color-accent-700)">100%</span></div>
+      </div>
+      <div class="hr" style="margin:var(--space-3) 0"></div>
+      <p class="mono" style="font-size:9.5px;line-height:1.7;color:rgba(32,31,29,.55);margin:0">Validator · blind solve · cross-model check · judge rubric · human sign-off</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(3,1fr)">
+    <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)"><div class="mono" style="font-size:9px;letter-spacing:.16em;color:var(--color-accent-700)">STAGE 01</div><h4 style="font:600 19px/1.2 var(--font-heading);margin:10px 0 8px">Distil</h4><p style="font:400 12.5px/1.75 var(--font-body);text-align:justify;margin:0;color:rgba(32,31,29,.75)">Public blueprints and syllabi are read once, in a clean room, and reduced to a concept inventory. No source text is ever carried forward.</p></div>
+    <div style="padding:var(--space-6);border-right:1px solid var(--color-divider)"><div class="mono" style="font-size:9px;letter-spacing:.16em;color:var(--color-accent-700)">STAGE 02</div><h4 style="font:600 19px/1.2 var(--font-heading);margin:10px 0 8px">Author</h4><p style="font:400 12.5px/1.75 var(--font-body);text-align:justify;margin:0;color:rgba(32,31,29,.75)">Items are written from the inventory alone. Each distractor comes from a different numbered failure pattern, so a paper teaches you how you are wrong.</p></div>
+    <div style="padding:var(--space-6)"><div class="mono" style="font-size:9px;letter-spacing:.16em;color:var(--color-accent-700)">STAGE 03</div><h4 style="font:600 19px/1.2 var(--font-heading);margin:10px 0 8px">Gate</h4><p style="font:400 12.5px/1.75 var(--font-body);text-align:justify;margin:0;color:rgba(32,31,29,.75)">A bank cannot publish until the validator, the blind solve, the cross-model check and a human sign-off all pass. Failures stay unpublished.</p></div>
+  </div>
+  <div style="background:var(--color-neutral-900);color:var(--color-neutral-100);padding:var(--space-6) var(--space-8);display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center;justify-content:space-between">
+    <p class="mono" style="font-size:10px;line-height:1.8;margin:0;max-width:52em;color:rgba(248,244,244,.72)">Mockka contains no live exam content from any certification programme. Items from actual sittings are NDA-protected and are rejected on contribution. Independent project, unaffiliated with any vendor or delivery provider.</p>
+    <div style="display:flex;gap:var(--space-4);align-items:center"><span class="mono" style="font-size:10px;color:var(--color-accent-300)">Code MIT</span><span class="mono" style="font-size:10px;color:var(--color-accent-300)">Content CC BY 4.0</span></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1j">
+<div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a>Catalog. A shelf, not a card grid — one ruled row per paper carrying weight coverage and gate status, so an unfinished bank is honest rather than hidden.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap">
+    <div><div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5)">Catalog</div><h2 style="font:300 40px/1.1 var(--font-heading);margin:12px 0 0">Papers on the shelf</h2></div>
+    <div style="display:flex;gap:8px;align-items:center"><input class="input" placeholder="Search exams, domains, concepts" style="width:260px"><button class="btn btn-secondary">Filters</button></div>
+  </div>
+  <div class="hr" style="margin:var(--space-6) 0 0"></div>
+  <div style="display:grid;grid-template-columns:1.6fr .9fr .9fr auto;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--color-divider);align-items:center">
+    <div><div style="display:flex;align-items:baseline;gap:10px"><h3 style="font:600 22px/1.2 var(--font-heading);margin:0">CCAR-P</h3><span class="tag tag-accent">published</span></div><p style="font:400 12.5px/1.7 var(--font-body);margin:6px 0 0;color:rgba(32,31,29,.7);max-width:38em">Claude Certified Architect — Professional. Six domains, 60 served items drawn from a 240-item bank.</p></div>
+    <div><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Blueprint coverage</div><div style="display:flex;gap:2px;margin-top:8px"><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent-200)"></div></div><div class="num" style="font:400 13px var(--font-body);margin-top:8px">186 / 194 concepts</div></div>
+    <div><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Gates</div><div class="mono num" style="font-size:11px;line-height:1.7;margin-top:8px;color:var(--color-accent-700)">validator ✓ solve ✓<br>judge ✓ sign-off ✓</div></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><a class="btn btn-primary" href="#1k">Start</a><a class="btn btn-ghost" href="#1n" style="font-size:12px">Dashboard</a></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr .9fr .9fr auto;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--color-divider);align-items:center;opacity:.72">
+    <div><div style="display:flex;align-items:baseline;gap:10px"><h3 style="font:600 22px/1.2 var(--font-heading);margin:0">Cloud Architect — Associate</h3><span class="tag tag-outline">authoring</span></div><p style="font:400 12.5px/1.7 var(--font-body);margin:6px 0 0;color:rgba(32,31,29,.7);max-width:38em">Concept inventory distilled; 88 of 200 items authored. Opens when the blind-solve gate passes.</p></div>
+    <div><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Blueprint coverage</div><div style="display:flex;gap:2px;margin-top:8px"><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent)"></div><div style="height:6px;flex:1;background:var(--color-accent-200)"></div><div style="height:6px;flex:1;background:var(--color-accent-200)"></div><div style="height:6px;flex:1;background:var(--color-accent-200)"></div><div style="height:6px;flex:1;background:var(--color-accent-200)"></div></div><div class="num" style="font:400 13px var(--font-body);margin-top:8px">74 / 200 concepts</div></div>
+    <div><div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Gates</div><div class="mono num" style="font-size:11px;line-height:1.7;margin-top:8px;color:rgba(32,31,29,.6)">validator ✓ solve —<br>judge — sign-off —</div></div>
+    <div><button class="btn btn-secondary" disabled>Notify me</button></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr .9fr .9fr auto;gap:var(--space-4);padding:var(--space-4) 0;align-items:center;opacity:.55">
+    <div><div style="display:flex;align-items:baseline;gap:10px"><h3 style="font:600 22px/1.2 var(--font-heading);margin:0">Your next paper</h3><span class="tag tag-outline" style="border-style:dashed">proposed</span></div><p style="font:400 12.5px/1.7 var(--font-body);margin:6px 0 0;color:rgba(32,31,29,.7);max-width:38em">Any certification with a public blueprint can be compiled. Propose one and the pipeline starts at distillation.</p></div>
+    <div></div><div></div>
+    <div><a class="btn btn-secondary" href="#1p">Propose an exam</a></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1k">
+<div class="dv-olabel"><a class="dv-oid" href="#1k">1k</a>Exam player, Practice mode. Chosen option is marked by a gold edge and a filled dot — no fill, no colour-only signal. The map rail carries state; the timer is muted until the last five minutes.</div>
+<div class="dv-card" style="width:1080px">
+  <div style="display:flex;align-items:center;gap:var(--space-4);padding:var(--space-3) var(--space-6);border-bottom:1px solid var(--color-divider)">
+    <div style="width:20px;height:20px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid var(--color-text)"></div><div style="position:absolute;inset:4px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div>
+    <span style="font:600 14px var(--font-heading);letter-spacing:.02em">CCAR-P</span>
+    <span class="mono num" style="font-size:10px;color:rgba(32,31,29,.55);letter-spacing:.1em">QUESTION 14 / 60</span>
+    <div style="flex:1;height:1px;background:var(--color-divider);position:relative"><div style="position:absolute;left:0;top:-1px;height:3px;width:23%;background:var(--color-accent)"></div></div>
+    <div class="seg" style="display:flex;border:1px solid var(--color-divider);border-radius:var(--radius-md);overflow:hidden"><span class="seg-opt" style="padding:5px 12px;font:600 11px var(--font-heading);background:color-mix(in srgb,var(--color-accent) 14%,transparent);color:var(--color-accent-700)">Practice</span><span class="seg-opt" style="padding:5px 12px;font:400 11px var(--font-heading);color:rgba(32,31,29,.55)">Exam</span></div>
+    <span class="mono num" style="font-size:11px;color:rgba(32,31,29,.55)">41:20</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 268px">
+    <div style="padding:var(--space-8) var(--space-8) var(--space-6)">
+      <div style="display:flex;align-items:baseline;gap:var(--space-3)"><span class="mono" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-700)">Domain 2 · Resilient design</span><span class="mono" style="font-size:9px;letter-spacing:.12em;color:rgba(32,31,29,.4)">single choice</span></div>
+      <h2 style="font:400 27px/1.35 var(--font-heading);margin:16px 0 var(--space-4);max-width:32em;text-wrap:pretty">A regional utility runs a real-time grid balancer whose agents hold live state in memory. During a regional failover, operators find the replacement agents answer confidently from stale positions. What should the architecture change?</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:44em">
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);cursor:pointer;align-items:flex-start" style-hover="background:color-mix(in srgb,var(--color-accent) 5%,transparent)">
+          <span style="width:15px;height:15px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:3px"></span>
+          <span style="font:400 14px/1.7 var(--font-body)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:rgba(32,31,29,.5)">A</b>Increase the failover replica count so a warm agent is always available in the secondary region.</span>
+        </label>
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-accent);border-radius:var(--radius-md);cursor:pointer;align-items:flex-start;background:color-mix(in srgb,var(--color-accent) 6%,transparent);box-shadow:inset 2px 0 0 var(--color-accent)">
+          <span style="width:15px;height:15px;border:1px solid var(--color-accent);border-radius:50%;flex:none;margin-top:3px;display:flex;align-items:center;justify-content:center"><span style="width:7px;height:7px;border-radius:50%;background:var(--color-accent)"></span></span>
+          <span style="font:400 14px/1.7 var(--font-body)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:var(--color-accent-700)">B</b>Treat live grid state as an external system of record the agent reads at decision time, rather than state the agent carries.</span>
+        </label>
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);cursor:pointer;align-items:flex-start">
+          <span style="width:15px;height:15px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:3px"></span>
+          <span style="font:400 14px/1.7 var(--font-body)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:rgba(32,31,29,.5)">C</b>Shorten the agent's context window so stale positions age out of memory faster.</span>
+        </label>
+        <label style="display:flex;gap:14px;padding:var(--space-3) var(--space-4);border:1px solid var(--color-divider);border-radius:var(--radius-md);cursor:pointer;align-items:flex-start">
+          <span style="width:15px;height:15px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:3px"></span>
+          <span style="font:400 14px/1.7 var(--font-body)"><b class="mono" style="font-weight:500;font-size:11px;margin-right:8px;color:rgba(32,31,29,.5)">D</b>Add a confidence threshold below which the agent declines to answer.</span>
+        </label>
+      </div>
+      <div class="hr" style="margin:var(--space-6) 0 var(--space-4)"></div>
+      <div style="display:flex;gap:10px;align-items:center"><button class="btn btn-secondary">Flag for review</button><span class="mono" style="font-size:9.5px;color:rgba(32,31,29,.42);margin-left:4px">⏎ check · → next · F flag</span><div style="margin-left:auto;display:flex;gap:8px"><button class="btn btn-ghost">Previous</button><a class="btn btn-primary" href="#1l">Check answer</a></div></div>
+    </div>
+    <aside style="border-left:1px solid var(--color-divider);padding:var(--space-6) var(--space-4)">
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(32,31,29,.5)">Question map</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:var(--space-3)">
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">1</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">2</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px dashed var(--color-accent);border-radius:2px">3</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">4</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">5</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">6</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">7</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">8</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">9</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">10</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px dashed var(--color-accent);border-radius:2px">11</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">12</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-accent-300);background:color-mix(in srgb,var(--color-accent) 16%,transparent);border-radius:2px">13</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;background:var(--color-text);color:var(--color-neutral-100);border:1px solid var(--color-text);border-radius:2px">14</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(32,31,29,.45)">15</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(32,31,29,.45)">16</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(32,31,29,.45)">17</span>
+        <span class="mono num" style="height:26px;display:flex;align-items:center;justify-content:center;font-size:10px;border:1px solid var(--color-divider);border-radius:2px;color:rgba(32,31,29,.45)">18</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--space-3)"><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">▪ answered</span><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">▫ unseen</span><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">⌐ flagged</span></div>
+      <div class="hr" style="margin:var(--space-4) 0"></div>
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(32,31,29,.5)">This sitting</div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:var(--space-3)">
+        <div><div style="display:flex;justify-content:space-between;font:400 11.5px var(--font-body)"><span>D1 Foundations</span><span class="num">6/6</span></div><div style="height:3px;background:var(--color-neutral-200);margin-top:4px"><div style="height:3px;width:100%;background:var(--color-accent)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 11.5px var(--font-body)"><span>D2 Resilience</span><span class="num">4/7</span></div><div style="height:3px;background:var(--color-neutral-200);margin-top:4px"><div style="height:3px;width:57%;background:var(--color-accent)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 11.5px var(--font-body)"><span>D3 Evaluation</span><span class="num">3/12</span></div><div style="height:3px;background:var(--color-neutral-200);margin-top:4px"><div style="height:3px;width:25%;background:var(--color-accent)"></div></div></div>
+      </div>
+    </aside>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1l">
+<div class="dv-olabel"><a class="dv-oid" href="#1l">1l</a>Rationale reveal. The keyed rationale never names a letter — the schema forbids it — so the layout leads with the principle, then indicts each distractor by its numbered pattern. The provenance line is the closing colophon.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-4)"><span class="mono" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-700)">Q14 · Domain 2 · concept C-007</span><span class="tag tag-accent" style="margin-left:auto">Correct</span></div>
+  <div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-8);align-items:start">
+    <div>
+      <div style="border-left:2px solid var(--color-accent);padding:2px 0 2px var(--space-4);margin-bottom:var(--space-6)">
+        <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(32,31,29,.5)">Why this holds</div>
+        <p style="font:400 15px/1.85 var(--font-body);text-align:justify;margin:10px 0 0;max-width:40em">Live operational state belongs to the system of record, not to the agent. An agent that carries state cannot distinguish "unchanged" from "unobserved", so after a failover it answers from the last position it happened to hold. Reading state at decision time makes the freshness of the answer a property of the read, not of the agent's lifetime.</p>
+      </div>
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-bottom:var(--space-3)">Why the others fail</div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:44em">
+        <div style="display:grid;grid-template-columns:22px 1fr;gap:14px;padding-bottom:var(--space-3);border-bottom:1px solid var(--color-divider)"><span class="mono" style="font-size:11px;color:rgba(32,31,29,.5)">A</span><div><p style="font:400 13.5px/1.75 var(--font-body);text-align:justify;margin:0">More warm replicas multiply the number of agents holding the same stale position. Availability was never the failing property here; freshness was.</p><span class="mono" style="font-size:9px;color:var(--color-accent-700)">pattern D19 · scales the wrong axis</span></div></div>
+        <div style="display:grid;grid-template-columns:22px 1fr;gap:14px;padding-bottom:var(--space-3);border-bottom:1px solid var(--color-divider)"><span class="mono" style="font-size:11px;color:rgba(32,31,29,.5)">C</span><div><p style="font:400 13.5px/1.75 var(--font-body);text-align:justify;margin:0">Ageing memory out removes the stale value without supplying a current one, leaving the agent to reason from an absence it cannot detect.</p><span class="mono" style="font-size:9px;color:var(--color-accent-700)">pattern D10 · treats the symptom</span></div></div>
+        <div style="display:grid;grid-template-columns:22px 1fr;gap:14px"><span class="mono" style="font-size:11px;color:rgba(32,31,29,.5)">D</span><div><p style="font:400 13.5px/1.75 var(--font-body);text-align:justify;margin:0">Confidence is calibrated against the state the agent believes it holds, so a stale-but-certain position clears any threshold you set.</p><span class="mono" style="font-size:9px;color:var(--color-accent-700)">pattern D09 · defensible but inert</span></div></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:var(--space-6);align-items:center"><a class="btn btn-primary" href="#1k">Next question</a><button class="btn btn-secondary">Add to review list</button><a class="btn btn-ghost" href="#1p" style="margin-left:auto;font-size:12px">Something wrong here?</a></div>
+    </div>
+    <aside class="card" style="padding:var(--space-4);border-radius:var(--radius-md)">
+      <div class="mono" style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(32,31,29,.5)">Provenance</div>
+      <div class="hr" style="margin:var(--space-3) 0"></div>
+      <dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font:400 11.5px/1.6 var(--font-body)">
+        <dt class="mono" style="font-size:9px;color:rgba(32,31,29,.5);letter-spacing:.08em">ORIGIN</dt><dd style="margin:0">Originally authored</dd>
+        <dt class="mono" style="font-size:9px;color:rgba(32,31,29,.5);letter-spacing:.08em">CONCEPT</dt><dd style="margin:0">C-007 · live state ownership</dd>
+        <dt class="mono" style="font-size:9px;color:rgba(32,31,29,.5);letter-spacing:.08em">RULE</dt><dd style="margin:0">Syllabus 2.04</dd>
+        <dt class="mono" style="font-size:9px;color:rgba(32,31,29,.5);letter-spacing:.08em">DERIVED</dt><dd style="margin:0"><a href="#1l">derivation/d2-resilience.md</a></dd>
+        <dt class="mono" style="font-size:9px;color:rgba(32,31,29,.5);letter-spacing:.08em">SOURCE</dt><dd style="margin:0">Public exam blueprint, v3 — classification only</dd>
+      </dl>
+      <div class="hr" style="margin:var(--space-3) 0"></div>
+      <div class="mono" style="font-size:9.5px;line-height:1.9;color:var(--color-accent-700)">validator ✓<br>blind solve ✓ (2 models)<br>judge rubric ✓ 4.6 / 5<br>human sign-off ✓ 2026-07-31</div>
+      <p class="mono" style="font-size:9px;line-height:1.7;color:rgba(32,31,29,.5);margin:var(--space-3) 0 0">No source text reproduced. Chain complete — this item is publishable.</p>
+    </aside>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1m">
+<div class="dv-olabel"><a class="dv-oid" href="#1m">1m</a>Score report. One display figure, the blueprint-weighted breakdown beside it, and a verdict written in words rather than a badge — the coaching voice you asked for.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-8);align-items:start">
+    <div>
+      <div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5)">Attempt 03 · 16 Aug 2026 · 58:41</div>
+      <div class="num" style="font:300 108px/.9 var(--font-heading);letter-spacing:-.03em;margin:16px 0 0">74<span style="font-size:44px;color:rgba(32,31,29,.45)">%</span></div>
+      <div style="border-top:1px solid var(--color-accent);margin:var(--space-4) 0 var(--space-3);padding-top:var(--space-3)"><p style="font:400 14px/1.8 var(--font-body);text-align:justify;margin:0">Comfortably above the 70% line, and up eleven points from your last sitting. Resilience and evaluation are what stand between you and a safe margin — both are heavily weighted, so an hour there is worth three anywhere else.</p></div>
+      <div style="display:flex;gap:10px;margin-top:var(--space-4)"><a class="btn btn-primary" href="#1o">Review the 16 misses</a><a class="btn btn-secondary" href="#1n">Dashboard</a></div>
+    </div>
+    <div>
+      <table class="table" style="width:100%">
+        <thead><tr><th style="text-align:left">Domain</th><th style="text-align:right">Weight</th><th style="text-align:right">Score</th><th style="width:32%">Against weight</th></tr></thead>
+        <tbody>
+          <tr><td>D1 Foundations</td><td class="num" style="text-align:right">14%</td><td class="num" style="text-align:right">92%</td><td><div style="height:6px;background:var(--color-neutral-200);position:relative"><div style="height:6px;width:92%;background:var(--color-accent)"></div><div style="position:absolute;left:14%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td></tr>
+          <tr><td>D2 Resilient design</td><td class="num" style="text-align:right">22%</td><td class="num" style="text-align:right">61%</td><td><div style="height:6px;background:var(--color-neutral-200);position:relative"><div style="height:6px;width:61%;background:var(--color-accent)"></div><div style="position:absolute;left:22%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td></tr>
+          <tr><td>D3 Evaluation</td><td class="num" style="text-align:right">20%</td><td class="num" style="text-align:right">55%</td><td><div style="height:6px;background:var(--color-neutral-200);position:relative"><div style="height:6px;width:55%;background:var(--color-accent)"></div><div style="position:absolute;left:20%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td></tr>
+          <tr><td>D4 Deployment</td><td class="num" style="text-align:right">18%</td><td class="num" style="text-align:right">83%</td><td><div style="height:6px;background:var(--color-neutral-200);position:relative"><div style="height:6px;width:83%;background:var(--color-accent)"></div><div style="position:absolute;left:18%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td></tr>
+          <tr><td>D5 Governance</td><td class="num" style="text-align:right">15%</td><td class="num" style="text-align:right">78%</td><td><div style="height:6px;background:var(--color-neutral-200);position:relative"><div style="height:6px;width:78%;background:var(--color-accent)"></div><div style="position:absolute;left:15%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td></tr>
+          <tr><td>D6 Operations</td><td class="num" style="text-align:right">11%</td><td class="num" style="text-align:right">80%</td><td><div style="height:6px;background:var(--color-neutral-200);position:relative"><div style="height:6px;width:80%;background:var(--color-accent)"></div><div style="position:absolute;left:11%;top:-3px;bottom:-3px;width:1px;background:var(--color-text)"></div></div></td></tr>
+        </tbody>
+      </table>
+      <p class="mono" style="font-size:9px;color:rgba(32,31,29,.5);margin:var(--space-3) 0 0">Vertical rule marks the domain's blueprint weight — bars left of it cost you more than their length suggests.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1n">
+<div class="dv-olabel"><a class="dv-oid" href="#1n">1n</a>Mastery dashboard. Three reads in the order you set: weighted domains, concept coverage from <span class="mono" style="font-size:10px">concepts.json</span>, then the distractor patterns that keep catching you.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-6);flex-wrap:wrap"><div><div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5)">CCAR-P · your progress</div><h2 style="font:300 36px/1.1 var(--font-heading);margin:12px 0 0">Where the margin is</h2></div><div style="display:flex;gap:var(--space-6)"><div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">READINESS</div><div class="num" style="font:400 34px/1 var(--font-heading);color:var(--color-accent-700)">74</div></div><div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">ATTEMPTS</div><div class="num" style="font:400 34px/1 var(--font-heading)">3</div></div><div><div class="mono" style="font-size:9px;letter-spacing:.14em;color:rgba(32,31,29,.5)">AVG / QUESTION</div><div class="num" style="font:400 34px/1 var(--font-heading)">58<span style="font-size:16px;color:rgba(32,31,29,.5)">s</span></div></div></div></div>
+  <div class="hr" style="margin:var(--space-6) 0"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)">
+    <div>
+      <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4)">Concept coverage <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(32,31,29,.5)">186 concepts · 41 untested</span></h4>
+      <div style="display:grid;grid-template-columns:repeat(18,1fr);gap:3px">
+        <span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span>
+        <span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span>
+        <span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span>
+        <span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:var(--space-3);align-items:center"><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">untested</span><div style="display:flex;gap:2px"><span style="width:12px;height:8px;background:var(--color-neutral-200)"></span><span style="width:12px;height:8px;background:var(--color-accent-300)"></span><span style="width:12px;height:8px;background:var(--color-accent-500)"></span><span style="width:12px;height:8px;background:var(--color-accent-700)"></span></div><span class="mono" style="font-size:8.5px;color:rgba(32,31,29,.5)">solid</span><a href="#1o" class="mono" style="font-size:9px;margin-left:auto">drill the 41 →</a></div>
+    </div>
+    <div>
+      <h4 style="font:600 15px var(--font-heading);margin:0 0 var(--space-4)">Traps that catch you <span class="mono" style="font-weight:400;font-size:9.5px;color:rgba(32,31,29,.5)">by distractor pattern</span></h4>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body);align-items:baseline"><span>D19 · scales the wrong axis</span><span class="num mono" style="font-size:11px">9 misses</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:82%;background:var(--color-accent-700)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body);align-items:baseline"><span>D10 · treats the symptom</span><span class="num mono" style="font-size:11px">7 misses</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:64%;background:var(--color-accent-700)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body);align-items:baseline"><span>D04 · plausible-but-outdated practice</span><span class="num mono" style="font-size:11px">5 misses</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:45%;background:var(--color-accent-700)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font:400 12.5px var(--font-body);align-items:baseline"><span>D09 · defensible but inert</span><span class="num mono" style="font-size:11px">3 misses</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:5px"><div style="height:5px;width:27%;background:var(--color-accent-700)"></div></div></div>
+      </div>
+      <div class="card" style="padding:var(--space-4);margin-top:var(--space-6);border-radius:var(--radius-md)"><p style="font:400 13px/1.8 var(--font-body);margin:0;text-align:justify">Two thirds of your misses come from one habit: when a scenario names a scaling knob, you reach for it. Next paper, read the failing property first and only then look at the options.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1o">
+<div class="dv-olabel"><a class="dv-oid" href="#1o">1o</a>Review mode. Flagged and missed items as an index — the one screen where density beats calm. Filter by domain, concept or trap; open any row into the reveal layout.</div>
+<div class="dv-card" style="width:1080px;padding:var(--space-8)">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)"><div><div class="mono" style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(32,31,29,.5)">Review list</div><h2 style="font:300 34px/1.1 var(--font-heading);margin:12px 0 0">19 items held back</h2></div>
+  <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag tag-accent">missed 16</span><span class="tag tag-outline" style="border-style:dashed">flagged 5</span><span class="tag tag-neutral">both 2</span><button class="btn btn-secondary" style="margin-left:6px">Drill these 19</button></div></div>
+  <table class="table" style="width:100%;margin-top:var(--space-6)">
+    <thead><tr><th style="text-align:left;width:64px">Item</th><th style="text-align:left">Question</th><th style="text-align:left;width:130px">Concept</th><th style="text-align:left;width:150px">Your trap</th><th style="width:92px">State</th></tr></thead>
+    <tbody>
+      <tr><td class="mono num">2.14</td><td><a href="#1l" style="color:var(--color-text)">A regional failover keeps the last known state…</a></td><td class="mono" style="font-size:11px">C-007</td><td class="mono" style="font-size:11px">D19</td><td style="text-align:right"><span class="tag tag-accent">missed</span></td></tr>
+      <tr><td class="mono num">3.02</td><td><a href="#1l" style="color:var(--color-text)">An eval suite passes on every rubric but ships regressions…</a></td><td class="mono" style="font-size:11px">C-041</td><td class="mono" style="font-size:11px">D10</td><td style="text-align:right"><span class="tag tag-accent">missed</span></td></tr>
+      <tr><td class="mono num">3.09</td><td><a href="#1l" style="color:var(--color-text)">Two graders disagree on the same transcript…</a></td><td class="mono" style="font-size:11px">C-044</td><td class="mono" style="font-size:11px">—</td><td style="text-align:right"><span class="tag tag-outline" style="border-style:dashed">flagged</span></td></tr>
+      <tr><td class="mono num">4.11</td><td><a href="#1l" style="color:var(--color-text)">A staged rollout hides a latency regression behind an average…</a></td><td class="mono" style="font-size:11px">C-063</td><td class="mono" style="font-size:11px">D04</td><td style="text-align:right"><span class="tag tag-neutral">both</span></td></tr>
+      <tr><td class="mono num">5.07</td><td><a href="#1l" style="color:var(--color-text)">A governance review asks who approved a tool call…</a></td><td class="mono" style="font-size:11px">C-088</td><td class="mono" style="font-size:11px">D19</td><td style="text-align:right"><span class="tag tag-accent">missed</span></td></tr>
+    </tbody>
+  </table>
+  <p class="mono" style="font-size:9.5px;color:rgba(32,31,29,.5);margin:var(--space-4) 0 0">Rows open in the reveal layout with the provenance panel attached · drilling reshuffles into a 19-item practice set</p>
+</div>
+</div>
+
+</div>
+
+<div class="dv-grp">Screens — mobile (390 × 844)</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1p">
+<div class="dv-olabel"><a class="dv-oid" href="#1p">1p</a>Player and reveal on mobile. Question map collapses to a strip plus a sheet; the action bar keeps 48px targets. Reveal stacks principle → distractors → provenance.</div>
+<div style="display:flex;gap:22px;flex-wrap:wrap">
+<div class="dv-card" style="width:390px;height:640px;display:flex;flex-direction:column">
+  <div style="padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);display:flex;align-items:center;gap:10px">
+    <div style="width:18px;height:18px;position:relative;flex:none"><div style="position:absolute;inset:0;border:1px solid var(--color-text)"></div><div style="position:absolute;inset:3px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div>
+    <span class="mono num" style="font-size:10px;letter-spacing:.08em;color:rgba(32,31,29,.6)">14 / 60</span>
+    <span class="mono num" style="font-size:11px;margin-left:auto;color:rgba(32,31,29,.6)">41:20</span>
+    <button class="btn btn-ghost" style="padding:4px 8px;font-size:11px">Map</button>
+  </div>
+  <div style="display:flex;gap:1px;padding:0 var(--space-4)">
+    <span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-accent)"></span><span style="height:3px;flex:1;background:var(--color-text)"></span><span style="height:3px;flex:1;background:var(--color-neutral-200)"></span><span style="height:3px;flex:1;background:var(--color-neutral-200)"></span><span style="height:3px;flex:1;background:var(--color-neutral-200)"></span><span style="height:3px;flex:1;background:var(--color-neutral-200)"></span>
+  </div>
+  <div style="padding:var(--space-4);overflow:hidden;flex:1">
+    <div class="mono" style="font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700)">Domain 2 · Resilient design</div>
+    <h3 style="font:400 20px/1.4 var(--font-heading);margin:12px 0 var(--space-4);text-wrap:pretty">A regional utility's grid-balancing agents hold live state in memory. After a failover they answer confidently from stale positions. What should change?</h3>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <label style="display:flex;gap:12px;padding:13px var(--space-3);border:1px solid var(--color-divider);border-radius:var(--radius-md);min-height:48px;align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:2px"></span><span style="font:400 13px/1.6 var(--font-body)"><b class="mono" style="font-weight:500;font-size:10px;margin-right:7px;color:rgba(32,31,29,.5)">A</b>Increase failover replica count.</span></label>
+      <label style="display:flex;gap:12px;padding:13px var(--space-3);border:1px solid var(--color-accent);border-radius:var(--radius-md);min-height:48px;align-items:flex-start;background:color-mix(in srgb,var(--color-accent) 6%,transparent);box-shadow:inset 2px 0 0 var(--color-accent)"><span style="width:14px;height:14px;border:1px solid var(--color-accent);border-radius:50%;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-accent)"></span></span><span style="font:400 13px/1.6 var(--font-body)"><b class="mono" style="font-weight:500;font-size:10px;margin-right:7px;color:var(--color-accent-700)">B</b>Read live state from the system of record at decision time.</span></label>
+      <label style="display:flex;gap:12px;padding:13px var(--space-3);border:1px solid var(--color-divider);border-radius:var(--radius-md);min-height:48px;align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:2px"></span><span style="font:400 13px/1.6 var(--font-body)"><b class="mono" style="font-weight:500;font-size:10px;margin-right:7px;color:rgba(32,31,29,.5)">C</b>Shorten the context window.</span></label>
+      <label style="display:flex;gap:12px;padding:13px var(--space-3);border:1px solid var(--color-divider);border-radius:var(--radius-md);min-height:48px;align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:2px"></span><span style="font:400 13px/1.6 var(--font-body)"><b class="mono" style="font-weight:500;font-size:10px;margin-right:7px;color:rgba(32,31,29,.5)">D</b>Add a confidence threshold.</span></label>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);padding:var(--space-3) var(--space-4);display:flex;gap:10px;align-items:center"><button class="btn btn-secondary" style="min-height:44px">Flag</button><button class="btn btn-primary" style="flex:1;min-height:44px">Check answer</button></div>
+</div>
+<div class="dv-card" style="width:390px;height:640px;display:flex;flex-direction:column">
+  <div style="padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);display:flex;align-items:center;gap:10px"><span class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.55)">Q14 · C-007</span><span class="tag tag-accent" style="margin-left:auto">Correct</span></div>
+  <div style="padding:var(--space-4);flex:1;overflow:hidden">
+    <div style="border-left:2px solid var(--color-accent);padding-left:var(--space-3)"><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Why this holds</div><p style="font:400 13.5px/1.8 var(--font-body);margin:8px 0 0">Live operational state belongs to the system of record. An agent carrying state cannot tell "unchanged" from "unobserved", so after a failover it answers from whatever it last held.</p></div>
+    <div class="hr" style="margin:var(--space-4) 0"></div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div style="display:grid;grid-template-columns:18px 1fr;gap:10px"><span class="mono" style="font-size:10px;color:rgba(32,31,29,.5)">A</span><div><p style="font:400 12.5px/1.7 var(--font-body);margin:0">More warm replicas multiply the same stale position.</p><span class="mono" style="font-size:8.5px;color:var(--color-accent-700)">D19 · wrong axis</span></div></div>
+      <div style="display:grid;grid-template-columns:18px 1fr;gap:10px"><span class="mono" style="font-size:10px;color:rgba(32,31,29,.5)">C</span><div><p style="font:400 12.5px/1.7 var(--font-body);margin:0">Ageing memory out removes the stale value without supplying a current one.</p><span class="mono" style="font-size:8.5px;color:var(--color-accent-700)">D10 · symptom</span></div></div>
+      <div style="display:grid;grid-template-columns:18px 1fr;gap:10px"><span class="mono" style="font-size:10px;color:rgba(32,31,29,.5)">D</span><div><p style="font:400 12.5px/1.7 var(--font-body);margin:0">A stale-but-certain position clears any threshold.</p><span class="mono" style="font-size:8.5px;color:var(--color-accent-700)">D09 · inert</span></div></div>
+    </div>
+    <div class="card" style="padding:var(--space-3);margin-top:var(--space-4);border-radius:var(--radius-md)"><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">Provenance</div><div class="mono" style="font-size:9.5px;line-height:1.9;margin-top:6px;color:var(--color-accent-700)">authored ✓ · chain complete ✓<br>judge 4.6 / 5 · sign-off 2026-07-31</div></div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);padding:var(--space-3) var(--space-4);display:flex;gap:10px"><button class="btn btn-secondary" style="min-height:44px">Review later</button><button class="btn btn-primary" style="flex:1;min-height:44px">Next</button></div>
+</div>
+<div class="dv-card" style="width:390px;height:640px;display:flex;flex-direction:column">
+  <div style="padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);display:flex;align-items:center;gap:10px"><span style="font:600 14px var(--font-heading)">Progress</span><span class="mono" style="font-size:9px;color:rgba(32,31,29,.5);margin-left:auto">CCAR-P</span></div>
+  <div style="padding:var(--space-4);flex:1">
+    <div style="display:flex;align-items:baseline;gap:12px"><div class="num" style="font:300 62px/.9 var(--font-heading);color:var(--color-accent-700)">74</div><div><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5)">readiness</div><div style="font:400 12px var(--font-body);color:rgba(32,31,29,.7)">+11 since attempt 02</div></div></div>
+    <div class="hr" style="margin:var(--space-4) 0"></div>
+    <div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-bottom:10px">Score vs. blueprint weight</div>
+    <div style="display:flex;flex-direction:column;gap:11px">
+      <div><div style="display:flex;justify-content:space-between;font:400 12px var(--font-body)"><span>D1 Foundations</span><span class="num">92%</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px;position:relative"><div style="height:5px;width:92%;background:var(--color-accent)"></div><div style="position:absolute;left:14%;top:-2px;bottom:-2px;width:1px;background:var(--color-text)"></div></div></div>
+      <div><div style="display:flex;justify-content:space-between;font:400 12px var(--font-body)"><span>D2 Resilience</span><span class="num">61%</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px;position:relative"><div style="height:5px;width:61%;background:var(--color-accent)"></div><div style="position:absolute;left:22%;top:-2px;bottom:-2px;width:1px;background:var(--color-text)"></div></div></div>
+      <div><div style="display:flex;justify-content:space-between;font:400 12px var(--font-body)"><span>D3 Evaluation</span><span class="num">55%</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px;position:relative"><div style="height:5px;width:55%;background:var(--color-accent)"></div><div style="position:absolute;left:20%;top:-2px;bottom:-2px;width:1px;background:var(--color-text)"></div></div></div>
+      <div><div style="display:flex;justify-content:space-between;font:400 12px var(--font-body)"><span>D4 Deployment</span><span class="num">83%</span></div><div style="height:5px;background:var(--color-neutral-200);margin-top:4px;position:relative"><div style="height:5px;width:83%;background:var(--color-accent)"></div><div style="position:absolute;left:18%;top:-2px;bottom:-2px;width:1px;background:var(--color-text)"></div></div></div>
+    </div>
+    <div class="hr" style="margin:var(--space-4) 0"></div>
+    <div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-bottom:10px">Concept coverage</div>
+    <div style="display:grid;grid-template-columns:repeat(14,1fr);gap:3px">
+      <span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span>
+      <span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span>
+      <span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span><span style="aspect-ratio:1;background:var(--color-neutral-200)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-500)"></span><span style="aspect-ratio:1;background:var(--color-accent-700)"></span><span style="aspect-ratio:1;background:var(--color-accent-300)"></span>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--color-divider);display:flex">
+    <div style="flex:1;padding:11px 0;text-align:center;border-right:1px solid var(--color-divider)"><span class="mono" style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,31,29,.5)">Exams</span></div>
+    <div style="flex:1;padding:11px 0;text-align:center;border-right:1px solid var(--color-divider);box-shadow:inset 0 2px 0 var(--color-accent)"><span class="mono" style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)">Progress</span></div>
+    <div style="flex:1;padding:11px 0;text-align:center"><span class="mono" style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(32,31,29,.5)">Review</span></div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="dv-grp">Entry &amp; contribution</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1q">
+<div class="dv-olabel"><a class="dv-oid" href="#1q">1q</a>Sign-in. Papers run without an account; sign-in exists only to carry progress across devices — the copy says so instead of pretending it's a gate.</div>
+<div class="dv-card" style="width:520px;padding:var(--space-8);display:flex;flex-direction:column;align-items:flex-start">
+  <div style="width:26px;height:26px;position:relative;margin-bottom:var(--space-4)"><div style="position:absolute;inset:0;border:1px solid var(--color-text)"></div><div style="position:absolute;inset:5px;border:1px solid var(--color-accent);border-right-color:transparent"></div></div>
+  <h2 style="font:300 32px/1.15 var(--font-heading);margin:0 0 10px">Keep your progress</h2>
+  <p style="font:400 13.5px/1.8 var(--font-body);margin:0 0 var(--space-6);color:rgba(32,31,29,.75);max-width:34em">Every paper is free and works without an account. Sign in only if you want attempts, review lists and concept coverage to follow you between devices.</p>
+  <div class="field" style="width:100%;margin-bottom:var(--space-3)"><label style="display:block;font:400 11.5px var(--font-body);margin-bottom:6px;color:rgba(32,31,29,.7)">Email</label><input class="input" style="width:100%" placeholder="you@example.com"></div>
+  <button class="btn btn-primary btn-block" style="width:100%">Send a sign-in link</button>
+  <div style="display:flex;align-items:center;gap:12px;width:100%;margin:var(--space-4) 0"><div style="flex:1;height:1px;background:var(--color-divider)"></div><span class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.45)">or</span><div style="flex:1;height:1px;background:var(--color-divider)"></div></div>
+  <button class="btn btn-secondary btn-block" style="width:100%">Continue with GitHub</button>
+  <a href="#1j" class="btn btn-ghost" style="margin-top:var(--space-3);padding-left:0">Skip — start a paper anonymously</a>
+  <p class="mono" style="font-size:9px;line-height:1.7;color:rgba(32,31,29,.5);margin:var(--space-6) 0 0">No product telemetry. Attempts are stored against your account only.</p>
+</div>
+</div>
+
+<div class="dv-opt" id="1r">
+<div class="dv-olabel"><a class="dv-oid" href="#1r">1r</a>Report a defect. The four contribution types from CONTRIBUTING.md are the form's spine, and the NDA attestation is a required checkbox — the rule that cannot bend, in the interface.</div>
+<div class="dv-card" style="width:520px;padding:0;overflow:hidden">
+  <div style="background:var(--color-neutral-900);color:var(--color-neutral-100);padding:var(--space-4) var(--space-6)"><div class="mono" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-300)">Item 2.14 · CCAR-P</div><h3 style="font:400 24px/1.2 var(--font-heading);margin:8px 0 0;color:var(--color-neutral-100)">Tell us what's wrong</h3></div>
+  <div style="padding:var(--space-6)">
+    <div class="mono" style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(32,31,29,.5);margin-bottom:10px">What kind of defect</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <label style="display:flex;gap:12px;padding:11px var(--space-3);border:1px solid var(--color-accent);border-radius:var(--radius-md);background:color-mix(in srgb,var(--color-accent) 6%,transparent);align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-accent);border-radius:50%;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center"><span style="width:6px;height:6px;border-radius:50%;background:var(--color-accent)"></span></span><span style="font:400 13px/1.6 var(--font-body)">A distractor is defensible enough to be a second correct answer</span></label>
+      <label style="display:flex;gap:12px;padding:11px var(--space-3);border:1px solid var(--color-divider);border-radius:var(--radius-md);align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:2px"></span><span style="font:400 13px/1.6 var(--font-body)">The keyed answer is wrong</span></label>
+      <label style="display:flex;gap:12px;padding:11px var(--space-3);border:1px solid var(--color-divider);border-radius:var(--radius-md);align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:2px"></span><span style="font:400 13px/1.6 var(--font-body)">The rationale's reasoning doesn't hold</span></label>
+      <label style="display:flex;gap:12px;padding:11px var(--space-3);border:1px solid var(--color-divider);border-radius:var(--radius-md);align-items:flex-start"><span style="width:14px;height:14px;border:1px solid var(--color-neutral-400);border-radius:50%;flex:none;margin-top:2px"></span><span style="font:400 13px/1.6 var(--font-body)">A syllabus concept no question tests</span></label>
+    </div>
+    <div class="field" style="margin-top:var(--space-4)"><label style="display:block;font:400 11.5px var(--font-body);margin-bottom:6px;color:rgba(32,31,29,.7)">Your reasoning <span class="mono" style="font-size:9px;color:rgba(32,31,29,.45)">— the part reviewers read first</span></label><textarea class="input" rows="3" style="width:100%;resize:vertical;font-family:var(--font-body)" placeholder="Option A is defensible because…"></textarea></div>
+    <label style="display:flex;gap:11px;align-items:flex-start;margin-top:var(--space-4);padding:var(--space-3);border:1px solid var(--color-accent-300);border-radius:var(--radius-md);background:var(--color-accent-100)"><span style="width:14px;height:14px;border:1px solid var(--color-accent-700);flex:none;margin-top:2px;border-radius:2px"></span><span style="font:400 12px/1.7 var(--font-body);color:var(--color-accent-900)">I attest this report contains no content from a real exam sitting. NDA-protected material is rejected and removed.</span></label>
+    <div style="display:flex;gap:10px;margin-top:var(--space-4);align-items:center"><button class="btn btn-primary">Open as a GitHub issue</button><button class="btn btn-ghost">Cancel</button><span class="mono" style="font-size:9px;color:rgba(32,31,29,.45);margin-left:auto">item id + slug attached</span></div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<p class="dv-next">Try next: "settle on <a class="dv-oid" href="#1a">1a</a> and drop the other marks" · "make <a class="dv-oid" href="#1k">1k</a> a working prototype with keyboard nav" · "show <a class="dv-oid" href="#1i">1i</a> in the dark theme" · "new directions for the dashboard"</p>
+</section>
+
+</x-dc>
+</body>
+</html>

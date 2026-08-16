@@ -1,0 +1,25 @@
+{
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, 2026-08-16. Covers round 1 (attempts 1-2) and round 2 (attempt 3): the instrument remains unavailable in both rounds.",
+  "status": "advisory_skipped",
+  "attempts": [
+    {
+      "n": 1,
+      "action": "command -v codex (login shell and interactive shell)",
+      "result": "codex not on PATH; no binary in /opt/homebrew/bin, ~/.local/bin, or npm globals"
+    },
+    {
+      "n": 2,
+      "action": "located bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex (codex-cli 0.148.0-alpha.9); ran `codex login status` then `codex exec --skip-git-repo-check -s read-only` probe",
+      "result": "login status: Not logged in; exec probe failed: 401 Unauthorized (Missing bearer or basic authentication) against api.openai.com/v1/responses after 5 reconnect attempts"
+    },
+    {
+      "n": 3,
+      "round": 2,
+      "action": "round-2 re-attempt (2026-08-16, post-rework re-eval): same bundled binary openai.chatgpt-26.810.52044 codex-cli 0.148.0-alpha.9; `codex login status` then one `codex exec --skip-git-repo-check` probe",
+      "result": "login status: Not logged in; exec probe failed: 401 Unauthorized against api.openai.com/v1/responses after 5 reconnect attempts — unchanged since round 1"
+    }
+  ],
+  "reason": "No Codex CLI authentication is available to this session and establishing it would require an interactive OAuth login / account credential outside the examiner's authority (project free-first rule: no account signups without Oliver's approval).",
+  "consequence": "Per methodology/05 #codex, a missing advisory instrument is noted, not blocking: S5 proceeds on the Claude blind solve alone, no 3-way disagreement matrix exists for this round, and the Gate 2 human sample was assembled WITHOUT the cross-model signal. Because author and examiner share Claude weights, a convergent-blind-spot miskey (both preferring the same wrong reading) cannot be excluded by this round's 67/67 blind-solve agreement; the Gate 2 deep-read sample is the compensating control and should weight adjudication-grade scrutiny accordingly.",
+  "retry_path": "If Oliver authenticates the Codex CLI (codex login, or ChatGPT sign-in in the VS Code extension exposing CLI auth), re-run the cross-solve on the same keyless form before Gate 2 sign-off; the keyless-form generation command is recorded in derivation/eval-report.md."
+}

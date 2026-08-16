@@ -29,6 +29,9 @@ supabase/.branches/
 tmp/
 coverage/
 
+# generated standalone exam exports (tools/export-exam.mjs output — regenerable)
+exports/
+
 # local session traces (ADR-0004; Opik is the lens, git is not the store for these)
 .claude/traces/
 

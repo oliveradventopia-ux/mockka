@@ -106,3 +106,15 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: when an advisory dependency is unavailable (codex CLI present but not logged in — auth needs an interactive session outside agent authority), record the failure mode and exact retry path in the eval artifact and continue — an advisory instrument is noted-when-missing, never a gate blocker; enforce: note (already the §codex contract in `project-brief.md`).
 - why: aif-c01 S5 cross-solve: `codex login status` → "Not logged in", exec probe → 401; free-first forbids agent-side signups, and blocking S5 on it would have stalled the round for a non-gating signal — the cost is real (no 3-way disagreement matrix; author and examiner share Claude weights, so Gate 2's deep read is the compensating control).
 - how to apply: on any advisory-tool failure, write the artifact with status advisory-skipped + attempts + retry command for Oliver, state the lost signal and its compensating control, and proceed; escalate only if the instrument is (or becomes) load-bearing for a gate.
+
+## L-0017 · Ship the defect-class validator check in the same wave as the bounce fix
+- date: 2026-08-16 · agent: exam-author (routed by OA0) · scope: local · tier: methodology
+- lesson: the round-1 bounce fixes landed fastest because the examiner's proposed checks (key-position-distribution, answer-length-cue) went live warn-tier mid-wave — "0 warnings" became a machine-checked exit for the rework.
+- why: a bounce report describes instances; a check describes the class. Fixing against the check re-measures automatically.
+- how to apply: when an eval finds a defect CLASS, pair the content rework lane with a ratchet lane implementing the check, in parallel.
+
+## L-0018 · Rider-regex nuance: contrast phrasing can express the claim without key-marking
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: "instead of" carries the necessary contrast inside a keyed option without tripping the since/because/rather-than rider detector; enumerated examples and doctrine clauses belong in rationale.correct.
+- why: the rider check targets self-justifying keys, not contrast per se.
+- how to apply: when a key must name what it displaces, prefer "instead of X" phrasing; move any "because…" argument to the rationale.

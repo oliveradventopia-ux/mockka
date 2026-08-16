@@ -237,6 +237,32 @@ layer exactly as in `ccar-p`. Recommended convention for S3: compute convergence
 **independent source families** (`vendor` = blueprint + samples + recap; `community` = beecham),
 not over raw source ids.
 
+The syllabus layer itself is already built: the recap's 35 rules are transcribed into
+`content/ccas/syllabus-rules.json` (original wording, module numbering 1–7 matching the course),
+so the player's weak-rule report works from S4 onward. S3 links each concept to its rule id.
+
+**Calibration is the weaker half, not coverage.** Concept coverage is genuinely good — the
+blueprint gives 30 objectives, the recap gives 35 rules with the decision frameworks behind them.
+What has no independent baseline is *calibration*: format mix beyond "MC and MR exist", difficulty
+pitch, and distractor-pattern frequency. Nine vendor-authored wrong options and one Tier-4 bank with
+a measured 2.24× answer-length cue is a thin baseline, so the manifest's pattern caps and format
+shares are house decisions and must be labelled as such.
+
+**Exit condition (methodology §single-source point 5) — what would lift this build to convergent:**
+
+1. **A second independent practice source in the Associate register.** The specific gap is items
+   that name the product surfaces and model tiers; `claudecertificationguide.com` has announced an
+   Associate track ("Coming soon") and already runs a free Architect one, so it is the most likely
+   candidate to re-screen. Watch it.
+2. **A vendor practice product.** Anthropic retired its practice exam in the move to Pearson; if one
+   returns it is an immediate Tier-1 re-calibration and the guide's sample-question section is where
+   the change would first show.
+3. **The prep-course lesson bodies** (`anthropic-prep-course`, pending extraction). This does not
+   create convergence — same vendor — but it would substantially deepen D1/D3/D5 vocabulary and is
+   the cheapest available improvement.
+4. **A CCAO-F dump corpus appearing publicly.** Not a source, an obligation: if one appears, re-run
+   screen step 2 against `beecham-ccao-f` before this package publishes.
+
 ## Clean-room statement
 
 This session (research-manager, S1–S2) read the registered sources. Everything in this directory is

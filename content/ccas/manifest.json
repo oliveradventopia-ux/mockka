@@ -1,81 +1,172 @@
 {
-  "$comment": "Exam manifest skeleton scaffolded by tools/new-exam.mjs. Every TODO is Gate 1 material — fill from the OFFICIAL blueprint page (one domains[] entry per blueprint domain, weights summing to 100; pattern_caps from the Artefact A frequency analysis), then run `pnpm validate ccas`. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "$comment": "S1/S2 state (research-manager). Blueprint facts are filled from the OFFICIAL exam guide (v1.0, July 2026) and evidenced in derivation/sources.md; remaining TODOs are S3 work (bank sizing, per-domain bank_items, format_mix shares, pattern caps, themes, intro copy). NOTE: slug is `ccas` from intake but the vendor's exam code is CCAO-F — see the naming note at the top of derivation/sources.md. Authoritative schema: methodology/schema/manifest.schema.json.",
   "slug": "ccas",
-  "title": "Claude Certified Associate - Foundations (CCAS)",
-  "vendor": "TODO",
+  "title": "Claude Certified Associate – Foundations (CCAO-F)",
+  "vendor": "Anthropic",
   "status": "draft",
   "version": "0.1.0",
-  "blueprint_version": "TODO",
+  "blueprint_version": "1.0 (July 2026)",
   "source_checked_date": "2026-08-16",
   "exam": {
-    "item_count": "TODO",
-    "time_limit_minutes": "TODO",
-    "pass_threshold_pct": "TODO"
+    "item_count": 60,
+    "time_limit_minutes": 120,
+    "pass_threshold_pct": 72
   },
   "bank": {
-    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+    "item_count": "TODO S3 — target 81 (60 x 1.35, exact); see derivation/sources.md"
   },
   "domains": [
     {
       "id": "d1",
-      "title": "TODO",
-      "weight_pct": "TODO",
-      "exam_items": "TODO",
-      "bank_items": "TODO",
+      "title": "Prompting and Task Execution",
+      "weight_pct": 14,
+      "exam_items": 8,
+      "bank_items": "TODO S3",
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Output Evaluation and Validation",
+      "weight_pct": 21,
+      "exam_items": 13,
+      "bank_items": "TODO S3",
+      "format_mix": {
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Product and Model Selection",
+      "weight_pct": 12,
+      "exam_items": 7,
+      "bank_items": "TODO S3",
+      "format_mix": {
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Workflow Integration and Solution Design",
+      "weight_pct": 16,
+      "exam_items": 10,
+      "bank_items": "TODO S3",
+      "format_mix": {
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Configuration and Knowledge Management",
+      "weight_pct": 12,
+      "exam_items": 7,
+      "bank_items": "TODO S3",
+      "format_mix": {
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d6",
+      "title": "Governance, Risk, and Responsible Use",
+      "weight_pct": 15,
+      "exam_items": 9,
+      "bank_items": "TODO S3",
+      "format_mix": {
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d7",
+      "title": "Troubleshooting and Optimization",
+      "weight_pct": 10,
+      "exam_items": 6,
+      "bank_items": "TODO S3",
+      "format_mix": {
+        "single_choice": "TODO S3",
+        "multiple_response": "TODO S3",
+        "scenario_matching": 0
       }
     }
   ],
   "formats": {
     "single_choice": {
-      "options": "TODO"
+      "options": 4
     },
     "multiple_response": {
-      "options": "TODO",
-      "select_count": [
-        "TODO"
-      ]
+      "options": "TODO S3 — no measured calibration exists; the guide states only that each item declares its own select-count. Adopt the house default and record it as a house decision",
+      "select_count": ["TODO S3"]
     },
     "scenario_matching": {
-      "min_options": "TODO",
-      "min_scenarios": "TODO",
+      "min_options": "TODO S3 — UNUSED for this exam (no matching item form on the real CCAO-F); the block is schema-required, so leave the house defaults and author zero items",
+      "min_scenarios": "TODO S3 — unused, see above",
       "require_option_reuse": true
     }
   },
   "style": {
-    "locale": "TODO e.g. en-GB",
+    "locale": "en-US",
     "emoji": false
   },
   "validation": {
     "pattern_caps": {},
-    "near_duplicate_jaccard": "TODO"
+    "near_duplicate_jaccard": "TODO S3 — pattern caps recommended in derivation/source-beecham-ccao-f.md (D19 0.10, D04 0.08, E02 0.15, D06 0.15). Leave key_letter_max_share and answer_length_ratio_* at validator defaults: vendor sample items sit at a median keyed/longest-distractor ratio of 1.11, so the 1.25 warn / 1.50 error tiers are correct for this exam and must not be raised"
   },
   "layers": {
-    "syllabus_rules": false
+    "syllabus_rules": true
   },
   "intro": {
-    "about": "TODO — executive summary: what the certification validates, domains covered",
-    "audience": "TODO — who the certification is for, as roles",
+    "about": "TODO S3 — executive summary: what the certification validates, domains covered",
+    "audience": "TODO S3 — who the certification is for, as roles (guide §3: operations, marketing, project management, education, communications, general knowledge work; explicitly NOT developers building against APIs or designing agentic systems)",
     "materials": [
       {
-        "title": "TODO — e.g. \"<N>-question practice exam\"",
-        "description": "TODO — what THIS mock provides: bank size, formats, dashboard, review depth"
+        "title": "TODO S3 — e.g. \"60-question practice exam\"",
+        "description": "TODO S3 — what THIS mock provides: bank size, formats, dashboard, review depth, weak-rule report off the syllabus_rules layer"
       }
     ],
     "official_resources": [
       {
-        "label": "TODO — official cert portal / exam guide link text",
-        "url": "https://TODO"
+        "label": "Claude Certification Program — certifications and exam guides",
+        "url": "https://anthropic-partners.skilljar.com/page/partner-certifications"
       }
     ],
-    "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
+    "disclaimer": "TODO S3 — independence + provenance + NDA notice; align with derivation/sources.md's NDA statement (cite, don't contradict)"
   },
-  "format_coverage": "TODO — disclosure per methodology/06-provenance-publishing.md#format-coverage",
+  "format_coverage": "The real CCAO-F exam uses two item types: multiple choice (one correct response) and multiple response, where each item states how many responses to select (exam guide v1.0 §5). There are no ordering items and no matching items. This mock's format profile is therefore a subset, not an approximation: multiple choice maps exactly to single_choice, and multiple response maps exactly to multiple_response with all-or-nothing scoring. Mockka's third format, scenario_matching, is deliberately UNUSED here (every domain sets it to 0) because authoring it would rehearse an interaction the real exam does not contain. Two disclosures follow from the guide rather than from the format set. First, the guide does not publish the option count or the select-count for multiple-response items, so those values are a Mockka house decision, not a measured property of the exam. Second, the real exam reports a scaled score from 100 to 1,000 with a cut score of 720, set by a formal standard-setting study; that is not a percent-correct figure, and this mock's percentage pass line is an approximation of it, not the vendor's threshold.",
   "provenance": {
-    "sources": [],
-    "nda_statement": "TODO — see methodology/06-provenance-publishing.md#readme-template"
+    "sources": [
+      {
+        "id": "ccas-blueprint",
+        "type": "public_blueprint",
+        "citation": "Official Claude Certified Associate – Foundations Exam Guide, version 1.0, effective July 2026, exam code CCAO-F, published by Anthropic, PBC on the Anthropic Partner Academy certifications page. Public document, read in full 2026-08-16. Supplies the domain list and weights, the 30 objectives, item formats, item count, time limit, scoring model, audience and scope-boundary statements, and canonical vocabulary. Distilled to derivation/source-ccas-blueprint.md."
+      },
+      {
+        "id": "ccas-guide-samples",
+        "type": "public_practice_set",
+        "citation": "The three sample questions published in section 8 of the official CCAO-F exam guide, authored by Anthropic and stated by the guide to be illustrative and not drawn from the live item bank. Used under the clean-room rule for analytical classification only — per-item concept mapping, distractor-pattern labels and style calibration in derivation/source-ccas-guide-samples.md. No text reused."
+      },
+      {
+        "id": "ccas-course-recap",
+        "type": "own_course_notes",
+        "citation": "Oliver Lau's recap notes from the official Claude Certified Associate – Foundations Prep Course (Anthropic Partner Academy), covering the key-takeaway layer of all seven content modules plus the course closing — 35 rules. Own notes from a legitimately accessed official course; proof-of-access basis on file. Supplies the decision frameworks and canonical study vocabulary, and backs the syllabus_rules layer. Distilled to derivation/source-ccas-recap.md."
+      },
+      {
+        "id": "beecham-ccao-f",
+        "type": "public_practice_set",
+        "citation": "Ray Beecham, CCAO-F practice bank (56 items) in the MIT-licensed GitHub repository raybeecham/claude-certified-associate-foundations. Screened for dump lineage at S1 (four screens, all clear — see derivation/sources.md). Used under the clean-room rule for analytical classification only — per-item concept mapping, distractor-pattern frequencies and style measurements in derivation/source-beecham-ccao-f.md. No text reused."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the CCAO-F item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and proprietary to Anthropic and is protected by the confidentiality and non-disclosure agreement every candidate accepts before the exam begins. Sources whose items trace back to candidate recall of a live sitting were screened out at S1. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Anthropic, PBC or Pearson VUE. \"Anthropic\", \"Claude\" and \"Claude Certified Associate – Foundations\" are trademarks of Anthropic, PBC."
   }
 }

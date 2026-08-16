@@ -125,8 +125,11 @@ Other style facts read off the vendor items:
   reasoning", "organizational policy restricts sharing regulated personal data"). The item is
   good-vs-best on a stated constraint, never a trick.
 - **Superlative framing**: "what is the *most appropriate* action", "which choice *best* fits".
-- **US spelling** in the source. Mockka's house locale is en-GB (`style.locale`); this is a
-  deliberate divergence from the vendor, not an oversight — record it so Gate 2 does not re-litigate it.
+- **US spelling** throughout the vendor's material ("anonymize", "Optimization", "organizational" —
+  the last two inside domain titles that must be reproduced exactly). `style.locale` is therefore set
+  to **en-US**, following the `aif-c01` precedent of matching the vendor rather than the house
+  default. `ccar-p` uses en-GB; the divergence between the two Anthropic packages is deliberate and
+  recorded here so Gate 2 does not re-litigate it.
 
 ## Concepts this source tests that other sources do not spell out
 

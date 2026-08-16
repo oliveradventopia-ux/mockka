@@ -15,6 +15,7 @@ export type QuestionFormat =
 export type ProvenanceSourceType =
   | 'public_blueprint'
   | 'public_syllabus'
+  | 'public_practice_set'
   | 'own_course_notes'
   | 'own_distillation'
   | 'licensed_import';

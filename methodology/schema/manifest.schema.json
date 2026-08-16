@@ -143,8 +143,8 @@
               "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
               "type": {
                 "enum": [
-                  "public_blueprint", "public_syllabus", "own_course_notes",
-                  "own_distillation", "licensed_import"
+                  "public_blueprint", "public_syllabus", "public_practice_set",
+                  "own_course_notes", "own_distillation", "licensed_import"
                 ]
               },
               "citation": { "type": "string", "minLength": 1 },

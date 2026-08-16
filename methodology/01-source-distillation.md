@@ -66,7 +66,7 @@ source:
 | Field | Meaning |
 |---|---|
 | `id` | short stable key, e.g. `src-blueprint`, `src-purcell` — derivation docs are named `source-<id>.md` |
-| `type` | `public_blueprint` \| `public_syllabus` \| `own_course_notes` \| `own_distillation` \| `licensed_import` |
+| `type` | `public_blueprint` \| `public_syllabus` \| `public_practice_set` \| `own_course_notes` \| `own_distillation` \| `licensed_import` — `public_practice_set` is a freely published practice set (Tier 4) used classification-only under the clean-room rule |
 | `author` | person or organisation |
 | `url` | canonical URL (or "offline — proof of access on file" for course notes) |
 | `date_accessed` | ISO date the source was read/checked |
@@ -231,7 +231,10 @@ layer.
 The one lane where item *text* legitimately enters from outside (plan Decision 12):
 
 - **Commercial-compatible allowlist only:** CC BY, MIT, Apache-2.0, or an explicit author
-  agreement. The allowlist is enforced by the validator, not by discipline. NC/SA-licensed content
+  agreement — recorded in the manifest with the exact machine literals the validator's
+  `LICENSE_ALLOWLIST` accepts: `CC-BY-4.0`, `MIT`, `Apache-2.0`, `author-agreement`
+  ("CC BY 4.0" is the licence's display name; `CC-BY-4.0` is the manifest literal). The
+  allowlist is enforced by the validator, not by discipline. NC/SA-licensed content
   stays **classification-only** (Artefact-A input), so future paid tiers stay clean.
 - **Registry entry required:** source type `licensed_import`, licence named, attribution
   requirements recorded exactly as the licence demands; attribution renders wherever the licence

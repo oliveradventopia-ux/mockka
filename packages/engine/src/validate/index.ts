@@ -34,6 +34,7 @@ const FORMATS = ['single_choice', 'multiple_response', 'scenario_matching'] as c
 const SOURCE_TYPES = [
   'public_blueprint',
   'public_syllabus',
+  'public_practice_set',
   'own_course_notes',
   'own_distillation',
   'licensed_import',

@@ -64,3 +64,27 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: when the blueprint IS the syllabus (no course-recap layer), practice-only share drops to ~0% (aif-c01) vs CCAR-P's 30%, and convergence measures corroboration of the blueprint rather than union breadth.
 - why: every concept necessarily traces to the blueprint source, so composition percentages shift meaning between exam shapes.
 - how to apply: read the source-composition table against layers.syllabus_rules; candidate explanatory line for methodology/02. (Stellar-promotion candidate from the same run — "check schemas' designed-in slots like sources[].items before proposing schema changes" — held for Oliver's named promotion confirmation per the loop gate.)
+
+## L-0010 · Budget pattern caps per batch, not against the final bank
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: pattern-frequency-caps computes over the partial bank, so a cap can trip at a domain boundary while fine at full size (D03 hit exactly 10% after d1's 39 slots).
+- why: incremental batch commits run the validator on a shrinking denominator.
+- how to apply: allocate cap budgets per batch during S4 (candidate rule for methodology/03 §procedure).
+
+## L-0011 · number-drift binds unit suffixes — match the stem's exact figure+unit pairing
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: "9,000 tokens" in a rationale vs "9,000 words" in the stem fails number-drift; never attach a suffix-list unit to a rationale figure unless the stem carries that exact pairing.
+- why: the check normalizes figure+unit as one token.
+- how to apply: quote numbers with their stem units verbatim in rationales.
+
+## L-0012 · Structural rules can retire calibration caps
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: one-pattern-per-item made all-E01 service items unrepresentable — E01 landed at 3.6% vs the sources' 21% with the 30% cap never binding.
+- why: a composition rule can dominate a frequency cap; the cap becomes a guard, not a constraint.
+- how to apply: when adding caps at S3, note which existing structural rules already bound the behavior.
+
+## L-0013 · Scenario-matching stems need domain-embedded framing
+- date: 2026-08-16 · agent: exam-author · scope: local · tier: methodology
+- lesson: a shared "For each scenario…" template across SM items risks the near-duplicate Jaccard check.
+- why: SM stems share boilerplate by construction.
+- how to apply: write each SM stem with domain-specific framing before the scenario list.

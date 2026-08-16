@@ -1,16 +1,16 @@
 {
-  "$comment": "Exam manifest skeleton scaffolded by tools/new-exam.mjs. Every TODO is Gate 1 material — fill from the OFFICIAL blueprint page (one domains[] entry per blueprint domain, weights summing to 100; pattern_caps from the Artefact A frequency analysis), then run `pnpm validate gcp-cdl`. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "$comment": "S1-S2 pass (research-manager) has filled the fields that are hard vendor facts: vendor, blueprint_version, source_checked_date, exam.item_count, exam.time_limit_minutes, the six domains with their weights, format_coverage, and provenance. Remaining TODOs are S3's contract (bank sizing, per-domain exam/bank counts and format mix, format shapes, style, pattern caps, intro) plus two that have no vendor answer at all. (1) exam.item_count: Google publishes a RANGE, 50-60 questions, not a scalar; 60 is the published upper bound, chosen so a Mockka form is never shorter than a real sitting — reversible presentation choice, listed as a Gate 1 confirmation item. (2) exam.pass_threshold_pct: Google publishes NO passing score for any Google Cloud certification (pass/fail results only, per the Google Cloud Certification FAQ, checked 2026-08-16) — Mockka must choose one and record it as a Mockka standard, not a vendor fact. Evidence and citations: derivation/sources.md. Authoritative schema: methodology/schema/manifest.schema.json.",
   "slug": "gcp-cdl",
   "title": "Google Cloud Digital Leader",
-  "vendor": "TODO",
+  "vendor": "Google Cloud",
   "status": "draft",
   "version": "0.1.0",
-  "blueprint_version": "TODO",
+  "blueprint_version": "2026-08-12",
   "source_checked_date": "2026-08-16",
   "exam": {
-    "item_count": "TODO",
-    "time_limit_minutes": "TODO",
-    "pass_threshold_pct": "TODO"
+    "item_count": 60,
+    "time_limit_minutes": 90,
+    "pass_threshold_pct": "TODO — Google publishes no passing score (pass/fail only). Mockka standard, Gate 1 decision."
   },
   "bank": {
     "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
@@ -18,8 +18,68 @@
   "domains": [
     {
       "id": "d1",
-      "title": "TODO",
-      "weight_pct": "TODO",
+      "title": "Digital Transformation with Google Cloud",
+      "weight_pct": 18,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Exploring Data Transformation with Google Cloud",
+      "weight_pct": 18,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Innovating with Google Cloud Artificial Intelligence",
+      "weight_pct": 18,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Modernize Infrastructure and Applications with Google Cloud",
+      "weight_pct": 18,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Trust and Security with Google Cloud",
+      "weight_pct": 18,
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    },
+    {
+      "id": "d6",
+      "title": "Scaling with Google Cloud Operations",
+      "weight_pct": 10,
       "exam_items": "TODO",
       "bank_items": "TODO",
       "format_mix": {
@@ -73,9 +133,30 @@
     ],
     "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
   },
-  "format_coverage": "TODO — disclosure per methodology/06-provenance-publishing.md#format-coverage",
+  "format_coverage": "The real Cloud Digital Leader exam uses two item formats: multiple choice and multiple select. Mockka supports three, so this exam's format profile is a SUBSET of what the player can render rather than an excess — nothing about the real paper goes unrepresented. Multiple choice maps exactly to single_choice; multiple select maps to multiple_response, and Mockka scores it all-or-nothing. Mockka's third format, scenario_matching, has NO counterpart on the real exam and is set to zero throughout: you will not be asked to map scenarios onto a reused option set when you sit the real paper. Two limits you should know about. First, Google publishes no per-format count, and its own free sample-question set is 100% single choice — so the real share of multiple-select items is unpublished and unobserved, and the split used here is Mockka's judgment, not a vendor figure. Second, the real exam is delivered as 50-60 questions in 90 minutes and Google does not publish a passing score (results are pass/fail only); this mock is built to the published upper bound of 60 items and applies a Mockka-chosen pass threshold, which is a study aid and not a prediction of the real result.",
   "provenance": {
-    "sources": [],
-    "nda_statement": "TODO — see methodology/06-provenance-publishing.md#readme-template"
+    "sources": [
+      {
+        "id": "gcp-cdl-guide",
+        "type": "public_blueprint",
+        "citation": "Official Cloud Digital Leader certification exam guide, published by Google LLC (services.google.com), page footer 'launched on August 12, 2026'. Public document, read in full 2026-08-16. Supplies the section list and weights, the 14 objectives and 69 consideration bullets, canonical product and concept vocabulary, and the named-risk register. Distilled to derivation/source-gcp-cdl-guide.md."
+      },
+      {
+        "id": "gcp-cdl-cert-page",
+        "type": "public_blueprint",
+        "citation": "Official Cloud Digital Leader certification page, Google LLC (cloud.google.com/learn/certification/cloud-digital-leader), read 2026-08-16. Public page; supplies the logistics the exam guide omits — 50-60 questions, 90 minutes, 99 USD, five languages, online- or onsite-proctored, no prerequisites, three-year validity, and the two item formats. Logistics only; no concepts, so no derivation document."
+      },
+      {
+        "id": "gcp-cdl-samples",
+        "type": "public_practice_set",
+        "citation": "Google LLC, official free Cloud Digital Leader sample questions (29 items), published as a public Google Form linked from the certification page; read 2026-08-16 without an account or a submission. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-gcp-cdl-samples.md. No text reused, and no answer key was available or taken."
+      },
+      {
+        "id": "whizlabs-cdl-free",
+        "type": "public_practice_set",
+        "citation": "Aditi Malhotra (Whizlabs Software Pvt. Ltd.), 30 free Cloud Digital Leader practice questions published on the Whizlabs blog, 2021-11-24; no paywall or login. Dump-screened against the ExamTopics CDL corpus at ids 1, 9 and 13 with no correspondence (evidence in derivation/sources.md). Used under the clean-room rule for analytical classification only — derivation/source-whizlabs-cdl-free.md. No text reused. Predates the 2026-08-12 blueprint: 14 of its 30 items are off-blueprint and are excluded from the inventory."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the Cloud Digital Leader item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential under the Google Cloud certification exam terms a candidate accepts before testing; sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Google LLC or its testing partners. \"Google Cloud\", \"Google\" and \"Cloud Digital Leader\" are trademarks of Google LLC."
   }
 }

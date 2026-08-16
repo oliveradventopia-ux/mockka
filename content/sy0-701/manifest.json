@@ -1,81 +1,118 @@
 {
-  "$comment": "Exam manifest skeleton scaffolded by tools/new-exam.mjs. Every TODO is Gate 1 material — fill from the OFFICIAL blueprint page (one domains[] entry per blueprint domain, weights summing to 100; pattern_caps from the Artefact A frequency analysis), then run `pnpm validate sy0-701`. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "$comment": "S1/S2 facts only (research-manager, 2026-08-16). Blueprint facts come from CompTIA Security+ SY0-701 Exam Objectives Version 5.0 (derivation/source-comptia-sy0701-objectives.md), corroborated against the live comptia.org certification page read the same day; provenance and screening are in derivation/sources.md. exam.item_count 90 is the vendor's stated MAXIMUM ('Maximum of 90'), so per-domain exam_items are weight_pct x 90 with largest-remainder rounding (11/20/16/25/18 = 90). formats reflect observed item shapes across both practice sources (single choice = 4 options everywhere; the only multiple-response items observed are select-2-of-5) - S3 may widen select_count, since CompTIA also uses select-three stems. STILL TODO, deliberately left for S3/Gate 1: (a) exam.pass_threshold_pct - the real exam is scaled 100-900 with a 750 pass mark and CompTIA publishes no raw-to-scaled conversion, so no raw percentage is defensible without an Oliver decision (disclose-vs-proxy); (b) bank.item_count and per-domain bank_items - methodology target is ~1.35x (122 items), but Artefact B splits the blueprint into 237 concepts, so the 'one item per concept' rule cannot hold and S3 must pick merge / grow / weight-proportional-selection (recommendation in the Artefact B closing section); (c) per-domain format_mix; (d) validation.pattern_caps and near_duplicate_jaccard, from the Artefact A frequency tables (E01 capped, E04 acronym-decoy-expansion proposed as a banned construction, E05 raised); (e) the intro block. Blueprint-version caveat: a 'Version 6.0' of the same objectives document is referenced by third-party document-sharing sites but no authoritative copy was obtainable without CompTIA's lead-capture form - see the [UNVERIFIED] note in derivation/sources.md. Authoritative schema: methodology/schema/manifest.schema.json.",
   "slug": "sy0-701",
   "title": "CompTIA Security+ (SY0-701)",
-  "vendor": "TODO",
+  "vendor": "CompTIA",
   "status": "draft",
   "version": "0.1.0",
-  "blueprint_version": "TODO",
+  "blueprint_version": "5.0 (© 2023)",
   "source_checked_date": "2026-08-16",
   "exam": {
-    "item_count": "TODO",
-    "time_limit_minutes": "TODO",
-    "pass_threshold_pct": "TODO"
+    "item_count": 90,
+    "time_limit_minutes": 90,
+    "pass_threshold_pct": "TODO — real exam is scaled 100–900, pass mark 750; no public raw conversion. S3/Gate 1 decision: disclose the scaled mark or set a documented raw proxy"
   },
   "bank": {
-    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+    "item_count": "TODO — S3. Methodology target ~1.35x exam size = 122; reconcile against the 237-concept inventory (see manifest $comment)"
   },
   "domains": [
     {
       "id": "d1",
-      "title": "TODO",
-      "weight_pct": "TODO",
-      "exam_items": "TODO",
-      "bank_items": "TODO",
-      "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
-        "scenario_matching": "TODO"
-      }
+      "title": "General Security Concepts",
+      "weight_pct": 12,
+      "exam_items": 11,
+      "bank_items": "TODO — S3",
+      "format_mix": { "single_choice": "TODO — S3", "multiple_response": "TODO — S3", "scenario_matching": "TODO — S3" }
+    },
+    {
+      "id": "d2",
+      "title": "Threats, Vulnerabilities, and Mitigations",
+      "weight_pct": 22,
+      "exam_items": 20,
+      "bank_items": "TODO — S3",
+      "format_mix": { "single_choice": "TODO — S3", "multiple_response": "TODO — S3", "scenario_matching": "TODO — S3" }
+    },
+    {
+      "id": "d3",
+      "title": "Security Architecture",
+      "weight_pct": 18,
+      "exam_items": 16,
+      "bank_items": "TODO — S3",
+      "format_mix": { "single_choice": "TODO — S3", "multiple_response": "TODO — S3", "scenario_matching": "TODO — S3" }
+    },
+    {
+      "id": "d4",
+      "title": "Security Operations",
+      "weight_pct": 28,
+      "exam_items": 25,
+      "bank_items": "TODO — S3",
+      "format_mix": { "single_choice": "TODO — S3", "multiple_response": "TODO — S3", "scenario_matching": "TODO — S3" }
+    },
+    {
+      "id": "d5",
+      "title": "Security Program Management and Oversight",
+      "weight_pct": 20,
+      "exam_items": 18,
+      "bank_items": "TODO — S3",
+      "format_mix": { "single_choice": "TODO — S3", "multiple_response": "TODO — S3", "scenario_matching": "TODO — S3" }
     }
   ],
   "formats": {
-    "single_choice": {
-      "options": "TODO"
-    },
-    "multiple_response": {
-      "options": "TODO",
-      "select_count": [
-        "TODO"
-      ]
-    },
-    "scenario_matching": {
-      "min_options": "TODO",
-      "min_scenarios": "TODO",
-      "require_option_reuse": true
-    }
+    "single_choice": { "options": 4 },
+    "multiple_response": { "options": 5, "select_count": [2] },
+    "scenario_matching": { "min_options": 3, "min_scenarios": 3, "require_option_reuse": true }
   },
   "style": {
-    "locale": "TODO e.g. en-GB",
+    "locale": "en-US",
     "emoji": false
   },
   "validation": {
     "pattern_caps": {},
-    "near_duplicate_jaccard": "TODO"
+    "near_duplicate_jaccard": "TODO — S3 (ccar-p/aif-c01 precedent is 0.4)"
   },
   "layers": {
     "syllabus_rules": false
   },
   "intro": {
-    "about": "TODO — executive summary: what the certification validates, domains covered",
-    "audience": "TODO — who the certification is for, as roles",
+    "about": "TODO — S3/S6: executive summary of what the certification validates and the five domains covered",
+    "audience": "TODO — S3/S6: who the certification is for, as roles; the objectives document targets a minimum of 2 years of IT administration experience with a security focus",
     "materials": [
       {
-        "title": "TODO — e.g. \"<N>-question practice exam\"",
-        "description": "TODO — what THIS mock provides: bank size, formats, dashboard, review depth"
+        "title": "TODO — S3/S6",
+        "description": "TODO — S3/S6: bank size, formats, dashboard, review depth"
       }
     ],
     "official_resources": [
       {
-        "label": "TODO — official cert portal / exam guide link text",
-        "url": "https://TODO"
+        "label": "CompTIA Security+ — official certification page",
+        "url": "https://www.comptia.org/en-us/certifications/security/"
+      },
+      {
+        "label": "CompTIA Security+ (V7) practice questions — free, no sign-in",
+        "url": "https://www.comptia.org/en-us/certifications/security/practice-questions/"
       }
     ],
-    "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
+    "disclaimer": "TODO — S3/S6: independence + provenance + NDA notice, aligned with the package README and derivation/sources.md"
   },
-  "format_coverage": "TODO — disclosure per methodology/06-provenance-publishing.md#format-coverage",
+  "format_coverage": "The real SY0-701 exam uses a maximum of 90 questions in 90 minutes and two item classes: multiple-choice (including select-two and select-three stems) and performance-based questions (PBQs). CompTIA publishes no count or weighting for PBQs. This mock supports three formats and approximates as follows. Multiple choice with one correct response maps exactly to single_choice, four options, as in every item of CompTIA's own free practice set. Select-two multiple choice maps exactly to multiple_response, all-or-nothing; select-three stems are supported by the same format if S3 widens select_count. Performance-based questions are NOT supported: a PBQ is an interactive simulation — building a firewall ruleset, dragging controls onto a topology, classifying log lines, completing a matrix — and Mockka has no simulation surface. PBQ reasoning is approximated two ways here, both of them demonstrated by CompTIA's own sample set: as scenario_matching where the task is genuinely a mapping (investigative questions onto log sources; situations onto agreement types), and as scenario-led single_choice over candidate configurations where the task has one defensible outcome — CompTIA's own sampler does exactly this with an access-list item whose four options are the same rule with source/destination and permit/deny transformed. The consequence, stated plainly: the underlying judgment is rehearsed, the interaction is not. You will meet the drag-and-drop and configuration-editor interfaces for the first time in the real exam, and the real paper's PBQs typically carry more marks per item than a multiple-choice question. Note also that the vendor states 'maximum of 90' questions, so a live form may be shorter than this mock.",
   "provenance": {
-    "sources": [],
-    "nda_statement": "TODO — see methodology/06-provenance-publishing.md#readme-template"
+    "sources": [
+      {
+        "id": "comptia-sy0701-objectives",
+        "type": "public_blueprint",
+        "citation": "CompTIA Security+ SY0-701 Certification Exam: Exam Objectives, Version 5.0, © 2023 CompTIA, Inc. Published by the certification owner; read in full 2026-08-16 and verified byte-identical across CompTIA's own Contentful CDN and an authorised partner mirror (sha256 64e5a75d…, 21 pages). Supplies the domain list and weights, the 28 objectives and their enumerated vocabulary, test details and the acronym list. Distilled to derivation/source-comptia-sy0701-objectives.md."
+      },
+      {
+        "id": "comptia-practice-v7",
+        "type": "public_practice_set",
+        "citation": "CompTIA, Inc., official free 'Security+ Practice Test (V7)' — 10 questions with answer key, published at comptia.org with no paywall and no sign-in, accessed 2026-08-16. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-comptia-practice-v7.md. No text reused."
+      },
+      {
+        "id": "jealarue-exam90",
+        "type": "public_practice_set",
+        "citation": "jealarue, SY0-701 practice-exam data in the public GitHub repository jealarue/exam90 (145 items), accessed 2026-08-16. No licence file — author retains copyright; registered on a public-publication basis and flagged for Gate 1. Dump-screened against the official sample corpus and the recalled-item corpus with the evidence recorded. Used under the clean-room rule for analytical classification only — derivation/source-jealarue-exam90.md. No text reused."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the SY0-701 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the CompTIA Candidate Agreement; CompTIA's own Authorized Materials Use Policy states that candidates who prepare with unauthorised 'brain dump' material have their certifications revoked and are suspended from future testing. Sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to CompTIA, Inc. or Pearson VUE. \"CompTIA\", \"Security+\" and \"CompTIA Security+\" are trademarks of CompTIA, Inc."
   }
 }

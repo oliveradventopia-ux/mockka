@@ -38,3 +38,6 @@ exports/
 
 # agent working memory (session-local; durable facts belong in project files)
 .claude/agent-memory/
+
+# local exam source vault (own_course_notes etc.) — sources never enter the repo, only derivation artefacts
+Mock Exam Library/

@@ -1,0 +1,53 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The original exam content in this repository — the per-exam content packages under
+`content/` (question banks, concept inventories, derivation documentation) and the
+authoring methodology under `methodology/` — is licensed under CC BY 4.0, except
+where a content package's source registry records a different inbound license for
+imported items (see "Licensed imports" below).
+
+You are free to:
+
+  Share  — copy and redistribute the material in any medium or format
+  Adapt  — remix, transform, and build upon the material for any purpose,
+           even commercially
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your
+  use.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+---
+
+LICENSED IMPORTS
+
+Individual bank items whose provenance is recorded as `licensed_import` carry the
+license and attribution recorded in their exam's source registry
+(`content/<exam-slug>/derivation/sources.md`). Only commercial-compatible licenses
+(CC BY, MIT, Apache-2.0, or an explicit author agreement) are accepted into
+published banks; the validator enforces this allowlist.
+
+---
+
+WHAT THIS LICENCE DOES NOT COVER
+
+This licence applies only to the original and licensed material in this
+repository. It does not grant rights over, and this repository does not contain:
+
+  - Live exam content from any certification programme. Exam items are
+    confidential and protected by each programme's certification NDA. Mockka
+    banks are originally authored from documented concept distillation, or
+    imported under a recorded compatible license — never harvested.
+  - Any certification vendor's trademarks, course materials, or programme
+    branding.
+  - Any exam delivery provider's trademarks or materials.
+
+See README.md and each exam package's derivation documentation for the full
+provenance and NDA statements.
+
+Source code (everything under `apps/`, `packages/`, and `tools/`) is licensed
+separately under the MIT License — see LICENSE.

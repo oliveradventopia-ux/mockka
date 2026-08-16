@@ -31,3 +31,7 @@ standard relative links (see [`NON-GOALS.md`](NON-GOALS.md)). Every doc-bearing 
 ## Learning & decisions
 - [`../learning/LEARNING.md`](../learning/LEARNING.md) — Stellar's global-generic learnings (the canonical store)
 - [`NON-GOALS.md`](NON-GOALS.md) — dropped: semantic graph / vault app (with the future gate)
+
+## Journal (`docs/journal/`)
+- [`../docs/journal/2026-08-16-p0-scaffold.md`](../docs/journal/2026-08-16-p0-scaffold.md) — P0 scaffold + review-gate fix-wave journal
+- [`../docs/journal/decisions/README.md`](../docs/journal/decisions/README.md) — the decisions seam: product ADRs live at repo `docs/decisions/` deliberately

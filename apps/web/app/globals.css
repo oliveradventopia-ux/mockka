@@ -1,42 +1,77 @@
-/* Mockka player — Classical design system.
+/* Mockka player — Classical design system, two themes.
 
-   Tokens ported from Design/design_handoff_mockka/design/classical-styles.css
-   (the handoff's single source of truth). The book grammar: hairlines carry
-   structure, gold is stroke-only, result states are value-based — no green/red
-   anywhere. Deliberately light-only in P0; the "lamplight" dark theme is a P1
-   seam.
+   Tokens ported from Design/design_handoff_mockka (README "Theming" table +
+   classical-styles.css). Two named themes ship: Paper (light) and Lamplight
+   (dark). Same token names in both — only values change; nothing in a
+   component branches on theme (if a component needs an if-dark, a token is
+   missing). Per Oliver's decision, LAMPLIGHT IS THE DEFAULT: this :root
+   carries the dark values, and [data-theme="light"] on <html> overrides with
+   Paper. No system-preference dependency — dark unless the user chose light
+   (blocking inline script in the layout head applies the stored choice
+   before first paint). Print always uses Paper: the @media print block at
+   the end of this file mirrors the light block token-for-token, and the
+   contrast gate asserts the two never drift.
 
-   Colour tokens are contrast-tested. apps/web/test/contrast.test.ts computes
-   the WCAG ratio for every declared foreground/background pair and fails the
-   run under 4.5:1, so these values cannot regress silently. Measured ratios
-   are noted inline.
+   Colour tokens are contrast-tested IN BOTH THEMES.
+   apps/web/test/contrast.test.ts resolves each pair per theme (compositing
+   the rgba tokens over their ground) and fails the run under 4.5:1.
+   Measured ratios are noted inline as light / dark.
 
-   Two golds by design, mirroring the prototype's own choices: --color-accent
-   #b68235 is the brand stroke at ~3.02:1 on the ground — legal for rules,
-   borders, bar fills and focus outlines, never for text. Anything that reads
-   as text in gold uses --color-accent-700, which passes AA everywhere it is
-   used. Muted text is a solid ink (neutral-700) rather than the prototype's
-   50–55% opacities, which measure below AA; hierarchy is carried by size,
-   tracking and case instead.
+   Gold is a stroke in both themes: --color-accent is #b68235 (3.02:1) on
+   Paper and steps UP to accent-400 #e1ad66 (8.67:1) on Lamplight so it
+   holds against ink. Text-sized gold goes through --color-accent-text,
+   which darkens on light and must NOT darken on dark (handoff "three
+   places dark is not a straight inversion", #3). Deviations from the
+   handoff's raw table, kept from the light build and applied symmetrically:
+   muted text is AA-solid on Paper (#605d5d, not the .55 alpha, which
+   measures 3.61:1 there), and --color-text-subtle (.42 alpha ≈ 2.9 / 3.6:1)
+   is pinned to the muted values — hierarchy comes from size and case.
 
-   The trailing alias block keeps tools/export-exam.mjs working: the exporter
-   extracts this :root at build time and its component CSS consumes the legacy
-   token names. Aliases resolve to Classical values, so the export carries the
-   same palette with zero hardcoded brand values. */
+   The legacy alias block keeps tools/export-exam.mjs working: the exporter
+   extracts this :root plus the light block at build time, so the standalone
+   export carries both themes with zero hardcoded brand values. */
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* — Classical core — */
-  --color-bg: #f3f2f2;         /* page ground */
-  --color-surface: #eae9e9;    /* mats, subtle fills */
-  --color-text: #201f1d;       /* 14.74:1 on bg, 13.59:1 on surface */
-  --color-accent: #b68235;     /* gold — 3.02:1 on bg: stroke, rules, marks ONLY */
-  --color-accent-2: #ac803e;   /* mono palette: same role as accent, unused as a second hue */
-  --color-divider: color-mix(in srgb, #201f1d 16%, transparent);
+  /* — themed core (Lamplight values; Paper overrides below) — */
+  --color-bg: #1a1918;         /* page ground */
+  --color-surface: #242220;    /* raised fills, mats, the lifted footer band */
+  --color-text: #efece7;       /* 14.74:1 light / 14.90:1 dark on bg */
+  --color-accent: #e1ad66;     /* gold stroke: accent-400 in dark to hold on ink */
+  --color-divider: rgba(239, 236, 231, 0.18);
 
-  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
-     same step of any role matches the others in visual value. */
+  /* — themed text roles — */
+  --color-text-muted: rgba(239, 236, 231, 0.55);  /* 5.83:1 light / 5.31:1 dark */
+  --color-text-body: rgba(239, 236, 231, 0.75);   /* long-form prose: 8.83:1 / 8.80:1 */
+  --color-text-subtle: rgba(239, 236, 231, 0.55); /* = muted; the spec .42 fails AA */
+  --color-accent-text: #e1ad66;  /* gold at paragraph size: 5.97:1 light / 8.67:1 dark */
+
+  /* — themed surfaces, edges, fills — */
+  --color-track: rgba(239, 236, 231, 0.14);       /* every bar track */
+  --color-accent-tint: rgba(225, 173, 102, 0.09);        /* selected-option fill */
+  --color-accent-tint-strong: rgba(225, 173, 102, 0.16); /* active segment, answered cell */
+  --color-accent-edge: rgba(225, 173, 102, 0.45); /* answered-cell border, faded bar */
+  --color-rule-marker: #efece7;  /* the 1px threshold rule drawn over a gold bar */
+  --color-accent-fill: #2a2317;  /* accent-100 cannot fill on ink; dark tint of the hue */
+  --color-accent-fill-text: #ffe3bf; /* 13.00:1 light / 12.58:1 dark on accent-fill */
+  --color-neutral-fill: #2d2b2b;      /* graded-miss fill, neutral tags */
+  --color-neutral-fill-text: #d7d3d3; /* 9.26:1 light / 9.48:1 dark on neutral-fill */
+  --color-neutral-edge: #7d7979;      /* graded-miss border */
+  --color-inverse-bg: #242220;   /* colophon band — LIFTS to surface on dark, not n900 */
+  --color-inverse-text: rgba(239, 236, 231, 0.85);  /* 12.89:1 / 10.07:1 */
+  --color-inverse-muted: rgba(239, 236, 231, 0.65); /* 9.48:1 / 6.48:1 */
+  --color-inverse-accent: #e1ad66;
+
+  /* — unthemed: the high-contrast ink chip (skip link, graded-miss map cell)
+       is self-contained fill+text and passes on both grounds — */
+  --color-ink-chip-bg: #444141;   /* = neutral-800 */
+  --color-ink-chip-text: #f8f4f4; /* = neutral-100: 9.26:1 on the chip */
+
+  /* — shared ramps (identical in both themes; generated in OKLCH on one
+       lightness scale). Dark reaches for the light steps where light
+       reached for the dark ones — that is what the semantic tokens above
+       encode; components use the semantics, not the steps. — */
   --color-neutral-100: #f8f4f4;
   --color-neutral-200: #eae7e7;
   --color-neutral-300: #d7d3d3;
@@ -52,28 +87,20 @@
   --color-accent-300: #facb8d;
   --color-accent-400: #e1ad66;
   --color-accent-500: #c28d41;
-  --color-accent-600: #a06f24;  /* 3.92:1 on bg — still decorative-only */
-  --color-accent-700: #7d5411;  /* the gold TEXT tone: 5.97:1 bg, 5.50:1 surface, 6.10:1 accent-100 */
-  --color-accent-800: #5a3b0a;  /* 9.30:1 on accent-100 */
-  --color-accent-900: #3a270d;  /* 13.00:1 on accent-100 */
-
-  /* — text roles (solid hexes so the contrast gate can parse them) — */
-  --color-text-muted: #605d5d;  /* = neutral-700: 5.83:1 on bg, 5.38:1 on surface, 5.21:1 on the 12% hover tint */
-  --color-ink-chip-bg: #444141; /* = neutral-800 */
-  --color-ink-chip-text: #f8f4f4; /* = neutral-100: 9.26:1 on ink-chip-bg */
-  --color-colophon-bg: #2d2b2b;   /* = neutral-900 */
-  --color-colophon-text: #f8f4f4; /* 12.89:1 on colophon-bg */
-  --color-colophon-muted: #d7d3d3; /* = neutral-300: 9.48:1 on colophon-bg */
+  --color-accent-600: #a06f24;
+  --color-accent-700: #7d5411;
+  --color-accent-800: #5a3b0a;
+  --color-accent-900: #3a270d;
 
   /* — typography (serif fallbacks are load-bearing: the self-contained
        exports open with no network, so the stacks must degrade to installed
        serifs, not sans) — */
   --font-heading: var(--font-cormorant, "Cormorant Garamond"), "Iowan Old Style", Georgia, "Times New Roman", serif;
-  --font-heading-weight: 600; /* semibold is the interface headings' ceiling; display goes lighter */
+  --font-heading-weight: 600;
   --font-body: var(--font-lora, "Lora"), Georgia, "Times New Roman", serif;
   --font-mono: var(--font-jbmono, "JetBrains Mono"), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  /* — spacing (density 1.15x), radius, elevation — */
+  /* — spacing (density 1.15x), radius — */
   --space-1: 4.6px;
   --space-2: 9.2px;
   --space-3: 13.8px;
@@ -85,55 +112,94 @@
   --radius-md: 4px;
   --radius-lg: 7px;
 
-  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
-  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
-  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+  /* — elevation: shadows read as smudges on ink, so Lamplight replaces them
+       with the hairline borders every surface already carries — */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 
-  /* — interaction tints (translucent gold over the ground; text on any of
-       these keeps AA: ink 13.17:1 and muted 5.21:1 on the strongest hover
-       tint, accent-700 4.80:1 on the 22% pressed tint) — */
+  /* — interaction tints by mix (they follow the themed accent) — */
   --tint-accent-05: color-mix(in srgb, var(--color-accent) 5%, transparent);
-  --tint-accent-06: color-mix(in srgb, var(--color-accent) 6%, transparent);
   --tint-accent-10: color-mix(in srgb, var(--color-accent) 10%, transparent);
   --tint-accent-12: color-mix(in srgb, var(--color-accent) 12%, transparent);
-  --tint-accent-14: color-mix(in srgb, var(--color-accent) 14%, transparent);
-  --tint-accent-16: color-mix(in srgb, var(--color-accent) 16%, transparent);
   --tint-accent-22: color-mix(in srgb, var(--color-accent) 22%, transparent);
   --tint-ink-07: color-mix(in srgb, var(--color-text) 7%, transparent);
 
   --maxw: 1080px;
 
   /* — legacy aliases consumed by tools/export-exam.mjs component CSS.
-       Values resolve to Classical tokens; the contrast gate resolves the
-       var chains and tests every text-bearing pairing. — */
+       Shared refs flip with the theme; the ones whose ROLE flips (text on a
+       gold fill is white on Paper, ink on Lamplight) carry per-theme values
+       here and in the light block. — */
   --bg: var(--color-bg);
-  --surface: var(--color-bg);          /* Classical cards are ground + border, not white */
+  --surface: var(--color-bg);          /* Classical cards are ground + border */
   --surface-2: var(--color-surface);
   --text: var(--color-text);
   --text-muted: var(--color-text-muted);
   --border: var(--color-divider);
-  --accent: var(--color-accent);       /* decorative only, as before */
-  --primary: var(--color-accent-700);  /* text-safe gold: 5.97:1 on bg */
-  --primary-hover: var(--color-accent-800);
-  --on-primary: #ffffff;               /* 6.67:1 on primary, 10.17:1 on primary-hover */
-  --primary-soft: var(--tint-accent-12);
-  --ok: var(--color-accent-700);       /* value-based result states: gold, not green */
-  --ok-bg: var(--color-accent-100);    /* ok on ok-bg 6.10:1 */
-  --on-ok: #ffffff;                    /* 6.67:1 on a solid ok fill */
-  --bad: var(--color-neutral-800);     /* ink, not red: 8.22:1 on bad-bg */
-  --bad-bg: var(--color-neutral-200);
-  --on-bad: #ffffff;                   /* 10.10:1 on a solid bad fill */
-  --warn: var(--color-accent-800);     /* 9.30:1 on warn-bg */
-  --warn-bg: var(--color-accent-100);
-  --info: var(--color-neutral-700);    /* 5.97:1 on info-bg */
-  --info-bg: var(--color-neutral-100);
-  --header-bg: var(--color-colophon-bg);
-  --header-text: var(--color-colophon-text);
-  --header-muted: var(--color-colophon-muted);
+  --accent: var(--color-accent);       /* decorative only */
+  --primary: var(--color-accent-text);
+  --primary-hover: #facb8d;            /* hover lightens on dark: 11.70:1 under ink */
+  --on-primary: #1a1918;               /* ink on gold: 8.67:1 */
+  --primary-soft: var(--color-accent-tint-strong);
+  --ok: var(--color-accent-text);      /* value-based result states: gold, not green */
+  --ok-bg: var(--color-accent-fill);   /* ok on ok-bg 6.10:1 light / 7.68:1 dark */
+  --on-ok: #1a1918;
+  --bad: var(--color-neutral-fill-text); /* ink family, not red */
+  --bad-bg: var(--color-neutral-fill);
+  --on-bad: #1a1918;                   /* on a solid bad fill: 11.83:1 dark */
+  --warn: #facb8d;                     /* 10.35:1 on warn-bg dark */
+  --warn-bg: var(--color-accent-fill);
+  --info: #d7d3d3;                     /* 10.68:1 on info-bg dark */
+  --info-bg: var(--color-surface);
+  --header-bg: var(--color-inverse-bg);
+  --header-text: var(--color-inverse-text);
+  --header-muted: var(--color-inverse-muted);
   --radius: var(--radius-lg);
   --shadow: var(--shadow-sm);
   --font: var(--font-body);
   --mono: var(--font-mono);
+}
+
+/* Paper (light) — the override theme. Applied when the blocking script in
+   the layout head finds a stored 'light' choice. Keep this block in sync
+   with the @media print copy at the end of the file — the contrast gate
+   asserts they are identical. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201f1d;
+  --color-accent: #b68235;
+  --color-divider: rgba(32, 31, 29, 0.16);
+  --color-text-muted: #605d5d;
+  --color-text-body: rgba(32, 31, 29, 0.82);
+  --color-text-subtle: #605d5d;
+  --color-accent-text: #7d5411;
+  --color-track: #eae7e7;
+  --color-accent-tint: color-mix(in srgb, var(--color-accent) 6%, transparent);
+  --color-accent-tint-strong: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  --color-accent-edge: #facb8d;
+  --color-rule-marker: #201f1d;
+  --color-accent-fill: #fff3e4;
+  --color-accent-fill-text: #3a270d;
+  --color-neutral-fill: #f8f4f4;
+  --color-neutral-fill-text: #444141;
+  --color-neutral-edge: #9b9797;
+  --color-inverse-bg: #2d2b2b;
+  --color-inverse-text: #f8f4f4;
+  --color-inverse-muted: #d7d3d3;
+  --color-inverse-accent: #facb8d;
+  --shadow-sm: 0 1px 2px rgba(45, 43, 43, 0.14);
+  --shadow-md: 0 3px 10px rgba(45, 43, 43, 0.16);
+  --shadow-lg: 0 12px 32px rgba(45, 43, 43, 0.22);
+  --primary-hover: #5a3b0a;
+  --on-primary: #ffffff;
+  --on-ok: #ffffff;
+  --on-bad: #ffffff;
+  --warn: #5a3b0a;
+  --info: #605d5d;
+  --info-bg: #f8f4f4;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -161,14 +227,14 @@ h1, h2, h3, h4 {
   text-wrap: pretty;
 }
 p { margin: 0 0 0.9em; }
-a { color: var(--color-accent-700); text-underline-offset: 3px; }
+a { color: var(--color-accent-text); text-underline-offset: 3px; }
 
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
-::selection { background: var(--tint-accent-22); }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 
 /* Mono kickers and labels — the system's signature metadata voice. */
 .mono-label,
@@ -181,7 +247,7 @@ a { color: var(--color-accent-700); text-underline-offset: 3px; }
   color: var(--color-text-muted);
   margin: 0 0 var(--space-1);
 }
-.kicker { color: var(--color-accent-700); }
+.kicker { color: var(--color-accent-text); }
 .num { font-variant-numeric: tabular-nums; }
 
 /* ------------------------------------------------------------ aperture mark */
@@ -221,7 +287,7 @@ header.site {
 .site-nav {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: var(--space-3) 20px;
+  padding: var(--space-2) 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -247,7 +313,7 @@ header.site {
 .brand p {
   margin: 6px 0 0;
   font-size: 12.5px;
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
   max-width: 70ch;
 }
 
@@ -259,7 +325,7 @@ header.site {
   color: var(--color-text-muted);
   text-decoration: none;
 }
-.back-link:hover { color: var(--color-accent-700); text-decoration: underline; }
+.back-link:hover { color: var(--color-accent-text); text-decoration: underline; }
 
 .header-tools {
   display: flex;
@@ -279,9 +345,9 @@ header.site {
   white-space: nowrap;
 }
 .pill.saved {
-  background: var(--color-accent-100);
-  border-color: var(--color-accent-300);
-  color: var(--color-accent-800);
+  background: var(--color-accent-fill);
+  border-color: var(--color-accent-edge);
+  color: var(--color-accent-fill-text);
 }
 
 /* Muted until it matters; the last five minutes go gold. Never flashes. */
@@ -298,14 +364,57 @@ header.site {
 .timer[data-state="warn"] { font-weight: 500; }
 .timer[data-state="critical"] {
   font-weight: 500;
-  color: var(--color-accent-700);
-  border-color: var(--color-accent-300);
+  color: var(--color-accent-text);
+  border-color: var(--color-accent-edge);
+}
+
+/* ------------------------------------------------------------ theme toggle */
+
+/* The one switch idiom (matches the mode segmented control). Radiogroup;
+   labels Paper / Lamp; shows the resolved theme. 44px targets kept — the
+   handoff's 4px padding is below the house floor. */
+.theme-toggle {
+  display: inline-flex;
+  margin-left: auto;
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.theme-opt {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 12px;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.theme-opt + .theme-opt { border-left: 1px solid var(--color-divider); }
+.theme-opt[data-active="true"] {
+  background: var(--color-accent-tint-strong);
+  color: var(--color-accent-text);
+}
+.theme-opt input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.theme-opt:has(input:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
 }
 
 /* ---------------------------------------------------------------- buttons */
 
-/* Gold is never a large fill: buttons are outlines, labels in accent-700
-   (the prototype's own AA choice for paragraph-size gold). */
+/* Gold is never a large fill: buttons are outlines, labels in the themed
+   gold text tone (darkened on Paper, native accent on Lamplight). */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -320,7 +429,7 @@ header.site {
   border-radius: var(--radius-md);
   border: 1px solid var(--color-accent);
   background: transparent;
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s ease, border-color 0.15s ease;
@@ -338,7 +447,7 @@ header.site {
 
 .btn-ghost {
   border-color: transparent;
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
 }
 .btn-ghost:hover { background: var(--tint-accent-10); }
 .btn-ghost:active { background: var(--tint-accent-22); }
@@ -372,13 +481,14 @@ main { max-width: var(--maxw); margin: 26px auto; padding: 0 20px; }
   white-space: nowrap;
 }
 .tab[aria-selected="true"] {
-  color: var(--color-accent-700);
-  background: var(--tint-accent-14);
+  color: var(--color-accent-text);
+  background: var(--color-accent-tint-strong);
   border-bottom-color: var(--color-accent);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
-/* Cards are bordered and unfilled — elevation is a whisper. */
+/* Cards are bordered and unfilled — elevation is a whisper (and none at all
+   on Lamplight, where shadows read as smudges). */
 .card {
   background: transparent;
   border: 1px solid var(--color-divider);
@@ -395,13 +505,13 @@ main { max-width: var(--maxw); margin: 26px auto; padding: 0 20px; }
 }
 .card h3 { font-size: 17px; margin: 22px 0 8px; }
 
-.lede { color: var(--color-text-muted); font-size: 14px; }
+.lede { color: var(--color-text-body); font-size: 14px; }
 
-/* Notices: guidance rides the gold tint, information stays neutral. No red. */
+/* Notices: guidance rides the gold fill, information stays neutral. No red. */
 .notice {
-  border: 1px solid var(--color-accent-300);
-  background: var(--color-accent-100);
-  color: var(--color-accent-900);
+  border: 1px solid var(--color-accent-edge);
+  background: var(--color-accent-fill);
+  color: var(--color-accent-fill-text);
   padding: 14px 16px;
   border-radius: var(--radius-md);
   font-size: 13px;
@@ -410,7 +520,7 @@ main { max-width: var(--maxw); margin: 26px auto; padding: 0 20px; }
 }
 .notice.info {
   border-color: var(--color-divider);
-  background: var(--color-neutral-100);
+  background: var(--info-bg);
   color: var(--color-text);
 }
 .notice strong {
@@ -470,7 +580,7 @@ ul.overview em { color: var(--color-text-muted); font-style: italic; }
 .catalog-lede {
   font-size: 13px;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
   max-width: 34em;
   margin: 0;
 }
@@ -489,12 +599,12 @@ ul.overview em { color: var(--color-text-muted); font-style: italic; }
 .shelf-title { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .shelf-title h2 { font-size: 22px; line-height: 1.2; }
 .shelf-title h2 a { color: var(--color-text); text-decoration: none; }
-.shelf-title h2 a:hover { color: var(--color-accent-700); text-decoration: underline; }
+.shelf-title h2 a:hover { color: var(--color-accent-text); text-decoration: underline; }
 
 .shelf-desc {
   font-size: 12.5px;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
   max-width: 38em;
   margin: 6px 0 0;
 }
@@ -528,8 +638,8 @@ ul.overview em { color: var(--color-text-muted); font-style: italic; }
   letter-spacing: 0.02em;
   padding: 3px 10px;
   border-radius: calc(var(--radius-md) * 0.75);
-  background: var(--color-neutral-100);
-  color: var(--color-neutral-800);
+  background: var(--color-neutral-fill);
+  color: var(--color-neutral-fill-text);
 }
 .tag.type {
   font-family: var(--font-mono);
@@ -540,13 +650,22 @@ ul.overview em { color: var(--color-text-muted); font-style: italic; }
   color: var(--color-text-muted);
   padding-inline: 0;
 }
-.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+/* The correct tag keeps its border in dark — the tint alone is not legible
+   on ink (handoff turn-3 note). */
+.tag-accent {
+  background: var(--color-accent-fill);
+  color: var(--color-accent-fill-text);
+  border: 1px solid var(--color-accent-edge);
+}
 .tag-outline {
   background: transparent;
   border: 1px solid var(--color-accent);
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
 }
-.tag.rule { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag.rule {
+  background: var(--color-accent-fill);
+  color: var(--color-accent-fill-text);
+}
 
 .attempt-chip {
   display: inline-flex;
@@ -564,12 +683,12 @@ ul.overview em { color: var(--color-text-muted); font-style: italic; }
 }
 .attempt-chip[data-state="in-progress"] {
   border-color: var(--color-accent);
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
 }
 .attempt-chip[data-state="submitted"] {
-  background: var(--color-accent-100);
-  border-color: var(--color-accent-300);
-  color: var(--color-accent-800);
+  background: var(--color-accent-fill);
+  border-color: var(--color-accent-edge);
+  color: var(--color-accent-fill-text);
 }
 
 /* ---------------------------------------------------------------- filters */
@@ -654,9 +773,9 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   margin-bottom: 14px;
 }
 
-/* Map states are value-and-stroke, not hue: answered is a gold tint, the
-   graded miss is an ink fill, flagged is the dashed outline. Every cell
-   carries a state-describing aria-label, so colour is never the only signal. */
+/* Map states are value-and-stroke, not hue: answered is the gold tint with
+   its edge, the graded miss is a solid ink chip, flagged is the dashed
+   outline. Every cell carries a state-describing aria-label. */
 .nav-cell {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
@@ -675,8 +794,8 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
 .nav-cell:hover { border-color: var(--color-accent); }
 
 .nav-cell[data-answered="true"] {
-  background: var(--tint-accent-16);
-  border-color: var(--color-accent-300);
+  background: var(--color-accent-tint-strong);
+  border-color: var(--color-accent-edge);
   color: var(--color-text);
 }
 .nav-cell[data-flagged="true"] {
@@ -684,9 +803,9 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   border-color: var(--color-accent);
 }
 .nav-cell[data-correct="true"] {
-  background: var(--tint-accent-16);
+  background: var(--color-accent-tint-strong);
   border-color: var(--color-accent);
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
 }
 .nav-cell[data-correct="false"] {
   background: var(--color-ink-chip-bg);
@@ -710,7 +829,7 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   border: 1px solid var(--color-divider); background: transparent;
   display: inline-block; flex-shrink: 0;
 }
-.nav-key i.done { background: var(--tint-accent-16); border-color: var(--color-accent-300); }
+.nav-key i.done { background: var(--color-accent-tint-strong); border-color: var(--color-accent-edge); }
 .nav-key i.flag { border: 1px dashed var(--color-accent); }
 
 /* ---------------------------------------------------------------- questions */
@@ -723,9 +842,9 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   margin-bottom: 18px;
   scroll-margin-top: 100px;
 }
-.q.answered { border-left-color: var(--color-accent-300); }
+.q.answered { border-left-color: var(--color-accent-edge); }
 .q.correct { border-left-color: var(--color-accent); }
-.q.incorrect { border-left-color: var(--color-neutral-800); }
+.q.incorrect { border-left-color: var(--color-neutral-edge); }
 .q.flash { box-shadow: 0 0 0 2px var(--color-accent); }
 
 .q-head {
@@ -744,7 +863,7 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
 }
 
 .badge {
@@ -755,8 +874,12 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   padding: 3px 10px;
   border-radius: calc(var(--radius-md) * 0.75);
 }
-.badge.ok { background: var(--color-accent-100); color: var(--color-accent-800); }
-.badge.bad { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.badge.ok {
+  background: var(--color-accent-fill);
+  color: var(--color-accent-fill-text);
+  border: 1px solid var(--color-accent-edge);
+}
+.badge.bad { background: var(--color-neutral-fill); color: var(--color-neutral-fill-text); }
 
 .flag-btn {
   font-family: var(--font-heading);
@@ -770,11 +893,11 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
   min-height: 44px;
   cursor: pointer;
 }
-.flag-btn:hover { border-color: var(--color-accent); color: var(--color-accent-700); }
+.flag-btn:hover { border-color: var(--color-accent); color: var(--color-accent-text); }
 .flag-btn[aria-pressed="true"] {
   border: 1px dashed var(--color-accent);
-  color: var(--color-accent-700);
-  background: var(--tint-accent-06);
+  color: var(--color-accent-text);
+  background: var(--color-accent-tint);
 }
 
 /* Reading measure. Question stems and rationales are dense prose read under
@@ -798,12 +921,12 @@ select:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transpare
 }
 
 /* The select-count hint appears only while every remaining pick is used up.
-   It rides the gold tint so it reads as guidance, not an error. */
+   It rides the gold fill so it reads as guidance, not an error. */
 .select-limit {
   font-size: 12.5px;
-  color: var(--color-accent-900);
-  background: var(--color-accent-100);
-  border: 1px solid var(--color-accent-300);
+  color: var(--color-accent-fill-text);
+  background: var(--color-accent-fill);
+  border: 1px solid var(--color-accent-edge);
   border-radius: var(--radius-md);
   padding: 8px 12px;
   margin: 10px 0 0;
@@ -814,8 +937,9 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
 
 .opts { display: flex; flex-direction: column; gap: 10px; max-width: 44em; }
 
-/* Chosen option: gold stroke, a whisper of tint, and the inset gold edge —
-   never a fill, never colour alone (the indicator + words carry the state). */
+/* Chosen option: gold stroke, a whisper of tint, and the inset gold edge.
+   On ink the tint is nearly invisible, so the edge carries the state in
+   both themes — never let the tint be the only signal. */
 .opt {
   display: flex;
   gap: 12px;
@@ -827,13 +951,13 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   cursor: pointer;
   transition: border-color 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
 }
-.opt:hover { background: var(--tint-accent-05); border-color: var(--color-accent-300); }
+.opt:hover { background: var(--tint-accent-05); border-color: var(--color-accent-edge); }
 .opt:has(input:checked) {
   border-color: var(--color-accent);
-  background: var(--tint-accent-06);
+  background: var(--color-accent-tint);
   box-shadow: inset 2px 0 0 var(--color-accent);
 }
-.opt input { margin: 4px 0 0; accent-color: var(--color-accent-600); flex-shrink: 0; }
+.opt input { margin: 4px 0 0; accent-color: var(--color-accent); flex-shrink: 0; }
 .opt input:disabled { cursor: default; }
 .opt:has(input:disabled) { cursor: default; }
 .opt:has(input:disabled:not(:checked)) { opacity: 0.6; }
@@ -844,15 +968,15 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
 .opt.is-answer,
 .opt.is-answer:has(input:checked),
 .opt.is-answer:has(input:disabled:not(:checked)) {
-  border-color: var(--color-accent-500);
-  background: var(--color-accent-100);
+  border-color: var(--color-accent);
+  background: var(--color-accent-fill);
   box-shadow: inset 2px 0 0 var(--color-accent);
   opacity: 1;
 }
 .opt.is-chosen-wrong,
 .opt.is-chosen-wrong:has(input:checked) {
-  border-color: var(--color-neutral-500);
-  background: var(--color-neutral-100);
+  border-color: var(--color-neutral-edge);
+  background: var(--color-neutral-fill);
   box-shadow: none;
 }
 .opt.is-chosen-wrong:has(input:checked) .key { color: var(--color-text-muted); }
@@ -863,7 +987,7 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   margin-right: 8px;
   color: var(--color-text-muted);
 }
-.opt:has(input:checked) .key { color: var(--color-accent-700); }
+.opt:has(input:checked) .key { color: var(--color-accent-text); }
 
 .scenario {
   padding: var(--space-3) var(--space-4);
@@ -874,16 +998,16 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
 }
 .scenario p { margin: 0 0 8px; font-size: 14px; line-height: 1.6; }
 .scenario select { width: 100%; }
-.scenario.is-correct { border-color: var(--color-accent-500); background: var(--color-accent-100); }
-.scenario.is-wrong { border-color: var(--color-neutral-500); background: var(--color-neutral-100); }
+.scenario.is-correct { border-color: var(--color-accent); background: var(--color-accent-fill); }
+.scenario.is-wrong { border-color: var(--color-neutral-edge); background: var(--color-neutral-fill); }
 .scenario .verdict {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.04em;
   margin-top: 6px;
 }
-.scenario .verdict.ok { color: var(--color-accent-700); }
-.scenario .verdict.bad { color: var(--color-neutral-800); }
+.scenario .verdict.ok { color: var(--color-accent-text); }
+.scenario .verdict.bad { color: var(--color-neutral-fill-text); }
 
 /* Rationale — the principle leads behind a gold rule, then the indictments. */
 .rationale {
@@ -925,10 +1049,14 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
 
 /* ---------------------------------------------------------------- colophon */
 
+/* The inverse band: near-black on Paper; on Lamplight it LIFTS to the
+   surface tone with its hairline — a dark band on a dark ground would
+   disappear (handoff "not a straight inversion", #1). */
 .colophon {
   margin-top: 28px;
   padding: var(--space-4);
-  background: var(--color-colophon-bg);
+  background: var(--color-inverse-bg);
+  border: 1px solid var(--color-divider);
   border-radius: var(--radius-md);
 }
 .colophon p { margin: 0 0 8px; }
@@ -937,7 +1065,7 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   font-family: var(--font-mono);
   font-size: 10px;
   line-height: 1.8;
-  color: var(--color-colophon-muted);
+  color: var(--color-inverse-muted);
   max-width: 72ch;
 }
 
@@ -996,8 +1124,9 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   margin-left: 8px;
 }
 
-/* Slot 3 — domain rows: bar on a neutral track, the threshold as a rule on
-   the bar, never a colour. Pale fill marks a domain too small to read alone. */
+/* Slot 3 — domain rows: bar on the themed track, the threshold as a rule on
+   the bar (it flips with the text so it reads over a gold fill), and the
+   too-small domain fades rather than lightening. */
 .grid { display: flex; flex-direction: column; margin-top: 6px; }
 
 .domain-card { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-divider); }
@@ -1026,23 +1155,23 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   font-family: var(--font-mono);
   font-size: 10.5px;
 }
-.domain-card .to-line.clear { color: var(--color-accent-700); }
+.domain-card .to-line.clear { color: var(--color-accent-text); }
 
 .bar {
   height: 7px;
-  background: var(--color-neutral-200);
+  background: var(--color-track);
   position: relative;
   overflow: visible;
   margin: 8px 0 6px;
 }
 .bar > i { display: block; height: 100%; background: var(--color-accent); }
-.bar > i.pale { background: var(--color-accent-300); }
+.bar > i.pale { background: var(--color-accent-edge); }
 .bar-rule {
   position: absolute;
   top: -3px;
   bottom: -3px;
   width: 1px;
-  background: var(--color-text);
+  background: var(--color-rule-marker);
 }
 
 .bar-footnote {
@@ -1066,7 +1195,7 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent-700);
+  color: var(--color-accent-text);
 }
 .rule-card .rule-title {
   font-family: var(--font-heading);
@@ -1100,7 +1229,7 @@ legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: re
   align-items: center;
   flex-wrap: wrap;
 }
-.miss .stem { font-size: 13px; color: var(--color-text-muted); flex: 1 1 340px; }
+.miss .stem { font-size: 13px; color: var(--color-text-body); flex: 1 1 340px; }
 
 /* ---------------------------------------------------------------- footer */
 
@@ -1138,7 +1267,7 @@ footer.exam-foot {
   z-index: 200;
   display: grid;
   place-items: center;
-  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+  background: color-mix(in srgb, #000000 55%, transparent);
   padding: 20px;
 }
 .modal-card {
@@ -1164,8 +1293,8 @@ footer.exam-foot {
 
 .skip-link {
   position: absolute; left: -9999px; top: 0; z-index: 300;
-  background: var(--color-colophon-bg);
-  color: var(--color-colophon-text);
+  background: var(--color-ink-chip-bg);
+  color: var(--color-ink-chip-text);
   padding: 10px 16px;
   border-radius: 0 0 var(--radius-md) 0;
 }
@@ -1173,7 +1302,7 @@ footer.exam-foot {
 
 ul.tight { padding-left: 20px; margin: 0 0 12px; }
 ul.tight li { margin-bottom: 6px; max-width: 72ch; }
-ul.tight li::marker { color: var(--color-accent-700); }
+ul.tight li::marker { color: var(--color-accent-text); }
 
 /* ---------------------------------------------------------------- responsive
 
@@ -1215,8 +1344,8 @@ ul.tight li::marker { color: var(--color-accent-700); }
 }
 
 /* Honour the OS-level motion preference. Transitions become imperceptible
-   rather than being removed, so state changes still register. The
-   smooth-scroll call in the player is gated on the same query. */
+   rather than being removed, so state changes still register — and the
+   theme swap is always instant (no cross-fade exists to disable). */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1228,8 +1357,48 @@ ul.tight li::marker { color: var(--color-accent-700); }
   }
 }
 
+/* Print always uses Paper regardless of preference — Lamplight text on
+   unprinted ink would be near-white on white paper. This block mirrors
+   :root[data-theme="light"] above token-for-token; the contrast gate
+   asserts they never drift. */
 @media print {
-  header.site, footer.exam-foot, .tabs, .filters, .flag-btn { display: none; }
+  :root {
+    color-scheme: light;
+    --color-bg: #f3f2f2;
+    --color-surface: #eae9e9;
+    --color-text: #201f1d;
+    --color-accent: #b68235;
+    --color-divider: rgba(32, 31, 29, 0.16);
+    --color-text-muted: #605d5d;
+    --color-text-body: rgba(32, 31, 29, 0.82);
+    --color-text-subtle: #605d5d;
+    --color-accent-text: #7d5411;
+    --color-track: #eae7e7;
+    --color-accent-tint: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    --color-accent-tint-strong: color-mix(in srgb, var(--color-accent) 14%, transparent);
+    --color-accent-edge: #facb8d;
+    --color-rule-marker: #201f1d;
+    --color-accent-fill: #fff3e4;
+    --color-accent-fill-text: #3a270d;
+    --color-neutral-fill: #f8f4f4;
+    --color-neutral-fill-text: #444141;
+    --color-neutral-edge: #9b9797;
+    --color-inverse-bg: #2d2b2b;
+    --color-inverse-text: #f8f4f4;
+    --color-inverse-muted: #d7d3d3;
+    --color-inverse-accent: #facb8d;
+    --shadow-sm: 0 1px 2px rgba(45, 43, 43, 0.14);
+    --shadow-md: 0 3px 10px rgba(45, 43, 43, 0.16);
+    --shadow-lg: 0 12px 32px rgba(45, 43, 43, 0.22);
+    --primary-hover: #5a3b0a;
+    --on-primary: #ffffff;
+    --on-ok: #ffffff;
+    --on-bad: #ffffff;
+    --warn: #5a3b0a;
+    --info: #605d5d;
+    --info-bg: #f8f4f4;
+  }
+  header.site, footer.exam-foot, .tabs, .filters, .flag-btn, .theme-toggle { display: none; }
   body:has(.exam-shell) { padding-bottom: 0; }
   .q { break-inside: avoid; }
 }

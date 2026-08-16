@@ -11,6 +11,7 @@ import { listExams, loadExam } from '@mockka/engine';
 import { contentDir } from '../lib/content.ts';
 import { AttemptChip } from '../components/attempt-chip.tsx';
 import { Mark } from '../components/mark.tsx';
+import { ThemeToggle } from '../components/theme-toggle.tsx';
 
 export default function CatalogPage() {
   const dir = contentDir();
@@ -25,6 +26,7 @@ export default function CatalogPage() {
           <Mark size={22} />
           <span className="wordmark">Mockka</span>
           <span className="imprint">exam compiler</span>
+          <ThemeToggle />
         </div>
       </header>
       <main id="main">

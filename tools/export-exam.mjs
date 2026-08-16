@@ -89,9 +89,19 @@ for (const id of form.items) {
 const globalsPath = join(repoRoot, 'apps', 'web', 'app', 'globals.css');
 if (!existsSync(globalsPath)) fail(`design source missing: ${globalsPath} — tokens cannot be extracted`);
 const globalsCss = readFileSync(globalsPath, 'utf8');
+// Two theme blocks: the first :root is Lamplight (dark, the default per
+// Oliver's decision); :root[data-theme="light"] is the Paper override. Both
+// propagate into the export so its toggle works offline, and print always
+// gets Paper (Lamplight text would print near-white on white paper).
 const rootMatch = globalsCss.match(/:root\s*\{([\s\S]*?)\}/);
 if (!rootMatch) fail('no :root token block found in apps/web/app/globals.css');
-const tokenBlock = `:root {${rootMatch[1]}}`;
+const lightMatch = globalsCss.match(/:root\[data-theme="light"\]\s*\{([\s\S]*?)\}/);
+if (!lightMatch) fail('no :root[data-theme="light"] block in globals.css — both themes must propagate');
+const tokenBlock = [
+  `:root {${rootMatch[1]}}`,
+  `:root[data-theme="light"] {${lightMatch[1]}}`,
+  `@media print { :root {${lightMatch[1]}} }`,
+].join('\n');
 
 // --- Gate 2 deep-read sample ids -------------------------------------------
 // Parsed from the checklist with four targeted rules (auto-flag table, the
@@ -242,6 +252,17 @@ header {
 .btn-review[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); }
 .btn-quiet { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
 .btn-quiet:hover { background: var(--border); }
+
+/* theme toggle — Paper / Lamp segmented control; Lamplight is the default */
+.theme-toggle { display: inline-flex; border: 1px solid var(--header-muted); border-radius: var(--radius-sm); overflow: hidden; }
+.theme-opt {
+  font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--header-muted); background: transparent;
+  border: 0; padding: 8px 12px; min-height: 36px; cursor: pointer;
+}
+.theme-opt + .theme-opt { border-left: 1px solid var(--header-muted); }
+.theme-opt[aria-checked="true"] { background: var(--primary-soft); color: var(--header-text); }
+.theme-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
 /* layout + tabs */
 main { max-width: var(--maxw); margin: 28px auto; padding: 0 20px; }
@@ -1179,6 +1200,23 @@ byIdEl('modalCancel').addEventListener('click', closeModal);
 byIdEl('modalOverlay').addEventListener('click', function (e) { if (e.target === byIdEl('modalOverlay')) closeModal(); });
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
+/* ---------- theme (Paper / Lamp; Lamplight is the default) ----------------- */
+var THEME_KEY = 'mockka-theme';
+function syncThemeControl() {
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  byIdEl('themePaper').setAttribute('aria-checked', light ? 'true' : 'false');
+  byIdEl('themeLamp').setAttribute('aria-checked', light ? 'false' : 'true');
+}
+function setTheme(next) {
+  if (next === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  else document.documentElement.removeAttribute('data-theme');
+  try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* private mode */ }
+  syncThemeControl();
+}
+byIdEl('themePaper').addEventListener('click', function () { setTheme('light'); });
+byIdEl('themeLamp').addEventListener('click', function () { setTheme('dark'); });
+syncThemeControl();
+
 renderFilterBar();
 renderIntro();
 renderExam();
@@ -1206,6 +1244,7 @@ ${componentCss}
 </style>
 </head>
 <body>
+<script>try{if(localStorage.getItem('mockka-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 
 <header>
   <div class="header-inner">
@@ -1216,6 +1255,10 @@ ${componentCss}
     <div class="header-actions">
       <span class="stat-badge" id="progressBadge">Answered 0 / ${form.items.length}</span>
       <span class="stat-badge" id="timerBadge" hidden></span>
+      <div class="theme-toggle" role="radiogroup" aria-label="Theme">
+        <button class="theme-opt" type="button" role="radio" aria-checked="false" id="themePaper">Paper</button>
+        <button class="theme-opt" type="button" role="radio" aria-checked="true" id="themeLamp">Lamp</button>
+      </div>
       <button class="btn btn-ghost" id="resetBtn" type="button">Reset attempt</button>
       <button class="btn btn-review" id="reviewToggle" type="button" aria-pressed="false">Gate 2 review</button>
     </div>

@@ -776,6 +776,31 @@ const CHECKS: Check[] = [
   },
 
   {
+    name: 'source-derivation-link',
+    run({ pkg, report }) {
+      // The derivation-doc half of the provenance chain: a registered source
+      // that no derivation artefact documents is a claim without evidence.
+      // public_blueprint is exempt — its facts (domains, weights, totals) live
+      // as manifest arithmetic, not in a distillation doc.
+      const dir = join(pkg.dir, 'derivation');
+      const registryPath = join(dir, 'sources.md');
+      const registryText = existsSync(registryPath) ? readFileSync(registryPath, 'utf8') : '';
+      for (const s of pkg.manifest.provenance?.sources ?? []) {
+        if (s.type === 'public_blueprint') continue;
+        const perSourceDoc = `source-${s.id}.md`;
+        if (!existsSync(join(dir, perSourceDoc)) && !registryText.includes(s.id)) {
+          report(
+            'source-derivation-link',
+            'error',
+            `source ${s.id}: registered but undocumented — expected derivation/${perSourceDoc} ` +
+              `or an entry for "${s.id}" in derivation/sources.md`,
+          );
+        }
+      }
+    },
+  },
+
+  {
     name: 'publication-preflight',
     when: (pkg) => pkg.manifest.status === 'published',
     run({ pkg, report }) {

@@ -48,6 +48,7 @@ const ALL_CHECKS = [
   'licensed-import-license',
   'derivation-present',
   'concept-source-registry',
+  'source-derivation-link',
   'publication-preflight',
 ];
 
@@ -96,6 +97,60 @@ test('a published package without eval artifacts fails the preflight', () => {
   assert.match(messages, /blind-solve\.json/);
   assert.match(messages, /judge-scores\.json/);
   assert.match(messages, /signoff\.md/);
+});
+
+test('a registered source with no derivation artefact fails the derivation-doc link', () => {
+  // The fixture ships no derivation/ directory, so a registered non-blueprint
+  // source cannot resolve to source-<id>.md or a sources.md entry.
+  const pkg = loadExam(join(HERE, 'fixtures'), 'broken-exam');
+  const withSource = {
+    ...pkg,
+    manifest: {
+      ...pkg.manifest,
+      provenance: {
+        ...pkg.manifest.provenance,
+        sources: [
+          {
+            id: 'undocumented-source',
+            type: 'own_distillation' as const,
+            citation: 'Registered in the manifest but documented nowhere on disk.',
+          },
+        ],
+      },
+    },
+  };
+  const result = validateExam(withSource, registry);
+
+  assert.equal(result.ok, false);
+  const findings = result.findings.filter(
+    (f) => f.check === 'source-derivation-link' && f.level === 'error',
+  );
+  assert.equal(findings.length, 1);
+  assert.match(
+    findings[0]!.message,
+    /undocumented-source: registered but undocumented — expected derivation\/source-undocumented-source\.md/,
+  );
+});
+
+test('a public_blueprint source needs no derivation doc — its facts are manifest arithmetic', () => {
+  const pkg = loadExam(join(HERE, 'fixtures'), 'broken-exam');
+  const withBlueprint = {
+    ...pkg,
+    manifest: {
+      ...pkg.manifest,
+      provenance: {
+        ...pkg.manifest.provenance,
+        sources: [
+          { id: 'some-blueprint', type: 'public_blueprint' as const, citation: 'Official blueprint.' },
+        ],
+      },
+    },
+  };
+  const result = validateExam(withBlueprint, registry);
+  assert.deepEqual(
+    result.findings.filter((f) => f.check === 'source-derivation-link'),
+    [],
+  );
 });
 
 test('the broken fixture bank fails with the expected findings — the gate gates', () => {

@@ -1,0 +1,81 @@
+{
+  "$comment": "Exam manifest skeleton scaffolded by tools/new-exam.mjs. Every TODO is Gate 1 material — fill from the OFFICIAL blueprint page (one domains[] entry per blueprint domain, weights summing to 100; pattern_caps from the Artefact A frequency analysis), then run `pnpm validate gcp-cdl`. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "gcp-cdl",
+  "title": "Google Cloud Digital Leader",
+  "vendor": "TODO",
+  "status": "draft",
+  "version": "0.1.0",
+  "blueprint_version": "TODO",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": "TODO",
+    "time_limit_minutes": "TODO",
+    "pass_threshold_pct": "TODO"
+  },
+  "bank": {
+    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "TODO",
+      "weight_pct": "TODO",
+      "exam_items": "TODO",
+      "bank_items": "TODO",
+      "format_mix": {
+        "single_choice": "TODO",
+        "multiple_response": "TODO",
+        "scenario_matching": "TODO"
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": "TODO"
+    },
+    "multiple_response": {
+      "options": "TODO",
+      "select_count": [
+        "TODO"
+      ]
+    },
+    "scenario_matching": {
+      "min_options": "TODO",
+      "min_scenarios": "TODO",
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "TODO e.g. en-GB",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {},
+    "near_duplicate_jaccard": "TODO"
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "intro": {
+    "about": "TODO — executive summary: what the certification validates, domains covered",
+    "audience": "TODO — who the certification is for, as roles",
+    "materials": [
+      {
+        "title": "TODO — e.g. \"<N>-question practice exam\"",
+        "description": "TODO — what THIS mock provides: bank size, formats, dashboard, review depth"
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "TODO — official cert portal / exam guide link text",
+        "url": "https://TODO"
+      }
+    ],
+    "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
+  },
+  "format_coverage": "TODO — disclosure per methodology/06-provenance-publishing.md#format-coverage",
+  "provenance": {
+    "sources": [],
+    "nda_statement": "TODO — see methodology/06-provenance-publishing.md#readme-template"
+  }
+}

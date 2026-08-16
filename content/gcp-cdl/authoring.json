@@ -1,0 +1,7 @@
+{
+  "$comment": "Per-exam authoring contract: theme set, pattern-registry extensions (E01...), vertical list. See methodology/03-authoring-guide.md#themes — architecture-style exams may adopt starter themes T1-T8.",
+  "version": "0.1.0",
+  "themes": [],
+  "pattern_extensions": [],
+  "verticals": []
+}

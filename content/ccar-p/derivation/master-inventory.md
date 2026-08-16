@@ -1,3 +1,10 @@
+> **Provenance header — added by Mockka's `tools/import-ccar-p.mjs`; body verbatim.**
+> This file was copied unchanged from the `ccar-p-mock-exam` repo
+> (`docs/concepts/master-inventory.md`). Its relative citations —
+> `data/concepts.json`, `tools/validate.mjs`, `../../data/…` links — refer to
+> paths in that SOURCE repo, not to this package. The Mockka equivalents are
+> `content/ccar-p/concepts.json` and `packages/engine/src/validate/`.
+
 # Artefact C · Master concept inventory
 
 **What this is.** The union of [artefact A](purcell-distillation.md) — the concept backbone distilled

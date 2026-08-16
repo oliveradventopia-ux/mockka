@@ -79,12 +79,13 @@ const SRC_RECAP = 'ccar-p-course-recap';
 
 const manifest = {
   $comment:
-    'Migrated from ~/LifeOS/ccar-p-mock-exam by tools/import-ccar-p.mjs. Everything the original tools/validate.mjs hardcoded is data here.',
+    'Migrated from ~/LifeOS/ccar-p-mock-exam by tools/import-ccar-p.mjs. Everything the original tools/validate.mjs hardcoded is data here. status in_review here means: imported legacy content, servable, unaudited — S5 never ran on this bank.',
   slug: 'ccar-p',
   title: 'Claude Certified Architect – Professional (CCAR-P) Mock Exam',
   vendor: 'Anthropic',
   status: 'in_review',
   version: '1.0.0',
+  blueprint_version: '2026-blueprint',
   source_checked_date: '2026-08-16',
   exam: { item_count: examTotal, time_limit_minutes: 120, pass_threshold_pct: 75 },
   bank: { item_count: bankTotal },
@@ -110,7 +111,7 @@ const manifest = {
       },
       {
         id: SRC_PURCELL,
-        type: 'own_distillation',
+        type: 'public_practice_set',
         citation:
           'Purcell practice set (freely published practice material). Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/purcell-distillation.md. No text reused.',
       },
@@ -225,10 +226,29 @@ write('selection.json', selection);
 write('syllabus-rules.json', syllabusRules);
 write('authoring.json', authoring);
 
-// Derivation artefacts: copy the distillation docs verbatim, then write the
-// source registry that manifest.provenance and concept sources[] resolve to.
+// Derivation artefacts: copy the distillation docs verbatim — except
+// master-inventory.md, which gets a provenance header prepended (body
+// untouched) because its relative citations refer to the SOURCE repo.
+// Injected on every run so re-runs stay byte-identical.
+const MASTER_INVENTORY_HEADER = `> **Provenance header — added by Mockka's \`tools/import-ccar-p.mjs\`; body verbatim.**
+> This file was copied unchanged from the \`ccar-p-mock-exam\` repo
+> (\`docs/concepts/master-inventory.md\`). Its relative citations —
+> \`data/concepts.json\`, \`tools/validate.mjs\`, \`../../data/…\` links — refer to
+> paths in that SOURCE repo, not to this package. The Mockka equivalents are
+> \`content/ccar-p/concepts.json\` and \`packages/engine/src/validate/\`.
+
+`;
+
 for (const f of readdirSync(join(SRC, 'docs', 'concepts'))) {
-  if (f.endsWith('.md')) copyFileSync(join(SRC, 'docs', 'concepts', f), join(OUT, 'derivation', f));
+  if (!f.endsWith('.md')) continue;
+  if (f === 'master-inventory.md') {
+    writeFileSync(
+      join(OUT, 'derivation', f),
+      MASTER_INVENTORY_HEADER + readFileSync(join(SRC, 'docs', 'concepts', f), 'utf8'),
+    );
+  } else {
+    copyFileSync(join(SRC, 'docs', 'concepts', f), join(OUT, 'derivation', f));
+  }
 }
 
 writeFileSync(
@@ -243,7 +263,7 @@ registered source).
 | id | type | licence basis | derivation artefact |
 |---|---|---|---|
 | ${SRC_BLUEPRINT} | public_blueprint | public document; facts only (domains, weights, format profile) | manifest domain arithmetic |
-| ${SRC_PURCELL} | own_distillation | freely published practice set; clean-room analytical classification only, zero text reuse | [purcell-distillation.md](purcell-distillation.md) |
+| ${SRC_PURCELL} | public_practice_set | freely published practice set; clean-room analytical classification only, zero text reuse | [purcell-distillation.md](purcell-distillation.md) |
 | ${SRC_RECAP} | own_course_notes | own notes from the legitimately accessed official course (proof-of-access basis) | [recap-concepts.md](recap-concepts.md) |
 
 The consolidated concept inventory across both artefacts is

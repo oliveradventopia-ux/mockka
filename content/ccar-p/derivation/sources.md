@@ -8,7 +8,7 @@ registered source).
 | id | type | licence basis | derivation artefact |
 |---|---|---|---|
 | ccar-p-blueprint | public_blueprint | public document; facts only (domains, weights, format profile) | manifest domain arithmetic |
-| purcell-practice-set | own_distillation | freely published practice set; clean-room analytical classification only, zero text reuse | [purcell-distillation.md](purcell-distillation.md) |
+| purcell-practice-set | public_practice_set | freely published practice set; clean-room analytical classification only, zero text reuse | [purcell-distillation.md](purcell-distillation.md) |
 | ccar-p-course-recap | own_course_notes | own notes from the legitimately accessed official course (proof-of-access basis) | [recap-concepts.md](recap-concepts.md) |
 
 The consolidated concept inventory across both artefacts is

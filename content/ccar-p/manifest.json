@@ -1,10 +1,11 @@
 {
-  "$comment": "Migrated from ~/LifeOS/ccar-p-mock-exam by tools/import-ccar-p.mjs. Everything the original tools/validate.mjs hardcoded is data here.",
+  "$comment": "Migrated from ~/LifeOS/ccar-p-mock-exam by tools/import-ccar-p.mjs. Everything the original tools/validate.mjs hardcoded is data here. status in_review here means: imported legacy content, servable, unaudited — S5 never ran on this bank.",
   "slug": "ccar-p",
   "title": "Claude Certified Architect – Professional (CCAR-P) Mock Exam",
   "vendor": "Anthropic",
   "status": "in_review",
   "version": "1.0.0",
+  "blueprint_version": "2026-blueprint",
   "source_checked_date": "2026-08-16",
   "exam": {
     "item_count": 63,
@@ -139,7 +140,7 @@
       },
       {
         "id": "purcell-practice-set",
-        "type": "own_distillation",
+        "type": "public_practice_set",
         "citation": "Purcell practice set (freely published practice material). Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/purcell-distillation.md. No text reused."
       },
       {

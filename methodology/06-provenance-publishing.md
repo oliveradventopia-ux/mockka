@@ -179,8 +179,11 @@ A sign-off with any preflight verdict at `fail` and no covering waiver is not a 
   "skipped (draft)"). To preview a draft: validate it explicitly with `pnpm validate <slug>`,
   and flip it to `in_review` locally if it must render in the player.
 - **`in_review`** — the preflight has passed and the Gate 2 package is assembled, awaiting
-  Oliver's sign-off. Served exactly like `draft`; the state exists so "waiting on the human" is
-  visible in the tree.
+  Oliver's sign-off. Served by the player with an in-review status note; the state exists so
+  "waiting on the human" is visible in the tree. **Legacy-import case:** a package imported
+  from an existing repo (ccar-p at the P0 scaffold) may also carry `in_review` meaning
+  "imported legacy content, servable, unaudited — S5 never ran on this bank"; the manifest's
+  `$comment` must record that meaning explicitly.
 - **`published`** — publicly served.
 
 The flip rules:

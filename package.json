@@ -9,7 +9,7 @@
     "build": "pnpm --filter @mockka/web build",
     "validate": "node packages/engine/src/validate/cli.ts",
     "typecheck": "pnpm -r typecheck",
-    "test": "node --test \"packages/engine/test/**/*.test.ts\"",
+    "test": "node --test \"packages/engine/test/**/*.test.ts\" \"apps/web/test/**/*.test.ts\"",
     "gate": "pnpm validate && pnpm typecheck && pnpm test && pnpm build"
   },
   "engines": {

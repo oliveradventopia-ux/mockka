@@ -109,7 +109,7 @@ const questions = { version: '0.1.0', questions: [] };
 
 const concepts = {
   $comment:
-    'Master concept inventory (Artefact C, machine-readable). Built at S3 per methodology/02-master-inventory.md; schema: methodology/schema/concepts.schema.json. priority is COMPUTED: sources.length >= 2 => high.',
+    'Master concept inventory (Artefact C, machine-readable). Built at S3 per methodology/02-master-inventory.md; schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) and surfaced by the validator concept-convergence WARN check; divergence is allowed as documented authoring judgment.',
   version: '0.1.0',
   concepts: [],
 };

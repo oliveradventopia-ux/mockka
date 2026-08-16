@@ -23,6 +23,7 @@ const registry = JSON.parse(
 const ALL_CHECKS = [
   'manifest-shape',
   'concept-inventory',
+  'concept-convergence',
   'concept-syllabus-rules',
   'blueprint-arithmetic',
   'bank-shape',
@@ -70,6 +71,20 @@ test('content/ccar-p passes with zero errors — the generalization acceptance t
 
   const errors = result.findings.filter((f) => f.level === 'error');
   assert.deepEqual(errors, [], `unexpected errors:\n${JSON.stringify(errors.slice(0, 15), null, 2)}`);
+  assert.equal(result.ok, true);
+});
+
+test('ccar-p surfaces its 27 known priority/convergence divergences as warnings, not errors', () => {
+  // The migrated bank's priorities were hand-tuned for exam seating, so they
+  // deliberately diverge from computed convergence (sources.length >= 2) on 27
+  // concepts. The divergence is allowed authoring judgment — surfaced, never
+  // gate-failing. A change to this count is a content decision, not noise.
+  const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
+  const result = validateExam(pkg, registry);
+
+  const convergence = result.findings.filter((f) => f.check === 'concept-convergence');
+  assert.equal(convergence.length, 27);
+  assert.ok(convergence.every((f) => f.level === 'warn'));
   assert.equal(result.ok, true);
 });
 

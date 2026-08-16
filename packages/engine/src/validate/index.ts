@@ -199,6 +199,34 @@ const CHECKS: Check[] = [
   },
 
   {
+    name: 'concept-convergence',
+    run({ pkg, report }) {
+      // Convergence is computed (sources.length >= 2), never asserted. Authored
+      // priority may diverge from the computed signal (e.g. hand-tuned exam
+      // seating), but divergence is surfaced as a warning — always visible,
+      // never gate-failing.
+      for (const c of pkg.concepts.concepts ?? []) {
+        const sourceCount = (c.sources ?? []).length;
+        if (c.priority === 'high' && sourceCount < 2) {
+          report(
+            'concept-convergence',
+            'warn',
+            `${c.id}: priority high with a single source — convergence not attested; ` +
+              'stands only as documented authoring judgment',
+          );
+        } else if (c.priority === 'normal' && sourceCount >= 2) {
+          report(
+            'concept-convergence',
+            'warn',
+            `${c.id}: priority normal despite ${sourceCount} independent sources — ` +
+              'computed convergence suggests high',
+          );
+        }
+      }
+    },
+  },
+
+  {
     name: 'concept-syllabus-rules',
     when: rulesLayerOn,
     run({ pkg, report }) {

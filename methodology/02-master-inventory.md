@@ -19,10 +19,13 @@ The output is Artefact C: `derivation/master-inventory.md` (the reasoning) plus 
    testable idea per concept — a syllabus rule that teaches three things becomes three concepts.
 2. **Compute convergence — never assert it.** A concept attested by **≥2 independent sources**
    gets `priority: high`, and this is *computed from the data* (`sources.length >= 2` in
-   `concepts.json`), not hand-labelled. Agreement across independent readings of the same
-   blueprint is the best available proxy for exam weight, so high-priority concepts are seated
-   into the exam form first at S6. "Independent" means independently authored — two pages by the
-   same author are one source.
+   `concepts.json`), not hand-labelled. The validator's `concept-convergence` check computes the
+   same signal and surfaces every priority/convergence divergence as a warn-level finding —
+   divergence (e.g. hand-tuned exam seating, as in ccar-p's 27) is allowed as documented
+   authoring judgment, but it is always visible, never silent. Agreement across independent
+   readings of the same blueprint is the best available proxy for exam weight, so high-priority
+   concepts are seated into the exam form first at S6. "Independent" means independently
+   authored — two pages by the same author are one source.
 3. **Merge duplicates deliberately.** Where two artefacts describe the same idea at different
    granularities, merge rather than duplicate — and **document every merge** (format below). The
    merge log is what makes the inventory auditable instead of vibes.

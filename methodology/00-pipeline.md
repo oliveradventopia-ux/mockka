@@ -77,7 +77,9 @@ used to reconstruct the original questions.
 
 Union the artefacts into `concepts.json` + `derivation/master-inventory.md` per
 [`02-master-inventory.md`](02-master-inventory.md). Convergence is **computed, not asserted**: a
-concept attested by ≥2 independent sources gets `priority: high`. The inventory fixes the
+concept attested by ≥2 independent sources gets `priority: high`, and the validator's
+`concept-convergence` check surfaces any priority/convergence divergence as a warning
+(divergence is allowed as documented authoring judgment, never silent). The inventory fixes the
 authoring contract — every concept becomes the primary concept of exactly one bank item, and the
 bank sizes at ≈1.35× the exam length. Fill the manifest with the real blueprint numbers and declare
 the exam's theme set in `authoring.json`. Then stop.

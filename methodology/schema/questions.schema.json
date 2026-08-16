@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mockka.dev/schema/questions.schema.json",
+  "title": "Mockka question bank (content/<slug>/questions.json)",
+  "description": "The proven CCAR-P item schema kept intact: primary_concept, theme, vertical, distractor_patterns per wrong option, option-keyed rationale. recap_rule is renamed syllabus_rule. Domains use short ids (d1…).",
+  "type": "object",
+  "required": ["questions"],
+  "properties": {
+    "$comment": { "type": "string" },
+    "version": { "type": "string" },
+    "questions": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/single_choice" },
+          { "$ref": "#/$defs/multiple_response" },
+          { "$ref": "#/$defs/scenario_matching" }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "base": {
+      "type": "object",
+      "required": ["id", "domain", "primary_concept", "keywords", "type", "question"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "domain": { "type": "string", "pattern": "^d[0-9]+$" },
+        "primary_concept": { "type": "string", "minLength": 1 },
+        "secondary_concepts": { "type": "array", "items": { "type": "string" } },
+        "syllabus_rule": {
+          "type": "string",
+          "description": "Required (and resolved against syllabus-rules.json) when manifest layers.syllabus_rules is true."
+        },
+        "theme": { "type": "string", "description": "Resolved against authoring.json themes." },
+        "vertical": { "type": "string" },
+        "keywords": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "question": { "type": "string", "minLength": 1 }
+      }
+    },
+    "optionMap": {
+      "type": "object",
+      "minProperties": 2,
+      "propertyNames": { "pattern": "^[A-Z]$" },
+      "additionalProperties": { "type": "string" }
+    },
+    "distractorPatterns": {
+      "type": "object",
+      "description": "Non-answer option key -> pattern id from methodology/distractor-patterns.json or the exam's pattern_extensions.",
+      "propertyNames": { "pattern": "^[A-Z]$" },
+      "additionalProperties": { "type": "string", "pattern": "^[DE][0-9]{2}$" }
+    },
+    "single_choice": {
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "required": ["options", "answer", "distractor_patterns", "rationale"],
+      "properties": {
+        "type": { "const": "single_choice" },
+        "options": { "$ref": "#/$defs/optionMap" },
+        "answer": { "type": "string", "pattern": "^[A-Z]$" },
+        "distractor_patterns": { "$ref": "#/$defs/distractorPatterns" },
+        "rationale": {
+          "type": "object",
+          "required": ["correct", "distractors"],
+          "additionalProperties": false,
+          "properties": {
+            "correct": { "type": "string", "minLength": 41 },
+            "distractors": {
+              "type": "object",
+              "propertyNames": { "pattern": "^[A-Z]$" },
+              "additionalProperties": { "type": "string", "minLength": 26 }
+            }
+          }
+        }
+      }
+    },
+    "multiple_response": {
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "required": ["options", "select_count", "answer", "distractor_patterns", "rationale"],
+      "properties": {
+        "type": { "const": "multiple_response" },
+        "options": { "$ref": "#/$defs/optionMap" },
+        "select_count": { "type": "integer", "minimum": 2 },
+        "answer": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z]$" }
+        },
+        "distractor_patterns": { "$ref": "#/$defs/distractorPatterns" },
+        "rationale": {
+          "type": "object",
+          "required": ["correct", "distractors"],
+          "additionalProperties": false,
+          "properties": {
+            "correct": { "type": "string", "minLength": 41 },
+            "distractors": {
+              "type": "object",
+              "propertyNames": { "pattern": "^[A-Z]$" },
+              "additionalProperties": { "type": "string", "minLength": 26 }
+            }
+          }
+        }
+      }
+    },
+    "scenario_matching": {
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "required": ["matching_options", "scenarios", "answer", "rationale"],
+      "properties": {
+        "type": { "const": "scenario_matching" },
+        "matching_options": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        },
+        "scenarios": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["id", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "text": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "answer": {
+          "type": "object",
+          "description": "Scenario id -> matching option text.",
+          "additionalProperties": { "type": "string" }
+        },
+        "rationale": {
+          "type": "object",
+          "required": ["correct"],
+          "additionalProperties": false,
+          "properties": { "correct": { "type": "string", "minLength": 41 } }
+        }
+      }
+    }
+  }
+}

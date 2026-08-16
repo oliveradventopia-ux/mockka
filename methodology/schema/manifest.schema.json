@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mockka.dev/schema/manifest.schema.json",
+  "title": "Mockka exam manifest (content/<slug>/manifest.json)",
+  "description": "Exam identity plus the ENTIRE blueprint as data. Everything the original CCAR-P validator hardcoded lives here; the validator (packages/engine/src/validate/) reads it and enforces the invariants.",
+  "type": "object",
+  "required": [
+    "slug", "title", "vendor", "status", "version",
+    "exam", "bank", "domains", "formats", "style", "validation", "layers", "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$comment": { "type": "string" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "vendor": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "in_review", "published"] },
+    "version": { "type": "string", "minLength": 1 },
+    "blueprint_version": { "type": "string" },
+    "source_checked_date": { "type": "string", "format": "date" },
+    "exam": {
+      "type": "object",
+      "required": ["item_count", "time_limit_minutes", "pass_threshold_pct"],
+      "additionalProperties": false,
+      "properties": {
+        "item_count": { "type": "integer", "minimum": 1 },
+        "time_limit_minutes": { "type": "integer", "minimum": 1 },
+        "pass_threshold_pct": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "bank": {
+      "type": "object",
+      "required": ["item_count"],
+      "additionalProperties": false,
+      "properties": { "item_count": { "type": "integer", "minimum": 1 } }
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "weight_pct", "exam_items", "bank_items", "format_mix"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^d[0-9]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "weight_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "exam_items": { "type": "integer", "minimum": 0 },
+          "bank_items": { "type": "integer", "minimum": 0 },
+          "format_mix": {
+            "type": "object",
+            "required": ["single_choice", "multiple_response", "scenario_matching"],
+            "additionalProperties": false,
+            "properties": {
+              "single_choice": { "type": "integer", "minimum": 0 },
+              "multiple_response": { "type": "integer", "minimum": 0 },
+              "scenario_matching": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "formats": {
+      "type": "object",
+      "required": ["single_choice", "multiple_response", "scenario_matching"],
+      "additionalProperties": false,
+      "properties": {
+        "single_choice": {
+          "type": "object",
+          "required": ["options"],
+          "additionalProperties": false,
+          "properties": { "options": { "type": "integer", "minimum": 2 } }
+        },
+        "multiple_response": {
+          "type": "object",
+          "required": ["options", "select_count"],
+          "additionalProperties": false,
+          "properties": {
+            "options": { "type": "integer", "minimum": 3 },
+            "select_count": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "integer", "minimum": 2 }
+            }
+          }
+        },
+        "scenario_matching": {
+          "type": "object",
+          "required": ["min_options", "min_scenarios", "require_option_reuse"],
+          "additionalProperties": false,
+          "properties": {
+            "min_options": { "type": "integer", "minimum": 2 },
+            "min_scenarios": { "type": "integer", "minimum": 2 },
+            "require_option_reuse": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "required": ["locale", "emoji"],
+      "additionalProperties": false,
+      "properties": {
+        "locale": { "type": "string", "minLength": 2 },
+        "emoji": { "type": "boolean" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["pattern_caps", "near_duplicate_jaccard"],
+      "additionalProperties": false,
+      "properties": {
+        "pattern_caps": {
+          "type": "object",
+          "additionalProperties": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+        },
+        "near_duplicate_jaccard": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+      }
+    },
+    "layers": {
+      "type": "object",
+      "required": ["syllabus_rules"],
+      "additionalProperties": false,
+      "properties": { "syllabus_rules": { "type": "boolean" } }
+    },
+    "format_coverage": {
+      "type": "string",
+      "description": "Disclosure shown on the exam intro page when the real exam's format profile exceeds the three supported formats (plan Decision 7)."
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["sources", "nda_statement"],
+      "additionalProperties": false,
+      "properties": {
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "type", "citation"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+              "type": {
+                "enum": [
+                  "public_blueprint", "public_syllabus", "own_course_notes",
+                  "own_distillation", "licensed_import"
+                ]
+              },
+              "citation": { "type": "string", "minLength": 1 },
+              "license": {
+                "type": "string",
+                "description": "Required for licensed_import. Allowlist enforced by the validator: CC-BY-4.0, MIT, Apache-2.0, author-agreement."
+              },
+              "attribution": { "type": "string" }
+            }
+          }
+        },
+        "nda_statement": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

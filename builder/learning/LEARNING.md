@@ -118,3 +118,27 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: "instead of" carries the necessary contrast inside a keyed option without tripping the since/because/rather-than rider detector; enumerated examples and doctrine clauses belong in rationale.correct.
 - why: the rider check targets self-justifying keys, not contrast per se.
 - how to apply: when a key must name what it displaces, prefer "instead of X" phrasing; move any "because…" argument to the rationale.
+
+## L-0019 · Canonical eval filenames carry the CURRENT round; prior rounds get -rN suffixes
+- date: 2026-08-16 · agent: exam-examiner · scope: local · tier: methodology/eval
+- lesson: the preflight parses `eval/blind-solve.json` / `eval/judge-scores.json` by name, so round 2 must live at the canonical names and round 1 moves to `*-r1.json` — writing the new round to a suffixed file would leave the machine half silently validating a stale round.
+- why: methodology/05 §artifact-shapes pins filenames but has no round-versioning convention; the gap surfaced at aif-c01 round 2 and was resolved by suffix-preserving copies, noted in eval-report.
+- how to apply: codify the `-rN` convention in methodology/05 §artifact-shapes; until then, every re-eval round copies the outgoing artifacts to `-r<n>.json` before overwriting the canonical names.
+
+## L-0020 · Round-2 blind solve runs BEFORE opening any round-1 artifact — and doubles as the rekey check
+- date: 2026-08-16 · agent: exam-examiner · scope: local · tier: methodology/eval
+- lesson: on re-eval, round-1 eval artifacts contain keys and judgments, so the fresh blind solve must be recorded first; a cue-free 67/67 on a letter-permuted bank then serves as the zero-rekey-errors proof a mechanical key permutation otherwise lacks.
+- why: aif-c01 round 2 — the round-1 100% was cue-confounded (BD-1/BD-2 visible in the keyless form); the round-2 100% on the cue-free bank is the first uncontaminated key-correctness signal, and it simultaneously verified the bank-wide permutation broke nothing.
+- how to apply: add the sequencing rule to the exam-eval skill for rounds ≥2 (read harness → generate keyless form → solve → only then open keys/r1 artifacts); treat a post-permutation blind solve as the rekey regression check.
+
+## L-0021 · Subtractive shape rework can overshoot into an inverse length cue
+- date: 2026-08-16 · agent: exam-examiner · scope: local · tier: authoring/validator
+- lesson: after trimming keyed-option riders bank-wide, the key is now shortest-or-tied in 25/57 SC items (~44% vs ~25% uniform) — trim toward the middle of the option-length band, not the floor.
+- why: `answer-length-cue` bounds the longest-key cue only; a never-longest/mostly-shortest key is a weaker but real elimination heuristic (rule out the longest option for free).
+- how to apply: next authoring wave drifts key lengths back toward parity; consider a warn-tier inverse bound in `answer-length-cue` (e.g. key strictly-shortest share ≤ 40%).
+
+## L-0022 · The per-exam README has no owning stage — preflight item 5 arrives unowned
+- date: 2026-08-16 · agent: exam-examiner · scope: local · tier: methodology/publishing
+- lesson: methodology/06 §readme-template defines the README's content but no S-stage produces it; aif-c01 reached S6 preflight with `content/<slug>/README.md` simply absent, and the examiner cannot author it (outside the eval/selection surface).
+- why: every preflight item needs an upstream producer; item 5 is the only one whose artifact no stage owns (ccar-p, the only prior package, never went through S5/S6 so the gap was invisible).
+- how to apply: assign README authorship to a stage (natural fit: exam-author at S4-exit, from the §readme-template + manifest provenance block); until the methodology names an owner, the S6 checklist records it OPEN with owner exam-author, blocking the published flip only.

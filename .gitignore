@@ -32,3 +32,6 @@ coverage/
 # local session traces (ADR-0004; Opik is the lens, git is not the store for these)
 .claude/traces/
 
+
+# agent working memory (session-local; durable facts belong in project files)
+.claude/agent-memory/

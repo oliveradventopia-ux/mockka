@@ -95,8 +95,10 @@ Produced at the end of S3 (exam-author, 2026-08-16) per `methodology/00-pipeline
 
 ## Validation record (S3 exit)
 
-`pnpm validate gcp-cdl` — see the run output in the S3 handoff. Expected and accepted at this
-stage: `bank-shape` (0 of 83 items), `concept-coverage` (83 uncovered concepts) and
-`selection-shape` (empty form) — all consequences of `questions.json`/`selection.json` being S4/S6
-outputs. Everything structural and provenance-related is green, and `concept-convergence` emits
-zero warnings (no priority divergences).
+`pnpm validate gcp-cdl` — 30 checks, 0 warnings; 4 checks fail, all consequences of
+`questions.json`/`selection.json` being S4/S6 outputs, expected and accepted at this stage:
+`bank-shape` (0 of 83 items), `concept-coverage` (83 uncovered concepts), `selection-shape` and
+`selection-format-mix` (both on the empty form). All 26 other checks green — everything structural
+and provenance-related passes (`manifest-shape`, `intro-presence`, `concept-inventory`,
+`blueprint-arithmetic`, `provenance-sources`, `concept-source-registry`, `source-derivation-link`),
+and `concept-convergence` emits zero warnings (no priority divergences).

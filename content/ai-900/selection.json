@@ -1,0 +1,10 @@
+{
+  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish.",
+  "version": "0.1.0",
+  "forms": [
+    {
+      "id": "form-a",
+      "items": []
+    }
+  ]
+}

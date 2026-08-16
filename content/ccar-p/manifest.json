@@ -1,0 +1,153 @@
+{
+  "$comment": "Migrated from ~/LifeOS/ccar-p-mock-exam by tools/import-ccar-p.mjs. Everything the original tools/validate.mjs hardcoded is data here.",
+  "slug": "ccar-p",
+  "title": "Claude Certified Architect – Professional (CCAR-P) Mock Exam",
+  "vendor": "Anthropic",
+  "status": "in_review",
+  "version": "1.0.0",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": 63,
+    "time_limit_minutes": 120,
+    "pass_threshold_pct": 75
+  },
+  "bank": {
+    "item_count": 85
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Solution Design & Architecture",
+      "weight_pct": 17,
+      "exam_items": 11,
+      "bank_items": 15,
+      "format_mix": {
+        "single_choice": 8,
+        "multiple_response": 2,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Claude Models, Prompting & Context Engineering",
+      "weight_pct": 13,
+      "exam_items": 8,
+      "bank_items": 11,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 2,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Integration",
+      "weight_pct": 19,
+      "exam_items": 12,
+      "bank_items": 16,
+      "format_mix": {
+        "single_choice": 8,
+        "multiple_response": 3,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Evaluation, Testing & Optimization",
+      "weight_pct": 16,
+      "exam_items": 10,
+      "bank_items": 13,
+      "format_mix": {
+        "single_choice": 7,
+        "multiple_response": 2,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Governance, Safety & Risk Management",
+      "weight_pct": 14,
+      "exam_items": 9,
+      "bank_items": 12,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 2,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d6",
+      "title": "Stakeholder Communication & Lifecycle Management",
+      "weight_pct": 14,
+      "exam_items": 9,
+      "bank_items": 12,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 2,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d7",
+      "title": "Developer Productivity & Operational Enablement",
+      "weight_pct": 7,
+      "exam_items": 4,
+      "bank_items": 6,
+      "format_mix": {
+        "single_choice": 3,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": 5,
+      "select_count": [
+        2
+      ]
+    },
+    "scenario_matching": {
+      "min_options": 3,
+      "min_scenarios": 4,
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-GB",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1
+    },
+    "near_duplicate_jaccard": 0.4
+  },
+  "layers": {
+    "syllabus_rules": true
+  },
+  "provenance": {
+    "sources": [
+      {
+        "id": "ccar-p-blueprint",
+        "type": "public_blueprint",
+        "citation": "Official CCAR-P exam blueprint (public): domain list, weights and format profile. Backbone for the domain arithmetic in this manifest."
+      },
+      {
+        "id": "purcell-practice-set",
+        "type": "own_distillation",
+        "citation": "Purcell practice set (freely published practice material). Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/purcell-distillation.md. No text reused."
+      },
+      {
+        "id": "ccar-p-course-recap",
+        "type": "own_course_notes",
+        "citation": "Own recap notes from the legitimately accessed CCAR-P course (proof-of-access basis). Distilled into the 24 architectural rules and concept vocabulary in derivation/recap-concepts.md."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the CCAR-P item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by NDA. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Anthropic, PBC or Pearson VUE. \"Claude\" and \"Anthropic\" are trademarks of Anthropic, PBC."
+  }
+}

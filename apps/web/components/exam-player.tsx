@@ -127,11 +127,15 @@ export function ExamPlayer({ slug, manifest, paper, syllabusRules }: ExamPlayerP
 
   /* --------------------------------------------------------------- submit */
 
+  // Depends on the stable submit callback, not the attempt object identity —
+  // the timer effect below holds finalise in its deps, so finalise must not
+  // change while the timer runs (the F3 re-render loop).
+  const { submit: submitAttempt } = attempt;
   const finalise = useCallback(() => {
-    attempt.submit();
+    submitAttempt();
     setModal(null);
     showTab('dashboard');
-  }, [attempt, showTab]);
+  }, [submitAttempt, showTab]);
 
   const requestSubmit = useCallback(() => {
     const missing = paper.length - paper.filter(answered).length;

@@ -4,7 +4,7 @@
 // render is answer-free, so hydration never mismatches), persists every
 // mutation, and drives the "Saved" autosave flash.
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { AnswerValue, AttemptState } from '@mockka/engine';
 import {
   emptyAttempt,
@@ -98,5 +98,11 @@ export function useAttempt(
     stateRef.current = fresh;
   }, [slug, store]);
 
-  return { state, hydrated, saveLabel, setAnswer, toggleFlag, startTimed, submit, reset };
+  // Memoized: consumers hold this object in effect/callback deps (e.g. the
+  // exam-player timer effect). A fresh object per render re-fired those deps
+  // every render — the F3 timer re-render loop.
+  return useMemo(
+    () => ({ state, hydrated, saveLabel, setAnswer, toggleFlag, startTimed, submit, reset }),
+    [state, hydrated, saveLabel, setAnswer, toggleFlag, startTimed, submit, reset],
+  );
 }

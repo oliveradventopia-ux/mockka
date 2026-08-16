@@ -972,6 +972,617 @@
           "E": "Enforcing access rules in prompt text is a control at the wrong layer on either stack: prompts can be steered by crafted input, which is why access enforcement belongs in the platform's control plane, not in instructions."
         }
       }
+    },
+    {
+      "id": "3.01",
+      "domain": "d3",
+      "primary_concept": "C-031",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "hospital radiology group",
+      "keywords": ["input/output length", "latency"],
+      "type": "single_choice",
+      "question": "A hospital radiology group is selecting a foundation model to summarize dictated imaging reports. Dictations arrive in six languages, clinicians expect the summary shortly after signing, and the longest transcripts run to 40,000 tokens — which several shortlisted models cannot accept at all. How should the group run the selection?",
+      "options": {
+        "A": "Let the dominating requirement filter first: eliminate models that cannot accept the 40,000-token input/output length, then weigh multi-lingual support, latency, and cost among the models that remain",
+        "B": "Take the model with the largest overall parameter count, since a larger model handles length, language coverage, and speed better across the board",
+        "C": "Take the strongest multi-modal model available, since radiology is an imaging discipline and the model should be chosen for image understanding",
+        "D": "Take the model the group's records-system vendor bundles without extra licensing, since integration convenience outweighs marginal differences between models"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "E05",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "FM selection starts from the requirement that dominates the workload — cost, modality, latency, multi-lingual support, model size and complexity, customization, or input/output length. Here input/output length is binding: a model that cannot accept a 40,000-token transcript fails regardless of its other virtues, so it filters the field first, and multi-lingual support, latency, and cost rank the survivors.",
+        "distractors": {
+          "B": "Parameter count is capacity, not a proxy for every requirement: some of the largest models carry modest input limits and slower responses, so the biggest model can still fail the two constraints that bind here.",
+          "C": "The workload is dictated text in and summary text out. The imaging happens upstream of the model; selecting for image understanding optimizes a modality this pipeline never presents.",
+          "D": "Bundling convenience is a criterion from outside the requirement set. A bundled model that cannot take the longest transcripts fails the radiologists on exactly the reports where a summary matters most."
+        }
+      }
+    },
+    {
+      "id": "3.02",
+      "domain": "d3",
+      "primary_concept": "C-032",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "auto insurance claims",
+      "keywords": ["prompt caching", "prefix"],
+      "type": "single_choice",
+      "question": "An auto insurance claims triage assistant sends the same 3,500-token policy-rules preamble at the start of every request, followed by a short claim-specific section, across 12,000 requests a day. Cost and response latency are both above target. Which change attacks the actual mechanism?",
+      "options": {
+        "A": "Enable prompt caching so the repeated 3,500-token preamble is reused as a cached prefix across calls, cutting cost and latency precisely because so many requests share the same leading context",
+        "B": "Fine-tune the policy rules into the model's weights so the preamble no longer needs to be sent with each request",
+        "C": "Shorten the preamble by cutting rule detail, accepting some loss of triage fidelity in exchange for a smaller per-request cost",
+        "D": "Purchase provisioned throughput to raise the request capacity available during the day's busiest triage hours"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D05",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Prompt caching reuses a repeated prompt prefix across calls, and this workload is its exact profile: an identical 3,500-token preamble leading 12,000 requests a day. Caching the shared prefix removes the repeated processing that drives both the cost and the latency, while the rules stay in the prompt where they can be updated instantly — no retraining, no fidelity loss.",
+        "distractors": {
+          "B": "Baking the rules into weights trades a caching problem for a training pipeline: every policy revision now requires a tuning run and a redeployment, where a prompt edit would have taken a minute.",
+          "C": "Trimming rule detail buys a smaller bill by making triage worse. It reduces the symptom while ignoring the mechanism — the repetition of an identical prefix — which caching removes without touching fidelity.",
+          "D": "Provisioned throughput adds capacity for load. The problem here is per-request cost and latency caused by reprocessing the same leading context, and more capacity reprocesses it just as expensively, at higher volume."
+        }
+      }
+    },
+    {
+      "id": "3.03",
+      "domain": "d3",
+      "primary_concept": "C-033",
+      "secondary_concepts": [],
+      "theme": "A5",
+      "vertical": "language-learning platform",
+      "keywords": ["temperature", "randomness"],
+      "type": "single_choice",
+      "question": "A language-learning platform's writing-feedback assistant intermittently produces wildly inventive, off-task feedback, and support tickets describe it as erratic. Config review shows the temperature was left at 1.0 after a creativity experiment. What should the team change, and why?",
+      "options": {
+        "A": "Lower the temperature from 1.0, since temperature widens or narrows sampling randomness; the erratic feedback is high-variance sampling, and no inference parameter changes what the model knows",
+        "B": "Switch the candidate-set limit from a count-based setting to a probability-mass setting, since the newer sampling parameter supersedes the older one",
+        "C": "Fine-tune the model on more graded essays, since erratic feedback indicates the model lacks the knowledge to assess writing consistently",
+        "D": "Ask reviewers to flag erratic feedback in the app so the team can examine a sample of flagged cases at the end of each week"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E04",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Each inference parameter moves one property of the output: temperature widens or narrows sampling randomness, candidate-set limits trim what can be sampled, and length settings cap the response — and none of them changes what the model knows. Wildly inventive output that appeared after temperature was raised to 1.0 is the randomness lever's signature, and turning that lever back down addresses the mechanism directly.",
+        "distractors": {
+          "B": "Count-based and probability-mass candidate limits are sibling parameters that trim the sampling pool in different ways; neither supersedes the other, and swapping between them does not undo the widened randomness that temperature introduced.",
+          "C": "Tuning changes what the model knows, and knowledge is not the failing property: the same model produced sound feedback before the experiment. Reaching for training to fix a sampling setting swaps an expensive lever for a free one.",
+          "D": "A weekly review of flagged cases detects the failure after learners have already received it. The cause is a configuration value visible today; detection is not the control this defect calls for."
+        }
+      }
+    },
+    {
+      "id": "3.04",
+      "domain": "d3",
+      "primary_concept": "C-034",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "accounting advisory",
+      "keywords": ["Retrieval Augmented Generation", "Amazon Bedrock Knowledge Bases"],
+      "type": "single_choice",
+      "question": "An accounting advisory firm's assistant must answer from the firm's private guidance notes and from tax bulletins that change every quarter. The foundation model's training data predates both, and quarterly retraining is unaffordable. Which approach fixes this by design?",
+      "options": {
+        "A": "Retrieval Augmented Generation, grounding each answer in guidance notes and bulletins retrieved at question time — for example through Amazon Bedrock Knowledge Bases — since the weights never contained this knowledge and retraining cannot keep up with it",
+        "B": "Fine-tuning the model each quarter on the newly issued bulletins, so the current rules are always carried in the weights",
+        "C": "Including the full guidance library in every prompt, so the model always has all firm knowledge in front of it when it answers",
+        "D": "Adding a system instruction directing the model to answer only from firm-approved knowledge and to decline when it is uncertain"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D03",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "Retrieval Augmented Generation is the fix for private or fast-changing knowledge: answers are grounded in documents retrieved at question time, so the assistant reads this quarter's bulletin and the firm's own guidance notes at the moment it answers. The model's weights never contained that content, and no retraining cadence can chase quarterly change — retrieval at inference is the design that keeps up by construction.",
+        "distractors": {
+          "B": "Quarterly tuning runs are the unaffordable treadmill restated: each cycle carries training cost and risk, the weights are stale for weeks around every bulletin, and private notes still leak into a model artifact that is harder to govern than a document store.",
+          "C": "Shipping the whole library with every prompt buys recall through brute volume: enormous per-call cost, and the relevant passage competes with everything else the prompt now carries. Retrieval exists to select, not to flood.",
+          "D": "An instruction cannot supply knowledge the call never contained. Directing the model to use firm-approved sources without an architecture that delivers them produces confident answers from stale training data, now with a compliant tone."
+        }
+      }
+    },
+    {
+      "id": "3.05",
+      "domain": "d3",
+      "primary_concept": "C-035",
+      "secondary_concepts": [],
+      "theme": "A2",
+      "vertical": "municipal water services",
+      "keywords": ["Amazon RDS for PostgreSQL", "vector"],
+      "type": "single_choice",
+      "question": "A municipal water utility has built retrieval over its maintenance manuals: documents are chunked and embedded, and the team must now choose where the embeddings will be stored and searched. The team already operates PostgreSQL databases and wants to stay close to that skill set. Which choice fits?",
+      "options": {
+        "A": "Amazon RDS for PostgreSQL with vector search capability, one of the AWS vector-store options — a storage decision that is separate from which embedding model produced the vectors",
+        "B": "Amazon DynamoDB, since a key-value table can hold the embedding arrays alongside each chunk's identifier",
+        "C": "No store at all: regenerate embeddings on demand at query time, comparing the query against each document as it is read",
+        "D": "Whichever store the chosen embedding model dictates, since the embedding model determines the database it must be paired with"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D02",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Embeddings on AWS live in a dedicated set of vector-capable stores — Amazon OpenSearch Service, Amazon Aurora, Amazon Neptune, and Amazon RDS for PostgreSQL — and the choice among them is a vector-store decision made on operational grounds, separate from choosing the embedding model. A team fluent in PostgreSQL picking RDS for PostgreSQL with vector capability is exactly how that separation is meant to be used.",
+        "distractors": {
+          "B": "A key-value table can hold arrays, but holding vectors is not the job: the job is searching them by similarity, and that requires a store with vector search capability, which is the adjacent role this service does not perform here.",
+          "C": "Discarding the stored embeddings re-embeds the corpus on every question: the intermediate artifact that makes retrieval fast and affordable is thrown away, and each query pays the entire indexing cost again.",
+          "D": "Embedding models produce vectors; they do not dictate a database. The two decisions are independent, which is why the same model's vectors can live in any of the four AWS vector-store options."
+        }
+      }
+    },
+    {
+      "id": "3.06",
+      "domain": "d3",
+      "primary_concept": "C-036",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "call-center outsourcing",
+      "keywords": ["in-context learning", "fine-tuning"],
+      "type": "single_choice",
+      "question": "A call-center outsourcing firm wants its assistant adapted to a new client's products, and the architects are ranking the customization approaches by implementation cost and effort before choosing where to start. Which ranking, cheapest first, is correct?",
+      "options": {
+        "A": "In-context learning, then RAG, then fine-tuning, then pre-training — with model distillation as the separate route to a smaller, cheaper model rather than a rung on this ladder",
+        "B": "RAG, then in-context learning, then fine-tuning, then pre-training, since retrieval infrastructure is quicker to stand up than prompt-based adaptation",
+        "C": "Fine-tuning first, since tuning is the standard opening move for adapting a model, then RAG, then in-context learning for the remaining gaps, then pre-training",
+        "D": "Pre-training first, since building a base model on the client's corpus gives the cleanest fit, falling back to cheaper approaches only if the budget forces it"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D14",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "The customization ladder runs from cheap to expensive: in-context learning costs a prompt edit, RAG adds retrieval infrastructure, fine-tuning adds a training run over prepared data, and pre-training is the heaviest undertaking of all. Model distillation sits apart as the route to a smaller, cheaper model. Starting at the cheap end and climbing only when the cheaper rung falls short is the whole point of ranking by cost and effort.",
+        "distractors": {
+          "B": "Swapping the first two rungs misprices them: in-context learning needs no infrastructure at all — examples go into the prompt — while RAG requires ingestion, embedding, and a vector store before the first improved answer appears.",
+          "C": "Tuning-first is a habit, not an analysis. Fine-tuning carries data preparation and training cost that the two cheaper rungs avoid, and reciting it as the standard opening move ignores the constraint this ranking exists to respect.",
+          "D": "Opening with the most expensive approach inverts the ladder to build the cleanest possible fit for a need the cheap rungs may satisfy this week. Falling back after spending is the costliest order of operations available."
+        }
+      }
+    },
+    {
+      "id": "3.07",
+      "domain": "d3",
+      "primary_concept": "C-037",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "property management",
+      "keywords": ["AI agent", "multi-step"],
+      "type": "single_choice",
+      "question": "A property management firm already runs a chatbot that answers tenant questions well. A vendor is now pitching an AI agent for maintenance handling, and the operations director asks what an agent would actually add. What is the accurate answer?",
+      "options": {
+        "A": "An AI agent completes a multi-step task by orchestrating tool and API calls — booking the contractor, updating the work-order ledger, notifying the tenant — a coordinator of actions rather than a better conversationalist",
+        "B": "An AI agent is a larger, more capable model, so its main contribution is answering harder maintenance questions than the current chatbot can",
+        "C": "An AI agent's contribution is operating without human oversight, so the maintenance queue would run with no staff involvement at all",
+        "D": "An AI agent mainly reduces cost per conversation, because agent frameworks batch model calls more efficiently than chatbots do"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "In business terms, an AI agent exists to complete a multi-step task by orchestrating tool and API calls: it acts on the systems where maintenance work actually happens — scheduling, ledgers, notifications — and sequences those actions to an outcome. That is the line between agentic AI and a chatbot: coordination of actions, not a smarter reply.",
+        "distractors": {
+          "B": "Agent and model are different axes: an agent can be built on the same model the chatbot uses. Its value is what it does — act and coordinate — not a capability jump in what it says.",
+          "C": "Zero-oversight operation is an operating model nobody asked for, and it is not what defines an agent. Autonomy is granted in degrees, and a maintenance agent typically acts under approval gates staff still control.",
+          "D": "Cost per conversation is not the mechanism of agent value, and batching efficiencies are not what frameworks are for. An agent typically makes more model calls than a chatbot, spending them to advance a task."
+        }
+      }
+    },
+    {
+      "id": "3.08",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "ride-hailing platform",
+      "keywords": ["negative prompts", "instruction"],
+      "type": "single_choice",
+      "question": "A ride-hailing platform generates rider safety notices with an FM. The prompt contains a single instruction sentence, and outputs keep drifting into phrasings the legal team has banned. The team asks how a working prompt is actually built. What should they change?",
+      "options": {
+        "A": "Build the prompt from its working parts — context about the incident type, a clear instruction, and negative prompts naming the banned phrasings to avoid — then refine it for specificity and concision through experimentation",
+        "B": "Repeat the existing instruction sentence three times at the top of the prompt, since repetition raises the weight the model gives it",
+        "C": "Leave the prompt as it is and add a moderation pass that scans each generated notice for banned phrasings after generation",
+        "D": "Move the instruction into the final user message on every call rather than structuring the prompt, since models weight the most recent text most heavily"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "D07",
+        "D": "D04"
+      },
+      "rationale": {
+        "correct": "A working prompt is built from context, instruction, and negative prompts — and the missing part here is exactly the negative prompts: nothing in a lone instruction sentence tells the model which phrasings are banned. Adding context about the incident type and naming what to avoid, then improving specificity and concision through experimentation and discovery, is the craft the concept describes.",
+        "distractors": {
+          "B": "Three copies of the same sentence add bulk, not information: the prompt still never states what must be avoided, so the drift continues under a heavier preamble.",
+          "C": "Scanning after generation catches banned phrasing once it exists instead of preventing it. A detection pass has a place as a backstop, but it is not an answer to how the prompt should be built.",
+          "D": "Position-shuffling is a superficial lever: wherever the instruction sits, it still contains no negative prompts, so the model remains uninformed about the one constraint that is being violated."
+        }
+      }
+    },
+    {
+      "id": "3.09",
+      "domain": "d3",
+      "primary_concept": "C-039",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "music streaming service",
+      "keywords": ["few-shot", "chain-of-thought"],
+      "type": "scenario_matching",
+      "question": "A music streaming service's enablement team is writing an internal guide that names the prompting technique used in each of its production prompts. For each described setup, select the technique it demonstrates. Options may be used more than once.",
+      "matching_options": [
+        "Zero-shot prompting",
+        "Few-shot prompting",
+        "Chain-of-thought prompting",
+        "Prompt template"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "The playlist-title prompt gives an instruction and the playlist's genre, and asks for a title without providing any example titles."
+        },
+        {
+          "id": "s2",
+          "text": "The lyric-summary prompt includes four worked examples, each pairing sample lyrics with a summary in the desired style, before presenting the new lyrics."
+        },
+        {
+          "id": "s3",
+          "text": "The royalty-query prompt instructs the model to reason step by step through the applicable contract clauses and to show that reasoning before stating its final answer."
+        },
+        {
+          "id": "s4",
+          "text": "The support-reply prompt is stored centrally with placeholders for artist name and issue type, which agents fill in for each ticket."
+        },
+        {
+          "id": "s5",
+          "text": "The genre-tagging prompt simply instructs the model to assign one genre from a fixed list to the track description, with no examples given."
+        }
+      ],
+      "answer": {
+        "s1": "Zero-shot prompting",
+        "s2": "Few-shot prompting",
+        "s3": "Chain-of-thought prompting",
+        "s4": "Prompt template",
+        "s5": "Zero-shot prompting"
+      },
+      "rationale": {
+        "correct": "The techniques are named by what the prompt carries. The count of in-prompt examples separates the first family: zero-shot provides none — instruction only, as in the playlist-title and genre-tagging prompts — single-shot provides one, and few-shot provides several, like the four worked lyric-summary examples. Chain-of-thought is defined by asking the model to reason step by step and show the reasoning, which is the royalty prompt's instruction. A prompt template is about reuse rather than examples: one stored prompt with placeholders filled in per ticket."
+      }
+    },
+    {
+      "id": "3.10",
+      "domain": "d3",
+      "primary_concept": "C-040",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "public transit agency",
+      "keywords": ["poisoning", "hijacking"],
+      "type": "single_choice",
+      "question": "A public transit agency's rider assistant retrieves community answers from a public suggestion forum. A security review finds that content planted on the forum was ingested into the retrieval corpus, and the assistant now repeats the planted misinformation in its answers. How should this risk be classified?",
+      "options": {
+        "A": "Poisoning: the attacker corrupted the retrieval content the assistant depends on, so the planted material now flows into answers through the corpus itself",
+        "B": "Hijacking: the attacker has repurposed the assistant so that it now serves the attacker's task instead of the agency's",
+        "C": "A hosting-layer intrusion: the forum's servers were compromised, so remediation belongs with the forum's hosting provider rather than the AI pipeline",
+        "D": "A content-quality issue: routine moderation review of the forum will surface and remove material of this kind in the normal course"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D06",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Adversarial prompt risks are told apart by the attacker's objective: exposure leaks data, poisoning corrupts training or retrieval content, hijacking repurposes the system, and jailbreaking defeats its safety policy. Planting material so that ingestion carries it into the corpus is poisoning precisely because the corruption lives in the content the assistant retrieves — every answer drawing on the tainted corpus spreads it.",
+        "distractors": {
+          "B": "Hijacking repurposes the system's behavior toward the attacker's task, typically through crafted input at question time. Here the assistant still performs its own task; what changed is the truthfulness of the content it retrieves.",
+          "C": "No server was breached: the attacker used the forum exactly as designed, by posting. The vulnerable boundary is the ingestion of untrusted public content into the corpus, which is squarely a property of the AI pipeline.",
+          "D": "Waiting for routine moderation leaves the corpus poisoned for as long as the review cycle runs, with the assistant amplifying the material meanwhile. A risk this direct needs a control at ingestion, not an eventual cleanup."
+        }
+      }
+    },
+    {
+      "id": "3.11",
+      "domain": "d3",
+      "primary_concept": "C-041",
+      "secondary_concepts": [],
+      "theme": "A7",
+      "vertical": "airport ground operations",
+      "keywords": ["prompt versioning", "Amazon Bedrock Prompt Management"],
+      "type": "single_choice",
+      "question": "Three teams at an airport ground-operations company edit their shared assistant's production prompt directly in a console. After a quality regression, nobody can say which wording change caused it, when it was made, or how to restore the previous behavior. What practice fixes this class of failure?",
+      "options": {
+        "A": "Prompt versioning: manage prompts as versioned artifacts that are tracked, compared, and rolled back like code, with Amazon Bedrock Prompt Management as the AWS home for the practice",
+        "B": "Restricting prompt edits to a single senior engineer, so that changes become rare and the other two teams submit wording requests instead",
+        "C": "A shared log where each team records its prompt changes after making them, so future regressions can be traced by reading the entries",
+        "D": "A weekly regression test of the assistant, so that the next quality drop is noticed within days of the change that caused it"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D16",
+        "C": "D09",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Prompts that drive production behavior are artifacts, and the failure described — unattributable changes, no history, no rollback — is exactly what versioning exists to remove. Treating prompts as versioned, managed artifacts makes every change tracked, comparable, and reversible, and Amazon Bedrock Prompt Management provides that practice as a service. Three teams can then edit safely because the history, not anyone's memory, carries the record.",
+        "distractors": {
+          "B": "Bottlenecking edits through one person reduces the mandate instead of meeting it: three teams legitimately need to iterate, and a single gatekeeper adds queue time while still recording no history and enabling no rollback.",
+          "C": "A voluntary after-the-fact log documents changes without governing them: entries get skipped under pressure, the log and the console drift apart, and a written note is still not a diff or a rollback.",
+          "D": "Weekly tests shorten the time to notice a regression; they do nothing to attribute it or reverse it. Detection cadence is a complement to version control, not a substitute for it."
+        }
+      }
+    },
+    {
+      "id": "3.12",
+      "domain": "d3",
+      "primary_concept": "C-042",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "dermatology clinics",
+      "keywords": ["continuous pre-training", "distillation"],
+      "type": "single_choice",
+      "question": "A dermatology clinic network wants its foundation model to command the field's terminology across every task it performs, and it holds a large unlabeled corpus of de-identified clinical notes. Later, the network plans a smaller, cheaper variant for waiting-room kiosks. Which weight-changing method fits the immediate goal?",
+      "options": {
+        "A": "Continuous pre-training on the unlabeled clinical corpus, since the goal is extending domain knowledge across tasks — with distillation reserved for later, when the smaller kiosk model is compressed from the full one",
+        "B": "Fine-tuning on labeled task examples, since tuning on the clinical notes will specialize the model to each dermatology task directly",
+        "C": "Pre-training a new model from scratch on the clinical corpus, so dermatology knowledge is present from the first layer up",
+        "D": "Distillation now, compressing the current model so the network starts from the smaller variant and adds knowledge afterward"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D01",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "The four ways weights change divide by purpose: pre-training builds general capability, fine-tuning adapts to a task, continuous pre-training extends domain knowledge, and distillation compresses into a smaller model. Broad command of dermatology language across all tasks, fed by a large unlabeled corpus, is continuous pre-training's exact profile — and the kiosk variant is a distillation of the finished model, later.",
+        "distractors": {
+          "B": "Fine-tuning adapts a model to a task and expects labeled examples. The corpus is unlabeled and the goal spans every task, which is the domain-extension case, not task adaptation.",
+          "C": "From-scratch pre-training rebuilds the general capability the foundation model already has, at the largest possible cost, to reach a goal that extending the existing model achieves for a fraction of it.",
+          "D": "Compression is the right method at the wrong point in the sequence: distilling first shrinks a model that does not yet hold the domain knowledge, leaving nothing worth compressing into the kiosks."
+        }
+      }
+    },
+    {
+      "id": "3.13",
+      "domain": "d3",
+      "primary_concept": "C-043",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "life insurance underwriting",
+      "keywords": ["instruction tuning", "transfer learning"],
+      "type": "single_choice",
+      "question": "A life insurance underwriting team ran three tuning efforts: first, teaching a general FM to follow structured directions across many task types using instruction-response pairs; second, specializing a model to actuarial and underwriting language; third, reusing a model trained on health-claims text for a new disability-claims task. Which naming of the three efforts is correct?",
+      "options": {
+        "A": "The first is instruction tuning, the second is domain adaptation, and the third is transfer learning — each fine-tuning variant named by its objective",
+        "B": "The first is domain adaptation, the second is instruction tuning, and the third is transfer learning, since teaching direction-following adapts the model to the underwriting domain",
+        "C": "The first is instruction tuning, the second is domain adaptation, and the third is continuous pre-training, since reusing the health-claims model extends its knowledge",
+        "D": "All three are variants of preference alignment, differing only in the data used, so distinguishing them adds vocabulary without a practical difference"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E04",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Fine-tuning variants are named by objective. Instruction tuning teaches a model to follow directions, which is the instruction-response effort. Domain adaptation specializes a model to a field's language, which is the actuarial effort. Transfer learning reuses capability learned on one task for a new one, which is the health-claims model applied to disability claims. The names classify the intent of the tuning, not its mechanics.",
+        "distractors": {
+          "B": "Swapping the first two names misreads both objectives: direction-following is a general skill across task types, not knowledge of underwriting language, and specializing to a field's vocabulary is not about following directions.",
+          "C": "The third effort reuses learned capability on a new task, which is transfer learning; continuous pre-training is the neighboring method that extends domain knowledge with further unlabeled training, and no such training is described.",
+          "D": "Collapsing the three names flattens real operational differences — each variant needs different data and serves a different objective, and a team that cannot tell them apart cannot choose or budget between them."
+        }
+      }
+    },
+    {
+      "id": "3.14",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "clinical trials recruitment",
+      "keywords": ["label", "representativeness"],
+      "type": "multiple_response",
+      "question": "A clinical trials recruitment platform is preparing a dataset to fine-tune an FM that screens patient inquiries. The data lead must state what the fine-tuning data has to look like before quality can follow. Which TWO properties belong in that statement? (Select TWO.)",
+      "options": {
+        "A": "Labeled examples: each inquiry paired with its correct screening outcome, so the tuning has a signal to learn from",
+        "B": "Representativeness: coverage that mirrors the inquiry traffic the deployed model will actually see in production",
+        "C": "Maximum volume: every inquiry that can be gathered, with quality issues offset by the sheer number of examples",
+        "D": "Strict recency: only inquiries from the last 30 days, since anything older teaches patterns the model should not learn",
+        "E": "Raw authenticity: inquiries left exactly as received, since any curation would introduce the curator's bias into the dataset"
+      },
+      "select_count": 2,
+      "answer": ["A", "B"],
+      "distractor_patterns": {
+        "C": "D03",
+        "D": "D10",
+        "E": "D02"
+      },
+      "rationale": {
+        "correct": "Fine-tuning data earns quality before training starts: it must be curated, governed, sufficiently sized, labeled, and representative of the traffic the model will actually see. Of the options offered, the two that state real requirements are the labeled screening outcomes — without labels there is no tuning signal — and representativeness of production inquiries, without which the model learns a population it will never meet.",
+        "distractors": {
+          "C": "Volume does not launder quality: scale multiplies whatever the data contains, including its defects. Sufficient size is a requirement; maximum size with known quality issues is how those issues become model behavior.",
+          "D": "A 30-day window is a schedule masquerading as a quality property. Screening patterns do not expire monthly, and truncating history narrows representativeness — the opposite of what the dataset statement needs.",
+          "E": "Refusing curation is not neutrality: raw data carries duplicates, errors, and noise, and data curation with governance is itself one of the stated requirements for fine-tuning data. Unprocessed is not unbiased."
+        }
+      }
+    },
+    {
+      "id": "3.15",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "fitness app platform",
+      "keywords": ["reinforcement learning from human feedback", "preference"],
+      "type": "single_choice",
+      "question": "A fitness app's coaching assistant needs a more motivating tone, but there is no labeled correct answer for what good coaching sounds like. The team does hold thousands of user ratings, each comparing two candidate responses and marking which one the user preferred. Which technique aligns the model using exactly this data?",
+      "options": {
+        "A": "Reinforcement learning from human feedback, which aligns model behavior with human preference rankings and exists precisely for goals where no labeled right answer is available to train against",
+        "B": "Supervised fine-tuning on a set of correct coaching responses, so the model learns the target tone from labeled examples",
+        "C": "Raising the temperature so responses vary more, letting warmer phrasings appear more often in the assistant's output",
+        "D": "Publishing tone guidance to users, so they learn to phrase their requests in ways that draw out the coaching style they want"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D04",
+        "D": "D18"
+      },
+      "rationale": {
+        "correct": "Reinforcement learning from human feedback aligns model behavior with human preference rankings, and it is used exactly where no labeled right answer exists — quality like motivating tone is comparative, not absolute. The thousands of pairwise preference ratings are RLHF's native input: they teach the model which of two behaviors people prefer, which is the only signal this goal can produce.",
+        "distractors": {
+          "B": "Supervised tuning presupposes the labeled correct responses the stem says do not exist. Manufacturing a canonical set of right answers for an inherently preference-shaped quality discards the comparative data the team actually holds.",
+          "C": "Temperature widens sampling variety; it has no notion of warmth. More varied output includes more of everything, and no configuration value can convert preference ratings into aligned behavior.",
+          "D": "Coaching tone is the product's obligation, not the user's technique. Training users to phrase around a flat assistant assigns the system's gap to its customers while the preference data sits unused."
+        }
+      }
+    },
+    {
+      "id": "3.16",
+      "domain": "d3",
+      "primary_concept": "C-046",
+      "secondary_concepts": [],
+      "theme": "A4",
+      "vertical": "hotel revenue management",
+      "keywords": ["human-in-the-loop", "LLM-as-a-judge"],
+      "type": "single_choice",
+      "question": "A hotel revenue-management vendor generates pricing-explanation notes with an FM. Quality is subjective — general managers must find a note clear and persuasive — and thousands of notes ship weekly, so evaluation must scale. How should the vendor evaluate?",
+      "options": {
+        "A": "Use human-in-the-loop evaluation on a sample to define the subjective standard, then LLM-as-a-judge calibrated against those human judgments to score at weekly scale — the pairing Amazon Bedrock Model Evaluation supports",
+        "B": "Score the model on public benchmark datasets, since benchmark results are objective and comparable across model versions",
+        "C": "Rely on account managers hearing from general managers when notes miss the mark, treating complaints as the evaluation channel",
+        "D": "Have the engineer who wrote the note-generation prompt review output samples, since the author knows the intended quality best"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D08",
+        "D": "D20"
+      },
+      "rationale": {
+        "correct": "The evaluation approach follows the quality criterion. A subjective bar — clear and persuasive to a general manager — is set by human-in-the-loop evaluation, because only humans hold the standard. Scale then comes from LLM-as-a-judge, calibrated against the human sample so the automated grader applies the human standard weekly, with benchmark datasets reserved for the comparability questions they actually answer, and Amazon Bedrock Model Evaluation as the tooling for both.",
+        "distractors": {
+          "B": "Public benchmarks measure general capabilities on public tasks; none of them scores whether this vendor's pricing notes persuade this audience. An objective number for the wrong question is not evaluation.",
+          "C": "Complaints are the slowest, most filtered signal available: most dissatisfied managers say nothing, and the ones who speak do so weeks into the damage. Waiting for them outsources evaluation to attrition.",
+          "D": "The prompt's author reviews from inside the assumptions that shaped the output, which is exactly the anchoring that independent evaluation exists to break. Familiarity with intent is a bias here, not a qualification."
+        }
+      }
+    },
+    {
+      "id": "3.17",
+      "domain": "d3",
+      "primary_concept": "C-047",
+      "secondary_concepts": [],
+      "theme": "A4",
+      "vertical": "seafood supply chain",
+      "keywords": ["ROUGE", "BLEU"],
+      "type": "single_choice",
+      "question": "A seafood exporter uses an FM to summarize inspection reports, and the team must pick the evaluation metric for the summaries against a set of reference summaries. One engineer proposes BLEU as the industry standard. Which metric choice is right, and what will it not tell the team?",
+      "options": {
+        "A": "ROUGE, which measures summarization overlap against the reference summaries — while certifying nothing about factual correctness, which no overlap metric establishes",
+        "B": "BLEU, since it is the established standard for scoring generated text of any kind against references",
+        "C": "BERTScore, since scoring semantic similarity makes overlap counting unnecessary and similar meaning implies the summary is faithful",
+        "D": "No formal metric: have the operations lead spot-read a handful of summaries each Friday and judge quality directly"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "E05",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Generation metrics map to tasks: ROUGE measures summarization overlap with reference summaries, BLEU measures translation quality, and BERTScore measures semantic similarity. For summaries scored against references, ROUGE is the fitted choice. The second half matters as much: none of the three certifies factual correctness, so a high ROUGE score is overlap evidence, not a guarantee the summary tells the truth about the inspection.",
+        "distractors": {
+          "B": "BLEU's home task is translation quality, not summarization: it was designed to compare translated text with reference translations, and applying it across task types misreads what its score means.",
+          "C": "BERTScore is the neighboring metric for semantic similarity, and similarity does not imply faithfulness: a summary can sit close to the reference in meaning while misstating the one finding that matters.",
+          "D": "Friday spot-reads are opinion sampling: a handful of summaries judged by one reader measures neither coverage nor consistency, and it cannot detect gradual quality drift the way a tracked metric can."
+        }
+      }
+    },
+    {
+      "id": "3.18",
+      "domain": "d3",
+      "primary_concept": "C-048",
+      "secondary_concepts": [],
+      "theme": "A4",
+      "vertical": "pension fund administration",
+      "keywords": ["RAG", "component"],
+      "type": "single_choice",
+      "question": "A pension fund administrator's RAG assistant answers member questions. The retriever scores well on its retrieval benchmark and the model scores well on its own benchmarks, yet end-to-end answers to real member questions are frequently wrong. What is the evaluation lesson?",
+      "options": {
+        "A": "Evaluate the application, not the components: a RAG pipeline is judged end to end on real member questions, because component quality does not compose into system quality",
+        "B": "Re-run each component's benchmark with larger test sets, since the existing scores were probably measured on samples too small to trust",
+        "C": "Re-index the document store more frequently, since strong components with wrong answers usually indicate the retrieval content has gone stale",
+        "D": "Add a notice that answers are informational only, so wrong answers carry less consequence while component scores remain the quality measure"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "D10",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Applications are evaluated as applications: a RAG pipeline, an agent, or a workflow is judged end to end because component quality does not compose into system quality. A well-benchmarked retriever can fetch passages a well-benchmarked model then misuses — chunk boundaries, prompt assembly, and question mismatch all live between the components. The failing unit is the pipeline, so the evaluation unit must be the pipeline, on real member questions.",
+        "distractors": {
+          "B": "Bigger samples of the same component measurements re-answer a question that was never in doubt. Both components already score well; measuring them harder cannot surface a failure that only exists where they meet.",
+          "C": "Refresh frequency is one possible cause among many, adopted here without evidence. Tuning a schedule before end-to-end evaluation has localized the failure is intervention by guesswork.",
+          "D": "A disclaimer re-labels wrong answers instead of finding out why they happen. Members still receive them, and the measurement gap — no end-to-end evaluation — remains exactly as it was."
+        }
+      }
+    },
+    {
+      "id": "3.19",
+      "domain": "d3",
+      "primary_concept": "C-049",
+      "secondary_concepts": [],
+      "theme": "A4",
+      "vertical": "industrial equipment rental",
+      "keywords": ["task completion rate", "cost per interaction"],
+      "type": "multiple_response",
+      "question": "An industrial equipment rental company has run its GenAI support assistant for two quarters. Model-quality dashboards look strong, and the board now asks whether the assistant actually serves the business. Which TWO metrics answer the board's question? (Select TWO.)",
+      "options": {
+        "A": "Task completion rate: the share of customer issues the assistant resolves without a human handoff",
+        "B": "Cost per interaction, compared against the cost of the same interactions handled by the support team",
+        "C": "ROUGE overlap between the assistant's replies and the company's approved answer library",
+        "D": "The assistant's underlying model's ranking on a public GenAI capability leaderboard",
+        "E": "Movement in the company's annual brand-perception survey attributed to the assistant's rollout"
+      },
+      "select_count": 2,
+      "answer": ["A", "B"],
+      "distractor_patterns": {
+        "C": "E02",
+        "D": "D12",
+        "E": "D08"
+      },
+      "rationale": {
+        "correct": "Whether an AI application serves the business is measured by business-alignment metrics: task completion rate, user satisfaction, cost per interaction, conversion rate, and their kin. Task completion rate says whether customers actually get resolved without human handoff, and cost per interaction against the human-handled baseline says what each resolution costs — together they answer value, which no model-quality dashboard can.",
+        "distractors": {
+          "C": "Overlap with an answer library is a generation-quality measure on the wrong question: a reply can match the library word for word and still fail to resolve the customer's issue or justify its cost.",
+          "D": "A leaderboard ranks the model on public tasks under lab conditions. The board asked about this assistant in this business, and no external ranking carries information about either.",
+          "E": "An annual brand survey is a lagging, confounded signal: a year of pricing, fleet, and market changes moves it too, and attribution to the assistant is a guess. Value questions need metrics the assistant directly drives."
+        }
+      }
     }
   ]
 }

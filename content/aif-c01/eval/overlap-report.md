@@ -57,3 +57,46 @@ Overlap screen **passes on process control** for all 67 items. Residual risk is 
 inherent one the methodology names: with no held source text, verbatim overlap with
 the two practice sets cannot be *measured*, only prevented by construction — the
 Gate 2 deep-read sample is the human backstop.
+
+---
+
+# S5 overlap screen — aif-c01, round 2 (post-rework re-run)
+
+Examiner: exam-examiner (fresh session, round 2) · Date: 2026-08-16 · Protocol:
+`methodology/05-eval-rubric.md` §overlap.
+
+## What changed since round 1
+
+The bank content changed in two rework commits, so the screen is re-run for the
+delta; the source posture is unchanged (sources still never held as text — the
+round-1 process control above remains the evidence for the bank at large):
+
+- `ea967ce` — keyed-option rider **trims** on 44 items (deletion-only: no new
+  prose entered the bank) plus **two newly authored distractors with rationales**:
+  3.07 option A (agent-as-retrieval) and 3.15 option D (best-of-n serve-time
+  filter).
+- `1b1596c` — bank-wide key-letter **permutation** (reordering only; no new text).
+
+## Delta check actually run
+
+Only the two newly authored distractor/rationale texts are new prose. Both were
+checked against every held derivation doc (distinctive-phrase grep + re-read of the
+relevant doc sections): **zero shared strings beyond single canonical vocabulary
+terms** (Artefact B bounded exception). The new text is scenario wardrobe
+("work-order records", "candidate replies") plus concept argument in the bank's own
+voice — original expression.
+
+## Process control (round-2 chain)
+
+The rework session (bounce round 1 → rework, exam-author) worked from the round-1
+bounce records in `eval/judge-scores-r1.json` (which contain only the examiner's
+own judge cases and fix instructions — no source text) and the bank itself. No
+source text was opened; the clean-room posture is unchanged. Artefact chain for
+this revision: `8a35a70` (S3 authored state) → `ea967ce` → `1b1596c` (bank under
+round-2 eval).
+
+## Verdict
+
+Round-2 overlap screen **passes**: deletion-only trims and a letter permutation
+introduce no overlap surface; the two new distractors are original expression.
+No clean-room breach; no re-expression bounces.

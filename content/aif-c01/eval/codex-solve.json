@@ -1,5 +1,5 @@
 {
-  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, 2026-08-16.",
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, 2026-08-16. Covers round 1 (attempts 1-2) and round 2 (attempt 3): the instrument remains unavailable in both rounds.",
   "status": "advisory_skipped",
   "attempts": [
     {
@@ -11,6 +11,12 @@
       "n": 2,
       "action": "located bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex (codex-cli 0.148.0-alpha.9); ran `codex login status` then `codex exec --skip-git-repo-check -s read-only` probe",
       "result": "login status: Not logged in; exec probe failed: 401 Unauthorized (Missing bearer or basic authentication) against api.openai.com/v1/responses after 5 reconnect attempts"
+    },
+    {
+      "n": 3,
+      "round": 2,
+      "action": "round-2 re-attempt (2026-08-16, post-rework re-eval): same bundled binary openai.chatgpt-26.810.52044 codex-cli 0.148.0-alpha.9; `codex login status` then one `codex exec --skip-git-repo-check` probe",
+      "result": "login status: Not logged in; exec probe failed: 401 Unauthorized against api.openai.com/v1/responses after 5 reconnect attempts — unchanged since round 1"
     }
   ],
   "reason": "No Codex CLI authentication is available to this session and establishing it would require an interactive OAuth login / account credential outside the examiner's authority (project free-first rule: no account signups without Oliver's approval).",

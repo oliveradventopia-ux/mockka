@@ -28,3 +28,7 @@ supabase/.branches/
 # scratch
 tmp/
 coverage/
+
+# local session traces (ADR-0004; Opik is the lens, git is not the store for these)
+.claude/traces/
+

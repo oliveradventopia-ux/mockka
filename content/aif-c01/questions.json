@@ -455,6 +455,523 @@
           "D": "One blended score covers only the model half. F1 also weighs precision and recall equally when this task's costs are 40-to-1 asymmetric, and no model metric, however balanced, can answer the value question the board asked."
         }
       }
+    },
+    {
+      "id": "2.01",
+      "domain": "d2",
+      "primary_concept": "C-015",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "legal e-discovery",
+      "keywords": ["tokens", "context window"],
+      "type": "single_choice",
+      "question": "A legal e-discovery platform is sizing an LLM workload. Contract documents average 9,000 words, the candidate model's context window is quoted in tokens, and the provider bills by usage. The team is drafting its capacity and cost plan. Which understanding should drive the plan?",
+      "options": {
+        "A": "Plan in tokens: the model reads and generates tokens, so whether a document fits the context window and what a call costs are both counted in tokens, and a 9,000-word contract occupies more than 9,000 of them",
+        "B": "Plan in words: for English text, words and tokens correspond one to one, so the existing word counts can stand in for token counts without conversion",
+        "C": "Plan in characters: language models bill by the character, so the platform's stored character counts are the figures the budget should be built on",
+        "D": "Treat unit economics as a post-launch concern, since real invoices will reveal the cost structure more accurately than any estimate made now"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E05",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "A token is the unit a language model reads and generates, and both the context window and usage are counted in tokens rather than words or characters. Tokens are sub-word units, so a 9,000-word contract occupies noticeably more than 9,000 of them, which is exactly the kind of gap that breaks a capacity plan built on word counts.",
+        "distractors": {
+          "B": "Words and tokens do not correspond one to one: tokenizers split many words into several tokens, so word-count planning systematically undersizes both the context budget and the bill.",
+          "C": "Characters are the neighboring unit, not the billing one. A plan keyed to character counts measures the wrong quantity at every step, from window fit to per-call cost.",
+          "D": "Token economics are a design input, not an accounting afterthought: prompt and document handling decisions made now determine the invoices later, and waiting for real bills means designing blind."
+        }
+      }
+    },
+    {
+      "id": "2.02",
+      "domain": "d2",
+      "primary_concept": "C-016",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "patent law practice",
+      "keywords": ["embedding", "chunking"],
+      "type": "single_choice",
+      "question": "A patent law practice is building semantic search over 80,000 filings so attorneys can find conceptually similar passages, not just shared wording. A junior architect asks how the retrieval layer actually finds passages that mean the same thing. Which explanation is correct?",
+      "options": {
+        "A": "Chunking splits each filing into retrievable pieces, each piece is encoded as an embedding vector that captures its meaning, and a query is embedded the same way, so conceptual similarity becomes geometric distance between vectors",
+        "B": "Each filing should be embedded whole as a single vector, since chunking is an implementation convenience that adds complexity without changing what the search can find",
+        "C": "The passages are clustered under topic labels assigned during ingestion, and retrieval walks the topic tree from broad categories down to the matching leaf",
+        "D": "Retrieval quality depends mainly on how much text each vector carries, so chunks should be made as large as the embedding model accepts"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D02",
+        "C": "E05",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "An embedding encodes meaning as a vector, which turns similarity of meaning into geometric distance: passages about the same concept sit near each other in vector space even when they share no wording. Chunking splits documents into the retrievable pieces that get embedded, and the size of those pieces shapes what can be found — a chunk is the unit of retrieval, not a storage detail.",
+        "distractors": {
+          "B": "Removing chunking removes the granularity retrieval depends on: one vector for an entire filing blurs together everything the filing discusses, so no single passage can be found by its own meaning.",
+          "C": "Topic trees are a neighboring retrieval idea, but they are not how embedding-based search works: there are no assigned labels to walk, only distances between vectors in a shared space.",
+          "D": "Bigger chunks pack more content into each vector and thereby dilute it: the vector averages over more ideas, and the specific passage an attorney needs becomes harder to isolate. Chunk size is a structural choice, not a capacity to maximize."
+        }
+      }
+    },
+    {
+      "id": "2.03",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "consumer electronics support",
+      "keywords": ["prompt engineering", "fine-tuning"],
+      "type": "single_choice",
+      "question": "A consumer electronics support team spent two weeks rewriting its assistant's instructions and worked examples, and troubleshooting replies improved sharply. A director, assuming the model was retrained, asks what the training run cost. Which statement correctly characterizes what the team did?",
+      "options": {
+        "A": "The team practiced prompt engineering, shaping the model's behavior through the input alone; no weights changed, which is what separates prompting from every form of tuning, and no training run occurred",
+        "B": "The team performed a lightweight form of fine-tuning, differing from a full training run only in degree, so a small training cost was in fact incurred",
+        "C": "The team practiced context engineering, changing which retrieved documents and history enter the model's context at call time",
+        "D": "The team's gains will need training-scale compute to sustain, since improvements made at the prompt level require moving to model training as usage grows"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E05",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Prompt engineering shapes model behavior through the input alone — instructions, wording, worked examples — while the model's weights stay untouched. That is the line that separates it from fine-tuning and every other form of tuning: no training run happened, so there is no training cost to report. The improvement lives in the prompt, not in the model.",
+        "distractors": {
+          "B": "Fine-tuning changes weights through a training process; rewriting instructions changes nothing but the input. The two are different in kind, not degree, and conflating them is how phantom training costs appear in budgets.",
+          "C": "Context engineering assembles and prioritizes what enters a model call — retrieved content, history, instructions as a payload. This team rewrote the instruction text itself, which is the neighboring discipline of prompt engineering.",
+          "D": "Prompt-level improvements do not decay into a compute bill: the prompt is supplied on every call at no training cost, regardless of scale. Nothing about growing usage converts prompting into training."
+        }
+      }
+    },
+    {
+      "id": "2.04",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "apparel e-commerce",
+      "keywords": ["diffusion model", "multi-modal model"],
+      "type": "scenario_matching",
+      "question": "An apparel e-commerce company is scoping five generative AI features. Each needs a model family suited to its inputs and outputs. For each feature, select the model family that fits. Options may be used more than once.",
+      "matching_options": [
+        "Transformer-based large language model",
+        "Diffusion model",
+        "Multi-modal model"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Generate polished product descriptions from bullet-point garment specifications supplied by merchandisers."
+        },
+        {
+          "id": "s2",
+          "text": "Produce photorealistic lifestyle images of garments for campaign mockups before any photo shoot is booked."
+        },
+        {
+          "id": "s3",
+          "text": "Answer customer support questions that arrive with an uploaded photo of a damaged item plus the order's text history."
+        },
+        {
+          "id": "s4",
+          "text": "Draft empathetic replies to written customer reviews for a human agent to approve."
+        },
+        {
+          "id": "s5",
+          "text": "Create style variants of an existing product image, changing color and background while keeping the garment recognizable."
+        }
+      ],
+      "answer": {
+        "s1": "Transformer-based large language model",
+        "s2": "Diffusion model",
+        "s3": "Multi-modal model",
+        "s4": "Transformer-based large language model",
+        "s5": "Diffusion model"
+      },
+      "rationale": {
+        "correct": "A foundation model's family is chosen by modality. Text in and text out — specifications becoming descriptions, reviews becoming reply drafts — is the home ground of transformer-based large language models. Image generation, whether creating lifestyle scenes from nothing or producing controlled variants of an existing shot, is what diffusion models do. The support feature is the discriminating case: its input spans two modalities at once, a photo and the order's text history, and a model that must read across input types is a multi-modal model rather than a language-only or image-only one."
+      }
+    },
+    {
+      "id": "2.05",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "digital news publishing",
+      "keywords": ["adaptability", "generate content"],
+      "type": "single_choice",
+      "question": "A digital news publisher has budget for one AI project this year and four candidates on the table. The selection committee wants the project where generative AI specifically earns its place. Which candidate is the strongest GenAI fit?",
+      "options": {
+        "A": "A conversational subscriber assistant that answers questions across any section and drafts personalized summaries of long investigations, adapting to topics a rule system would need rewriting for",
+        "B": "A pipeline that reproduces scanned archive pages as text with exact fidelity, since a generative model can recreate each historical page faithfully",
+        "C": "A churn-risk scorer that predicts which subscribers will cancel next quarter from their billing and reading history",
+        "D": "A paywall pricing engine, chosen because it is the candidate the board would find most impressive at the annual shareholder briefing"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E05",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "A GenAI use case is recognized by the new artifact it produces and by the capabilities that make it fit: summarization, conversation, and the ability to generate content, carried by adaptability and responsiveness where rule systems would need rewriting. The subscriber assistant produces new artifacts — answers and summaries — across shifting topics, which is precisely the profile that justifies a generative model.",
+        "distractors": {
+          "B": "Exact-fidelity reproduction is the opposite of generation: a generative model samples plausible output rather than guaranteeing a faithful copy, so the one property this project needs is the one the approach does not offer.",
+          "C": "Churn scoring is classic predictive machine learning over labeled history. It produces a probability, not a new artifact, and nothing about it requires the content-generating capabilities the committee is funding.",
+          "D": "Boardroom impressiveness is a criterion from outside the decision framework. It says nothing about whether generation, adaptability, or conversational capability are what the project actually exercises."
+        }
+      }
+    },
+    {
+      "id": "2.06",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "community banking",
+      "keywords": ["fine-tuning", "model selection"],
+      "type": "single_choice",
+      "question": "A community bank is planning its first foundation-model deployment for a lending-assistant pilot, and the program manager must lay the FM lifecycle out in the project plan. Which ordering of stages is correct?",
+      "options": {
+        "A": "Data selection, then model selection, then pre-training, then fine-tuning, then evaluation, then deployment, then feedback flowing back into the next iteration",
+        "B": "Data selection, then model selection, then pre-training, then fine-tuning, then deployment, with evaluation replaced by feedback gathered from live users after release",
+        "C": "Model selection, then fine-tuning, then pre-training to broaden the tuned model, then evaluation, then deployment, then feedback",
+        "D": "Data selection, then model selection, then pre-training, then fine-tuning, then evaluation, then deployment, with the lifecycle complete once the assistant ships"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "E03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "The FM lifecycle runs data selection, model selection, pre-training, fine-tuning, evaluation, deployment, and feedback, and each stage owes its output to the next: data and model choices precede any training, pre-training builds general capability before fine-tuning specializes it, evaluation gates deployment, and feedback closes the loop into the next iteration.",
+        "distractors": {
+          "B": "Live user feedback complements evaluation; it cannot replace it. Skipping the evaluation stage turns the bank's real lending customers into the test set, discovering quality problems only after they have consequences.",
+          "C": "Pre-training builds the broad capability that fine-tuning then adapts; running fine-tuning first inverts the two stages, and the later pre-training pass would wash out the very specialization the tuning added.",
+          "D": "A lifecycle that ends at deployment has no feedback stage, and feedback is what tells the next iteration what to fix. Shipping is a stage boundary, not the finish line."
+        }
+      }
+    },
+    {
+      "id": "2.07",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "food delivery marketplace",
+      "keywords": ["token-based pricing", "provisioned throughput"],
+      "type": "single_choice",
+      "question": "A food delivery marketplace runs a GenAI order-support assistant. Costs are climbing on two fronts: prompts average 6,000 input tokens against about 400 output tokens, and every evening the assistant hits the on-demand request limits and throttles during the dinner peak. What should the team change?",
+      "options": {
+        "A": "Treat prompt length as a design decision under token-based pricing and trim the 6,000-token prompts, and move the predictable dinner peak onto provisioned throughput, since the throttling is a load problem rather than a model-quality problem",
+        "B": "Distill the model into a smaller one so each call costs less, letting the evening throttling subside as the per-call footprint shrinks",
+        "C": "Cap the assistant's maximum output length during evening hours, cutting spend where the generation happens",
+        "D": "Re-index the assistant's knowledge base hourly instead of nightly, so fresher retrieved context keeps prompts from growing"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D05",
+        "D": "D10"
+      },
+      "rationale": {
+        "correct": "GenAI economics has two levers here, one per symptom. Under a token-based pricing model, prompt and output length are cost decisions, and prompts averaging 6,000 on the input side against about 400 on the output side say the spend concentrates on the input, which prompt design can cut. Provisioned throughput versus on-demand inference is the lever when load, not model quality, is the problem — and a predictable dinner peak that hits on-demand limits is exactly that case.",
+        "distractors": {
+          "B": "Distillation is a customization move that changes the model when nothing about the model is wrong. Cheaper calls do not lift an on-demand request limit, so the dinner-peak throttling survives the swap.",
+          "C": "Output runs at about 400 against 6,000 of input: capping the small side trims the margin while the dominant cost driver — prompt length — is untouched, and the throttling is not addressed at all.",
+          "D": "Refresh frequency governs how current retrieved content is; it neither shortens prompts nor raises request limits. Re-indexing hourly changes a schedule, not either mechanism behind the two symptoms."
+        }
+      }
+    },
+    {
+      "id": "2.08",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "travel visa processing",
+      "keywords": ["context engineering", "prompt engineering"],
+      "type": "single_choice",
+      "question": "A travel visa processing assistant has polished, well-tested instruction text, yet it keeps answering from whatever happens to fit in the call: long conversation history crowds out the current rule bulletin, and the applicant's prior-application records are never included at all. Which discipline addresses this failure?",
+      "options": {
+        "A": "Context engineering: deciding what goes into each model call — the retrieved records, the history, the instructions — and how those pieces are prioritized when they compete for space",
+        "B": "Prompt engineering: sharper instruction wording that directs the model to give the rule bulletin precedence and to consult the applicant's prior records",
+        "C": "Fine-tuning on historical case decisions, so the model carries the rules in its weights and no longer depends on what reaches the call",
+        "D": "A model with a much larger context window, so that history, bulletins, and records all fit and nothing needs to be prioritized"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E04",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "The failure is in what reaches the model, not in how the instructions are worded and not in the weights — which is context engineering's territory: assembling and prioritizing the content of each model call, including retrieved records, conversation history, and instructions. The bulletin losing to old history and the records never arriving are assembly and prioritization defects, distinct from prompt wording and from any form of tuning.",
+        "distractors": {
+          "B": "Instruction wording cannot include a record that was never assembled into the call. Prompt engineering is the neighboring discipline; it shapes how the model treats what arrives, not what arrives.",
+          "C": "Tuning bakes in yesterday's rules: visa bulletins change, and weights cannot be retrained per bulletin. The problem is call assembly, and swapping in a training-time fix leaves that mechanism broken.",
+          "D": "A larger context window postpones the collision without resolving it: content still competes, priority is still undefined, and the records that are never fetched still never arrive. Capacity does not substitute for assembly."
+        }
+      }
+    },
+    {
+      "id": "2.09",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "smart building management",
+      "keywords": ["tool usage", "memory management"],
+      "type": "multiple_response",
+      "question": "A smart building management platform currently makes a single FM call: given a work-order description, the model drafts a response for a technician. The team now wants an agent that resolves a fault end to end — looking up the device, adjusting settings through the building-control API, and remembering what it has already tried across a multi-day incident. Which TWO capabilities distinguish the agent they need from the single FM call they have? (Select TWO.)",
+      "options": {
+        "A": "Tool usage, so the agent can act on external systems such as the building-control API instead of only generating text about them",
+        "B": "Memory management, so the state of a multi-day incident persists across steps instead of vanishing between calls",
+        "C": "A larger context window, since agent behavior emerges once the model can read enough information in a single call",
+        "D": "A longer request timeout, so that multi-step work can complete inside one extended API call",
+        "E": "Fine-tuned weights, because a model must be retrained on the building's data before it can interact with external systems"
+      },
+      "select_count": 2,
+      "answer": ["A", "B"],
+      "distractor_patterns": {
+        "C": "D03",
+        "D": "D04",
+        "E": "E04"
+      },
+      "rationale": {
+        "correct": "What an agent adds beyond a single FM call is exactly what this fault-resolution job needs: tool usage to act on the world rather than describe it, memory management to persist state across a multi-day incident, and workflow orchestration to sequence the steps. Of the options offered, tool usage and memory management are the two agentic building blocks — the building-control API is a tool to call, and the incident's history is state to manage.",
+        "distractors": {
+          "C": "Reading more text per call does not create the ability to act or to persist state. A window is capacity for input, and no amount of it turns a text generator into something that adjusts a damper or remembers yesterday.",
+          "D": "A timeout is a serving configuration. Stretching one call longer changes when the call fails, not what the model can do during it — no tools, no memory, no orchestration appear.",
+          "E": "Interacting with external systems is granted by tooling, not by training: fine-tuned weights change what the model knows and how it responds, and a tuned model with no tool access still cannot touch the building-control API."
+        }
+      }
+    },
+    {
+      "id": "2.10",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "cargo logistics",
+      "keywords": ["multi-agent system patterns", "communication patterns"],
+      "type": "single_choice",
+      "question": "A cargo logistics firm's single booking agent now handles rate quoting, customs paperwork, and vessel scheduling. Its prompt has grown unwieldy and errors are crossing between task types. The architects are weighing a move to multiple agents. What do multi-agent system patterns and multi-agent communication patterns actually govern?",
+      "options": {
+        "A": "System patterns divide the work among specialized agents — quoting, customs, scheduling — and communication patterns govern how those agents coordinate and hand work off to each other",
+        "B": "They describe running multiple copies of the same generalist agent behind a load balancer, so the main effect of going multi-agent is higher request capacity",
+        "C": "They apply only after the single agent's error rate has doubled, so the right move is to defer any split until operations reach that threshold",
+        "D": "They add process where none is needed: keeping one agent with a sectioned mega-prompt achieves the same separation with less machinery"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D15",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Multi-agent system patterns are about structure: dividing work among specialized agents so each carries a focused role such as quoting, customs, or scheduling. Multi-agent communication patterns are the second half — how those agents coordinate and hand off, which is what keeps a divided system coherent. The firm's symptoms, a bloated prompt and errors crossing task types, are precisely what specialization plus governed handoffs address.",
+        "distractors": {
+          "B": "Replicating one generalist behind a load balancer is fleet scaling, not multi-agent structure: every copy still carries the bloated prompt and the cross-task errors, just at higher volume.",
+          "C": "The symptoms that justify the split are already present. Waiting for a doubled error rate compounds a known structural problem while the trigger threshold does nothing to fix it.",
+          "D": "The sectioned mega-prompt is the design that produced the errors: sections share one context and leak into each other. Removing the structural split keeps exactly the coupling the patterns exist to remove."
+        }
+      }
+    },
+    {
+      "id": "2.11",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "telecom field services",
+      "keywords": ["Model Context Protocol", "external tools"],
+      "type": "single_choice",
+      "question": "A telecom field-services assistant must reach ticketing, parts inventory, and crew scheduling systems built by three different vendors, and every integration so far has been hand-built. An architect proposes adopting the Model Context Protocol (MCP). What is MCP?",
+      "options": {
+        "A": "An open protocol that connects agents and assistants to external tools and data sources through a standard interface, replacing per-vendor custom integrations",
+        "B": "The scheduling component of Amazon Bedrock AgentCore that assigns incoming work orders to whichever agent has capacity",
+        "C": "A prompting technique that packs each tool's documentation into the context so the model can imitate calls to that tool",
+        "D": "A network transport standard that encrypts traffic between the assistant and each vendor system it connects to"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "Model Context Protocol (MCP) is an open protocol that gives agents and assistants a standard interface to external tools and data sources. Its value is exactly the situation described: instead of one hand-built integration per vendor system, each system exposes its capability through the protocol once, and any MCP-capable assistant can connect. It is a connectivity standard, not a product feature, a prompting trick, or a security layer.",
+        "distractors": {
+          "B": "Assigning work orders to agents is an orchestration capability of an agent platform, a different job entirely. MCP standardizes how an agent reaches tools; it does not schedule or route work.",
+          "C": "Packing documentation into the context produces imitation, not connection: the model can describe a call it cannot make. MCP is a real interface through which tools are actually invoked.",
+          "D": "Encryption in transit is a transport-layer concern that any of the integrations would need regardless. MCP operates at the application layer, defining how tools are exposed and called, not how packets are protected."
+        }
+      }
+    },
+    {
+      "id": "2.12",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "secondary_concepts": [],
+      "theme": "A5",
+      "vertical": "online tutoring marketplace",
+      "keywords": ["hallucination", "inaccuracy"],
+      "type": "single_choice",
+      "question": "An online tutoring marketplace's assistant recommends practice books to parents. Support tickets show it confidently citing textbook titles, authors, and page counts for books that do not exist. The engineering lead has filed it as a rare bug to be patched. What is the correct reading of this behavior?",
+      "options": {
+        "A": "This is hallucination — fluent, confident output that is wrong — a first-class GenAI failure mode that the design must plan controls around, not an occasional defect to patch case by case",
+        "B": "This is a corrupted model artifact producing garbled facts, so redeploying the model file from a clean backup will restore correct behavior",
+        "C": "This is acceptable if disclosed, so the fix is a notice in the interface stating that book recommendations may contain inaccurate titles",
+        "D": "This is a user-expectation problem, so the fix is asking parents to verify titles in a bookstore catalog before purchasing"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D09",
+        "D": "D18"
+      },
+      "rationale": {
+        "correct": "Hallucination is inherent to how generative models work: they produce fluent, confident output that can be wrong, and invented titles with plausible authors and page counts are its signature. Because it is a first-class failure mode rather than an occasional bug, the response is designed-in controls — grounding recommendations in a real catalog, validating output before display — sized to the harm inaccuracy causes here.",
+        "distractors": {
+          "B": "A corrupted artifact would degrade behavior broadly and reproducibly, not generate coherent, well-formed, wrong citations. Redeploying the same model restores the same failure mode, because the mechanism is the model.",
+          "C": "A notice tells parents the output may be wrong and then keeps showing them wrong output. Disclosure has a place, but it is not the control that stops fabricated titles from reaching users.",
+          "D": "Sending parents to verify the assistant's claims converts the system's failure into the customer's chore. The defect is in the product's output, and the burden of catching it cannot be assigned to its users."
+        }
+      }
+    },
+    {
+      "id": "2.13",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "secondary_concepts": [],
+      "theme": "A5",
+      "vertical": "freight brokerage",
+      "keywords": ["nondeterminism", "repeatable"],
+      "type": "single_choice",
+      "question": "A freight brokerage runs the same extraction prompt over each carrier's rate email twice — once in the booking flow, once in the audit flow. Reconciliation intermittently fails because the two runs of the same prompt on the same email disagree. Engineers suspect flaky infrastructure. What is actually happening, and what is the durable fix?",
+      "options": {
+        "A": "This is nondeterminism: the same prompt need not return the same answer, so a workflow that assumes a repeatable output is broken by design — run the extraction once and have both flows consume the single stored result",
+        "B": "This is transient infrastructure noise: add automatic retries that re-run the extraction until the booking and audit results agree with each other",
+        "C": "This is a sampling configuration issue: set the temperature to zero, which will make the two runs match and restore the workflow's assumption",
+        "D": "This is a known reconciliation quirk: record in the operations runbook that extracted quotes may differ between the two flows so analysts can waive the mismatches"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "D04",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Nondeterminism is a stated property of generative models: the same prompt on the same input need not reproduce the same answer, and any workflow built on the assumption that it will is broken by design rather than by infrastructure. The durable fix removes the assumption — extract once, store the result, and let booking and audit consume the same artifact, so agreement is guaranteed by construction and not hoped for run to run.",
+        "distractors": {
+          "B": "Retrying until two probabilistic runs happen to agree treats the visible mismatch while leaving the design assumption in place; it spends compute to manufacture coincidence and still fails on the days coincidence is slow to arrive.",
+          "C": "Lowering the temperature narrows sampling variability; it does not grant a guarantee of identical output, and the workflow's correctness would still hang on a configuration value doing what no configuration promises.",
+          "D": "Documenting that the flows disagree converts a design defect into an operating procedure: every waived mismatch is unverified data flowing into audit, with the underlying assumption still broken."
+        }
+      }
+    },
+    {
+      "id": "2.14",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "regional airline",
+      "keywords": ["latency", "compliance"],
+      "type": "single_choice",
+      "question": "A regional airline is selecting a foundation model for a crew-scheduling assistant. Gate-side kiosks need answers within 2 seconds, union data-handling rules require processing to stay in-region, and finance has capped the per-query budget. The model currently leading public capability rankings meets none of the three. How should the selection be made?",
+      "options": {
+        "A": "Filter first on the binding constraints — the 2 seconds of latency headroom, the in-region compliance rule, and the per-query cost cap — then choose the most capable model among those that pass, since no single score decides a multi-constraint selection",
+        "B": "Choose the model leading the public capability rankings, since the strongest general performer will compensate for shortfalls on the other dimensions over time",
+        "C": "Score every candidate on cost alone, since one clear, comparable criterion produces a more defensible decision than juggling several incommensurable ones",
+        "D": "Choose the model from the vendor that offered the airline preferential partnership pricing, since commercial alignment matters more than marginal capability differences"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "D02",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "Foundation-model selection is a multi-constraint decision: capabilities, cost, latency, compliance, and model complexity all bear on it, no single score decides, and the binding constraint filters first. A model that cannot answer inside 2 seconds, cannot process in-region, or cannot fit the query budget is ineligible regardless of ranking; among the models that satisfy all three constraints, capability then earns its place as the tie-breaker.",
+        "distractors": {
+          "B": "A public ranking is a measurement of a different question — general capability on benchmark tasks — and a top rank cannot compensate for failing a hard latency, compliance, or cost constraint even slightly.",
+          "C": "Collapsing the decision to cost is simpler and wrong: the cheapest model that violates the in-region rule or the kiosk latency budget fails the airline exactly as thoroughly as the most expensive one.",
+          "D": "Partnership pricing is a criterion from outside the engineering decision. It can tilt a choice between models that already satisfy the constraints; it cannot make an ineligible model eligible."
+        }
+      }
+    },
+    {
+      "id": "2.15",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "secondary_concepts": [],
+      "theme": "A2",
+      "vertical": "event ticketing marketplace",
+      "keywords": ["Amazon Bedrock", "Amazon SageMaker"],
+      "type": "single_choice",
+      "question": "An event ticketing marketplace with no ML infrastructure wants to build a customer-facing GenAI assistant: choose among foundation models from several providers, ground answers in its own help content, and apply content safeguards — all without managing training or serving infrastructure. Which AWS building block fits?",
+      "options": {
+        "A": "Amazon Bedrock, the managed platform offering a catalog of foundation models with retrieval and safeguard capabilities behind a single API",
+        "B": "Amazon SageMaker AI, the platform for building, training, and deploying the marketplace's own custom models end to end",
+        "C": "Strands Agents, since a GenAI application of this kind is best built agent-first with autonomous task execution from day one",
+        "D": "Open source models self-hosted on GPU instances, avoiding dependence on any managed platform's roadmap and pricing"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D01",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "Choosing the AWS GenAI building block is a job-matching exercise: Amazon Bedrock is the managed foundation-model platform — a catalog of FMs from multiple providers with knowledge-grounding and safeguard capabilities behind one API — which is exactly the assistant described. Amazon SageMaker AI and SageMaker JumpStart serve custom model work, Amazon Q is the packaged assistant, and Strands Agents with Amazon Bedrock AgentCore serve agent construction; none of those is the requirement here.",
+        "distractors": {
+          "B": "Amazon SageMaker AI performs the adjacent, heavier job: building and training custom models. A team with no ML infrastructure asking for provider FMs behind an API is describing the platform above that layer.",
+          "C": "Nothing in the requirement needs autonomous multi-step execution: this is a grounded, safeguarded assistant. Reaching for an agent framework first adds machinery the use case has not asked for.",
+          "D": "Platform independence is a preference, not a requirement this team stated, and it is purchased by taking on the serving, scaling, and safety work a managed platform exists to remove from a team like this one."
+        }
+      }
+    },
+    {
+      "id": "2.16",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "solar installation services",
+      "keywords": ["lower barrier to entry", "speed to market"],
+      "type": "multiple_response",
+      "question": "A solar installation services company with no ML infrastructure team is choosing between assembling its own GenAI serving stack on rented GPUs and building on a managed GenAI service. Which TWO advantages does the managed service offer this team? (Select TWO.)",
+      "options": {
+        "A": "A lower barrier to entry and faster speed to market, because the platform removes the infrastructure build that the company cannot staff",
+        "B": "Security, compliance, and safety capabilities inherited from the platform, which a self-built stack would have to earn control by control",
+        "C": "Elimination of model inaccuracy, because managed platforms correct hallucinated content before responses are returned to the application",
+        "D": "Full control over model weights and serving internals, letting the team tune every layer of the stack to its workload",
+        "E": "The ability to enforce access rules in the prompt text rather than in platform controls, which keeps the application code simpler"
+      },
+      "answer": ["A", "B"],
+      "select_count": 2,
+      "distractor_patterns": {
+        "C": "D19",
+        "D": "E05",
+        "E": "D06"
+      },
+      "rationale": {
+        "correct": "The managed-platform case rests on two pillars. Commercially, a lower barrier to entry and speed to market: a team without ML infrastructure skips the build entirely and ships while a self-assembled stack is still being racked. Technically, the platform brings inherited security, compliance, and safety — capabilities a self-built stack would have to design, implement, and prove one by one. Cost-effectiveness follows from the same arithmetic for a team this size.",
+        "distractors": {
+          "C": "No platform eliminates hallucination: inaccuracy is a property of generative models themselves, and managed services provide safeguard tooling around it, not correction of it. The claimed mechanism does not exist.",
+          "D": "Full control of weights and serving internals is the self-hosted stack's advantage, offered here with the sides swapped: the managed trade is precisely giving up that control in exchange for not operating the stack.",
+          "E": "Enforcing access rules in prompt text is a control at the wrong layer on either stack: prompts can be steered by crafted input, which is why access enforcement belongs in the platform's control plane, not in instructions."
+        }
+      }
     }
   ]
 }

@@ -1583,6 +1583,287 @@
           "E": "An annual brand survey is a lagging, confounded signal: a year of pricing, fleet, and market changes moves it too, and attribution to the assistant is a guess. Value questions need metrics the assistant directly drives."
         }
       }
+    },
+    {
+      "id": "4.01",
+      "domain": "d4",
+      "primary_concept": "C-050",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "pharmaceutical pharmacovigilance",
+      "keywords": ["diversity", "balanced datasets"],
+      "type": "multiple_response",
+      "question": "A pharmaceutical pharmacovigilance team is assembling the training dataset for a model that routes adverse-event reports. The responsible-AI review requires the team to show that the dataset can deliver fairness and inclusivity across patient populations. Which TWO dataset characteristics answer that requirement? (Select TWO.)",
+      "options": {
+        "A": "Diverse, curated data sources that span the patient populations, regions, and report types the deployed system will serve",
+        "B": "Balanced datasets, so that no single demographic group or adverse-event class dominates what the model learns",
+        "C": "The largest obtainable volume of reports, since fairness properties emerge on their own once the data is big enough",
+        "D": "Reports drawn exclusively from the company's largest market, since a uniform source keeps the labeling consistent",
+        "E": "A complaint channel opened after deployment, so that reports of biased routing arrive directly from affected users"
+      },
+      "select_count": 2,
+      "answer": ["A", "B"],
+      "distractor_patterns": {
+        "C": "D03",
+        "D": "D02",
+        "E": "D07"
+      },
+      "rationale": {
+        "correct": "The named dimensions of responsible AI — bias, fairness, inclusivity, robustness, safety, veracity — are delivered through dataset characteristics, not declared afterwards: diversity of curated data sources and balanced datasets are the two levers that determine whether every patient population is represented and none dominates. A model routes fairly across groups it has actually seen in fair proportion; both properties are established before training, in the data.",
+        "distractors": {
+          "C": "Volume amplifies whatever distribution the data already has: a huge dataset skewed toward one population trains a confidently skewed model. Fairness is a property of composition, and scale is not a substitute for it.",
+          "D": "A single-market corpus is uniformity purchased with representativeness: the populations outside that market vanish from the training signal, which is the exact inclusivity failure the review exists to prevent.",
+          "E": "A complaint channel discovers unfair routing only after patients have experienced it. Detection after deployment complements responsible data practice; it cannot stand in for building fairness into the dataset."
+        }
+      }
+    },
+    {
+      "id": "4.02",
+      "domain": "d4",
+      "primary_concept": "C-051",
+      "secondary_concepts": [],
+      "theme": "A7",
+      "vertical": "city parking authority",
+      "keywords": ["Amazon Bedrock Guardrails", "topic"],
+      "type": "single_choice",
+      "question": "A city parking authority's citizen chatbot must stay on parking topics — no election questions, no legal advice — and must block profanity and personal data in both prompts and responses. One engineer proposes retraining the model until the unwanted behaviors disappear. What is the right control?",
+      "options": {
+        "A": "Amazon Bedrock Guardrails, enforcing content and topic policy on the model's interactions at the boundary of the prompt and the output, with no retraining of the model at all",
+        "B": "Fine-tuning the unwanted topics and content out of the model, so the policy lives permanently in the weights themselves",
+        "C": "A system-prompt instruction listing the prohibited topics and content, relying on the model to follow the instruction on every interaction",
+        "D": "Replacing free-text chat with a fixed menu of approved canned responses, so off-topic content becomes impossible by construction"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D06",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Amazon Bedrock Guardrails is the control built for exactly this: enforcing content and topic policy on model interactions — denied topics, filtered content, blocked personal data — applied at the boundary where prompts enter and outputs leave. Constraining behavior at that boundary keeps the policy inspectable and updatable in minutes, rather than baked into weights by retraining.",
+        "distractors": {
+          "B": "Tuning behaviors out of a model is slow, expensive, and unverifiable: no training run proves a topic can never resurface, and every policy change becomes another training cycle instead of a configuration edit.",
+          "C": "An instruction is a request, not an enforcement point: crafted input can steer a model past its system prompt, which is why policy that must hold belongs in a control layer outside the model rather than in text the model weighs.",
+          "D": "Canned menus achieve the policy by deleting the product: citizens lose the free-text help the chatbot exists to provide. The mandate is to make open interaction safe, and guardrails do that without removing the capability."
+        }
+      }
+    },
+    {
+      "id": "4.03",
+      "domain": "d4",
+      "primary_concept": "C-052",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "forestry management",
+      "keywords": ["sustainability", "environmental considerations"],
+      "type": "single_choice",
+      "question": "A forestry management SaaS is choosing between a frontier-scale model and a mid-size model that also meets the product's accuracy target. The company's sustainability review flags the energy difference between the two. How should the review's finding be treated?",
+      "options": {
+        "A": "As a legitimate selection criterion: larger models cost more energy to train and to run, so with the accuracy target met by both, environmental considerations properly tip the choice to the mid-size model",
+        "B": "As already resolved: modern provider data centers run efficiently, which makes the energy difference between model sizes environmentally immaterial",
+        "C": "As a cost to compensate: choose the frontier-scale model and purchase annual carbon offsets that cover its additional energy footprint",
+        "D": "As premature: revisit environmental questions once the product is profitable, when the company can afford to weigh them properly"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D05",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Model choice is an environmental decision: larger models cost more energy to train and to run, and sustainability is a legitimate selection criterion rather than an afterthought. The case here is as clean as it gets — both models meet the accuracy target, so the environmental considerations are not trading against product quality at all; they are simply deciding between two adequate options.",
+        "distractors": {
+          "B": "Data-center efficiency scales both models' footprints down proportionally; it does not erase the difference between them. A larger model consumes more energy in the same facility, so the materiality claim is simply not how the physics works.",
+          "C": "Offsets compensate for consumption that a better selection would avoid entirely. Paying to neutralize an avoidable footprint treats the ledger while leaving the underlying energy demand — the actual mechanism — untouched.",
+          "D": "The energy profile is set at selection time and compounds with every inference from launch onward. Deferring the question until profitability locks in years of the higher footprint that the review exists to prevent."
+        }
+      }
+    },
+    {
+      "id": "4.04",
+      "domain": "d4",
+      "primary_concept": "C-053",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "video game publishing",
+      "keywords": ["intellectual property infringement", "loss of customer trust"],
+      "type": "single_choice",
+      "question": "A video game publisher is shipping a GenAI art tool that lets players generate custom character skins. Legal counsel asks what belongs on the risk register specifically because of the generative capability. Which register entry is correct?",
+      "options": {
+        "A": "Generated skins may attract intellectual property infringement claims, biased model outputs may harm or exclude players, and both expose the studio to end user risk and the loss of customer trust that follows an incident",
+        "B": "No new entries are needed, since the studio's standard software liability language has always covered whatever its products generate",
+        "C": "The material risks are operational — plan for generation outages and latency spikes, which are what players actually notice and complain about",
+        "D": "Whatever is entered, marketing should keep the generative capability low-profile at launch so that any generated-content incidents draw less public attention"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "E05",
+        "D": "D17"
+      },
+      "rationale": {
+        "correct": "GenAI creates a distinctive exposure set: intellectual property infringement claims arising from generated output, biased model outputs, end user risk, and the loss of customer trust that follows when either lands in public. A tool that generates player-visible art sits squarely in that set — a skin resembling protected work or an output that demeans a player group is a legal and business event, not a rendering bug.",
+        "distractors": {
+          "B": "Boilerplate-covers-everything is a habit applied past its precondition: standard liability language was drafted for software whose outputs the studio authored and reviewed, and generated content is precisely the case it never contemplated.",
+          "C": "Outages and latency are real risks of any online feature, offered here in place of the generative ones. Swapping the familiar risk family for the new one leaves the register blind to what the capability actually changes.",
+          "D": "Managing attention instead of the risk absorbs a known exposure silently: the incident still happens, players still see it, and the quiet launch reads afterwards as the studio having known and said nothing."
+        }
+      }
+    },
+    {
+      "id": "4.05",
+      "domain": "d4",
+      "primary_concept": "C-054",
+      "secondary_concepts": [],
+      "theme": "A5",
+      "vertical": "warehouse robotics integration",
+      "keywords": ["overfitting", "underfitting"],
+      "type": "single_choice",
+      "question": "A warehouse robotics integrator's visual defect-detection model scores 99% on its training images but 71% on validation images and live camera feeds. Analysis also shows the misses concentrate on one product line's packaging. What is the correct reading of the scores?",
+      "options": {
+        "A": "The model is overfitting — strong training performance with weak validation and production performance means it memorized training specifics rather than learning the general pattern, and the concentrated misses show a fit failure falling unevenly on one group of products",
+        "B": "The model is underfitting — it is too simple to capture the task, which is why the two scores diverge, and more capacity will close the gap",
+        "C": "The validation set is unrepresentatively hard — re-draw the validation split until the two scores align, then reassess whether any problem remains",
+        "D": "The gap is camera noise — live lenses and lighting degrade inputs relative to the training images, and the scores will converge as the hardware is maintained"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D12",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "The score pattern is the diagnostic: strong training but weak validation or production performance means overfitting — the model bound itself to training-image specifics that do not generalize — while weak performance on both would mean underfitting. The 99% against 71% split reads cleanly as the former, and the misses concentrating on one product line show why fit matters beyond averages: either failure can fall unevenly across groups.",
+        "distractors": {
+          "B": "Underfitting shows as weak performance on training and validation alike, because the model never captured the pattern at all. A 99% training score is the opposite signature: this model captured too much, too specifically.",
+          "C": "Re-drawing the split until the numbers agree is measuring for the answer you want: the divergence is the finding, and the live camera feeds — which no split touches — already confirm it is real.",
+          "D": "The stem says validation images show the same 71%, and validation sets are not affected by lens wear. A hardware explanation that cannot account for the validation gap is attributing the failure to the wrong mechanism."
+        }
+      }
+    },
+    {
+      "id": "4.06",
+      "domain": "d4",
+      "primary_concept": "C-055",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "mortgage origination",
+      "keywords": ["subgroup analysis", "human audits"],
+      "type": "single_choice",
+      "question": "A mortgage origination firm's pre-qualification model reports 90% aggregate accuracy. A community advocacy group alleges the model performs worse for applicants from certain neighborhoods, and the firm must actually find out. How is bias like this discovered in practice?",
+      "options": {
+        "A": "Subgroup analysis comparing per-group accuracy across neighborhoods and demographics, analysis of label quality in the historical decisions, and human audits — with Amazon A2I bringing structured human review into the loop",
+        "B": "Recomputing aggregate accuracy on a fresh sample of applications, since a sound overall number on new data would settle the allegation",
+        "C": "Enabling drift monitoring on the production model, since a bias problem of this kind would register as distribution drift in the monitoring dashboards",
+        "D": "Publishing the model's aggregate accuracy and methodology in a transparency report, so external parties can see the firm has nothing to hide"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "E01",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Bias hides inside aggregates, so it is found by disaggregating: subgroup analysis compares accuracy per group, where a model that is 90% accurate overall can be sharply worse for one neighborhood; analysis of label quality asks whether the historical decisions the model learned from were themselves skewed; and human audits examine individual decisions — the loop Amazon A2I exists to structure.",
+        "distractors": {
+          "B": "A fresh sample re-measures the same aggregate, and the aggregate is the number that conceals the problem. The allegation is about a subgroup, and no overall score, however fresh, speaks to it.",
+          "C": "Drift monitoring detects the input population changing over time — an adjacent job. A model that has been uneven across neighborhoods since launch shows no drift while the unfairness continues undetected.",
+          "D": "A transparency report discloses the number that hides the issue. Publishing methodology has governance value, but disclosure is not discovery: it cannot tell the firm whether the allegation is true."
+        }
+      }
+    },
+    {
+      "id": "4.07",
+      "domain": "d4",
+      "primary_concept": "C-056",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "community banking",
+      "keywords": ["transparent", "explainable"],
+      "type": "single_choice",
+      "question": "A banking regulator sends a community bank two requests about its loan-decision model: documentation of what the system is and how it was built, and an account of why one named applicant was declined. The project lead plans a single response document. What should the lead understand first?",
+      "options": {
+        "A": "These are different properties: transparency exposes what the system is and how it was built, while explainability accounts for why a particular output happened — the regulator asked for both, and each needs its own kind of artifact",
+        "B": "Publishing the architecture and training-data description satisfies both requests, since a system that is fully documented is by that fact explainable",
+        "C": "Neither request can be met for a model of this complexity, so the bank should seek a supervisory exemption rather than attempt either response",
+        "D": "A notice that lending decisions involve an AI system, added to all decline letters, addresses the regulator's underlying concern in both requests"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D16",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Transparent and explainable are different properties answering different questions. Transparency is systemic: what the model is, what data built it, how it was assembled — the first request. Explainability is per-output: why this applicant received this decision — the second request. Because the properties differ, so do the artifacts: system documentation cannot account for one declined application, and one decision's account documents nothing about the system.",
+        "distractors": {
+          "B": "Documentation makes a system transparent; it does not make any individual decision explainable. The regulator's second request names one applicant, and no architecture description answers why that person was declined.",
+          "C": "Declining both requests abandons obligations the bank can meet: transparency artifacts exist for any model, and explainability techniques and interpretable-model choices exist precisely for regulated decisions like lending.",
+          "D": "A notice that AI is involved discloses the system's existence — the thinnest slice of transparency — and explains nothing. Neither request is answered by labeling the decision as automated."
+        }
+      }
+    },
+    {
+      "id": "4.08",
+      "domain": "d4",
+      "primary_concept": "C-057",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "life insurance underwriting",
+      "keywords": ["SageMaker Model Cards", "SageMaker Clarify"],
+      "type": "single_choice",
+      "question": "A life insurance underwriter must show its board how explainability will actually reach the people who need it — reviewers, auditors, and applicants — for its new risk-assessment model. Which set of artifacts and mechanisms does that job?",
+      "options": {
+        "A": "Amazon SageMaker Model Cards documenting the model's purpose and limitations, SageMaker Clarify surfacing bias findings and feature attributions, disclosure of open source components and licensing, and human-centered design with user-feedback mechanisms",
+        "B": "AWS KMS encryption of the model artifacts and CloudTrail logging of every API call, establishing a complete audited record around the model",
+        "C": "A public trust page describing the company's commitment to responsible AI, professionally written to reassure applicants and regulators",
+        "D": "Deferral until the model can be replaced by a fully open source alternative, since meaningful explainability artifacts are not possible before then"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D11",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Explainability travels to people through named carriers: Amazon SageMaker Model Cards state a model's purpose, limitations, and intended use in reviewable form; SageMaker Clarify surfaces bias findings and feature attributions that account for outputs; open source and licensing disclosure shows what the system is built from; and human-centered design with user-feedback mechanisms gives the people affected a channel back. Together they are how explainability becomes something reviewers and applicants can actually hold.",
+        "distractors": {
+          "B": "Encryption and API logging are security and audit controls — the adjacent governance job. A perfectly encrypted, fully logged model can remain entirely unexplained to every reviewer and applicant who encounters it.",
+          "C": "A trust page is reassurance, not explainability: it carries no model card, no attribution, no limitation statement — nothing a reviewer could use to understand a single decision.",
+          "D": "Model Cards, Clarify findings, and feedback mechanisms work on the current model today. Waiting for a future open source replacement withholds available artifacts for the entire life of the deployed system."
+        }
+      }
+    },
+    {
+      "id": "4.09",
+      "domain": "d4",
+      "primary_concept": "C-058",
+      "secondary_concepts": [],
+      "theme": "A6",
+      "vertical": "hospital radiology group",
+      "keywords": ["interpretability", "performance"],
+      "type": "single_choice",
+      "question": "A hospital radiology group is selecting a triage model that prioritizes scans for radiologist review. A deep ensemble scores 94% but its reasoning is opaque; an interpretable model scores 91% and clinicians can read the factors behind each priority score. The medical board must be able to defend every triage decision. Which choice is right?",
+      "options": {
+        "A": "The 91% interpretable model: the models that perform best are often the hardest to interpret, and a regulated, high-stakes decision can force the more interpretable, lower-performing choice — this is that case",
+        "B": "The 94% ensemble: accuracy improvements translate directly into patient safety, so the stronger model is the responsible pick whatever its opacity",
+        "C": "The 94% ensemble, paired with a second model that generates a plausible explanation for each triage output after the fact",
+        "D": "Whichever model the deployment team prefers: model selection is an engineering detail that does not need to reach the medical board at all"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "E05",
+        "D": "D17"
+      },
+      "rationale": {
+        "correct": "The safety-transparency trade-off is real: interpretability and performance often pull against each other, and the models that score highest are frequently the hardest to account for. When the decision is high-stakes and must be defensible — a medical board standing behind every triage call — the trade-off resolves toward the interpretable model, accepting 91% over 94% because a decision nobody can explain is not defensible at any accuracy.",
+        "distractors": {
+          "B": "Higher-accuracy-is-always-safer is a slogan that ignores this scenario's binding constraint: the board must defend individual decisions, and an opaque model leaves it defending outputs it cannot account for — including the errors the stronger model still makes.",
+          "C": "A second model rationalizing outputs after the fact produces plausible stories, not the actual factors behind the score. Post-hoc narrative is interpretability's look-alike, and a medical board defending decisions with it is defending fiction.",
+          "D": "Routing the choice away from the board hides a trade-off that belongs to the accountable owner: the board carries the defense obligation, so the interpretability consequence of the model choice is exactly what it must see."
+        }
+      }
     }
   ]
 }

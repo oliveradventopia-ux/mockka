@@ -31,7 +31,7 @@ Plan of record: `~/.claude/plans/want-to-formally-scardfold-imperative-wirth.md`
 ## Commands (root seam)
 
 ```bash
-pnpm dev          # run the player locally
+pnpm dev          # run the player locally on :4400 (3000 collides with jobber)
 pnpm validate     # validate all content packages (or: pnpm validate <slug>)
 pnpm typecheck    # tsc --noEmit
 pnpm test         # node --test (engine + contrast tests)

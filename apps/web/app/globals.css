@@ -1,0 +1,29 @@
+/* Token system arrives with the player build step (ported from the CCAR-P
+   design, which the WCAG contrast test runs against). Minimal base for now. */
+:root {
+  --bg: #f9f8f6;
+  --text: #2d3142;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}

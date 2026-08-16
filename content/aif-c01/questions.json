@@ -1,4 +1,460 @@
 {
+  "$comment": "AIF-C01 question bank, authored at S4 (exam-author) per methodology/03-authoring-guide.md, clean-room from concepts.json + authoring.json + derivation artefacts only. Every concept is the primary concept of exactly one item; each wrong option carries a distinct distractor pattern (registry D01-D20 + extensions E01-E05); rationales are option-keyed in canonical vocabulary. Locale en-US per manifest.",
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "1.01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "video game publishing",
+      "keywords": ["deep learning", "generative AI"],
+      "type": "single_choice",
+      "question": "A video game publisher's AI roadmap lists three initiatives: a fraud-scoring model for in-game purchases, an image generator for concept art, and a dialogue assistant that plans multi-step quests and calls game-engine tools. The CTO wants the roadmap slide to group each initiative inside its parent field. Which grouping is correct?",
+      "options": {
+        "A": "Machine learning sits inside AI, deep learning sits inside machine learning and is built on neural networks; the image generator belongs to generative AI, a newer branch built on deep learning, and the tool-calling quest assistant belongs to agentic AI",
+        "B": "Deep learning is the umbrella field, machine learning is one technique inside it, and both generative AI and agentic AI sit inside machine learning as its two modern sub-branches",
+        "C": "Generative AI and agentic AI have superseded machine learning, so the fraud-scoring model should be migrated to a generative approach before the roadmap is drawn at all",
+        "D": "The three initiatives should be grouped under a single AI label, because the boundaries between these fields shift too quickly for the distinctions to be worth mapping"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D19",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "The field nests: machine learning is a subset of AI, deep learning is a subset of machine learning built on neural networks, and generative AI and agentic AI are newer branches that build on that stack rather than standing beside it. A language model earns the label large language model through parameter and training-data scale, and an assistant that plans and calls tools is the agentic AI case. The fraud model is classic machine learning; the concept-art generator is generative AI; the quest assistant is agentic AI.",
+        "distractors": {
+          "B": "This inverts the containment: deep learning is the subset that lives inside machine learning, not the umbrella above it. Swapping the two neighboring terms produces a hierarchy that reads plausibly and is wrong at every level.",
+          "C": "Newer branches do not supersede the fields they grew from. Generative AI builds on deep learning; a fraud-scoring problem with labeled purchase data remains a standard machine learning fit, and migrating it buys nothing.",
+          "D": "Flattening the fields into one label discards exactly the structure the roadmap needs: the three initiatives require different data, different skills, and different risk controls, and those differences follow the hierarchy."
+        }
+      }
+    },
+    {
+      "id": "1.02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "dairy processing",
+      "keywords": ["algorithm", "inferencing"],
+      "type": "single_choice",
+      "question": "A dairy processing plant runs a system that predicts spoilage risk for each production batch. A gradient-boosting procedure learned from three years of historical batch readings; every night the resulting system scores the day's new readings. During handover, a new engineer reads four claims in the runbook. Which claim is accurate?",
+      "options": {
+        "A": "The gradient-boosting algorithm is the procedure that learned from the historical readings during training; the model is the artifact that procedure produced, and the nightly scoring of new readings is inferencing",
+        "B": "The model and the algorithm are the same object referred to at different times: before deployment the team calls it an algorithm, and after deployment the same thing is called a model",
+        "C": "The nightly scoring run is a form of training, because the system is exposed to new batch readings each night and therefore continues to learn from them",
+        "D": "Because the system keeps inferencing in production, it gradually improves its own weights with every prediction it makes, without any retraining step"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E03",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "The four working parts separate cleanly: the algorithm is the procedure that learns, the model is the artifact it produces, training is the phase that learns from historical data, and inferencing is the phase that predicts on new input. Here the gradient-boosting algorithm ran once over three years of readings during training, produced a model, and that model performs inferencing every night.",
+        "distractors": {
+          "B": "Algorithm and model are different kinds of thing, not one thing renamed over time: the procedure exists before and after training, and the model is the separate artifact the procedure produced from data.",
+          "C": "Seeing new data is not learning from it. The nightly run is inferencing: the model predicts on new readings without its parameters changing. Training is the distinct phase in which parameters are learned.",
+          "D": "Inferencing does not update a model. A deployed model's parameters stay fixed between training runs; improvement requires an explicit retraining step, not the act of predicting."
+        }
+      }
+    },
+    {
+      "id": "1.03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "used-car marketplace",
+      "keywords": ["supervised learning", "regression"],
+      "type": "single_choice",
+      "question": "A used-car marketplace holds 40,000 historical listings, each labeled with the final sale price the vehicle achieved. The product team wants to predict the likely sale price of every new listing at the moment it is posted. Which learning approach fits the data and the required output?",
+      "options": {
+        "A": "Supervised learning trained on the labeled listings, framed as regression, because the supervision signal exists and the required output is a continuous price",
+        "B": "Unsupervised learning that clusters similar listings, with each new listing priced at the average of the cluster it lands in",
+        "C": "Reinforcement learning that rewards the system each time a seller accepts a suggested price, so the pricing policy improves through interaction",
+        "D": "Supervised learning framed as classification into low, medium, and high price bands, since bands are simpler to report than exact figures"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D01",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Two signals decide the approach: the 40,000 listings carry labels, so this is supervised learning rather than unsupervised learning, and the output is a continuous number, which makes it regression rather than classification or clustering. Labeled data plus a numeric target is the textbook regression setup.",
+        "distractors": {
+          "B": "Clustering is the unsupervised move for unlabeled data. Discarding 40,000 existing price labels to group listings by similarity throws away the supervision signal that makes a direct prediction possible.",
+          "C": "A reward loop adds interactive machinery the problem does not have: the historical labels already state the right answer for every training example, so nothing needs to be discovered through trial and interaction.",
+          "D": "Collapsing a continuous price into three bands removes the precision the team asked for. Classification is for categorical targets; when the target is a number, regression keeps the information the bands would flatten away."
+        }
+      }
+    },
+    {
+      "id": "1.04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "courier delivery network",
+      "keywords": ["batch", "managed API service"],
+      "type": "single_choice",
+      "question": "A courier delivery network scores roughly 2 million parcel records for misdelivery risk. The scores feed an operations dashboard that supervisors review each morning at 6 a.m.; the input is the previous day's complete manifest, and no scoring requests occur during the day. The three-person data team wants minimal operational load. How should the model be served?",
+      "options": {
+        "A": "Run batch inference over the nightly manifest through a managed API service, since the workload's volume and latency shape needs no always-on endpoint and the provider carries the operational responsibility",
+        "B": "Provision a real-time inference endpoint that stays available around the clock, so the dashboard reflects each parcel the moment its record is created",
+        "C": "Self-host the model behind the team's own API on dedicated servers, keeping full control of the serving stack in-house where the team can tune it",
+        "D": "Submit each parcel record individually to an asynchronous inference queue with callbacks, collecting the responses as they complete overnight"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D11",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Inference mode follows the workload's latency and volume shape: 2 million records arriving as one nightly manifest, consumed once each morning, is the defining batch profile. Choosing a managed API service over a self-hosted API decides who carries the operational responsibility, and a three-person team that wants minimal load should let the provider carry it.",
+        "distractors": {
+          "B": "An always-on real-time endpoint serves workloads that must answer individual requests within moments. Nothing here is consumed before 6 a.m., so around-the-clock availability is capacity the dashboard can never use, paid for continuously.",
+          "C": "Full control is a comfort criterion, not a requirement this workload states. A self-hosted API transfers patching, scaling, and availability onto the same three people who asked for minimal operational load.",
+          "D": "Asynchronous inference fits individual long-running requests that need a response later. Submitting 2 million records one at a time with callbacks rebuilds a batch job out of queue machinery, with more moving parts and no gain."
+        }
+      }
+    },
+    {
+      "id": "1.05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "electric utility grid operations",
+      "keywords": ["time-series", "unstructured"],
+      "type": "single_choice",
+      "question": "An electric utility collects two feeds for a transformer-failure project: substation sensor readings recorded every 30 seconds with a timestamp, exported as CSV tables, and free-text maintenance notes typed by field crews. An architect must characterize the data before selecting techniques. Which characterization is right?",
+      "options": {
+        "A": "The sensor feed is time-series data that is structured, and the maintenance notes are text data that is unstructured; modality and structure are different properties, so the CSV export does not make the problem tabular",
+        "B": "The sensor feed is tabular data, because anything delivered in rows and columns is tabular, and the ordering of the rows is a storage detail rather than a property of the data",
+        "C": "Both feeds should be treated as one dataset of a single type, since the distinction between the feeds has no consequence for how models consume them",
+        "D": "Both feeds are unstructured until a schema is applied to them during feature engineering, at which point each becomes structured data"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D02",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "A dataset's type and its structure are read separately. Readings ordered by timestamp every 30 seconds are time-series data: the temporal ordering is the property that modeling must respect, and it survives any file format. The sensor feed is structured; the free-text notes are text data and unstructured. Conflating modality with structure, or either with the export format, leads straight to the wrong technique.",
+        "distractors": {
+          "B": "The CSV rows and columns are the container, not the type. When the ordering by timestamp carries the signal, treating the feed as plain tabular data invites techniques that shuffle away exactly what predicts a failure.",
+          "C": "Merging a structured time-series feed with unstructured text erases the distinction that drives technique choice: the two modalities need different preparation, and a single undifferentiated dataset serves neither.",
+          "D": "Structure is a property the data has now, not a status conferred by a later pipeline stage. The sensor readings are already structured, and applying a schema to free text does not happen as a side effect of feature engineering."
+        }
+      }
+    },
+    {
+      "id": "1.06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "payroll services bureau",
+      "keywords": ["cost-benefit analysis", "prediction"],
+      "type": "multiple_response",
+      "question": "A payroll services bureau is deciding whether to build an ML system that computes statutory tax withholding for every paycheck it processes. A feasibility review, including a cost-benefit analysis, produced five findings. Which TWO findings should steer the bureau toward a conventional rules-based implementation instead? (Select TWO.)",
+      "options": {
+        "A": "Withholding amounts are fully determined by published tax tables, and any deviation from those tables is a compliance defect",
+        "B": "The projected cost of building, hosting, and monitoring the model exceeds the annual savings it could produce over a maintained rules engine",
+        "C": "The engineering team does not currently operate a GPU cluster capable of training a model of this kind",
+        "D": "A vendor demonstration the team attended produced visible errors on two of the sample paychecks it processed",
+        "E": "Client payroll records contain personal information, and personal information is not permitted to be processed by machine learning systems"
+      },
+      "select_count": 2,
+      "answer": ["A", "B"],
+      "distractor_patterns": {
+        "C": "D11",
+        "D": "D12",
+        "E": "D19"
+      },
+      "rationale": {
+        "correct": "AI earns its cost where it assists human decision making, scales a solution, or automates judgment, and it is the wrong choice when a deterministic answer is required or the cost-benefit analysis fails. Both disqualifiers are present: a calculation fully determined by published tables is not a prediction problem, since any deviation is a defect rather than an acceptable error, and the review shows the model costing more than the value it returns over a rules engine.",
+        "distractors": {
+          "C": "What hardware the team happens to own is a criterion from outside the decision framework: compute can be rented in an afternoon, and a finding about current resources says nothing about whether prediction fits the task.",
+          "D": "Two visible errors in one vendor demonstration is an anecdote, not measurement. A demo's sample proves nothing in either direction, and decisions steered by it would be steered by noise.",
+          "E": "This states a compliance rule that does not exist in this form: personal data can be processed by ML systems under appropriate controls. The real disqualifiers are the deterministic requirement and the failed economics, not a blanket prohibition."
+        }
+      }
+    },
+    {
+      "id": "1.07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "home security monitoring",
+      "keywords": ["forecasting", "fraud detection"],
+      "type": "single_choice",
+      "question": "A home security monitoring company wants to estimate next month's false-alarm volume for each neighborhood it serves, using three years of alarm history, so it can roster response staff ahead of demand. Before any service is shortlisted, the team must name the AI application category this capability belongs to. Which category is it?",
+      "options": {
+        "A": "Forecasting, because the system predicts a future quantity from patterns in historical, time-ordered alarm data",
+        "B": "Fraud detection, because false alarms are deceptive events and the system's purpose is to identify where deception is likely",
+        "C": "Computer vision, deployed on the camera streams to detect and tally alarm events in real time so volumes can be derived from the tallies",
+        "D": "Classification, labeling each neighborhood as either high risk or low risk so the roster can be planned from two simple categories"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D01",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Naming the application category comes before any service is chosen, and the category is read from what the capability produces: a future quantity estimated from time-ordered history is forecasting. Neighboring categories such as fraud detection, computer vision, or recommendation systems describe different capabilities, and the roster decision needs a number per neighborhood per month, which is exactly what forecasting yields.",
+        "distractors": {
+          "B": "The word false in false alarm suggests deception, but nothing here identifies deceptive actors or transactions. Fraud detection flags individual suspicious events; this capability estimates an aggregate future volume.",
+          "C": "Building a real-time vision pipeline to count events is heavy machinery for a number the alarm history already contains. Three years of recorded volumes answer the question without analyzing a single video frame.",
+          "D": "Two risk labels flatten the quantity the rostering decision needs. Staffing ahead of demand requires how many, not which of two buckets, and the flattening discards most of what the history can predict."
+        }
+      }
+    },
+    {
+      "id": "1.08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "secondary_concepts": [],
+      "theme": "A2",
+      "vertical": "boutique hotel group",
+      "keywords": ["Amazon Transcribe", "Amazon Polly"],
+      "type": "scenario_matching",
+      "question": "A boutique hotel group is adding AI capabilities across its guest services and must pick the AWS service that performs each job. For each requirement below, select the service. Options may be used more than once.",
+      "matching_options": [
+        "Amazon Transcribe",
+        "Amazon Polly",
+        "Amazon Comprehend",
+        "Amazon Translate"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Convert recorded front-desk phone calls into searchable text so shift supervisors can review what was said."
+        },
+        {
+          "id": "s2",
+          "text": "Render each guest's nightly itinerary as natural-sounding speech for the in-room voice assistant to read aloud."
+        },
+        {
+          "id": "s3",
+          "text": "Detect sentiment and extract key phrases from thousands of free-text guest review comments."
+        },
+        {
+          "id": "s4",
+          "text": "Convert the housekeeping app's status messages from English into the other languages the staff read."
+        },
+        {
+          "id": "s5",
+          "text": "Turn voicemail messages left on the concierge line into text for the morning triage queue."
+        }
+      ],
+      "answer": {
+        "s1": "Amazon Transcribe",
+        "s2": "Amazon Polly",
+        "s3": "Amazon Comprehend",
+        "s4": "Amazon Translate",
+        "s5": "Amazon Transcribe"
+      },
+      "rationale": {
+        "correct": "Each task-level managed service performs one job, and the direction of the task separates near neighbors. Speech becoming text is Amazon Transcribe, which covers both the front-desk recordings and the concierge voicemail. Text becoming speech is the opposite direction, which is Amazon Polly reading the itinerary aloud. Understanding what text means, including sentiment and key phrases in the review comments, is Amazon Comprehend. Moving text between languages is Amazon Translate. The pair to hold apart is Transcribe and Polly: both involve speech, and the arrow between speech and text points in opposite directions."
+      }
+    },
+    {
+      "id": "1.09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "commercial drone inspection",
+      "keywords": ["operational constraints", "explainability requirements"],
+      "type": "single_choice",
+      "question": "A commercial drone inspection firm detects corrosion defects on remote transmission towers. Flights happen far outside network coverage, the pilot must see flagged defects during the flight to re-photograph them, and the energy regulator requires the firm to account for why each defect was flagged. The imagery workload feels like a fit for the newest foundation models. What should the firm deploy?",
+      "options": {
+        "A": "A compact traditional ML vision model running on the drone's onboard hardware, because the operational constraints and explainability requirements dominate this choice rather than raw model capability",
+        "B": "A multimodal foundation model accessed through a cloud API, with each flight's imagery uploaded for scoring after the drone returns to network coverage",
+        "C": "A foundation model hosted on a GPU server carried in the ground-support vehicle, streaming frames from the drone over a dedicated local radio link",
+        "D": "A foundation model fine-tuned on the firm's corrosion imagery, since fine-tuning on domain data makes the model's decisions explainable to the regulator"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D15",
+        "C": "D01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "When regulatory concerns, explainability requirements, or operational constraints dominate, a traditional ML model or small model beats a foundation model regardless of headline capability. Every stated requirement points that way: offline flight rules out API calls, in-flight results rule out deferred scoring, and the regulator's demand to account for each flag favors a simpler model whose decisions can be explained. Foundation models earn their place when those constraints are absent.",
+        "distractors": {
+          "B": "Uploading after the flight postpones scoring past the moment it is needed: the pilot must re-photograph flagged defects while still airborne. Deferred results quietly convert an in-flight capability into a next-day report.",
+          "C": "A GPU vehicle and a dedicated radio link add an infrastructure project to every flight in order to preserve a model choice the constraints already ruled against. The modest on-device model meets the requirement without the convoy.",
+          "D": "Fine-tuning adapts what a model knows; it does not make the model's reasoning accountable. A fine-tuned foundation model is as hard to explain to a regulator as the base model it came from."
+        }
+      }
+    },
+    {
+      "id": "1.10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "grocery retail chain",
+      "keywords": ["exploratory data analysis", "hyperparameter tuning"],
+      "type": "single_choice",
+      "question": "A grocery retail chain is standing up its first demand-prediction project and wants the work plan to follow the AI/ML pipeline. Which sequence places the stages in the right order?",
+      "options": {
+        "A": "Exploratory data analysis, then data pre-processing and feature engineering, then model training with hyperparameter tuning, then evaluation, then deployment, then monitoring",
+        "B": "Feature engineering first on the raw sales data, then data pre-processing to clean the engineered features, then exploratory data analysis to check the result, then training, evaluation, deployment, and monitoring",
+        "C": "Data pre-processing, then model training, then deployment, with evaluation performed on live store traffic after release, then monitoring",
+        "D": "Exploratory data analysis, then data pre-processing, then feature engineering, then model training, then evaluation, then deployment, with the pipeline complete once the model ships"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E03",
+        "C": "D12",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "The AI/ML pipeline runs in a stable order: exploratory data analysis reveals what the data holds, data pre-processing cleans it, feature engineering converts it into informative inputs, model training and hyperparameter tuning fit the model, evaluation judges it against held-out data, deployment releases it, and monitoring watches it in production. Each stage feeds the next, and monitoring is a stage of the pipeline, not an optional afterthought.",
+        "distractors": {
+          "B": "Engineering features from raw, uncleaned data slips two stages out of order: pre-processing exists so that features are built from reliable inputs, and exploratory data analysis belongs before both, not as a check afterward.",
+          "C": "Releasing first and evaluating on live traffic replaces controlled evaluation with an experiment on real customers. Evaluation against held-out data exists precisely so quality is measured before shoppers are exposed to the model.",
+          "D": "Ending at deployment omits monitoring, and a demand model degrades as shopping patterns drift. A pipeline that stops when the model ships has no way to notice the day the model stops working."
+        }
+      }
+    },
+    {
+      "id": "1.11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "secondary_concepts": [],
+      "theme": "A3",
+      "vertical": "wildlife conservation nonprofit",
+      "keywords": ["open source pre-trained model", "custom model"],
+      "type": "single_choice",
+      "question": "A wildlife conservation nonprofit with two engineers and a six-week grant window needs to identify animal species in camera-trap photos. It holds 1,200 labeled photos. How should the team obtain its model?",
+      "options": {
+        "A": "Start from an open source pre-trained model and adapt it to the species set, accepting less task fit and less control in exchange for saving the time, data, and compute of training a custom model",
+        "B": "Design and train a custom model from scratch on the 1,200 photos, so the architecture is purpose-built for camera-trap imagery from the first layer",
+        "C": "Delay the build and spend the grant period collecting and labeling a larger photo set, since a custom model will need far more than 1,200 examples",
+        "D": "Contract a specialist lab to develop a proprietary model after this grant cycle, when a future budget can fund a longer engagement"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Where a model comes from is a trade: reusing an open source pre-trained model saves the time, data, and compute that training a custom model demands, at the price of less task fit and less control. Two engineers, six weeks, and 1,200 labeled photos is precisely the profile that trade favors — the pre-trained model already carries general visual capability, and the small labeled set adapts it to the species involved.",
+        "distractors": {
+          "B": "A from-scratch build is machinery the constraints cannot support: purpose-built architecture demands data and compute this team does not have, and 1,200 photos is orders of magnitude short of training visual capability from nothing.",
+          "C": "More examples answers the wrong question. The shortage is not data for a custom build; it is that a custom build is the wrong route entirely when a pre-trained model reaches the goal with the photos already in hand.",
+          "D": "Pushing the work to a future budget spends the six-week window producing nothing, when the reuse route fits inside it. The grant funds an outcome this cycle, and deferral converts an achievable project into a postponed one."
+        }
+      }
+    },
+    {
+      "id": "1.12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "secondary_concepts": [],
+      "theme": "A1",
+      "vertical": "franchise restaurant chain",
+      "keywords": ["MLOps", "repeatable processes"],
+      "type": "single_choice",
+      "question": "At a franchise restaurant chain, one senior engineer retrains the sales-prediction model on his laptop, deploys it by copying files to the server, and keeps no record of experiments or versions. He has resigned with four weeks' notice. What should the engineering director institute?",
+      "options": {
+        "A": "MLOps as a working discipline: experimentation tracking, repeatable processes, scalable systems, managed technical debt, and production readiness, so the workflow survives any individual",
+        "B": "A license for a leading MLOps platform, since adopting the market's standard toolchain will close the gap the departure exposes",
+        "C": "A second engineer hired now to shadow the current one for the remaining four weeks and absorb the workflow before he leaves",
+        "D": "A detailed runbook documenting the current laptop-based workflow step by step, written by the departing engineer during his notice period"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "D03",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "MLOps is a discipline of repeatability — experimentation you can track, repeatable processes, scalable systems, managed technical debt, production readiness — rather than a particular toolchain. The exposure here is that the process lives in one person's habits: nothing is versioned, nothing is reproducible, and departure is the failure mode. Instituting the discipline makes the workflow a property of the organization instead of the individual.",
+        "distractors": {
+          "B": "A platform purchase treats the visible symptom and leaves the practice untouched: a tool nobody has wrapped in tracked experiments and repeatable process reproduces the same one-person workflow with a more expensive interface.",
+          "C": "A second head absorbs habits, not process. Shadowing transfers the fragility to two people instead of one, and four weeks of observation cannot substitute for versioning, tracking, and reproducibility.",
+          "D": "Documenting an unrepeatable workflow labels the problem without fixing it: the runbook describes steps that depend on one laptop's state and one person's judgment, which is disclosure of the defect rather than its removal."
+        }
+      }
+    },
+    {
+      "id": "1.13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "secondary_concepts": [],
+      "theme": "A5",
+      "vertical": "mortgage origination",
+      "keywords": ["model monitoring", "model re-training"],
+      "type": "single_choice",
+      "question": "A mortgage origination firm's approval-risk model scored 91% accuracy at launch. Over 18 months, as interest rates moved sharply, accuracy has slid to 76%. The code and the model file are confirmed unchanged since launch. What explains the decline, and what is the durable response?",
+      "options": {
+        "A": "Production applications have drifted away from the data the model was trained on; institute model monitoring that feeds scheduled or triggered model re-training so the model tracks the changing population",
+        "B": "The decision threshold has become miscalibrated; adjust the approval cutoff until the reported approval rates return to their launch-era levels",
+        "C": "The model's weights have degraded through repeated use in production; restore the original artifact from backup to recover the launch accuracy",
+        "D": "The model has too little capacity for the problem; replace it with a substantially larger model so future economic shifts are absorbed by headroom"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "D19",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "A deployed model degrades when production data drifts from what it was trained on — 18 months of sharp rate movement changed who applies and what risk looks like, while the model stood still. The durable response is the loop: model monitoring to detect the drift as it happens, feeding scheduled or triggered model re-training so the model relearns the current population rather than the launch-era one.",
+        "distractors": {
+          "B": "Moving the cutoff can restore the look of launch-era approval rates while the underlying scores remain wrong for today's applicants. The number moves; the mismatch between training data and production data stays.",
+          "C": "Weights do not wear out: a model file read a million times is bit-for-bit the file that was deployed, and the stem confirms it is unchanged. Restoring an identical artifact changes nothing.",
+          "D": "Capacity is not the gap — the model fit its training distribution well at 91%. A larger model trained on the same outdated data learns the same outdated world, more expensively."
+        }
+      }
+    },
+    {
+      "id": "1.14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "secondary_concepts": [],
+      "theme": "A4",
+      "vertical": "pet insurance",
+      "keywords": ["recall", "return on investment"],
+      "type": "single_choice",
+      "question": "A pet insurance company is rolling out a claims classifier that flags likely fraudulent claims for review. About 2% of claims are fraudulent, and a missed fraudulent claim costs roughly 40 times as much as an unnecessary manual review. The board wants model quality tracked and also wants to know whether the system pays off. Which measurement pairing fits?",
+      "options": {
+        "A": "Recall on the fraud class as the model-performance metric, since the error cost concentrates on missed fraud, paired with return on investment as the business metric",
+        "B": "Accuracy across all claims as the model-performance metric, with cost per user added later once the rollout has matured enough to measure",
+        "C": "Recall on the fraud class as the model-performance metric, paired with customer feedback gathered in the company's annual satisfaction survey as the business measure",
+        "D": "F1 score on its own, since it balances precision and recall in one number and thereby removes the need to track a separate business metric"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D08",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Evaluation has two halves: a model-performance metric picked for the task and its error costs, and a business metric that measures value. With fraud at 2% of claims and a miss costing roughly 40 times a review, the error cost sits on false negatives, which is what recall on the fraud class measures. Return on investment then answers the board's second question — whether the reviews the model triggers cost less than the fraud it catches.",
+        "distractors": {
+          "B": "With fraud at 2% of claims, accuracy is the mismatched metric: a model that flags nothing at all is still correct on nearly every claim while missing every fraudulent one. Accuracy rewards exactly the failure this system exists to prevent.",
+          "C": "The model half is right, but an annual survey is a lagging signal from the wrong population: claimants' satisfaction moves long after fraud losses do, and it cannot tell the board whether the system pays off.",
+          "D": "One blended score covers only the model half. F1 also weighs precision and recall equally when this task's costs are 40-to-1 asymmetric, and no model metric, however balanced, can answer the value question the board asked."
+        }
+      }
+    }
+  ]
 }

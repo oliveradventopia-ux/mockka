@@ -36,6 +36,8 @@ decisions, 2026-08-16).
   - `pnpm dev` — player on :4400 (3000 collides with jobber)
 - **Growth accounts:** none declared. ads-manager stays dormant. gso-manager may run keyword/demand
   intel with free tools for catalog prioritization.
+- **Commit style:** imperative present tense per the repo `CLAUDE.md` — this project rule wins over
+  the harness's universal "conventional commits" default (`phase-process.md` hygiene row).
 
 ## Guardrail obligations {#obligations}
 

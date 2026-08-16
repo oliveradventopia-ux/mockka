@@ -597,7 +597,7 @@ low.
   may be used more than once") — they exist to test discrimination between adjacent patterns,
   so the options must be genuinely adjacent.
 
-### Bounce rework
+### Bounce rework {#bounce-rework}
 
 When an item returns from S5 with a score report ([`05-eval-rubric.md`](05-eval-rubric.md#bounce)),
 rework **only what the report indicts** — the failing dimension tells you which part of this

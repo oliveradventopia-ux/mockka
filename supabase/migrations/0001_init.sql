@@ -29,3 +29,6 @@ create policy "attempts_owner_insert" on public.attempts
 create policy "attempts_owner_update" on public.attempts
   for update using ((select auth.uid()) = user_id)
   with check ((select auth.uid()) = user_id);
+
+create policy "attempts_owner_delete" on public.attempts
+  for delete using ((select auth.uid()) = user_id);

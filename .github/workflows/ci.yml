@@ -19,6 +19,8 @@ jobs:
       - run: pnpm validate
       - run: pnpm typecheck
       - run: pnpm test
+      - name: Stellar harness gate
+        run: node builder/index/index_check.mjs && node builder/engine/scripts/harness_drift_check.mjs && node builder/engine/scripts/control_byte_check.mjs && (cd builder && node --test)
       - run: pnpm build
 
   gitleaks:

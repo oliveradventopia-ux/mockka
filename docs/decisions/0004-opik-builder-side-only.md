@@ -3,8 +3,11 @@
 **Status:** accepted (2026-08-16) · **Plan:** Decisions 10/14/15
 
 Self-hosted Opik (Docker, local, free OSS) receives operational traces of pipeline
-agent sessions (Claude Code OTel export + PostToolUse hook events): tool calls,
-session flow, bounce iterations, judge-score runs.
+agent sessions: tool calls, session flow, bounce iterations, judge-score runs.
+**Shipped:** PostToolUse hook spans (`tools/trace-hook.mjs` → JSONL → Opik when
+reachable). **Deferred:** Claude Code OTel export via OTLP — revisit when Opik's
+OTLP ingest path is verified (`docs/opik-runbook.md` §Deferred); the hook covers
+the operational-lens need for P0.
 
 **Boundaries:** (a) semantic decision records — `eval/*.json`, derivation docs,
 sign-offs — stay in git as the provenance source of truth; Opik is a lens, never the

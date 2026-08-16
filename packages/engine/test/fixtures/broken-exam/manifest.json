@@ -1,0 +1,29 @@
+{
+  "$comment": "Deliberately broken fixture — the negative test proving the gate gates. Planted defects: bad answer key (b1), rationale naming a letter (b2), missing distractor entry (b2), unregistered pattern D99 (b2), concept double-primary (b2+b3 both test C-2, leaving C-3 uncovered), selection format mix mismatch (two single_choice picked, manifest wants one of each), empty provenance, and no derivation/ directory.",
+  "slug": "broken-exam",
+  "title": "Broken Fixture Exam",
+  "vendor": "Fixture Vendor",
+  "status": "draft",
+  "version": "1.0.0",
+  "exam": { "item_count": 2, "time_limit_minutes": 30, "pass_threshold_pct": 75 },
+  "bank": { "item_count": 3 },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Only Domain",
+      "weight_pct": 100,
+      "exam_items": 2,
+      "bank_items": 3,
+      "format_mix": { "single_choice": 1, "multiple_response": 1, "scenario_matching": 0 }
+    }
+  ],
+  "formats": {
+    "single_choice": { "options": 4 },
+    "multiple_response": { "options": 5, "select_count": [2] },
+    "scenario_matching": { "min_options": 3, "min_scenarios": 4, "require_option_reuse": true }
+  },
+  "style": { "locale": "en-GB", "emoji": false },
+  "validation": { "pattern_caps": {}, "near_duplicate_jaccard": 0.4 },
+  "layers": { "syllabus_rules": false },
+  "provenance": { "sources": [], "nda_statement": "" }
+}

@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "concepts": [
+    {
+      "id": "C-1",
+      "domain": "d1",
+      "statement": "Requests are routed by their declared category rather than by inferred content",
+      "vocabulary": ["declared category"],
+      "priority": "normal",
+      "sources": [{ "artefact": "unregistered-source" }]
+    },
+    {
+      "id": "C-2",
+      "domain": "d1",
+      "statement": "Verification starts from the source record, never from the produced summary",
+      "vocabulary": ["source record"],
+      "priority": "normal",
+      "sources": [{ "artefact": "unregistered-source" }]
+    },
+    {
+      "id": "C-3",
+      "domain": "d1",
+      "statement": "Exceptions escalate to a human decision when an automated retry is not deterministic",
+      "vocabulary": ["escalation"],
+      "priority": "normal",
+      "sources": [{ "artefact": "unregistered-source" }]
+    }
+  ]
+}

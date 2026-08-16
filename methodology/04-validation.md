@@ -48,6 +48,24 @@ enforcement claim without a named check is a claim, not a fact.
   `selection-concept-uniqueness`. Each form in `selection.json` matches the manifest's exam
   total, per-domain counts, and per-domain format mix; `select_count` matches the key size on
   multiple-response items (`multiple-response-shape`).
+- **Structural answer-cue bounds** — `key-position-distribution` + `answer-length-cue` (the
+  aif-c01 S5 round-1 ratchet, BD-1/BD-2 in `content/aif-c01/eval/judge-scores.json` →
+  `bank_defects`). `key-position-distribution`: no key letter carries an outsized share of
+  single-choice items, no exact key set dominates multiple-response items, and no
+  scenario-matching item maps its scenarios to `matching_options` in listed order — a constant
+  key position lets test-wiseness beat the bank. `answer-length-cue`: the keyed option's length
+  is bounded relative to the longest distractor (two tiers), and a justification rider
+  (since/because/rather than) appearing **only** in the keyed option is flagged — the argument
+  belongs in `rationale.correct`. The share/ratio numbers are manifest knobs (table below) with
+  code-enforced bounds and defaults, so neither check can be knob-disabled. **Both currently
+  report at warn level, deliberately**: 2026-08-16 calibration showed shipped `ccar-p` carries
+  the same latent defects (key letter B = 90% of SC items; keyed option longest in 55/59), so an
+  error level would redline a shipped bank — per [the adding-a-check
+  procedure](#adding-a-check) step 4 they promote to error once the key-rebalance and
+  shape-parallelism content waves land, and are never weakened to fit content. The player-side
+  complement is the seeded render-shuffle (`apps/web/lib/shuffle.ts`), which makes JSON order
+  immaterial on screen — data-level balance is still required because exports and print forms
+  see JSON order.
 - **Text hygiene** — `near-duplicate-stems` (shingle comparison across stems),
   `keyword-presence` (each item's declared `keywords` actually appear in its stem/rationale —
   the tie to canonical vocabulary), `number-drift` (figures cited in a rationale match the
@@ -76,6 +94,7 @@ code fork:
 | pattern caps + extensions | pattern-histogram caps ([calibration](03-authoring-guide.md#calibration)) |
 | option-reuse rule (scenario matching) | reuse legality |
 | locale + emoji policy | spelling/style checks |
+| structural-cue knobs (`key_letter_max_share`, `mr_key_set_max_share`, `answer_length_ratio_warn`/`_error`) | `key-position-distribution` + `answer-length-cue` bounds — optional, defaulted, and range-bounded by `manifest-shape` so an out-of-range value can never disable the check |
 | time limit, pass mark | player data sanity |
 | `layers.syllabus_rules` | whether rule-coverage checks run at all ([degradation path](02-master-inventory.md#single-source)) |
 | provenance block, licence allowlist | provenance chain + preflight |

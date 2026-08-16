@@ -88,3 +88,21 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: a shared "For each scenario…" template across SM items risks the near-duplicate Jaccard check.
 - why: SM stems share boilerplate by construction.
 - how to apply: write each SM stem with domain-specific framing before the scenario list.
+
+## L-0014 · Distillation-stage warnings convert to checks at handoff, or they die
+- date: 2026-08-16 · agent: tech-manager · scope: local · tier: methodology/validator
+- lesson: a warning recorded in a distillation artefact must be converted into an S3 checklist rule or a validator check at the S2→S3 handoff — prose warnings do not survive the stage boundary; enforce: rule → check (this wave IS the check: `answer-length-cue`).
+- why: BD-2 was predicted verbatim in `content/aif-c01/derivation/source-declute-serverside.md` ("authoring must keep option shapes parallel within an item") and the bank still shipped 51/57 longest-keyed items — the warning existed, the enforcement did not.
+- how to apply: at Gate 1, sweep the derivation docs for "authoring must / should / never" sentences; each one either becomes a named validator check or an S3 checklist line with an owner — an unconverted warning is logged as an accepted risk, not silently carried.
+
+## L-0015 · Keyed options that argue for themselves mark the key
+- date: 2026-08-16 · agent: tech-manager · scope: local · tier: authoring/validator
+- lesson: a keyed option embedding its own justification ("X, since Y rather than Z") is a reliable key marker — the argument belongs in `rationale.correct`, and the fix is subtractive (trim the rider), not additive (pad the distractors); enforce: check (`answer-length-cue` — length-ratio tiers + rider detection).
+- why: aif-c01 S5: the keyed option was longest in 51/57 SC items (median 134% of the longest distractor) and routinely the only both-sides construction; "pick the longest, most hedged option" solved the bank with zero domain knowledge, and the trimmed argument already existed nearly verbatim in `rationale.correct`.
+- how to apply: when reworking a flagged item, move the rider clause into `rationale.correct` and keep option shapes parallel; models to copy per the S5 report: 1.14, 5.08, 3.13, 1.07.
+
+## L-0016 · Advisory instruments record a retry path, never block
+- date: 2026-08-16 · agent: tech-manager · scope: local · tier: eval-tooling
+- lesson: when an advisory dependency is unavailable (codex CLI present but not logged in — auth needs an interactive session outside agent authority), record the failure mode and exact retry path in the eval artifact and continue — an advisory instrument is noted-when-missing, never a gate blocker; enforce: note (already the §codex contract in `project-brief.md`).
+- why: aif-c01 S5 cross-solve: `codex login status` → "Not logged in", exec probe → 401; free-first forbids agent-side signups, and blocking S5 on it would have stalled the round for a non-gating signal — the cost is real (no 3-way disagreement matrix; author and examiner share Claude weights, so Gate 2's deep read is the compensating control).
+- how to apply: on any advisory-tool failure, write the artifact with status advisory-skipped + attempts + retry command for Oliver, state the lost signal and its compensating control, and proceed; escalate only if the instrument is (or becomes) load-bearing for a gate.

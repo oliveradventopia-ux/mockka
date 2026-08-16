@@ -21,6 +21,7 @@ import { QuestionCard } from './question-card.tsx';
 import { Navigator } from './navigator.tsx';
 import { Dashboard } from './dashboard.tsx';
 import { SubmitModal } from './submit-modal.tsx';
+import { Mark } from './mark.tsx';
 
 export interface ExamPlayerProps {
   slug: string;
@@ -252,7 +253,10 @@ export function ExamPlayer({ slug, manifest, paper, syllabusRules }: ExamPlayerP
             <a className="back-link" href="/">
               ← All exams
             </a>
-            <h1>{manifest.title}</h1>
+            <div className="brand-row">
+              <Mark size={20} />
+              <h1>{manifest.title}</h1>
+            </div>
             <p>
               Original practice questions for the {manifest.vendor} certification —
               never live exam content.

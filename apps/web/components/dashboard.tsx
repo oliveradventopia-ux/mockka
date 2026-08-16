@@ -1,8 +1,11 @@
 'use client';
 
-// Results tab: score ring vs the manifest pass threshold, per-domain grid,
+// Results tab, Classical construction (handoff 2a/2c): verdict header that
+// states the gap in questions, coaching line behind the gold rule, domain
+// rows barred against the threshold (a rule on the bar, never a colour),
 // weak syllabus-rules cards (layer-gated) and the mistakes review. Every
-// missed item links back into the exam tab via onJump.
+// missed item links back into the exam tab via onJump. Result states are
+// value-based — no green/red anywhere.
 
 import type {
   ExamManifest,
@@ -10,6 +13,30 @@ import type {
   Question,
   SyllabusRules,
 } from '@mockka/engine';
+
+const NUM_WORDS = [
+  'Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
+] as const;
+
+/** Smallest number of additional correct answers that would reach the pass
+ *  line under the engine's Math.round pass rule. Presentation-only. */
+function itemsShort(report: GradeReport, thresholdPct: number): number {
+  let c = report.totalCorrect;
+  while (
+    c < report.totalItems &&
+    Math.round((c / report.totalItems) * 100) < thresholdPct
+  ) {
+    c++;
+  }
+  return c - report.totalCorrect;
+}
+
+function verdictHeadline(report: GradeReport, thresholdPct: number): string {
+  if (report.passed) return `Clear of the ${thresholdPct}% line`;
+  const gap = itemsShort(report, thresholdPct);
+  const word = NUM_WORDS[gap] ?? String(gap);
+  return `${word} question${gap === 1 ? '' : 's'} short`;
+}
 
 export interface DashboardProps {
   manifest: ExamManifest;
@@ -29,10 +56,12 @@ export function Dashboard(props: DashboardProps) {
   if (!report) {
     return (
       <div className="card">
-        <h2>Results dashboard</h2>
-        <p className="lede">
-          Submit the exam to see your score, the per-domain breakdown and a
-          review of every missed question with its rationale.
+        <p className="mono-label">{manifest.title} · in progress</p>
+        <h2 className="verdict-line">Scoring stays sealed</h2>
+        <p className="lede" style={{ maxWidth: '44em', marginTop: 10 }}>
+          A score built on partial answers would flatter you. Submit the exam
+          to see your score, the per-domain breakdown against the {threshold}%
+          line, and a review of every missed question with its rationale.
         </p>
         <div className="start-row">
           <button type="button" className="btn" onClick={props.onRequestSubmit}>
@@ -43,56 +72,100 @@ export function Dashboard(props: DashboardProps) {
     );
   }
 
+  const hasCoarseDomain = report.perDomain.some((d) => d.total < 5);
+
   return (
     <>
       <div className="card">
-        <h2>Your result</h2>
-        <div className="score-card">
-          <div className={`ring ${report.passed ? 'pass' : 'fail'}`}>
-            <div className="pct">{report.pct}%</div>
-            <div className="frac">
-              {report.totalCorrect} / {report.totalItems}
+        <div className="verdict">
+          <div>
+            <p className="mono-label">
+              {manifest.title} · {report.totalItems} items
+            </p>
+            <h2 className="verdict-line">{verdictHeadline(report, threshold)}</h2>
+          </div>
+          <div className="verdict-figures">
+            <div>
+              <p className="mono-label">Score</p>
+              <p className="fig-lg num">
+                {report.pct}
+                <span className="fig-unit">%</span>
+              </p>
+            </div>
+            <div>
+              <p className="mono-label">Threshold</p>
+              <p className="fig-md num muted-fig">{threshold}%</p>
+            </div>
+            <div>
+              <p className="mono-label">Correct</p>
+              <p className="fig-md num">
+                {report.totalCorrect} / {report.totalItems}
+              </p>
             </div>
           </div>
-          <div>
-            <h3 style={{ margin: 0 }}>
-              {report.passed
-                ? `Pass — at or above the ${threshold}% threshold`
-                : `Below the ${threshold}% threshold`}
-            </h3>
-            <p className="lede" style={{ margin: '6px 0 0' }}>
-              A pass needs {threshold}% overall.
-              {props.elapsedLabel ? ` Completed in ${props.elapsedLabel}.` : ''}
-            </p>
-          </div>
+        </div>
+        <div className="coach">
+          <p>
+            {report.passed
+              ? `At or above the ${threshold}% pass threshold — ${report.totalCorrect} of ${report.totalItems} correct.`
+              : `A pass needs ${threshold}% overall; ${itemsShort(report, threshold)} more correct answer${itemsShort(report, threshold) === 1 ? '' : 's'} would have reached the line.`}
+            {props.elapsedLabel ? ` Completed in ${props.elapsedLabel}.` : ''}
+          </p>
         </div>
 
-        <h3>By domain</h3>
+        <h3>
+          Domain performance
+          <span className="h-note">
+            bar = your score · rule = the {threshold}% line
+          </span>
+        </h3>
         <div className="grid">
           {report.perDomain.map((d) => {
             const idx = manifest.domains.findIndex((m) => m.id === d.domainId);
             const spec = idx === -1 ? undefined : manifest.domains[idx];
             const name = spec ? `Domain ${idx + 1}: ${spec.title}` : d.domainId;
-            const colour =
-              d.pct >= threshold ? 'var(--ok)' : d.pct >= 60 ? 'var(--warn)' : 'var(--bad)';
+            let needed = d.correct;
+            while (
+              needed < d.total &&
+              Math.round((needed / d.total) * 100) < threshold
+            ) {
+              needed++;
+            }
+            const gap = needed - d.correct;
+            // gap === 0 means the rounded pct sits at or above the line;
+            // exactly on it reads "at the line", above it reads "clear".
+            const atLine = gap === 0 && d.pct <= threshold;
             return (
               <div className="domain-card" key={d.domainId}>
                 <div className="top">
                   <span className="name">{name}</span>
-                  <span className="pct" style={{ color: colour }}>
-                    {d.pct}%
-                  </span>
-                </div>
-                <div className="sub">
-                  {d.correct} of {d.total} correct
+                  <span className="pct num">{d.pct}%</span>
                 </div>
                 <div className="bar">
-                  <i style={{ width: `${d.pct}%`, background: colour }} />
+                  <i
+                    className={d.total < 5 ? 'pale' : undefined}
+                    style={{ width: `${d.pct}%` }}
+                  />
+                  <span className="bar-rule" style={{ left: `${threshold}%` }} aria-hidden="true" />
+                </div>
+                <div className="sub num">
+                  <span>
+                    {d.correct} of {d.total} correct
+                  </span>
+                  <span className={`to-line${gap === 0 ? ' clear' : ''}`}>
+                    {gap === 0 ? (atLine ? 'at the line' : 'clear') : `+${gap} item${gap === 1 ? '' : 's'}`}
+                  </span>
                 </div>
               </div>
             );
           })}
         </div>
+        {hasCoarseDomain ? (
+          <p className="bar-footnote">
+            Pale bar = fewer than 5 items in the domain; the percentage is too
+            coarse to act on alone.
+          </p>
+        ) : null}
       </div>
 
       {manifest.layers.syllabus_rules && props.syllabusRules ? (

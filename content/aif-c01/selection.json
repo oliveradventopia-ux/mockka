@@ -1,10 +1,16 @@
 {
-  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish.",
+  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish by exam-examiner, 2026-08-16, on the round-2 bank revision (post ea967ce/1b1596c). Selection method (methodology/02 #priority + /exam-publish step 1): seat priority:high (convergent, sources>=2) concepts first, then fill to the manifest's per-domain format mix; reserves are substitutes, not rejects. Arithmetic verified against manifest: 50 items = d1 10 (8 SC + 1 MR + 1 SM) + d2 12 (9+2+1) + d3 14 (11+2+1) + d4 7 (6+1+0) + d5 7 (6+1+0); 42 of 44 high-priority concepts seated + 8 fills; 17 reserve-only concepts. HAND-ADJUSTMENTS (documented per skill): (1) d1 has 10 high-priority SC items for 8 SC seats — reserved C-003/1.03 (supervised-regression selection overlaps seated C-007/1.07's predict-a-quantity discrimination) and C-011/1.11 (reuse-vs-build trade partially covered by seated 2.16 managed-vs-self and 3.06 customization ladder); both remain first-line substitutes. (2) MR mix forces two normal-priority MR seats (1.06, 2.09 — the only MR items in their domains). (3) Normal-priority SC fills chosen for breadth and judged quality: 2.08 (v1.1 context engineering, dim2 5), 2.11 (v1.1 MCP — fresh blueprint slice), 2.13 (nondeterminism, dim5 5, strongest distractor in the bank), 3.02 (prompt caching, dim5 5 — deliberately seated WITH 2.07: provisioned throughput is the key in 2.07 and a distractor in 3.02, the bank's best cross-item discrimination), 3.10 (poisoning — only adversarial-taxonomy coverage in the form), 5.04 (scoping matrix — only shared-responsibility coverage). (4) Reserved normals with rationale: 2.14 overlaps seated 3.01's constraint-filter doctrine; 3.18 would make a 4th eval-family item; 3.15 would make a 4th tuning-family item; 5.05 overlaps seated 4.02's control-boundary placement; 5.07 overlaps seated 5.08's audit-trail adjacency. (5) The three Gate-2 3-flag items (2.05, 2.12, 4.04) are seated because their concepts are high-priority; same-domain SC reserves exist as substitutes if the Gate 2 deep-read rejects any.",
   "version": "0.1.0",
   "forms": [
     {
       "id": "form-a",
-      "items": []
+      "items": [
+        "1.01", "1.02", "1.06", "1.07", "1.08", "1.09", "1.10", "1.12", "1.13", "1.14",
+        "2.01", "2.03", "2.04", "2.05", "2.07", "2.08", "2.09", "2.11", "2.12", "2.13", "2.15", "2.16",
+        "3.02", "3.03", "3.04", "3.05", "3.06", "3.07", "3.09", "3.10", "3.12", "3.13", "3.14", "3.16", "3.17", "3.19",
+        "4.01", "4.02", "4.04", "4.05", "4.06", "4.07", "4.08",
+        "5.01", "5.02", "5.03", "5.04", "5.06", "5.08", "5.09"
+      ]
     }
   ]
 }

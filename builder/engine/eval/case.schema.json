@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stellar.dev/eval/case.schema.json",
+  "title": "Regression case",
+  "description": "One accumulated, re-runnable regression case. The envelope is universal; each dimension's runner owns its own extra fields (additionalProperties allowed).",
+  "type": "object",
+  "required": ["id", "kind"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "kebab-case, unique within its corpus" },
+    "kind": { "type": "string", "description": "the dimension/runner this case belongs to" },
+    "anchors": { "type": "array", "items": { "type": "string" }, "description": "harness anchors this case pins" },
+    "addedInPr": { "type": ["integer", "null"], "description": "PR number that introduced the case" },
+    "origin": { "type": "string", "description": "phase:<slug> | uat:<id> | user-report | seed" }
+  }
+}

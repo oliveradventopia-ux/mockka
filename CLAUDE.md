@@ -8,7 +8,7 @@ an agent-runnable authoring pipeline (`methodology/` + `.claude/skills/`).
 Plan of record: `~/.claude/plans/want-to-formally-scardfold-imperative-wirth.md`
 (15 locked decisions, 2026-08-16).
 
-<!-- Builder harness line added at Stellar wiring step -->
+**Builder harness: builder/templates/harness/**
 
 ## Hard rules
 

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stellar.dev/eval/registry.schema.json",
+  "title": "Regression registry",
+  "description": "The single declaration of a project's agentic paths + regression dimensions. Ships EMPTY in the kernel; a project adds rows as it registers behaviors.",
+  "type": "object",
+  "required": ["agenticPaths", "harnessPaths", "dimensions"],
+  "additionalProperties": true,
+  "properties": {
+    "agenticPaths": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "globs; touching one obliges growing/touching the corpus"
+    },
+    "harnessPaths": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "globs; touching one obliges a tier-B compare report"
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "type": { "type": "string", "enum": ["deterministic", "judged"] },
+          "anchor": { "type": "string" },
+          "corpus": { "type": "string" },
+          "floor": { "type": "number" },
+          "baselineFile": { "type": "string" }
+        }
+      }
+    },
+    "r6Exclusions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "harness anchors deliberately outside case coverage"
+    }
+  }
+}

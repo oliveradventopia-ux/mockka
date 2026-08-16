@@ -174,8 +174,10 @@ A sign-off with any preflight verdict at `fail` and no covering waiver is not a 
 
 `manifest.status` has three values (the enum in `methodology/schema/manifest.schema.json`):
 
-- **`draft`** — the scaffolder's default and the state through S1–S5. The player may serve draft
-  exams locally; deployed catalogs exclude them.
+- **`draft`** — the scaffolder's default and the state through S1–S5. Drafts are excluded from
+  the catalog/build AND from the all-package validator walk (`pnpm validate` prints
+  "skipped (draft)"). To preview a draft: validate it explicitly with `pnpm validate <slug>`,
+  and flip it to `in_review` locally if it must render in the player.
 - **`in_review`** — the preflight has passed and the Gate 2 package is assembled, awaiting
   Oliver's sign-off. Served exactly like `draft`; the state exists so "waiting on the human" is
   visible in the tree.

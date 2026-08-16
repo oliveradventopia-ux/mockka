@@ -49,6 +49,12 @@ Produced at the end of S3 (exam-author, 2026-08-16) per `methodology/00-pipeline
 
 ## Three decisions for Oliver
 
+> **Decision record (Oliver, 2026-08-16):** D1 **YES** — Oliver will create the free Skill Builder
+> account; the S2 top-up + S3 delta pass runs once access exists. D2 **RATIFIED** — 70% raw proxy
+> stands as manifested. D3 **RATIFIED** — keep 90 minutes with the drafted disclosure.
+> **Gate 1 sign-off itself is PENDING** — Oliver is reviewing this checklist and the master
+> inventory before authorizing S4; the checkboxes above remain his to tick.
+
 1. **Skill Builder account — yes or no?** The free official 20-question practice set is the only
    source that can corroborate the v1.1 block, but it sits behind an AWS Skill Builder account
    wall; no account was created (free-first / no-signup rule). Authorizing a sign-in enables a

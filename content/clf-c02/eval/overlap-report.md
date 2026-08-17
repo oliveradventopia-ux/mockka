@@ -86,3 +86,39 @@ Gate 2 deep-read:
 
 The single round-1 bounce (`1.10`, answer-surface-cue) is a difficulty-pitch defect, **not**
 an originality defect, and does not affect this verdict.
+
+---
+
+# Round 2 delta — 2026-08-18
+
+Examiner: exam-examiner (fresh session, never authored this bank) · Protocol unchanged
+(`methodology/05-eval-rubric.md` §overlap).
+
+**Source posture: unchanged.** No registered source became available as text between rounds;
+`derivation/sources.md` is unmodified. The process control recorded above is therefore still
+the evidence, and it still holds — the round-2 examiner re-read the clean-room statement and
+the artefact commit chain rather than taking round 1 on trust.
+
+**Bank delta under screen:** one commit, `168ae1f`, touching one item (`1.10` — stem, keyed
+option C, and the `correct` / `A` rationales). No new item, no new source, no new derivation
+artefact. The rework was directed by the round-1 bounce report and authored from that report,
+not from any source text.
+
+**Supplementary check re-run on the current tree** (8-gram word shingles, full bank text —
+stems, all options, correct and distractor rationales — against every derivation doc):
+
+| Doc | Shared 8-gram shingles | Items | Change vs round 1 |
+|---|---|---|---|
+| `source-clf-blueprint.md` | 14 | `1.05`, `1.09`, `1.12`, `2.13`, `2.14`, `3.04` | none — same count, same items (Artefact B canonical-vocabulary exception, all in rationales) |
+| `source-tutorialsdojo-sampler.md` | 1 | `2.07` | none — the same distiller's-prose match, in a rationale |
+| `source-tss-mckenzie.md` · `source-tss-declute.md` · `master-inventory.md` · `sources.md` · `gate1-checklist.md` | 0 | — | none |
+
+**The reworked item `1.10` matches zero shingles in any derivation doc**, so the rework
+introduced no new shared text of any kind. Every match in the table is in a rationale; none is
+in a stem or an option; none is a quoted source string.
+
+**Round-2 verdict: overlap screen passes on process control for all 68 items, unchanged.** The
+two clf-c02-specific notes for the Gate 2 deep-read stand as written above (tutorialsdojo
+assurance level; the unusually deep dump-corpus exclusion record). The residual risk is the
+same one the methodology names and cannot be retired by another round: with no held source
+text, verbatim overlap with the three practice sets is prevented by construction, not measured.

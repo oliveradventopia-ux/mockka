@@ -1,839 +1,872 @@
 {
-  "$comment": "S5 judge rubric — clf-c02, round 1. exam-examiner (fresh session, never authored this bank), 2026-08-18. Protocol: methodology/05-eval-rubric.md #judge; shape per #artifact-shapes. Every item was scored only after the strongest honest case FOR each distractor had been written; the `case` field records that work and names the distractor that came closest. Dimensions: 1 single defensible best answer · 2 distractor plausibility · 3 concept alignment · 4 rationale traceability · 5 difficulty pitch · 6 scenario realism. Calibration is carried over from the aif-c01 rounds so scores are comparable across exams — see derivation/eval-report.md §calibration.",
-  "round": 1,
-  "examiner": "exam-examiner",
-  "date": "2026-08-18",
-  "items": [
-    {
-      "id": "1.01",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (AWS operates and secures everything you run) is a real boardroom belief about managed platforms and the strongest case here - it loses because the shared responsibility model leaves applications, data and configuration with the customer, which is the concept's own boundary. A inverts the pricing model into a flat fee; D is social proof, and it is the only option not phrased as a claim about the cloud, so it is eliminable on form - that caps dim 2. The stem's bulk server discount is a live decoy pointing away from the capex/on-demand argument. NOTE: this item's key was inadvertently exposed during pre-solve schema inspection; its blind result is not independent (see blind-solve.json)."
-    },
-    {
-      "id": "1.02",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (delay each launch until a local hosting contract is signed) is the operations lead's own stated assumption and is exactly how a pre-cloud team plans a market entry - it loses because the capacity is already deployed and the launch is a configuration step. A (elasticity) is a genuine benefit argued at full strength on the wrong axis: it answers how much capacity, never where. B (Direct Connect) is a real service a network engineer would reach for on 'responding quickly'. Key wins on the geography axis the stem names. Mild surface cue: only the key mentions Regions, so a candidate can pattern-match 'the geography option' - caps dim 5."
-    },
-    {
-      "id": "1.03",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (AWS Auto Scaling) is the strongest and is the concept's whole point - the service that implements the behaviour is not the benefit the behaviour demonstrates, and a candidate who knows the service but not the property/service distinction picks it. D (high availability) is baited hard by the stem's 'riders have never noticed an outage' and loses only on 'of any kind'. B (agility) is a real benefit on the wrong axis. Genuine good-vs-best: the surface points away from elasticity twice."
-    },
-    {
-      "id": "1.04",
-      "scores": {
-        "1": 4,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (Well-Architected Tool) is strong enough to hold dim 1 below 5 - the Tool is where a review is actually conducted and recorded, so 'provides the review lens' is arguable for it; it loses because the guidance itself (pillars, design principles) is the Framework, and the Tool only carries it. A (CAF) is the right instrument at the wrong stage - governs the journey in, not workloads already running. B (support case) is a real practice under higher support tiers but is eliminable on form (an instrument was asked for), capping dim 2."
-    },
-    {
-      "id": "1.05",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 4
-      },
-      "case": "Argued FOR each: A (fault tolerance) is the strongest - it sounds like a pillar, and designing for failure genuinely lives inside reliability. C (increased revenue) is a real member of the neighbouring CAF outcome list, which is the right kind of cross-instrument trap. E (elasticity) is a cloud benefit borrowed into the pillar slot. Key pair is unambiguous. Dim 5 capped: this is naked list recall - the city zoning wardrobe bears on nothing, and no scenario work stands between the candidate and the six-item list. Key is also the longest option (129% of the longest distractor), though at two-to-three-word option length that is noise, not a cue."
-    },
-    {
-      "id": "1.06",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (high availability as 'the pillar dedicated to keeping services reachable') is baited by the stem's 'must keep operating through the loss of an Availability Zone' and is the classic non-pillar trap - it loses because high availability is a property, not one of the six. A (cost optimization) is live in the room: the plant manager keeps raising the bill, and answering the loudest voice is a real failure mode. C (performance efficiency) is the nearest genuine pillar. Two-part stem with a running distraction; pitched good-vs-best."
-    },
-    {
-      "id": "1.07",
-      "scores": {
-        "1": 5,
-        "2": 3,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (move everything unchanged) is the strongest because rehost-first genuinely is the most common opening strategy - it loses on 'in all cases / universally recommended'. B (single cutover) and C (rewrite everything first) are real organisational instincts. But all three carry absolutist or self-defeating riders ('only adds confusion', 'every system', 'in all cases'), so a test-wise candidate reaches the key by the moderate-option heuristic without engaging cloud adoption at all - that caps dim 2 and dim 5 together."
-    },
-    {
-      "id": "1.08",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (Pricing Calculator) is the strongest and is genuinely used inside business cases - it loses because it prices a design you specify forward and cannot inventory the servers and utilization the board asked for. B (paid consulting engagement) is what most organisations actually do and is defeated only by the stem's stated no-budget constraint, which is a fair discriminator. C (Migration Hub) is the right family at the wrong stage. Moderate stem/key word match on 'business case' and 'current/projected' caps dim 5."
-    },
-    {
-      "id": "1.09",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 4
-      },
-      "case": "Argued FOR each: B (performance efficiency) is the strongest - it is a real framework term from the neighbouring instrument, which is exactly the confusion the concept targets. E (transfer of the customer's security responsibilities) is the single most common cloud misconception. D (a flat monthly bill) is filler: flatly false to anyone who has seen a cloud bill, and it caps dim 2. Dim 5 capped: recall of a four-item list with one free elimination, and the actuarial wardrobe does no work."
-    },
-    {
-      "id": "1.10",
-      "scores": {
-        "1": 5,
-        "2": 3,
-        "3": 5,
-        "4": 5,
-        "5": 2,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (one-time bulk export in an overnight window) is the strongest real alternative and is defeated cleanly by the minutes-long window; D (re-platform to a different engine) and A (defer the move) are genuine migration approaches. But none of them can compete, because the stem already states the approach and only asks for its name - and the keyed option repeats the stem's sentence almost word for word ('keeping the on-premises database and a cloud copy synchronized until the moment of switchover' -> 'Database replication, keeping the on-premises source and the cloud copy synchronized until the moment of cutover'; 9 shared content words against a maximum of 4 for any distractor). A candidate with no AWS knowledge string-matches the answer. BOUNCE on dim 5."
-    },
-    {
-      "id": "1.11",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (variable becomes fixed) is the exact inversion and is chosen by candidates who remember that one of the two words is the answer but not which direction - the strongest case here. D (book the percentage other logistics firms report) is a real CFO move. C (guaranteed to fall for every workload) is the overclaim that a careful reader eliminates without cloud knowledge, capping dim 2. Key wins on the concept's own terms."
-    },
-    {
-      "id": "1.12",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (commercial database licence fees) is the strongest - many teams do assume licences vanish with the server room, and the rationale correctly answers with BYOL and included-licence pricing. B (compute spend during business hours) is the good trap: it changes shape rather than disappearing, which is the distinction the concept is about. E (AWS patches every operating system) is a shared-responsibility misconception but is a free elimination for anyone who has read domain 2, capping dim 2."
-    },
-    {
-      "id": "1.13",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (license-included pricing) is the strongest because it is the true opposite arrangement stated accurately - it loses only because the brand already owns entitlements and wants to carry them in. B (Marketplace subscription) is a real procurement route for exactly this software. A (perpetual licence restated as a flat monthly AWS fee) is invented but sits close to how EDP-style commercial terms are misremembered. Clean single best answer."
-    },
-    {
-      "id": "1.14",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (buy Reserved Instances for the existing instances) is the strongest and is what many finance-pressured teams actually do - it is a genuine cost action, and it loses only because it locks in the oversizing rather than correcting it. That is a true good-vs-best discrimination. A (serverless rewrite) is real and is defeated by the stem's 'without changing how the application works'. D (billing alarm) is monitoring offered in place of acting. Best-pitched item in domain 1."
-    },
-    {
-      "id": "1.15",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (one larger shared test environment) is a real platform-team answer to environment sprawl; D (a checklist making each person responsible) is what most organisations try first; B (quarterly audit) is the governance reflex. All three are honest organisational answers from distinct patterns, and each loses to automation on the same point - they manage the symptom rather than removing the manual step. Mild stem/key word overlap on 'staff / idle environments' caps dim 5."
-    },
-    {
-      "id": "1.16",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (the capital-to-operating shift is what lowers the price) is the strongest - it is a true statement about cloud economics deployed as a wrong answer, and separating a structural spending change from a lower unit cost of delivery is real work. A (the publisher's own volume) and C (Reserved Instance discounts applied by default) are both plausible pricing mechanisms attributed to the wrong party. Pitched good-vs-best; the surface points at the customer, the principle is about the provider."
-    },
-    {
-      "id": "2.01",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 4
-      },
-      "case": "Argued FOR each: B (every duty to AWS) is the strongest, being the standing misconception the model exists to correct. A (Regions vs Availability Zones) is a category error a candidate primed on infrastructure vocabulary can fall for. D (ranking duties by severity) is invented and is eliminable without engaging, capping dim 2. Dim 5 capped: the keyed option carries the canonical 'of the cloud / in the cloud' phrasing, which is recognisable to anyone who has read one page of the model, and the stem contains no misdirection pointing away from it."
-    },
-    {
-      "id": "2.02",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (configuring the virtualization layer) is the strongest - it is a real control, and a candidate who thinks 'we run the instances, so we own the stack under them' picks it; it loses because the layer sits below the customer boundary and cannot be reached at all. B (physical security of the facilities) is the canonical AWS-side duty. E (signing the audit report that certifies AWS infrastructure) inverts the roles and is a free elimination, capping dim 2. Both keys are unambiguously customer-side; the standard Linux image detail earns the OS-patching key."
-    },
-    {
-      "id": "2.03",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (inherited controls) is the strongest and is genuinely hard - it is a real named category in the model, and 'the customer takes it over on adoption' is a defensible-sounding reading; it loses because inherited controls are the ones the customer gains without action, not ones split across layers. B (AWS patching covers the guests) is the standard over-read of managed infrastructure. C (record as an unowned exception) is the auditor's own framing, which the stem makes attractive. Real good-vs-best between two named categories."
-    },
-    {
-      "id": "2.04",
-      "scores": {
-        "1": 5,
-        "2": 3,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (nothing changes on any AWS service) is the strongest - treating the boundary as fixed is exactly the error the move exposes, and it is a real belief. B (same task, now from the console) is a genuine trap for anyone who reads a managed service as 'EC2 with a nicer console'. C (the task disappears and no party patches the engine) is self-defeating on its face - no candidate believes a database goes unpatched - and it caps dim 2 at 3. The committee's wish to keep the task is a good misdirection."
-    },
-    {
-      "id": "2.05",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (transfers the whole security programme including applications and data) is the strongest, being the classic managed-platform over-read. A (immune to stolen credentials) is the naive 'the cloud is secure' belief. D (replace own controls with Marketplace products) is weak but sits on a real procurement instinct. Dim 5 capped: all three distractors are overclaims, so the moderate-option heuristic reaches the key without engaging what inheritance actually means."
-    },
-    {
-      "id": "2.06",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 4,
-        "5": 3,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (a managed key service) is the strongest and is the right answer to almost every other key-management question - it loses only on the dedicated, customer-controlled, validated-module clause. A (TLS already covers it) is the genuine in-transit/at-rest confusion, well baited by the stem's 'already terminates every connection with TLS'. D (AWS encrypts everything as a platform property) is false and eliminable, capping dim 2. Dim 5 capped: the keyed option's gloss restates the requirement almost term for term (dedicated / cryptographic hardware / the network controls / stored data - 8 shared content words against 4), so a candidate can match strings rather than recall CloudHSM. Dim 4 capped: the correct rationale argues the principle without ever naming AWS CloudHSM, so a candidate cannot carry the service name back to their study material from the rationale alone."
-    },
-    {
-      "id": "2.07",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (CloudWatch) is baited directly by the stem's existing CPU and network graphs and is the strongest - it loses because a metric never names a caller. B (AWS Config) is genuinely close: Config does record that the security group changed and how, and only CloudTrail names the identity and source address, which is precisely the discrimination asked for. C (host OS logs) is a real record at the wrong layer, since the change came through the API. Exemplary distractor set; pitched good-vs-best."
-    },
-    {
-      "id": "2.08",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (Security Hub posture score) is the strongest - a security-posture dashboard is a plausible thing to hand an auditor, and it loses because a posture score is about the customer's own configuration, not a third-party attestation of AWS. A (Config against the auditor's framework) is the same mistake one layer down. C (open a support case) is a real reflex but is a deflect-to-support pattern, eliminable on the stem's self-service framing, capping dim 2."
-    },
-    {
-      "id": "2.09",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (a certification held by AWS extends to every service) is the project manager's stated conclusion argued at full strength - and is the misreading an audit actually finds. C (checking coverage is AWS's task) is a real customer belief about who owns compliance. D (buy a compliance product per service through Marketplace) is the weakest and sits on a wrong-service-family pattern, capping dim 2. Key wins on the concept's own terms: programme scope is per service."
-    },
-    {
-      "id": "2.10",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (Inspector) and B (GuardDuty) are the correct near-neighbour family and both are real answers - Inspector for 'find the problem in what we run', GuardDuty for 'flag the suspicious upload'; each loses because neither reads object contents. D (server-side encryption removes the need to identify the objects) is a real control offered as a substitute for the actual question. Clean single best answer on the discovery-and-classification axis."
-    },
-    {
-      "id": "2.11",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (IAM users are Regional) is the strongest and is well baited - the stem plants 'work across two AWS Regions' for no other reason, and Regional-scoping is true of many AWS resources. A (a policy per analyst) is a real, common, bad practice. D (one shared sign-in while permissions are identical) is the convenience argument teams genuinely make. Both keys are correct as written. The planted Region detail makes this a genuine good-vs-best."
-    },
-    {
-      "id": "2.12",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (MFA first) is the strongest - it is a real control that would have been sensible here, and it loses because a second factor sizes nothing. C (delegated administration with per-action approval) is a real governance model, heavier than the situation warrants and leaving the oversized grant intact. D (root user protection) is a real obligation at the wrong layer. Each distractor is a genuine security principle misapplied - distinct patterns, all defensible-sounding."
-    },
-    {
-      "id": "2.13",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (attach a read-only policy to the root user) is the strongest and is genuinely instructive - it fails only because root's authority does not come from an attached policy, which is the fact the concept turns on. B (rotate the root access key quarterly) is textbook credential hygiene applied to a credential that should not exist. D (share root credentials with a second director) is dual-control reasoning misapplied. Both keys are the canonical measures. Excellent pitch: the strongest distractor is wrong for a non-obvious structural reason."
-    },
-    {
-      "id": "2.14",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (viewing bills and downloading invoices) is the strongest - billing access was historically root-bound and still requires the account to activate IAM access to billing, so a practitioner can defend it; it loses because it is delegable. B (creating IAM users) is defeated by the stem's own admission that the lab has managed for months without root. D (deleting an S3 bucket) is an ordinary permissioned resource action. Key names two genuinely root-only operations."
-    },
-    {
-      "id": "2.15",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (environment variables set at launch) is the strongest and is what a great many teams actually ship - it loses because the same plaintext just moves to another readable place on the same host. B (encrypted source file with the team lead holding the password) is real and collapses into the key-management regress. C (put them in an IAM user's access keys) is a genuine category confusion between AWS credentials and application secrets. Clean best answer."
-    },
-    {
-      "id": "2.16",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (IAM Identity Center) is the strongest - it is the right answer for cross-account access when the caller is a person, and the whole discrimination is that this caller is an unattended application. B (MFA on the analytics account) is real and cannot apply to an unattended workload. D (a second copy of the key in the other account) is what the team would do next if left alone. Good-vs-best: the strongest distractor is a correct service used one axis off."
-    },
-    {
-      "id": "2.17",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (federating removes the need to define AWS permissions) is the strongest - conflating authentication with authorization is a real and consequential misunderstanding of federation. A (records copied into IAM) is the mirror error and recreates the second credential store the firm refused. C (replace the corporate directory with an AWS-hosted one) is weak: it contradicts the firm's stated position so directly that it is eliminable without knowing what federation is, capping dim 2."
-    },
-    {
-      "id": "2.18",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (Firewall Manager) is the strongest - it is squarely in the protection family and is a real answer for an organisation with multiple accounts; it loses because it administers protections that must already exist. A (Inspector) is a real assessment service offered as a control in the traffic path. E (CloudTrail) is a detective record offered for a live flood. Both keys map one threat each, cleanly."
-    },
-    {
-      "id": "2.19",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 4,
-        "5": 3,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (AWS Security Center) is the strongest - it is a real destination gathering bulletins and compliance material, and 'a standing source of AWS security material' describes it fairly; it loses on the stem's 'analysis of new features and practices, as reading material'. A (Knowledge Center) is the right estate answering an already-formed question. C (a support case) is a real route for a specific problem, and none is open. Dim 5 capped: the keyed option repeats the stem's phrase 'analysis of security features and practices' verbatim, so string-matching reaches it. Dim 4 capped: the correct rationale never names the AWS Security Blog, calling it only 'the blog'."
-    },
-    {
-      "id": "2.20",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (ask AWS Support to arrange a licence with the vendor) is the strongest of a moderate set - it is a real thing account teams get asked to do, and it loses because it still ends in a procurement process, which is the stated constraint. D (drop the appliance for the nearest native service) is a genuine architectural recommendation that answers the constraint by surrendering the requirement. B (AWS Artifact) is a wrong-service pattern and is a free elimination for anyone who read item 2.08, capping dim 2."
-    },
-    {
-      "id": "2.21",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (GuardDuty) is baited hard and is the strongest for a candidate who reads 'security service that produces findings' - the stem's explicit 'rather than alerts about attacks under way' is what defeats it. B (AWS Config) is genuinely close: it records the configuration state that the recommendations are derived from, and loses because turning history into recommendations is a separate job. D (CloudWatch alarms on account metrics) is a real monitoring reflex. Well pitched: three real services, one axis."
-    },
-    {
-      "id": "3.01",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (a runbook of console steps) is the strongest - it is what most teams write first, and it is a defensible process control that loses because the steps are still performed by hand and still drift. C (console plus second-engineer review) is a real four-eyes control catching differences after they exist. D (the CLI interactively) is faster manual work with the definition still living in a session. All three are honest engineering answers; the key wins on repeatability, which is the auditor's finding. Genuine good-vs-best."
-    },
-    {
-      "id": "3.02",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (on-premises, because the hardware in the building sets the model) is the strongest - equipment ownership genuinely does drive how many people label an estate. A (cloud, because that is where staff sign in) is the same error from the other side. C ('neither, until the controllers move') is a false-prerequisite option that a candidate can eliminate on shape rather than content, capping dim 2. The cabled analyzers make the hybrid answer permanent rather than transitional, which is the point."
-    },
-    {
-      "id": "3.03",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (more Availability Zones) is the engineer's own proposal argued at full strength and is the strongest - AZs are the right answer to a different question, and the stem deliberately puts it in the candidate's head first. D (a Region per country) is a real, expensive, over-committed answer that would actually work. C (larger instances) is the standard misread of latency as capacity. The distinction between the delivery tier and the availability tier is the concept, and the surface points away from it."
-    },
-    {
-      "id": "3.04",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (consolidate member records into one Region) is the strongest - single-copy simplicity is a real operational preference, and it loses because it directly breaks the stated residency requirement. B (nightly backups kept in the AZ being protected) is a genuine mistake teams make. D (larger instances in the same AZ) is capacity offered as resilience, eliminable without much engagement, capping dim 2. Two requirements, two different kinds of geographic spread - clean mapping."
-    },
-    {
-      "id": "3.05",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (memory optimized) is the strongest because the stem hands the candidate the administrator's own long-standing sizing habit - carrying over a rule from owned hardware is exactly how this goes wrong in practice. B (storage optimized) is baited by the words 'input file' and 'result', which describe two tiny files rather than a data-intensive profile. D (largest general purpose) is the avoid-the-decision answer. Surface points away from the principle in two directions."
-    },
-    {
-      "id": "3.06",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (Fargate tasks kept running so no reminder waits for a container to start) is the strongest - cold-start avoidance is a real engineering concern and this is a real design; it loses on the team's stated 'nothing running between events'. B (ECS on instances the team keeps running) is the same trade-off with more to operate. D (EKS to grow into) is the over-commitment a two-person team is sometimes talked into. Clean best answer on the event-driven axis."
-    },
-    {
-      "id": "3.07",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (one larger instance sized for the busiest storm) is the strongest - vertical scaling genuinely absorbs the peak and is defeated by paying for it all year with the ceiling still fixed. C (a health check pulling the overloaded instance) is plausible-sounding and actively harmful, which makes it a good distractor. A (a second load balancer) is the classic confusion of distribution with capacity, which is the concept's named failure mode. Key is unambiguous."
-    },
-    {
-      "id": "3.08",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (keep the duties, gain a console that makes them quicker) is the strongest - it is exactly how a self-hosted team imagines a managed service before using one. A (nothing changes on any service) is the fixed-boundary error. C (the application must be rewritten) is defeated by the stem's 'the engine and the application stay as they are' and is closer to filler, capping dim 2. The staffing detail makes the operational-work axis the one that matters."
-    },
-    {
-      "id": "3.09",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (RDS holding the records in one wide table) is the strongest - it genuinely works, and it loses on paying for relational machinery the workload never uses. D (ElastiCache) is baited by 'read back by a single key' and loses because a cache accelerates data that lives elsewhere. B (Aurora) is the 'scale the relational option further' answer. Three real services on one axis; the data model picks the service."
-    },
-    {
-      "id": "3.10",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (DMS alone converts the schema as it moves the data) is the strongest and is a very common belief - the two-tool split is precisely the concept. C (restore a backup into the new engine) is a real instinct that fails on engine-format incompatibility. D (Storage Gateway presenting the database files) is far-fetched enough to be eliminable without engaging, capping dim 2. Heterogeneous-engine detail in the stem earns the both-tools key."
-    },
-    {
-      "id": "3.11",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 5
-      },
-      "case": "Argued FOR each: E (a single subnet with per-server firewalls) is the strongest - host-based segmentation is a genuine design opinion, and it loses because one mistaken rule then exposes batch tracking. A (Route 53 deciding subnet reachability) is the practice corpus's favourite wrong answer and the concept names it explicitly. D (no separation needed, AWS isolates customers) is a real misreading of tenancy isolation. Dim 5 capped: both keyed options echo the stem's requirements almost phrase for phrase ('separating the portal servers from the batch-tracking servers', 'from the plant office network'), so a candidate can match requirement text to option text; the mechanism knowledge (public/private subnets, a VPN gateway pair) is still required, which keeps this at 3 rather than 2."
-    },
-    {
-      "id": "3.12",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (security groups) is the strongest and is the whole discrimination - stateful and instance-scoped is right for most filtering questions, and it fails only on 'without the rule being attached to any instance' plus 'including instances launched later'. C (Inspector) is assessment offered as filtering. D ('AWS protections at the Region boundary') is invented and eliminable, capping dim 2. The stem's two clauses are precisely the scope and attachment tests - well pitched."
-    },
-    {
-      "id": "3.13",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (Global Accelerator) is the strongest - it genuinely improves internet-path routing and is a real answer to 'transfers are inconsistent'; it loses because the requirement is to stop depending on internet transit at all. A (a second VPN tunnel over the same circuit) is the bandwidth-doubling instinct that shares the same congestion. D (compress the photographs) is a real practitioner move that changes volume, not path variability. Good-vs-best on the predictability axis."
-    },
-    {
-      "id": "3.14",
-      "scores": {
-        "1": 5,
-        "2": 3,
-        "3": 5,
-        "4": 4,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (one EBS volume shared with the rest over the network) is the strongest - teams really do build an NFS export on a block volume, and it loses because that is hand-building what the file service provides. A (S3 as a boot volume) is category-impossible and C (Glacier for scratch space) is absurd on retrieval time; both are eliminable without engaging the scenario, which caps dim 2 at 3 and is the only real weakness here. Dim 4 capped: the correct rationale argues 'the file services' without naming Amazon EFS. Both keys are unambiguous."
-    },
-    {
-      "id": "3.15",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (an archive class from day one) is the strongest and is genuinely tempting - it minimises cost over seven years and is defeated only by the busy first month, which the stem quantifies. A (a monthly copy-and-delete job) is a real hand-built lifecycle that adds a moving part which can silently stop. B (one class for everything) is the do-nothing option with an honest cost argument. The stem's hours-long retrieval tolerance is a deliberate pull toward archiving early. Well pitched."
-    },
-    {
-      "id": "3.16",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (managed services already back themselves up on the account's behalf) is the strongest - it is a real and consequential misconception about who owns retention and evidence. C (S3 lifecycle policies on a bucket each team copies into) is a real mechanism at the wrong layer for volume and database backups. B (Storage Gateway) is the neighbouring data-management service doing the other job. The board's 'one place where retention is set and compliance shown' is what selects the key."
-    },
-    {
-      "id": "3.17",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 4,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (Rekognition) is the strongest - it is image analysis applied to what is literally an image, and the discrimination is between recognising objects and reading form fields. A (SageMaker AI) is the correct platform for a team that had ML skills and labelled data, which the stem explicitly removes. D (Transcribe) has no audio to work with and is a free elimination, capping dim 2. Dim 4 capped: the correct rationale never names Amazon Textract, describing it only as 'a ready-made capability'."
-    },
-    {
-      "id": "3.18",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (Glue) is the strongest - cataloguing genuinely precedes querying and is real preparation work, and it loses because it answers none of the analyst's questions on its own. C (QuickSight) fits figures watched repeatedly rather than one-off questions. D (load into a relational database) is the standard answer the stem explicitly excludes. Three real analytics services on one axis; key wins on 'no loading, no cluster'."
-    },
-    {
-      "id": "3.19",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 4,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (Step Functions) is the strongest - orchestration is a real answer to 'handle the delay', and it loses because neither need is a multi-step workflow with state. E (a shared table each component polls) is a genuine legacy pattern that keeps components coupled. D (Amazon Connect) is a business-application service in a messaging question and is close to filler, capping dim 2. Dim 4 capped: the correct rationale argues 'a queue' and 'a notification topic' without naming Amazon SQS or Amazon SNS. Two needs, two delivery shapes - clean."
-    },
-    {
-      "id": "3.20",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 4,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (SNS topics applicants subscribe to) is the strongest by some distance - SNS does deliver email, so this is a defensible reading defeated only by the subscription model, which does not fit applicants emailed about their own permit. That is a genuine good-vs-best. C (EventBridge routing status changes to the mail provider) is a real event-routing misconception. A (Connect) is the neighbouring business-application service. Dim 4 capped: the correct rationale says 'the email service' and never names Amazon SES."
-    },
-    {
-      "id": "3.21",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 4,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (roll back the last release) is the strongest - it is the honest on-call instinct, and the stem defuses it with 'the last deployment was weeks ago'. A (CodeBuild) and B (CodePipeline) are the concept's own contrast set: they are real tools at the wrong lifecycle stage, which is exactly what the item tests. Dim 4 capped: the correct rationale describes tracing and timing without naming AWS X-Ray."
-    },
-    {
-      "id": "3.22",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 4,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (AppStream 2.0) is the strongest - it genuinely delivers the fleet's applications to a personal laptop and loses only on 'a full desktop' plus persistent settings and files. C (WorkSpaces Secure Browser) is the same family narrowed to web apps and is built to leave nothing behind. D (EC2 with credentials shared per shift) is what a small operator would improvise. Dim 4 capped: the correct rationale argues 'a persistent virtual desktop' without naming Amazon WorkSpaces."
-    },
-    {
-      "id": "3.23",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 4,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: D (Kinesis) is the strongest - continuous readings really are a stream, and it loses because ingestion is not connectivity or fleet management. C (a self-built broker on EC2) is the honest build-it-yourself answer the concept contrasts against purpose-built services. A (Amplify) is the frontend half of the same category and is close to filler here, capping dim 2. Dim 4 capped: the correct rationale says 'the IoT service' rather than naming AWS IoT Core."
-    },
-    {
-      "id": "4.01",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (Reserved Instances for the nightly capacity) is the strongest - the batch is genuinely predictable and recurring, which is the RI case, and it loses because interruption tolerance points at cheaper spare capacity. D (Dedicated Hosts) is right for server-bound licensing, a constraint the stem deliberately does not state. C (On-Demand) is the safe default and the most expensive answer to 'lowest price'. Three stated properties select the key cleanly."
-    },
-    {
-      "id": "4.02",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: B (every matching instance in the organization, including the other Availability Zone) is very strong and would be correct for a Regional reservation - the whole item turns on the reservation being scoped to one AZ, which the stem states precisely once. A (only the holding account benefits) is the pre-consolidated-billing intuition. D (the discount divided evenly) is a plausible-sounding allocation model AWS does not use. Best-pitched item in the bank: two true facts (org-wide sharing, zonal scope) must be held at once."
-    },
-    {
-      "id": "4.03",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (uploading the masters) is the strongest - it is unmistakably a data transfer, and it loses only on the direction rule that inbound is not billed, which is the exact fact being tested. C (keeping the videos in S3 between releases) is a genuine charge in the wrong category, which is a sharp and fair discrimination given the stem asks specifically for data transfer charges. E (tagging) is attribution machinery that adds no charge. Excellent pitch."
-    },
-    {
-      "id": "4.04",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (Cost Explorer) is the strongest - it is the tool most people reach for on any cost question, and it loses on the stem's 'no AWS charges have ever been incurred'. B (Budgets) fails on the same fact one step later. C (a fixed monthly quote from AWS) is a real procurement expectation from buyers new to usage-based pricing but is eliminable without engaging, capping dim 2. The never-deployed detail is what makes this a real discrimination."
-    },
-    {
-      "id": "4.05",
-      "scores": {
-        "1": 4,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (one AWS account per brand) is strong enough to hold dim 1 at 4 - account-per-workload is genuine AWS guidance and would in fact produce per-brand bills; it loses on proportionality (re-architecting the account estate to answer a reporting question) rather than on being wrong, so the key is best rather than uniquely correct. Flagged to Gate 2 for a human read on whether 'What should the business put in place?' is tight enough. B (a naming convention matched by hand) is the status quo the stem describes. D (a fixed agreed monthly charge per brand) is a real but non-existent commercial expectation. Rationale concedes C's merit explicitly, which is good practice."
-    },
-    {
-      "id": "4.06",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (the current arrangement already includes technical support cases at any hour) is the strongest - it is the direct inversion candidates fall for when they conflate customer service with technical support. B (free support from the Partner Network) is a real misconception about what partners do. D (AWS restores a customer's own site as part of operating the platform) is a shared-responsibility error that belongs to domain 2 and is a free elimination here, capping dim 2. Both keys are correct as stated."
-    },
-    {
-      "id": "4.07",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: C (Business Support engineers deliver the migration under the plan) is the strongest - the boundary between support and delivery is genuinely blurry to buyers, and it loses because a support plan answers questions about what you run rather than staffing an outcome. A (Marketplace) supplies product where the chain funded delivery. D (Trusted Advisor recommendations) is advice, which the stem explicitly rules out, and is eliminable without engaging, capping dim 2. The 'carries accountability for the result' clause is the discriminator."
-    },
-    {
-      "id": "4.08",
-      "scores": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR each: A (Prescriptive Guidance) is the strongest - it is a real published destination for hard problems, and it loses because it offers strategies written in advance for anticipated situations rather than an answer to an unusual one. D (buy a support plan for one question) is defeated by the stem's no-urgency, no-budget framing, which is fair. B (Trust and Safety) handles abuse reports and is a free elimination, capping dim 2. The community-answer axis is cleanly selected."
-    }
+ "$comment": "S5 judge rubric ROUND 2 (methodology/05-eval-rubric.md #judge), post-bounce re-eval. exam-examiner, fresh session, 2026-08-18. Round 1 preserved at eval/judge-scores-r1.json (versioning-by-suffix, aif-c01 precedent). Scope of the rework under judgment: commit 168ae1f restated item 1.10's stem as constraints and re-glossed keyed option C with an off-stem mechanism detail; options A, B, D unchanged; rationale rewritten. METHOD: all 68 items re-read in full and every distractor argued FOR before scoring, INDEPENDENTLY of round 1 - the round-2 grid was formed first (including an independent re-measurement of stem/option content-word overlap across the whole bank) and only then compared with round 1. Outcome of that comparison: 373 of 408 dimension scores identical; 32 single-point differences across 26 items reconciled to round 1's published calibration statement (each recorded in that item's `case`; three of them touched the 3/4 boundary - 1.07 dim 2, 2.04 dim 2 and dim 5 - and none changed Gate 2 sample membership); 3 differences HELD as round-2 deltas (1.10 dim 2 and dim 5, the verified rework; 4.08 dim 4, a round-1 miss). The `case` field this round records the delta or reconciliation judgment; the full round-1 distractor cases remain in the r1 file and were re-checked against the current option text. RESULT: zero dimensions <=2 anywhere - NO BOUNCES in round 2. Dimension-5 distribution moved from 20x5 / 39x4 / 8x3 / 1x2 (round 1) to 20x5 / 40x4 / 8x3 / 0x2. Gate 2 auto-flags from 3s: 10 items.",
+ "round": 2,
+ "examiner": "exam-examiner",
+ "date": "2026-08-18",
+ "summary": {
+  "items": 68,
+  "score_distribution": {
+   "1": {
+    "5": 66,
+    "4": 2
+   },
+   "2": {
+    "4": 27,
+    "5": 38,
+    "3": 3
+   },
+   "3": {
+    "5": 68
+   },
+   "4": {
+    "5": 58,
+    "4": 10
+   },
+   "5": {
+    "4": 40,
+    "5": 20,
+    "3": 8
+   },
+   "6": {
+    "5": 65,
+    "4": 3
+   }
+  },
+  "items_with_any_3": [
+   "1.05",
+   "1.07",
+   "1.09",
+   "2.01",
+   "2.04",
+   "2.05",
+   "2.06",
+   "2.19",
+   "3.11",
+   "3.14"
   ],
-  "bounces": [
-    {
-      "id": "1.10",
-      "bounce": 1,
-      "failing_dimensions": {
-        "5": 2
-      },
-      "noted_threes": {
-        "2": 3
-      },
-      "judge_case": "The stem states the migration approach in full and then asks only for its name, and the keyed option repeats the stem's own sentence: stem 'keeping the on-premises database and a cloud copy synchronized until the moment of switchover' vs option C 'Database replication, keeping the on-premises source and the cloud copy synchronized until the moment of cutover'. Measured overlap: 9 shared content words between stem and key against a maximum of 4 for any distractor - the widest stem/key word-match margin in the bank. A candidate with no AWS knowledge selects C by string match, so the item cannot test the concept it is built on (C-010, recognising the migration strategy a described situation implies). The distractors are individually sound (a one-time bulk export defeated by the minutes-long window; deferral; re-platforming) but none can compete once the stem has pre-committed to the answer, which is why dim 2 also drops to 3. This is the answer-surface-cue class the aif-c01 round-1 eval raised, in its stem-restatement rather than its key-length variant: length here is 92% of the longest distractor, so the existing answer-length-cue validator check does not catch it.",
-      "defect_class": "answer-surface-cue",
-      "required_fix": "Break the string match and restore the mapping work, without changing the key or the concept. Two edits, both needed: (1) rewrite the stem so it states the constraint rather than the mechanism - the portal takes writes around the clock and the cutover window is minutes, and the DBA asks which approach fits - deleting the 'keeping ... synchronized until the moment of switchover' clause entirely; (2) re-gloss option C so its supporting clause carries a mechanism detail that does not appear in the stem (for example, ongoing change capture applied to the target until the switch) rather than echoing the stem's wording. Keep options A, B and D as they are - they are the right three alternatives. Re-authored item re-enters S5 for a fresh blind solve and full re-score."
-    }
-  ]
+  "items_with_any_score_le_2": [],
+  "bounces_this_round": 0
+ },
+ "items": [
+  {
+   "id": "1.01",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.02",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.04",
+   "scores": {
+    "1": 4,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 1, dim 2 and dim 5 (round-2 first pass 5/5/5). Round 1 is right: the Well-Architected Tool is a real instrument that survives on framing rather than on being wrong (dim 1 = 4), the support-case option is the weaker of the three (dim 2 = 4), and Framework-vs-Tool is a near-neighbour resolved on recall rather than a surface pointing away (dim 5 = 4). The round-2 blind solve recorded MEDIUM confidence on this item - the only medium in the bank - which is independent evidence for the dim-1 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.05",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 4
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 6 (first pass 5). The zoning-department wardrobe is decorative: no detail of it bears on which pillars are named; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.06",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4, on a suspected \"recover from disruption\" stem/key echo). Withdrawn on measurement: the keyed option shares 4 content words with the stem while distractor A shares 5 and D shares 3, so the echo is not a key-selecting cue - the fake-pillar option D absorbs the same words. Dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.07",
+   "scores": {
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). Round 1 is right and this crosses the 3/4 boundary: all three distractors carry absolutist riders (\"only adds confusion\", \"every system ... rewritten\", \"in all cases ... universally recommended\"), so the moderate-option heuristic eliminates them without engaging the scenario. Dim 2 = 3. Item is in the Gate 2 sample either way; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.08",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.09",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 4
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 6 (first pass 5). Decorative wardrobe, same reading as 1.05; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.10",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "REWORKED ITEM - scored fresh under \u00a7bounce (full rubric, new blind solve, no partial credit). Argued FOR each distractor against the new stem: B (one-time bulk export restored during a scheduled overnight outage) is the strongest and is now a real competitor - it is the ordinary way a data tier is moved, and it is defeated only by reading the two constraints together (a window of minutes, and no write lost); D (rebuild in a different engine as part of the move) is a genuine migration strategy that a team carrying an old schema really does propose, and loses as unrequested re-architecture; A (defer the move, accept a stale copy) is a real portfolio-sequencing answer and loses because every stated constraint keeps applying while it waits. ROUND-1 DEFECT VERIFIED FIXED: the stem now states constraints only (round-the-clock writes, minutes-long cutover, no write lost) and no longer states the mechanism, and keyed option C carries an off-stem mechanism detail (ongoing change capture applied to the target). Re-measured stem/key content-word overlap: key = 1 shared word, the LOWEST of the four options (max distractor 3, option D) - inverted from round 1's 9-vs-4 key-high margin, so the string-match route is gone and the item now requires the constraint-to-strategy mapping that concept C-010 names. Dim 5 2 -> 4 (a near-neighbour resolved on recall, not a surface giveaway; not 5 because 'no write may be lost' is a fairly direct signpost once the option set is known). Dim 2 3 -> 4 (B and D compete properly now that the stem no longer pre-commits; A is the weaker of the three). Rationale rewritten with the key named and distractor A re-argued on its own terms - dim 4 holds at 5. BOUNCE CLEARED."
+  },
+  {
+   "id": "1.11",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.12",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 5/5). Option E carries an absolutist rider (\"for every service\") and the item resolves once the BYOL/patching boundary is recalled; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.13",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). The invented \"conversion model\" in A is a real cloud-licensing misconception (E05 inversion), not a self-defeating option; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.14",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.15",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.16",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). The CFO framing points at the customer's own volume and at commitment discounts, both offered as options - the surface points away from provider-side scale. Dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.01",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 4
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 6 (first pass 5). Decorative wardrobe; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.02",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). Option E (the customer signing the report that certifies AWS infrastructure) is eliminable without engaging the boundary; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). Shared-vs-inherited is a genuine good-vs-best pair and option D is a strong near-neighbour; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.04",
+   "scores": {
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 4/3 - the same two values as round 1, swapped between the dimensions). Round 1 assigns them correctly: option C (\"no party patches the engine\") is self-defeating on its face, which is a dim-2 3; what remains after A and C fall is a real B-vs-D discrimination on the RDS boundary, which is a dim-5 4. Item is in the Gate 2 sample either way; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.05",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.06",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.07",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). The stem plants CloudWatch dashboards as a live decoy and Config-vs-CloudTrail is the real discrimination; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.08",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). The Security Hub option (\"posture scores stand in for the compliance report\") is the weaker of the three; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.09",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.10",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). \"Encryption removes the need to identify the objects\" is a real compliance misconception, not a self-defeating option; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.11",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). The IAM-is-Regional option is a strong trap that the surface does not resolve; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.12",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.13",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 4/4). A read-only policy attached to root is wrong for a structural reason a candidate must know, and split-credential dual control is a real (misapplied) security idea; 5/5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.14",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 5). The billing-access lure is strong but resolves once the root-only list is recalled; dim 5 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.15",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.16",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.17",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.18",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.19",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.20",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.21",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). Config-vs-Trusted-Advisor is a genuine near-neighbour pair and the stem contrasts standing exposures with live attacks; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.01",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). Runbook, four-eyes review and interactive CLI are all real process answers pointing away from IaC; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.02",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.04",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). \"Move to larger instances in the current Availability Zone so a failure is absorbed\" is close to self-defeating; dim 2 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.05",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.06",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.07",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.08",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.09",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.10",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.11",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.12",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.13",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.14",
+   "scores": {
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.15",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.16",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). Storage Gateway, bucket lifecycle and \"managed services already back up for you\" are three distinct real misconceptions; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.17",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.18",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.19",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). Amazon Connect is off-axis enough to be eliminable without engaging the delivery-shape question; dim 2 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.20",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 4/4). EventBridge is a real routing service offered in the wrong category rather than a weak option, and the SNS lure genuinely points away from a bulk-email service; 5/5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.21",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.22",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 5). AppStream is a strong lure but the persistent-state requirement resolves it on recall; dim 5 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.23",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.01",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.02",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). Tagging offered as a data-transfer line item is a real category confusion; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "4.04",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.05",
+   "scores": {
+    "1": 4,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.06",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.07",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.08",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR each distractor: A (AWS Prescriptive Guidance) is the strongest - it is real published material and a volunteer administrator would plausibly look there first; it loses because the question has already outrun what was written in advance. D (buy a plan for one question) is a real instinct defeated by the stem's no-urgency, no-budget framing. B (Trust and Safety) is off-axis and eliminable without engaging, which caps dim 2 at 4. ROUND-2 DELTA, HELD AGAINST ROUND 1: dim 4 lowered 5 -> 4. rationale.correct argues the principle as 'what the community question-and-answer service is for' and never names AWS re:Post, so a candidate revising from the rationale alone cannot carry the service name back to their study material. This is the same house-style gap round 1 recorded on nine items (2.06, 2.19, 3.14, 3.17, 3.19, 3.20, 3.21, 3.22, 3.23); 4.08 was missed there. Evidence for ratchet proposal 2 is therefore 10 items, not 9. Not a bounce - a 4 ships."
+  }
+ ],
+ "bounces": [],
+ "bounce_resolution": {
+  "1.10": "RESOLVED (commit 168ae1f), verified on this tree. Round-1 record: defect_class answer-surface-cue (stem-restatement variant), dim 5 = 2, dim 2 = 3 noted; required fix was two edits - restate the stem as constraint rather than mechanism, and re-gloss keyed option C with an off-stem mechanism detail, keeping A, B and D. Both edits landed and nothing else in the item changed. Independent re-measurement on this tree: stem/keyed-option content-word overlap is now 1 (was 9), the lowest of the four options, against a maximum of 3 for any distractor (was 4) - the key-high margin that defined the defect is inverted. Fresh round-2 blind solve of the reworked item: answered C at high confidence, reasoning recorded pre-key as 'minutes of cutover with zero lost writes requires ongoing replication/change capture, not a bulk export' - i.e. solved from the constraints, which is the concept the item is built on. Full re-score 5/4/5/5/4/5, no dimension <=2, bounce cleared. 1.10 is carried into the Gate 2 sample as a bounce survivor so a human confirms the fix. Ratchet: the stem-key-word-match validator check proposed by round 1 (eval-report round 1 \u00a78.1) remains unimplemented and outside this session's ownership; until it lands, this defect class is caught only by examiner measurement."
+ }
 }

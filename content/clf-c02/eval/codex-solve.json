@@ -1,15 +1,23 @@
 {
-  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, clf-c02 round 1, 2026-08-18. The instrument is unavailable on this machine; per #codex a missing advisory instrument is noted, not blocking.",
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, clf-c02. Covers round 1 (attempt 1, 2026-08-18) and round 2 (attempt 2, 2026-08-18). The instrument is unavailable on this machine in both rounds; per #codex a missing advisory instrument is noted, not blocking.",
   "status": "advisory_skipped",
-  "round": 1,
+  "round": 2,
+  "rounds_covered": [1, 2],
   "attempts": [
     {
       "n": 1,
+      "round": 1,
       "action": "`which codex` on the session shell; then located the bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex and ran `codex login status`",
       "result": "codex not on PATH; bundled binary present but `login status` reports \"Not logged in\" — unchanged from the aif-c01 rounds 1 and 2 findings (2026-08-16). No exec probe was issued: the login-status check is dispositive and firing a request that is certain to 401 buys nothing."
+    },
+    {
+      "n": 2,
+      "round": 2,
+      "action": "Re-probed at the start of round 2 (a fresh session must not inherit an unavailability finding): `which codex`; `ls ~/.codex/auth.json`; then the bundled binary at openai.chatgpt-26.810.52044 with `codex login status` followed by one `codex exec --skip-git-repo-check` probe.",
+      "result": "codex still not on PATH; no ~/.codex/auth.json; `login status` reports \"Not logged in\"; the exec probe failed 401 Unauthorized (\"Missing bearer or basic authentication\") against api.openai.com/v1/responses after 5 reconnect attempts. Nothing has changed between rounds."
     }
   ],
   "reason": "No Codex CLI authentication is available to this session. Establishing it requires an interactive `codex login` by Oliver — outside the examiner's authority under the project free-first / no-signup rule (CLAUDE.md hard rules).",
-  "consequence": "No three-way Claude/Codex/key disagreement matrix exists for this round. Every item in eval/blind-solve.json carries codex.status = advisory_skipped and codex.chosen = null. The Gate 2 sample was assembled WITHOUT the cross-model signal. Because the author and the examiner share Claude weights, this round's 68/68 blind agreement CANNOT exclude a convergent blind spot — an item where author and examiner prefer the same wrong reading is invisible to a single-family eval. The Gate 2 human deep-read is the compensating control and should weight adjudication-grade scrutiny accordingly; this is stated again in the sign-off checklist.",
-  "retry_path": "If Oliver authenticates the Codex CLI (`codex login`, or a ChatGPT sign-in that exposes auth to the CLI), re-run the cross-solve on the same keyless form BEFORE Gate 2 sign-off. The keyless-form generation command is recorded in derivation/eval-report.md §round-1."
+  "consequence": "No three-way Claude/Codex/key disagreement matrix exists for either round. Per-item codex fields are absent from eval/blind-solve.json (round 2) and carry codex.status = advisory_skipped in eval/blind-solve-r1.json. The Gate 2 sample was assembled WITHOUT the cross-model signal in both rounds. Because the author and the examiner share Claude weights, round 2's 68/68 blind agreement CANNOT exclude a convergent blind spot — an item where author and examiner prefer the same wrong reading is invisible to a single-family eval. That limitation is sharper on a foundational bank like CLF-C02, where a blind solve has low discriminating power to begin with. The Gate 2 human deep-read is the compensating control and should weight adjudication-grade scrutiny accordingly; this must be stated in signoff.md.",
+  "retry_path": "If Oliver authenticates the Codex CLI (`codex login`, or a ChatGPT sign-in that exposes auth to the CLI), re-run the cross-solve on the same keyless form BEFORE Gate 2 sign-off. The keyless-form generation command is recorded in derivation/eval-report.md §round-1; the round-2 form is identical except for item 1.10's reworked stem and option C."
 }

@@ -1,3 +1,10 @@
+# S5 eval report — clf-c02
+
+Rounds are appended in order. Round 1 begins immediately below; **round 2 (the current
+state of the bank) is at the end of this file.**
+
+---
+
 # S5 eval report — clf-c02, round 1
 
 Examiner: exam-examiner (fresh session; authored nothing in this bank — independence
@@ -224,3 +231,227 @@ but the gap is a single mechanically fixable stem/key restatement. Once `1.10` i
 its bounce record, the bank re-enters S5 for a fresh blind solve and full re-score of the
 reworked item, with a strong prognosis; S6 selection and the Gate 2 checklist follow the
 round-2 pass.
+
+---
+
+# S5 eval report — clf-c02, round 2 {#round-2}
+
+Examiner: exam-examiner (fresh session; authored nothing in this bank, and had never seen it —
+independence precondition of `methodology/05-eval-rubric.md` §independence checked and met) ·
+Date: 2026-08-18 · Bank: 68 items (55 single_choice · 13 multiple_response) at `questions.json`
+commit `168ae1f` · Round-1 artifacts preserved at `eval/blind-solve-r1.json` and
+`eval/judge-scores-r1.json`; the unsuffixed files carry the current revision, per the preflight
+contract and the aif-c01 precedent.
+
+Validator at eval start: **all 28 bank checks green**; the only two failures remain
+`selection-shape` and `selection-format-mix` against an empty `selection.json` — the expected
+pre-S6 state, and S6's own surface, not a bank defect.
+
+## Headline
+
+**S5 round 2: 68 of 68 items pass. Zero bounces. The round-1 bounce is verified fixed.** Blind
+accuracy 68/68 with no adjudications open, no dimension ≤2 anywhere, and — unlike round 1 — no
+independence caveat on any item. The bank is S5-clear and ready for S6 selection and Gate 2.
+
+| | Round 1 | Round 2 |
+|---|---|---|
+| Blind solve | 68/68 (1 item's independence caveated) | **68/68, all independent** |
+| Bounces | 1 (`1.10`) | **0** |
+| Dimensions ≤2 | 1 (`1.10` dim 5 = 2) | **0** |
+| Items carrying a 3 | 11 | **10** |
+| Gate 2 sample | 12 | **12** |
+| Codex cross-solve | advisory-skipped | advisory-skipped (re-probed) |
+
+## 1 · Blind solve (`eval/blind-solve.json`)
+
+- Keyless form regenerated from `questions.json` (`id`, `domain`, `type`, `question`, `options`
+  only) and **all 68 items solved with a confidence grade and a one-line reasoning recorded
+  before any key, rationale or round-1 eval artifact was opened.** The pre-key record is
+  preserved in the session scratchpad (`blind-answers.json`) and was written to disk before the
+  first diff was run.
+- **Accuracy: 68/68 (100%). Confidence: 67 high, 1 medium (`1.04`). Zero misses → zero
+  adjudications open.**
+- **The round-1 independence caveat is cleared.** Round 1 lost item `1.01`'s blind independence
+  by printing a whole item to establish the JSON schema, and recorded the procedure lesson in
+  its §9. That lesson was applied here: the schema was established from a keyed-free projection
+  (field *names* first, then one item printed with `answer`, `rationale`, `distractor_patterns`,
+  `primary_concept`, `theme`, `vertical` and `keywords` stripped). No key or rationale was
+  visible to this session before the solve was recorded, so **`1.01` is independent this round
+  and is removed from the Gate 2 sample.** This is the first documented case of a Mockka
+  procedure lesson being carried into the next round and paying off.
+- **The 100% carries the same caveat as round 1 and it has not weakened.** CLF-C02 is a
+  foundational exam whose content sits well inside a general-purpose model's competence, so a
+  blind solve has low discriminating power here; it rules out gross miskeying and little more.
+  The single medium-confidence item (`1.04`, Well-Architected Framework vs Tool) is the one place
+  the bank made the examiner hesitate, and it is independent evidence for that item's dimension-1
+  4. The compensating controls remain the judge rubric and the Gate 2 deep read.
+
+## 2 · Codex advisory cross-solve (`eval/codex-solve.json`)
+
+**advisory-skipped, re-probed — a fresh session must not inherit an unavailability finding.**
+`codex` is still not on PATH; there is no `~/.codex/auth.json`; the binary bundled with the VS
+Code ChatGPT extension (`openai.chatgpt-26.810.52044`) reports `Not logged in`, and one `codex
+exec` probe returned **401 Unauthorized** after five reconnect attempts. Establishing auth
+requires an interactive login outside this session's authority (free-first: no signups without
+Oliver). Per §codex a missing advisory instrument is noted, not blocking.
+
+**Consequence, restated because it is the single largest residual risk in this eval:** there is
+no three-way disagreement matrix, so the Gate 2 sample carries **no cross-model signal**. Author
+and examiner share Claude weights; a convergent blind spot — both preferring the same wrong
+reading — is invisible to this eval by construction, and 68/68 cannot exclude it. `signoff.md`
+must say so.
+
+## 3 · Judge rubric (`eval/judge-scores.json`)
+
+All 68 items re-read in full and re-scored on six dimensions, every distractor argued FOR at
+full strength before scoring.
+
+Score distribution (items × score):
+
+| Dimension | 5 | 4 | 3 | 2 | Δ vs round 1 |
+|---|---|---|---|---|---|
+| 1 single defensible best answer | 66 | 2 | — | — | — |
+| 2 distractor plausibility | 38 | 27 | 3 | — | `1.10` 3 → 4 |
+| 3 concept alignment | 68 | — | — | — | — |
+| 4 rationale traceability | 58 | 10 | — | — | `4.08` 5 → 4 (new finding) |
+| 5 difficulty pitch | 20 | 40 | 8 | **0** | `1.10` 2 → 4 |
+| 6 scenario realism | 65 | 3 | — | — | — |
+
+### Method — independence from round 1, and what the comparison showed
+
+The round-2 grid was formed **before** round 1's per-item scores were opened: every item
+re-read against the current option text, every distractor argued FOR, and an independent
+bank-wide re-measurement of stem/option content-word overlap run to grade dimension 5 on
+evidence rather than impression. Only then was the round-1 grid compared.
+
+- **373 of 408 dimension scores were identical.** For a rubric applied by two fresh sessions
+  weeks apart, that is the calibration holding.
+- **32 single-point differences across 26 items were reconciled to round 1's published
+  calibration statement** (§calibration, round 1), which covers each case; every one is recorded
+  in that item's `case` field with the first-pass value and the reason it moved. Three touched
+  the 3/4 boundary — `1.07` dim 2, `2.04` dim 2 and dim 5 — and **none changed Gate 2 sample
+  membership**, because both items carry a 3 either way.
+- **3 differences were HELD as round-2 deltas** (below). Reconciling toward a published
+  calibration is not deference: where round 2 had an argument round 1 lacked, round 2 kept it.
+
+One first-pass judgment worth recording because it was *withdrawn on measurement*: `1.06` looked
+like a stem/key echo ("recover from disruption"), which would have capped dimension 5 at 3. The
+measurement killed it — the keyed option shares 4 content words with the stem while distractor A
+shares 5, so the echo is not a key-selecting cue. Dimension 5 stays 5. The lesson is that the
+cue class round 1 discovered has to be *measured* per item, not pattern-matched.
+
+### Delta 1 — `1.10`, the round-1 bounce: verified fixed
+
+Rework commit `168ae1f` made exactly the two edits the bounce report required and nothing else.
+Independent verification on this tree:
+
+| | Round 1 | Round 2 |
+|---|---|---|
+| Stem states | the mechanism ("keeping the on-premises database and a cloud copy synchronized until the moment of switchover") | the constraints only (round-the-clock writes, cutover window of minutes, no write lost) |
+| Keyed option C | repeats the stem's sentence | names replication + an **off-stem** mechanism ("ongoing change capture applied to the cloud target") |
+| Stem/key content-word overlap | **9**, the highest of the four options (max distractor 4) | **1**, the *lowest* of the four options (max distractor 3, option D) |
+| Scores | 5 / 3 / 5 / 5 / **2** / 5 | 5 / **4** / 5 / 5 / **4** / 5 |
+
+The string-match route is gone and the margin is inverted, so the item now requires the
+constraint-to-strategy mapping concept C-010 names. The fresh blind solve answered it from the
+constraints ("minutes of cutover with zero lost writes requires ongoing replication/change
+capture, not a bulk export") at high confidence. Dimension 2 recovers to 4 because options B and
+D compete properly once the stem no longer pre-commits. **Bounce cleared** — recorded in
+`judge-scores.json` → `bounce_resolution`. `1.10` is carried into the Gate 2 sample as a bounce
+survivor so a human confirms the fix rather than taking the examiner's word for it.
+
+### Delta 2 — `4.08`, dimension 4 lowered 5 → 4 (round-1 miss)
+
+`4.08`'s `rationale.correct` argues the principle as "what the community question-and-answer
+service is for" and **never names AWS re:Post**. That is exactly the house-style gap round 1
+recorded on nine items (`2.06`, `2.19`, `3.14`, `3.17`, `3.19`, `3.20`, `3.21`, `3.22`, `3.23`);
+`4.08` belongs on the list and was missed. Not a bounce — a 4 ships — but it moves the evidence
+for ratchet proposal 2 from nine items to **ten**, and it is a small, honest correction of the
+round-1 record rather than a new defect in the bank.
+
+### Reading
+
+- **Dimension 5 now has no 2s and the tail is eight 3s**, all carried over from round 1 and all
+  re-derived independently this round: five are recall-shaped items where the concept *is* a list
+  or a canonical phrase (`1.05` pillars, `1.09` CAF outcomes, `2.01` "of the cloud / in the
+  cloud", `2.05`, `1.07`), and three are measured stem/key word-match (`2.06`, `2.19`, `3.11`).
+- **A near-miss recorded so Gate 2 can see the line being drawn.** `1.08` (Migration Evaluator)
+  sits in the same measured overlap band as the flagged trio — keyed overlap 5 against a best
+  distractor of 2 — but was scored 4, not 3, because the shared words are the requirement's own
+  generic vocabulary ("business case", "current", "projected", "migration") rather than a
+  distinctive reproduced phrase, and because the actual discriminator ("analyzes the current
+  environment") is the concept's own term. `3.19` (+3 margin) was scored 4 on the same test. The
+  rule this round applied: **a distinctive multi-word phrase reproduced uniquely in the key caps
+  dimension 5 at 3; generic shared vocabulary does not.** If Gate 2 disagrees with that line,
+  `1.08` and `3.19` are the two items it changes.
+- **Dimension 3 is uniformly 5 again**, for the structural reason round 1 gave (one item per
+  concept, concept statements written at item-spec grain). Read the zero variance as the pipeline
+  working, not as a skipped dimension.
+
+## 4 · Bounces (0 items)
+
+**None.** No dimension scored ≤2 on any item. The round-1 bounce is resolved (§3, Delta 1); the
+bounce cap of 2 was never approached, and nothing returns to the author from this round.
+
+## 5 · Overlap screen (`eval/overlap-report.md` → "Round 2 delta")
+
+Source posture unchanged; no source became available as text, so the process control remains the
+evidence and was re-verified rather than assumed. The supplementary bank-vs-derivation 8-gram
+shingle check was re-run on the current tree: **15 shared shingles, identical to round 1 in count
+and in items** (14 canonical-vocabulary sequences from the blueprint distillation across `1.05`,
+`1.09`, `1.12`, `2.13`, `2.14`, `3.04`; one distiller's-prose phrase in `2.07`), **all in
+rationales, none in a stem or an option**. The reworked item `1.10` matches **zero** shingles in
+any derivation doc. No clean-room breach; no re-expression bounces.
+
+## 6 · Gate 2 sample (assembled per §handoff) — 12 items
+
+- **From dimension 3s (10 items):** `1.05`, `1.07`, `1.09`, `2.01`, `2.04`, `2.05`, `2.06`,
+  `2.19`, `3.11`, `3.14`. Read these for **pitch, not correctness**. The question for Oliver is
+  whether recall-shaped items and measured word-match items are acceptable on a foundational
+  certification whose real exam is itself substantially recall. A defensible outcome is "accept
+  all ten as correctly pitched for CLF-C02"; the examiner's own view is unchanged from round 1 —
+  `2.06`, `2.19` and `3.11` (word-match) are worth a rewrite in a later wave, and the
+  list/heuristic items are fair for this exam.
+- **From bounce survivors (1 item):** `1.10` — reworked and re-scored clean, sampled so a human
+  confirms the fix.
+- **From dimension-1 4s, referred by name (1 item):** `4.05` — is "one AWS account per brand"
+  close enough to co-correct to matter? It genuinely produces per-brand bills and is real AWS
+  guidance; it loses on proportionality, not on being wrong. `1.04` (Well-Architected Tool)
+  carries the same shape more weakly; it is **not** sampled, but note that it is the one item
+  that drew a medium-confidence blind answer, so if Oliver wants a thirteenth item it is that one.
+- **From process flags: none.** Round 1's `1.01` flag is cleared (§1) and drops out of the sample.
+- **From cross-model disagreements: none** — instrument skipped (§2). Gate 2 samples without the
+  signal and must say so in `signoff.md`.
+- **From open adjudications: none** (zero blind-solve misses).
+
+## 7 · Cross-exam note — the ratchet, second data point
+
+The two validator checks born from the aif-c01 round-1 eval (`key-position-distribution`,
+`answer-length-cue`) are green on this bank in both rounds, and the round-1 cue measurements were
+independently reproduced this round. The clf-c02-specific proposal — `stem-key-word-match` — is
+still **unimplemented** and outside this session's ownership (`packages/engine/src/validate/`).
+Round 2 is fresh evidence for it: the one defect it would have caught mechanically (`1.10`) cost
+a full bounce round to find and fix by hand, and the three surviving dimension-5 word-match 3s
+(`2.06`, `2.19`, `3.11`) would have been surfaced at authoring time instead of at Gate 2.
+
+## 8 · Ratchet proposals carried forward
+
+1. **`stem-key-word-match` (validator check candidate)** — unchanged from round 1 §8.1, now with
+   round-2 evidence: the check's own signature (keyed overlap far above the best distractor's) was
+   the measurement that both diagnosed `1.10` and verified its fix (9→1, margin inverted). Routing
+   note, not an implementation request from this session.
+2. **Authoring-guide note (not yet a rule): name the keyed service in `rationale.correct`.**
+   Evidence is now **10 items in this bank** (round 1's nine plus `4.08`), consistent with a
+   house-style habit rather than isolated slips. Still one exam's worth of evidence; the next exam
+   confirms or drops it.
+
+## Verdict
+
+**S5 round 2: PASS. 68/68 blind, 0 bounces, 0 open adjudications, 0 dimensions ≤2, overlap screen
+clean on process control.** The bank clears S5. Two things a Gate 2 reader must weigh and neither
+is a bank defect: the eval carries **no cross-model signal** (Codex unauthenticated in both
+rounds), and a 100% blind score on a foundational bank is weak evidence of key correctness — the
+12-item sample and the human deep read are the real controls. Next: S6 selection against the
+manifest mix (`selection.json` is still empty, which is why `pnpm validate clf-c02` reports two
+selection failures), then the Gate 2 checklist, then Oliver's sign-off before any `manifest.status`
+flip.

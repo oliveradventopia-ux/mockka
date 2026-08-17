@@ -1784,6 +1784,263 @@
           "D": "A monthly report finds the stray deployment after client records have already landed outside the approved regions — the same after-the-fact removal the network is trying to stop."
         }
       }
+    },
+    {
+      "id": "3.09",
+      "domain": "d3",
+      "primary_concept": "C-052",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "wind farm maintenance company",
+      "keywords": [
+        "Azure Policy",
+        "compliance"
+      ],
+      "type": "single_choice",
+      "question": "A wind farm maintenance company adopted a standard this year: every resource carries an owner tag and sits in one of its approved regions. Most of the estate predates the standard. Leadership wants both a list of which existing resources fall short of it and assurance that the same standard holds for everything deployed from now on.",
+      "options": {
+        "A": "Azure Advisor's operational excellence recommendations, read across the whole of the existing estate",
+        "B": "Assign the policy at the subscription and read its compliance state, which evaluates existing resources as well as new ones",
+        "C": "Because a policy takes effect only on deployments made after it is assigned, redeploy the older resources through a template that meets the standard",
+        "D": "An alert rule that fires whenever a resource is found sitting outside the standard the company adopted"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D19",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Azure Policy does two jobs over one estate. It gates new deployments, and it evaluates the resources that already exist against the same definition, reporting each of them as compliant or not. Assigning the definition at a scope that contains the older estate therefore produces the shortfall list and the ongoing enforcement from a single control.",
+        "distractors": {
+          "A": "Advisor recommends improvements drawn from general best practice. It does not evaluate an estate against a standard this company wrote, and it enforces nothing.",
+          "C": "The premise is wrong: an assigned policy evaluates the resources already inside its scope and reports their compliance state, so nothing has to be redeployed to see the shortfall.",
+          "D": "An alert notifies once a condition has been observed in telemetry. It is the notification layer, not an evaluation of resources against a compliance definition."
+        }
+      }
+    },
+    {
+      "id": "3.10",
+      "domain": "d3",
+      "primary_concept": "C-053",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "county courthouse system",
+      "keywords": [
+        "resource lock",
+        "delete"
+      ],
+      "type": "single_choice",
+      "question": "A county courthouse system keeps its case-record storage account in a resource group that four administrators own. During a cleanup last year one of those owners deleted the wrong storage account. The clerk wants the record store protected so that even an owner cannot delete it without a deliberate, separate step first.",
+      "options": {
+        "A": "Apply a delete lock to the storage account, so deletion is refused for every principal until the lock is removed",
+        "B": "Reduce the four administrators from owner to a role that carries fewer permissions on the resource group",
+        "C": "Assign a policy to the resource group that denies the deletion of any storage account inside it",
+        "D": "Turn on an activity log for the resource group so that a deletion is recorded against whoever performed it"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E01",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "A resource lock blocks deletion or modification independently of who holds permissions. It stops an owner exactly as it stops anyone else, and the guarded action can only proceed once the lock has been deliberately removed — which is the separate step the clerk is asking for.",
+        "distractors": {
+          "B": "Changing role assignments changes who is authorized to act. A contributor can still delete a storage account, and the case records would be protected only by whoever holds the next role up.",
+          "C": "A policy governs what may be created and how resources must be configured. The action to be stopped here is the deletion of something that already exists, which is the lock's job.",
+          "D": "An activity log names who deleted the case records once they are gone. Recording a deletion is not refusing one."
+        }
+      }
+    },
+    {
+      "id": "3.11",
+      "domain": "d3",
+      "primary_concept": "C-054",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "insurance brokerage",
+      "keywords": [
+        "Azure Policy",
+        "resource lock",
+        "Azure role-based access control (RBAC)"
+      ],
+      "type": "scenario_matching",
+      "question": "An insurance brokerage is placing four governance requirements against the control that meets each one. For each requirement below, select the control. Options may be used more than once.",
+      "matching_options": [
+        "A resource lock",
+        "Azure role-based access control (RBAC)",
+        "Azure Policy"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "No resource may be created outside the brokerage's two approved regions, whoever issues the deployment."
+        },
+        {
+          "id": "s2",
+          "text": "The claims database must survive a cleanup: nobody, not even a subscription owner, may delete it until the guard on it is deliberately removed."
+        },
+        {
+          "id": "s3",
+          "text": "Claims analysts must be able to read everything in the reporting resource group and change none of it."
+        },
+        {
+          "id": "s4",
+          "text": "Every virtual machine created from now on must carry a cost-center tag, or the deployment is refused."
+        }
+      ],
+      "answer": {
+        "s1": "Azure Policy",
+        "s2": "A resource lock",
+        "s3": "Azure role-based access control (RBAC)",
+        "s4": "Azure Policy"
+      },
+      "rationale": {
+        "correct": "Three control classes answer three different questions. Azure Policy gates what may be created: a deployment is evaluated against a rule over its scope and refused when it does not comply, which is what both the region restriction and the mandatory cost-center tag need. A resource lock protects what already exists — it blocks deletion or modification regardless of permission, so it stops an owner too, and it has to be removed deliberately before the guarded action can proceed. Azure role-based access control (RBAC) decides who may attempt an action at all, which is the instrument for granting read without change. Only a lock stops an owner deleting; only a policy refuses a non-compliant creation; only a role assignment decides who may try."
+      }
+    },
+    {
+      "id": "3.12",
+      "domain": "d3",
+      "primary_concept": "C-055",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "coffee roastery chain",
+      "keywords": [
+        "the Azure portal",
+        "repeatable"
+      ],
+      "type": "single_choice",
+      "question": "A coffee roastery chain manages its whole Azure estate by hand in the Azure portal. Its cloud lead wants to keep the portal for the work it genuinely suits and move everything else to surfaces better matched to it. Which piece of work should stay in the portal?",
+      "options": {
+        "A": "Building each new roasting site's resource set by hand from a written checklist, so the steps stay familiar to the team",
+        "B": "Applying one configuration change to every site's resources in turn, with the administrator reopening each resource afterwards to confirm it landed",
+        "C": "Keeping the definition of what a site should look like as a library of screenshots a reviewer approves before an administrator applies it",
+        "D": "Exploring an unfamiliar subscription during a support call: seeing how its resources relate and reading one resource's metrics chart"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D20",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "The portal is the graphical control plane, and it is at its best for exploration, visualization and one-off administration: looking over an estate somebody else built, reading a chart, changing one setting once. What it is wrong for is work that must be repeatable, reviewable or performed at scale, because a sequence of clicks cannot be versioned, compared or replayed identically.",
+        "distractors": {
+          "A": "A checklist is what teams reach for when the build should have been repeatable. Identical environments come from a definition that is deployed, not from a human following steps.",
+          "B": "A change applied across an estate belongs to a surface that can iterate over resources. Reopening each resource in the same sitting that changed it also checks the work from inside the context that produced it.",
+          "C": "Screenshots record what somebody intended to build. A reviewer can approve them and still cannot tell whether the estate matches, because the picture is not the thing that gets deployed."
+        }
+      }
+    },
+    {
+      "id": "3.13",
+      "domain": "d3",
+      "primary_concept": "C-056",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "ferry operator",
+      "keywords": [
+        "Azure Cloud Shell",
+        "Azure CLI",
+        "Azure PowerShell"
+      ],
+      "type": "single_choice",
+      "question": "A ferry operator's duty manager has to run one short administrative command from a shared terminal in the port office. Nothing may be installed on that machine and no credentials may be stored on it, and the manager is already signed in to the company's browser session. Which surface fits the constraint?",
+      "options": {
+        "A": "The Azure CLI, installed on the port office terminal because it is the cross-platform command language",
+        "B": "Azure Cloud Shell, opened in the browser and already authenticated for the manager's session",
+        "C": "The Azure portal, stepping through the equivalent setting by hand on the resource's own page",
+        "D": "A request to the central platform team asking them to run the command on the duty manager's behalf"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "E01",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Azure Cloud Shell is the browser-hosted, pre-authenticated shell: it needs nothing installed on the machine in front of the user and leaves no credentials there, and it runs either of the two command languages — the cross-platform Azure CLI or the object-based Azure PowerShell. The constraint here is about where the shell runs and how it authenticates, not about which language the command is written in.",
+        "distractors": {
+          "A": "The Azure CLI is a command language and it is genuinely cross-platform. Installing it is the one thing the terminal forbids, and the same commands run in the browser-hosted shell with no install at all.",
+          "C": "The portal can make the change and is the graphical surface, not a command one. It gives the duty manager a sequence of clicks where a command was asked for.",
+          "D": "Handing the command to another team postpones a task the duty manager is authorized to perform and that a browser-hosted shell already makes possible."
+        }
+      }
+    },
+    {
+      "id": "3.14",
+      "domain": "d3",
+      "primary_concept": "C-057",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "container shipping line",
+      "keywords": [
+        "Azure Arc",
+        "on-premises"
+      ],
+      "type": "single_choice",
+      "question": "A container shipping line runs half its servers on-premises in two port datacenters and a few more with another cloud provider, and a berth-side contract prevents any of them moving this year. The governance team wants those servers inventoried alongside the Azure ones and covered by the same policy assignments.",
+      "options": {
+        "A": "Migrate the port servers into Azure first, and then govern the whole estate natively from there",
+        "B": "A site-to-site connection between the two port datacenters and the shipping line's Azure virtual network",
+        "C": "Azure Arc, which projects the non-Azure servers into Azure so the same management tooling governs them",
+        "D": "Azure Monitor collecting metrics from the port servers into the same workspace as the Azure resources"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D16",
+        "B": "E01",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Azure Arc extends Azure's management plane to what does not run in Azure: on-premises and other-cloud machines are projected into Azure, appear in its inventory, and are governed with the same tooling — policy assignments included — as native resources. The requirement is management reach across the boundary, not connectivity across it and not migration through it.",
+        "distractors": {
+          "A": "Moving the servers is what the berth-side contract rules out this year. It answers a governance requirement by removing the constraint the team was told to work within.",
+          "B": "A network connection makes the port servers reachable. Reachability is not management: the servers still appear in no Azure inventory and no policy can be assigned to them.",
+          "D": "Collecting metrics gives the governance team observation of the port servers. Observation is not governance, and a metric stream carries no policy assignment."
+        }
+      }
+    },
+    {
+      "id": "3.15",
+      "domain": "d3",
+      "primary_concept": "C-058",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "glass recycling plant",
+      "keywords": [
+        "infrastructure as code",
+        "drift"
+      ],
+      "type": "multiple_response",
+      "question": "A glass recycling plant's platform team builds each processing line's environment by hand, and the environments have drifted apart. The team is adopting infrastructure as code. Which TWO things does that change actually buy it? (Select TWO.)",
+      "options": {
+        "A": "It removes the need for a separate approval step, as the deployment tool validates the definition before it runs",
+        "B": "The environment is declared once and deployed repeatedly, so every processing line comes out identical",
+        "C": "Responsibility for what the environments contain moves to the platform provider, which applies the definition",
+        "D": "The estate becomes self-correcting: a resource that drifts from the definition is returned to it with nobody acting",
+        "E": "The definition is a versioned artifact, so a proposed change can be reviewed and approved before it reaches the estate"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D20",
+        "C": "D19",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Infrastructure as code replaces clicking an environment into existence with declaring it. What that buys is repeatability — the same definition deploys the same environment every time — and reviewability, because a versioned artifact can be read, compared and approved before anything reaches the estate. Drift becomes visible for the same reason: there is now a written statement of what the estate should be to compare it against.",
+        "distractors": {
+          "A": "Validation checks that a definition is well formed. Whether the change it describes is the right one is the question an approval step exists to answer.",
+          "C": "Declaring an estate does not move responsibility for its contents. The plant still owns what it deploys, in a definition exactly as it did in the portal.",
+          "D": "Seeing drift and closing it are different things. The definition makes the difference visible, and correcting it is still a deployment somebody chooses to run."
+        }
+      }
     }
   ]
 }

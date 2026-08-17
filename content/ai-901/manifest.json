@@ -1,0 +1,124 @@
+{
+  "$comment": "S1/S2 facts only (research-manager, 2026-08-17). Every remaining TODO is S3 + Gate 1 material — see derivation/sources.md and the three artefacts. READ derivation/sources.md FIRST: AI-901 REPLACED the retired AI-900 on 2026-06-30 and is NOT a re-numbered AI-900 (two skill areas, 55-60% implementation, Python assumed) — nothing was carried over from content/ai-900. HARD VENDOR FACTS filled here: blueprint_version (skills measured as of 2026-04-15; no change log exists yet, this is the exam's first blueprint), source_checked_date, exam.time_limit_minutes 45 (Fundamentals exam time; 65 min seat time), domain ids/titles verbatim from the 'Assessed on this exam' list. PROPOSED, NOT ASSERTED: weight_pct 42/58 — Microsoft publishes RANGES (40-45 / 55-60) whose minimums sum to 95 and maximums to 105; the midpoints (42.5/57.5) already sum to 100, so unlike AI-900 no normalisation constant is needed, only a half-point tie-break. 42/58 keeps the majority area strictly inside its published band and matches the split an independent bank derived from the same ranges. Gate-1 ratification D1. STILL TODO (S3): exam.item_count (Microsoft publishes NO per-exam count — only the vendor-wide 40-60 band, so whatever is chosen is a DOCUMENTED CHOICE, Gate-1 ratification D2), exam.pass_threshold_pct (the real exam is scaled 1-1,000 / pass 700, which Microsoft states 'may not equal 70% of the points', with per-component partial credit and unidentified unscored pilot items — no honest raw percentage exists; whatever is set is a disclosed PROXY, Gate-1 ratification D3), bank.item_count (~1.35x exam), per-domain exam_items/bank_items/format_mix, and the whole intro block. FORMATS are an S2 default from the observed profile, not vendor calibration: the one accessible practice source is 160-of-163 four-option single choice, and 12% of its items are in forms Mockka cannot render at all. PATTERN CAPS are derived in derivation/source-akashp-ai901-simulator.md: E01 0.25 (service/model-role-swap at ~25% of that source's wrong options AND its stalest reflex), E04 0.20 (principle-substitution at 68 of 72 wrong options inside the responsible-AI group), D04 0.05 (temperature-as-filler in 17 separate items), E08 0.05 + E10 0.05 (spec-trivia and SDK-symbol recall, both below a fundamentals exam's level); E09-E12 are NEW vendor-extension patterns proposed for the implementation half and must be declared in authoring.json at S3. layers.syllabus_rules false because the study guide IS the syllabus (1:1 skill-area-to-domain mapping). OPEN GATE-1 QUESTION recorded in the artefacts: the official curriculum spends 12.7% of its course time on RAG and Foundry IQ, which NO blueprint bullet names — S3 must rule before authoring d2. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "ai-901",
+  "title": "Microsoft Azure AI Fundamentals (AI-901)",
+  "vendor": "Microsoft",
+  "status": "draft",
+  "version": "0.1.0",
+  "blueprint_version": "skills measured as of 2026-04-15 (first blueprint of a new exam; study-guide page ms.date 2026-03-31, updated_at 2026-07-14, no change log published yet)",
+  "source_checked_date": "2026-08-17",
+  "exam": {
+    "item_count": "TODO (S3) — Microsoft publishes no per-exam count; choose from the vendor-wide 40-60 band and disclose as chosen",
+    "time_limit_minutes": 45,
+    "pass_threshold_pct": "TODO (S3) — disclosed proxy only; real exam is scaled 1-1,000 with a 700 pass mark that 'may not equal 70% of the points'"
+  },
+  "bank": {
+    "item_count": "TODO (S3) — target ~1.35x exam item_count (methodology/02-master-inventory.md)"
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Identify AI concepts and capabilities",
+      "weight_pct": 42,
+      "exam_items": "TODO (S3)",
+      "bank_items": "TODO (S3)",
+      "format_mix": {
+        "single_choice": "TODO (S3)",
+        "multiple_response": "TODO (S3)",
+        "scenario_matching": "TODO (S3)"
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Implement AI solutions by using Microsoft Foundry",
+      "weight_pct": 58,
+      "exam_items": "TODO (S3)",
+      "bank_items": "TODO (S3)",
+      "format_mix": {
+        "single_choice": "TODO (S3)",
+        "multiple_response": "TODO (S3)",
+        "scenario_matching": "TODO (S3)"
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": 5,
+      "select_count": [
+        2
+      ]
+    },
+    "scenario_matching": {
+      "min_options": 3,
+      "min_scenarios": 3,
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {
+      "D04": 0.05,
+      "E01": 0.25,
+      "E04": 0.2,
+      "E08": 0.05,
+      "E10": 0.05
+    },
+    "near_duplicate_jaccard": 0.4,
+    "key_letter_max_share": 0.4
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "intro": {
+    "about": "TODO (S3) — executive summary. Must state: AI-901 replaced the retired AI-900 on 2026-06-30 and is the only exam that now earns Microsoft Certified: Azure AI Fundamentals; two skill areas, with 55-60% of the weight on implementing solutions in Microsoft Foundry rather than describing them.",
+    "audience": "TODO (S3) — roles. Must carry the blueprint's own precondition, which AI-900 did not have: 'knowledge of Python coding syntax and programming techniques' and familiarity with 'REST APIs, SDKs, and CLIs'.",
+    "materials": [
+      {
+        "title": "TODO (S3) — e.g. \"<N>-question practice form\"",
+        "description": "TODO (S3) — bank size, formats, dashboard, review depth"
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "Study guide for Exam AI-901: Microsoft Azure AI Fundamentals (official)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-901"
+      },
+      {
+        "label": "Exam AI-901: Microsoft Azure AI Fundamentals (official exam page)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-901/"
+      },
+      {
+        "label": "Microsoft Certified: Azure AI Fundamentals (certification)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
+      }
+    ],
+    "disclaimer": "TODO (S3) — independence + provenance + NDA notice, aligned with the package README. Must reproduce the substance of provenance.nda_statement below and name the trademark line, including \"Microsoft Foundry\"."
+  },
+  "format_coverage": "The real AI-901 exam draws from Microsoft's full item-type repertoire: multiple choice, multi-part/multi-select questions, build list (ordering), drag and drop, hot area, active screen, case studies, and problem-solution sets. Microsoft does not publish which of these appear on any given exam, and Microsoft Learn access is excluded from Fundamentals exams. This mock supports three formats and approximates as follows. Multiple choice maps exactly to single_choice. Multi-part and multi-select items map to multiple_response - but this mock scores them all-or-nothing, while Microsoft awards one point per correctly answered component, so this mock's multi-response scoring is STRICTER than the real exam's. Drag and drop is approximated by scenario_matching: mapping scenarios onto a reused option set exercises the same discrimination without the same interaction. Build list, hot area, active screen, case studies and problem-solution sets are NOT rehearsed at all - a candidate would meet those interactions for the first time in the real exam. This matters more for AI-901 than for a describe-level fundamentals exam: 55-60% of AI-901's weight is on IMPLEMENTING solutions in Microsoft Foundry - work whose real assessment involves portal screens, SDK code and CLI invocations - so a text-only mock necessarily tests recognition of the right implementation move rather than performance of it. Format shares here are a documented default rather than observed calibration: the official practice assessment is behind a sign-in wall and was not accessed, and the one accessible community practice source is 81% four-option single choice with 12% of its items in forms this player cannot render. Finally, the real exam mixes unidentified unscored pilot items into the paper and reports a scaled 1-1,000 score with a 700 pass mark that Microsoft states may not equal 70% of the points, so no raw percentage from this mock converts to a Microsoft score.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "ms-ai901-blueprint",
+        "type": "public_blueprint",
+        "citation": "Study guide for Exam AI-901: Microsoft Azure AI Fundamentals, skills measured as of April 15, 2026, published by Microsoft (learn.microsoft.com). Public document, read in full 2026-08-17. Supplies the two skill areas and weight ranges, the 29 objective bullets, the audience profile and the canonical vocabulary. Scoring, duration and item-type facts come from the vendor-wide exam-scoring and exam-duration pages cited in derivation/sources.md. Distilled to derivation/source-ms-ai901-blueprint.md."
+      },
+      {
+        "id": "ms-ai901-curriculum",
+        "type": "public_syllabus",
+        "citation": "Microsoft official course AI-901T00-A \"Introduction to AI in Azure\" and the two Microsoft Learn learning paths it maps to - \"AI concepts for developers and technology professionals\" and \"Get started with AI applications and agents on Azure\" (14 modules, 103 units). Public Microsoft Learn content, readable without an account; structure read 2026-08-17. Supplies the current implementation vocabulary (Microsoft Foundry, Foundry SDK, Foundry Tools, Azure Content Understanding, Foundry IQ) that the terse blueprint bullets only name in passing. Distilled to derivation/source-ms-ai901-curriculum.md."
+      },
+      {
+        "id": "akashp-ai901-simulator",
+        "type": "public_practice_set",
+        "citation": "akashp18, 196 freely published AI-901 practice items in the MIT-licensed GitHub repository akashp18/ai901-exam-simulator. Used under the clean-room rule for analytical classification only - per-item concept mapping and distractor-pattern frequencies in derivation/source-akashp-ai901-simulator.md. No text reused. Screened against the dump corpus and cleared; almost certainly LLM-generated in a single pass, and 25% of its items are off the AI-901 blueprint, recorded item by item."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the AI-901 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the Microsoft Certification Exam Candidate Agreement; sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Microsoft Corporation or Pearson VUE. \"Microsoft\", \"Azure\", \"Microsoft Foundry\" and \"Microsoft Certified: Azure AI Fundamentals\" are trademarks of the Microsoft group of companies."
+  }
+}

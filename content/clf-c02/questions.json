@@ -2052,6 +2052,285 @@
           "D": "Stream ingestion handles readings once they arrive, and it does not connect or manage the devices sending them."
         }
       }
+    },
+    {
+      "id": "4.01",
+      "domain": "d4",
+      "primary_concept": "C-061",
+      "theme": "C4",
+      "vertical": "building materials supplier",
+      "keywords": [
+        "Spot Instances",
+        "On-Demand Instances",
+        "Reserved Instances"
+      ],
+      "type": "single_choice",
+      "question": "A building materials supplier renders its product catalog images in nightly batches. A render that is interrupted is simply put back on the queue, the batch has no deadline of any kind, and the supplier's only stated goal is the lowest price it can get. Which purchasing option fits?",
+      "options": {
+        "A": "Spot Instances, which use spare capacity at a deep discount and can be reclaimed",
+        "B": "Reserved Instances, committing to the nightly capacity for a one-year or three-year term",
+        "C": "On-Demand Instances, the familiar standard rate that commits the supplier to nothing",
+        "D": "Dedicated Hosts, which give the supplier visibility of the physical server the renders use"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E03",
+        "C": "D11",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Interruption tolerance and commitment horizon pick the purchasing option. Work that can be stopped and requeued, with no deadline attached, is what Spot Instances exist for: spare capacity at the deepest discount, on the understanding that AWS may reclaim it. On-Demand Instances buy flexibility at the standard rate, and Reserved Instances or AWS Savings Plans buy a discount in exchange for a committed term.",
+        "distractors": {
+          "B": "A term commitment does lower the rate, and it is the wrong lever for a batch whose defining property is that interruption costs nothing.",
+          "C": "The standard rate is the safe default and the most expensive way to run work that would tolerate the cheapest capacity available.",
+          "D": "Visibility of the physical server answers server-bound licensing requirements, which is not a constraint the supplier stated."
+        }
+      }
+    },
+    {
+      "id": "4.02",
+      "domain": "d4",
+      "primary_concept": "C-062",
+      "theme": "C4",
+      "vertical": "actuarial consulting firm",
+      "keywords": [
+        "AWS Organizations consolidated billing",
+        "Reserved Instance flexibility"
+      ],
+      "type": "single_choice",
+      "question": "An actuarial consulting firm uses AWS Organizations with consolidated billing across its management account and several member accounts. One member account holds a Reserved Instance covering four instances of a type in a single Availability Zone but runs only one of them. A second member account runs three matching instances in that same Availability Zone, and a third runs two matching instances in a different Availability Zone of the same Region. How does the reserved discount apply?",
+      "options": {
+        "A": "Only the account holding the reservation benefits, so most of the reserved capacity is wasted",
+        "B": "Every matching instance in the organization benefits, including those in the other Availability Zone",
+        "C": "The holder's instance and the three matching instances in the same Availability Zone benefit",
+        "D": "The discount is divided evenly across every matching instance the organization runs"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "AWS Organizations consolidated billing aggregates the family's usage, so a reservation bought in one member account discounts matching usage anywhere in the organization. Reserved Instance flexibility then follows the dimensions the reservation was bought on: this one is scoped to a single Availability Zone, so it covers the holder's own instance and the matching instances running in that same Availability Zone until its capacity is used up. Matching instances in a different Availability Zone are billed at the standard rate.",
+        "distractors": {
+          "A": "Treating the reservation as trapped in its own account is the misreading consolidated billing exists to remove.",
+          "B": "Sharing is real but bounded: a reservation scoped to one Availability Zone does not reach instances running in another one.",
+          "D": "A reservation covers matching usage up to the capacity it was bought for; it is not spread thinly across everything that matches."
+        }
+      }
+    },
+    {
+      "id": "4.03",
+      "domain": "d4",
+      "primary_concept": "C-063",
+      "theme": "C4",
+      "vertical": "board-game publisher",
+      "keywords": [
+        "incoming data transfer costs",
+        "outgoing data transfer costs",
+        "from one AWS Region to another Region"
+      ],
+      "type": "multiple_response",
+      "question": "A board-game publisher is estimating the bill for a new rules-video library before building it. The publisher will upload video masters into AWS from its studio, serve the finished videos to customers over the internet, and keep an archive copy in a second AWS Region. Which TWO of these carry a data transfer charge? (Select TWO.)",
+      "options": {
+        "A": "Uploading the video masters from the studio into AWS",
+        "B": "Serving the finished videos out to customers over the internet",
+        "C": "Keeping the finished videos in Amazon S3 between releases",
+        "D": "Copying the archive set from one AWS Region to another Region",
+        "E": "Tagging the videos so the cost can be attributed to each product line"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E04",
+        "E": "D04"
+      },
+      "rationale": {
+        "correct": "Knowing which line items exist at all is the skill here. Incoming data transfer costs are not billed, so bringing masters into AWS is free, while outgoing data transfer costs apply once content leaves for the internet, and transfer from one AWS Region to another Region is billed as well. Transfer within the same Region is priced differently again, and storage is billed separately by option and tier.",
+        "distractors": {
+          "A": "Inbound movement into AWS is the one direction that is not billed, which is what makes the upload free.",
+          "C": "Storage is a genuine charge on the bill, priced by storage option and tier rather than counted as data transfer.",
+          "E": "Tagging is a cost-attribution mechanism, so it changes how charges are reported and adds none of its own."
+        }
+      }
+    },
+    {
+      "id": "4.04",
+      "domain": "d4",
+      "primary_concept": "C-064",
+      "theme": "C6",
+      "vertical": "car wash franchise",
+      "keywords": [
+        "AWS Pricing Calculator",
+        "AWS Cost Explorer",
+        "AWS Budgets"
+      ],
+      "type": "single_choice",
+      "question": "A car wash franchise is deciding whether to move its booking platform to AWS. Nothing has been deployed and no AWS charges have ever been incurred, yet the finance director wants a monthly figure for the proposed design before the board meets next week. Which tool produces it?",
+      "options": {
+        "A": "AWS Cost Explorer, whose charts analyze what the account has already spent",
+        "B": "AWS Budgets, which raises an alert once spending crosses a threshold set for it",
+        "C": "A quote from AWS for a fixed monthly fee covering the design as it is proposed",
+        "D": "AWS Pricing Calculator, which estimates the cost of a design before it exists"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "E05"
+      },
+      "rationale": {
+        "correct": "Each cost tool answers a different question, and the franchise is asking about a design that has never run. Estimating the monthly cost of a configuration that does not exist yet is what the pricing calculator does, drawing on published rates for the services in the proposal.",
+        "distractors": {
+          "A": "Analyzing and visualizing historical spend needs a history, and this account has never incurred a charge.",
+          "B": "A threshold alert watches spending as it happens, so it also depends on the workload already running.",
+          "C": "AWS pricing is published and usage-based, so there is no negotiated flat monthly fee to quote for a design."
+        }
+      }
+    },
+    {
+      "id": "4.05",
+      "domain": "d4",
+      "primary_concept": "C-065",
+      "theme": "C4",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "AWS cost allocation tags",
+        "AWS Cost and Usage Report"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line reservations business runs three brands inside one AWS account and cannot tell its board what each brand costs. Every resource already carries its brand as a name prefix, and the monthly bill still arrives as one undivided figure. What should the business put in place?",
+      "options": {
+        "A": "AWS cost allocation tags on the resources, activated so charges are attributed per brand",
+        "B": "A naming convention the finance team matches against the bill by hand each month",
+        "C": "One AWS account per brand, opened so that each brand receives a separate bill",
+        "D": "A fixed monthly charge per brand, agreed with AWS so the split is known in advance"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "D01",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Attributing spend to teams, projects, or brands is what AWS cost allocation tags are for: tags are applied to resources, activated for billing, and the charges then arrive already attributed. The AWS Cost and Usage Report is where those tagged costs surface at the finest grain, line by line, which is the detail a board question needs.",
+        "distractors": {
+          "B": "Names are not read by billing, so the finance team keeps doing the attribution by hand every month and keeps making the errors.",
+          "C": "Splitting into separate accounts does divide the bill, and it is a structural change to the estate to answer a reporting question.",
+          "D": "AWS charges follow usage, so a flat agreed figure per brand would report a number that no longer reflects what each brand consumed."
+        }
+      }
+    },
+    {
+      "id": "4.06",
+      "domain": "d4",
+      "primary_concept": "C-066",
+      "theme": "C6",
+      "vertical": "dance studio chain",
+      "keywords": [
+        "AWS Business Support",
+        "customer service and communities"
+      ],
+      "type": "multiple_response",
+      "question": "A dance studio chain runs its class-booking site on AWS and has never bought a support plan. After the site stayed down through a holiday weekend, the owner wants an AWS engineer reachable at any hour for production problems and somewhere to have architecture questions answered. Which TWO statements are correct? (Select TWO.)",
+      "options": {
+        "A": "The chain's current arrangement already includes technical support cases at any hour",
+        "B": "Support for the site is supplied at no cost by the AWS Partner Network to any account",
+        "C": "The chain's current arrangement gives it customer service and communities, not technical support",
+        "D": "An outage of a customer's own site is restored by AWS as part of operating the platform",
+        "E": "AWS Business Support adds around-the-clock technical support for production problems"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The tiers are told apart by what each one adds. Every account gets customer service and communities - account and billing help, documentation, and the community forums - and no technical support cases. Technical support begins with the developer tier and becomes around-the-clock coverage for production systems, along with architecture guidance, from the business tier upward.",
+        "distractors": {
+          "A": "Technical support cases are the thing the no-cost tier does not include, which is why the weekend outage had nowhere to go.",
+          "B": "Partners deliver paid consulting and technology services; they are not a free support channel attached to every account.",
+          "D": "AWS operates the platform, and restoring an application the customer runs on it stays a customer responsibility at every tier."
+        }
+      }
+    },
+    {
+      "id": "4.07",
+      "domain": "d4",
+      "primary_concept": "C-067",
+      "theme": "C6",
+      "vertical": "eyewear retail chain",
+      "keywords": [
+        "AWS Professional Services",
+        "AWS Partner Network",
+        "system integrators"
+      ],
+      "type": "single_choice",
+      "question": "An eyewear retail chain has funding approved to have its point-of-sale migration delivered by an outside team that carries accountability for the result, not merely advice it then has to implement. Its head of IT asks which channel supplies a paid engagement of that kind. Which answer fits?",
+      "options": {
+        "A": "AWS Marketplace, where the chain subscribes to the migration software it needs",
+        "B": "AWS Professional Services, or a partner from the AWS Partner Network",
+        "C": "AWS Business Support, whose engineers deliver the migration under the plan",
+        "D": "AWS Trusted Advisor, whose recommendations stand in for a delivery plan"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E03",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Outside help arrives through defined channels. Paid, outcome-oriented engagements come from AWS Professional Services or from the AWS Partner Network, whose consulting partners include the system integrators that deliver migrations of this kind; independent software vendors in the same network supply the products. AWS Marketplace is the procurement channel for that software, with its own cost-management and governance features.",
+        "distractors": {
+          "A": "Subscribing to software procures a product, and the chain has funded a team accountable for delivering an outcome.",
+          "C": "A support plan answers questions and helps with problems on what the chain runs; it does not staff and deliver a migration.",
+          "D": "Recommendations from an inspection tool are advice, which is explicitly what the chain said is not enough here."
+        }
+      }
+    },
+    {
+      "id": "4.08",
+      "domain": "d4",
+      "primary_concept": "C-068",
+      "theme": "C6",
+      "vertical": "animal shelter network",
+      "keywords": [
+        "AWS re:Post",
+        "AWS Prescriptive Guidance",
+        "AWS Trust and Safety team"
+      ],
+      "type": "single_choice",
+      "question": "An animal shelter network is run by volunteers, holds no paid support plan, and has an unusual configuration question that the documentation does not settle. Nothing is broken and there is no urgency, but the volunteer administrator would value an answer from someone who has met the same situation. Where should the question go?",
+      "options": {
+        "A": "AWS Prescriptive Guidance, which publishes proven strategies and patterns",
+        "B": "The AWS Trust and Safety team, which handles reports about AWS resources",
+        "C": "AWS re:Post, the community question-and-answer service that AWS hosts",
+        "D": "A support case, on a paid plan bought to cover this single question"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Each published destination supplies a different kind of help. A specific question asked of people who have solved it before is what the community question-and-answer service is for, and it costs the shelter network nothing. Whitepapers, blogs, and documentation cover material AWS has already written down, which this question has already outrun.",
+        "distractors": {
+          "A": "Prescriptive guidance offers proven strategies written in advance, so it answers questions someone anticipated rather than an unusual one.",
+          "B": "That team receives reports of abuse of AWS resources, which is an entirely different kind of contact.",
+          "D": "Buying a support plan for one non-urgent question spends money the volunteers do not need to spend to get an answer."
+        }
+      }
     }
   ]
 }

@@ -2041,6 +2041,244 @@
           "D": "Seeing drift and closing it are different things. The definition makes the difference visible, and correcting it is still a deployment somebody chooses to run."
         }
       }
+    },
+    {
+      "id": "3.16",
+      "domain": "d3",
+      "primary_concept": "C-059",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "cruise line operations",
+      "keywords": [
+        "Azure Resource Manager",
+        "ARM templates"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line's operations team changes its Azure estate from three directions: the portal, a deployment pipeline that calls the command line, and scripts run by administrators. An auditor asks how one set of permissions and policy rules can possibly hold when three different surfaces are issuing the changes.",
+      "options": {
+        "A": "Every one of those surfaces sends its request to Azure Resource Manager, the control plane where permissions and policy are applied",
+        "B": "Each surface applies its own copy of the permission and policy rules, so the three configurations have to be kept aligned",
+        "C": "Standardize on one surface and withdraw the other two, leaving a single path by which the estate can be changed",
+        "D": "Enable a separate log on each of the three surfaces and reconcile those logs with one another every month"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D16",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Azure Resource Manager is the control plane that every deployment and management request goes through, whatever surface issued it — portal, command line or script. Authentication, role assignments and policy are evaluated there, once, which is why consistency does not depend on the tool an administrator happened to pick. The same control plane accepts ARM templates, the declarative format that makes a repeated deployment identical.",
+        "distractors": {
+          "B": "There are no per-surface copies of the rules to keep aligned. The surfaces are clients of one control plane and carry no enforcement of their own.",
+          "C": "Removing tools narrows how the team can work without changing where enforcement happens, and the surface left standing is evaluated exactly as the two withdrawn ones were.",
+          "D": "Reconciling logs describes afterwards what was allowed through. Consistency here is a property of where requests are evaluated, not of how their records are compared."
+        }
+      }
+    },
+    {
+      "id": "3.17",
+      "domain": "d3",
+      "primary_concept": "C-060",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "heavy machinery importer",
+      "keywords": [
+        "Azure Advisor",
+        "recommendations"
+      ],
+      "type": "single_choice",
+      "question": "A heavy machinery importer's new cloud lead inherits an estate nobody has reviewed for two years. The board asks for a prioritized list of improvements — cheaper, safer, more reliable — derived from how these particular resources are actually configured rather than from a generic checklist.",
+      "options": {
+        "A": "The pricing calculator, priced against the sizes the estate runs today, to show the board where money could be saved",
+        "B": "Azure Advisor, which analyzes the resources that exist and returns personalized recommendations across those categories",
+        "C": "A policy assignment across the subscription, reporting which resources fall short of the importer's own standards",
+        "D": "Microsoft Defender for Cloud's secure score, taken as the answer to the whole of the board's improvement question"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "E01",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Azure Advisor produces personalized best-practice recommendations across cost, security, reliability, performance and operational excellence, and it produces them by analyzing the resources that already exist. That is what separates a recommender from an estimator, which prices a design nobody has built, and from an enforcer, which decides what is allowed. The board asked for advice about this estate, so the surface that reads this estate is the one that answers.",
+        "distractors": {
+          "A": "Pricing a configuration estimates what something would cost. It reads no resource's actual configuration and recommends nothing about security or reliability.",
+          "C": "A policy reports compliance against rules the importer wrote. It enforces a standard instead of proposing improvements, and it is silent on everything the standard does not mention.",
+          "D": "Defender for Cloud covers security posture in depth and stops there. Cost, reliability and performance sit outside it, and the board asked about all four."
+        }
+      }
+    },
+    {
+      "id": "3.18",
+      "domain": "d3",
+      "primary_concept": "C-061",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "e-sports league",
+      "keywords": [
+        "Azure Service Health",
+        "incident"
+      ],
+      "type": "single_choice",
+      "question": "Midway through a tournament an e-sports league's match service stops responding. Before touching its own code, the league wants to establish whether Azure is having an incident that affects the services and regions its own subscription depends on.",
+      "options": {
+        "A": "The public Azure status view, which reports incidents affecting the platform overall",
+        "B": "Resource health for the match service's virtual machine, which reports that one machine's own health",
+        "C": "Azure Service Health, which reports incidents and planned maintenance for this subscription's services and regions",
+        "D": "An alert on the match service's response time, which fires whenever responses slow beyond the threshold"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Three questions about one outage have three surfaces. Whether the platform is having an incident at all is the public status view; whether an incident touches the services and regions this subscription uses is Azure Service Health; and whether one particular resource is healthy is that resource's own health view. The league is asking the middle question, which is the personalized one.",
+        "distractors": {
+          "A": "The public view answers whether anything anywhere is wrong. It is not filtered to this subscription, so a page listing no broad incident still leaves the league's own regions unanswered.",
+          "B": "Resource health is the right family at the wrong level. It describes one machine, and cannot say whether a regional service the league depends on is degraded.",
+          "D": "An alert reports that the league's own service is slow, which is the symptom already in front of them. It says nothing about whether a platform incident is the cause."
+        }
+      }
+    },
+    {
+      "id": "3.19",
+      "domain": "d3",
+      "primary_concept": "C-062",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "orchestra and concert hall",
+      "keywords": [
+        "Azure Monitor",
+        "metrics and logs"
+      ],
+      "type": "single_choice",
+      "question": "An orchestra and concert hall runs ticketing, door access and building-sensor workloads across many Azure resources. Each team reads its own resource's telemetry in isolation, and when ticketing slowed last week nobody could line that up against what the rest of the estate was doing. The venue wants one place that collects metrics and logs from all of those resources and can act on what they show.",
+      "options": {
+        "A": "Log Analytics on its own, as the workspace in which collected log data is queried",
+        "B": "Application Insights, as the telemetry surface for what happens inside the ticketing application",
+        "C": "A portal dashboard for each team, pinned with the charts for that team's own resources",
+        "D": "Azure Monitor, the platform that collects, correlates and acts on telemetry from the whole estate"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E02",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "Azure Monitor is the telemetry platform for the estate: it collects metrics and logs from many resources, correlates them in one place, and acts on what it finds. The named surfaces beneath it are parts of that platform rather than rivals to it — one is where collected data is queried, another reports what happens inside an application — so an estate-wide collection and correlation requirement is answered by the platform itself.",
+        "distractors": {
+          "A": "Querying is one job inside the platform. A workspace answers questions of data that something else collected, and does not itself gather the venue's estate-wide telemetry or act on it.",
+          "B": "Application Insights sits at the application level and reports what happens inside one application. The requirement spans door access and building sensors as much as ticketing.",
+          "C": "Per-team dashboards are what the venue already has in effect: each team watches its own resources, which is exactly the isolation that stopped anyone correlating the slowdown."
+        }
+      }
+    },
+    {
+      "id": "3.20",
+      "domain": "d3",
+      "primary_concept": "C-063",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "mining equipment supplier",
+      "keywords": [
+        "Log Analytics",
+        "query"
+      ],
+      "type": "single_choice",
+      "question": "A mining equipment supplier already collects log data from its Azure estate into one workspace. After a delivery-tracking failure an engineer wants to interrogate what was collected — which requests failed, on which resources, in the twenty minutes around the failure — and to refine the question as the answers come back.",
+      "options": {
+        "A": "Log Analytics, the surface on which collected log data is queried and analyzed",
+        "B": "An alert rule on the failed-request signal, set to fire when failures cross a threshold",
+        "C": "Application Insights, instrumenting the delivery-tracking application so the data is gathered again",
+        "D": "Azure Advisor's operational excellence recommendations for the resources that were involved"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Log Analytics is the query surface: the place where log data that has already been collected is interrogated and analyzed, question by question, as an investigation narrows. It is neither the pipeline that gathers the telemetry nor the layer that notifies somebody about it — those are separate jobs inside the same platform.",
+        "distractors": {
+          "B": "An alert rule watches a signal for a condition and tells somebody when it is met. It notifies; it does not let an engineer ask a new question of data already collected.",
+          "C": "Instrumenting the application adds another source of telemetry, and the supplier's data is already in the workspace. Collecting again answers nothing about what was collected then.",
+          "D": "Advisor returns recommendations about how resources are configured. The engineer needs the specific events around one failure, which no recommendation contains."
+        }
+      }
+    },
+    {
+      "id": "3.21",
+      "domain": "d3",
+      "primary_concept": "C-064",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "bicycle-share operator",
+      "keywords": [
+        "Azure Monitor alerts",
+        "threshold"
+      ],
+      "type": "single_choice",
+      "question": "A bicycle-share operator's docking-station service degrades quietly: the queue of unprocessed dock events climbs for an hour before riders begin reporting problems. Operations wants to be told the moment queue depth crosses its agreed threshold, and wants the processing job restarted when that happens.",
+      "options": {
+        "A": "A saved Log Analytics query over the queue-depth data, run by an engineer at the start of each day",
+        "B": "A wall-screen dashboard in the operations room showing queue depth as it rises and falls",
+        "C": "Change the daily service summary into an hourly one so that the climb shows up sooner",
+        "D": "An Azure Monitor alert on the queue-depth signal, firing at the threshold and triggering the restart"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "E04",
+        "C": "D10"
+      },
+      "rationale": {
+        "correct": "Azure Monitor alerts are the notification-and-action layer: a rule watches a signal for a stated condition, fires when the condition is met, and can trigger a response as well as telling somebody. Storing telemetry and querying it are separate jobs, and neither of them reaches out when a threshold is crossed.",
+        "distractors": {
+          "A": "A saved query answers the question when somebody runs it. Overnight the queue climbs with nothing watching, which is the gap operations described.",
+          "B": "A dashboard shows the climb to whoever happens to be looking. Observation is not notification, and nothing on a screen restarts the processing job.",
+          "C": "An hourly summary shortens the wait and keeps its shape: the operator still learns after the fact and still has to act by hand."
+        }
+      }
+    },
+    {
+      "id": "3.22",
+      "domain": "d3",
+      "primary_concept": "C-065",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "motorcycle dealership network",
+      "keywords": [
+        "Application Insights",
+        "requests"
+      ],
+      "type": "single_choice",
+      "question": "A motorcycle dealership network's booking site is slow for some customers, while every metric on the virtual machines, disks and network beneath it sits well inside normal. The team needs to see which requests inside the booking application are failing or running long, and which pages customers actually reach.",
+      "options": {
+        "A": "Azure Monitor metrics for the underlying virtual machines and disks, read over a longer window",
+        "B": "Log Analytics queries over the platform logs already collected from those same resources",
+        "C": "Application Insights, the application surface of the telemetry platform, which reports request failures and usage",
+        "D": "Move the booking site onto a larger virtual machine size so that the slow requests complete sooner"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E03",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Application-level telemetry sits at a different altitude from platform-level collection. Request failures, performance anomalies and how customers actually use the pages happen inside the application, and Application Insights is the surface of the telemetry platform that reports them. The infrastructure beneath looks healthy precisely because the problem is not at that level.",
+        "distractors": {
+          "A": "Platform metrics describe the machines and disks the application runs on, which the team has already found healthy. A longer window shows more of the same level.",
+          "B": "Querying platform logs interrogates telemetry gathered from the infrastructure. The failing requests were never in that data, so no query over it returns them.",
+          "D": "More capacity answers a resource constraint, and the resources are not constrained. The slow requests would stay slow on a larger machine, and stay undiagnosed."
+        }
+      }
     }
   ]
 }

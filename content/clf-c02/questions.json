@@ -1260,6 +1260,798 @@
           "D": "A metric alarm fires once a threshold is crossed, so it reports symptoms after the fact instead of listing standing exposures."
         }
       }
+    },
+    {
+      "id": "3.01",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "theme": "C2",
+      "vertical": "fire alarm monitoring company",
+      "keywords": [
+        "infrastructure as code (IaC)",
+        "AWS Management Console",
+        "repeatable processes"
+      ],
+      "type": "single_choice",
+      "question": "A fire alarm monitoring company must stand up an identical monitoring stack for every new municipal contract it wins. The last three stacks were clicked together by hand and each came out slightly different, which the contract auditor has now flagged. Which approach fits the requirement?",
+      "options": {
+        "A": "Write a runbook listing each console step in order so every build is done the same way",
+        "B": "Define the stack as infrastructure as code (IaC) and deploy the same template per contract",
+        "C": "Keep building in the AWS Management Console and have a second engineer review each result",
+        "D": "Use the AWS CLI interactively for each build, which is quicker than clicking through screens"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D05",
+        "C": "D07",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "One-time operations and repeatable processes justify different surfaces. Interactive work in the AWS Management Console suits a change made once; APIs, SDKs, and the AWS CLI suit programmatic access; anything that has to come out identical every time belongs in infrastructure as code (IaC), where the template is the definition and each contract gets the same stack from it.",
+        "distractors": {
+          "A": "A runbook documents the manual process that produced the differences; the steps are still performed by hand and still drift.",
+          "C": "Review after the build catches a difference once it exists, which is later and more expensive than not creating it.",
+          "D": "Typing commands is a faster way to do the same one-off work; the definition still lives in an engineer's session rather than in a template."
+        }
+      }
+    },
+    {
+      "id": "3.02",
+      "domain": "d3",
+      "primary_concept": "C-039",
+      "theme": "C1",
+      "vertical": "food safety auditing firm",
+      "keywords": [
+        "hybrid",
+        "identifying deployment models"
+      ],
+      "type": "single_choice",
+      "question": "A food safety auditing firm keeps its laboratory instrument controllers in its own building, cabled directly to the analyzers, while its scheduling and reporting applications run in AWS and exchange results with those controllers over a private connection. Which deployment model does this estate use?",
+      "options": {
+        "A": "Cloud, as every application the firm's staff sign in to is delivered from AWS",
+        "B": "On-premises, as instrument hardware in the firm's own building is what sets the model",
+        "C": "Neither, until the controllers are moved to AWS so the estate has one clean model",
+        "D": "Hybrid, as workloads run both in AWS and in the firm's own building and connect to each other"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D19",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "Identifying deployment models means reading the whole estate, not its most visible half. Applications running in AWS alongside equipment that stays in the firm's own building, connected to each other, is the hybrid model. Cloud and on-premises are the other two, and each describes an estate that sits wholly on one side.",
+        "distractors": {
+          "A": "Where staff sign in is not what the model describes; the controllers are part of the estate and they are not in AWS.",
+          "B": "Owning some hardware does not make an estate on-premises; the model follows where the workloads run, and here they run in both places.",
+          "C": "Instrument controllers cabled to analyzers cannot move, and a mixed estate is a recognized model rather than an unfinished migration."
+        }
+      }
+    },
+    {
+      "id": "3.03",
+      "domain": "d3",
+      "primary_concept": "C-040",
+      "theme": "C1",
+      "vertical": "genealogy research platform",
+      "keywords": [
+        "edge locations",
+        "Amazon CloudFront",
+        "AWS Regions"
+      ],
+      "type": "single_choice",
+      "question": "A genealogy research platform serves large scanned record images from a single AWS Region, and readers on other continents wait a long time for each page to appear. The platform's engineer proposes spreading the images across more Availability Zones in that same Region. What does the platform actually need?",
+      "options": {
+        "A": "Edge locations delivering the images through Amazon CloudFront close to those readers",
+        "B": "More Availability Zones in the Region, which put copies of the images nearer to readers",
+        "C": "Larger instances serving the images, so every request is answered with more capacity",
+        "D": "A separate AWS Region opened for each country whose readers report a slow page"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "AWS Regions contain isolated Availability Zones, and edge locations stand apart from both as the delivery tier. Content delivery through Amazon CloudFront caches the images at edge locations near the reader, which is what removes the wait. Availability Zones buy availability within a Region; they do not shorten the distance to a distant audience.",
+        "distractors": {
+          "B": "Availability Zones are all inside the same Region, so adding them changes resilience and leaves the distance to the reader untouched.",
+          "C": "The images are not slow to produce, they are slow to arrive; more capacity at the origin does not shorten the journey.",
+          "D": "Standing up a Region per country is a large, permanent commitment for a delivery problem the edge network already solves."
+        }
+      }
+    },
+    {
+      "id": "3.04",
+      "domain": "d3",
+      "primary_concept": "C-041",
+      "theme": "C1",
+      "vertical": "golf course management group",
+      "keywords": [
+        "Availability Zones do not share single points of failure",
+        "data sovereignty"
+      ],
+      "type": "multiple_response",
+      "question": "A golf course management group runs its tee-time booking system in one Availability Zone and has two requirements to satisfy: the booking system must survive the loss of a single data center, and member records for its European clubs must stay stored in Europe. Which TWO steps meet these requirements? (Select TWO.)",
+      "options": {
+        "A": "Run the booking system across multiple Availability Zones in its current Region",
+        "B": "Take nightly booking backups and keep them in the Availability Zone being protected",
+        "C": "Consolidate all member records into one Region so a single copy serves every club",
+        "D": "Move to larger instances in the current Availability Zone so a failure is absorbed",
+        "E": "Store the member records of the European clubs in a Region located in Europe"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "E"
+      ],
+      "distractor_patterns": {
+        "B": "D06",
+        "C": "D02",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Two needs, two different kinds of spread. High availability comes from multiple Availability Zones: Availability Zones do not share single points of failure, so losing one leaves the booking system serving from another. A second Region is reached for the other reasons - disaster recovery, business continuity, low latency for end users, and data sovereignty, which is what keeps European member records in Europe.",
+        "distractors": {
+          "B": "A backup is a real control kept in the very place whose loss it is meant to cover, so the failure takes the copy with it.",
+          "C": "One consolidated copy is simpler to operate and directly breaks the requirement that European records stay in Europe.",
+          "D": "A larger instance is still one instance in one Availability Zone; capacity does not survive the loss of the site holding it."
+        }
+      }
+    },
+    {
+      "id": "3.05",
+      "domain": "d3",
+      "primary_concept": "C-042",
+      "theme": "C2",
+      "vertical": "grain elevator cooperative",
+      "keywords": [
+        "Amazon EC2 instance types",
+        "compute optimized",
+        "storage optimized"
+      ],
+      "type": "single_choice",
+      "question": "A grain elevator cooperative runs a moisture-analysis job that saturates the processor for hours while reading one small input file and writing one small result. Its administrator has always sized servers by memory, as that was the number the cooperative's old hardware was bought on. Which choice fits the job?",
+      "options": {
+        "A": "A memory optimized instance type, keeping the sizing rule the cooperative already trusts",
+        "B": "A storage optimized instance type, matched to the file the job reads and the result it writes",
+        "C": "A compute optimized instance type, matched to a job that saturates the processor",
+        "D": "The largest general purpose instance available, so that no resource can become the limit"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D11",
+        "B": "E04",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Amazon EC2 instance types are grouped into families so a workload profile can be matched to the resource it actually consumes. A job that pins the processor for hours while touching almost no data is the textbook compute optimized profile; storage optimized serves high-throughput or high-IOPS data access, which this job does not perform.",
+        "distractors": {
+          "A": "Carrying over a purchasing habit from owned hardware is a familiar rule applied to a job whose demand is not memory.",
+          "B": "Two small files are not a storage-intensive profile, so this family's advantage would be paid for and never used.",
+          "D": "Buying the largest instance avoids the matching decision entirely and pays for capacity the job cannot consume."
+        }
+      }
+    },
+    {
+      "id": "3.06",
+      "domain": "d3",
+      "primary_concept": "C-043",
+      "theme": "C2",
+      "vertical": "hair salon booking platform",
+      "keywords": [
+        "AWS Lambda",
+        "AWS Fargate",
+        "Amazon Elastic Container Service [Amazon ECS]"
+      ],
+      "type": "single_choice",
+      "question": "A hair salon booking platform sends a reminder whenever a booking record changes. The work finishes in well under a second, happens at unpredictable moments through the day, and the two-person team does not want anything running between events. Which compute choice fits?",
+      "options": {
+        "A": "AWS Lambda, which runs the reminder function when each booking change arrives",
+        "B": "Amazon Elastic Container Service [Amazon ECS] on instances the team keeps running",
+        "C": "AWS Fargate tasks kept running so that no reminder waits for a container to start",
+        "D": "Amazon Elastic Kubernetes Service [Amazon EKS], which the team can grow into later"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "The choice follows the shape of the work. Event-driven functions that run briefly and unpredictably are what AWS Lambda exists for, with no host to keep alive between events. Containers on Amazon ECS or Amazon EKS suit long-running services, and AWS Fargate removes the servers beneath containers without removing the running task itself.",
+        "distractors": {
+          "B": "Instances the team keeps running are exactly what it asked to avoid, and they idle between reminders.",
+          "C": "This keeps the serverless launch model but leaves a task running continuously for work that arrives in bursts.",
+          "D": "A Kubernetes cluster is a large operating commitment for a two-person team sending short reminder messages."
+        }
+      }
+    },
+    {
+      "id": "3.07",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "theme": "C1",
+      "vertical": "helicopter charter service",
+      "keywords": [
+        "auto scaling provides elasticity",
+        "purposes of load balancers"
+      ],
+      "type": "single_choice",
+      "question": "A helicopter charter service watches its booking site crawl whenever a storm grounds flights and every passenger checks their reservation at once. The site runs on a fixed pair of instances behind a load balancer, and both instances are pinned at their limit during the surge. What resolves it?",
+      "options": {
+        "A": "A second load balancer, so that arriving requests are spread across two of them",
+        "B": "Auto scaling, which adds instances while the surge lasts and removes them afterwards",
+        "C": "A health check that pulls an overloaded instance out of the load balancer's targets",
+        "D": "Replacing both instances with one larger instance sized for the busiest storm"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "D05",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "The two mechanisms do different jobs, and offering one as the other is the classic confusion. Auto scaling provides elasticity: it changes how many instances exist, which is what a surge needs. Among the purposes of load balancers is spreading traffic across healthy targets in multiple Availability Zones - valuable, and unable to create capacity that two saturated instances do not have.",
+        "distractors": {
+          "A": "Adding distribution machinery in front of the same two instances leaves the number of instances, and therefore the ceiling, unchanged.",
+          "C": "Removing a saturated instance treats the symptom and sends its share of the surge to the one instance still standing.",
+          "D": "One large instance carries the peak and is paid for all year, while the storm-day ceiling is still fixed."
+        }
+      }
+    },
+    {
+      "id": "3.08",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "theme": "C3",
+      "vertical": "home appliance insurer",
+      "keywords": [
+        "AWS managed databases",
+        "EC2 hosted databases"
+      ],
+      "type": "single_choice",
+      "question": "A home appliance insurer runs its claims database as a self-administered engine on Amazon EC2. Two of its three database administrators are leaving, and the remaining one spends most of each week on patching, backup verification, and failover drills. The engine and the application stay as they are. What changes if the insurer moves to a managed database service?",
+      "options": {
+        "A": "Nothing operationally: patching, backups, and failover stay with the insurer on any service",
+        "B": "The insurer keeps those duties and gains a console that makes each of them quicker to do",
+        "C": "The claims application has to be rewritten for the managed engine before it can move",
+        "D": "AWS takes over patching, backup, and availability work, and the insurer keeps data and access"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The two legitimate ways to run an engine differ in the operational work they keep. EC2 hosted databases leave patching, backup, and availability engineering with the customer, which is where the remaining administrator's week goes. AWS managed databases absorb that work and scale an instance without application changes, leaving the insurer its data, its access decisions, and the service configuration.",
+        "distractors": {
+          "A": "The boundary moves with the service model, so treating operational duties as fixed misses the whole reason for the move.",
+          "B": "A better console makes the same work faster to perform; the point of a managed service is that the customer stops performing it.",
+          "C": "Keeping the same engine is what makes the move straightforward; a rewrite belongs to a change of engine, not a change of who operates it."
+        }
+      }
+    },
+    {
+      "id": "3.09",
+      "domain": "d3",
+      "primary_concept": "C-046",
+      "theme": "C2",
+      "vertical": "ice cream distribution company",
+      "keywords": [
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon ElastiCache"
+      ],
+      "type": "single_choice",
+      "question": "An ice cream distribution company stores freezer telemetry from its delivery trucks as key-value records: hundreds of millions of tiny items, written constantly, always read back by a single key, with no joins and no reporting across them. Which database service fits the workload?",
+      "options": {
+        "A": "Amazon RDS, whose relational engines can hold the records in one wide table",
+        "B": "Amazon Aurora, which scales the same relational engine further than a standard instance",
+        "C": "Amazon DynamoDB, a NoSQL service built for key-value records at this volume",
+        "D": "Amazon ElastiCache, holding the telemetry in memory so each key is read quickly"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The data model picks the service. Key-value records written constantly and read by key, with no relational work over them, are a NoSQL workload, and Amazon DynamoDB is the NoSQL service in the catalog. Amazon RDS and Amazon Aurora serve relational workloads; memory-based Amazon ElastiCache serves speed in front of a store rather than the store itself.",
+        "distractors": {
+          "A": "A relational engine can be made to hold key-value rows, and the company would pay for relational features it never uses.",
+          "B": "This scales the relational option further and still answers a workload that has no relational requirement.",
+          "D": "An in-memory service accelerates reads for data that lives elsewhere; on its own it is not where the telemetry should be kept."
+        }
+      }
+    },
+    {
+      "id": "3.10",
+      "domain": "d3",
+      "primary_concept": "C-047",
+      "theme": "C2",
+      "vertical": "immigration law practice",
+      "keywords": [
+        "AWS Database Migration Service [AWS DMS]",
+        "AWS Schema Conversion Tool [AWS SCT]"
+      ],
+      "type": "single_choice",
+      "question": "An immigration law practice is moving its case-management database from a commercial engine in its office to a different, open-source engine on AWS. The two engines do not share data types or stored-procedure syntax, and the case records must arrive intact. Which tooling does this move require?",
+      "options": {
+        "A": "AWS SCT to convert the schema, then AWS DMS to move the case records across",
+        "B": "AWS DMS alone, which converts the schema as part of moving the records across",
+        "C": "AWS Backup, restoring a backup of the office database into the new engine",
+        "D": "AWS Storage Gateway, presenting the office database files to the new engine"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E01",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "A change of engine is two problems, and each has its own tool. The AWS Schema Conversion Tool [AWS SCT] converts a schema and its procedural code to the target engine's dialect, and AWS Database Migration Service [AWS DMS] moves the data itself. A migration between different engines needs both; a migration between like engines needs only the second.",
+        "distractors": {
+          "B": "Moving data and translating a schema are separate jobs, and the data-movement service does not perform the translation.",
+          "C": "A backup file written by one engine is not restorable into a different engine, whichever service holds the file.",
+          "D": "Presenting files to the environment does not convert their format; the new engine still cannot read the old engine's structures."
+        }
+      }
+    },
+    {
+      "id": "3.11",
+      "domain": "d3",
+      "primary_concept": "C-048",
+      "theme": "C2",
+      "vertical": "industrial paint manufacturer",
+      "keywords": [
+        "components of a VPC",
+        "purpose of Amazon Route 53",
+        "gateways"
+      ],
+      "type": "multiple_response",
+      "question": "An industrial paint manufacturer is designing its first Amazon VPC. Its batch-tracking servers must never be reachable from the internet, its customer portal must be, and its plant office network needs a private path into the same VPC. Which TWO components does that design require? (Select TWO.)",
+      "options": {
+        "A": "Amazon Route 53, which decides whether each subnet can be reached from the internet",
+        "B": "Public and private subnets, separating the portal servers from the batch-tracking servers",
+        "C": "A gateway pair terminating a tunnel from the plant office network into the VPC",
+        "D": "No separation at all, as AWS keeps each customer's traffic isolated from the internet",
+        "E": "A single subnet for everything, with each server's own firewall deciding what it accepts"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "C"
+      ],
+      "distractor_patterns": {
+        "A": "E01",
+        "D": "E02",
+        "E": "D02"
+      },
+      "rationale": {
+        "correct": "The components of a VPC do the work here: subnets divide the address space so the portal can be reachable while batch tracking is not, and gateways connect the VPC outward, including the pair that terminates an encrypted tunnel from an office network. The purpose of Amazon Route 53 is different again - it is the DNS service that resolves names to addresses.",
+        "distractors": {
+          "A": "Name resolution and network reachability are separate concerns; DNS answers where a name points, not who may connect.",
+          "D": "AWS isolates one customer's network from another's, and deciding which of the manufacturer's own servers face the internet stays with the manufacturer.",
+          "E": "Flattening the design pushes the entire separation onto per-server rules, so one mistaken rule exposes batch tracking."
+        }
+      }
+    },
+    {
+      "id": "3.12",
+      "domain": "d3",
+      "primary_concept": "C-049",
+      "theme": "C5",
+      "vertical": "locksmith dispatch network",
+      "keywords": [
+        "security groups",
+        "network ACLs",
+        "Amazon Inspector"
+      ],
+      "type": "single_choice",
+      "question": "A locksmith dispatch network wants a single rule that blocks a range of abusive source addresses for every instance in one subnet, including instances launched later, without the rule being attached to any instance. Which control does that?",
+      "options": {
+        "A": "Security groups on the instances, which are stateful and evaluated per instance",
+        "B": "A network ACL on the subnet, which is stateless and applies to all its traffic",
+        "C": "Amazon Inspector, which assesses the instances and reports unintended exposure",
+        "D": "AWS protections at the Region boundary, which stop abusive sources before the subnet"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The two VPC traffic filters are told apart by state and scope. Security groups are stateful and attach to instances; network ACLs are stateless and attach to a subnet, so one rule covers everything in that subnet and everything launched into it afterwards. That subnet scope is exactly what the requirement describes.",
+        "distractors": {
+          "A": "An instance-scoped filter has to be attached to every instance, including each one launched later, which is the attachment the network wants to avoid.",
+          "C": "Amazon Inspector assesses and reports on exposure; it is not in the traffic path and blocks nothing.",
+          "D": "Filtering a customer's own unwanted sources is a customer control inside the VPC, not something the platform performs on the account's behalf."
+        }
+      }
+    },
+    {
+      "id": "3.13",
+      "domain": "d3",
+      "primary_concept": "C-050",
+      "theme": "C2",
+      "vertical": "luxury watch reseller",
+      "keywords": [
+        "AWS Direct Connect",
+        "AWS VPN"
+      ],
+      "type": "single_choice",
+      "question": "A luxury watch reseller moves large authentication photographs between its grading room and AWS throughout the day. Its insurers require transfer performance that holds steady at peak times, and the encrypted tunnel it already runs over the shop's internet circuit does not hold steady. What should the reseller adopt?",
+      "options": {
+        "A": "A second AWS VPN tunnel over the same circuit, doubling the bandwidth available",
+        "B": "AWS Global Accelerator, which improves the routing of traffic crossing the internet",
+        "C": "AWS Direct Connect, a dedicated physical link with predictable, contracted throughput",
+        "D": "Compression of the photographs before transfer, so the existing tunnel carries them faster"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "E01",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "The two private paths differ in what they ride on. AWS VPN builds encrypted tunnels across the public internet, so it inherits whatever the internet is doing at the time. AWS Direct Connect is a dedicated physical link into AWS, which is what makes throughput predictable. Tolerance for internet transit is the whole decision.",
+        "distractors": {
+          "A": "Two tunnels over one internet circuit share the same congestion, so the variability the insurers object to remains.",
+          "B": "Better routing across the internet is still routing across the internet, and the requirement is to stop depending on it.",
+          "D": "Smaller files move faster on a good day and just as unpredictably on a bad one; the variability is in the path."
+        }
+      }
+    },
+    {
+      "id": "3.14",
+      "domain": "d3",
+      "primary_concept": "C-051",
+      "theme": "C2",
+      "vertical": "marina management company",
+      "keywords": [
+        "block storage",
+        "instance store",
+        "Amazon Elastic File System [Amazon EFS]"
+      ],
+      "type": "multiple_response",
+      "question": "A marina management company runs its berth-allocation application across a fleet of Amazon EC2 instances. Every instance must read and write the same set of mooring documents, and each instance also needs a scratch area for temporary chart rendering that nobody needs to keep. Which TWO storage choices fit? (Select TWO.)",
+      "options": {
+        "A": "Amazon S3 attached as the boot volume of each instance for the mooring documents",
+        "B": "One Amazon EBS volume attached to an instance and shared with the rest over the network",
+        "C": "Amazon S3 Glacier for the scratch area, as it is the cheapest place to write to",
+        "D": "Amazon Elastic File System [Amazon EFS] for the mooring documents every instance uses",
+        "E": "The instance store for the scratch area, which is ephemeral by design"
+      },
+      "select_count": 2,
+      "answer": [
+        "D",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E04",
+        "C": "E03"
+      },
+      "rationale": {
+        "correct": "Three storage models, three jobs. Object storage holds discrete objects retrieved as a whole; block storage on Amazon EBS gives one instance a persistent volume, while the instance store gives it fast local space that disappears with the instance - which is what temporary rendering wants. Shared access from many instances at once is what the file services provide.",
+        "distractors": {
+          "A": "Object storage is not presented to an instance as a boot volume; the model does not work that way.",
+          "B": "A block volume belongs to its instance, so making the rest read it means building a file-sharing layer the file services already provide.",
+          "C": "An archive class is priced for data kept and rarely read, and its retrieval times make it wrong for scratch space."
+        }
+      }
+    },
+    {
+      "id": "3.15",
+      "domain": "d3",
+      "primary_concept": "C-052",
+      "theme": "C4",
+      "vertical": "scaffolding rental company",
+      "keywords": [
+        "Amazon S3 Glacier",
+        "use cases for lifecycle policies",
+        "differences in Amazon S3 storage classes"
+      ],
+      "type": "single_choice",
+      "question": "A scaffolding rental company keeps site inspection photographs in Amazon S3. Each photograph is opened constantly for about a month after the inspection and almost never afterwards, insurance rules require keeping them for seven years, and a retrieval of an old photograph may take hours. What should the company configure?",
+      "options": {
+        "A": "A monthly job that copies the photographs to a second bucket and deletes the originals",
+        "B": "One storage class for everything, with the standing cost accepted as the price of retention",
+        "C": "An archive storage class from the day each photograph is taken and for its whole life",
+        "D": "A lifecycle policy that moves the photographs into Amazon S3 Glacier as they age"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D15",
+        "C": "E03"
+      },
+      "rationale": {
+        "correct": "The differences in Amazon S3 storage classes are differences in access pattern, retention, and cost, and the photographs change pattern at a known moment. Among the use cases for lifecycle policies is precisely this: the policy moves objects into a colder class such as Amazon S3 Glacier as they age, so the busy month is served from a frequent-access class and the remaining years are billed as archive.",
+        "distractors": {
+          "A": "A hand-built copy job reproduces part of what the policy does, adds a moving part to maintain, and can silently stop running.",
+          "B": "Doing nothing keeps years of untouched photographs in a class priced for constant access, which is the cost the retention rule creates.",
+          "C": "Archiving on day one saves the most and makes the busy first month, when the photographs are opened constantly, slow to serve."
+        }
+      }
+    },
+    {
+      "id": "3.16",
+      "domain": "d3",
+      "primary_concept": "C-053",
+      "theme": "C2",
+      "vertical": "senior meal delivery service",
+      "keywords": [
+        "use cases for AWS Backup",
+        "AWS Storage Gateway"
+      ],
+      "type": "single_choice",
+      "question": "A senior meal delivery service protects its Amazon EBS volumes, its file systems, and its databases with three separate routines, each run by a different team on its own schedule. Its board wants one place where retention is set and where compliance with it can be shown. Which service meets that?",
+      "options": {
+        "A": "AWS Backup, which centralizes backup policy and reporting across those services",
+        "B": "AWS Storage Gateway, which gives the kitchen servers a cached path to cloud storage",
+        "C": "Amazon S3 lifecycle policies on a bucket that each of the three teams copies into",
+        "D": "Managed services, whose backups AWS already takes and retains on the account's behalf"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D06",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The use cases for AWS Backup are exactly this shape: one policy engine that schedules, retains, and reports on backups across several AWS services, so retention is defined once and evidence comes from one console. AWS Storage Gateway solves the other job in this area, giving on-premises applications a cached path to cloud storage.",
+        "distractors": {
+          "B": "A hybrid storage path extends on-premises applications into the cloud; it does not set or prove backup retention.",
+          "C": "Object lifecycle rules govern objects in a bucket, so they are a real mechanism at the wrong layer for volume and database backups.",
+          "D": "Retention settings and the evidence that they were met stay with the customer even where a service performs backups for it."
+        }
+      }
+    },
+    {
+      "id": "3.17",
+      "domain": "d3",
+      "primary_concept": "C-054",
+      "theme": "C2",
+      "vertical": "uniform embroidery supplier",
+      "keywords": [
+        "Amazon Textract",
+        "Amazon SageMaker AI",
+        "Amazon Rekognition"
+      ],
+      "type": "single_choice",
+      "question": "A uniform embroidery supplier receives scanned order forms as email attachments and wants the customer name, garment size, and quantity lifted out of each scan automatically. Its two developers have no machine learning experience and no labeled training data of their own. Which service fits?",
+      "options": {
+        "A": "Amazon SageMaker AI, used to build and train a model on the supplier's own scans",
+        "B": "Amazon Rekognition, whose image analysis identifies the objects present in a scan",
+        "C": "Amazon Textract, which extracts text and form fields from scanned documents",
+        "D": "Amazon Transcribe, which turns the content of each order form into written text"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "E04",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The AWS AI/ML services split between ready-made capabilities and a platform for building your own. Pulling text and form fields out of a scanned document is a ready-made capability, so no model has to be trained and no labeled data is needed - which matters for a team with neither.",
+        "distractors": {
+          "A": "Amazon SageMaker AI is the build-your-own platform, so it asks the supplier for exactly the skills and training data it does not have.",
+          "B": "Amazon Rekognition analyzes images for objects, scenes, and faces, which is a different question from reading the fields on a form.",
+          "D": "Amazon Transcribe converts speech to text, and an order form arriving as a scan carries no audio."
+        }
+      }
+    },
+    {
+      "id": "3.18",
+      "domain": "d3",
+      "primary_concept": "C-055",
+      "theme": "C2",
+      "vertical": "adventure tour operator",
+      "keywords": [
+        "Amazon Athena",
+        "AWS Glue",
+        "Amazon Quick Sight"
+      ],
+      "type": "single_choice",
+      "question": "An adventure tour operator already keeps several years of booking exports as files in Amazon S3. Its finance analyst wants to answer occasional one-off questions about them in SQL, without loading the files into a database and without operating a cluster. Which service does that?",
+      "options": {
+        "A": "AWS Glue, which prepares and catalogs the data before any question is asked",
+        "B": "Amazon Athena, which runs SQL queries directly against the files in Amazon S3",
+        "C": "Amazon Quick Sight, whose dashboards visualize the figures for the finance team",
+        "D": "A relational database the exports are loaded into first and then queried there"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "E01",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "The analytics services are near neighbors doing different jobs. Running SQL straight over files already sitting in object storage, with nothing to provision, is what Amazon Athena is for. AWS Glue prepares and catalogs data, and Amazon Quick Sight presents it once the questions have settled into dashboards.",
+        "distractors": {
+          "A": "Data preparation and cataloging support querying; on their own they answer none of the analyst's questions.",
+          "C": "Dashboards suit figures watched repeatedly, and the analyst described occasional one-off questions instead.",
+          "D": "Loading years of exports into a database is a project in itself, which is the work the analyst asked to avoid."
+        }
+      }
+    },
+    {
+      "id": "3.19",
+      "domain": "d3",
+      "primary_concept": "C-056",
+      "theme": "C2",
+      "vertical": "campus shuttle service",
+      "keywords": [
+        "Amazon Simple Queue Service (Amazon SQS)",
+        "Amazon Simple Notification Service (Amazon SNS)"
+      ],
+      "type": "multiple_response",
+      "question": "A campus shuttle service wants two things when a shuttle is delayed: the ticketing system should hand the delay to a slower refund component without waiting for it, and the same delay should reach the rider app, the platform signs, and the operations inbox together. Which TWO services deliver these? (Select TWO.)",
+      "options": {
+        "A": "Amazon Simple Queue Service (Amazon SQS), holding the delay for the refund component",
+        "B": "Amazon Simple Notification Service (Amazon SNS), fanning the delay out to every channel",
+        "C": "AWS Step Functions, orchestrating the delay handling as a multi-step workflow",
+        "D": "Amazon Connect, which reaches riders through the service's cloud contact center",
+        "E": "A shared database table that each component polls every minute for new delays"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "B"
+      ],
+      "distractor_patterns": {
+        "C": "E04",
+        "D": "E01",
+        "E": "D10"
+      },
+      "rationale": {
+        "correct": "The application-integration services are chosen by delivery shape. A queue decouples a fast producer from a slow consumer, holding each delay until the refund component is ready for it. A notification topic fans one message out to many subscribers at once, which is what puts the same delay in front of the app, the signs, and the inbox together.",
+        "distractors": {
+          "C": "Step Functions sequences a multi-step process with visible state, and neither of these needs are a workflow with steps.",
+          "D": "A cloud contact center serves voice and chat conversations with people, not message delivery between systems.",
+          "E": "Polling a table on a schedule builds a delay into every notification and still leaves the components coupled to one store."
+        }
+      }
+    },
+    {
+      "id": "3.20",
+      "domain": "d3",
+      "primary_concept": "C-057",
+      "theme": "C2",
+      "vertical": "city zoning department",
+      "keywords": [
+        "Amazon Simple Email Service (Amazon SES)",
+        "Amazon Connect"
+      ],
+      "type": "single_choice",
+      "question": "A city zoning department's permit application sends tens of thousands of status emails to applicants each month, and receiving providers have begun blocking its self-run mail relay. The department wants the application itself to send those messages dependably at that volume. Which service fits?",
+      "options": {
+        "A": "Amazon Connect, the cloud contact center the department can route the messages through",
+        "B": "Amazon Simple Notification Service (Amazon SNS) topics that applicants subscribe to one by one",
+        "C": "Amazon EventBridge, which routes each status change straight to the applicant's mail provider",
+        "D": "Amazon Simple Email Service (Amazon SES), built for application-sent email at scale"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The business-application services meet needs the messaging services do not. Sending large volumes of email from an application, with the deliverability work that goes with it, is exactly what the email service exists for, which is what a blocked self-run relay needs replaced.",
+        "distractors": {
+          "A": "Amazon Connect runs a contact center for voice and chat conversations with people; it is not a bulk email sender.",
+          "B": "Topic subscriptions expect subscribers to opt in, which does not match applicants who are emailed about their own permit.",
+          "C": "An event bus routes events between AWS targets; it does not deliver mail to an external provider on its own."
+        }
+      }
+    },
+    {
+      "id": "3.21",
+      "domain": "d3",
+      "primary_concept": "C-058",
+      "theme": "C2",
+      "vertical": "coffee equipment importer",
+      "keywords": [
+        "AWS X-Ray",
+        "AWS CodePipeline",
+        "AWS CodeBuild"
+      ],
+      "type": "single_choice",
+      "question": "A coffee equipment importer's order service has started answering slowly, and nobody can say which of the several internal calls behind each order is responsible. Builds and releases are running normally, and the last deployment was weeks ago. Which service helps find the slow call?",
+      "options": {
+        "A": "AWS CodeBuild, which compiles and tests the service so the fault is caught in the build",
+        "B": "AWS CodePipeline, which sequences the release stages the service moves through",
+        "C": "AWS X-Ray, which traces a request through the service and times each call it makes",
+        "D": "A rollback of the last release, returning the service to its earlier behavior"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Developer tools sit at different lifecycle stages: build and test, then release sequencing, then troubleshooting what is already running. Tracing a request end to end and timing each call it makes belongs to the troubleshooting stage, which is where a service that has started answering slowly needs help.",
+        "distractors": {
+          "A": "Building and testing happen before the code ships, and a service already slow in production is past that stage.",
+          "B": "Release sequencing moves code through its stages; the importer's releases are working and are not what is being diagnosed.",
+          "D": "Undoing a release weeks old is an intervention chosen before the cause is known, and it may leave the slow call untouched."
+        }
+      }
+    },
+    {
+      "id": "3.22",
+      "domain": "d3",
+      "primary_concept": "C-059",
+      "theme": "C2",
+      "vertical": "cold-chain trucking fleet",
+      "keywords": [
+        "Amazon WorkSpaces",
+        "Amazon AppStream 2.0",
+        "Amazon WorkSpaces Secure Browser"
+      ],
+      "type": "single_choice",
+      "question": "A cold-chain trucking fleet hires seasonal dispatchers who work from their own laptops. Each dispatcher needs a full desktop carrying the fleet's applications, and their settings and working files must still be there at the start of the next shift. Which service provides that?",
+      "options": {
+        "A": "Amazon WorkSpaces, which gives each dispatcher a persistent virtual desktop",
+        "B": "Amazon AppStream 2.0, which streams individual applications to a dispatcher's laptop",
+        "C": "Amazon WorkSpaces Secure Browser, which delivers controlled access to web applications",
+        "D": "Amazon EC2 instances the dispatchers reach with one set of credentials shared per shift"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E03",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "The end-user-computing services differ in what they present. A persistent virtual desktop gives each dispatcher a whole environment that survives sign-out, which is what carrying settings and files between shifts requires. Streaming one application and delivering a controlled browser session present less than a desktop by design.",
+        "distractors": {
+          "B": "Streaming individual applications covers the fleet's software and not the desktop around it that holds a dispatcher's working state.",
+          "C": "A controlled browser session reaches web applications only, and it is built to leave nothing behind at the end of a session.",
+          "D": "Raw instances with credentials shared across a shift give every seasonal dispatcher the same identity and no attribution."
+        }
+      }
+    },
+    {
+      "id": "3.23",
+      "domain": "d3",
+      "primary_concept": "C-060",
+      "theme": "C2",
+      "vertical": "art print marketplace",
+      "keywords": [
+        "AWS IoT Core",
+        "AWS Amplify"
+      ],
+      "type": "single_choice",
+      "question": "An art print marketplace has fitted humidity sensors in each partner gallery to protect the works on display. The sensors must connect securely, report readings continuously, and be managed as one growing fleet as galleries join. Which service is purpose-built for this?",
+      "options": {
+        "A": "AWS Amplify, used to create and deploy the frontend the galleries will look at",
+        "B": "AWS IoT Core, which connects and manages the sensor fleet as it grows",
+        "C": "Amazon EC2 instances running a message broker the marketplace builds itself",
+        "D": "Amazon Kinesis, which ingests the stream of readings the sensors produce"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D01",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Purpose-built services exist for exactly these workloads. Connecting devices securely, taking their readings, and managing them as a fleet is the job of the IoT service, which is why the marketplace does not have to assemble it. AWS Amplify covers the other half of this category, creating and deploying frontend and mobile services.",
+        "distractors": {
+          "A": "A frontend service builds what people look at; the galleries' problem is getting sensors connected and managed in the first place.",
+          "C": "A self-built broker on instances is assembly work that reproduces device connectivity and fleet management by hand.",
+          "D": "Stream ingestion handles readings once they arrive, and it does not connect or manage the devices sending them."
+        }
+      }
     }
   ]
 }

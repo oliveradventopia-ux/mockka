@@ -1,5 +1,738 @@
 {
-  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 per methodology/02-master-inventory.md; schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) and surfaced by the validator concept-convergence WARN check; divergence is allowed as documented authoring judgment.",
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-16) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning and merge log in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) with zero hand-tuned divergences. INDEPENDENCE NOTE: tss-mckenzie and tss-declute draw from one item pool and count as ONE independent voice (derivation/sources.md #independence-warning); for this build the computed signal and the independence-adjusted signal coincide, because every concept carries clf-blueprint — any practice attestation therefore means >=2 independent voices. sources[].items for clf-blueprint are the b-x.y-z concept rows in derivation/source-clf-blueprint.md; for practice sources they are the item rows in the respective Artefact A.",
   "version": "0.1.0",
-  "concepts": []
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "What the AWS Cloud sells that a server room cannot: the stated value proposition — trading capital-heavy, slow-to-change owned infrastructure for on-demand capacity — and what that promise does and does not include",
+      "vocabulary": ["value proposition of the AWS Cloud"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.1-1"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "Why a globally distributed platform is itself a benefit and not just a topology: presence in many geographies turns entering a new market into a configuration step — speed of deployment and global reach as outcomes of the infrastructure",
+      "vocabulary": ["global infrastructure", "speed of deployment", "global reach"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.1-2"] }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Telling three routinely conflated cloud benefits apart — high availability keeps a service reachable through failure, elasticity matches provisioned capacity to demand in both directions, agility shortens the path from idea to running system — and distinguishing each property from the service that implements it",
+      "vocabulary": ["high availability", "elasticity", "agility"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.1-3"] },
+        { "artefact": "tss-declute", "items": ["1.5", "1.27"] },
+        { "artefact": "tss-mckenzie", "items": ["1.15"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Which named instrument gives design guidance for workloads already on the cloud: the AWS Well-Architected Framework as the review lens, kept apart from the AWS Well-Architected Tool that runs the review and from the adoption framework that governs the journey in",
+      "vocabulary": ["AWS Well-Architected Framework", "AWS Well-Architected Tool"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.2-1"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Naming the six Well-Architected pillars as a complete set, so that an offered list with an invented, borrowed, or missing member is recognisably wrong",
+      "vocabulary": ["operational excellence", "security", "reliability", "performance efficiency", "cost optimization", "sustainability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.2-2"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "Placing a stated design concern under the pillar that owns it — recovering from disruption is reliability, matching resources to demand is performance efficiency or cost optimization depending on the question asked, minimising environmental impact is sustainability",
+      "vocabulary": ["identifying differences between the pillars", "reliability", "performance efficiency", "cost optimization", "sustainability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.2-3"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Cloud adoption as a planned strategy rather than a single lift event — recognising that an organisation chooses among adoption strategies and sequences workloads deliberately",
+      "vocabulary": ["cloud adoption strategies"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.3-1"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Knowing which published resources exist to support a cloud migration journey and what kind of help each supplies, before any paid engagement is bought",
+      "vocabulary": ["resources to support the cloud migration journey"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.3-2"] }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "The AWS Cloud Adoption Framework as the instrument that organises an adoption effort, and the four business outcomes the guide attaches to it: reduced business risk, improved ESG performance, increased revenue, and increased operational efficiency",
+      "vocabulary": ["AWS Cloud Adoption Framework (AWS CAF)", "reduced business risk", "improved environmental, social, and governance (ESG) performance", "increased revenue", "increased operational efficiency"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.3-3", "b-1.3-4"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["1.3"] }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Recognising the migration strategy a described situation implies — including database replication as the guide's own worked example of moving a data tier with minimal disruption",
+      "vocabulary": ["identifying appropriate migration strategies", "database replication"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.3-5"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "The cost-structure change that funds every other cloud economic argument: up-front, capital, fixed spending on owned capacity becomes usage-driven, variable operating spend — and where the saving actually comes from when moving off premises",
+      "vocabulary": ["aspects of cloud economics", "cost savings of moving to the cloud", "fixed costs", "variable costs"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.4-1", "b-1.4-2", "b-1.4-3"] },
+        { "artefact": "tss-mckenzie", "items": ["1.4", "1.28"] },
+        { "artefact": "tss-declute", "items": ["1.9", "1.16", "1.21"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["1.10"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "Which costs an on-premises environment carries that never appear as line items on a cloud bill — facility space, power and cooling, hardware refresh, and the staff time to run them — and why cost comparisons that omit them mislead",
+      "vocabulary": ["costs that are associated with on-premises environments"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.4-4"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "Whether a software licence travels with the workload or arrives with the service: the Bring Your Own License model against included licenses, and what each implies for which purchasing options are usable",
+      "vocabulary": ["Bring Your Own License [BYOL] model", "included licenses"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.4-5"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["4.6"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "Rightsizing as a deliberate cost action: matching provisioned resource size to observed demand, distinct from redesigning the workload and from buying a discount on the oversized shape",
+      "vocabulary": ["rightsizing"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.4-6"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d1",
+      "statement": "Automation as a cost lever and not only a speed lever — what automating provisioning, scaling, and housekeeping removes from a monthly bill and from staff toil",
+      "vocabulary": ["benefits of automation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.4-7"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d1",
+      "statement": "Why a provider's aggregate scale shows up in a customer's unit price: economies of scale as the mechanism, distinct from the customer's own volume or commitment discounts",
+      "vocabulary": ["economies of scale"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-1.4-8"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "What question the AWS shared responsibility model answers and what its two components are: security OF the cloud versus security IN the cloud, as the standing division every service inherits",
+      "vocabulary": ["AWS shared responsibility model", "recognizing the components"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.1-1", "b-2.1-2"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "Deciding which side of the shared-responsibility boundary a named duty falls on — customer duties such as data classification, guest configuration, and access decisions against AWS duties such as facilities, hardware, and managed-service internals",
+      "vocabulary": ["describing the customer's responsibilities on AWS", "describing AWS responsibilities"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.1-3", "b-2.1-4"] },
+        { "artefact": "tss-declute", "items": ["2.7", "2.12", "2.28", "2.32"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "That some duties are genuinely shared rather than assigned to one side — the model's third category, where AWS and the customer each carry a piece of the same control at different layers",
+      "vocabulary": ["responsibilities that the customer and AWS share"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.1-5"] }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "That the responsibility boundary moves with the service model: the same duty — patching a database engine, securing an operating system — sits with the customer on Amazon EC2 and with AWS on Amazon RDS or AWS Lambda",
+      "vocabulary": ["Amazon EC2", "Amazon RDS", "AWS Lambda"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.1-6"] },
+        { "artefact": "tss-mckenzie", "items": ["3.16"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "What the platform's security posture gives a customer that a self-run server room does not — inherited physical and infrastructure controls, plus encryption capabilities available as configuration rather than as projects",
+      "vocabulary": ["benefits of cloud security", "encryption"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.2-2"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "The two states data must be protected in and the distinction between them — encryption in transit versus encryption at rest — including when a control mandates customer-controlled, validated cryptographic hardware rather than a managed key service",
+      "vocabulary": ["encryption in transit", "encryption at rest"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.2-7"] },
+        { "artefact": "tss-declute", "items": ["2.1"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "Which service answers which governance question: continuous monitoring of metrics with Amazon CloudWatch, the account-wide event history of API activity with AWS CloudTrail, resource-configuration auditing with AWS Config — and where security-relevant logs are captured and found",
+      "vocabulary": ["monitoring with Amazon CloudWatch", "auditing with AWS CloudTrail and AWS Config", "reporting with access reports", "where to capture and locate logs that are associated with cloud security", "AWS compliance and governance concepts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.2-1", "b-2.2-3", "b-2.2-8"] },
+        { "artefact": "tss-mckenzie", "items": ["2.22"] },
+        { "artefact": "tss-declute", "items": ["3.13"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["2.7"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "Where a compliance artefact is obtained on demand: AWS Artifact as the self-service source of audit reports and attestations, distinct from the services that monitor, configure, or detect anything",
+      "vocabulary": ["AWS Artifact"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.2-4"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "That compliance obligations are not uniform: they differ by geographic location and by industry, and a service's own presence in a given compliance programme varies by service — checking coverage is part of selecting the service",
+      "vocabulary": ["compliance needs among geographic locations or industries", "compliance requirements that vary among AWS services", "AWS compliance"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.2-5", "b-2.2-9"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "Which service detects which class of security problem: Amazon Inspector for software vulnerabilities and unintended network exposure, Amazon GuardDuty for threat detection, AWS Security Hub for aggregated posture, AWS Shield for DDoS — with Amazon Macie as the discovery-and-classification answer for sensitive data at rest",
+      "vocabulary": ["Amazon Inspector", "AWS Security Hub", "Amazon GuardDuty", "AWS Shield", "Amazon Macie"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.2-6"] },
+        { "artefact": "tss-mckenzie", "items": ["2.6", "2.14"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "AWS IAM as the service that decides who may do what, and its building blocks in their proper roles: users carry long-lived identity, groups aggregate users, managed and custom policies carry the permissions — and identity is a global construct, never a per-Region resource",
+      "vocabulary": ["identity and access management", "AWS Identity and Access Management [IAM]", "groups", "users", "custom policies", "managed policies"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-1", "b-2.3-7"] },
+        { "artefact": "tss-mckenzie", "items": ["2.27"] },
+        { "artefact": "tss-declute", "items": ["2.14"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "The principle that sizes every permission set: least privilege grants what the task requires and nothing more — distinct from adding authentication factors, delegating administration, or organisation-level guardrails",
+      "vocabulary": ["principle of least privilege"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-3"] },
+        { "artefact": "tss-declute", "items": ["2.19"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d2",
+      "statement": "Why the account root user is a special risk and the concrete measures that protect it: strong unique credentials, multi-factor authentication, no standing access keys, and using it only when a task genuinely requires it",
+      "vocabulary": ["importance of protecting the AWS root user account", "methods can achieve root user protection", "multi-factor authentication [MFA]"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-2", "b-2.3-9"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d2",
+      "statement": "The short list of actions no identity other than the account root user can perform — the account-level operations that justify keeping the root user reachable at all",
+      "vocabulary": ["tasks that only the account root user can perform"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-8"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d2",
+      "statement": "Which credential type serves which access path — access keys for programmatic calls, passwords governed by password policies for the console, key pairs for instance OS access — and where application secrets belong: AWS Secrets Manager or AWS Systems Manager, never source code",
+      "vocabulary": ["access keys", "password policies", "credential storage", "AWS Secrets Manager", "AWS Systems Manager"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-5"] },
+        { "artefact": "tss-mckenzie", "items": ["2.19", "2.23"] },
+        { "artefact": "tss-declute", "items": ["2.23"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d2",
+      "statement": "Recognising the authentication capability a described access need implies: multi-factor authentication and its factor types, AWS IAM Identity Center for workforce single sign-on as distinct from IAM itself, and cross-account IAM roles instead of shared credentials — with compute workloads assuming roles rather than holding static keys",
+      "vocabulary": ["multi-factor authentication [MFA]", "IAM Identity Center", "cross-account IAM roles"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-4", "b-2.3-6"] },
+        { "artefact": "tss-mckenzie", "items": ["2.1", "2.11", "2.32"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d2",
+      "statement": "Identity that originates outside AWS: the types of identity management available, and what federating an existing directory changes about where sign-in happens and where the identity lives",
+      "vocabulary": ["types of identity management", "federated"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.3-10"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d2",
+      "statement": "Matching the protective service to the threat it addresses — AWS WAF for web-request exploits, AWS Shield for DDoS, AWS Firewall Manager for administering protections across accounts, Amazon GuardDuty for detecting active threats — as the catalogue of protective capabilities the platform offers",
+      "vocabulary": ["AWS WAF", "AWS Firewall Manager", "AWS Shield", "Amazon GuardDuty", "security capabilities that AWS provides"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.4-1", "b-2.4-3"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d2",
+      "statement": "Where security information is published and which destination answers which need: the AWS Knowledge Center, AWS Security Center, and AWS Security Blog as the guide's three named destinations, alongside the security documentation estate",
+      "vocabulary": ["AWS Knowledge Center", "AWS Security Center", "AWS Security Blog", "security-related documentation that AWS provides"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.4-2", "b-2.4-5"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d2",
+      "statement": "That third-party security products are procured through AWS Marketplace — extending protection beyond the native services without opening a separate procurement channel",
+      "vocabulary": ["third-party security products", "AWS Marketplace"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.4-4"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d2",
+      "statement": "AWS Trusted Advisor as the service that surfaces security issues as recommendations — open access risks, missing MFA — distinct from the services that detect active threats, and pitched apart from Trusted Advisor's cost-optimisation role tested in Domain 4",
+      "vocabulary": ["AWS Trusted Advisor"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-2.4-6"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d3",
+      "statement": "Choosing how to create and operate resources: the AWS Management Console for interactive work, APIs, SDKs, and the AWS CLI for programmatic access, and infrastructure as code for anything that must be repeatable — one-time operations and repeatable processes justify different surfaces",
+      "vocabulary": ["various ways of provisioning and operating in the AWS Cloud", "various ways to access AWS services", "programmatic access", "APIs", "SDKs", "CLI", "AWS Management Console", "infrastructure as code (IaC)", "one-time operations", "repeatable processes"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.1-1", "b-3.1-2", "b-3.1-3", "b-3.1-4"] },
+        { "artefact": "tss-declute", "items": ["3.2"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d3",
+      "statement": "Recognising the deployment model a described estate implies — cloud, hybrid, or on-premises — using the guide's own three models rather than service-model labels this exam does not use",
+      "vocabulary": ["cloud", "hybrid", "on-premises", "identifying deployment models"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.1-5", "b-3.1-6"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d3",
+      "statement": "The three physical units of the platform and how they nest — Regions containing isolated Availability Zones, with edge locations standing apart — and what the edge estate buys: content delivery close to users with Amazon CloudFront, optimised global routing with AWS Global Accelerator, and accelerated uploads as a separate mechanism from accelerated delivery",
+      "vocabulary": ["AWS Regions", "Availability Zones", "edge locations", "benefits of edge locations", "describing relationships among Regions, Availability Zones, and edge locations", "Amazon CloudFront", "AWS Global Accelerator"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.2-1", "b-3.2-4", "b-3.2-5"] },
+        { "artefact": "tss-mckenzie", "items": ["3.7", "3.9", "3.13", "3.25"] },
+        { "artefact": "tss-declute", "items": ["3.11", "3.26"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d3",
+      "statement": "Which geographic spread answers which need: multiple Availability Zones deliver high availability because AZs do not share single points of failure; a second Region is reached for disaster recovery, business continuity, lower latency for end users, or data sovereignty — not for everyday availability",
+      "vocabulary": ["high availability", "achieve high availability by using multiple Availability Zones", "Availability Zones do not share single points of failure", "use of multiple Regions", "disaster recovery", "business continuity", "low latency for end users", "data sovereignty"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.2-2", "b-3.2-3", "b-3.2-6", "b-3.2-7", "b-3.2-8"] },
+        { "artefact": "tss-declute", "items": ["3.34"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d3",
+      "statement": "Matching a workload profile to the compute shape it needs: Amazon EC2 instance types grouped into families — compute optimized, storage optimized, and their siblings — and choosing among compute services by the control level a requirement implies",
+      "vocabulary": ["AWS compute services", "Amazon EC2 instance types", "compute optimized", "storage optimized"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.3-1", "b-3.3-2"] },
+        { "artefact": "tss-declute", "items": ["3.33"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d3",
+      "statement": "Choosing the container and serverless compute mode: Amazon ECS versus Amazon EKS by orchestration standard, AWS Fargate as the serverless launch model against self-managed hosts, and AWS Lambda for event-driven functions rather than long-running services",
+      "vocabulary": ["Amazon Elastic Container Service [Amazon ECS]", "Amazon Elastic Kubernetes Service [Amazon EKS]", "AWS Fargate", "AWS Lambda"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.3-3", "b-3.3-4"] },
+        { "artefact": "tss-mckenzie", "items": ["3.33"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d3",
+      "statement": "How elasticity and traffic distribution are delivered by different mechanisms: auto scaling changes how many resources exist, a load balancer spreads traffic across healthy targets in multiple Availability Zones — offering one as the other is the classic confusion",
+      "vocabulary": ["auto scaling provides elasticity", "purposes of load balancers"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.3-5", "b-3.3-6"] },
+        { "artefact": "tss-mckenzie", "items": ["3.35"] },
+        { "artefact": "tss-declute", "items": ["3.22"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d3",
+      "statement": "The two legitimate ways to run a database engine — the managed service that absorbs patching, backup, and availability work, or the same engine self-administered on Amazon EC2 for control — what operational work each choice keeps or gives away, and which changes scale a managed instance without application changes",
+      "vocabulary": ["AWS managed databases", "EC2 hosted databases", "database migration"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.4-1", "b-3.4-3"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["3.4"] },
+        { "artefact": "tss-declute", "items": ["3.35"] },
+        { "artefact": "tss-mckenzie", "items": ["3.21"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d3",
+      "statement": "Matching the data model to the database service: Amazon RDS and Amazon Aurora for relational workloads, Amazon DynamoDB for NoSQL, Amazon ElastiCache for in-memory speed — with a drop-in cache that preserves the existing data model distinguished from a general-purpose cache that requires application changes",
+      "vocabulary": ["Amazon RDS", "Amazon Aurora", "NoSQL databases", "Amazon DynamoDB", "memory-based databases", "Amazon ElastiCache"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.4-4", "b-3.4-5", "b-3.4-6"] },
+        { "artefact": "tss-declute", "items": ["3.31"] },
+        { "artefact": "tss-mckenzie", "items": ["3.20"] }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d3",
+      "statement": "Moving a database as its own problem with two named tools: AWS Database Migration Service moves the data, the AWS Schema Conversion Tool converts the schema when the engine changes — which one a described migration needs, or both",
+      "vocabulary": ["AWS Database Migration Service [AWS DMS]", "AWS Schema Conversion Tool [AWS SCT]", "database migration"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.4-2", "b-3.4-7"] }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d3",
+      "statement": "What a virtual network is made of and which component does what: Amazon VPC with subnets and gateways as its parts — including the gateway pair that terminates a tunnel from an on-premises network — and Amazon Route 53 as the DNS service that resolves names, a service the practice corpus keeps offering as a wrong answer",
+      "vocabulary": ["AWS network services", "components of a VPC", "subnets", "gateways", "purpose of Amazon Route 53"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.5-1", "b-3.5-2", "b-3.5-4"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["3.9"] }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d3",
+      "statement": "The two VPC traffic filters told apart by state and scope — security groups are stateful and instance-scoped, network ACLs are stateless and subnet-scoped — with Amazon Inspector kept distinct as assessment, not filtering",
+      "vocabulary": ["security groups", "network ACLs", "Amazon Inspector"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.5-3"] }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d3",
+      "statement": "The two ways to reach AWS privately from elsewhere: AWS VPN as encrypted tunnels over the internet versus AWS Direct Connect as a dedicated physical link with predictable throughput — tolerance for internet transit decides",
+      "vocabulary": ["AWS VPN", "AWS Direct Connect", "AWS Site-to-Site VPN"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.5-5"] },
+        { "artefact": "tss-mckenzie", "items": ["3.5"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d3",
+      "statement": "The three storage models mapped to their services and lifetimes: object storage in Amazon S3, block storage in Amazon EBS — persistent — against ephemeral instance store, and file services in Amazon EFS and Amazon FSx; permuting the mapping is the classic wrong option",
+      "vocabulary": ["uses for object storage", "block storage", "Amazon Elastic Block Store [Amazon EBS]", "instance store", "file services", "Amazon Elastic File System [Amazon EFS]", "Amazon FSx"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.6-1", "b-3.6-2", "b-3.6-4", "b-3.6-5"] },
+        { "artefact": "tss-declute", "items": ["3.4", "3.8"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["3.8"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d3",
+      "statement": "Telling the Amazon S3 storage classes apart by access pattern, retention, and cost — down to S3 Glacier for archives — and lifecycle policies as the mechanism that moves objects between classes automatically as data ages",
+      "vocabulary": ["differences in Amazon S3 storage classes", "use cases for lifecycle policies", "Amazon S3", "Amazon S3 Glacier"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.6-3", "b-3.6-7"] },
+        { "artefact": "tss-declute", "items": ["3.18", "3.29"] },
+        { "artefact": "tss-mckenzie", "items": ["3.29"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d3",
+      "statement": "The data-management layer around storage: AWS Backup centralising backup across services, and AWS Storage Gateway giving on-premises applications a cached path to cloud storage — protection and hybrid extension as two distinct jobs",
+      "vocabulary": ["use cases for AWS Backup", "cached file systems", "AWS Storage Gateway"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.6-6", "b-3.6-8"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d3",
+      "statement": "Which AWS AI/ML service performs which task out of the box — Amazon Rekognition for image analysis, Amazon Lex for conversational interfaces, Amazon Polly, Amazon Transcribe, and Amazon Translate for speech and language, Amazon SageMaker AI as the build-your-own platform — using the guide's current service names",
+      "vocabulary": ["AWS AI/ML services", "Amazon SageMaker AI", "Amazon Lex", "Amazon Rekognition", "Amazon Textract", "Amazon Transcribe", "Amazon Polly"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.7-1", "b-3.7-3"] },
+        { "artefact": "tss-declute", "items": ["3.24"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d3",
+      "statement": "Which analytics service answers which data question: Amazon Athena for SQL over object storage, Amazon Kinesis for streaming, AWS Glue for data preparation, Amazon Quick Sight for dashboards, Amazon OpenSearch Service for interactive log search — near neighbours doing different jobs",
+      "vocabulary": ["AWS analytics services", "Amazon Athena", "Amazon Kinesis", "AWS Glue", "Amazon Quick Sight", "Amazon OpenSearch Service"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.7-2", "b-3.7-4"] },
+        { "artefact": "tss-mckenzie", "items": ["3.12"] },
+        { "artefact": "tss-declute", "items": ["3.20"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d3",
+      "statement": "Choosing the application-integration service by delivery shape: Amazon EventBridge routes events, Amazon SNS fans out alerts and notifications across channels, Amazon SQS queues messages for decoupled consumers, AWS Step Functions orchestrates multi-step work with visible state and retries",
+      "vocabulary": ["Amazon EventBridge", "Amazon Simple Notification Service (Amazon SNS)", "Amazon Simple Queue Service (Amazon SQS)", "AWS Step Functions", "deliver messages", "send alerts and notifications"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.8-1", "b-3.8-8"] },
+        { "artefact": "tss-mckenzie", "items": ["3.2", "3.26"] }
+      ]
+    },
+    {
+      "id": "C-057",
+      "domain": "d3",
+      "statement": "The two business-application services and the needs they meet: Amazon Connect for a cloud contact centre, Amazon SES for application-sent email at scale — kept apart from the notification and messaging services that sound adjacent",
+      "vocabulary": ["Amazon Connect", "Amazon Simple Email Service (Amazon SES)", "meet business application needs"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.8-2", "b-3.8-9"] }
+      ]
+    },
+    {
+      "id": "C-058",
+      "domain": "d3",
+      "statement": "Placing a developer tool at its software-lifecycle stage: AWS CodeBuild builds and tests, AWS CodePipeline sequences the release, AWS X-Ray traces requests to troubleshoot running applications — develop, deploy, and troubleshoot as three different stages",
+      "vocabulary": ["AWS CodeBuild", "AWS CodePipeline", "AWS X-Ray", "develop, deploy, and troubleshoot applications"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.8-4", "b-3.8-11"] }
+      ]
+    },
+    {
+      "id": "C-059",
+      "domain": "d3",
+      "statement": "The end-user-computing services and what each presents to a user: Amazon WorkSpaces for persistent virtual desktops, Amazon AppStream 2.0 for streaming individual applications, Amazon WorkSpaces Secure Browser for controlled web access — the output of virtual machines on end-user devices",
+      "vocabulary": ["Amazon AppStream 2.0", "Amazon WorkSpaces", "Amazon WorkSpaces Secure Browser", "present the output of virtual machines (VMs) on end-user machines"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.8-5", "b-3.8-12"] }
+      ]
+    },
+    {
+      "id": "C-060",
+      "domain": "d3",
+      "statement": "Standing up frontend, mobile, and device-fleet workloads with the purpose-built services: AWS Amplify to create and deploy frontend and mobile services, AWS IoT Core to connect and manage a fleet of devices — against general-purpose services that would need assembly",
+      "vocabulary": ["AWS Amplify", "AWS IoT Core", "create and deploy frontend and mobile services", "services that manage IoT devices"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-3.8-6", "b-3.8-7", "b-3.8-13", "b-3.8-14"] }
+      ]
+    },
+    {
+      "id": "C-061",
+      "domain": "d4",
+      "statement": "Matching a workload's interruption tolerance and commitment horizon to the compute purchasing option it implies — On-Demand, Reserved Instances, Spot, Savings Plans, Dedicated Hosts versus Dedicated Instances, Capacity Reservations — with physical-host visibility for server-bound licences as the Dedicated Hosts discriminator",
+      "vocabulary": ["On-Demand Instances", "Reserved Instances", "Spot Instances", "AWS Savings Plans", "Dedicated Hosts", "Dedicated Instances", "Capacity Reservations", "identifying when to use various compute purchasing options"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.1-1", "b-4.1-3"] },
+        { "artefact": "tss-mckenzie", "items": ["4.3", "4.8"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["4.6"] }
+      ]
+    },
+    {
+      "id": "C-062",
+      "domain": "d4",
+      "statement": "How AWS Organizations changes billing: consolidated billing aggregates the family's charges and allocates costs, Reserved Instance discounts flex along their stated dimensions and apply across linked accounts — with the zonal reservation's sharing condition as the hard case",
+      "vocabulary": ["AWS Organizations", "AWS Organizations consolidated billing", "allocation of costs", "Reserved Instance flexibility", "Reserved Instance behavior in AWS Organizations"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.1-4", "b-4.1-5", "b-4.2-3", "b-4.2-7"] },
+        { "artefact": "tss-declute", "items": ["4.30"] }
+      ]
+    },
+    {
+      "id": "C-063",
+      "domain": "d4",
+      "statement": "Which data movements and storage choices carry charges: incoming transfer is free while outgoing and Region-to-Region transfer are billed, transfer within the same Region is priced differently again, and storage is priced by option and tier — knowing which line items exist at all",
+      "vocabulary": ["incoming data transfer costs", "outgoing data transfer costs", "from one AWS Region to another Region", "within the same Region", "storage options and tiers", "pricing options for various storage options and tiers"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.1-2", "b-4.1-6", "b-4.1-7"] },
+        { "artefact": "tss-declute", "items": ["4.25"] }
+      ]
+    },
+    {
+      "id": "C-064",
+      "domain": "d4",
+      "statement": "Which cost tool answers which question: AWS Budgets alerts against thresholds, AWS Cost Explorer analyses and visualises historical spend and recommends commitments, AWS Pricing Calculator estimates a design before it exists, published pricing pages carry the price lists — with AWS Trusted Advisor recommending optimisations and the AWS Health Dashboard reporting service health, neither of them a spend-analysis tool",
+      "vocabulary": ["AWS Budgets", "AWS Cost Explorer", "AWS Pricing Calculator", "billing support and information", "pricing information for AWS services", "AWS Trusted Advisor", "AWS Health Dashboard", "AWS Health API", "cost optimization"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.2-1", "b-4.2-2", "b-4.2-5", "b-4.2-6", "b-4.3-8"] },
+        { "artefact": "tss-mckenzie", "items": ["4.24", "4.30"] },
+        { "artefact": "tss-declute", "items": ["4.3", "4.6", "4.17"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["4.5"] }
+      ]
+    },
+    {
+      "id": "C-065",
+      "domain": "d4",
+      "statement": "Cost allocation tags as the mechanism that attributes spend to teams and projects, the types of cost allocation tags available, and the AWS Cost and Usage Report as where tagged costs surface at the finest grain",
+      "vocabulary": ["AWS cost allocation tags", "types of cost allocation tags", "AWS Cost and Usage Report"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.2-4", "b-4.2-8"] }
+      ]
+    },
+    {
+      "id": "C-066",
+      "domain": "d4",
+      "statement": "Telling the five support tiers apart by what each adds — customer service and communities for every account, then Developer, Business, Enterprise On-Ramp, and Enterprise — what the no-cost tier does not include, and AWS Support Center as where a case is raised",
+      "vocabulary": ["AWS Support plans", "customer service and communities", "AWS Developer Support", "AWS Business Support", "AWS Enterprise On-Ramp Support", "AWS Enterprise Support", "AWS Support Center", "customer enablement services", "business support assistance"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.3-2", "b-4.3-4", "b-4.3-7", "b-3.8-3", "b-3.8-10"] },
+        { "artefact": "tss-mckenzie", "items": ["4.17"] }
+      ]
+    },
+    {
+      "id": "C-067",
+      "domain": "d4",
+      "statement": "Who helps from outside the account and through which channel: the AWS Partner Network's consulting and technology partners — independent software vendors and system integrators — with the training, event, and volume-discount benefits partnering earns, AWS Marketplace for procuring software plus its cost-management and governance features, and AWS Professional Services for paid outcome-oriented engagements",
+      "vocabulary": ["AWS Partner Network", "independent software vendors", "system integrators", "partner training and certification", "partner events", "partner volume discounts", "AWS Marketplace", "cost management", "governance and entitlement", "AWS Professional Services", "AWS solutions architects"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.3-3", "b-4.3-10", "b-4.3-11", "b-4.3-12", "b-4.3-13"] },
+        { "artefact": "tutorialsdojo-sampler", "items": ["4.1", "4.2"] }
+      ]
+    },
+    {
+      "id": "C-068",
+      "domain": "d4",
+      "statement": "Which published destination supplies which kind of help: AWS Prescriptive Guidance for proven strategies, the AWS Knowledge Center for frequent questions, AWS re:Post for community answers, whitepapers, blogs, and documentation by type — and the AWS Trust and Safety team as where abuse of AWS resources is reported",
+      "vocabulary": ["AWS Prescriptive Guidance", "AWS Knowledge Center", "AWS re:Post", "AWS whitepapers", "blogs", "documentation", "AWS Trust and Safety team", "resources and documentation available on official AWS websites"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "clf-blueprint", "items": ["b-4.3-1", "b-4.3-5", "b-4.3-6", "b-4.3-9"] }
+      ]
+    }
+  ]
 }

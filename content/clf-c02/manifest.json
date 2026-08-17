@@ -1,5 +1,5 @@
 {
-  "$comment": "S1/S2 fill: every value below is taken from the official CLF-C02 exam guide or the official exam detail page (see derivation/sources.md 'Blueprint facts recorded for the manifest'). Remaining TODOs are deliberately S3's: bank sizing, per-domain bank_items, per-domain format_mix, pattern_caps and the intro block. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "$comment": "S1/S2 facts (research-manager) + S3 authoring contract (exam-author, 2026-08-17, derivation/master-inventory.md). Blueprint facts are from the official CLF-C02 exam guide (unversioned - the vendor publishes no version string and no change history; PDF build 2026-08-14) plus the exam detail page for logistics; exam.item_count is the 50 SCORED items (AWS adds 15 unscored pretest items, not modellable); per-domain exam_items are weight_pct x 50 EXACT (12/15/17/6 - no rounding judgment for this exam). TWO GATE-1 RATIFICATIONS PENDING: (a) pass_threshold_pct 70 is a raw-score PROXY - the real exam is scaled 100-1,000, minimum 700, compensatory, and the scale is not publicly convertible to a raw percent (precedent: identical proxy ratified at the aif-c01 Gate 1); (b) time_limit_minutes 90 is the vendor number for the 65-question sitting kept for this 50-item mock (~28% generous) - disclose-vs-scale is a Gate 1 decision, matching the aif-c01 ratified disclosure. S3 decisions: bank 68 = 1.36x exam, the tie-free largest-remainder allocation 16/21/23/8 per L-0008 (candidate sizes and the d2 merge-floor rationale in derivation/master-inventory.md); format_mix is the EXAM-FORM mix per domain - 41 single_choice + 9 multiple_response + 0 scenario_matching (CLF-C02 has exactly two item types, both 1:1 on Mockka formats; see format_coverage). The 18% MR share is an S3 DECISION, not a measurement: the blueprint states no proportion and the three practice sources disagree (14%/23%/30%); all MR is choose-2-of-5, the unanimous shape of all 80 corpus items. Pattern caps: E01 0.35 (service-role-swap observed at 63%/47%/43% of wrong options - capped to force concept reasoning back into the paper; L-0012 notes the one-pattern-per-item rule already bounds per-item repetition, so this acts as a bank-level guard), D19 0.10 (kept sparse per registry guidance and both Artefact A recommendations), E06 0.004 = EFFECTIVE BAN on out-of-scope-service lures (pattern-frequency-caps fires at share >= cap: one use in the ~204-distractor bank is share ~0.005 and trips it, zero passes), D03/D04 0.10 registry-standard; near_duplicate_jaccard 0.4 (ccar-p/aif-c01 precedent). layers.syllabus_rules false because the blueprint IS the syllabus (1:1 domain mapping, Artefact B) and a rules layer would duplicate concepts.json. Authoritative schema: methodology/schema/manifest.schema.json.",
   "slug": "clf-c02",
   "title": "AWS Certified Cloud Practitioner (CLF-C02)",
   "vendor": "Amazon Web Services",
@@ -13,7 +13,7 @@
     "pass_threshold_pct": 70
   },
   "bank": {
-    "item_count": "TODO (target ~1.35x exam item_count — methodology/02-master-inventory.md)"
+    "item_count": 68
   },
   "domains": [
     {
@@ -21,10 +21,10 @@
       "title": "Cloud Concepts",
       "weight_pct": 24,
       "exam_items": 12,
-      "bank_items": "TODO",
+      "bank_items": 16,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
+        "single_choice": 10,
+        "multiple_response": 2,
         "scenario_matching": 0
       }
     },
@@ -33,10 +33,10 @@
       "title": "Security and Compliance",
       "weight_pct": 30,
       "exam_items": 15,
-      "bank_items": "TODO",
+      "bank_items": 21,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
+        "single_choice": 12,
+        "multiple_response": 3,
         "scenario_matching": 0
       }
     },
@@ -45,10 +45,10 @@
       "title": "Cloud Technology and Services",
       "weight_pct": 34,
       "exam_items": 17,
-      "bank_items": "TODO",
+      "bank_items": 23,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
+        "single_choice": 14,
+        "multiple_response": 3,
         "scenario_matching": 0
       }
     },
@@ -57,10 +57,10 @@
       "title": "Billing, Pricing, and Support",
       "weight_pct": 12,
       "exam_items": 6,
-      "bank_items": "TODO",
+      "bank_items": 8,
       "format_mix": {
-        "single_choice": "TODO",
-        "multiple_response": "TODO",
+        "single_choice": 5,
+        "multiple_response": 1,
         "scenario_matching": 0
       }
     }
@@ -86,19 +86,33 @@
     "emoji": false
   },
   "validation": {
-    "pattern_caps": {},
-    "near_duplicate_jaccard": "TODO"
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1,
+      "D19": 0.1,
+      "E01": 0.35,
+      "E06": 0.004
+    },
+    "near_duplicate_jaccard": 0.4
   },
   "layers": {
     "syllabus_rules": false
   },
   "intro": {
-    "about": "TODO — executive summary: what the certification validates, domains covered",
-    "audience": "TODO — who the certification is for, as roles",
+    "about": "The AWS Certified Cloud Practitioner (CLF-C02) is AWS's foundational certification: it validates that a candidate can explain the value of the AWS Cloud, work with the shared responsibility model and core security and compliance concepts, recognize what the principal AWS services do, and reason about pricing, billing and support channels — all at recognition level, without designing, building or troubleshooting anything. The exam guide defines four content domains: Cloud Concepts (24%), Security and Compliance (30%), Cloud Technology and Services (34%), and Billing, Pricing, and Support (12%).",
+    "audience": "Aimed at people who need a working vocabulary of the AWS Cloud rather than hands-on depth — the exam guide targets candidates with up to about six months of exposure to AWS, explicitly including non-IT backgrounds. That fits sales, marketing, finance, project-management, procurement and leadership roles working around AWS teams, and it is the common first rung for career changers heading toward the associate-level certifications. Items reward recognition, positioning and selection; coding, architecture design, troubleshooting and implementation are declared out of scope by the guide.",
     "materials": [
       {
-        "title": "TODO — e.g. \"<N>-question practice exam\"",
-        "description": "TODO — what THIS mock provides: bank size, formats, dashboard, review depth"
+        "title": "50-question practice form",
+        "description": "Weighted to the official exam guide across all four domains and drawn from a 68-item originally-authored bank — the same size as the real exam's scored portion (AWS adds 15 unscored pretest questions this mock does not simulate)."
+      },
+      {
+        "title": "Two question formats, matching the real exam exactly",
+        "description": "Multiple choice (one key among four options) and multiple response (pick two of five) — the only two item types CLF-C02 uses, so every question mechanic you meet here also appears on the real exam. The format note below records the two calibration caveats behind that claim."
+      },
+      {
+        "title": "Review dashboard and rationales",
+        "description": "Per-domain scoring against a 70% threshold (a raw-score proxy for the real exam's scaled 700-of-1,000 pass mark), plus an explanation for the key and every distractor on submission, written in the exam guide's own vocabulary."
       }
     ],
     "official_resources": [
@@ -109,9 +123,13 @@
       {
         "label": "AWS Certified Cloud Practitioner (CLF-C02) exam guide",
         "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.pdf"
+      },
+      {
+        "label": "AWS Skill Builder — official CLF-C02 practice question set (free, sign-in required)",
+        "url": "https://skillbuilder.aws/learn/E4W52ZKK6P/official-practice-question-set-aws-certified-cloud-practitioner-clfc02--english/RJSZKD3MG3"
       }
     ],
-    "disclaimer": "TODO — independence + provenance + NDA notice, exam-specific, aligned with the package README (cite, don't contradict)"
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Amazon Web Services, Inc. or Pearson VUE. AWS, Amazon Web Services and AWS Certified Cloud Practitioner are trademarks of Amazon.com, Inc. or its affiliates. Every question was written clean-room from documented derivation artefacts against the public exam guide, with prior practice sets analyzed for classification only, exactly as this package's source registry and derivation records show. Nothing here is drawn from the live CLF-C02 item bank: real exam content is confidential and protected by the AWS Certification NDA, which binds you too once you sit the exam — please never share live questions here."
   },
   "format_coverage": "The real CLF-C02 exam uses exactly two item types: multiple choice (one correct response and three distractors) and multiple response (two or more correct responses among five or more response options). The exam guide names no other type. Both map 1:1 onto Mockka formats, so this mock reproduces 100% of the exam's item types — the exam's formats are a strict subset of Mockka's three. Mockka's third format, scenario_matching, is NOT a CLF-C02 item type and is set to 0 in every domain; it must not be used for this exam. Two fidelity caveats stand: (1) the blueprint permits multiple-response items with more than two keys and more than five options, but all 80 items across the three registered practice sources are choose-2-of-5, so the corpus supplies no calibration for wider items — the select_count and options values above are the corpus's shape, not the blueprint's ceiling, and S3 owns that decision; (2) the blueprint states no proportion of multiple-response items, and the practice sources disagree (14%, 23%, 30%), so the per-domain format_mix is a documented authoring judgment rather than a measured value.",
   "provenance": {

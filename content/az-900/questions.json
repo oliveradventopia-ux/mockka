@@ -1507,6 +1507,283 @@
           "D": "Azure Advisor recommends improvements — security among its categories — by analyzing existing resources; it is an advisory surface, not continuous threat protection with a compliance view."
         }
       }
+    },
+    {
+      "id": "3.01",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "airport duty-free retail",
+      "keywords": [
+        "resource group",
+        "deallocated"
+      ],
+      "type": "multiple_response",
+      "question": "An airport duty-free retail chain deallocated its seasonal stocktake virtual machine at the end of the summer season. The finance controller expected the workload to drop off the monthly invoice, but charges tied to it keep arriving. Which TWO statements explain what is still being billed? (Select TWO.)",
+      "options": {
+        "A": "The managed disks the deallocated virtual machine was built on are still provisioned, and provisioned storage bills whatever the machine's power state",
+        "B": "The resource group holding the stocktake resources is a billed container in its own right and keeps charging until the group itself is deleted",
+        "C": "Deallocating a virtual machine releases the disks attached to it, so the charges that remain must belong to resources in another subscription",
+        "D": "Every resource meters on its own terms, so the workload's reserved public IP address bills independently of the virtual machine it served",
+        "E": "Resizing the deallocated virtual machine down to the smallest size available will clear the charges that are still arriving"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D19",
+        "E": "D05"
+      },
+      "rationale": {
+        "correct": "Cost in Azure follows the resources that exist, not the activity running on them. Deallocating a virtual machine stops its compute meter, while the storage it was built on stays provisioned and keeps billing, and every other resource in the workload meters separately on its own terms — a reserved public IP address goes on costing whether or not anything is using it. A resource group is only a container: the group itself is free, and what it holds is what gets metered.",
+        "distractors": {
+          "B": "A resource group costs nothing in its own right. It organizes resources for management and billing views, and only the resources inside it carry meters.",
+          "C": "Deallocation releases the compute, not the storage. The disks stay provisioned in the same subscription, which is precisely where the remaining charge is coming from.",
+          "E": "Size sets the rate on a compute meter that is already stopped. The disks and the reserved address are provisioned regardless of the size the machine would run at."
+        }
+      }
+    },
+    {
+      "id": "3.02",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "microbrewery chain",
+      "keywords": [
+        "region",
+        "data transfer"
+      ],
+      "type": "single_choice",
+      "question": "A microbrewery chain runs the same brewing-telemetry deployment for two of its sites, on identically sized virtual machines handling the same volume of readings. The second site's bill is consistently higher. Its readings are written to a storage account in one region while the analytics that consume them run in another, and the dashboards pull those readings across that boundary all day. Which cost factor does the difference point at?",
+      "options": {
+        "A": "The second site's readings arrive in larger daily batches, and data ingested into a storage account is metered on a rising volume tier",
+        "B": "Outbound data transfer: readings leaving one region to be consumed in another are metered on their own line",
+        "C": "The second deployment lives in a separate resource group, which adds a management charge on top of the resources it holds",
+        "D": "The second site retains its readings for longer, so trimming the retention setting will bring the two bills back together"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E02",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "The levers fixed at design time are resource type and size, the region a resource is placed in, the network traffic the design creates, and licensing. Type, size and workload are identical across these two sites, so what is left is the placement decision: the design separates where the data lands from where it is consumed, and traffic leaving a region is metered. A dashboard reading across that boundary all day pays that meter all day.",
+        "distractors": {
+          "A": "Data arriving into a region is not what separates these two bills. The meter that does is on traffic leaving a region, which only the second site's design creates.",
+          "C": "A resource group is a free container. Placing resources in a group of their own changes how they are organized, not what they cost.",
+          "D": "Retention changes how much storage is held, which is a real lever and not this one: both sites hold the same volume of readings, and only one of them moves those readings between regions."
+        }
+      }
+    },
+    {
+      "id": "3.03",
+      "domain": "d3",
+      "primary_concept": "C-046",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "outdoor advertising firm",
+      "keywords": [
+        "the pricing calculator",
+        "estimating"
+      ],
+      "type": "single_choice",
+      "question": "An outdoor advertising firm has board approval to design a campaign-imagery platform, and nothing has been deployed for it. The firm already runs a substantial Azure estate with two years of invoices behind it, and the finance director wants a defensible monthly figure for the proposed platform before a single resource is created. Which approach produces that figure?",
+      "options": {
+        "A": "Cost analysis over the firm's existing estate, filtered to the services the new platform would be built from",
+        "B": "A budget set at the amount the board is willing to fund, with alerts as consumption approaches that line",
+        "C": "The pricing calculator, configured with the proposed services, sizes and regions and priced as a monthly total",
+        "D": "A total-cost-of-ownership comparison against what the firm currently spends on print production"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E01",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Estimating what a design that does not exist yet would cost is the pricing calculator's job: it prices a configuration — chosen services, sizes, regions and quantities — and returns a monthly figure before anything is deployed. Every other cost surface reports on consumption that has already been metered, and the proposed platform has metered nothing.",
+        "distractors": {
+          "A": "Cost analysis reads charges that were actually incurred. The estate's history describes what the firm already runs, and a platform nobody has built has no history to filter.",
+          "B": "A budget records the line the firm is prepared to spend up to and warns as consumption climbs toward it. It states an intention rather than pricing a design.",
+          "D": "A comparison against print-production spend supports a business case. It prices nothing in the proposed configuration, and the ownership comparison is not the estimating surface for an Azure design."
+        }
+      }
+    },
+    {
+      "id": "3.04",
+      "domain": "d3",
+      "primary_concept": "C-047",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "print and signage shop",
+      "keywords": [
+        "cost analysis",
+        "cost management"
+      ],
+      "type": "single_choice",
+      "question": "A print and signage shop's Azure invoice rose by roughly a fifth last month, and no new project was approved in that period. The owner wants to know which resources and which services carried the rise, and on which days it showed up, before changing anything about the estate. Which capability answers that?",
+      "options": {
+        "A": "Cost analysis, slicing the charges already incurred by resource, by service and over time",
+        "B": "The pricing calculator, priced for the same services at the sizes the shop runs today",
+        "C": "A budget for next month set at the previous month's total, with an alert as consumption approaches it",
+        "D": "A tagging scheme applied across the estate so future charges can be attributed to a department"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E01",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Analyzing spend that has already happened is the retrospective half of cost management: it takes incurred charges and slices them by resource, by service and by time until the thing driving a rise is visible. It is the only surface reading what was actually metered, which is what a question about money already spent requires.",
+        "distractors": {
+          "B": "Pricing a configuration estimates what something would cost. It cannot name which resource moved a bill that has already been issued.",
+          "C": "A budget guards the coming period against overrunning a line. It is a forward-looking guard and explains nothing about charges that have already landed.",
+          "D": "Tags make future charges attributable by department and are worth applying. They do nothing for the month in question, whose charges were metered against untagged resources."
+        }
+      }
+    },
+    {
+      "id": "3.05",
+      "domain": "d3",
+      "primary_concept": "C-048",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "sailing school",
+      "keywords": [
+        "budget",
+        "alerts"
+      ],
+      "type": "single_choice",
+      "question": "A sailing school's trustees agreed a monthly ceiling for cloud spend. During a busy summer intake the school went through that ceiling in the third week, and nobody knew until the invoice arrived. The trustees want to be warned while spend is still climbing toward the line rather than after it has been crossed.",
+      "options": {
+        "A": "Review cost analysis at the close of each month and compare the total against the agreed ceiling",
+        "B": "Move the billing review from monthly to weekly so that an overrun comes to light sooner",
+        "C": "Model the intake period in the pricing calculator so the expected total is known before the season",
+        "D": "Set a budget at the agreed ceiling and configure alerts that fire as consumption approaches it"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "D10",
+        "C": "E04"
+      },
+      "rationale": {
+        "correct": "Budgets and alerts are the proactive half of cost management. The budget records the line, and alerts fire as consumption climbs toward it, while there is still a season left in which to act. Anything that reports once the period has closed can only describe an overrun that has already happened.",
+        "distractors": {
+          "A": "A month-end review is a detection control. It names the overrun accurately, and always after the money has gone.",
+          "B": "A shorter review cycle finds the overrun sooner and still finds it afterwards. Between reviews the spend climbs with nothing watching it.",
+          "C": "An estimate made before the season sets an expectation. It watches no actual consumption and says nothing once the intake is under way."
+        }
+      }
+    },
+    {
+      "id": "3.06",
+      "domain": "d3",
+      "primary_concept": "C-049",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "stadium operations company",
+      "keywords": [
+        "tags",
+        "resource groups"
+      ],
+      "type": "single_choice",
+      "question": "A stadium operations company charges its cloud costs back to four business units. Its resource groups are organized by environment — production, staging, test — and several of them hold resources belonging to more than one unit. Finance needs each unit's monthly share, and the operations team has ruled out rebuilding the estate.",
+      "options": {
+        "A": "Reorganize the estate so that every business unit's resources sit in resource groups belonging to that unit alone",
+        "B": "Apply a business-unit tag to each resource and group the monthly cost report by that tag",
+        "C": "Give each unit a role assignment over the resources it owns, and report each unit's costs per assignment",
+        "D": "Split each shared resource group's monthly charge evenly between the business units that use it"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "E01",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Tags attach metadata to resources so that cost and ownership can be sliced after the fact. They cut across the containment hierarchy instead of replacing it, which is exactly what chargeback needs here: the resource groups stay organized by environment, and the cost report is grouped by the business-unit dimension the tag carries.",
+        "distractors": {
+          "A": "Rebuilding the hierarchy around one reporting need is the move the operations team ruled out, and it trades a structure the team relies on for a dimension that metadata already supplies.",
+          "C": "A role assignment decides who may act on a resource. It authorizes access and carries no cost dimension, so shared groups stay unattributed.",
+          "D": "An even split is an assumption rather than a measurement. The units draw on the shared groups unequally, so the report would charge costs to units that never incurred them."
+        }
+      }
+    },
+    {
+      "id": "3.07",
+      "domain": "d3",
+      "primary_concept": "C-050",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "textile mill",
+      "keywords": [
+        "Microsoft Purview",
+        "classify"
+      ],
+      "type": "single_choice",
+      "question": "A textile mill's compliance officer must find where customer design files containing personal data have spread across the mill's storage accounts and file shares, label them by sensitivity, and keep track of them as copies move between systems. The security posture of the infrastructure holding them was reviewed separately and is not in question.",
+      "options": {
+        "A": "Microsoft Purview, to discover the data, map where it sits and classify it wherever it travels",
+        "B": "Microsoft Defender for Cloud, to raise the security posture of the storage accounts holding the files",
+        "C": "Azure Policy, to deny the creation of any storage account outside the mill's approved configuration",
+        "D": "A published data-handling notice telling staff which locations may and may not hold personal data"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D06",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Governing the data estate is a different job from governing the resource estate the data happens to sit on. Microsoft Purview discovers, maps, classifies and protects sensitive information wherever it travels, which is the only approach here that follows the design files themselves rather than the accounts and services beneath them.",
+        "distractors": {
+          "B": "Defender for Cloud works on the security posture and regulatory compliance of the infrastructure. It hardens the accounts that hold the files and never looks inside them.",
+          "C": "A policy governs what may be created and how it must be configured. It sets rules for the containers, and classifies nothing that lands in them.",
+          "D": "A notice states where personal data is supposed to live. It documents an intention, and discovers, labels and tracks nothing."
+        }
+      }
+    },
+    {
+      "id": "3.08",
+      "domain": "d3",
+      "primary_concept": "C-051",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "veterinary clinic network",
+      "keywords": [
+        "Azure Policy",
+        "regions"
+      ],
+      "type": "single_choice",
+      "question": "A veterinary clinic network is committed to keeping client records inside two approved regions. Engineers at each practice deploy their own resources, and last quarter two test databases turned up in a third region and had to be removed afterwards. The network wants any future deployment outside the approved regions refused at the moment of creation.",
+      "options": {
+        "A": "Apply a lock at each subscription so that resources cannot be created in the regions that are not approved",
+        "B": "Withdraw deployment rights from the practice engineers and route every deployment through the central team",
+        "C": "Assign a policy that permits only the two approved regions, so a deployment elsewhere is refused",
+        "D": "Report monthly on resources by region and remove anything found outside the two approved ones"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D16",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Azure Policy is the deployment-time gate: what compliant looks like is defined once as a rule over a scope, and a resource that violates it is prevented from being created anywhere in that scope. Restricting the regions in which resources may be deployed is the canonical case, and it holds whoever issues the deployment and whichever surface they issue it from.",
+        "distractors": {
+          "A": "A resource lock protects resources that already exist from deletion or modification. It guards what is there and takes no part in deciding what may be created.",
+          "B": "Centralizing every deployment removes the engineers' ability to work instead of making their deployments compliant, and a central team can put a database in the wrong region just as easily.",
+          "D": "A monthly report finds the stray deployment after client records have already landed outside the approved regions — the same after-the-fact removal the network is trying to stop."
+        }
+      }
     }
   ]
 }

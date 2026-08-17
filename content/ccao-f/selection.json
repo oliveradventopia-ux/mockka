@@ -1,10 +1,32 @@
 {
-  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish.",
+  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish by exam-examiner, 2026-08-18, on the S5 round-2 bank revision (questions.json last changed at d7cb9e4, the round-1 rework; S5 round 2 committed at 301c065 — eval artifacts in eval/). Selection method (methodology/02-master-inventory.md #priority + /exam-publish step 1): seat priority:high (convergent) concepts first, then fill to the manifest's per-domain count and format mix; reserves are substitutes, not rejects. Arithmetic verified against manifest: 60 items = d1 8 (7 SC + 1 MR) + d2 13 (11+2) + d3 7 (6+1) + d4 10 (8+2) + d5 7 (6+1) + d6 9 (8+1) + d7 6 (5+1); scenario_matching is 0 everywhere because the real exam has no matching items. 40 of 42 high-priority concepts seated + 20 normal-priority fills; 21 reserve-only concepts. All 9 bank MR items are seated — every domain's MR quota exactly equals its MR stock, so the MR half of the form is forced, not chosen. All 35 syllabus rules are covered by the form (syllabus-rule-form-coverage is error-level: a rule tested only by reserves can never reach the weak-rule report). HAND-ADJUSTMENTS (documented per skill): (1) TWO high-priority concepts are deliberately reserved for the S5 same-form overlap findings, not for quality — d2-q16/C-016 overlaps seated d2-q15/C-015 (both: model self-reports high confidence on a polished draft -> verify against an authoritative source; q15 kept, sum 28 vs q16 27), and d5-q59/C-059 overlaps seated d5-q53/C-053 (both: durable rules belong in Project instructions, uploaded material in knowledge) with a second partial overlap onto seated d5-q56/C-056 on knowledge scoping. Both are first-line substitutes if Gate 2 rejects their seated twins. (2) d1-q06/C-006 (normal) is reserved for the same reason against seated d1-q04/C-004 — byte-different verticals, identical shape: one long multi-function prompt, errors not attributable, decompose. This was carried into S6 as an explicit S5 instruction. (3) Normal-priority fills chosen for rule breadth and judged quality, not by score alone: d1-q05 (rule 2.03 dependency ordering, distinct from q04's decomposition), d1-q07 + d1-q10 over d1-q08 (dim5 3) and d1-q11; d2-q13 (rule 3.03, sum 30) over d2-q23/q24 so 3.03 keeps two seats after q16 is reserved; d3-q35 seated so rule 1.03 (model-tier match) keeps two seats, d3-q33 (dim3 4, dim5 3, the Haiku/Sonnet/Opus naming item) reserved; d4-q44 seated over d4-q43 and d4-q46 because q43 duplicates seated q45's stage-review argument and q46 would make a third rule-4.04 seat on a form already heavy with human-gate items; d6-q72 (sum 30) seated so rule 6.05 keeps two seats after d2-q17 is dropped; d7-q74 kept over d7-q79 for rule-7.01 breadth. (4) d7-q75 is reserved deliberately: it is the bank's weakest item (dim2 = 3, the only 3 outside dimension 5) — option B offers a temperature control the Associate-scope surfaces do not expose. It should be rebuilt at the next authoring pass, not seated. (5) Ten of the sixteen round-2 auto-flagged items are seated (d1-q01, d1-q02, d1-q03, d2-q15, d2-q25, d3-q32, d3-q34, d4-q50, d6-q65, d6-q73) because their concepts are high-priority or their rules have no alternative; every one is on the Gate 2 deep-read list with a same-domain, same-format substitute named in derivation/gate2-checklist.md.",
   "version": "0.1.0",
   "forms": [
     {
       "id": "form-a",
-      "items": []
+      "items": [
+        "ccao-f-d1-q01", "ccao-f-d1-q02", "ccao-f-d1-q03", "ccao-f-d1-q04", "ccao-f-d1-q05",
+        "ccao-f-d1-q07", "ccao-f-d1-q09", "ccao-f-d1-q10",
+
+        "ccao-f-d2-q12", "ccao-f-d2-q13", "ccao-f-d2-q14", "ccao-f-d2-q15", "ccao-f-d2-q18",
+        "ccao-f-d2-q19", "ccao-f-d2-q20", "ccao-f-d2-q21", "ccao-f-d2-q22", "ccao-f-d2-q25",
+        "ccao-f-d2-q26", "ccao-f-d2-q27", "ccao-f-d2-q28",
+
+        "ccao-f-d3-q29", "ccao-f-d3-q31", "ccao-f-d3-q32", "ccao-f-d3-q34", "ccao-f-d3-q35",
+        "ccao-f-d3-q36", "ccao-f-d3-q37",
+
+        "ccao-f-d4-q39", "ccao-f-d4-q41", "ccao-f-d4-q42", "ccao-f-d4-q44", "ccao-f-d4-q45",
+        "ccao-f-d4-q47", "ccao-f-d4-q48", "ccao-f-d4-q49", "ccao-f-d4-q50", "ccao-f-d4-q51",
+
+        "ccao-f-d5-q52", "ccao-f-d5-q53", "ccao-f-d5-q54", "ccao-f-d5-q55", "ccao-f-d5-q56",
+        "ccao-f-d5-q57", "ccao-f-d5-q58",
+
+        "ccao-f-d6-q62", "ccao-f-d6-q64", "ccao-f-d6-q65", "ccao-f-d6-q67", "ccao-f-d6-q68",
+        "ccao-f-d6-q70", "ccao-f-d6-q71", "ccao-f-d6-q72", "ccao-f-d6-q73",
+
+        "ccao-f-d7-q74", "ccao-f-d7-q76", "ccao-f-d7-q77", "ccao-f-d7-q78", "ccao-f-d7-q80",
+        "ccao-f-d7-q81"
+      ]
     }
   ]
 }

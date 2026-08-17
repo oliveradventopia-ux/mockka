@@ -1,20 +1,26 @@
 {
-  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, ccao-f round 1, 2026-08-18. The instrument is unavailable in this session, as it was for both aif-c01 rounds.",
-  "round": 1,
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, ccao-f ROUND 2, 2026-08-18. The instrument is unavailable in this session, as it was for ccao-f round 1 and for both aif-c01 rounds. Advisory only: methodology/05-eval-rubric.md #codex states a missing advisory instrument is noted, never blocking. The round-1 record is superseded by this file; its content is reproduced in substance below.",
+  "round": 2,
   "status": "advisory_skipped",
   "attempts": [
     {
       "n": 1,
       "action": "`which codex` on PATH",
-      "result": "codex not found - no binary on PATH"
+      "result": "codex not found — no binary on PATH"
     },
     {
       "n": 2,
-      "action": "located the bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex (codex-cli 0.148.0-alpha.9); ran `codex login status`, then one `codex exec --skip-git-repo-check` probe",
-      "result": "login status: `Not logged in`; exec probe failed with `401 Unauthorized: Missing bearer or basic authentication in header` against https://api.openai.com/v1/responses after 5 reconnect attempts (request id req_f15d249344454753ba6159a0390dbf1b)"
+      "action": "located the newest bundled binary at /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.5810.52044-darwin-arm64/bin/macos-aarch64/codex and ran `codex login status`",
+      "result": "\"Not logged in\""
+    },
+    {
+      "n": 3,
+      "action": "ran one minimal `codex exec \"reply with OK\"` against the same binary to confirm the auth state end-to-end",
+      "result": "ERROR: unexpected status 401 Unauthorized: Missing bearer or basic authentication in header, url: https://api.openai.com/v1/responses"
     }
   ],
-  "reason": "No Codex CLI authentication is available to this session. The VS Code extension's auth is not exposed to the CLI, and establishing it requires an interactive `codex login` by Oliver - outside the examiner's authority under the project free-first rule (no account signups or spend without Oliver's approval).",
-  "consequence": "Per methodology/05 #codex a missing advisory instrument is noted, not blocking. S5 round 1 therefore proceeds on the Claude blind solve alone: no three-way Claude/Codex/key disagreement matrix exists, and the Gate 2 sample was assembled WITHOUT any cross-model signal. This matters more than usual here: the blind solve returned 81/81 with 76 high-confidence answers, and because the author and the examiner share Claude weights, a convergent blind spot - both preferring the same reading of a miskeyed item - is exactly the failure a single-family eval cannot see. A perfect blind score is evidence of a clean bank ONLY under the assumption that the two Claude sessions are independent, which they are not. The Gate 2 deep-read is the compensating control and should carry adjudication-grade scrutiny on the 10 sampled items.",
-  "retry_path": "If Oliver runs `codex login` (or signs into the ChatGPT VS Code extension in a way that exposes CLI auth), re-run the cross-solve on the same keyless form before Gate 2 sign-off. The keyless form is regenerated deterministically from questions.json by the projection recorded in derivation/eval-report.md (id, type, question, options only)."
+  "root_cause": "The VS Code ChatGPT extension's authentication is not exposed to the bundled CLI. Establishing auth requires an interactive `codex login` by Oliver; the examiner does not sign in or sign up on his behalf (global free-first / no-account rule).",
+  "disagreement_matrix": null,
+  "consequence": "No cross-model signal exists for any of the 81 items in either round. The three-way Claude/Codex/key matrix could not be built, so the convergent-miss check — the protocol's strongest miskey signal — has never run on this bank. The Gate 2 sample below is assembled from judge-rubric 3s alone and SAYS SO. Because Claude authored this bank and Claude solved it, a convergent author/examiner blind spot would be invisible to this eval; that residual risk transfers to the Gate 2 human deep-read, and must be restated in signoff.md.",
+  "unblock": "Oliver runs `codex login` once in an interactive terminal; every later S5 round then gets the cross-solve for free."
 }

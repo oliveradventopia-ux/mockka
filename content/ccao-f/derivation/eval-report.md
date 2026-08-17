@@ -183,3 +183,187 @@ note (§1), the key-longest lean watch item (§1), and the clean-room process fi
   selection or a status flip until they are reworked and re-scored in round 2.
 - 79 items pass. `manifest.status` unchanged — the examiner flips status only after
   Oliver's recorded Gate 2 sign-off (`methodology/06-provenance-publishing.md`).
+
+---
+
+# S5 eval report — ccao-f, round 2
+
+Examiner: exam-examiner (fresh session; authored nothing in this bank, and opened no round-1
+eval artifact, key, rationale or concept metadata until the 81 round-2 blind answers were
+written to disk — `methodology/05-eval-rubric.md` §independence) · Date: 2026-08-18 ·
+Bank: 81 items at `questions.json` commit `d7cb9e4` (the round-1 bounce rework) ·
+Validator state at eval start: every bank-level check green; the 24 errors remain entirely
+selection-derived because `selection.json` is still empty — S6 has not run.
+
+## Headline
+
+**Both bounces are discharged, nothing new bounces, and the bank is eligible for S6 — but a
+fresh examiner flags 60% more items to Gate 2 than round 1 did, and one of the two fixes cost
+the item its difficulty pitch.**
+
+- Keys are right: **81/81 blind, zero misses, zero adjudications open** — matching round 1
+  independently.
+- Rubric: **no dimension scored ≤2 on any item. Zero bounces.** Dimension 1 scored 5 on all 81.
+- **Both round-1 overlap bounces are closed** (`d3-q34`, `d6-q65`): the borrowed vendor clauses
+  are gone, the quoted-span screen is clean, and neither item reaches the 2-bounce cap.
+- **The `d6-q65` fix traded pitch for clarity.** Making the restriction's object explicit closed
+  option B (dim 1: 4 → 5) and, in the same sentence, told the candidate the claim narrative is
+  unrestricted (dim 5: 5 → 3). Correct fix, real cost, routed to Gate 2 — not a bounce.
+- **Full re-solve and re-score, not a delta pass.** A fresh examiner's independence covers the
+  whole bank, so all 81 items were blind-solved and scored again rather than only the two
+  reworked ones.
+
+## 1 · Blind solve (`eval/blind-solve.json`, round 1 preserved at `blind-solve-r1.json`)
+
+81/81 match, 0 misses, so no adjudication queue and no defect candidates. 78 answers were
+recorded at `high` confidence and 3 at `medium` (`d2-q19`, `d6-q64` — both MR items where a
+genuinely good option is excluded by a stated constraint rather than by being wrong).
+
+**Independence incident, disclosed.** While inspecting the shape of `questions.json` before
+building the keyless form, a truncated record dump printed the `answer` field for
+`ccao-f-d1-q01`. The examiner's answer for that item matches the key, but it is **not an
+independent blind result**; it is recorded as `integrity_note: key_exposed_pre_solve` in
+`blind-solve.json` and the item is auto-added to the Gate 2 sample for a human solve. The other
+80 items were solved from stems and options only. Process lesson for the next round: build the
+keyless form with a projection that never materializes `answer` or `rationale`, and never print
+a raw item record during shape inspection.
+
+**Cue screens (all 81 items, mechanical).**
+
+| Screen | Result | Reading |
+|---|---|---|
+| SC answer-key balance | 18 / 18 / 18 / 18 across A–D (72 SC items) | Perfect; unchanged by the rework |
+| MR key pairs | All 9 distinct | No learnable pair |
+| Keyed-option length, magnitude | Median keyed/longest ratio **0.990** | No exploitable magnitude cue |
+| Keyed-option length, frequency | Key is the longest option in **35/72 SC items (49%, chance 25%)** | New round-2 observation. Not exploitable — when the key is longest it is longest by ~1% — but the frequency lean is real and belongs on the watch list for the next exam |
+| Stem→key lexical echo | 9 items where the key shares notably more content words with the stem than any distractor | Fed directly into dimension 5; see §3 |
+
+## 2 · Codex advisory cross-solve (`eval/codex-solve.json`)
+
+**`advisory_skipped` again.** `codex` is not on PATH; the binary bundled with the VS Code ChatGPT
+extension reports `Not logged in` and a single `codex exec` probe returns 401 Unauthorized.
+Advisory instruments that are missing are noted, never blocking (§codex).
+
+Consequence, restated because it compounds across rounds: **no cross-model signal has ever been
+collected for this bank.** Claude authored it and Claude solved it, twice. A convergent
+author/examiner blind spot would be invisible to both rounds. That residual transfers to the
+Gate 2 human deep-read and must be restated in `signoff.md`. One interactive `codex login` by
+Oliver unblocks every future round.
+
+## 3 · Judge rubric (`eval/judge-scores.json`, round 1 preserved at `judge-scores-r1.json`)
+
+All 81 items scored fresh on all six dimensions, arguing FOR each distractor before scoring.
+
+| Dim | 5 | 4 | 3 | ≤2 |
+|---|---|---|---|---|
+| 1 · single defensible best answer | 81 | 0 | 0 | **0** |
+| 2 · distractor plausibility | 65 | 15 | 1 | **0** |
+| 3 · concept alignment | 76 | 5 | 0 | **0** |
+| 4 · rationale traceability | 80 | 1 | 0 | **0** |
+| 5 · difficulty pitch | 16 | 50 | 15 | **0** |
+| 6 · scenario realism | 79 | 2 | 0 | **0** |
+
+**Round-1 → round-2 delta.** Round 1: dim1 80×5 + 1×4 · dim2 61/19/1 · dim3 75/6 · dim4 81×5 ·
+dim5 32/42/7 · dim6 81×5. The material differences:
+
+- **dim 1 rises to a clean sweep** — the one 4 (`d6-q65`) was fixed exactly as the bounce report
+  instructed.
+- **dim 5 tightens sharply: 7 threes → 15.** This is an independent-examiner difference, not a
+  regression in the bank; 79 items are byte-identical. Two examiners applying the same rubric to
+  the same text disagreed on how many items are right-vs-wrong rather than good-vs-best, and they
+  flagged *different* items (only `d2-q16`, `d2-q15` and `d7-q75` appear in both samples). That
+  spread is itself the finding: **dimension 5 is the least reproducible dimension in this rubric**,
+  and it is the one carrying every Gate 2 flag. Recommend Gate 2 calibrate on it explicitly.
+- **dim 4 loses one 5** (`d2-q14`: the rationale argues from exam structure — "why output
+  evaluation carries the largest weight in this credential" — rather than from practitioner
+  vocabulary a candidate can find in study material).
+
+**The dimension-5 rule applied this round**, stated so it can be audited and reproduced: an item
+scores 3 when either (a) all three distractors are drawn from surface-eliminable pattern families
+(D12 anecdote, D14 dogma, D15 deferral, D16 refuse-the-mandate, D17 deception, D18 push-to-users,
+D19 false-technical-claim, D20 self-review, E02 fluency-as-evidence), so a test-wise candidate can
+clear the item without the concept; or (b) the stem hands over the key's operative phrase and no
+distractor requires the concept to eliminate. The 15: `d1-q01`, `d1-q02`, `d1-q03`, `d1-q08`,
+`d2-q15`, `d2-q16`, `d2-q25`, `d3-q32`, `d3-q33`, `d3-q34`, `d4-q40`, `d4-q50`, `d5-q61`,
+`d6-q65`, `d6-q73`.
+
+**The weakest item in the bank is `d7-q75`** (dim2 = 3, dim6 = 4): option B offers to raise the
+temperature setting, a control the Associate-scope surfaces do not expose to a packaging-studio
+coordinator. It is the only distractor in 243 drawn from outside the audience's actual toolkit,
+so it can be discarded without engaging the diagnosis. No dimension ≤2, so it ships — but it
+should be rebuilt from an in-scope layer at the next authoring pass.
+
+## 4 · Bounce reports
+
+**None. `eval/judge-scores.json` → `bounces` is empty.** No item scored ≤2 on any dimension and
+the overlap screen is clean, so nothing returns to exam-author. The two round-1 bounces are
+recorded as resolved in `bank_defects_resolution`; neither reaches the 2-bounce cap.
+
+## 5 · Overlap screen (`eval/overlap-report.md`, round 1 preserved at `overlap-report-r1.md`)
+
+**PASS, 81/81.** Quoted-span screen: 2 substantive hits in round 1, **0 in round 2** — the
+`source-ccas-guide-samples.md` doc that carried both defects now shares zero residual shingles
+with the bank. 8-gram screen: 231 of 251 hits are the exam's own concept statements (the intended
+derivation chain); all 20 residuals inspected and accounted for by the Artefact B vocabulary
+exception.
+
+**Carried forward unresolved:** round-1 finding F-3 — an Artefact A derivation doc that declares
+itself free of source prose and then quotes two vendor stem fragments as craft evidence.
+Re-authoring the items removed the symptom, not the seam. The ratchet recommendation stands and
+is restated at strength: promote the quoted-span screen to a validator check (*no bank stem,
+option or rationale may contain a quoted span of ≥5 words appearing in any
+`derivation/source-*.md`*). This round's screen is a working reference implementation, and it
+would have caught both items at S4.
+
+## 6 · Gate 2 sample (16 items, round-2 canonical)
+
+Assembled per §handoff: every item carrying any 3, plus the integrity-flagged item. No
+cross-model disagreements exist to add (§2) and no adjudications are open.
+
+| Item | Why it is in the sample |
+|---|---|
+| `d1-q01` | dim5 = 3, dim3 = 4, dim2 = 4 — **and** key exposed pre-solve: needs a human blind solve |
+| `d1-q02` | dim5 = 3 — stem names both failures in the keys' own vocabulary |
+| `d1-q03` | dim5 = 3 — stem lists the missing context verbatim (echo screen) |
+| `d1-q08` | dim5 = 3 — highest stem→key echo in the bank (7 vs 2) |
+| `d2-q15` | dim5 = 3 — stem marks the self-confidence trap rather than concealing it |
+| `d2-q16` | dim5 = 3, dim2 = 4 — all three distractors surface-eliminable |
+| `d2-q25` | dim5 = 3 — three distractors are all "keep the prose" variants |
+| `d3-q32` | dim5 = 3 — two stated needs, two named layers, mechanical mapping |
+| `d3-q33` | dim5 = 3, dim3 = 4 — resolves to recall of the tier mapping |
+| `d3-q34` | dim5 = 3 — **reworked item**; the fix raised the echo. Rule on whether the pitch cost is acceptable |
+| `d4-q40` | dim5 = 3, dim2 = 4 — all three distractors surface-eliminable |
+| `d4-q50` | dim5 = 3, dim3 = 4 — three of five options transparently self-defeating |
+| `d5-q61` | dim5 = 3 — stem states the dependency outright |
+| `d6-q65` | dim5 = 3 — **reworked item**; the fix closed dim 1 and cost dim 5. The key delta of this round |
+| `d6-q73` | dim5 = 3 — "what does this workflow still owe" presupposes the obligation |
+| `d7-q75` | dim2 = 3, dim6 = 4 — weakest item in the bank; out-of-scope distractor |
+
+**Recommended union read (22 items).** Round 1 flagged six items this round scored 4–5
+(`d1-q04`, `d1-q06`, `d2-q27`, `d3-q29`, `d3-q35`, `d3-q36`). Their text is unchanged, so a
+round-1 3 on them is live independent evidence, not a superseded score. Given the dimension-5
+reproducibility spread above, Gate 2 should read the **22-item union**, not the 16.
+
+Also for Gate 2, not item-level:
+
+1. **No cross-model signal, two rounds running** (§2) — the largest residual on this bank.
+2. **The clean-room seam F-3** (§5) and the validator-check ratchet proposal.
+3. **`d1-q04` / `d1-q06` are near-twins** — both turn on "one opaque multi-stage prompt cannot be
+   diagnosed → decompose", under neighbouring concepts C-004 and C-006. Not a defect (the
+   near-duplicate check passes at jaccard 0.4), but **S6 must not place both on the same form.**
+   Same note for `d2-q15` / `d2-q16` (self-reported confidence is not verification).
+4. **The key-is-longest frequency lean** (49% vs 25% chance, §1) — watch item for the next exam.
+5. **Dimension-5 calibration** — two independent examiners produced 7 and 15 threes on the same
+   text. Gate 2's deep-read is the tie-breaker and should record which reading it endorses so the
+   next round has a calibration anchor.
+
+## 7 · State at end of round 2
+
+- `eval/blind-solve.json`, `eval/codex-solve.json`, `eval/judge-scores.json`,
+  `eval/overlap-report.md` rewritten for round 2; round-1 artifacts preserved at
+  `blind-solve-r1.json`, `judge-scores-r1.json`, `overlap-report-r1.md`.
+- **0 items bounced. 81 of 81 pass.** Nothing returns to exam-author.
+- **The bank is eligible for S6 selection.** `selection.json` is still empty and the 24 validator
+  errors are entirely selection-derived; they clear when S6 builds form A.
+- `manifest.status` stays `draft`. The examiner flips status only after Oliver's recorded Gate 2
+  sign-off (`methodology/06-provenance-publishing.md`).

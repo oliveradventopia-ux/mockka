@@ -1,0 +1,1012 @@
+{
+  "$comment": "S5 blind solve - ccao-f round 1. exam-examiner (fresh session, never authored this bank), 2026-08-18. Protocol: methodology/05-eval-rubric.md #blind-solve. The keyless form (stems + options only, ids preserved, nothing shuffled) was generated from questions.json with a script that projected only id/type/question/options; every answer, confidence grade and reasoning line below was written and frozen to disk BEFORE the key, any rationale, any distractor_patterns tag or any concept metadata was read. One documented exception is flagged on ccao-f-d1-q01. Result: 81/81 match, zero misses, therefore zero adjudications open. Cross-model matrix: none - the Codex advisory instrument was unavailable (eval/codex-solve.json).",
+  "round": 1,
+  "summary": {
+    "items": 81,
+    "matches": 81,
+    "misses": 0,
+    "accuracy_pct": 100.0,
+    "confidence_distribution": {
+      "high": 76,
+      "medium": 5
+    },
+    "adjudications_open": 0,
+    "codex_status": "advisory_skipped"
+  },
+  "cue_analysis": {
+    "$comment": "A 100% blind pass is itself a signal, so the surface cues that could produce one without concept knowledge were measured. Findings feed dimension 5 and the Gate 2 notes; none is a bounce on its own.",
+    "key_position_single_choice": {
+      "A": 18,
+      "B": 18,
+      "C": 18,
+      "D": 18,
+      "reading": "perfectly balanced across 72 SC items - the aif-c01 BD-1 defect does not recur"
+    },
+    "key_pairs_multiple_response": "all 9 MR items carry a distinct key pair (AB AC AD AE BD BE CD CE DE) - no repeated pair to learn",
+    "answer_length": {
+      "keyed_over_longest_median": 0.99,
+      "keyed_over_longest_min": 0.74,
+      "key_is_longest_option": "34/72 (47%) vs 25% by chance",
+      "median_margin_when_longest_chars": 7,
+      "median_option_length_spread_chars": 16,
+      "reading": "a mild statistical lean toward the key being the longest option. The margin is ~7 characters on ~100-character options, well below a readable cue, so this is a watch item (cf. LEARNING.md L-0021 on aif-c01's mirror-image key-shortest lean), not a defect. Recorded so a future authoring wave does not widen it."
+    },
+    "pattern_shape_cue": "31 items carry exactly one, and 6 items carry two, distractors from the 'eliminable by shape' family (D14 dogma / D16 refuse-the-mandate / D19 false-technical-claim). The 6 two-of-three items (d2-q27, d3-q35, d3-q36, d3-q38, d5-q56, d6-q70) were scored down on dimension 5 or 2 where the shape actually did the work; see judge-scores.json.",
+    "e02_family_cue": "E02 fluency-as-evidence appears on 20 distractors (8.2%, cap 0.15). A candidate who learns the single rule 'the option that praises polish/confidence is never the key' gets those 20 eliminations free. This is legitimate - fluency-is-not-accuracy is a core blueprint theme and the vendor's own samples use it - but it is the largest single learnable cue in the bank, and it is why the examiner's confidence ran high on so many items. Gate 2 note, not a bounce."
+  },
+  "items": [
+    {
+      "id": "ccao-f-d1-q01",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Fitness for the business purpose is the only standard that survives; register, length and peer endorsement are all proxies.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      },
+      "independence_note": "NON-INDEPENDENT: this item's full record (answer + rationale) was visible during schema discovery, before the keyless form was generated. The blind result is recorded for completeness but carries no evidential weight; the item is auto-added to the Gate 2 sample."
+    },
+    {
+      "id": "ccao-f-d1-q02",
+      "chosen": "A,C",
+      "keyed": "A,C",
+      "confidence": "high",
+      "reasoning": "The two failures are a length breach and a shape breach, so the two missing prompt components are constraints and output format.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q03",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Generic output with the differentiating detail sitting outside the request is a missing-context failure, not a capability ceiling.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q04",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "One opaque prompt doing three jobs cannot be diagnosed; ordered steps with a check between them localise the failure.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q05",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Build and verify the step everything downstream depends on first; client eagerness does not change the dependency order.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q06",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Three functions in one pass hides which function errs; separate stages give each function its own checkable result.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "The draft is a diagnostic pointing at the length constraint; change that one component instead of rewriting everything.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q08",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Five rounds of wording cannot supply data that was never attached; the missing component is the sales figures.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q09",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Definitions have stopped paying; labelled borderline examples are the component that teaches the boundary.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q10",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Strategy must match task type: constraints suit analysis, deliberate latitude suits ideation.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d1-q11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Current duty rates are a research task; prompting it as drafting produced polished prose with no grounding.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q12",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "The three references (requirements, source material, professional standards) apply to every draft; only depth of review scales with stakes.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q13",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Every stated claim being true says nothing about omissions; completeness against the decision's needs is the unchecked axis.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q14",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Accountability stays with the person whose name is on the letter; disclosure and routing do not transfer it.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q15",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Self-reported confidence is not evidence; a cited return and a regulatory date must be validated against authoritative sources.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q16",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Plausible is not verified; load-bearing claims need authoritative records regardless of how confident the model says it is.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q17",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A systematic framing pattern passing review means the review lacks a bias dimension; add it to the routine check.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q18",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Volatile, recently revised rules must be supplied or retrieved from a current authoritative source, then the answer validated against them.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q19",
+      "chosen": "B,D",
+      "keyed": "B,D",
+      "confidence": "medium",
+      "reasoning": "Request-time protections: bound claims to the uploaded pack with citations, and license an explicit 'I don't know'; the fact-check is a later control, not a prompt provision.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q20",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Decision-grade numbers should be computed from the export by code, not generated as prose.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q21",
+      "chosen": "C,E",
+      "keyed": "C,E",
+      "confidence": "high",
+      "reasoning": "The review threshold is set by stakes/reversibility and audience/regulatory exposure - not by fluency, tier or deadline.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q22",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Mandatory review means a reviewer competent on the requirement with the records needed to check it; a tone skim is not review.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q23",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Adaptation must preserve claims; the qualifier that dropped changed the claim, so that statistic is re-verified.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q24",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Set the criterion before reading so the comparison is against requirements, not fluency or popularity.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q25",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Re-keying errors are a format-reliability problem; structured data the system ingests removes the transcription step.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q26",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "The evaluation sample was written for the trial; it must be rebuilt from real, messy, contradictory contracts.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q27",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Variation is inherent, so the answer is structural review plus a measured consistency bound, not a defect report or withdrawal.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d2-q28",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "A safety-contact error is a stop condition; thresholds are not averages when one class of error is categorical.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q29",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Recurring task with fixed reference material is a Project-shaped task; pick the entry point from task shape before writing the prompt.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q30",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Needs current published information from many external sources - that is the research surface.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q31",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Twice a quarter with a human reviewer does not justify an automated pipeline; delegate deliberately.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q32",
+      "chosen": "A,D",
+      "keyed": "A,D",
+      "confidence": "high",
+      "reasoning": "A Skill makes the procedure repeatable; code execution makes the totals computed rather than plausible.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q33",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "High-volume extraction to the light tier, everyday work to the mid tier, hardest strategy work to the top tier.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q34",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "When two tiers clear the bar, the cheapest/fastest that clears it is the right pick for high-volume structured work.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q35",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Top tier for everything is a cost and latency tax, not a safety margin; route bulk work down.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q36",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A week-long thread exhausts a finite context budget; degradation is the budget, not a swapped model.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q37",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Carry the conclusions into a fresh session before the budget bites; the exploratory trail is not needed.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d3-q38",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Context window holds the current conversation; Memory is the mechanism that carries anything across sessions.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q39",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Requirements analysis: structured, source-traceable, testable requirements - not a readable summary or a whole process design.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q40",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Checkability before downstream consumption is the delegation qualifier; repetitiveness and confident-reading output are not.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q41",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Plans must be built on verified numbers - compute the totals from the export while the narrative is synthesised.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q42",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Nothing is measured, so the target is a guess; instrument first, then aim at the friction the data shows.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q43",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Strong drafts are not a reason to remove the checkpoints where human judgment re-enters.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q44",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "The review named one failing component; iterate on that component rather than restarting.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q45",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Delegate steps deliberately and keep the human approval gate; the approval is the step that must not be automated.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q46",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Map every step on reversibility, stakes and accountability and give a three-way verdict, not a binary automate/keep.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q47",
+      "chosen": "B,E",
+      "keyed": "B,E",
+      "confidence": "medium",
+      "reasoning": "A gate must sit before the irreversible act and have a named accountable owner; timing out or logging after the fact are not gates.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q48",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Fixed steps in a fixed order with fixed validation is a workflow, not an agent; grant autonomy only where it is needed.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q49",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "The requirement is a template-conformant draft plus duty-officer review; the pipeline adds machinery no requirement asked for.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q50",
+      "chosen": "A,B",
+      "keyed": "A,B",
+      "confidence": "high",
+      "reasoning": "Durable trust comes from stating limits alongside capabilities and naming the review gates that make reliance safe.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d4-q51",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Configuration work is in scope; API integration is a developer boundary - deliver the first and escalate the second.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q52",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A weekly recurring task means the one-off setup cost amortises across every later run; configuration is leverage.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q53",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Mechanism mismatch: reference data belongs in knowledge, a repeatable procedure belongs in a Skill, instructions govern behaviour.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q54",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Reorganising folders and changing permissions is outside the connector's scope; no rewording crosses a capability boundary.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q55",
+      "chosen": "D,E",
+      "keyed": "D,E",
+      "confidence": "high",
+      "reasoning": "Screen each file for authority/currency with a recorded owner, and scope the upload to the questions asked with a refresh cadence.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q56",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Resolve the conflict explicitly by recording which document governs which scope and stating the resolution in replies.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q57",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "An upload timestamp is file metadata, not content currency; check against the agency's current rules.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q58",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A vague standing instruction produces no observable change; rewrite it as precise, testable rules.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q59",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Durable rules belong in instructions; uploaded knowledge is data and carries no instruction authority.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q60",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Configurations decay silently against a changing world, so maintenance must be scheduled rather than triggered by a signal.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d5-q61",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A shared configuration change has downstream consumers; tell the three teams what changed.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q62",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "The screen is a graded assessment on the delegation criteria, not a yes/no gate; this lands appropriate-with-review.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q63",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "medium",
+      "reasoning": "Governance is a practitioner skill: reason the uncovered case against the policy's boundaries and record the reasoning.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q64",
+      "chosen": "C,D",
+      "keyed": "C,D",
+      "confidence": "high",
+      "reasoning": "Classify the data against policy first, then match handling - de-identify and scope; deadline pressure does not change the order.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q65",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "medium",
+      "reasoning": "Classification drives handling: strip the regulated identifiers and summarise the redacted file, keeping the work inside policy.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q66",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "The deciding question is where the data comes to rest on each surface - retention, Memory persistence, connector scope.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q67",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Minimise what is logged and bound retention to policy; indefinite logs of account numbers are the defect.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q68",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "A local risk argument is not an exception; take a documented exception request with compensating controls to the policy owner.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q69",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A Skill is software - review its source and requested permissions; install counts and ratings are not an evaluation.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q70",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Benchmark the new tier against the current baseline on the same assessments, then stage the change.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q71",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Name the boundary, offer the permitted alternative, and log it - refusal without a path, or covert compliance, both fail.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q72",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "medium",
+      "reasoning": "Ambiguous cases are reasoned against the screening criteria and recorded; instinct and another region's precedent are not grounds.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d6-q73",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A decision letter owes the student disclosure of AI involvement and a named route to contest the outcome.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q74",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Underperformance has discoverable causes; run the diagnostic sequence in order before changing tiers or blaming the tool.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q75",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Isolate before you fix - identify which layer failed; that determines which fix is right.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q76",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Strong-draft-plus-edit is the realistic ceiling; the mismatch is the promise of mail-ready output, not the prompt.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q77",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Three simultaneous changes are unattributable; reintroduce them one at a time from a rebuilt baseline.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q78",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A refusal is data: check the request against the task, current policy and permissions, then redo the permitted portion.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q79",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Turn vague feedback into one named, testable change rather than a resolution to be careful.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q80",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A repeated fix belongs in the configuration - instructions or a Skill - so every scheduler inherits it by default.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "ccao-f-d7-q81",
+      "chosen": "A,E",
+      "keyed": "A,E",
+      "confidence": "high",
+      "reasoning": "A claimed gain needs a reconstructed before measure and the same measures after, on an instrumented workflow.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    }
+  ]
+}

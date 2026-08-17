@@ -2535,6 +2535,282 @@
           "C": "A disclosure that appears only when a student thinks to ask is not part of the design, and most students will never know to ask."
         }
       }
+    },
+    {
+      "id": "ccao-f-d7-q74",
+      "domain": "d7",
+      "primary_concept": "C-074",
+      "syllabus_rule": "7.01",
+      "theme": "T8",
+      "vertical": "ferry and harbor operations",
+      "keywords": [
+        "diagnostic sequence",
+        "specification"
+      ],
+      "type": "single_choice",
+      "question": "A scheduling clerk at a ferry and harbor operations office asks Claude each morning for a plain-language summary of the day's sailing changes. For two weeks the summaries have been leaving out berth reassignments, and the team's view is that the tool has simply stopped being good at this. What should the clerk do first?",
+      "options": {
+        "A": "Move the summaries to the top model tier, as the current tier is evidently not capable enough",
+        "B": "Open a vendor ticket reporting that the model has become unreliable for sailing summaries",
+        "C": "Work the diagnostic sequence in order — specification, context, feature, configuration",
+        "D": "Rewrite the prompt, reload the berth reference table, and switch the Project Skill in one pass"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D15",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Underperformance has discoverable causes, checked in a fixed order: the diagnostic sequence runs specification, context, feature, configuration, cheapest and most likely first. Summaries that drop berth reassignments most often trace to a specification that never named them or a context that no longer carries them, and both are found before the tool is blamed.",
+        "distractors": {
+          "A": "A larger tier answers a capability question nobody has established, when the omission may be a field the prompt never asked for.",
+          "B": "Reporting a fault hands the diagnosis away before the four cheap checks inside the team’s own reach have been run.",
+          "D": "Three changes at once removes any way of knowing which layer was at fault, and leaves the same uncertainty next time."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q75",
+      "domain": "d7",
+      "primary_concept": "C-075",
+      "syllabus_rule": "7.02",
+      "theme": "T8",
+      "vertical": "packaging design studio",
+      "keywords": [
+        "isolate",
+        "diagnose"
+      ],
+      "type": "single_choice",
+      "question": "A studio coordinator at a packaging design studio has the evidence in hand: the artwork-spec summaries Claude produces omit the print finish and the die-line reference on every job, including jobs whose brief stated both. Several fixes are on the table and each has a supporter. What determines which fix is the right one?",
+      "options": {
+        "A": "Naming the layer that failed — the prompt, the context, the feature choice or the configuration",
+        "B": "Raising the temperature setting so the summaries stop repeating the same two omissions",
+        "C": "Adding the print finish and die-line reference to each summary by hand as jobs come through",
+        "D": "Applying the fix that worked on the client-brief prompts last month, which felt much the same"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D04",
+        "C": "D05",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Isolate before you fix: to diagnose here is to name whether the failure is the prompt, the context, the feature choice or the configuration, since each layer implies a different remedy. Briefs that stated both fields and summaries that drop both point at the specification, and a fix applied without a named cause is a guess, however well it worked elsewhere.",
+        "distractors": {
+          "B": "A sampling setting has no mechanism connecting it to two fields that are consistently absent from the output.",
+          "C": "Filling the gaps by hand keeps the summaries usable and leaves whatever drops the fields exactly as it is.",
+          "D": "A fix that worked on a different failure is a borrowed conclusion; the layer at fault here has still not been named."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q76",
+      "domain": "d7",
+      "primary_concept": "C-076",
+      "syllabus_rule": "7.02",
+      "theme": "T8",
+      "vertical": "orchestra development office",
+      "keywords": [
+        "expectation mismatch"
+      ],
+      "type": "single_choice",
+      "question": "A development officer at an orchestra development office has spent three weeks refining a prompt that drafts major-donor renewal letters. The drafts come back strong, accurate and warm, and every one still needs a fundraiser's edit before it can be sent. The office had promised the board a workflow that produces mail-ready letters. What is the most likely diagnosis?",
+      "options": {
+        "A": "The prompt needs further refinement, until the drafts come back ready to mail unchanged",
+        "B": "The workflow needs a higher model tier, as a stronger model would close the remaining gap",
+        "C": "Claude should rate its own drafts, and the ones it scores as mail-ready can go out unedited",
+        "D": "The expectation is the mismatch: what was promised was a finished letter, not a strong draft"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D03",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Expectation mismatch is a legitimate diagnosis: sometimes nothing is broken except what was promised. Drafts that are strong, accurate and warm and still need a fundraiser's edit describe a working assistive workflow, and the honest remedy is to reset the promise made to the board instead of tuning what already delivers.",
+        "distractors": {
+          "A": "Three weeks of refinement have produced strong drafts; more of the same tuning chases a target that was set wrong.",
+          "B": "A stronger model produces a better draft, and a better draft is still a draft that a fundraiser signs off.",
+          "C": "A self-assessment reports how confident the model is, not whether the letter is ready for a major donor."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q77",
+      "domain": "d7",
+      "primary_concept": "C-077",
+      "syllabus_rule": "7.02",
+      "theme": "T8",
+      "vertical": "food safety auditing firm",
+      "keywords": [
+        "baseline",
+        "one changed variable"
+      ],
+      "type": "single_choice",
+      "question": "An audit coordinator at a food safety auditing firm improved the firm's report drafts in one afternoon: the prompt was rewritten, a knowledge file of past audit reports was added, and the Project was moved to a higher model tier. The drafts are visibly better, and the partners want to know what worked so it can be applied to the other report types. What should the coordinator do?",
+      "options": {
+        "A": "Report that the combination works, as the three changes together produced the better drafts",
+        "B": "Rebuild the baseline and reintroduce the three changes one at a time to see which carries the gain",
+        "C": "Credit the tier move, as a model change is the largest of the three levers pulled that afternoon",
+        "D": "Ask Claude which of the three changes improved its drafts, and pass that answer to the partners"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D19",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Attribution requires a reconstructed baseline and one changed variable at a time. Three changes in one afternoon read as decisiveness and leave the firm unable to say what to carry across to the other report types: the gain is real and unattributed, which is the same as untransferable.",
+        "distractors": {
+          "A": "A combination that works is not a finding that transfers; the other report types would inherit changes that may contribute nothing.",
+          "C": "The size of a lever is a prior, not a measurement, and the prompt rewrite is at least as plausible a cause.",
+          "D": "The model holds no record of the prompt it ran under yesterday and no view of the tier move, so the answer would be a plausible guess."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q78",
+      "domain": "d7",
+      "primary_concept": "C-078",
+      "syllabus_rule": "7.01",
+      "theme": "T7",
+      "vertical": "paralegal support bureau",
+      "keywords": [
+        "diagnose",
+        "permissions"
+      ],
+      "type": "single_choice",
+      "question": "A paralegal at a support bureau asks Claude to summarize a document bundle for a client matter, and the request is declined. The same kind of summary ran without trouble last quarter, the bundle now includes another firm's privileged correspondence, and the filing deadline is Thursday. What is the most appropriate next step?",
+      "options": {
+        "A": "Rephrase the request in smaller pieces until the refusal stops appearing",
+        "B": "Report it as a product fault and wait for the vendor to restore the earlier behavior",
+        "C": "Check the request against the task, current policy and permissions, then redo the permitted part",
+        "D": "Switch off the bureau’s policy configuration for the session so the summary can be produced"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D13",
+        "B": "D15",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "A refusal is diagnosed against the task, current policy and permissions, and any recent change: a bundle that now carries another firm's privileged correspondence is a different task from last quarter's. The permitted portion is then redesigned and done, or the work is escalated — evading or stripping the control is never the fix.",
+        "distractors": {
+          "A": "Reshaping the request until it passes treats the control as an obstacle, and the privileged correspondence is still in the bundle.",
+          "B": "Waiting on the vendor assumes a defect, when what changed is the bundle, and the deadline does not move.",
+          "D": "Turning the configuration off removes the control that caught the problem and leaves the privileged material untouched."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q79",
+      "domain": "d7",
+      "primary_concept": "C-079",
+      "syllabus_rule": "7.03",
+      "theme": "T2",
+      "vertical": "specialty coffee importer",
+      "keywords": [
+        "specific adjustment",
+        "feedback"
+      ],
+      "type": "single_choice",
+      "question": "A trading assistant at a specialty coffee importer sends the weekly market update to the desk head, who replies that it is too generic to be useful and nothing more. The assistant plans to be more careful with the next one. What should happen instead?",
+      "options": {
+        "A": "Turn the critique into one named change: state the buyer segment and the origins to cover",
+        "B": "Add a line to the prompt asking for higher quality and more specific market writing",
+        "C": "Rewrite the prompt, attach a file of past updates, and lengthen the output in one revision",
+        "D": "Circulate the next update to the whole desk and act on whatever comments come back"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D04",
+        "C": "E01",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "A disappointing output is data: the critique is translated into one specific adjustment aimed at the component it names, not into a general resolve to do better. Too generic points at an unspecified audience and scope, so the feedback becomes a stated buyer segment and a stated set of origins — a change whose effect on the next update can be seen.",
+        "distractors": {
+          "B": "Asking for higher quality restates the complaint inside the prompt and names nothing the next draft can act on.",
+          "C": "Three simultaneous changes make the next update better or worse with no way to say which of them did it.",
+          "D": "Another round of desk opinions gathers more critique, when the one already given has not been converted into a change."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q80",
+      "domain": "d7",
+      "primary_concept": "C-080",
+      "syllabus_rule": "7.03",
+      "theme": "T6",
+      "vertical": "landscaping services franchise",
+      "keywords": [
+        "capture the fix",
+        "Skill"
+      ],
+      "type": "single_choice",
+      "question": "A scheduler at a landscaping services franchise finds a phrasing that makes Claude include crew size and equipment in every route-plan summary, which the earlier phrasing kept dropping. It works reliably. Six other schedulers across the franchise hit the same problem every week. What should be done with the fix?",
+      "options": {
+        "A": "Post the working phrasing in the team chat, where any scheduler can search for it later",
+        "B": "Leave it as know-how, since the schedulers who need it will work the phrasing out as they go",
+        "C": "Rebuild the route-planning Project from scratch around the new phrasing",
+        "D": "Write it into the Project instructions or a Skill, so every scheduler gets it by default"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D18",
+        "C": "D01"
+      },
+      "rationale": {
+        "correct": "A fix that worked is captured so it persists beyond the session: to capture the fix as a standing instruction or a Skill is what stops six schedulers re-deriving it every week. An unrecorded fix is re-derived on every future occurrence, which is decay by another name.",
+        "distractors": {
+          "A": "A chat post preserves the text and not the default; every scheduler still has to remember it exists and go and find it.",
+          "B": "Tacit know-how is what the franchise has now, and it is why the same problem returns every week.",
+          "C": "A rebuild spends a day of reconstruction on a change that belongs in one line of the configuration."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q81",
+      "domain": "d7",
+      "primary_concept": "C-081",
+      "syllabus_rule": "7.04",
+      "theme": "T8",
+      "vertical": "port authority communications",
+      "keywords": [
+        "instrument",
+        "measure the gain"
+      ],
+      "type": "multiple_response",
+      "question": "A communications officer at a port authority has moved the drafting of berth-closure notices into a configured Project, and the director wants to report the efficiency gain to the board. Nobody recorded how the old process performed. Which TWO steps make the claimed gain checkable? (Select TWO.)",
+      "options": {
+        "A": "Reconstruct a before measure of the old process — time per notice and rework rounds",
+        "B": "Ask the communications team whether the new workflow feels faster, and report that",
+        "C": "Move to a faster model tier at the same time, so the reported gain is as large as possible",
+        "D": "Have Claude estimate the time saved across the notices it has drafted so far",
+        "E": "Measure the same two figures after the change, with the workflow instrumented at that level"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "E"
+      ],
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Optimization is deliberate and measured: instrument the workflow, find the friction, promote the fix into configuration, and measure the gain. A before measure of time per notice and rework rounds, and the same two figures after, give the board a number it can check; optimizing without a baseline produces an unfalsifiable claim of improvement.",
+        "distractors": {
+          "B": "A sense that the workflow feels faster is the impression the measurement was there to test.",
+          "C": "A second change made at the same time inflates the number and destroys the attribution behind it.",
+          "D": "The model holds no record of how long the old process took, so its estimate is fluent arithmetic over nothing."
+        }
+      }
     }
   ]
 }

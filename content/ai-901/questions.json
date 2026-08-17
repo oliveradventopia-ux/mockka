@@ -1,4 +1,848 @@
 {
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "ai-901-d1-q01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "theme": "F3",
+      "vertical": "rural broadband provider",
+      "keywords": [
+        "fairness",
+        "responsible AI"
+      ],
+      "type": "single_choice",
+      "question": "A rural broadband provider is preparing a model that ranks incoming fault reports so engineers are dispatched to the most disruptive outages first. Its dispatch history is dense for town streets and thin for outlying farms, and the regulator has asked the provider to show that the ranking is fair. Which action addresses the fairness consideration for this solution?",
+      "options": {
+        "A": "Publish a notice on the customer portal explaining that the order of engineer dispatch is decided with the help of an AI system.",
+        "B": "Compare how the model ranks town faults against outlying-farm faults of the same type, and report the gap between the two.",
+        "C": "Encrypt the stored dispatch history and limit access to the ranking data to the operations team who run the dispatch desk.",
+        "D": "Review a weekly sample of closed jobs to see whether any farm customers have complained about how long they waited."
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D09",
+        "C": "E04",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "A fairness consideration asks where a solution could hand out attention or accuracy unevenly across groups of people, and the only way to answer it is to measure the outcome for each group. Ranking town faults beside outlying-farm faults of the same type turns the responsible AI question into a number the regulator can read.",
+        "distractors": {
+          "A": "Telling customers that an AI system orders dispatch discharges transparency. It describes the mechanism to people without revealing whether farms consistently wait longer than towns.",
+          "C": "Encrypting the history and limiting access is a privacy and security control. It protects the data behind the ranking and says nothing about how the ranking treats each group.",
+          "D": "Complaints surface only after people have already waited, and the customers who wait longest are often the least likely to complain, so the gap stays invisible."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "theme": "F3",
+      "vertical": "ferry operator",
+      "keywords": [
+        "reliability and safety",
+        "responsible AI"
+      ],
+      "type": "single_choice",
+      "question": "A ferry operator counts boarding passengers with a vision model so that no sailing exceeds its licensed capacity. The model was built on images captured in clear weather at the main terminal. On the exposed northern route, fog and spray leave the camera images washed out for part of the year. Which measure addresses the reliability and safety consideration here?",
+      "options": {
+        "A": "Retrain the counting model every quarter on the most recent boarding footage captured across all of the routes.",
+        "B": "Display the counted figure on a screen at the gate with a note that the number is produced by an AI system.",
+        "C": "Detect when image quality drops below what the model needs and hand the count to gate staff until it recovers.",
+        "D": "Install a second camera at every gate so that more images of each boarding passenger reach the model."
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D10",
+        "B": "D09",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "A reliability and safety consideration asks how the solution behaves when conditions fall outside what it was built for, and what catches it when they do. Fog and spray are exactly that condition, so the responsible AI answer is a detected quality floor with a manual fallback behind it, not a model that keeps counting through weather it cannot see.",
+        "distractors": {
+          "A": "A retraining cadence improves the model between refreshes and leaves every foggy sailing in the gap unprotected. The failure arrives with the weather, not with the calendar.",
+          "B": "Showing the figure and its origin at the gate is a transparency measure. Passengers learn where the number came from and the vessel can still be loaded past its licensed capacity.",
+          "D": "More cameras capture more of the same degraded images. Adding capture volume does not give the model a usable view when spray has washed the scene out."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "theme": "F3",
+      "vertical": "dental practice group",
+      "keywords": [
+        "privacy and security",
+        "responsible AI"
+      ],
+      "type": "single_choice",
+      "question": "A dental practice group is building an assistant that answers clinicians' questions from the group's clinical notes. The clinical director is comfortable that the notes are held on the group's own systems and asks what else the privacy and security consideration requires before the assistant is opened to all sixteen practices. Which answer is correct?",
+      "options": {
+        "A": "Display a privacy statement in each waiting room describing how patient notes are used by the new assistant.",
+        "B": "Give the assistant the notes from every practice so its answers stay consistent wherever a clinician asks.",
+        "C": "Ask reception staff to strip patient names out of any note before they paste it into the assistant's window.",
+        "D": "Scope which notes the assistant can reach for each role, and test whether crafted questions pull patient detail out of it."
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D09",
+        "B": "D13",
+        "C": "D18"
+      },
+      "rationale": {
+        "correct": "A privacy and security consideration asks what data the solution holds, who can reach it, and how it resists attempts to pull that data back out through the model itself. Role-scoped reach answers the second question and adversarial questioning answers the third, which is the part a responsible AI review of storage location never touches.",
+        "distractors": {
+          "A": "A waiting-room statement tells patients what happens to their notes. It is a transparency measure and it changes nothing about who can reach the notes through the assistant.",
+          "B": "Handing every practice's notes to one assistant widens exposure to reach a consistency goal. Any single crafted question can now surface a patient from a practice the clinician never worked at.",
+          "C": "Asking reception staff to redact by hand puts the control on the busiest people in the practice, and the notes the assistant already holds are untouched by anything typed into its window."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "theme": "F3",
+      "vertical": "hearing-aid retail",
+      "keywords": [
+        "inclusiveness",
+        "responsible AI"
+      ],
+      "type": "single_choice",
+      "question": "A hearing-aid retail chain replaces its appointment line with a voice assistant that books fittings. In the pilot, callers with profound hearing loss and callers whose speech is affected by a stroke abandon the call far more often than other callers, and the chain has to decide what to do before the national rollout. Which action addresses the inclusiveness consideration?",
+      "options": {
+        "A": "Restrict the voice assistant to callers who have completed a short hearing questionnaire on the chain's website first.",
+        "B": "Add a line to the booking page warning that the voice assistant may misunderstand some callers on the first attempt.",
+        "C": "Test the assistant with callers who have hearing loss and affected speech, and add a text booking route where it fails.",
+        "D": "Raise the microphone sensitivity of the voice assistant so that quieter and less distinct callers are picked up."
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D16",
+        "B": "D09",
+        "D": "D04"
+      },
+      "rationale": {
+        "correct": "An inclusiveness consideration asks whether the solution can actually be used by people across abilities and circumstances, not only by the callers it was convenient to build for. Testing with the affected callers is what turns that responsible AI question into evidence, and an alternative booking route is what makes the service usable for the people the voice path still fails.",
+        "distractors": {
+          "A": "Gating the assistant behind a website questionnaire removes the callers who struggle instead of serving them, and it assumes the same people can complete a web form unaided.",
+          "B": "A warning on the booking page tells callers that they may not be understood. Being told about a barrier in advance does not get the appointment booked.",
+          "D": "Microphone sensitivity is a capture setting. It changes what the audio picks up and does nothing for a caller whose speech the model cannot resolve into words."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "theme": "F3",
+      "vertical": "charity fundraising",
+      "keywords": [
+        "transparency",
+        "responsible AI"
+      ],
+      "type": "single_choice",
+      "question": "A charity's fundraising team launches a chat assistant that answers donor questions about how gifts are spent. Donors reach it from the donation page and many assume they are chatting to the supporter care team. Trustees ask what the transparency consideration obliges the charity to do. Which action is it?",
+      "options": {
+        "A": "Tell donors at the start of the chat that they are talking to an AI assistant and what it is not able to answer.",
+        "B": "Keep a signed record of every answer the assistant gives so the board can hold a named trustee to account for it.",
+        "C": "Publish the size of the model behind the assistant and the volume of text it was trained on in the annual report.",
+        "D": "Have a fundraiser read a month of conversations and correct any answer that gave donors the wrong impression."
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E08",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "A transparency consideration asks what users must be told about how the system works, what its limits are, and that they are dealing with an AI system at all. Donors who believe they reached supporter care have been told none of it, so the responsible AI obligation is discharged at the start of the conversation.",
+        "distractors": {
+          "B": "A signed record with a named owner is an accountability instrument. It settles who answers for a misleading reply and still leaves the donor believing they were talking to a person.",
+          "C": "Model size and training volume are implementation figures. Donors cannot use either to understand what the assistant can and cannot tell them about their gift.",
+          "D": "Reading a month of conversations afterwards catches misleading answers once donors have already acted on them, which is a detection step and not a disclosure."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "theme": "F3",
+      "vertical": "coastal port authority",
+      "keywords": [
+        "accountability",
+        "responsible AI"
+      ],
+      "type": "single_choice",
+      "question": "A coastal port authority ranks containers for physical inspection with a model, and inspectors work the ranked list from the top down. A mis-declared cargo passed through the port unopened, and the authority's board wants to know what the accountability consideration requires of the arrangement. Which answer is correct?",
+      "options": {
+        "A": "Have the model return a written explanation of the factors behind each container's position on the ranked list.",
+        "B": "Name the officer who owns the inspection decision and set out the governance through which that decision is reviewed.",
+        "C": "Log every ranking the model produced and every inspector response to it, so the record can be examined afterwards.",
+        "D": "Move container ranking to a specialist cargo-risk supplier whose service already carries an assurance certificate."
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "D07",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "An accountability consideration asks who remains answerable for the outcome and through what governance, which is a different question from what the system is able to explain about itself. A responsible AI answer names the human owner of the inspection decision and the forum that reviews it, so the mis-declared cargo has somewhere to land.",
+        "distractors": {
+          "A": "An explanation of the ranking factors serves transparency. It helps an inspector understand the list and leaves the question of who answers for an unopened container unanswered.",
+          "C": "A log preserves evidence for whoever eventually looks. It supports a review without creating the owner or the forum that would hold one.",
+          "D": "Handing the ranking to a supplier moves the work outward. The port authority still admits the cargo, so the answerability it was asked about has not moved anywhere."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "theme": "F3",
+      "vertical": "maritime insurance",
+      "keywords": [
+        "responsible AI",
+        "transparency",
+        "privacy and security"
+      ],
+      "type": "multiple_response",
+      "question": "A maritime insurer flags claims for manual review with a deployed model. Broker associations are pressing the insurer to publish the exact weight the model places on each factor so brokers can see why a claim was flagged. The insurer's fraud team says a broker holding those weights could shape a claim to sit just under the flag. Select TWO statements that correctly describe the obligations in play.",
+      "options": {
+        "A": "Telling brokers that a model flags claims, what it broadly weighs, and how to contest a flag discharges the transparency obligation.",
+        "B": "Publishing the exact weights is required, as transparency outranks the other responsible AI considerations whenever they meet.",
+        "C": "Withholding the exact weights serves the privacy and security consideration, which is the obligation pulling the other way here.",
+        "D": "The conflict disappears once the insurer names a claims officer who is accountable for every flagged claim.",
+        "E": "Raising the flagging threshold so fewer claims are flagged removes the need to explain the model's weights."
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "D14",
+        "D": "E04",
+        "E": "D05"
+      },
+      "rationale": {
+        "correct": "One design decision can engage two responsible AI principles at once and they can pull in opposite directions. Here transparency obliges the insurer to tell brokers that a model flags claims, what it broadly weighs and how to contest a flag, while privacy and security is the obligation that argues for holding the exact weights back. Naming both is what the judgment consists of.",
+        "distractors": {
+          "B": "No responsible AI principle carries a standing rank over the others. Applying transparency as a rule that always wins is what hands the fraud team's objection away unexamined.",
+          "D": "Naming an accountable claims officer discharges accountability. It settles who answers for a flag and leaves the question of what may be published exactly where it was.",
+          "E": "Moving the threshold changes how many claims are flagged. The brokers whose claims are still flagged are owed the same explanation, so the obligation is untouched."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "theme": "F4",
+      "vertical": "archival film restoration",
+      "keywords": [
+        "Tokenization",
+        "Large language models"
+      ],
+      "type": "single_choice",
+      "question": "An archival film restoration studio drafts catalog entries for restored reels with a deployed generative model. For one 1954 documentary the model wrote a fluent entry naming a director of photography who worked on no such film, and the studio's own records were never connected to the model. A restorer asks how that sentence came to exist. Which explanation is correct?",
+      "options": {
+        "A": "The model held a copy of its training material and returned the row that most closely matched the reel's title.",
+        "B": "The model looked the credit up in a reference collection at request time and returned the nearest available match.",
+        "C": "The model produced the entry one token at a time, picking each from patterns it learned during pre-training.",
+        "D": "The model sorted the reel into a genre class and completed the credit fields from the typical values of that class."
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E06",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Large language models break input into tokens and produce output one token at a time, choosing each from patterns learned during pre-training and not from a stored record of anything they were shown. Tokenization and next-token selection are the whole mechanism, which is exactly why a fluent, specific and entirely unsupported credit can appear.",
+        "distractors": {
+          "A": "A generative model does not carry its training material as retrievable rows. Treating the output as a lookup makes the invented credit look like a data fault that could be corrected in a table.",
+          "B": "Looking a fact up at request time describes a grounded solution connected to a source. This deployment had no such connection, so nothing was consulted when the entry was written.",
+          "D": "Sorting an item into a class and filling fields from it describes a classification pipeline. The model was not classifying the reel; it was continuing text."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "theme": "F4",
+      "vertical": "genealogy research service",
+      "keywords": [
+        "prompts",
+        "Large language models"
+      ],
+      "type": "single_choice",
+      "question": "A genealogy research service uses a deployed model to answer researchers' questions about transcribed parish registers. Two complaints recur: the model sometimes states a baptism date that appears in no register, and when a very long register is pasted in as one request, details from its opening pages stop showing up in the answers. Which explanation covers both complaints?",
+      "options": {
+        "A": "Both follow from how the model works: output is generated from learned patterns, and one request can only attend to a fixed amount of text.",
+        "B": "Both indicate that the service has outgrown its model and needs one trained on a broader body of genealogical material.",
+        "C": "The invented dates are transcription faults in the registers and the missing detail is the request timing out mid-answer.",
+        "D": "Both are effects of the sampling settings on the deployment and resolve once the temperature is turned down."
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "D19",
+        "D": "D04"
+      },
+      "rationale": {
+        "correct": "Two limits follow directly from the mechanism behind Large language models: output can be fluent, specific and entirely unsupported, and there is a fixed amount of text the model can attend to in one request. A stated baptism date that no register holds is the first limit, and opening pages dropping out of a very long request is the second, so one explanation covers both prompts.",
+        "distractors": {
+          "B": "More training material would change what the model knows and neither limit is a knowledge gap. A broader model invents dates just as fluently and still attends to a fixed amount of text.",
+          "C": "Transcription faults would put the wrong date in the register itself, and the answers stay complete rather than truncating, so nothing here points at a request that failed to finish.",
+          "D": "Sampling settings move how varied the wording is. They do not create a record the model never had, and they do not extend how much text one request can attend to."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "theme": "F4",
+      "vertical": "corporate travel management",
+      "keywords": [
+        "multimodal model",
+        "Generative AI models"
+      ],
+      "type": "single_choice",
+      "question": "A corporate travel management firm wants travelers to photograph a paper taxi receipt in the expense app and ask a question about it in the same step, such as whether the fare is claimable under their client's policy. The firm's platform team has to pick the model capability the feature needs before any code is written. Which one is it?",
+      "options": {
+        "A": "A chat and text generation model, with the traveler typing the fare and date from the receipt into the app first.",
+        "B": "An embeddings model that turns the photographed receipt into a vector so the app can find similar past receipts.",
+        "C": "An image generation model prompted with the policy wording so it renders the receipt in a readable format.",
+        "D": "A multimodal model that takes the photograph and the traveler's typed question together in one request."
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D18",
+        "B": "E01",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Generative AI models are chosen by the capability the requirement needs, and this requirement puts an image and a question in the same request. A multimodal model is the capability class that accepts more than one input type, which is what lets the traveler photograph the receipt and ask about it in one step.",
+        "distractors": {
+          "A": "Text generation over typed values works only once the traveler has done the reading. It meets the requirement by moving the hard part of it onto the person holding the receipt.",
+          "B": "Embeddings place content in a vector space for comparison. Finding similar receipts is a real capability of that model class and it answers no question about this client's policy.",
+          "C": "Image generation produces new visual content from a description. Nothing in this requirement asks for a new image; the image already exists and has to be read."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "theme": "F4",
+      "vertical": "craft brewery",
+      "keywords": [
+        "Microsoft Foundry",
+        "deployment options"
+      ],
+      "type": "single_choice",
+      "question": "A craft brewery is putting its first generative feature into its trade-order portal and has picked a model in Microsoft Foundry. A developer tells the project group that deploying the model is simply switching it on, and that everything worth deciding is decided later in the client code. Which correction should the group hear?",
+      "options": {
+        "A": "Deployment only places the model files inside the project, and every meaningful choice is made by the calling application.",
+        "B": "A deployment carries its own options for how the model is made available, and those options are settled when it is deployed.",
+        "C": "Deployment settles nothing at all: the model's behavior comes entirely from the inference parameters sent on each request.",
+        "D": "The choices belong to the model catalog, where the brewery compares the available models before picking one to work with."
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E07",
+        "D": "E09"
+      },
+      "rationale": {
+        "correct": "A model has to be deployed in Microsoft Foundry before anything can use it, and the deployment is not a single fixed act: it carries deployment options about how that model is made available. Treating it as an on switch hides decisions that are made at deployment time and are awkward to revisit once the portal is live.",
+        "distractors": {
+          "A": "A deployment is what makes a model callable, not a file drop. Describing it as storage leaves the project group expecting choices in the client code that were already made.",
+          "C": "Inference parameters are real and they shape each response. They sit around a deployment that already exists and cannot make one available in the first place.",
+          "D": "The model catalog is where a model is compared and chosen. It is a different surface from the deployment that publishes the chosen model for use."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "theme": "F4",
+      "vertical": "cinema exhibition",
+      "keywords": [
+        "configuration parameters",
+        "prompts"
+      ],
+      "type": "single_choice",
+      "question": "A cinema exhibition chain generates a short blurb for each film from the distributor's synopsis. Marketing needs the same synopsis to produce the same blurb every time it is regenerated, because the wording is printed on foyer cards and reused by twelve venues. Today the same request returns differently worded blurbs. Which change produces the behavior marketing asked for?",
+      "options": {
+        "A": "Lower the temperature on the requests so the model's token choices vary far less from one run to the next.",
+        "B": "Raise the maximum output tokens on the requests so the model always has room to finish the blurb it started.",
+        "C": "Move the house style rules into the system prompt so every request to the deployment carries the same wording rules.",
+        "D": "Deploy a second copy of the model for marketing and cache the first blurb each film receives from the deployment."
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E07",
+        "C": "E06",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Inference behavior is governed by configuration parameters set around the deployment, and each parameter moves output in a stated direction. Repeatable wording for identical prompts is what a lower temperature produces, so the judgment is picking the parameter whose stated direction matches the behavior asked for.",
+        "distractors": {
+          "B": "The output length ceiling governs how much the model may produce. A longer allowance does not make two runs of the same request agree on their wording.",
+          "C": "House style in the system prompt makes every blurb sound like the chain. Two runs under the same style rules still land on different sentences.",
+          "D": "A second deployment with a cache in front of it freezes the first answer for each film and adds a copy of the model to run. The variation is still there the moment a blurb is regenerated."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "theme": "F1",
+      "vertical": "waste collection services",
+      "keywords": [
+        "computer vision",
+        "information extraction",
+        "speech",
+        "text analysis"
+      ],
+      "type": "scenario_matching",
+      "question": "A waste collection services operator has five AI proposals from five different depots and wants each one named as an AI workload before any product or route is chosen. Match each proposal to the workload class it belongs to. Options may be used more than once.",
+      "matching_options": [
+        "Information extraction",
+        "Speech",
+        "Text and natural language",
+        "Computer vision"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Depot supervisors dictate end-of-shift notes into a handset in the yard and need those notes available as text the same evening."
+        },
+        {
+          "id": "s2",
+          "text": "Weighbridge tickets arrive as scanned pages, and the finance system needs the tonnage, date and vehicle number from each ticket as named values."
+        },
+        {
+          "id": "s3",
+          "text": "Residents' complaint emails have to be routed by the service they mention, and the operations team wants the recurring terms across each month."
+        },
+        {
+          "id": "s4",
+          "text": "A camera on the lifting arm must flag a bin holding a gas cylinder before the load is tipped into the truck."
+        },
+        {
+          "id": "s5",
+          "text": "Residents who cannot read the printed collection calendar want the week's collection dates read out to them over the phone line."
+        }
+      ],
+      "answer": {
+        "s1": "Speech",
+        "s2": "Information extraction",
+        "s3": "Text and natural language",
+        "s4": "Computer vision",
+        "s5": "Speech"
+      },
+      "rationale": {
+        "correct": "Naming the workload class is the decision that governs everything downstream, and it is decided by what goes in and what has to come out. Dictated notes turned into text and printed dates turned into audio are both speech work, which is why one class covers two of these proposals. Scanned tickets whose tonnage, date and vehicle number must arrive as named values are information extraction. Routing complaint emails by service and pulling out the terms that recur is text analysis. A camera judging what is inside a bin before it is tipped is computer vision."
+      }
+    },
+    {
+      "id": "ai-901-d1-q14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "theme": "F7",
+      "vertical": "bicycle-share operations",
+      "keywords": [
+        "agentic AI",
+        "AI agents"
+      ],
+      "type": "single_choice",
+      "question": "A bicycle-share operator already drafts nightly rebalancing plans with a deployed generative model: an analyst pastes in the docking telemetry and the model returns a written plan. The operations lead has been told the next step is agentic AI and assumes it means moving to a larger, better-writing model. Which statement corrects that assumption?",
+      "options": {
+        "A": "An agentic solution writes longer and better structured rebalancing plans than a model answering a single prompt.",
+        "B": "An agentic solution is a model given a much larger context so that a whole night of docking telemetry fits in one request.",
+        "C": "An agentic solution pursues the rebalancing goal across steps and acts on it, booking the van and issuing the move orders.",
+        "D": "An agentic solution is a model fine-tuned on the operator's own history of overnight rebalancing decisions."
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E11",
+        "B": "D03",
+        "D": "E06"
+      },
+      "rationale": {
+        "correct": "Agentic AI is its own workload class and not a larger generative model. The distinguishing property of AI agents is that the solution pursues a goal across steps and takes actions, so booking the van and issuing the move orders is the change of class, while better prose is a change of degree.",
+        "distractors": {
+          "A": "Better written plans are a change in output quality within the same rung. The analyst still reads the plan and still does everything the plan describes.",
+          "B": "A larger context lets one request hold more telemetry. The solution still answers and stops, which is the property that keeps it outside the agentic class.",
+          "D": "Fine-tuning adapts a model to the operator's own style of plan. It changes what the model produces and never gives it a step to take."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "theme": "F2",
+      "vertical": "independent bookstore chain",
+      "keywords": [
+        "keyword extraction",
+        "text analysis"
+      ],
+      "type": "single_choice",
+      "question": "An independent bookstore chain collects several thousand customer reviews a month across its shops. The buying team does not want to read the reviews. It wants each review tagged with the salient terms it is about, so reviews can be indexed by subject and the rising terms tracked month by month. Which text analysis technique produces that?",
+      "options": {
+        "A": "Summarization of each review, so the buying team can read a condensed version of what every customer wrote.",
+        "B": "Entity detection over each review, so the team receives the people, places and organizations that each one names.",
+        "C": "Sentiment analysis of each review, so the team receives a polarity score showing how positive each customer was.",
+        "D": "Keyword extraction over each review, so the team receives the salient terms that the review is actually about."
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E07",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Keyword extraction returns the salient terms a text is about, which is what a business wants when it needs to index, route or trend content instead of reading a condensed version of it. Indexing by subject and tracking rising terms are both built on those terms, so this is the text analysis output the requirement names.",
+        "distractors": {
+          "A": "Summarization returns shorter prose that preserves the substance of each review. It is still something to read, and thousands of short reads do not make an index.",
+          "B": "Entity detection returns typed spans naming real things. Authors and shop names are useful and they are not the same as the subjects a review is about.",
+          "C": "A polarity score says how the customer felt. It sorts reviews by mood without saying what any of them discussed."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q16",
+      "domain": "d1",
+      "primary_concept": "C-016",
+      "theme": "F2",
+      "vertical": "heritage museum",
+      "keywords": [
+        "entity detection",
+        "text analysis"
+      ],
+      "type": "single_choice",
+      "question": "A heritage museum has already transcribed its donor correspondence, so the full text of every letter is held as text in the collections system. Curators now need each letter to yield the people, places, organizations and dates it mentions, as typed values, so that letters can be linked to the catalog records for those things. Which technique returns that?",
+      "options": {
+        "A": "Keyword extraction over each letter, returning the terms that the letter is most about.",
+        "B": "Entity detection over each letter, returning typed spans for the people, places, organizations and dates it names.",
+        "C": "Summarization of each letter, returning a short account of what the correspondent was writing to say.",
+        "D": "Optical character recognition over each letter, returning the words on the page in the order they appear."
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E07",
+        "D": "E12"
+      },
+      "rationale": {
+        "correct": "Entity detection returns typed spans naming real things in the text, such as people, places, organizations, dates and quantities, which is a different output from a list of the terms that happen to be salient. Typed spans are what the collections system can match against catalog records, so this is the text analysis the linking work needs.",
+        "distractors": {
+          "A": "Salient terms describe what a letter is about. They arrive untyped, so nothing tells the collections system which of them is a person and which is a place.",
+          "C": "A short account of the letter is prose for a curator to read. It carries no values the catalog can link against.",
+          "D": "Reading characters off a page is the step that produced the transcripts the museum already holds. Running it again returns the same text and no typed values."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q17",
+      "domain": "d1",
+      "primary_concept": "C-017",
+      "theme": "F2",
+      "vertical": "specialty coffee roasting",
+      "keywords": [
+        "sentiment analysis",
+        "text analysis"
+      ],
+      "type": "single_choice",
+      "question": "A specialty coffee roasting subscription receives long written feedback from members. Most messages praise the roast and criticize the delivery in the same paragraph, and the current per-message score comes back neutral. The roastery wants to see how members feel about each thing they commented on. Which use of sentiment analysis meets that?",
+      "options": {
+        "A": "Sentiment analysis at the level of each aspect a member commented on, so roast and delivery carry their own polarity.",
+        "B": "Sentiment analysis at the level of the whole message, with the resulting scores averaged across each week of feedback.",
+        "C": "Keyword extraction over the feedback, returning the terms that members use most often when they write to the roastery.",
+        "D": "A classification model trained on past feedback to sort each incoming message into a happy or an unhappy pile."
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E07",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Sentiment analysis returns polarity, and the granularity matters: one score for a whole document answers a different question from a score attached to each thing the writer commented on. A message praising the roast and criticizing the delivery only stops reading as neutral when the text analysis is done per aspect.",
+        "distractors": {
+          "B": "A document-level score is exactly what is coming back neutral today, and averaging those scores over a week hides the split even more thoroughly.",
+          "C": "The terms members use are already fairly obvious to the roastery. Knowing that delivery is discussed says nothing about whether members are happy with it.",
+          "D": "Sorting whole messages into two piles is a coarser version of the score that is already failing, and a mixed message has no correct pile."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q18",
+      "domain": "d1",
+      "primary_concept": "C-018",
+      "theme": "F2",
+      "vertical": "vocational training college",
+      "keywords": [
+        "summarization",
+        "text analysis"
+      ],
+      "type": "single_choice",
+      "question": "A vocational training college receives a long written placement report from every employer at the end of each term. The head of faculty has to act on what employers actually said before the next term is planned, and has no time to read the full set. Which text analysis technique fits what the head of faculty needs?",
+      "options": {
+        "A": "Keyword extraction across the reports, returning the terms that recur most often in what employers wrote.",
+        "B": "Entity detection across the reports, returning the employers, qualifications and dates that each report names.",
+        "C": "Summarization of each report, returning shorter prose that preserves the substance of what the employer said.",
+        "D": "Sentiment analysis of each report, returning a polarity score for how positive the employer was about the placement."
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E07",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Summarization returns shorter prose that preserves the substance of the original, which is what a reader needs when the goal is to act on the content instead of cataloging what it mentions. The head of faculty has to plan a term from what employers said, and that is a reading task made shorter, not a set of tags.",
+        "distractors": {
+          "A": "Recurring terms show what employers kept mentioning. They do not carry the judgment an employer made about a placement, which is the part the planning turns on.",
+          "B": "Typed spans for employers, qualifications and dates are catalog values. The head of faculty already knows who wrote and about what course.",
+          "D": "A polarity score ranks the reports by mood. It shows where to look without saying what the employer actually asked the college to change."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q19",
+      "domain": "d1",
+      "primary_concept": "C-019",
+      "theme": "F1",
+      "vertical": "driving school network",
+      "keywords": [
+        "speech recognition",
+        "speech"
+      ],
+      "type": "single_choice",
+      "question": "A driving school network asks instructors to record a spoken debrief in the car at the end of each lesson. Head office wants those debriefs held as searchable text in the pupil record, so that the existing text tools can index them and pull out the terms instructors keep raising. Which capability produces what head office needs?",
+      "options": {
+        "A": "Speech synthesis over the debriefs, so each pupil receives a spoken version of the instructor's comments.",
+        "B": "A multimodal model that describes the driving scene recorded by the dashboard camera during each lesson.",
+        "C": "Keyword extraction run over the recordings, returning the terms the instructor used during the spoken debrief.",
+        "D": "Speech recognition over the debriefs, producing a transcript of each one that head office can then index."
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "C": "E12"
+      },
+      "rationale": {
+        "correct": "Speech recognition takes audio in and produces text out, so it is the capability a scenario needs whenever the useful artifact is a transcript that something else will then read. Head office wants indexing and term extraction over the debriefs, and both of those run on text that only speech work can produce from a recording.",
+        "distractors": {
+          "A": "Synthesis runs the other way, turning text into audio. It gives the pupil something to listen to and leaves head office with no text at all.",
+          "B": "Describing the driving scene is vision work on a different input. The instructor's spoken judgment is the content head office asked about.",
+          "C": "Extracting terms is the right ambition applied at the wrong point: a text technique has no input until the audio has been recognized."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q20",
+      "domain": "d1",
+      "primary_concept": "C-020",
+      "theme": "F1",
+      "vertical": "national parks service",
+      "keywords": [
+        "speech synthesis",
+        "speech"
+      ],
+      "type": "single_choice",
+      "question": "A national parks service publishes each trailhead's safety notice as text in its visitor app, where the wording is already held and edited. Visitors with low vision have asked to hear the notice for the trail they are standing at, on their own phone, without waiting for a ranger. Which capability delivers that?",
+      "options": {
+        "A": "Speech recognition in the app, so a ranger reading the notice aloud can be captured for the visitor to keep.",
+        "B": "Speech synthesis in the app, so the stored wording of the notice is produced as audio the visitor can hear.",
+        "C": "Optical character recognition in the app, so the words on the trailhead sign are returned to the visitor as text.",
+        "D": "Translation of the notice in the app, so the visitor reads it on screen in whichever language they have set."
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E12",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Speech synthesis takes text in and produces audio out, so it is the capability a scenario needs whenever a person has to hear something instead of reading it. The parks service already holds the notice as text, which is the input this speech capability consumes.",
+        "distractors": {
+          "A": "Recognition turns audio into text. It needs a ranger to speak first, which is the wait the visitors asked to avoid, and it produces something to read.",
+          "C": "Reading the characters off the physical sign produces text the service already holds and edits, so the step returns the visitor to where they started.",
+          "D": "Translation changes the language of the notice on the screen. A visitor who cannot read the screen is no better served in any language."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q21",
+      "domain": "d1",
+      "primary_concept": "C-021",
+      "theme": "F2",
+      "vertical": "quarry operations",
+      "keywords": [
+        "computer vision",
+        "Computer vision tasks and techniques"
+      ],
+      "type": "multiple_response",
+      "question": "A quarry wants one camera feed over its loading bay to do two things: confirm which product each haul truck is carrying, and count how many trucks are waiting in the bay at any moment. A single overall description of the scene has already been trialed and did not support either job. Select TWO outputs the vision work has to produce.",
+      "options": {
+        "A": "A caption describing what is happening in the loading bay at the moment the frame was taken.",
+        "B": "A label for the product visible in the bed of a truck in the frame.",
+        "C": "A generated image of a correctly loaded truck for the bay operator to compare against.",
+        "D": "A timestamp written into each frame of the recorded loading-bay footage.",
+        "E": "Located instances of each truck within the frame, so the waiting trucks can be counted."
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E02",
+        "D": "E08"
+      },
+      "rationale": {
+        "correct": "What a vision model can be asked to report about an image differs by granularity, and the business need picks the granularity. Computer vision tasks and techniques here split cleanly: confirming the product carried is a label for what is in the frame, and counting waiting trucks needs each truck located as its own instance. One requirement therefore buys two different outputs.",
+        "distractors": {
+          "A": "A description of the scene is the granularity that was already trialed. It reads well and it neither names the product reliably nor separates one truck from another.",
+          "C": "Producing a reference image is generation rather than analysis. It gives the operator something to look at and reports nothing about the trucks in the bay.",
+          "D": "A frame timestamp is a recording detail. It helps someone find the footage later and answers neither of the two questions the quarry asked."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q22",
+      "domain": "d1",
+      "primary_concept": "C-022",
+      "theme": "F1",
+      "vertical": "fashion resale platform",
+      "keywords": [
+        "image-generation models",
+        "computer vision"
+      ],
+      "type": "single_choice",
+      "question": "A fashion resale platform is preparing a seasonal campaign for garment styles it has not yet taken in stock, so no seller photographs of them exist. The marketing team wants studio-style visuals produced from written descriptions of each style. Which capability class does that campaign work need?",
+      "options": {
+        "A": "An image analysis call over the platform's existing seller photographs, describing what each garment in them is.",
+        "B": "An optical character recognition call over the seller photographs, reading the brand and size from the garment labels.",
+        "C": "An image generation model, producing new visuals from the written description of each garment style.",
+        "D": "A model fine-tuned on the platform's own photographs so that searches return closer visual matches to a style."
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E01",
+        "D": "E06"
+      },
+      "rationale": {
+        "correct": "Image generation is a separate capability class from image analysis, and the two sit on opposite sides of computer vision: image-generation models produce new visual content from a description, while analysis reports on visual content that already exists. The campaign needs visuals of garments the platform has never held, so nothing existing can be reported on and only the generative class can serve it.",
+        "distractors": {
+          "A": "Describing existing seller photographs reports on stock the platform already has. The campaign is about styles it has not taken in, so there is nothing to describe.",
+          "B": "Reading labels off photographs returns text from images that exist. It is useful cataloging work and produces no campaign visual.",
+          "D": "Fine-tuning for closer visual matches improves retrieval over the existing library. Better search still cannot surface a photograph that was never taken."
+        }
+      }
+    },
+    {
+      "id": "ai-901-d1-q23",
+      "domain": "d1",
+      "primary_concept": "C-023",
+      "theme": "F1",
+      "vertical": "household moving services",
+      "keywords": [
+        "information extraction",
+        "audio",
+        "video",
+        "images"
+      ],
+      "type": "scenario_matching",
+      "question": "A household moving services company is consolidating five separate backlogs into one information extraction project, and the project lead has to state the content type each backlog presents before any extraction is configured. Match each backlog to its content type. Options may be used more than once.",
+      "matching_options": [
+        "Video",
+        "Text",
+        "Audio",
+        "Images"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Photographs taken by crews on arrival showing damage to furniture before it is loaded."
+        },
+        {
+          "id": "s2",
+          "text": "Recordings from the booking line on which customers state their address, dates and access restrictions."
+        },
+        {
+          "id": "s3",
+          "text": "Quotation requests typed by customers into the website form and stored as they were written."
+        },
+        {
+          "id": "s4",
+          "text": "Dashcam footage of the approach to each property, kept for disputes about access and parking."
+        },
+        {
+          "id": "s5",
+          "text": "Photographs of the labels on packed crates showing the room and the destination address."
+        }
+      ],
+      "answer": {
+        "s1": "Images",
+        "s2": "Audio",
+        "s3": "Text",
+        "s4": "Video",
+        "s5": "Images"
+      },
+      "rationale": {
+        "correct": "Information extraction is one workload that spans four content types, so recognizing which type a backlog actually presents is the first decision and not an implementation detail. Damage photographs and crate-label photographs are both images, which is why one content type covers two of these backlogs. Booking-line recordings are audio, typed quotation requests are text, and dashcam footage of the approach is video. Naming the type is what tells the project lead which extraction path each backlog takes."
+      }
+    },
+    {
+      "id": "ai-901-d1-q24",
+      "domain": "d1",
+      "primary_concept": "C-024",
+      "theme": "F2",
+      "vertical": "customs brokerage",
+      "keywords": [
+        "Optical character recognition (OCR)",
+        "Field extraction and mapping"
+      ],
+      "type": "single_choice",
+      "question": "A customs brokerage receives commercial invoices from shippers as scanned pages in dozens of house layouts. Its declaration system needs the invoice number, currency, total and consignee for each shipment as named values it can post directly, with no clerk reading the page and no parsing code per layout. Which technique meets that requirement?",
+      "options": {
+        "A": "Character reading over each scan, returning the words and figures of the page in the order they appear on it.",
+        "B": "Keyword extraction over each scanned invoice, returning the terms that the invoice is most about.",
+        "C": "Summarization of each scanned invoice, returning a short account of what the shipment contains.",
+        "D": "Field extraction over each scan, returning invoice number, currency, total and consignee as named values."
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E07",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Reading the characters off content is not the same as extracting fields from it. Optical character recognition (OCR) returns text in the order it appears, while Field extraction and mapping returns named values a downstream system can use without further parsing. The declaration system needs values it can post, so only the field-level output removes both the clerk and the per-layout parsing code.",
+        "distractors": {
+          "A": "Page text in reading order is exactly the output that forces parsing code per house layout, which is the work the brokerage asked to remove.",
+          "B": "Salient terms describe what an invoice is about. A declaration needs the consignee and the total, not the subject matter of the document.",
+          "C": "A short account of the shipment is prose for a person. Nothing in it arrives as a value the declaration system can post."
+        }
+      }
+    }
+  ]
 }

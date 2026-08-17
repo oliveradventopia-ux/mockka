@@ -453,21 +453,21 @@
       "vertical": "commercial real estate developer",
       "keywords": ["first-party", "second-party", "third-party"],
       "type": "single_choice",
-      "question": "A commercial real estate developer buys a footfall dataset from a company that compiles anonymized movement counts from many retailers and mobile apps, none of which the developer has any relationship with. The developer pays a licence fee and may use the counts freely in its site appraisals. How should this dataset be classified in the developer's data register?",
+      "question": "A commercial real estate developer buys a footfall dataset from a company that compiles anonymized movement counts from many retailers and mobile apps, none of which the developer has any relationship with. The developer pays a license fee and may use the counts freely in its site appraisals. How should this dataset be classified in the developer's data register?",
       "options": {
         "A": "Second-party data, shared directly by the organization that collected it",
         "B": "Third-party data, acquired from an aggregator that collected none of it itself",
         "C": "Brokered data, a separate class for information resold by an intermediary",
-        "D": "First-party data, because the licence fee transfers ownership to the developer"
+        "D": "First-party data, because the license fee transfers ownership to the developer"
       },
       "answer": "B",
       "distractor_patterns": { "A": "E05", "C": "E08", "D": "D19" },
       "rationale": {
-        "correct": "Origin is what classifies data, not price or licence terms. Third-party data is acquired from an external aggregator that collected it from neither the developer's own customers nor a named partner, which is why its coverage and accuracy have to be taken on the supplier's word.",
+        "correct": "Origin is what classifies data, not price or license terms. Third-party data is acquired from an external aggregator that collected it from neither the developer's own customers nor a named partner, which is why its coverage and accuracy have to be taken on the supplier's word.",
         "distractors": {
           "A": "Second-party data comes directly from a partner the organization deals with, and the developer deals with none of the retailers or apps behind these counts.",
           "C": "No such class exists in the first-party, second-party and third-party scheme, and resale through an intermediary is precisely what makes data third-party.",
-          "D": "Paying for data does not change where it came from. A licence grants use, while first-party data is data the developer collected itself."
+          "D": "Paying for data does not change where it came from. A license grants use, while first-party data is data the developer collected itself."
         }
       }
     },
@@ -585,20 +585,20 @@
       "vertical": "auction house",
       "keywords": ["relational", "non-relational", "object storage", "NoSQL"],
       "type": "single_choice",
-      "question": "An auction house is planning storage for three new workloads: bidder account records with fixed fields and enforced links between them, high-resolution lot photographs and condition videos, and a catalogue where each lot carries whatever attributes its category needs. Before any product is shortlisted, the architect asks the team to classify all three. Which classification is correct?",
+      "question": "An auction house is planning storage for three new workloads: bidder account records with fixed fields and enforced links between them, high-resolution lot photographs and condition videos, and a catalog where each lot carries whatever attributes its category needs. Before any product is shortlisted, the architect asks the team to classify all three. Which classification is correct?",
       "options": {
         "A": "All three are non-relational: only fixed rows and columns count as relational",
-        "B": "Relational for accounts, object storage for the media, non-relational for the catalogue",
-        "C": "Relational for accounts and the catalogue, with object storage for the media",
-        "D": "Non-relational for accounts and the catalogue, with object storage for the media"
+        "B": "Relational for accounts, object storage for the media, non-relational for the catalog",
+        "C": "Relational for accounts and the catalog, with object storage for the media",
+        "D": "Non-relational for accounts and the catalog, with object storage for the media"
       },
       "answer": "B",
       "distractor_patterns": { "A": "D19", "C": "E07", "D": "E05" },
       "rationale": {
-        "correct": "Classification comes before product choice. Fixed fields with enforced links are relational and belong to structured query language; photographs and videos are files, which is object storage; a catalogue whose attributes vary by category is non-relational, the NoSQL shape. Getting these right is what makes the product shortlist short.",
+        "correct": "Classification comes before product choice. Fixed fields with enforced links are relational and belong to structured query language; photographs and videos are files, which is object storage; a catalog whose attributes vary by category is non-relational, the NoSQL shape. Getting these right is what makes the product shortlist short.",
         "distractors": {
           "A": "Relational describes an enforced structure of related tables, not a spreadsheet layout, and bidder accounts with fixed fields and enforced links are the textbook relational case.",
-          "C": "Treating the catalogue as relational forces every category's attributes into one schema, which is the constraint a non-relational model exists to lift; the other two assignments here are right.",
+          "C": "Treating the catalog as relational forces every category's attributes into one schema, which is the constraint a non-relational model exists to lift; the other two assignments here are right.",
           "D": "Bidder accounts with fixed fields and enforced links are the relational case, so classifying them as non-relational discards the referential integrity the auction house depends on."
         }
       }
@@ -779,7 +779,7 @@
       "rationale": {
         "correct": "Ingestion and distribution is Pub/Sub's stage of the pipeline: it accepts events as they arrive and delivers them to every subscriber, so publishers and consumers never need to know about each other. Dataflow's stage comes next, processing what has been ingested, and Managed Service for Apache Spark runs Spark workloads, which is a third stage again.",
         "distractors": {
-          "A": "Dataflow processes readings that something else has already ingested, so it is the neighbouring stage, and pointing the meters at it leaves nothing decoupling publishers from consumers.",
+          "A": "Dataflow processes readings that something else has already ingested, so it is the neighboring stage, and pointing the meters at it leaves nothing decoupling publishers from consumers.",
           "B": "A file export on a schedule holds every reading until the next file and makes each team responsible for fetching it, which is neither ingestion as events arrive nor distribution to subscribers.",
           "D": "Wiring the gateway into each team's system makes the meters aware of every consumer, so adding a fourth team means changing the gateway, the coupling the firm asked to avoid."
         }

@@ -629,6 +629,884 @@
       "rationale": {
         "correct": "The deciding constraint in each case is how much of the stack the consortium must control. Needing to pin the operating-system patch level forces IaaS, the only service type that hands the customer the operating system. Deploying custom code with no runtime or middleware duties is the PaaS split. A finished product configured at the feature-and-user level — the email campaigns and the donor accounting — is SaaS, licensed rather than built, with the least responsibility and the least control."
       }
+    },
+    {
+      "id": "2.01",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "container shipping line",
+      "keywords": [
+        "region",
+        "paired"
+      ],
+      "type": "single_choice",
+      "question": "A container shipping line is planning where its Azure workloads will run, and its architect is asked to explain what an Azure region actually is and why many regions have a partner region. Which explanation is right?",
+      "options": {
+        "A": "A region is a single large datacenter building, and its partner is the identical building next door for fast failover",
+        "B": "A region is a set of nearby datacenters, and platform updates roll out to both members of a pair simultaneously so they stay identical",
+        "C": "A region is a set of datacenters connected by a low-latency network, often paired with a distant region for replication and sequenced updates",
+        "D": "A region is defined by the subscription that deploys into it, so each customer draws its own regional boundaries"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D19",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "An Azure region is a latency-bounded set of datacenters — never a single facility and never a zone — connected by a dedicated low-latency network. Many regions are paired with a partner hundreds of miles away; the platform replicates some services across the pair and sequences platform updates so both members are not updated at once, which is what makes the pair a recovery relationship.",
+        "distractors": {
+          "A": "A region is larger than any one building: it is a set of datacenters. And a partner region is deliberately distant — an identical building next door would share the disasters a pair exists to survive.",
+          "B": "Sequencing is the point of pairing: updates roll to one member of the pair before the other, so a faulty update cannot land on both at once. Simultaneous rollout would remove exactly that protection.",
+          "D": "Regions are platform geography, fixed by the provider; subscriptions choose which regions to deploy into but draw no boundaries of their own."
+        }
+      }
+    },
+    {
+      "id": "2.02",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "ambulance service trust",
+      "keywords": [
+        "sovereign region",
+        "isolated"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance service trust that handles nationally classified dispatch data is told its cloud deployment must use a sovereign region. What is a sovereign region?",
+      "options": {
+        "A": "A private cloud that a government department builds and operates for itself in its own datacenter facilities",
+        "B": "A nationally isolated instance of Azure with its own boundary, built for government and residency obligations",
+        "C": "Any standard Azure region that happens to be physically located inside the nation's own borders",
+        "D": "A management group configured so that resources may only be created in a list of approved regions"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D19",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "A sovereign region is a nationally isolated instance of Azure built for government and residency obligations — a separate cloud with its own boundary and its own operational rules. It is not a deployment model and not just another region on the standard map; isolation at the cloud boundary is what distinguishes it.",
+        "distractors": {
+          "A": "A sovereign region is operated by the cloud provider as an isolated instance of its platform; a government-built private cloud is a different deployment model entirely, not a region type.",
+          "C": "Geography alone does not make a region sovereign: a standard region inside the country still belongs to the provider's global cloud. Sovereignty requires a separately bounded, nationally isolated instance.",
+          "D": "Restricting where resources may be created governs placement within the standard cloud; it builds no isolation boundary and leaves the platform itself shared."
+        }
+      }
+    },
+    {
+      "id": "2.03",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "bus charter company",
+      "keywords": [
+        "availability zones",
+        "power"
+      ],
+      "type": "single_choice",
+      "question": "A bus charter company's booking system runs across an availability set inside one Azure datacenter. A resilience review now requires the design to survive the loss of that entire datacenter, including its power and cooling. Which construct meets the requirement?",
+      "options": {
+        "A": "A larger availability set spanning more fault domains and update domains within the datacenter",
+        "B": "Virtual Machine Scale Sets, which add and remove identical booking instances with demand",
+        "C": "A second copy of the booking data replicated to a storage account in the same datacenter",
+        "D": "Availability zones — physically separate locations in the region with independent power, cooling, and networking"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "The failure class stated is the loss of a whole datacenter. Availability zones are physically separated facilities within one region, each with independent power, cooling, and networking, so a deployment spread across zones keeps running when an entire datacenter — power and cooling included — goes down. Every in-datacenter construct fails with the building it is in.",
+        "distractors": {
+          "A": "Fault domains and update domains separate racks and maintenance windows inside one facility; when the building's power and cooling fail, every domain in it fails together.",
+          "B": "Scale sets solve elasticity — matching instance count to demand — not facility failure; a scale set deployed into a single datacenter is lost with it.",
+          "C": "A replica in the same datacenter shares the same power, cooling, and walls as the original; the copy protects against disk loss, not against the stated failure of the whole facility."
+        }
+      }
+    },
+    {
+      "id": "2.04",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "kitchen equipment wholesaler",
+      "keywords": [
+        "resource group",
+        "membership"
+      ],
+      "type": "single_choice",
+      "question": "At a kitchen equipment wholesaler, the app team and the analytics team both want one production database to appear in their own resource group, and an engineer also insists that group members must share the group's region. Which response resolves the debate correctly?",
+      "options": {
+        "A": "The database can join only one resource group at a time, and its group need not constrain where members are located",
+        "B": "The database can be placed into both resource groups at the same time so that each team sees it inside its own group",
+        "C": "The two groups must first be moved to the database's region, as members and their group must share a location",
+        "D": "Grant the analytics team owner rights over the whole subscription so that group membership stops mattering"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E02",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "A resource belongs to exactly one resource group at a time — membership is exclusive, though a resource can be moved between groups. Membership also does not constrain location: a group can hold members from different regions, and the group's own location metadata does not bind its members. The right resolution is choosing one home group; management access is a separate question from membership.",
+        "distractors": {
+          "B": "Exclusive membership is the rule: one resource, one resource group at any moment. A second team's visibility is solved with access control, not with double membership the platform does not offer.",
+          "C": "No such co-location rule exists — a resource group routinely holds members located in different regions, and moving groups around to chase a region would achieve nothing.",
+          "D": "Subscription-wide owner rights hand the analytics team every resource in the estate to reach one database — far more access than the goal warrants, and no answer to how groups actually behave."
+        }
+      }
+    },
+    {
+      "id": "2.05",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "insurance brokerage",
+      "keywords": [
+        "subscription",
+        "billing"
+      ],
+      "type": "single_choice",
+      "question": "An insurance brokerage runs two divisions whose Azure spend must be invoiced separately, while all staff keep signing in with the same directory identities. Which construct separates the billing?",
+      "options": {
+        "A": "Two separate Microsoft Entra tenants, since every subscription requires a directory tenant of its own",
+        "B": "Two subscriptions that trust the one directory tenant, as a subscription is a billing and access boundary",
+        "C": "Two resource groups inside a single subscription, each tagged with its own division's cost center",
+        "D": "A month-end billing report filtered by division tags, shared with each division's finance lead"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E02",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "The subscription is the billing and access boundary that owns resource groups: separate subscriptions produce separately invoiced spend. Identity does not need to split, as many subscriptions can trust the same directory tenant — so both divisions keep their existing sign-ins while their costs part cleanly.",
+        "distractors": {
+          "A": "The relationship runs the other way: a single tenant can be trusted by many subscriptions. Splitting the directory would fracture sign-in for no billing gain a second subscription does not already deliver.",
+          "C": "Resource groups organize resources inside one subscription and one bill; tags can slice a cost report, but the invoice itself remains a subscription-level document.",
+          "D": "A filtered report describes the shared bill after the fact; it does not create the separate invoicing the divisions require, and the underlying billing boundary is untouched."
+        }
+      }
+    },
+    {
+      "id": "2.06",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "mining equipment supplier",
+      "keywords": [
+        "management group",
+        "inherits"
+      ],
+      "type": "single_choice",
+      "question": "A mining equipment supplier has grown to forty Azure subscriptions across its business units. A governance lead must apply one compliance requirement to every subscription, current and future, with the least ongoing effort. Where should the assignment be applied?",
+      "options": {
+        "A": "To each of the subscriptions in turn today, and again to each new subscription as it is created",
+        "B": "To every resource group across all the subscriptions, keeping the assignment as close to resources as possible",
+        "C": "Into the platform onboarding runbook that every project team is required to read and follow",
+        "D": "At a management group above the subscriptions, so the assignment inherits down to every current and future one"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "E02",
+        "C": "D09"
+      },
+      "rationale": {
+        "correct": "The containment chain reads resource, resource group, subscription, management group — and settings applied at a level inherit down the chain. Governance at scale is applied at the level above subscriptions precisely so one assignment reaches every subscription beneath it, including ones created later, with no per-subscription repetition.",
+        "distractors": {
+          "A": "Per-subscription assignment works today and breaks tomorrow: it multiplies effort by the subscription count and depends on someone remembering every new subscription — the hierarchy exists so nobody has to.",
+          "B": "Resource groups sit below subscriptions; assigning there multiplies the work further and leaves gaps whenever a new group appears. Inheritance flows down from above, which is where a broad obligation belongs.",
+          "C": "A runbook informs people; it enforces nothing. Compliance that lives in documentation depends on every team reading and remembering it, which is not a control."
+        }
+      }
+    },
+    {
+      "id": "2.07",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "commercial bakery group",
+      "keywords": [
+        "containers",
+        "Azure Functions"
+      ],
+      "type": "single_choice",
+      "question": "A commercial bakery group runs three workloads: a legacy ordering app that needs its own specially configured operating system, a packaged web API the team ships as a portable image, and a snippet of code that should run only when a delivery webhook fires. Which mapping fits the three?",
+      "options": {
+        "A": "Virtual machines for the ordering app, containers for the packaged API, Azure Functions for the webhook code",
+        "B": "Containers for all three workloads, as container images standardize operations across every environment",
+        "C": "Virtual machines for all three workloads, sized generously so that each has headroom to grow into",
+        "D": "Azure Functions for the ordering app, virtual machines for the webhook code, and containers for the API"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "D03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The choice follows what the workload needs you to manage. Needing a specially configured operating system means owning the OS, which is the virtual machine case. A packaged runtime shipped as a portable image is the container case. Code that should exist only while an event is being handled — the delivery webhook — is the functions case: event-driven, with nothing to manage between firings.",
+        "distractors": {
+          "B": "Standardizing on images ignores the first workload's stated need to own and configure its operating system, which containers deliberately abstract away; the slogan fits two workloads and breaks on the third.",
+          "C": "Uniform virtual machines hand the team three operating systems to patch when only one workload needs that control, and generous sizing pays around the clock for a webhook that runs in bursts.",
+          "D": "This mapping crosses every need: the OS-bound ordering app loses its operating system on Functions, and the event-driven snippet inherits a full virtual machine that idles between webhooks."
+        }
+      }
+    },
+    {
+      "id": "2.08",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "car rental fleet operator",
+      "keywords": [
+        "Virtual Machine Scale Sets",
+        "availability set"
+      ],
+      "type": "single_choice",
+      "question": "A car rental fleet operator's reservation web tier runs on identical virtual machines, and the instance count should rise and fall automatically as booking demand moves. Which construct provides this?",
+      "options": {
+        "A": "An availability set that spreads the reservation tier across update domains and fault domains",
+        "B": "Azure Virtual Desktop, which delivers managed instances to reservation staff on demand",
+        "C": "Virtual Machine Scale Sets running identical managed instances that grow and shrink with demand",
+        "D": "A single larger VM size with capacity for the peak, avoiding instance-count changes entirely"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Virtual Machine Scale Sets run a set of identical, centrally managed instances and change the instance count automatically with demand — elasticity for a uniform tier is exactly their job. Availability sets and Azure Virtual Desktop answer different questions, and a bigger machine answers none: demand here moves both up and down.",
+        "distractors": {
+          "A": "An availability set staggers update domains and fault domains so maintenance and hardware failure do not take the whole tier down at once; it never changes how many instances exist.",
+          "B": "Azure Virtual Desktop delivers the desktop itself as a service to end users; a public reservation web tier is not a desktop workload.",
+          "D": "One large machine sized for the peak pays for the peak at every hour of the year and still offers no automatic response when demand exceeds the guess."
+        }
+      }
+    },
+    {
+      "id": "2.09",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "heavy machinery importer",
+      "keywords": [
+        "network interface",
+        "public IP"
+      ],
+      "type": "multiple_response",
+      "question": "A heavy machinery importer is scripting the creation of a new Azure virtual machine for an internal parts catalog that must not be reachable from the internet. Which TWO resources are required for the VM to exist and run at all? (Select TWO.)",
+      "options": {
+        "A": "A managed disk for the operating system",
+        "B": "A public IP address on the network interface",
+        "C": "A network interface joined to a virtual network",
+        "D": "An Azure Bastion host deployed into the virtual network",
+        "E": "An availability set containing the virtual machine"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "D13",
+        "D": "D01",
+        "E": "E03"
+      },
+      "rationale": {
+        "correct": "A virtual machine cannot exist without its dependent resources: an operating-system disk and a network interface that joins it to a virtual network, each created alongside the VM and billed as itself. A public address is required only when the machine must be reachable from the internet — the opposite of this catalog's requirement.",
+        "distractors": {
+          "B": "A public IP address is optional, attached only when internet reachability is wanted; for an internal-only catalog it would add exposure the requirement explicitly rules out.",
+          "D": "Bastion is an access convenience for administrators, not an existence requirement; virtual machines run without one.",
+          "E": "An availability set is a resilience option chosen at deployment, not a dependency: a standalone VM needs no set to exist."
+        }
+      }
+    },
+    {
+      "id": "2.10",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "golf resort group",
+      "keywords": [
+        "web app",
+        "host"
+      ],
+      "type": "single_choice",
+      "question": "A golf resort group is choosing where its booking website runs. The two-person web team wants to push code and have the host's operating system, patching, and web-server plumbing handled for them — and it does not want to adopt container images. Which hosting option fits?",
+      "options": {
+        "A": "A container platform running the site as images the team builds, ships, and maintains itself",
+        "B": "A managed web app, deploying code while the platform operates the host beneath it",
+        "C": "Virtual machines, giving the team full control of the web server and its operating system",
+        "D": "Azure Front Door, caching the booking pages at the edge so that no web host is required"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D01",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "The deciding question for application hosting is how much of the host the team wants to own. Wanting to push code while the operating system, patching, and web-server plumbing are handled by the platform — and explicitly not managing container images — points at the managed web app option: the platform operates the host, and the team owns only the application.",
+        "distractors": {
+          "A": "Containers shift the packaging to images the team builds and maintains, which is precisely the adoption the team declined; that host abstraction is bought with new packaging work.",
+          "C": "Full control of the web server and operating system is what a two-person team asked to avoid: virtual machines hand back patching and plumbing along with the control.",
+          "D": "Front Door sits outside this decision and outside the outline's hosting options — edge caching accelerates delivery of a site that must still be hosted somewhere, and a booking site's dynamic pages need that host."
+        }
+      }
+    },
+    {
+      "id": "2.11",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "ceramics manufacturer",
+      "keywords": [
+        "virtual network",
+        "Azure DNS"
+      ],
+      "type": "single_choice",
+      "question": "A ceramics manufacturer places its production database subnet and its web subnet in the same virtual network. An auditor asks what traffic flows by default and how the estate's name resolution should be run. Which statement is correct?",
+      "options": {
+        "A": "Subnets inside one virtual network are isolated from one another until virtual network peering is explicitly configured between them",
+        "B": "Two virtual networks route to each other automatically, since every Azure virtual network shares the platform's one backbone",
+        "C": "The estate's DNS zones must run on separate infrastructure with separate credentials, kept apart from the Azure estate",
+        "D": "The virtual network is isolated by default, its subnets route to each other, and Azure DNS is managed like any other Azure resource"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D19",
+        "C": "D01"
+      },
+      "rationale": {
+        "correct": "Isolation sits at the virtual network boundary, not inside it: a virtual network is isolated by default, while the subnets that segment it route to one another by default. Name resolution does not need an outside system — Azure DNS hosts the zones and is managed with the same credentials, tooling, and billing as the rest of the estate.",
+        "distractors": {
+          "A": "Peering connects separate virtual networks; subnets of the same network need no such step and exchange traffic by default — restricting them is what requires deliberate configuration.",
+          "B": "The default runs the other way between networks: each virtual network is an isolation boundary, and traffic flows between two of them only once peering or a gateway is configured.",
+          "C": "Separateness is exactly what Azure DNS removes: zones are Azure resources, administered with the estate's existing credentials and tooling rather than on a parallel system."
+        }
+      }
+    },
+    {
+      "id": "2.12",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "cruise line operations",
+      "keywords": [
+        "ExpressRoute",
+        "site-to-site"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line operations center must connect its on-premises booking estate to Azure. The link will carry constant reservation traffic, and the line's regulators require predictable latency on a path that does not traverse the public internet. Which connectivity option fits?",
+      "options": {
+        "A": "ExpressRoute, a private circuit into Azure with predictable latency",
+        "B": "A site-to-site VPN, an encrypted tunnel from the operations center over the internet",
+        "C": "Point-to-site VPN connections established from each of the booking terminals individually",
+        "D": "Virtual network peering configured between the operations center and the Azure estate"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E03",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The constraints are who is connecting and which requirement dominates: a whole on-premises site, constant traffic, and a regulatory bar on the public internet with predictable latency. That combination is ExpressRoute's case — a private circuit that does not traverse the public internet and behaves predictably. VPN options are encrypted tunnels over the internet, which the requirement excludes.",
+        "distractors": {
+          "B": "A site-to-site VPN connects the right parties the wrong way: the tunnel is encrypted but still rides the public internet, so its latency can never be promised to a regulator.",
+          "C": "Point-to-site serves a single client device at a time; connecting an operations center's whole estate terminal-by-terminal misreads who is connecting, and each tunnel still crosses the internet.",
+          "D": "Peering joins virtual networks to each other across the Microsoft backbone; it has no on-premises end and cannot be the site link this design needs."
+        }
+      }
+    },
+    {
+      "id": "2.13",
+      "domain": "d2",
+      "primary_concept": "C-031",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "art auction house",
+      "keywords": [
+        "private endpoint",
+        "Microsoft backbone"
+      ],
+      "type": "single_choice",
+      "question": "An art auction house keeps consignor contracts in an Azure storage service that is currently reached at its public endpoint. Security asks what actually changes if access moves to a private endpoint inside the firm's virtual network. Which answer is right?",
+      "options": {
+        "A": "Both endpoint types ultimately resolve to the same internet-facing address, so the attack surface stays unchanged",
+        "B": "Traffic still leaves the virtual network and crosses the public internet, but wrapped inside an encrypted tunnel",
+        "C": "The service becomes reachable from inside the virtual network over the Microsoft backbone, and public exposure can be removed",
+        "D": "The contracts must move onto virtual machines inside the virtual network, since platform services cannot be reached privately"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "A private endpoint gives the service an address inside the firm's own virtual network, and traffic to it travels privately over the Microsoft backbone rather than the public internet. What a public endpoint exposes — a service reachable from the internet — is exactly what the change removes from the attack surface once public access is disabled.",
+        "distractors": {
+          "A": "The two endpoint types differ in precisely the property at stake: a private endpoint is an address inside the virtual network, unreachable from the internet, not a relabeled public one.",
+          "B": "An encrypted path across the internet describes a VPN, not a private endpoint; private endpoint traffic stays on the Microsoft backbone and never transits the public internet.",
+          "D": "No redeployment is needed — private endpoints exist so that platform services can be reached privately as they are, without rebuilding them onto infrastructure the firm must then run."
+        }
+      }
+    },
+    {
+      "id": "2.14",
+      "domain": "d2",
+      "primary_concept": "C-032",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "city library network",
+      "keywords": [
+        "Azure Files",
+        "SMB"
+      ],
+      "type": "scenario_matching",
+      "question": "A city library network is redesigning storage for five workloads and must land each on the Azure Storage service whose data shape and access pattern fit. For each workload below, select the storage service. Options may be used more than once.",
+      "matching_options": [
+        "Azure Files",
+        "Azure Queue Storage",
+        "Azure Blob Storage",
+        "Azure Disk Storage"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Digitized rare-book scans — millions of unstructured image files served to the public catalog at scale."
+        },
+        {
+          "id": "s2",
+          "text": "A shared drive of branch administrative documents that staff open over SMB at a UNC path from library PCs."
+        },
+        {
+          "id": "s3",
+          "text": "The persistent volume behind the catalog database server, attached to its Azure virtual machine."
+        },
+        {
+          "id": "s4",
+          "text": "Small transient messages passed between the checkout kiosks and the worker that emails borrowers."
+        },
+        {
+          "id": "s5",
+          "text": "Nightly export bundles of circulation statistics — large binary objects written once, then read by analysts."
+        }
+      ],
+      "answer": {
+        "s1": "Azure Blob Storage",
+        "s2": "Azure Files",
+        "s3": "Azure Disk Storage",
+        "s4": "Azure Queue Storage",
+        "s5": "Azure Blob Storage"
+      },
+      "rationale": {
+        "correct": "Each storage service matches a data shape and access pattern. Unstructured objects at scale — image scans and export bundles alike — are the blob case. Documents opened over SMB at a UNC path are the files case: a managed file share behaving like the network drive staff already know. A volume attached to a virtual machine is the disk case. Small transient messages passed between components are the queue case. The pair to hold apart is blobs and files: both hold files in the everyday sense, but only Azure Files presents them as an SMB share."
+      }
+    },
+    {
+      "id": "2.15",
+      "domain": "d2",
+      "primary_concept": "C-033",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "academic publishing house",
+      "keywords": [
+        "archive tier",
+        "access pattern"
+      ],
+      "type": "single_choice",
+      "question": "An academic publishing house must retain every typeset manuscript for seven years. Manuscripts are read constantly during their first months, then almost never — but each must remain retrievable throughout. Finance wants the storage spend reduced. What should drive the tier choice?",
+      "options": {
+        "A": "Importance of the data: contractually retained manuscripts belong in the frequent-access tier for safety",
+        "B": "Access pattern over each manuscript's lifetime: the frequent-access tier while new, then cooler and archive rungs as reads stop",
+        "C": "Moving everything to the archive tier at once, as that rung has the lowest per-gigabyte holding price",
+        "D": "Deferring every tier decision until the seven-year retention period ends, avoiding early moves that might need reversing later"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "D14",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Storage tiers trade storage price against access price: the frequent-access tier costs most to hold and least to read, and the archive tier the reverse. The right rung is read off the access pattern — heavily read while new, almost never after — so manuscripts should start hot and descend to cooler and archive rungs as reads stop, staying retrievable at every rung.",
+        "distractors": {
+          "A": "Importance is not a tier criterion — every tier is durable, and a contract in the archive tier is as safe as one in the frequent-access tier. What differs is the price of holding versus the price and speed of reading.",
+          "C": "The archive tier's holding price is bought with the highest access cost and slowest retrieval; archiving manuscripts that are read constantly in their first months moves the spend into reads instead of removing it.",
+          "D": "Deferral pays the frequent-access holding price for years of manuscripts nobody reads; the saving on offer comes precisely from moving down the rungs when the access pattern changes."
+        }
+      }
+    },
+    {
+      "id": "2.16",
+      "domain": "d2",
+      "primary_concept": "C-034",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "bicycle-share operator",
+      "keywords": [
+        "geo-redundant",
+        "locally redundant"
+      ],
+      "type": "single_choice",
+      "question": "A bicycle-share operator stores two datasets: dock telemetry that the bikes can regenerate at any time, and irreplaceable trip-history records that anchor its city contracts. The current default replicates both geo-redundantly. What should the redundancy review conclude?",
+      "options": {
+        "A": "Keep both datasets geo-redundant, as maximum redundancy is always the safest choice",
+        "B": "Move both datasets down to locally redundant storage so the account's costs fall together",
+        "C": "The redundancy rungs differ only in price, as every option survives the same failure classes at different speeds",
+        "D": "Drop the regenerable telemetry to locally redundant storage and keep the irreplaceable records geo-redundant"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D14",
+        "B": "D11",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "The redundancy ladder is read by copies, distance, and the failure class each rung survives — and it is climbed in both directions. Irreplaceable records that anchor city contracts justify the distance of geo-redundancy; telemetry that the bikes can regenerate at any time is expendable, and the cheapest rung is the correct choice for it, not a compromise.",
+        "distractors": {
+          "A": "Maximum redundancy for regenerable telemetry buys protection the data does not need; the ladder exists so each dataset pays for the failure class that actually threatens it.",
+          "B": "Locally redundant copies stand in one facility; for irreplaceable contract records that choice accepts losing everything with a single site, which no saving on telemetry justifies.",
+          "C": "The rungs differ in what they survive, not merely in speed or price: local redundancy fails with its facility, zone redundancy survives a datacenter, and geo-redundancy survives a regional event."
+        }
+      }
+    },
+    {
+      "id": "2.17",
+      "domain": "d2",
+      "primary_concept": "C-035",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "architectural design firm",
+      "keywords": [
+        "Azure File Sync",
+        "AzCopy"
+      ],
+      "type": "single_choice",
+      "question": "An architectural design firm keeps project files on an on-premises Windows file server that branch staff rely on daily, and wants that same share continuously mirrored into Azure Files so both copies stay in step as designs change. Which tool performs this job?",
+      "options": {
+        "A": "Azure File Sync, keeping the on-premises share and Azure Files continuously synchronized",
+        "B": "AzCopy, scripted from the command line to copy the share's contents into Azure",
+        "C": "Azure Storage Explorer, used to browse and transfer the project folders graphically",
+        "D": "Azure Data Box appliances, shipping the file server's contents to Azure on a schedule"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D05",
+        "D": "D10"
+      },
+      "rationale": {
+        "correct": "Continuous two-way synchronization between an on-premises Windows file server and Azure Files is exactly Azure File Sync's job: staff keep using the local share while the cloud copy stays in step as files change. The other tools move data; only File Sync keeps two live copies aligned over time.",
+        "distractors": {
+          "B": "AzCopy performs scripted bulk copies from the command line; every run is a one-way snapshot, and nothing keeps the two sides aligned between runs.",
+          "C": "Storage Explorer is a graphical browse-and-transfer client — right for occasional manual moves, but a person dragging folders is not a synchronization mechanism.",
+          "D": "Data Box is a shipped appliance for volumes the network cannot carry; scheduling shipments still leaves the share and the cloud copy divergent between deliveries."
+        }
+      }
+    },
+    {
+      "id": "2.18",
+      "domain": "d2",
+      "primary_concept": "C-036",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "glass recycling plant",
+      "keywords": [
+        "Azure Data Box",
+        "uplink"
+      ],
+      "type": "single_choice",
+      "question": "A glass recycling plant must move 900 TB of furnace-sensor archives into Azure within six weeks, and its site uplink can carry at most 40 TB in that window while still serving daily traffic. Which migration path fits?",
+      "options": {
+        "A": "Run the transfer over the wire with Azure Migrate, compressing the archives until they fit the uplink",
+        "B": "Order a faster uplink for the site and stream the archives once the new line is installed",
+        "C": "Ship the archives on Azure Data Box appliances, as the wire cannot carry the volume in the time available",
+        "D": "Send a 40 TB sample of the archives now and defer the remainder to the following quarters"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D04",
+        "B": "D03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "The decision is data volume against network feasibility: 900 TB must arrive within the deadline, and the uplink can carry at most 40 TB in that window. When the wire cannot carry the data in the time available, shipped appliances are the path — Azure Data Box moves the volume offline while the uplink keeps serving daily traffic.",
+        "distractors": {
+          "A": "Compression is a knob, not a bridge: no realistic ratio closes the gap between 900 TB and a 40 TB window, and the transfer mechanism remains the same saturated wire.",
+          "B": "A faster line might eventually carry the volume, but procurement and installation consume the very six weeks this migration has; the constraint binds now, not after an upgrade.",
+          "D": "Shipping a sample redefines the requirement instead of meeting it: the deadline applies to the archives as a whole, and the remainder compounds into an identical problem next quarter."
+        }
+      }
+    },
+    {
+      "id": "2.19",
+      "domain": "d2",
+      "primary_concept": "C-037",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "industrial laundry service",
+      "keywords": [
+        "Microsoft Entra Domain Services",
+        "domain-join"
+      ],
+      "type": "single_choice",
+      "question": "An industrial laundry service is retiring its last on-premises servers. Most workloads authenticate against Microsoft Entra ID, but one legacy scheduling app still requires classic domain-join and older domain protocols. What serves the legacy app without redeploying domain controllers?",
+      "options": {
+        "A": "Configure the app for single sign-on, which replaces the domain protocols it depends on",
+        "B": "Deploy new domain controller virtual machines in Azure and continue managing the domain by hand",
+        "C": "Microsoft Entra ID alone, as the cloud directory speaks every protocol that legacy apps use",
+        "D": "Microsoft Entra Domain Services, a managed domain that provides the legacy protocols"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D01",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "Microsoft Entra ID is the identity authority for users, applications, and devices, and Microsoft Entra Domain Services exists precisely for workloads that still need classic domain-join and legacy domain protocols — a managed domain, served without deploying or operating domain controllers. One tenant keeps serving cloud identities while the managed domain carries the legacy app.",
+        "distractors": {
+          "A": "Single sign-on reduces how often users authenticate across applications; it does not supply the domain-join and legacy protocols the scheduling app itself requires.",
+          "B": "Self-run domain controllers do provide the protocols, at the price of rebuilding the very server estate and operations burden the retirement was meant to end.",
+          "C": "The cloud directory deliberately does not speak the older domain protocols; that gap is the reason the separate managed-domain service exists."
+        }
+      }
+    },
+    {
+      "id": "2.20",
+      "domain": "d2",
+      "primary_concept": "C-038",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "motorcycle dealership network",
+      "keywords": [
+        "authentication",
+        "authorization"
+      ],
+      "type": "single_choice",
+      "question": "A motorcycle dealership network's helpdesk keeps conflating two identity terms, so a trainer gives an example: a salesperson signs in with a password plus a one-time code, and is then allowed to see only her own branch's inventory. Which pairing of terms is correct?",
+      "options": {
+        "A": "Both steps are part of authentication, which finishes only once the inventory scope has been applied",
+        "B": "The sign-in with a second factor is authentication; the branch-inventory limit is authorization",
+        "C": "The sign-in step is the authorization, and the branch-inventory limit is the authentication",
+        "D": "The one-time code makes this passwordless authentication, which also grants the branch permissions"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "E03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Authentication proves who someone is; authorization decides what they may do. A password plus a one-time code is multifactor authentication (MFA) — two proofs of identity — and it ends when identity is established. Limiting the signed-in salesperson to her own branch's inventory is authorization, applied after identity is proven. Passwordless would remove the password entirely, which this sign-in does not.",
+        "distractors": {
+          "A": "Folding the two together erases the boundary the terms exist to mark: proving identity completes before any scope decision, and the inventory limit is a permission, not a proof.",
+          "C": "This reverses the terms: proving who is signing in — password and one-time code — is authentication, and the inventory boundary applied afterward is authorization.",
+          "D": "Passwordless removes the password in favor of another factor; a password plus a code is multifactor authentication, and no authentication factor grants permissions by itself."
+        }
+      }
+    },
+    {
+      "id": "2.21",
+      "domain": "d2",
+      "primary_concept": "C-039",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "children's education charity",
+      "keywords": [
+        "external identities",
+        "partner"
+      ],
+      "type": "single_choice",
+      "question": "A children's education charity wants volunteer coordinators at partner schools — people who already have school accounts — to work in the charity's grant-tracking app without the charity creating or managing accounts for them. Which capability fits?",
+      "options": {
+        "A": "External identities, letting the partners collaborate using the accounts they already have",
+        "B": "Guest passwords created in the charity's tenant and emailed to each coordinator by the admin",
+        "C": "Multifactor authentication for the coordinators, which lets outside users into the tenant",
+        "D": "One shared partner sign-in account used by all the schools, with its password rotated quarterly"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "E01",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "External identities exist for boundary-crossing access: partners and customers who are not in the tenant collaborate using the identities they already hold, with nothing created or managed for them in the charity's directory. The requirement — outside collaborators, no account administration — is that construct's definition.",
+        "distractors": {
+          "B": "Hand-created guest passwords are precisely the account creation and management the charity wants to avoid, and mailed credentials add a handling risk on top of the burden.",
+          "C": "Multifactor authentication strengthens proof of identity for accounts that already have access; it is not a mechanism for admitting people from another organization.",
+          "D": "A shared account erases individual identity: every school acts as one indistinguishable user, access cannot be revoked for one partner alone, and the password spreads further on every rotation."
+        }
+      }
+    },
+    {
+      "id": "2.22",
+      "domain": "d2",
+      "primary_concept": "C-040",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "coffee roastery chain",
+      "keywords": [
+        "Conditional Access",
+        "sign-in"
+      ],
+      "type": "single_choice",
+      "question": "A coffee roastery chain wants this rule: staff signing in from managed roastery laptops on the office network proceed normally, but any sign-in from an unmanaged device or unfamiliar location must first satisfy an additional check before access is granted. Which capability implements the rule?",
+      "options": {
+        "A": "A stricter tenant-wide password policy applied equally to every account and every device",
+        "B": "Azure role-based access control assignments scoped to the roastery's office network subnet",
+        "C": "Microsoft Entra Conditional Access, evaluating signals like device state and location at sign-in",
+        "D": "A weekly review of the tenant's sign-in logs that flags risky access after it has occurred"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "E01",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Deciding at sign-in time what a user must satisfy, from signals such as location, device state, and detected risk, is Microsoft Entra Conditional Access: policy evaluated at the point of authentication, not a standing permission. Familiar signals pass through; unfamiliar ones trigger the additional requirement before access is granted — exactly the rule described.",
+        "distractors": {
+          "A": "A password policy is uniform and signal-blind: it cannot distinguish a roastery laptop on the office network from an unknown device elsewhere, so it cannot vary the requirement between them.",
+          "B": "Role-based access control decides what a signed-in identity may do; it neither observes devices and locations nor imposes requirements at the moment of authentication.",
+          "D": "A log review discovers the risky sign-in days after it succeeded; the requirement is a gate evaluated before access is granted, not an audit that follows it."
+        }
+      }
+    },
+    {
+      "id": "2.23",
+      "domain": "d2",
+      "primary_concept": "C-041",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "orchestra and concert hall",
+      "keywords": [
+        "role assignment",
+        "union"
+      ],
+      "type": "single_choice",
+      "question": "At an orchestra and concert hall, an engineer holds the Reader role on the whole subscription and the Contributor role on one resource group inside it. A colleague claims the subscription-level Reader overrides the narrower grant, leaving the engineer unable to change anything. What is the real effect?",
+      "options": {
+        "A": "The colleague is right: the broadest scope wins, and every narrower assignment is ignored",
+        "B": "The most restrictive assignment applies everywhere, so the engineer is effectively read-only across the estate",
+        "C": "Contributor on the resource group flows upward through the hierarchy, making the engineer a Contributor on the whole subscription",
+        "D": "The assignments combine as a union: read across the subscription, write within that one resource group and its resources"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Multiple role assignments combine as the union of what they grant, never the intersection: the subscription-level Reader adds read access everywhere, and the resource-group Contributor adds write access within its scope, inherited downward by the group's resources. Nothing overrides anything — each assignment keeps granting its actions at its scope.",
+        "distractors": {
+          "A": "Scope breadth carries no priority: a broad read grant neither blocks nor absorbs a narrower write grant, and the engineer keeps both sets of permissions at once.",
+          "B": "Reading the combination as most-restrictive turns union into intersection — the model works the other way, adding grants together rather than reducing them to the narrowest.",
+          "C": "Inheritance in the hierarchy flows downward only: a grant at a resource group reaches the resources inside it and never climbs to the subscription above."
+        }
+      }
+    },
+    {
+      "id": "2.24",
+      "domain": "d2",
+      "primary_concept": "C-042",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "bottled-water distributor",
+      "keywords": [
+        "Zero Trust",
+        "defense-in-depth"
+      ],
+      "type": "multiple_response",
+      "question": "A bottled-water distributor is rewriting its security standards after moving to Azure. The draft must reflect the Zero Trust model specifically, not merely generic good practice. Which TWO requirements belong under the Zero Trust heading? (Select TWO.)",
+      "options": {
+        "A": "Traffic originating inside the corporate network is trusted and skips re-verification",
+        "B": "Independent security layers are stacked so one breached layer does not breach the system",
+        "C": "Every access request is verified explicitly, whatever network position it comes from",
+        "D": "The perimeter firewall is doubled up so that the boundary becomes harder to cross",
+        "E": "Identities receive the minimum access needed, granted just-in-time where possible"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Zero Trust assumes the network is already hostile: no request is trusted for its network position, every access is verified explicitly, and least-privilege access — minimal and just-in-time — limits what any verified identity can do. Those two requirements restate the model's own principles. Layering controls is the defense-in-depth model: sound practice, but a different model answering a different question.",
+        "distractors": {
+          "A": "Trusting inside-the-perimeter traffic is the assumption Zero Trust exists to reject; assuming breach means the corporate network is not a trust signal at all.",
+          "B": "Stacked independent layers describe the defense-in-depth model — the draft's other heading, not the Zero Trust one; the two models prescribe different things.",
+          "D": "A stronger perimeter deepens the boundary the Zero Trust model declines to rely on; doubling it is perimeter thinking, whatever the thickness."
+        }
+      }
+    },
+    {
+      "id": "2.25",
+      "domain": "d2",
+      "primary_concept": "C-043",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "engineering consultancy",
+      "keywords": [
+        "Microsoft Defender for Cloud",
+        "posture"
+      ],
+      "type": "single_choice",
+      "question": "An engineering consultancy wants a single service that continuously assesses the security posture of its Azure estate, protects its resources against threats, and shows how the infrastructure measures up against regulatory standards. Which service does this?",
+      "options": {
+        "A": "Microsoft Defender for Cloud",
+        "B": "Microsoft Purview",
+        "C": "Azure Security Center",
+        "D": "Azure Advisor"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Continuous security-posture assessment, threat protection across the estate, and a regulatory-compliance view of the infrastructure are Microsoft Defender for Cloud's job description. The near misses govern different things: Purview governs and classifies the data estate, Advisor recommends across best-practice categories, and the old Security Center name has been folded into Defender for Cloud.",
+        "distractors": {
+          "B": "Microsoft Purview discovers, maps, and protects sensitive data wherever it travels — governance of the data estate, not posture assessment and threat protection for the infrastructure that holds it.",
+          "C": "Security Center is the service's former name: its capabilities now live inside Microsoft Defender for Cloud, and the current outline knows only the successor.",
+          "D": "Azure Advisor recommends improvements — security among its categories — by analyzing existing resources; it is an advisory surface, not continuous threat protection with a compliance view."
+        }
+      }
     }
   ]
 }

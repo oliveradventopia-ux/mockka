@@ -530,6 +530,958 @@
           "D": "Double hashing is more of the same fast computation; it adds one negligible step for defender and attacker alike."
         }
       }
+    },
+    {
+      "id": "d2-q01",
+      "domain": "d2",
+      "primary_concept": "C-016",
+      "theme": "S1",
+      "vertical": "children's hospital network",
+      "keywords": [
+        "nation-state",
+        "organized crime",
+        "sophistication",
+        "threat actor"
+      ],
+      "type": "single_choice",
+      "question": "A children's hospital network discovers an intrusion that has quietly persisted for over a year. The attackers used custom-built malware never seen elsewhere, staged data from a rare-disease research program, and made no ransom demand or public statement. Which threat actor does the evidence best indicate?",
+      "options": {
+        "A": "Organized crime",
+        "B": "A nation-state actor",
+        "C": "A hacktivist group",
+        "D": "An insider threat"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E05",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "The threat actor is named from what the description implies, not from the victim's industry. Custom tooling and a year of quiet persistence indicate deep resources and sophistication, and staging research data with no monetary demand points to espionage — the nation-state profile.",
+        "distractors": {
+          "A": "Organized crime is the reflex answer for a hospital victim, but criminal groups monetize — ransom, extortion, resale — and this intrusion asked for nothing.",
+          "C": "A hacktivist attacks to be seen: defacement, leaks, public statements. A year of silence is the opposite of an ideological campaign.",
+          "D": "Long dwell time does not imply an internal position — external actors routinely persist for months, and nothing else in the evidence suggests an employee."
+        }
+      }
+    },
+    {
+      "id": "d2-q02",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "theme": "S1",
+      "vertical": "commodity trading desk",
+      "keywords": [
+        "revenge",
+        "financial gain",
+        "espionage",
+        "motivation"
+      ],
+      "type": "single_choice",
+      "question": "Two weeks after a commodity trading desk dismisses a senior analyst, its pricing models are corrupted by an account the analyst once shared, and a taunting message referencing the dismissal is left on the team's chat channel. Nothing was copied out and no payment was demanded. What was the attacker's most likely motivation?",
+      "options": {
+        "A": "Espionage",
+        "B": "Financial gain",
+        "C": "Disruption and chaos",
+        "D": "Revenge"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "D12",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Motivation is read from the evidence, not the victim's industry: the timing after dismissal, the personal taunt referencing it, and destruction without any demand all point to revenge — harm inflicted to settle a grievance.",
+        "distractors": {
+          "A": "Espionage means taking information quietly to use it; this attacker destroyed data, announced the act, and copied nothing out.",
+          "B": "Assuming money because the target is a trading desk substitutes a base rate for the evidence — no payment was demanded and nothing sellable was taken.",
+          "C": "Chaos-motivated attackers disrupt indiscriminately; this attack chose one former employer and signed the act with the dismissal, which is targeted, not chaotic."
+        }
+      }
+    },
+    {
+      "id": "d2-q03",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "theme": "S1",
+      "vertical": "container port terminal",
+      "keywords": [
+        "shadow IT",
+        "insider threat",
+        "unsanctioned"
+      ],
+      "type": "single_choice",
+      "question": "A container port terminal's security team finds that the berth-planning department has been running vessel schedules and crew lists through an unsanctioned cloud scheduling service for a year. The data was exposed by the service's weak default settings. No employee intended any harm. Which threat actor does this scenario describe?",
+      "options": {
+        "A": "Shadow IT",
+        "B": "An insider threat",
+        "C": "A managed service provider",
+        "D": "A hacktivist"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Shadow IT counts as a threat actor in its own right: the unsanctioned department that moved corporate data outside approved systems is the source of the exposure — no malice required, and no misconfiguration by the IT organization involved.",
+        "distractors": {
+          "B": "Insider threat is the nearest label, but it implies intent to harm or misuse access; a department improvising tooling in good faith is the sibling category, not the same one.",
+          "C": "The cloud service is external, but it was never engaged as a provider by the organization — the exposure originates with the department that adopted it, not with a contracted party.",
+          "D": "Reading an external attack into the scenario adds an adversary the evidence does not contain; the data was exposed, not attacked."
+        }
+      }
+    },
+    {
+      "id": "d2-q04",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "theme": "S1",
+      "vertical": "credit union branch network",
+      "keywords": [
+        "smishing",
+        "phishing",
+        "vishing",
+        "SMS"
+      ],
+      "type": "single_choice",
+      "question": "Members of a credit union report text messages claiming their debit cards have been frozen, with a link to a convincing lookalike portal that harvests their sign-in details. Which attack is this?",
+      "options": {
+        "A": "Phishing",
+        "B": "Vishing",
+        "C": "Smishing",
+        "D": "Brand impersonation"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Social engineering is named by the channel it arrives on. This lure arrived by SMS, and SMS-delivered credential theft is smishing — the same con on a different channel would take a different name.",
+        "distractors": {
+          "A": "Phishing is the email-channel name; applying it to a text message drops exactly the distinction the taxonomy encodes.",
+          "B": "Vishing is the voice-call channel — a phone conversation, not a text message with a link.",
+          "D": "The message does impersonate the credit union's brand, but that names the lure inside the message; the attack itself is classified by its delivery channel."
+        }
+      }
+    },
+    {
+      "id": "d2-q05",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "theme": "S1",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "business email compromise",
+        "pretexting",
+        "impersonation"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line's accounts-payable clerk receives an email that appears to come from the chief financial officer's own mailbox, pressing for an immediate wire transfer to secure a berth at a foreign port before a stated deadline. The domain and signature are exact. Which attack does this describe?",
+      "options": {
+        "A": "Business email compromise",
+        "B": "Generic phishing",
+        "C": "Pretexting",
+        "D": "Brand impersonation"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Impersonation operates at levels of specificity, and this is the most specific: a particular executive's authority over payments, exercised from what appears to be the executive's own mailbox — the defining shape of business email compromise.",
+        "distractors": {
+          "B": "Phishing is the broad email-channel label; it misses what makes this attack work — the specific executive identity and payment authority being borrowed.",
+          "C": "Pretexting fabricates a role or story; here the story is secondary to the impersonated identity — the clerk complies with the CFO, not with a scenario.",
+          "D": "Brand impersonation borrows a whole company's identity toward outsiders; this attack borrows one named officer's authority inside the company."
+        }
+      }
+    },
+    {
+      "id": "d2-q06",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "theme": "S1",
+      "vertical": "defense subcontractor",
+      "keywords": [
+        "watering hole",
+        "typosquatting",
+        "trusts"
+      ],
+      "type": "single_choice",
+      "question": "Engineers at a defense subcontractor are infected with identical malware over several weeks. Investigation shows the infections came from a niche trade-association forum that engineers across the sector routinely visit, which had been compromised to serve exploit code to visitors. Which attack does this describe?",
+      "options": {
+        "A": "Typosquatting",
+        "B": "A phishing campaign",
+        "C": "A supply chain compromise",
+        "D": "A watering hole attack"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D12",
+        "C": "E05"
+      },
+      "rationale": {
+        "correct": "Some vectors never contact the target directly — they poison something the target trusts. Compromising a site the target's sector routinely visits and letting the victims come to it is the watering hole attack, named for exactly this hunting pattern.",
+        "distractors": {
+          "A": "Typosquatting poisons a mistyped domain name and waits for typing errors; these engineers reached the genuine forum at its real address.",
+          "B": "Assuming a phishing lure because most malware arrives by email ignores the evidence — no message brought the victims to the site; habit did.",
+          "C": "A supply chain compromise arrives through a party that delivers into your environment — a vendor or provider. A forum the engineers visit delivers nothing; the trust exploited is a browsing habit, not a supplier relationship."
+        }
+      }
+    },
+    {
+      "id": "d2-q07",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "theme": "S1",
+      "vertical": "dental practice group",
+      "keywords": [
+        "removable device",
+        "file-based",
+        "vector"
+      ],
+      "type": "single_choice",
+      "question": "A dental practice group's front-desk workstation is infected after a receptionist plugs in a USB stick found in the parking lot, labeled as staff payroll. Autorun executed the malware on insertion. Which attack vector was used?",
+      "options": {
+        "A": "A file-based vector",
+        "B": "A removable device vector",
+        "C": "A message-based vector",
+        "D": "A client-based vector"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D12",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "The vector is the path by which the payload reached the target. Here the path was a removable device carried through the door and plugged in — the curiosity-baited USB drop is the canonical removable device attack.",
+        "distractors": {
+          "A": "A file is what executed, but file-based names the payload's form, not the route it traveled — the taxonomy classifies by the arrival path.",
+          "C": "Defaulting to email or messaging because most malware arrives that way substitutes the base rate for this scenario's evidence; no message was involved.",
+          "D": "Client-based versus agentless describes whether vulnerable software must be installed to be exposed — an axis about the target's software, not a delivery route."
+        }
+      }
+    },
+    {
+      "id": "d2-q08",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "theme": "S1",
+      "vertical": "newspaper printing group",
+      "keywords": [
+        "default credentials",
+        "open service ports",
+        "attack surface"
+      ],
+      "type": "single_choice",
+      "question": "A vulnerability scan of a newspaper printing group's press-control workstations finds Telnet listening, the vendor's default administrator password still set, and Bluetooth enabled on every unit. No compromise has occurred. What do these findings collectively represent?",
+      "options": {
+        "A": "A zero-day vulnerability in the press-control software",
+        "B": "An on-path attack currently in progress",
+        "C": "Attack surface left in its as-shipped state",
+        "D": "A malicious update delivered by the press vendor"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D12",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Attack surface is created by leaving things on, open, or as shipped: open service ports, default credentials, and unneeded radios are documented, well-understood exposures that exist before any attacker arrives.",
+        "distractors": {
+          "A": "Calling these findings a zero-day is factually wrong — a zero-day is a flaw unknown to the vendor, while default passwords and open ports are known, documented, and fixable today.",
+          "B": "Nothing in a configuration scan shows an attack in progress; reading static exposure as an active adversary adds an assumption the evidence does not support.",
+          "D": "The vendor shipped an insecure default configuration, which is not the same as compromising its delivery channel to push malware."
+        }
+      }
+    },
+    {
+      "id": "d2-q09",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "theme": "S1",
+      "vertical": "electronics assembly plant",
+      "keywords": [
+        "malicious update",
+        "supply chain",
+        "software provider"
+      ],
+      "type": "single_choice",
+      "question": "An electronics assembly plant is compromised through a digitally signed firmware update fetched automatically from the maintenance portal of its pick-and-place machine vendor. The vendor's build system had been breached, and the tainted update passed every signature check. Which attack does this describe?",
+      "options": {
+        "A": "An unsupported system exploit",
+        "B": "A watering hole attack",
+        "C": "An insider threat at the plant",
+        "D": "A supply chain attack"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "The supply chain is both vector and vulnerability: the compromise is located at a specific link — here the software provider's build system — and the malicious update weaponizes the trusted delivery channel itself, which is why the signature checks passed.",
+        "distractors": {
+          "A": "The machines were fully supported and current — the flaw is in what the trusted channel delivered, not in abandoned software.",
+          "B": "A watering hole poisons a site victims choose to visit; this payload was pushed into the plant through a channel that delivers by design.",
+          "C": "Assuming an employee because the compromise appeared inside the plant ignores the traced evidence: the taint entered with the vendor's signed update."
+        }
+      }
+    },
+    {
+      "id": "d2-q10",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "theme": "S3",
+      "vertical": "energy retailer billing",
+      "keywords": [
+        "buffer overflow",
+        "race condition",
+        "memory injection"
+      ],
+      "type": "single_choice",
+      "question": "Penetration testers report that sending an account-name field of 4,000 characters to an energy retailer's meter-data collector crashes the service, and that carefully constructed input at that length executes attacker-supplied instructions. Which vulnerability class is being exploited?",
+      "options": {
+        "A": "A buffer overflow",
+        "B": "A race condition",
+        "C": "Memory injection",
+        "D": "SQL injection"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Writing past an intended boundary is the buffer overflow signature: input longer than the code silently assumed overwrites adjacent memory, which first crashes the process and, when crafted, redirects it to attacker-supplied instructions.",
+        "distractors": {
+          "B": "A race condition is a timing flaw — two operations racing between time-of-check and time-of-use; nothing here depends on timing, only on length.",
+          "C": "Memory injection plants code into another process's memory space from outside; here the process damages its own memory by accepting oversized input.",
+          "D": "SQL injection would execute in the database through a query, and its symptom is data-layer manipulation, not a crashed collector running attacker instructions."
+        }
+      }
+    },
+    {
+      "id": "d2-q11",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "theme": "S3",
+      "vertical": "engineering consultancy",
+      "keywords": [
+        "cross-site scripting",
+        "SQL injection",
+        "browser"
+      ],
+      "type": "single_choice",
+      "question": "An engineering consultancy's client portal allows comments on project drawings. A tester finds that a crafted comment saved to one drawing runs script in the browser of every reviewer who later opens that page, silently forwarding their session tokens. Which vulnerability is this?",
+      "options": {
+        "A": "SQL injection",
+        "B": "Stored cross-site scripting",
+        "C": "Cross-site request forgery",
+        "D": "Directory traversal"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The two classic web flaws are separated by who executes the injected content: here the victim's browser runs it when the page is viewed, which is cross-site scripting — stored, since the payload persists in the comment for every later reviewer.",
+        "distractors": {
+          "A": "SQL injection is executed by the database, and its harvest is data through queries; this payload runs in reviewers' browsers, the other side of the dividing line.",
+          "C": "Forgery abuses the victim's authenticated request to make the server act; here the attack plants script that acts inside the victim's browser, the reverse direction.",
+          "D": "Directory traversal walks the server's filesystem with crafted paths — a different mechanism with no script execution in anyone's browser."
+        }
+      }
+    },
+    {
+      "id": "d2-q12",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "theme": "S1",
+      "vertical": "fashion wholesale distributor",
+      "keywords": [
+        "end-of-life",
+        "legacy",
+        "firmware"
+      ],
+      "type": "single_choice",
+      "question": "A fashion wholesale distributor's warehouse barcode scanners run an operating system whose vendor ended all support last year — no further security patches will ever be produced. A scanner exploit is now circulating. Which vulnerability class do the scanners represent?",
+      "options": {
+        "A": "A misconfiguration",
+        "B": "A firmware vulnerability",
+        "C": "An end-of-life platform",
+        "D": "A legacy system that remains vendor-supported"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E05",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Platform vulnerabilities live below the application, and end-of-life is the class where the vendor no longer fixes flaws at all: the defining property is that no patch will ever come, which is exactly the scanners' situation.",
+        "distractors": {
+          "A": "A misconfiguration is a correctable setup error; no configuration change conjures patches out of a vendor that has stopped producing them.",
+          "B": "The flaw class here is defined by support status, not by which layer the bug sits in — firmware names a layer, and these scanners' problem is the ended support.",
+          "D": "Legacy is the near-sibling: old technology still in use. The discriminator is support — a legacy system may still receive patches, while an end-of-life one never will again."
+        }
+      }
+    },
+    {
+      "id": "d2-q13",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "theme": "S3",
+      "vertical": "fire safety inspection agency",
+      "keywords": [
+        "resource reuse",
+        "VM escape",
+        "hypervisor"
+      ],
+      "type": "single_choice",
+      "question": "A fire safety inspection agency hosts one virtual machine per county client on a shared hypervisor. A client reports that a memory-analysis tool inside its own VM recovered fragments of another county's inspection reports. No guest ever executed code outside its VM. Which virtualization vulnerability does this indicate?",
+      "options": {
+        "A": "Resource reuse",
+        "B": "A virtual machine escape",
+        "C": "Memory injection by an attacker",
+        "D": "A hypervisor misconfiguration must exist"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Virtualization vulnerabilities break the isolation the hypervisor should guarantee, and resource reuse is the passive form: memory or storage reallocated from one tenant to another without being scrubbed, leaving readable residue — no code ever leaves the guest.",
+        "distractors": {
+          "B": "A VM escape means guest code executes on the host or in another guest; the stem rules that out, and residue in reallocated memory needs no escape.",
+          "C": "Memory injection is an active attack that plants code in a running process; here the other tenant did nothing but read what was left behind.",
+          "D": "Jumping to operator error substitutes an assumption for the mechanism in evidence — unscrubbed reallocation is a vulnerability class of its own, present even on correctly configured hosts."
+        }
+      }
+    },
+    {
+      "id": "d2-q14",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "theme": "S1",
+      "vertical": "furniture manufacturer",
+      "keywords": [
+        "jailbreaking",
+        "side loading",
+        "platform restrictions"
+      ],
+      "type": "single_choice",
+      "question": "A furniture manufacturer issues iPads to its showroom sales team. IT discovers several reps have removed the tablets' built-in platform restrictions entirely so they can install software from an unapproved third-party store. Which vulnerability class have the reps introduced?",
+      "options": {
+        "A": "A cryptographic vulnerability",
+        "B": "A misconfiguration",
+        "C": "Side loading alone",
+        "D": "Jailbreaking"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E05",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Hygiene-class vulnerabilities come from how a system is set up, and jailbreaking is the class where the user deliberately removes the platform's built-in restrictions — after which every protection the platform assumed is off the table.",
+        "distractors": {
+          "A": "No cipher or key handling is implicated; the weakness these reps created is about removed platform protections, not cryptography.",
+          "B": "A misconfiguration is a setting wrongly chosen within a working platform; these devices had their protective platform deliberately broken, which is a different origin.",
+          "C": "Side loading installs apps from outside the official store, but it can occur without removing the platform's restrictions — the stem describes the stronger act that enables it."
+        }
+      }
+    },
+    {
+      "id": "d2-q15",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "theme": "S1",
+      "vertical": "gaming tournament platform",
+      "keywords": [
+        "zero-day",
+        "patch",
+        "signature"
+      ],
+      "type": "single_choice",
+      "question": "A gaming tournament platform's bracket service is breached through a flaw its software vendor confirms it has never seen before. No patch exists, no detection signature exists, and the first anyone learned of the flaw was its exploitation. How should the vulnerability be classified?",
+      "options": {
+        "A": "An unsupported application flaw",
+        "B": "A misconfiguration by the platform team",
+        "C": "A zero-day",
+        "D": "A known vulnerability with an unapplied patch"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D12",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "A zero-day has no patch, no signature, and no warning — its defining property is that defenders learn of it from its exploitation, which is precisely the sequence the vendor confirmed.",
+        "distractors": {
+          "A": "Unsupported software also lacks future patches, but by abandonment of a known product; this vendor actively supports the software and simply never knew the flaw existed.",
+          "B": "Blaming configuration substitutes an assumption for the vendor's own confirmation that the flaw is in the software itself.",
+          "D": "A known-but-unpatched vulnerability inverts the defining property: there a fix exists and was not applied; here no fix could have existed before the attack."
+        }
+      }
+    },
+    {
+      "id": "d2-q16",
+      "domain": "d2",
+      "primary_concept": "C-031",
+      "theme": "S3",
+      "vertical": "high school district",
+      "keywords": [
+        "worm",
+        "virus",
+        "trojan",
+        "replication"
+      ],
+      "type": "single_choice",
+      "question": "A high school district's IT office isolates one infected staff laptop at 16:00. By the next morning the same malware is on 240 devices across three campuses. Forensics confirms the spread required no user action of any kind — no files opened, nothing installed. Which malware type does this behavior identify?",
+      "options": {
+        "A": "A virus",
+        "B": "A worm",
+        "C": "A trojan",
+        "D": "Ransomware"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E05",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Malware families are named from what the code does. Self-replication across the network with no user action is the worm's defining behavior — the code propagates itself, which is what put it on 240 devices overnight.",
+        "distractors": {
+          "A": "A virus is the nearest sibling but needs a host action — a file opened or executed — to spread, and forensics confirmed there was none.",
+          "C": "A trojan spreads by disguise: a user installs it believing it is something legitimate. Installation by deception is exactly the user action this outbreak lacked.",
+          "D": "Ransomware is the headline answer for school districts, but it is named for encrypting and extorting — a payload behavior the stem never describes."
+        }
+      }
+    },
+    {
+      "id": "d2-q17",
+      "domain": "d2",
+      "primary_concept": "C-032",
+      "theme": "S1",
+      "vertical": "hospice care provider",
+      "keywords": [
+        "RFID cloning",
+        "brute force",
+        "badge"
+      ],
+      "type": "single_choice",
+      "question": "A hospice care provider's medication room logs show a nurse's badge entering at 02:14 while she was verifiably off-site — and her badge never left her possession. The badge system accepts any card presenting the correct identifier over its radio interface. Which attack does the evidence indicate?",
+      "options": {
+        "A": "RFID cloning",
+        "B": "Physical brute force",
+        "C": "Credential replay over the network",
+        "D": "An environmental attack"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Some attacks need the attacker's hardware near the target: copying a badge's identifier over its radio interface and presenting it from a duplicate card is RFID cloning — the door saw a valid identifier the nurse still holds the original of.",
+        "distractors": {
+          "B": "Physical brute force defeats the door, not the credential — a forced entry leaves damage, not a clean badge read in the log.",
+          "C": "Credential replay reuses captured authentication material on a network; this credential was captured and replayed over the air at a physical reader, the badge-family variant.",
+          "D": "An environmental attack manipulates the target's surroundings — power, temperature, interference — and would not produce a valid badge entry in the log."
+        }
+      }
+    },
+    {
+      "id": "d2-q18",
+      "domain": "d2",
+      "primary_concept": "C-033",
+      "theme": "S3",
+      "vertical": "hotel casino loyalty program",
+      "keywords": [
+        "reflected",
+        "amplified",
+        "DDoS",
+        "resolvers"
+      ],
+      "type": "single_choice",
+      "question": "A hotel casino's loyalty portal is knocked offline by a flood of enormous DNS responses. Packet captures show small queries, carrying the portal's address as their forged source, being sent to thousands of third-party open resolvers — whose large answers all land on the portal. Which attack technique is in use?",
+      "options": {
+        "A": "A direct flood from a botnet the attacker controls",
+        "B": "A DNS attack against the portal's name resolution",
+        "C": "An on-path attack against portal traffic",
+        "D": "A reflected DDoS amplified through open resolvers"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Volumetric attacks are told apart by how the volume is manufactured. Forging the victim's address on small queries so third-party resolvers return large answers to the target is reflection with amplification — the third parties generate the flood, multiplied per query.",
+        "distractors": {
+          "A": "A direct botnet flood sends traffic from hosts the attacker controls; these packets arrive from innocent resolvers, which inverts where the volume is manufactured.",
+          "B": "DNS is the amplifier here, not the target — the portal's own name resolution keeps working; a DNS attack proper targets resolution itself.",
+          "C": "An on-path attacker sits between two parties to relay or alter their traffic; nothing here is intercepted — the portal is simply buried."
+        }
+      }
+    },
+    {
+      "id": "d2-q19",
+      "domain": "d2",
+      "primary_concept": "C-034",
+      "theme": "S1",
+      "vertical": "industrial paint supplier",
+      "keywords": [
+        "on-path",
+        "relay",
+        "alter"
+      ],
+      "type": "single_choice",
+      "question": "At a trade fair, sales reps from an industrial paint supplier join what looks like the venue's free wireless network. The rogue access point silently relays every request to the genuine network — while rewriting the bank details inside quotation PDFs the reps email to customers. Which attack does this describe?",
+      "options": {
+        "A": "A replay attack",
+        "B": "An on-path attack",
+        "C": "A downgrade attack",
+        "D": "DNS spoofing"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "An on-path attacker sits between two parties and relays or alters their traffic — the position, not any specific tool, defines the attack. The rogue access point occupies exactly that position over the air, passing traffic through while changing it.",
+        "distractors": {
+          "A": "A replay attack captures material and reuses it later; this attacker alters traffic live while sitting in the conversation, not afterward.",
+          "C": "A downgrade attack forces a weaker protocol version to break its protection — a technique an on-path attacker might use, not the name for holding the position itself.",
+          "D": "DNS spoofing misdirects victims by answering name lookups falsely; these reps reached the genuine network through the attacker, no name resolution was falsified."
+        }
+      }
+    },
+    {
+      "id": "d2-q20",
+      "domain": "d2",
+      "primary_concept": "C-035",
+      "theme": "S3",
+      "vertical": "insurance claims adjuster network",
+      "keywords": [
+        "directory traversal",
+        "injection",
+        "privilege escalation"
+      ],
+      "type": "single_choice",
+      "question": "An insurance claims platform's web logs show repeated requests to its document endpoint in which the file parameter has been altered to climb out of the documents folder using parent-directory sequences, successfully retrieving server configuration files. Which application attack is this?",
+      "options": {
+        "A": "Injection",
+        "B": "Privilege escalation",
+        "C": "Directory traversal",
+        "D": "Request forgery"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Application-layer attacks are told apart by mechanism, and this one is defined by which path is traversed: parent-directory sequences in a file parameter walk the request out of its intended folder into the server's filesystem — directory traversal.",
+        "distractors": {
+          "A": "Injection supplies input that gets executed as code or query by an interpreter; these requests execute nothing — they walk a path to files that already exist.",
+          "B": "Privilege escalation names what an attacker gains — a higher privilege level; this attacker's account privileges never changed, only the paths reached with them.",
+          "D": "Forgery tricks a victim's browser into sending requests the victim never intended; these requests came directly and deliberately from the attacker."
+        }
+      }
+    },
+    {
+      "id": "d2-q21",
+      "domain": "d2",
+      "primary_concept": "C-036",
+      "theme": "S3",
+      "vertical": "interior design marketplace",
+      "keywords": [
+        "spraying",
+        "brute force",
+        "account lockout"
+      ],
+      "type": "single_choice",
+      "question": "An interior design marketplace reviews a week of authentication logs: three common passwords were each tried exactly once against roughly 40,000 different accounts, paced hours apart, and almost no account lockout events fired. Which attack do the logs show?",
+      "options": {
+        "A": "Brute force against a single account",
+        "B": "Credential replay",
+        "C": "A birthday attack",
+        "D": "Password spraying"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Spraying and brute force look identical in a log until you count accounts versus attempts. Few passwords tried across roughly 40,000 accounts, paced to stay under lockout thresholds, is password spraying — breadth over depth, engineered to avoid account lockout.",
+        "distractors": {
+          "A": "Brute force inverts the ratio: many attempts against few accounts — and it trips lockouts quickly, which is exactly what this log lacks.",
+          "B": "Credential replay presents captured valid material, and it succeeds or fails on the first try per account; nothing here was captured — passwords were guessed.",
+          "C": "A birthday attack exploits collision probability in cryptographic functions — an attack on the protecting crypto, not on sign-in endpoints."
+        }
+      }
+    },
+    {
+      "id": "d2-q22",
+      "domain": "d2",
+      "primary_concept": "C-038",
+      "theme": "S2",
+      "vertical": "managed print services provider",
+      "keywords": [
+        "isolation",
+        "segmentation",
+        "containment"
+      ],
+      "type": "single_choice",
+      "question": "A managed print services provider confirms that a print server at a customer site is actively beaconing to a command-and-control address and attempting lateral movement right now. Which mitigation should be applied first?",
+      "options": {
+        "A": "Isolate the print server from the network entirely",
+        "B": "Move the site's printers into a separate VLAN segment",
+        "C": "Add a firewall rule blocking the beacon's destination address",
+        "D": "Schedule a rebuild of the server in the next maintenance window"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D05",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Segmentation and isolation are the same containment judgment at two severities, and an active compromise demands the severe one: isolation cuts the system off entirely, ending both the beaconing and the lateral movement in one move.",
+        "distractors": {
+          "B": "Segmentation limits how far a compromise can travel and is the right design-time control — but re-architecting VLANs mid-incident leaves the compromised host connected while the work happens.",
+          "C": "Blocking one destination treats the symptom you can see; the malware keeps its foothold and can beacon to the next address on its list.",
+          "D": "Deferring to a maintenance window leaves an actively spreading compromise on the network for days — the cost compounds hourly."
+        }
+      }
+    },
+    {
+      "id": "d2-q23",
+      "domain": "d2",
+      "primary_concept": "C-039",
+      "theme": "S2",
+      "vertical": "medical billing clearinghouse",
+      "keywords": [
+        "least privilege",
+        "permissions",
+        "compromised"
+      ],
+      "type": "single_choice",
+      "question": "At a medical billing clearinghouse, a compromised claims-intake account was able to encrypt the entire billing file share because every intake clerk holds modify rights across all of it. Management asks for the control that would most reduce the damage the next compromised clerk account can do. What should be implemented?",
+      "options": {
+        "A": "Additional endpoint protection on all clerk workstations",
+        "B": "A quarterly audit of file share access rights",
+        "C": "Least privilege permissions scoped to each role's required folders",
+        "D": "Stronger password complexity requirements for clerk accounts"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D07",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Least privilege grants only what the role requires, so a compromised account reaches less. Scoping each clerk's permissions to the folders their role needs converts the next compromise from a share-wide loss into a folder-sized one.",
+        "distractors": {
+          "A": "More protective software on the endpoint adds capacity without changing the design flaw — any account that is compromised anyway still reaches everything.",
+          "B": "A quarterly audit detects over-broad permissions after the fact; the requirement is to limit what a compromise reaches, not to notice the breadth later.",
+          "D": "Stronger passwords make compromise less likely but bound nothing once it happens — the question asks about the reach of a compromised account, not its probability."
+        }
+      }
+    },
+    {
+      "id": "d2-q24",
+      "domain": "d2",
+      "primary_concept": "C-040",
+      "theme": "S2",
+      "vertical": "mining site operations",
+      "keywords": [
+        "application allow list",
+        "deny",
+        "approved"
+      ],
+      "type": "single_choice",
+      "question": "Ruggedized terminals at a mining site keep accumulating unauthorized utilities that later turn out to carry malware. Site policy states that only the approved dispatch and telemetry applications may ever run. Which control enforces the policy as stated?",
+      "options": {
+        "A": "Security awareness training on approved software",
+        "B": "An application allow list on the terminals",
+        "C": "A deny list of known-bad executables",
+        "D": "More frequent antivirus scans of the terminals"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "E05",
+        "D": "D10"
+      },
+      "rationale": {
+        "correct": "An application allow list makes the intended state the enforced state: everything not approved is denied by default, so the policy that only the dispatch and telemetry applications may run becomes a property of the terminal rather than an aspiration.",
+        "distractors": {
+          "A": "Training addresses the people installing utilities, but it instructs rather than enforces — the policy says what may run, and only a technical default can guarantee that.",
+          "C": "A deny list inverts the default: everything unlisted runs, so each new malicious utility is allowed until someone catalogs it.",
+          "D": "Scanning more often shortens the window between infection and detection but changes no default — unauthorized software still runs first and gets caught later."
+        }
+      }
+    },
+    {
+      "id": "d2-q25",
+      "domain": "d2",
+      "primary_concept": "C-037",
+      "theme": "S3",
+      "vertical": "outpatient surgery center",
+      "keywords": [
+        "impossible travel",
+        "account lockout",
+        "resource consumption",
+        "missing logs"
+      ],
+      "type": "scenario_matching",
+      "question": "An outpatient surgery center's security analyst is triaging a morning's worth of alerts from the clinical systems. For each observation below, classify the evidence by the indicator family it belongs to. Options may be used more than once.",
+      "matching_options": [
+        "Resource indicator",
+        "Account-state indicator",
+        "Logging indicator"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "A surgeon's account signs in at the scheduling kiosk while a second, simultaneous session for the same account runs from an overseas address."
+        },
+        {
+          "id": "s2",
+          "text": "The imaging archive's disk fills overnight with unreadable encrypted files, and its share becomes inaccessible to clinical staff."
+        },
+        {
+          "id": "s3",
+          "text": "The medication cabinet controller, which writes an entry on a fixed cycle, produced nothing at all for a six-hour overnight window."
+        },
+        {
+          "id": "s4",
+          "text": "Front-desk staff report that their first sign-in attempts are rejected and several registration accounts are locked out by midmorning."
+        },
+        {
+          "id": "s5",
+          "text": "The nightly audit export, normally produced on schedule at 02:00, appears at 14:30 at more than its usual size."
+        }
+      ],
+      "answer": {
+        "s1": "Account-state indicator",
+        "s2": "Resource indicator",
+        "s3": "Logging indicator",
+        "s4": "Account-state indicator",
+        "s5": "Logging indicator"
+      },
+      "rationale": {
+        "correct": "Indicators come in families defined by what the evidence is about. Concurrent sessions, impossible travel, and account lockout describe the state of accounts; resource consumption and resource inaccessibility describe what is happening to systems and data; and missing logs or out-of-cycle logging are themselves the indicator — absent or displaced logging is evidence of tampering, not a gap in the evidence."
+      }
+    },
+    {
+      "id": "d2-q26",
+      "domain": "d2",
+      "primary_concept": "C-041",
+      "theme": "S2",
+      "vertical": "pharmaceutical wholesaler",
+      "keywords": [
+        "hardening",
+        "default passwords",
+        "unnecessary software",
+        "ports"
+      ],
+      "type": "multiple_response",
+      "question": "A pharmaceutical wholesaler receives 60 new warehouse handheld scanners, delivered in the vendor's out-of-the-box configuration with several preloaded demo utilities. Before the scanners join the operational network, which THREE hardening actions should be completed? (Select THREE).",
+      "options": {
+        "A": "Schedule a quarterly review of scanner activity logs",
+        "B": "Change the vendor default passwords on every unit",
+        "C": "Disable the ports, protocols, and services the scanners do not need",
+        "D": "Place the scanners on the guest wireless network, away from the servers",
+        "E": "Remove the preloaded software the warehouse workflow does not use"
+      },
+      "select_count": 3,
+      "answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D07",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "Hardening is a checklist of removals and additions applied before exposure: default passwords come off because they are published and shared across every unit shipped, unneeded ports, protocols, and services come off because each is attack surface, and unnecessary software comes off because unused code is unpatrolled risk.",
+        "distractors": {
+          "A": "Log review is a detective activity for devices already in service; it removes none of the as-shipped exposure before the scanners connect.",
+          "D": "The guest network places the scanners among the least trusted devices in the building — it trades proximity to servers for exposure to every visitor's traffic while leaving the scanners themselves unhardened."
+        }
+      }
+    },
+    {
+      "id": "d2-q27",
+      "domain": "d2",
+      "primary_concept": "C-042",
+      "theme": "S2",
+      "vertical": "professional sports franchise",
+      "keywords": [
+        "patching",
+        "decommission",
+        "sanitize",
+        "attack surface"
+      ],
+      "type": "multiple_response",
+      "question": "A professional sports franchise is replacing its ticketing file server; the migration completes in 60 days, and the old server stays in production until cutover. Which TWO actions keep the old server from becoming the franchise's weak point during and after the transition? (Select TWO).",
+      "options": {
+        "A": "Continue applying security patches to the old server until cutover",
+        "B": "Suspend further patching now that the server's retirement is scheduled",
+        "C": "Increase the frequency of full backups during the migration period",
+        "D": "At cutover, decommission the server fully: sanitize its storage and remove its accounts and DNS records",
+        "E": "At cutover, power the server off but leave it racked and configured in case of rollback"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "D15",
+        "C": "D10",
+        "E": "E03"
+      },
+      "rationale": {
+        "correct": "Lifecycle mitigations act over time. Until cutover the server is still production attack surface, so patching continues to close known holes on cadence; at retirement, decommissioning — sanitize the storage, remove the accounts and DNS records — takes it out of the attack surface entirely instead of leaving a forgotten, reachable host.",
+        "distractors": {
+          "B": "Accepting staleness for the 60 days inverts the risk: a known-vulnerable production server is most attractive precisely when everyone has mentally retired it.",
+          "C": "Backup frequency protects recoverability, a different property — no backup cadence reduces what an attacker can reach on the live server.",
+          "E": "Powering off is the first step of decommissioning left half-done: a racked, configured server with live accounts and DNS records returns to the attack surface the moment anyone powers it back on."
+        }
+      }
     }
   ]
 }

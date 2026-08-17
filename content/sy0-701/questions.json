@@ -2243,6 +2243,1219 @@
           "D": "Mirroring is the sibling that survives hardware failure; replication faithfully copies the corruption to the second array within moments."
         }
       }
+    },
+    {
+      "id": "d4-q01",
+      "domain": "d4",
+      "primary_concept": "C-065",
+      "theme": "S5",
+      "vertical": "architectural engineering firm",
+      "keywords": [
+        "secure baseline",
+        "maintain",
+        "drift",
+        "hardening target"
+      ],
+      "type": "single_choice",
+      "question": "An architectural engineering firm established a hardened workstation build 18 months ago and deployed it as a standard image. A configuration audit has just found that most of the fleet no longer matches that build: local accounts have been added, host firewalls switched off, screen locks extended. The build itself still specifies the correct settings. Which action addresses the stage of the secure baseline lifecycle that has failed?",
+      "options": {
+        "A": "Re-image every deviating workstation from the current standard build",
+        "B": "Monitor deployed workstations continuously against the established baseline",
+        "C": "Rewrite the baseline with tighter settings ahead of the next imaging cycle",
+        "D": "Add the firm's plotters and site tablets to the hardening target list"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D05",
+        "C": "E03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Secure baselines are a three-verb lifecycle: establish, deploy, maintain. This firm established the build and deployed it, and what has failed is the maintain step. Drift becomes visible only when deployed hosts are compared continuously against the established baseline, and that continuous comparison is what turns a standard image into a live control.",
+        "distractors": {
+          "A": "Re-imaging returns the fleet to the build for a day and leaves the mechanism untouched: with no continuous comparison in place, the same deviations accumulate again.",
+          "C": "Tightening the settings is work at the establish stage, and the audit found no fault with the settings themselves. The deployed hosts no longer match the ones already chosen.",
+          "D": "Extending the hardening target list is deploy-stage expansion. More targets built from an unmonitored baseline produce more drift, not less."
+        }
+      }
+    },
+    {
+      "id": "d4-q02",
+      "domain": "d4",
+      "primary_concept": "C-066",
+      "theme": "S4",
+      "vertical": "automotive parts distributor",
+      "keywords": [
+        "BYOD",
+        "COPE",
+        "CYOD",
+        "mobile device management"
+      ],
+      "type": "single_choice",
+      "question": "Warehouse pickers at an automotive parts distributor scan stock with an app on their own phones. The security team wants full-device encryption and remote wipe enforced through mobile device management, and legal has advised that the distributor cannot impose either on hardware it does not own. Staff were promised they could keep carrying one phone for work and personal life. Which deployment model resolves the conflict?",
+      "options": {
+        "A": "Issue company-owned handsets that staff may also use for personal purposes",
+        "B": "Keep the handsets employee-purchased and limit the choice to an approved model list",
+        "C": "Enroll the personal handsets and confine the scanning app to a managed container",
+        "D": "Keep the personal handsets and have staff sign a policy accepting remote wipe"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E02",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "Ownership decides what mobile device management may enforce. Corporate-owned, personally enabled (COPE) hardware belongs to the distributor, so full-device encryption and remote wipe are the owner's to impose, and the personal-use allowance staff were promised survives the change.",
+        "distractors": {
+          "B": "Choose your own device (CYOD) as described here still leaves the handset in the employee's name, so the ownership obstacle legal identified is unchanged and only the model catalog narrows.",
+          "C": "A managed container separates work data on a bring your own device (BYOD) handset. It is a real control answering data separation, not the full-device encryption and wipe authority the requirement names.",
+          "D": "Consent captured in a policy document places the authority in paperwork instead of in ownership. The distributor still cannot wipe hardware it does not own once an employee withdraws that consent."
+        }
+      }
+    },
+    {
+      "id": "d4-q03",
+      "domain": "d4",
+      "primary_concept": "C-067",
+      "theme": "S2",
+      "vertical": "biotech research laboratory",
+      "keywords": [
+        "WPA3",
+        "RADIUS",
+        "authentication protocols",
+        "cryptographic protocol"
+      ],
+      "type": "single_choice",
+      "question": "A biotech research laboratory is replacing the shared passphrase on its laboratory wireless network. Two requirements were set: every connection must be attributable to a named scientist, and traffic carried over the air must resist offline capture and cracking. The network team has already selected Wi-Fi Protected Access 3 (WPA3) for the radio link. Which element completes the design?",
+      "options": {
+        "A": "Rotate the shared passphrase on a monthly schedule across all instruments",
+        "B": "Publish separate network names for laboratory instruments and staff laptops",
+        "C": "Authenticate each scientist against a RADIUS server in enterprise mode",
+        "D": "Enable the strongest cryptographic protocol the access points support"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D10",
+        "B": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The wireless stack is layered, and the two requirements land on different layers. WPA3 is the cryptographic choice that protects the air; attribution to a named scientist is an authentication question, answered by AAA with a Remote Authentication Dial-In User Service (RADIUS) server in enterprise mode. Cryptographic protocols and authentication protocols are separate choices doing separate jobs.",
+        "distractors": {
+          "A": "A rotated shared passphrase is still one secret held by everyone. A scheduled change shortens the window of a leak and never makes a connection attributable to one scientist.",
+          "B": "Separate network names segment the estate, which answers a different requirement. Both networks would still admit everyone holding the same shared secret.",
+          "D": "Strengthening the link encryption works the layer WPA3 already covers. No cryptographic protocol setting tells the network which scientist is connected."
+        }
+      }
+    },
+    {
+      "id": "d4-q04",
+      "domain": "d4",
+      "primary_concept": "C-068",
+      "theme": "S2",
+      "vertical": "bottling and beverage plant",
+      "keywords": [
+        "input validation",
+        "sandboxing",
+        "code signing",
+        "Secure cookies"
+      ],
+      "type": "multiple_response",
+      "question": "A bottling and beverage plant runs an in-house web application that records batch quality data and feeds it to the line controllers. Two problems are open: malformed batch records reach the database parser and crash the nightly job, and an unvetted third-party charting library now runs inside the same application host. Which TWO controls address the two problems? (Select TWO).",
+      "options": {
+        "A": "Validate every batch record field against an allowed format before processing",
+        "B": "Sign the application package at release so operators can verify its origin",
+        "C": "Run the third-party charting library in a sandbox with no host access",
+        "D": "Schedule static code analysis of the in-house source at each release",
+        "E": "Set secure and HttpOnly attributes on the application's session cookies"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "E02",
+        "D": "E03",
+        "E": "E01"
+      },
+      "rationale": {
+        "correct": "Application security spans build time and run time, and the two problems sit one on each side. Input validation at the boundary rejects the malformed record before the parser sees it. Sandboxing contains code the plant did not write and cannot inspect, so unknown behavior stays away from the line controller host.",
+        "distractors": {
+          "B": "Code signing proves who built the package and that it arrived unaltered. It says nothing about what the code does once it runs, and it cannot judge a malformed input.",
+          "D": "Static code analysis is a build-time check on source the plant owns. The charting library is a third-party binary running now, which is the run-time half of the problem.",
+          "E": "Secure cookies keep a session token off unencrypted channels and away from scripts. That is a real application control aimed at session theft, not at malformed input or unvetted code."
+        }
+      }
+    },
+    {
+      "id": "d4-q05",
+      "domain": "d4",
+      "primary_concept": "C-069",
+      "theme": "S5",
+      "vertical": "chartered accountancy practice",
+      "keywords": [
+        "acquisition",
+        "inventory",
+        "ownership",
+        "classification"
+      ],
+      "type": "single_choice",
+      "question": "A chartered accountancy practice has discovered 30 laptops bought directly on departmental credit cards over two years. None appears in the asset register, several hold client tax files, and two cannot be located at all. The partners want the next batch of untracked hardware prevented, not merely this one cleaned up. Which change achieves that?",
+      "options": {
+        "A": "Run monthly network enumeration to find devices missing from the register",
+        "B": "Ask department heads to email the register team after each hardware purchase",
+        "C": "Classify the recovered laptops and issue full-disk encryption to each of them",
+        "D": "Route hardware purchases through procurement, which assigns an owner on receipt"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "D02",
+        "C": "D05"
+      },
+      "rationale": {
+        "correct": "Security decisions start at acquisition. An asset that never passes through the procurement process never receives an owner, a classification, or an inventory row, and everything downstream depends on those three. Making procurement the only path to a laptop is what keeps the list true, and ownership assigned on receipt is what makes someone answerable for it.",
+        "distractors": {
+          "A": "Enumeration finds what has already escaped. It is a detective measure that would shorten the years of invisibility while still discovering laptops one purchase at a time.",
+          "B": "A voluntary notification depends on the same people who bypassed the process remembering to report that they did. Nothing in the purchase path itself changes.",
+          "C": "Encrypting the recovered laptops treats the batch in front of the partners. The intake that produced them is untouched, so the next departmental card purchase is invisible in the same way."
+        }
+      }
+    },
+    {
+      "id": "d4-q06",
+      "domain": "d4",
+      "primary_concept": "C-070",
+      "theme": "S1",
+      "vertical": "city council IT department",
+      "keywords": [
+        "sanitization",
+        "destruction",
+        "certification",
+        "data retention"
+      ],
+      "type": "single_choice",
+      "question": "A city council IT department is retiring 200 hard drives pulled from decommissioned servers. Some hold planning application records still inside their statutory retention period; the rest hold nothing the council must keep. The council's auditor will ask, drive by drive, what happened to each one and how the council knows. Which of the following answers the auditor?",
+      "options": {
+        "A": "A certificate from the disposal vendor naming the method applied to each drive serial",
+        "B": "A sanitization procedure that overwrites every drive before it leaves the building",
+        "C": "A destruction contract under which every drive is shredded on collection",
+        "D": "An asset register entry marking each drive as decommissioned on its removal date"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D14",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Ending an asset's life splits three ways: sanitization removes the data and leaves the medium usable, destruction removes the medium, and certification is the evidence of which one happened to which drive. The auditor is asking the third question, and only a per-serial record of the method applied can answer it. Data retention decides which drives may be emptied at all; it does not prove what was done.",
+        "distractors": {
+          "B": "Overwriting is one of the two disposal methods, not proof that it occurred. A procedure describes intent, and the auditor is asking for evidence about each drive.",
+          "C": "Shredding everything on collection ignores the planning records still inside their statutory retention period, and a contract to shred is still not a record of what was shredded.",
+          "D": "The register records that a drive left the estate. It says nothing about whether the data on it was removed, destroyed, or carried out of the building intact."
+        }
+      }
+    },
+    {
+      "id": "d4-q07",
+      "domain": "d4",
+      "primary_concept": "C-071",
+      "theme": "S7",
+      "vertical": "coastal shipping line",
+      "keywords": [
+        "credentialed",
+        "false negative",
+        "false positive",
+        "vulnerability scan"
+      ],
+      "type": "single_choice",
+      "question": "A coastal shipping line's monthly vulnerability scan reports its engine-room monitoring servers as clean. The equipment vendor has just published an advisory describing a critical flaw in exactly the software version those servers run. The scan is unauthenticated and runs from a management subnet. Which conclusion should the analyst draw?",
+      "options": {
+        "A": "The advisory is a false positive; confirm it against a second source before acting",
+        "B": "The clean result is a false negative; rerun the scan with credentials on the hosts",
+        "C": "The scanner sits in the wrong place; move it into the engine-room segment and rescan",
+        "D": "The flaw is in vendor code; static analysis of that code is what would surface it"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "D05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "An unauthenticated scan sees a host from outside and infers versions from what the network exposes. A credentialed scan reads the installed software from inside and sees far more. A clean result against a published flaw in the installed version is the signature of a false negative, and the false negative is the expensive error: a finding that is never raised is also never fixed.",
+        "distractors": {
+          "A": "This reverses the two errors. A false positive is a finding the scan raised and reality does not support; here the scan raised nothing at all, and the vendor advisory is the evidence.",
+          "C": "Network position changes what the scanner can reach, not what it can read. An unauthenticated scan inside the engine-room segment still infers versions from the outside of the host.",
+          "D": "Static analysis examines source code the shipping line does not hold. The vendor has already published the affected version, which is enough to act on."
+        }
+      }
+    },
+    {
+      "id": "d4-q08",
+      "domain": "d4",
+      "primary_concept": "C-072",
+      "theme": "S7",
+      "vertical": "commercial bakery chain",
+      "keywords": [
+        "threat feed",
+        "information-sharing organization",
+        "open-source intelligence",
+        "dark web"
+      ],
+      "type": "single_choice",
+      "question": "A commercial bakery chain wants early warning of attacks aimed at food production peers: the same plant control systems, the same ingredient suppliers, the same seasonal shutdowns. Its security budget is one analyst's time, and management will act only on indicators another operator has already verified. Which source best fits those constraints?",
+      "options": {
+        "A": "A proprietary threat feed subscription covering every industry at the top tier",
+        "B": "Dark web marketplace monitoring for mentions of the chain's brand and domains",
+        "C": "Membership of the sector's information-sharing organization and its advisories",
+        "D": "Open-source intelligence gathered from public security blogs and social posts"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Threat feed sources differ in reliability, timeliness, and cost, and the bakery's constraints name all three. An information-sharing organization for the sector carries indicators contributed and verified by operators running the same plant control systems, at membership cost, which is the combination the chain asked for.",
+        "distractors": {
+          "A": "Breadth is the opposite of the requirement. An all-industry feed at the top tier buys volume one analyst cannot triage, at the price point the budget rules out.",
+          "B": "Dark web monitoring answers whether the chain's own data or brand is being traded. That is exposure intelligence about one company, not early warning about attacks on its peers.",
+          "D": "Open-source intelligence is the cheapest source and the least verified. Public blogs report what is already public, which is later than a peer advisory and unvetted at the moment management would have to act."
+        }
+      }
+    },
+    {
+      "id": "d4-q09",
+      "domain": "d4",
+      "primary_concept": "C-073",
+      "theme": "S1",
+      "vertical": "commodity trading desk",
+      "keywords": [
+        "responsible disclosure",
+        "bug bounty",
+        "penetration test"
+      ],
+      "type": "single_choice",
+      "question": "Outside researchers occasionally find flaws in a commodity trading desk's client portal and have nowhere safe to report them; two have been threatened with legal action for trying. The desk wants a published route for unsolicited reports, with a safe harbor statement, no payment, and no contractual relationship. Which of the following should it establish?",
+      "options": {
+        "A": "A scoped penetration test of the client portal, repeated each quarter",
+        "B": "A bug bounty program paying external researchers for each valid finding",
+        "C": "A security contact in the portal's terms, with reports logged for the next release",
+        "D": "A responsible disclosure program with a published safe harbor statement"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E01",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "The discriminator is scoped engagement versus open invitation. A responsible disclosure program is the open invitation with no money changing hands: it publishes where to send a finding and undertakes not to pursue the sender, which is precisely the gap the threatened researchers exposed.",
+        "distractors": {
+          "A": "A penetration test is a contracted, scoped engagement the desk commissions. It exercises the portal on a schedule and gives the uncontracted researcher no route at all.",
+          "B": "A bug bounty program is the paid form of the same open invitation. It meets the reporting need and adds the per-finding payment the desk ruled out.",
+          "C": "Logging reports for a future release defers the response a reporter is owed. Without a safe harbor statement, the legal exposure that stopped the last two reporters remains."
+        }
+      }
+    },
+    {
+      "id": "d4-q10",
+      "domain": "d4",
+      "primary_concept": "C-074",
+      "theme": "S6",
+      "vertical": "county court administration",
+      "keywords": [
+        "CVSS",
+        "CVE",
+        "exposure factor",
+        "risk tolerance"
+      ],
+      "type": "single_choice",
+      "question": "A county court administration has two open findings. One scores 9.8 on the Common Vulnerability Scoring System (CVSS) and sits on an isolated test server that holds no records and is reachable only from the administration's own network. The other scores 6.5 and sits on the internet-facing public records portal the public uses daily. Which prioritization is defensible?",
+      "options": {
+        "A": "Take the portal finding first, weighing exposure and impact on the court's service",
+        "B": "Take the 9.8 finding first, as the base score ranks severity in any environment",
+        "C": "Ask the vendor to re-score the test server finding before deciding the order",
+        "D": "Take the finding whose Common Vulnerability Enumeration (CVE) entry is older"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D11",
+        "C": "D15",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The score measures the flaw; the queue is ordered by the organization. Environmental variables, exposure factor, and the court's own risk tolerance are what convert a shared severity number into a local priority, and a public records portal reachable by anyone carries an exposure the isolated test server does not.",
+        "distractors": {
+          "B": "This treats the base score as the whole answer. Two organizations with the same finding rank it differently, and the score does not know that one host is isolated and holds no records.",
+          "C": "The deciding evidence is already in hand: one host is internet-facing and carries public records, the other is isolated and empty. Waiting on a re-score leaves the portal exposed while paperwork moves.",
+          "D": "Age of the identifier says nothing about severity or exposure. A Common Vulnerability Enumeration entry names the flaw; it neither scores nor prioritizes it."
+        }
+      }
+    },
+    {
+      "id": "d4-q11",
+      "domain": "d4",
+      "primary_concept": "C-075",
+      "theme": "S2",
+      "vertical": "dental practice group",
+      "keywords": [
+        "compensating control",
+        "segmentation",
+        "exception",
+        "patching"
+      ],
+      "type": "single_choice",
+      "question": "A dental practice group's digital X-ray controller runs an operating system its vendor no longer supports. The imaging vendor will not certify any patch, and the device's medical certification means it cannot be replaced this financial year. The same scan finding will reappear every month until something changes. What should the group do?",
+      "options": {
+        "A": "Apply the operating system vendor's patch and accept that the certification lapses",
+        "B": "Isolate the controller on a restricted segment and record an owner for the exception",
+        "C": "Buy cyber insurance covering claims arising from imaging system compromise",
+        "D": "Mark the finding as accepted in the scan report and rescan again next quarter"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D14",
+        "C": "E02",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Patching is one remediation option among several, not the only one. Where a patch is unavailable, segmentation is the compensating control that reduces what the flaw can reach, and the residual risk is carried as an exception with a named owner and a review date. That pairing closes the loop: the finding is answered and someone is accountable for revisiting it.",
+        "distractors": {
+          "A": "Patching as a reflex overrides the constraint the scenario states. An uncertified imaging device cannot be used on patients, so the flaw closes at the cost of the service the device exists to deliver.",
+          "C": "Insurance transfers the financial consequence of a compromise. It does nothing to reduce the chance of one, and the controller stays reachable from the whole practice network.",
+          "D": "Acceptance with no owner, no boundary, and no review date is a note in a report. The risk is untreated, and nothing has changed by the time the next scan runs."
+        }
+      }
+    },
+    {
+      "id": "d4-q12",
+      "domain": "d4",
+      "primary_concept": "C-076",
+      "theme": "S7",
+      "vertical": "electronics assembly plant",
+      "keywords": [
+        "NetFlow",
+        "SNMP",
+        "log aggregation",
+        "Data loss prevention"
+      ],
+      "type": "single_choice",
+      "question": "Analysts at an electronics assembly plant want to know when a production line controller begins communicating with a host it has never contacted before, including which host, at what time, and how much data moved. The controllers run a real-time operating system that accepts no additional software. Which telemetry source answers all three parts?",
+      "options": {
+        "A": "Simple Network Management Protocol (SNMP) traps from the plant's switches",
+        "B": "Data loss prevention alerts raised on the plant's engineering file server",
+        "C": "NetFlow records exported by the routers between the plant and the offices",
+        "D": "Archived controller syslog, pulled from the archive after each production shift"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "NetFlow records describe conversations: source, destination, time, and volume, exported by network devices with nothing installed on the controller. Log aggregation collects those exports centrally so alerting can fire on a first-time destination, which is exactly the three-part question the analysts asked.",
+        "distractors": {
+          "A": "Traps report device and interface state: a port flapping, a power supply failing. They describe the switch, not who the controller is talking to.",
+          "B": "Data loss prevention inspects content leaving defined channels on the hosts and services it covers. It watches the file server, and it cannot be installed on a real-time controller.",
+          "D": "Pulling archives at the end of a shift is detection after the event, and archiving is the end of the monitoring pipeline rather than its alerting stage. The conversation is over before anyone looks."
+        }
+      }
+    },
+    {
+      "id": "d4-q13",
+      "domain": "d4",
+      "primary_concept": "C-077",
+      "theme": "S5",
+      "vertical": "engineering consultancy",
+      "keywords": [
+        "alert tuning",
+        "quarantine",
+        "alert response"
+      ],
+      "type": "single_choice",
+      "question": "An engineering consultancy's endpoint tool raises about 400 alerts a week for one behavior: its own computer-aided design licensing agent contacting a vendor server. Analysts now close those alerts unread. Last month a genuine credential-theft detection was closed in the same sweep. What should the security lead do?",
+      "options": {
+        "A": "Quarantine the host on each alert until an analyst has confirmed the cause",
+        "B": "Add a second analyst to the morning queue to work through the alert volume",
+        "C": "Disable the detection signature that the licensing agent keeps matching",
+        "D": "Tune the alert so the known licensing agent behavior no longer raises it"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D03",
+        "C": "D16"
+      },
+      "rationale": {
+        "correct": "Alert tuning is what makes an alert worth reading. An alert that fires hundreds of times a week for one known-good behavior trains analysts to close it unread, and a genuine detection dies inside that habit. Alert response and remediation only work on a queue small enough to be read, so tuning the known behavior out restores both.",
+        "distractors": {
+          "A": "Quarantine is a response action for a confirmed incident. Applied to a known-good agent it takes design workstations offline hundreds of times a week and leaves the noise that hid the real detection.",
+          "B": "More analysts read more of the same noise. The volume is the defect, so every future genuine detection sits in the same haystack with two people looking at it.",
+          "C": "Turning the signature off removes the noise and the detection together. The next genuine match of that signature raises nothing at all."
+        }
+      }
+    },
+    {
+      "id": "d4-q14",
+      "domain": "d4",
+      "primary_concept": "C-078",
+      "theme": "S4",
+      "vertical": "fashion wholesale distributor",
+      "keywords": [
+        "SCAP",
+        "benchmark",
+        "agentless",
+        "agent"
+      ],
+      "type": "single_choice",
+      "question": "A fashion wholesale distributor must show its auditors that 900 warehouse handheld scanners match a published hardening benchmark. The scanners are locked appliances that accept no additional software, and they reach the network only when docked at shift end. Which assessment approach fits?",
+      "options": {
+        "A": "Check the scanners agentlessly against the benchmark whenever they dock",
+        "B": "Deploy a configuration agent to each scanner and report its state continuously",
+        "C": "Have store managers confirm the settings on a written checklist each month",
+        "D": "Compare the scanners against the distributor's own server hardening benchmark"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D12",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Agent versus agentless is decided by whether the tool may install software on the host, and a locked appliance settles it. An agentless check reads configuration over the network at dock time, and the Security Content Automation Protocol (SCAP) is what lets the published benchmark be evaluated by machine rather than by eye, which is what an auditor can be shown.",
+        "distractors": {
+          "B": "An agent reports continuously and sees the most, which is why it is the usual answer. These scanners accept no additional software, so the approach cannot be deployed at all.",
+          "C": "A written confirmation is an assertion about the settings, not a measurement of them. Hundreds of devices checked by hand also produce hundreds of chances to record what the checker expected to see.",
+          "D": "The server benchmark prescribes a configuration for a different class of host. Measuring the scanners against it produces findings that describe the wrong target."
+        }
+      }
+    },
+    {
+      "id": "d4-q15",
+      "domain": "d4",
+      "primary_concept": "C-079",
+      "theme": "S2",
+      "vertical": "film post-production studio",
+      "keywords": [
+        "security information and event management",
+        "SIEM",
+        "correlation"
+      ],
+      "type": "single_choice",
+      "question": "A film post-production studio records one failed sign-in against each of roughly 300 accounts over four hours, arriving from many different addresses and spread across the render farm, the asset store, and the client review portal. No single system's log shows more than one failure. What should the studio put in place?",
+      "options": {
+        "A": "Lower the account lockout threshold on the render farm's authentication service",
+        "B": "Have each system's administrator review that system's own logs every week",
+        "C": "Forward authentication logs to a SIEM and correlate failures across systems",
+        "D": "Raise log retention on every host so more sign-in history is kept locally"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D04",
+        "B": "D02",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "A password spray is invisible one log at a time by design: a single attempt per account is unremarkable everywhere it lands. Security information and event management exists for this shape, turning many single-signal sources into one timeline so correlation can surface the pattern no individual system can see.",
+        "distractors": {
+          "A": "Lockout thresholds respond to repeated failures against one account. A spray never repeats against one account, so the threshold is never approached and the setting changes nothing.",
+          "B": "Per-system review reproduces the blindness in human form. Each administrator sees one unremarkable failure, and nobody is positioned to see them together.",
+          "D": "Longer retention preserves more of the same fragmented evidence. The pattern is spread across systems, not lost in time."
+        }
+      }
+    },
+    {
+      "id": "d4-q16",
+      "domain": "d4",
+      "primary_concept": "C-080",
+      "theme": "S2",
+      "vertical": "fire safety inspection agency",
+      "keywords": [
+        "access list",
+        "source",
+        "destination",
+        "deny"
+      ],
+      "type": "single_choice",
+      "question": "A fire safety inspection agency must stop all traffic reaching its inspection report server at 10.20.0.15 from a hostile network range, 198.51.100.0/24, named by its regional threat partner. The perimeter firewall evaluates access list entries in order and applies the first match. Which entry implements the requirement?",
+      "options": {
+        "A": "deny from 10.20.0.15 to 198.51.100.0/24 for any port and protocol",
+        "B": "deny from 198.51.100.0/24 to 10.20.0.15 for any port and protocol",
+        "C": "deny from 198.51.100.0/24 to 10.20.0.15 for tcp port 443 only",
+        "D": "permit from 198.51.100.0/24 to 10.20.0.15 and log every matching packet"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "D05",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "A rule is intent expressed as source, destination, port, protocol, and action, and here direction is the whole answer. The hostile range is the source of the unwanted traffic and the report server is its destination, so the entry that matches traffic arriving from the range and denies it is the one that expresses the requirement.",
+        "distractors": {
+          "A": "Source and destination are transposed. This entry matches traffic the report server sends toward the hostile range and leaves everything arriving from that range untouched.",
+          "C": "Narrowing to one port and protocol blocks part of the traffic and admits the rest. The requirement names all traffic, and every other port stays open to the same range.",
+          "D": "Logging records what arrived after it arrived. The packets still reach the report server, which is what the requirement forbids."
+        }
+      }
+    },
+    {
+      "id": "d4-q17",
+      "domain": "d4",
+      "primary_concept": "C-081",
+      "theme": "S3",
+      "vertical": "furniture manufacturer",
+      "keywords": [
+        "User behavior analytics",
+        "File integrity monitoring",
+        "signatures",
+        "IDS/IPS"
+      ],
+      "type": "single_choice",
+      "question": "A furniture manufacturer's finance clerk account signs in with valid credentials at 03:10, from a workstation the clerk has never used, and downloads the complete supplier price list. No malware signature matched, no file on the share was modified, and the account's permissions did allow the download. Which control would have flagged this?",
+      "options": {
+        "A": "An intrusion prevention system kept current with the latest signatures",
+        "B": "File integrity monitoring watching the supplier price list share",
+        "C": "A data loss prevention rule at the mail gateway for price list attachments",
+        "D": "User behavior analytics profiling normal activity for each account"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Detection controls are chosen by what they match on. IDS/IPS match signatures and traffic trends, and file integrity monitoring matches a file changing when it should not. Here nothing malicious ran and nothing changed: the account itself acted wrong, at an unusual hour, from an unusual host, at an unusual volume. User behavior analytics is the control that matches on that.",
+        "distractors": {
+          "A": "Signature matching needs something recognizable to match. A valid sign-in and an authorized download carry no signature, and the traffic looks like ordinary file access.",
+          "B": "File integrity monitoring reports modification. The price list was read, not altered, so nothing it watches for occurred.",
+          "C": "The rule sits at the mail gateway and the download never crossed it. A control placed where the data is not moving cannot see the movement that happened."
+        }
+      }
+    },
+    {
+      "id": "d4-q18",
+      "domain": "d4",
+      "primary_concept": "C-082",
+      "theme": "S4",
+      "vertical": "gaming tournament platform",
+      "keywords": [
+        "protocol selection",
+        "SELinux",
+        "port",
+        "transport"
+      ],
+      "type": "single_choice",
+      "question": "A gaming tournament platform administers its Linux match servers over telnet. A new hardening standard requires administrative sessions to be encrypted, and the platform's auditors also require that an operations engineer cannot simply restart the cleartext service during a busy tournament weekend. Which change satisfies both requirements?",
+      "options": {
+        "A": "Move administration to SSH and pin the telnet service off in SELinux policy",
+        "B": "Move administration to SSH and block the telnet port at the perimeter firewall",
+        "C": "Keep telnet and carry it inside a VPN tunnel to the match server segment",
+        "D": "Move telnet to a high non-standard port and restrict it to the operations subnet"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D06",
+        "C": "E02",
+        "D": "D04"
+      },
+      "rationale": {
+        "correct": "Protocol selection brings its port and transport with it: choosing SSH replaces a cleartext protocol with an encrypted one on its own port, which is the first requirement. The second requirement is about enforcement from inside the host, and SELinux policy is the operating system mechanism that keeps the disabled service disabled when an engineer under tournament pressure tries to bring it back.",
+        "distractors": {
+          "B": "A perimeter rule stops the cleartext protocol crossing the boundary and leaves it available to everything already inside. It also fails the second requirement outright: the service can be restarted at will.",
+          "C": "Tunneling protects the traffic in transit while the servers keep listening for cleartext sessions. Anyone on the match server segment reaches the same unencrypted service.",
+          "D": "Moving the listener and filtering by source address changes where the cleartext service answers, not what it is. Credentials still cross the network in the clear."
+        }
+      }
+    },
+    {
+      "id": "d4-q19",
+      "domain": "d4",
+      "primary_concept": "C-083",
+      "theme": "S1",
+      "vertical": "gas pipeline operator",
+      "keywords": [
+        "Sender Policy Framework",
+        "DomainKeys Identified Mail",
+        "DMARC",
+        "gateway"
+      ],
+      "type": "single_choice",
+      "question": "A gas pipeline operator publishes Sender Policy Framework records and signs outbound mail with DomainKeys Identified Mail. Suppliers are still receiving invoices that claim the operator's domain from sending hosts the operator does not own, and their mail systems are delivering them anyway. Which addition changes that outcome?",
+      "options": {
+        "A": "A tighter Sender Policy Framework record listing only the operator's own hosts",
+        "B": "A second DomainKeys Identified Mail selector using a longer signing key",
+        "C": "A Domain-based Message Authentication Reporting and Conformance policy of reject",
+        "D": "A banner added by the operator's gateway warning staff about external mail"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D03",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "The three records assert three different things. The first states which hosts may send for the domain and the second proves the message was not altered, but neither tells a receiving gateway what to do when a check fails. DMARC supplies that instruction, and a policy of reject is what turns a failed check into a message that is never delivered.",
+        "distractors": {
+          "A": "The operator already publishes this record. Listing fewer hosts makes the check more accurate and still leaves the receiving system free to deliver a message that fails it.",
+          "B": "A longer signing key strengthens a signature nobody is acting on. The spoofed invoices carry no valid signature at all, and they are delivered regardless.",
+          "D": "A warning banner tells the operator's own staff to be careful about mail they receive. The messages in question are reaching suppliers, so a banner on inbound mail never touches them."
+        }
+      }
+    },
+    {
+      "id": "d4-q20",
+      "domain": "d4",
+      "primary_concept": "C-084",
+      "theme": "S2",
+      "vertical": "high school district",
+      "keywords": [
+        "Network access control",
+        "Data loss prevention",
+        "DNS filtering",
+        "Endpoint detection and response"
+      ],
+      "type": "multiple_response",
+      "question": "A high school district is rebuilding its network controls around three board requirements: personal laptops brought in by staff must not join the administrative network, student record exports must not leave through webmail uploads, and district devices must be stopped from resolving domains categorized as malicious. Which THREE controls meet the three requirements? (Select THREE).",
+      "options": {
+        "A": "Network access control posture checks before a device joins the administrative network",
+        "B": "Endpoint detection and response agents deployed across the district's managed laptops",
+        "C": "Data loss prevention inspection of uploads leaving managed devices",
+        "D": "A centralized proxy performing URL scanning and content categorization of browsing",
+        "E": "DNS filtering that refuses resolution of domains in malicious content categories"
+      },
+      "select_count": 3,
+      "answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "B": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Each edge control answers a different question. Network access control decides whether a device may join, data loss prevention decides what may leave, and DNS filtering decides what may be reached at the name-resolution step. The three board requirements are one of each, and no other combination covers all three.",
+        "distractors": {
+          "B": "Endpoint detection and response watches what runs on a managed device and how it behaves. It has no say over an unmanaged laptop joining the network, and it does not decide what may leave one.",
+          "D": "A centralized proxy with URL scanning and content categorization is a web filter, so it overlaps the reachability requirement without replacing it: it sits in the browsing path only, and a device resolving a malicious domain from any other application is unaffected."
+        }
+      }
+    },
+    {
+      "id": "d4-q21",
+      "domain": "d4",
+      "primary_concept": "C-085",
+      "theme": "S5",
+      "vertical": "hospice care provider",
+      "keywords": [
+        "Identity proofing",
+        "provisioning",
+        "de-provisioning"
+      ],
+      "type": "single_choice",
+      "question": "A hospice care provider staffs night shifts with agency nurses. An account was created for a nurse named in an emailed placement request from the agency and granted access to the clinical record system the same evening. The named nurse has never worked for that agency, and the account was used to read patient records overnight. Which change closes the gap?",
+      "options": {
+        "A": "Require the agency to confirm the nurse's start date before access is granted",
+        "B": "Verify the person's identity documents in person before the account is created",
+        "C": "Expire every agency account automatically at the placement's stated end date",
+        "D": "Grant new agency accounts read-only access to the clinical record system"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D12",
+        "C": "E03",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Identity proofing is the step that establishes a person is who they claim before an identity is issued to them. The provisioning process here ran correctly on an unverified claim, so it issued a real account with real access to an invented person. Proofing against documents, in person, is what an emailed request cannot substitute for.",
+        "distractors": {
+          "A": "A second email from the same agency confirms the placement, not the person. The claim being trusted is the one that was false.",
+          "C": "Automatic expiry is a de-provisioning control and it guards the other end of the lifecycle. The account still reads patient records on every night of the stated placement.",
+          "D": "Read-only access is exactly what was abused here. Narrowing the grant reduces what an unproofed identity can change and leaves what it can read untouched."
+        }
+      }
+    },
+    {
+      "id": "d4-q22",
+      "domain": "d4",
+      "primary_concept": "C-086",
+      "theme": "S2",
+      "vertical": "hotel casino loyalty program",
+      "keywords": [
+        "password manager",
+        "length",
+        "complexity",
+        "expiration"
+      ],
+      "type": "single_choice",
+      "question": "A hotel casino loyalty program's call center enforces complexity rules and a 60-day password change. An audit of shift handover notes found staff incrementing a trailing digit at each change. The program wants staff to stop deriving each password from the last one, without asking them to memorize anything more. Which change achieves that?",
+      "options": {
+        "A": "Raise the complexity requirement to two special characters in every password",
+        "B": "Shorten the change interval from 60 days to 30 days for call center staff",
+        "C": "Raise the minimum password length and keep the existing change schedule",
+        "D": "Deploy a password manager that generates and stores a unique credential per system"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D04",
+        "B": "D10",
+        "C": "D05"
+      },
+      "rationale": {
+        "correct": "The strongest password levers take the password away from the person choosing it. A password manager generates a long, unique credential for each system and stores it, so nothing is derived from anything and nothing is memorized. Length beats complexity while a human is choosing, and forced expiration is what produces the incrementing digit in the first place.",
+        "distractors": {
+          "A": "More required character classes constrain the shape of the password and not the habit. The trailing digit arrives alongside a mandatory symbol in the same base word.",
+          "B": "A shorter interval makes the same derivation happen more often. Staff who increment a digit every two months will increment it every month.",
+          "C": "Longer minimums are the better of the two levers being adjusted, and the schedule that drives the derivation stays in place. Staff lengthen the base word once and keep incrementing."
+        }
+      }
+    },
+    {
+      "id": "d4-q23",
+      "domain": "d4",
+      "primary_concept": "C-087",
+      "theme": "S1",
+      "vertical": "independent bookstore chain",
+      "keywords": [
+        "federation",
+        "Single sign-on",
+        "SAML",
+        "LDAP"
+      ],
+      "type": "single_choice",
+      "question": "An independent bookstore chain has been acquired by a publishing group. Booksellers must reach the publisher's expenses portal using the accounts they already have, the publisher will not create accounts for another company's staff, and neither side will hand the other a copy of its directory. Which arrangement meets this?",
+      "options": {
+        "A": "A federation trust in which the publisher's portal accepts the chain's assertions",
+        "B": "Single sign-on across the applications the chain already runs for booksellers",
+        "C": "A directory synchronization copying bookseller accounts into the publisher's LDAP",
+        "D": "One shared portal account issued to the chain for booksellers to use in turn"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E02",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "Trusting another organization's authentication is federation. The publisher's portal validates a Security Assertions Markup Language (SAML) assertion issued by the chain's identity provider, so the chain keeps its accounts and its directory and the publisher creates neither. Single sign-on is what a user experiences inside one trust domain; federation is what joins two of them.",
+        "distractors": {
+          "B": "Single sign-on spares booksellers repeated sign-ins across the chain's own applications. The publisher's portal sits outside that domain, and nothing here makes it accept those sessions.",
+          "C": "Synchronization creates a second copy of the accounts in the publisher's directory, which is the account creation the publisher refused, and it hands over the directory data neither side agreed to share.",
+          "D": "A shared account makes the portal work on day one and makes every expense claim untraceable to a bookseller. It also gives everyone the access level of that single account."
+        }
+      }
+    },
+    {
+      "id": "d4-q24",
+      "domain": "d4",
+      "primary_concept": "C-088",
+      "theme": "S1",
+      "vertical": "industrial paint supplier",
+      "keywords": [
+        "Attribute-based",
+        "Role-based",
+        "Discretionary",
+        "time-of-day"
+      ],
+      "type": "single_choice",
+      "question": "An industrial paint supplier wants access to each pigment formula decided automatically from the requester's department, their assignment to the project the formula belongs to, and whether the request arrives from a plant network inside shift hours. Formula authors should not decide who reads their work, and the supplier does not classify formulas by sensitivity label. Which access control model fits?",
+      "options": {
+        "A": "Role-based, with a role defined for each department in the supplier",
+        "B": "Discretionary, with each formula's author granting access to colleagues",
+        "C": "Attribute-based, evaluating department, project assignment, and network origin",
+        "D": "Mandatory, with a sensitivity label applied to every formula and every user"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Access control models are separated by what decides. Here the decision combines several properties of the requester and the request at once, including a time-of-day restriction expressed as shift hours, which is the attribute-based pattern. The formula's own sensitivity does not drive it, and neither does the requester's job title alone.",
+        "distractors": {
+          "A": "A role captures the job. Department alone cannot express project assignment and shift-hour origin, so the supplier would need a separate role for every combination of the three.",
+          "B": "This inverts who decides: the owner of the formula grants access. The supplier explicitly wants that decision made by policy against properties, not by the author.",
+          "D": "Labels and clearances are machinery for an environment that classifies information by sensitivity. The supplier does not, and every formula and user would have to be labeled before a single decision could be made."
+        }
+      }
+    },
+    {
+      "id": "d4-q25",
+      "domain": "d4",
+      "primary_concept": "C-089",
+      "theme": "S1",
+      "vertical": "insurance claims adjuster network",
+      "keywords": [
+        "something you know",
+        "something you have",
+        "security key",
+        "Biometrics"
+      ],
+      "type": "single_choice",
+      "question": "Adjusters in an insurance claims network sign in to the claims system with a password and an answer to a security question. The network wants genuine multifactor authentication, and adjusters routinely work from vehicles at accident sites where cellular coverage fails. Which addition delivers it?",
+      "options": {
+        "A": "A personal identification number entered after the password and security answer",
+        "B": "A one-time code sent by text message to the adjuster's mobile number",
+        "C": "A fingerprint scan on the laptop, replacing the password at sign-in",
+        "D": "A security key the adjuster taps, which authenticates without a network path"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "C": "E05"
+      },
+      "rationale": {
+        "correct": "Multifactor means factors from different categories. A password and a security answer are both something you know, so the pair is single-factor however many prompts it presents. A security key is something you have, it supplies the missing category, and it completes the sign-in offline, which is what an adjuster at a roadside with no coverage needs.",
+        "distractors": {
+          "A": "A personal identification number is a third piece of knowledge. Three prompts from the same category still leave one factor between an attacker and the claims system.",
+          "B": "A texted code is something you have and would be a legitimate second factor elsewhere. It cannot be delivered at the accident sites the requirement names.",
+          "C": "Biometrics are something you are, and swapping them in for the password exchanges one category for another instead of adding one. The sign-in stays single-factor."
+        }
+      }
+    },
+    {
+      "id": "d4-q26",
+      "domain": "d4",
+      "primary_concept": "C-090",
+      "theme": "S2",
+      "vertical": "interior design marketplace",
+      "keywords": [
+        "just-in-time",
+        "Password vaulting",
+        "Ephemeral credentials"
+      ],
+      "type": "multiple_response",
+      "question": "Platform engineers at an interior design marketplace share one break-glass administrator account whose password lives on a team wiki page. After the last outage nobody could say which engineer had used it, and the password was still valid weeks later. The marketplace needs every privileged session attributable to a person and the credential invalid once the session ends. Which TWO changes meet those requirements? (Select TWO).",
+      "options": {
+        "A": "Broker the administrator credential through a vault that checks it out per session",
+        "B": "Rotate the wiki password monthly and record each rotation in the change log",
+        "C": "Issue ephemeral credentials that expire when the engineer's session closes",
+        "D": "Create a permanent named administrator account for each engineer on every host",
+        "E": "Require an emailed manager approval before an engineer opens the wiki page"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "D10",
+        "D": "D13",
+        "E": "D06"
+      },
+      "rationale": {
+        "correct": "The two requirements map onto two mechanisms. Password vaulting brokers the shared credential so each checkout is tied to the engineer who requested it and the session is recorded, which supplies attribution. Ephemeral credentials expire at the end of the session, so nothing stays valid between incidents. Together they are just-in-time privilege: the access exists while it is needed and not afterwards.",
+        "distractors": {
+          "B": "Rotation on a schedule shortens the life of a shared secret and never attaches it to a person. Between rotations the wiki page still hands the same credential to anyone who reads it.",
+          "D": "Permanent named accounts supply attribution and take the second requirement in the wrong direction: standing administrator rights for every engineer on every host, valid all the time.",
+          "E": "An approval step in email records who asked. The credential on the wiki is unchanged, it stays valid after the session, and nothing stops an engineer reading the page without asking."
+        }
+      }
+    },
+    {
+      "id": "d4-q27",
+      "domain": "d4",
+      "primary_concept": "C-091",
+      "theme": "S2",
+      "vertical": "livestock auction house",
+      "keywords": [
+        "User provisioning",
+        "API",
+        "Enabling/disabling"
+      ],
+      "type": "single_choice",
+      "question": "A livestock auction house takes on ring staff for a twelve-week autumn season. Accounts are created by hand from a spreadsheet the yard manager keeps, and last season a batch of them stayed active for months after the season closed. The house wants both ends of the season handled without anyone having to remember to act. Which approach delivers that?",
+      "options": {
+        "A": "Add an account-closure step to the season-end checklist the yard manager works through",
+        "B": "Drive account enabling and disabling from the seasonal roster through the payroll API",
+        "C": "Issue one shared ring-staff account for the season and change its password each year",
+        "D": "Review active accounts every quarter and disable those with no recent sign-in"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "D13",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Automation and orchestration apply at named points in security operations, and enabling/disabling services and access is one of them. Driving both ends from the roster record through an interface means user provisioning happens when someone joins the roster and de-provisioning happens when they leave it, with no human step left to forget.",
+        "distractors": {
+          "A": "A checklist item is the same manual act with a reminder attached. It failed last season for the ordinary reason checklists fail at the end of a busy season.",
+          "C": "A shared account removes the closure problem by removing attribution: every ring worker is the same identity, and a leaver keeps working access until the annual change.",
+          "D": "A quarterly review closes accounts weeks or months after the season ends, and it uses recent sign-in as its evidence, which leaves a dormant but valid account open."
+        }
+      }
+    },
+    {
+      "id": "d4-q28",
+      "domain": "d4",
+      "primary_concept": "C-092",
+      "theme": "S4",
+      "vertical": "managed print services provider",
+      "keywords": [
+        "single point of failure",
+        "technical debt",
+        "ongoing supportability",
+        "workforce multiplier"
+      ],
+      "type": "single_choice",
+      "question": "A managed print services provider automated firmware patching for 12,000 customer printers using one orchestration server and a set of scripts written by an engineer who left the company last year. Nobody has changed them since. Leadership now wants the same pattern extended to customer network switches. Which consideration should weigh most in that decision?",
+      "options": {
+        "A": "The orchestration server is a single point of failure and the scripts are unowned technical debt",
+        "B": "Automation is a workforce multiplier, so extending it to switches increases the saving",
+        "C": "Switch firmware should stay manual so engineers keep hands-on familiarity with the devices",
+        "D": "Automation enforces baselines, so switch configurations become standard as a side effect"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D11",
+        "C": "D16",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Automation's benefits are bought with costs candidates forget: complexity, a possible single point of failure, technical debt, and ongoing supportability. This provider has all four in one system, and extending an unowned, single-server pattern to a second device class multiplies the dependency before anyone can support it.",
+        "distractors": {
+          "B": "The saving is real and it is not the question. Citing the benefit as the deciding criterion is how the printer estate came to depend on one server and one departed engineer.",
+          "C": "Keeping the work manual to preserve familiarity gives up the reaction time and baseline enforcement automation exists to provide. The costs are managed, not avoided by refusing the approach.",
+          "D": "Standard configurations follow from automation that someone maintains. Scripts nobody owns encode last year's standard and drift away from it silently."
+        }
+      }
+    },
+    {
+      "id": "d4-q29",
+      "domain": "d4",
+      "primary_concept": "C-093",
+      "theme": "S5",
+      "vertical": "medical billing clearinghouse",
+      "keywords": [
+        "containment",
+        "eradication",
+        "recovery",
+        "lessons learned"
+      ],
+      "type": "single_choice",
+      "question": "A medical billing clearinghouse detected ransomware encrypting a claims file share. The affected server has been disconnected from the network, and analysis has identified the scheduled task that launched the payload and the two binaries it dropped. Which action belongs to the next step of the incident response process?",
+      "options": {
+        "A": "Restore the claims share from the last known clean backup and return it to service",
+        "B": "Write up how the scheduled task was created and update the response runbook",
+        "C": "Delete the scheduled task and the dropped binaries from the affected server",
+        "D": "Disconnect the clearinghouse's remaining file servers as a precaution"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "The process runs preparation, detection, analysis, containment, eradication, recovery, lessons learned. Disconnecting the server was containment and the task and binaries have been identified by analysis, so eradication is next: removing the attacker's components from the environment before anything is brought back.",
+        "distractors": {
+          "A": "Recovery follows eradication. Returning the share to service while the scheduled task still exists on the server invites the same encryption to run again on restored data.",
+          "B": "Lessons learned closes the process after the environment is clean and the service is back. Writing it now leaves the malicious task in place while the report is drafted.",
+          "D": "Containment has already been performed on the affected server, and the analysis gives no indication the others are involved. Disconnecting the estate adds an outage the incident did not cause."
+        }
+      }
+    },
+    {
+      "id": "d4-q30",
+      "domain": "d4",
+      "primary_concept": "C-094",
+      "theme": "S4",
+      "vertical": "microbrewery cooperative",
+      "keywords": [
+        "tabletop exercise",
+        "simulation",
+        "Training"
+      ],
+      "type": "single_choice",
+      "question": "A microbrewery cooperative wrote an incident response plan last year and has never used it. Its response team is volunteers spread across five member sites, the budget for exercising the plan is a single evening, and the board wants to know whether the plan's decision points and call lists actually work. Bottling must not be interrupted. Which exercise fits?",
+      "options": {
+        "A": "A simulation that takes the bottling line's control network offline without warning",
+        "B": "Awareness training for members on recognizing and reporting security incidents",
+        "C": "A review of the plan document by the cooperative's external IT contractor",
+        "D": "A tabletop exercise walking the response team through the plan's decision points"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "Realism and cost rise together across training, tabletop exercise, and simulation. A tabletop talks the plan through with the people who would run it, which is what surfaces a decision point nobody can answer or a call list full of former members, and it costs an evening and interrupts nothing.",
+        "distractors": {
+          "A": "A simulation exercises the plan under real conditions and is the most convincing test available. It is also the one the cooperative ruled out: it interrupts bottling and costs far more than an evening.",
+          "B": "Training builds individual skill at spotting and reporting an incident. It never puts the response team in a room together, so the plan's decision points stay untested.",
+          "C": "One contractor's opinion of the document tests the document. Whether volunteers across several sites can reach each other and decide is not something a read-through can establish."
+        }
+      }
+    },
+    {
+      "id": "d4-q31",
+      "domain": "d4",
+      "primary_concept": "C-095",
+      "theme": "S5",
+      "vertical": "mining site operations",
+      "keywords": [
+        "Root cause analysis",
+        "Threat hunting"
+      ],
+      "type": "single_choice",
+      "question": "A mining site restored its compromised weighbridge controller from backup and returned it to service. Eleven days later the same compromise reappeared on the rebuilt controller. The site's IT lead has budget for one activity before the next production audit. Which one most directly prevents a third recurrence?",
+      "options": {
+        "A": "A threat hunt across the site network for footholds detection has not surfaced",
+        "B": "A root cause analysis of how the controller was reached on both occasions",
+        "C": "A rebuild of the controller from vendor media instead of the site backup",
+        "D": "Adding the controller to the weekly vulnerability scan schedule"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D05",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Root cause analysis finds the mechanism behind the symptom, and a recurrence on a rebuilt host is the symptom asking for it. Until the path by which the controller was reached is known, every rebuild restores the same reachable target and the third recurrence is already scheduled.",
+        "distractors": {
+          "A": "Threat hunting looks from a hypothesis for what detection missed elsewhere, and it is valuable work. Here the compromised host is already known, and the unanswered question is how it keeps being reached.",
+          "C": "Vendor media removes the possibility that the backup carried the compromise, which is one hypothesis among several. If the entry path is still open, a clean build is compromised again on the same schedule.",
+          "D": "Weekly scanning reports weaknesses on a cadence. It describes the controller's posture and never explains how an attacker arrived on it twice."
+        }
+      }
+    },
+    {
+      "id": "d4-q32",
+      "domain": "d4",
+      "primary_concept": "C-096",
+      "theme": "S5",
+      "vertical": "motorway toll operator",
+      "keywords": [
+        "chain of custody",
+        "legal hold",
+        "acquisition",
+        "preservation"
+      ],
+      "type": "single_choice",
+      "question": "A motorway toll operator suspects a member of its billing staff altered transaction records. The workstation involved is still powered on and signed in, counsel has confirmed the matter is likely to reach prosecution, and the fraud team is waiting to look at the data. What must the operator do to keep the evidence usable in court?",
+      "options": {
+        "A": "Record every person who handles the workstation and its images, with times",
+        "B": "Power the workstation down and lock it in a cabinet until an analyst arrives",
+        "C": "Copy the transaction database to a shared folder for the fraud team to review",
+        "D": "Issue a legal hold to the employee's manager and wait for counsel's instruction"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D13",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Evidence survives challenge when its handling is documented. A chain of custody records who held the workstation and every image taken from it, and when, so acquisition and preservation can be demonstrated instead of asserted. Without it, the most careful acquisition is a file whose history nobody can vouch for.",
+        "distractors": {
+          "B": "Powering down inverts the order of volatility: memory, running processes, and network state are lost first, and those are the artifacts most likely to show what the account was doing.",
+          "C": "A copy on a shared folder can be opened, altered, or deleted by anyone with access, and no record ties any version to a handler. The examination is legitimate; the handling destroys its evidential value.",
+          "D": "A legal hold stops routine deletion and is a correct instruction to give. Waiting on counsel while a powered-on workstation sits unattended loses volatile evidence and leaves the handling unrecorded."
+        }
+      }
+    },
+    {
+      "id": "d4-q33",
+      "domain": "d4",
+      "primary_concept": "C-097",
+      "theme": "S7",
+      "vertical": "orchestra and concert hall",
+      "keywords": [
+        "Firewall logs",
+        "Application logs",
+        "Endpoint logs",
+        "OS-specific security logs"
+      ],
+      "type": "scenario_matching",
+      "question": "An orchestra and concert hall is investigating the theft of ticketing and donor data, which touches the box office system, the donor database, and the rehearsal scheduling server. For each investigative question below, select the log source that can answer it. Options may be used more than once.",
+      "matching_options": [
+        "Firewall logs",
+        "Application logs",
+        "Endpoint logs",
+        "OS-specific security logs"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Which external address the box office server was communicating with when the export left the network, and whether that connection was permitted."
+        },
+        {
+          "id": "s2",
+          "text": "Which account added a new member to the local administrators group on the rehearsal scheduling server."
+        },
+        {
+          "id": "s3",
+          "text": "Whether the donor database accepted or rejected a run of malformed search requests submitted through the public web form."
+        },
+        {
+          "id": "s4",
+          "text": "Which process wrote an unfamiliar executable into the box office workstation's startup folder."
+        },
+        {
+          "id": "s5",
+          "text": "Whether a connection from the finance subnet to that same external address was allowed or blocked at the boundary."
+        }
+      ],
+      "answer": {
+        "s1": "Firewall logs",
+        "s2": "OS-specific security logs",
+        "s3": "Application logs",
+        "s4": "Endpoint logs",
+        "s5": "Firewall logs"
+      },
+      "rationale": {
+        "correct": "Each source sees one layer and cannot testify to the others. Firewall logs record connections crossing the boundary and the permit or deny decision applied, which answers both the external destination question and the finance subnet question. OS-specific security logs record account and privilege events on the host, so the group membership change is theirs. Application logs record what the application itself accepted or rejected, which is where malformed input to the donor database appears. Endpoint logs record process and file activity on the device, which is what identifies the process that wrote the startup executable. Choosing the source that can see the layer the question asks about is the first move of any investigation."
+      }
+    },
+    {
+      "id": "d4-q34",
+      "domain": "d4",
+      "primary_concept": "C-098",
+      "theme": "S7",
+      "vertical": "outpatient surgery center",
+      "keywords": [
+        "metadata",
+        "packet capture",
+        "Dashboards",
+        "Automated reports"
+      ],
+      "type": "single_choice",
+      "question": "An outpatient surgery center received a threatening message claiming to come from its implant supplier, and the display name matches the supplier exactly. The center needs to establish which mail servers actually relayed the message and when. Its mail gateway logs for that day have already rotated out of the retention window. Which source answers the question?",
+      "options": {
+        "A": "A packet capture taken at the mail gateway covering the relevant period",
+        "B": "The gateway's automated daily summary report for the day in question",
+        "C": "The message metadata, which records each relay that handled it and when",
+        "D": "The security dashboard trending inbound mail volume for the past month"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "Not every investigative source is a log. Metadata is data about the data, and a mail message carries its own relay history inside itself: each handling server and the time it accepted the message. That record travels with the message, so it survives the gateway's retention window entirely.",
+        "distractors": {
+          "A": "A packet capture records traffic while the capture is running. Nothing was capturing at the mail gateway on the day in question, and a capture started now cannot reach backwards.",
+          "B": "Automated reports summarize: they count messages and flag categories. The relay path of one message is exactly the detail a summary discards.",
+          "D": "Dashboards show a trend over a period, which is the wrong altitude for a single message. Volume over the past month cannot name a relaying server."
+        }
+      }
     }
   ]
 }

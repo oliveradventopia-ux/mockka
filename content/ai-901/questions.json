@@ -500,7 +500,7 @@
         "text analysis"
       ],
       "type": "single_choice",
-      "question": "An independent bookstore chain collects several thousand customer reviews a month across its shops. The buying team does not want to read the reviews. It wants each review tagged with the salient terms it is about, so reviews can be indexed by subject and the rising terms tracked month by month. Which text analysis technique produces that?",
+      "question": "An independent bookstore chain collects several thousand customer reviews a month across its shops. The buying team does not want to read the reviews. It wants reviews that discuss the same thing to sit together in one index, and it wants to see month by month which subjects are rising across the shops. Which text analysis technique produces that?",
       "options": {
         "A": "Summarization of each review, so the buying team can read a condensed version of what every customer wrote.",
         "B": "Entity detection over each review, so the team receives the people, places and organizations that each one names.",
@@ -514,7 +514,7 @@
         "C": "E01"
       },
       "rationale": {
-        "correct": "Keyword extraction returns the salient terms a text is about, which is what a business wants when it needs to index, route or trend content instead of reading a condensed version of it. Indexing by subject and tracking rising terms are both built on those terms, so this is the text analysis output the requirement names.",
+        "correct": "Keyword extraction returns the salient terms a text is about, which is what a business wants when it needs to index, route or trend content instead of reading a condensed version of it. Grouping reviews that discuss the same thing and watching which subjects rise month by month are both built on those terms, so this is the text analysis output the requirement names.",
         "distractors": {
           "A": "Summarization returns shorter prose that preserves the substance of each review. It is still something to read, and thousands of short reads do not make an index.",
           "B": "Entity detection returns typed spans naming real things. Authors and shop names are useful and they are not the same as the subjects a review is about.",
@@ -533,7 +533,7 @@
         "text analysis"
       ],
       "type": "single_choice",
-      "question": "A heritage museum has already transcribed its donor correspondence, so the full text of every letter is held as text in the collections system. Curators now need each letter to yield the people, places, organizations and dates it mentions, as typed values, so that letters can be linked to the catalog records for those things. Which technique returns that?",
+      "question": "A heritage museum has already transcribed its donor correspondence, so the full text of every letter is held as text in the collections system. The collection holds a separate catalog record for each individual, each institution and each location it documents, and it files correspondence by year. Curators need every letter to surface which of those records it refers to, so the letter can be linked to each one. Which technique returns that?",
       "options": {
         "A": "Keyword extraction over each letter, returning the terms that the letter is most about.",
         "B": "Entity detection over each letter, returning typed spans for the people, places, organizations and dates it names.",
@@ -822,25 +822,25 @@
         "Field extraction and mapping"
       ],
       "type": "single_choice",
-      "question": "A customs brokerage receives commercial invoices from shippers as scanned pages in dozens of house layouts. Its declaration system needs the invoice number, currency, total and consignee for each shipment as named values it can post directly, with no clerk reading the page and no parsing code per layout. Which technique meets that requirement?",
+      "question": "A customs brokerage receives commercial invoices from shippers as scanned pages in dozens of house layouts, and a handful of new shippers onboard every month. Every declaration it files needs the same details lifted off the invoice and handed to the declaration system ready to post, with no clerk reading the page and no parsing code written per layout. Which technique meets that requirement?",
       "options": {
         "A": "Character reading over each scan, returning the words and figures of the page in the order they appear on it.",
         "B": "Keyword extraction over each scanned invoice, returning the terms that the invoice is most about.",
-        "C": "Summarization of each scanned invoice, returning a short account of what the shipment contains.",
+        "C": "A position template configured once per shipper layout, so each field is read from a fixed place on the scanned page.",
         "D": "Field extraction over each scan, returning invoice number, currency, total and consignee as named values."
       },
       "answer": "D",
       "distractor_patterns": {
         "A": "E05",
         "B": "E07",
-        "C": "E01"
+        "C": "D05"
       },
       "rationale": {
         "correct": "Reading the characters off content is not the same as extracting fields from it. Optical character recognition (OCR) returns text in the order it appears, while Field extraction and mapping returns named values a downstream system can use without further parsing. The declaration system needs values it can post, so only the field-level output removes both the clerk and the per-layout parsing code.",
         "distractors": {
           "A": "Page text in reading order is exactly the output that forces parsing code per house layout, which is the work the brokerage asked to remove.",
           "B": "Salient terms describe what an invoice is about. A declaration needs the consignee and the total, not the subject matter of the document.",
-          "C": "A short account of the shipment is prose for a person. Nothing in it arrives as a value the declaration system can post."
+          "C": "A template does lift the fields off the page without a clerk, and it does it by fixing where each field sits. Dozens of house layouts means dozens of templates, and every new shipper needs another, so the per-layout work moves from code to configuration rather than going away."
         }
       }
     },
@@ -1507,11 +1507,11 @@
         "lightweight application that includes text analysis"
       ],
       "type": "single_choice",
-      "question": "A water testing laboratory takes sample results by phone from field samplers. The laboratory wants each call classified by the contaminant the sampler mentions and flagged when the sampler sounds unsure of a reading. A design document shows the classification step reading the call audio, with a transcript produced afterward for the archive. Which correction does the design need?",
+      "question": "A water testing laboratory takes sample results by phone from field samplers. Every call is to be classified by the contaminant the sampler names and flagged when the sampler states a reading outside the expected range, and the laboratory has chosen Azure Language text analysis to do both. A design document shows the classification step reading the call audio, with a transcript produced afterward for the archive. Which correction does the design need?",
       "options": {
-        "A": "Recognition has to run first, and only then can a text technique be applied to what it produced.",
+        "A": "Recognition has to run first, and only then can a text technique be applied to its output.",
         "B": "Both steps can run against the audio at once, with their two results joined before the record is written.",
-        "C": "The archive transcript is optional, and classification is able to work from the recorded call directly.",
+        "C": "The archive transcript is optional, because the text step is able to work from the recorded call directly.",
         "D": "The order is immaterial as long as both steps have finished before the record reaches the archive."
       },
       "answer": "A",
@@ -1524,7 +1524,7 @@
         "correct": "A voice workload runs in a fixed order: the audio is turned into text first, and only then can any text technique be applied to it. A lightweight application that includes text analysis over recorded calls has no input at all until speech recognition has produced one, so a design that classifies before it recognizes is classifying nothing.",
         "distractors": {
           "B": "Running both at once assumes the classifier has an input while the audio is still audio. There is nothing for it to read until recognition finishes.",
-          "C": "Treating the transcript as optional removes the only artifact the classifier can work from, which makes the archive copy the load-bearing part of the design.",
+          "C": "Treating the transcript as optional leaves a text analysis service with nothing to read: the chosen route takes text, not audio, so the archive copy is the load-bearing part of the design.",
           "D": "Order is the whole constraint here. Two steps that both finish in the wrong sequence still produce a classification with no text behind it."
         }
       }
@@ -1707,11 +1707,11 @@
       "type": "multiple_response",
       "question": "A construction site's gate camera has to do two jobs as each delivery arrives: capture the permit number printed on the windscreen docket, and count the pallets stacked on the flatbed. A trial that asked for one description of the gate scene returned a fluent paragraph carrying neither the permit number nor a count. Select TWO tasks the vision pipeline needs.",
       "options": {
-        "A": "A caption describing the delivery scene at the gate as the vehicle arrives.",
+        "A": "A caption of the windscreen area as each delivery arrives at the gate.",
         "B": "Character reading over the windscreen docket, so the permit number arrives as text.",
-        "C": "A generated image of a compliant delivery load for the gate marshal to compare against.",
+        "C": "Classification of each arriving flatbed as a compliant or a non-compliant delivery.",
         "D": "Located instances of each pallet on the flatbed, so the pallets can be counted.",
-        "E": "One call asking the model to deal with everything visible at the gate."
+        "E": "Character reading over the windscreen docket for the permit number and the pallet count together."
       },
       "select_count": 2,
       "answer": [
@@ -1726,9 +1726,9 @@
       "rationale": {
         "correct": "One visual requirement often needs more than one distinct visual task in the same pipeline: describing a scene, locating instances in it and reading the characters on it are separate asks that a single call does not cover. Computer vision tasks and techniques split this gate into reading the docket and locating each pallet, which is why a lightweight application that includes vision capabilities here makes two calls and not one.",
         "distractors": {
-          "A": "A scene caption is the output the trial already produced. It reads well and carries neither the permit number nor a count.",
-          "C": "A generated reference image gives the marshal something to look at. It reports nothing about the vehicle actually at the gate.",
-          "E": "Asking one call to deal with everything visible is the approach that failed in the trial, and it leaves the pipeline with no structured value either way."
+          "A": "A caption of the windscreen area describes in prose what is displayed there. The permit number has to arrive as a value the gate log can hold, and a description of the docket is not one.",
+          "C": "A compliant or non-compliant verdict for the whole vehicle is a single label over the whole image. It answers neither of the gate's two questions: the permit number is still unread and the pallets are still uncounted.",
+          "E": "The docket is the delivery's paperwork. Reading a count off it reports what was loaded on paper, while the gate's second job is counting the pallets that actually arrived on the flatbed."
         }
       }
     },

@@ -2119,6 +2119,422 @@
           "D": "An annual digest informs the dependents months after their reporting already hit the new structure."
         }
       }
+    },
+    {
+      "id": "ccao-f-d6-q62",
+      "domain": "d6",
+      "primary_concept": "C-062",
+      "syllabus_rule": "6.02",
+      "theme": "T5",
+      "vertical": "recruitment process outsourcing",
+      "keywords": [
+        "reversibility",
+        "accountability",
+        "appropriate-with-review"
+      ],
+      "type": "single_choice",
+      "question": "A resourcing coordinator at a recruitment process outsourcing provider wants Claude to summarize interview notes into a shortlist brief for the client's hiring manager. The provider's AI policy permits candidate-related work but requires every use case to be screened first, and the team has been treating that screen as a yes-or-no gate. How should the coordinator screen this use case?",
+      "options": {
+        "A": "Rule it inappropriate, as any work touching candidate material is off limits to AI",
+        "B": "Ask Claude to weigh the use case against the provider's policy and adopt the verdict it returns",
+        "C": "Approve it outright, as the briefs stay inside the account team and no candidate reads one",
+        "D": "Score it on reversibility, consequence, human element and accountability, and land it as appropriate-with-review"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D16",
+        "B": "E02",
+        "C": "D11"
+      },
+      "rationale": {
+        "correct": "The four screening criteria — reversibility, consequence, human element and accountability — classify a use case as appropriate, appropriate-with-review, or inappropriate, and the middle verdict is the common one. A shortlist brief is reversible before it reaches the hiring manager, carries real consequence for candidates, and has a human element throughout, which places it in the middle band with a named reviewer instead of at either pole.",
+        "distractors": {
+          "A": "A blanket exclusion answers the screen before it is run; the criteria exist to separate candidate work that needs a reviewer from work that cannot be delegated at all.",
+          "B": "The model's reading of a policy is not a screening verdict, and accountability for the classification stays with the coordinator who runs it.",
+          "C": "Internal circulation is not one of the four criteria; the consequence the shortlist brief carries for a candidate is unchanged by who reads the document."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q63",
+      "domain": "d6",
+      "primary_concept": "C-063",
+      "syllabus_rule": "6.01",
+      "theme": "T7",
+      "vertical": "craft brewery sales cooperative",
+      "keywords": [
+        "governance standards",
+        "responsible use"
+      ],
+      "type": "single_choice",
+      "question": "A sales coordinator at a craft brewery sales cooperative is drafting the members' bulletin with Claude. The cooperative's AI policy is a single page: it permits AI drafting for member communications and asks the practitioner to stay within it. The draft repeats a supplier's unverified claim about a competitor's hop contracts, a situation the policy does not address. What should the coordinator do?",
+      "options": {
+        "A": "Send it as drafted, as the policy permits AI drafting for member communications",
+        "B": "Decide this one against the boundaries the policy sets, and record the reasoning for the call",
+        "C": "Pass every bulletin the policy does not explicitly cover to the compliance lead",
+        "D": "Add a footer saying the bulletin was drafted with AI assistance, and send it"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D14",
+        "C": "D15",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Governance standards bound the call; they do not make it. Responsible use is exercised by the practitioner one decision at a time, so the unverified claim about a competitor is the coordinator's to resolve, and the policy's silence on it is not permission.",
+        "distractors": {
+          "A": "Permission to draft with AI is not permission to publish an unverified claim; the policy bounds the work and leaves this judgment in the practitioner’s hands.",
+          "C": "Routing every uncovered case upward turns a practitioner skill into a queue, and the bulletin waits while a one-page policy is asked to do work it was never written to do.",
+          "D": "Naming the drafting tool tells members how the text was produced and nothing about whether the claim it repeats is true."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q64",
+      "domain": "d6",
+      "primary_concept": "C-064",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "dental clinic network operations",
+      "keywords": [
+        "classify first",
+        "data sensitivity",
+        "privacy considerations"
+      ],
+      "type": "multiple_response",
+      "question": "An operations analyst at a dental clinic network wants to load a year of appointment records — patient names, treatment codes, contact details — into a Project so Claude can analyze no-show patterns. The upload window is short and the analysis is due to the network board this week. Which TWO steps belong before the records enter the Project? (Select TWO.)",
+      "options": {
+        "A": "Upload the export now and pull anything sensitive back out if a concern is raised later",
+        "B": "Ask Claude to confirm that the export is safe to upload, then proceed on that confirmation",
+        "C": "Classify the export against the network's data policy before any of it moves",
+        "D": "Match the handling to that classification: strip patient identifiers and scope the Project",
+        "E": "Write into the Project instructions that the records are confidential and must not be shared"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "E02",
+        "E": "D06"
+      },
+      "rationale": {
+        "correct": "Data sensitivity is established before data enters a feature: classify first, then match the handling. Appointment records carry patient identifiers, so the privacy considerations are settled by classifying the export and by stripping identifiers and scoping the Project — the check happens before the records move, not after an incident.",
+        "distractors": {
+          "A": "Pulling data back out after it has landed is incident response, not a control; the identifiers are already inside the Project when the concern arrives.",
+          "B": "The model has no view of the network's data policy or of what the export contains, so its reassurance is fluent, not a classification.",
+          "E": "A confidentiality instruction governs how Claude behaves once the records are in the Project, and says nothing about whether they should have entered it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q65",
+      "domain": "d6",
+      "primary_concept": "C-065",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "insurance claims intake team",
+      "keywords": [
+        "redaction",
+        "privacy",
+        "regulatory"
+      ],
+      "type": "single_choice",
+      "question": "A claims analyst on an insurance claims intake team needs a summary of a disputed claim file that contains policyholder national identification numbers and medical notes. Organizational policy restricts sharing regulated personal data with external tools, and the adjuster has asked for the summary within the hour. What is the most appropriate action?",
+      "options": {
+        "A": "Remove or anonymize the regulated identifiers, then run the summary on the redacted file",
+        "B": "Do this summary by hand, as regulated claim files cannot involve an external tool at all",
+        "C": "Instruct the model not to retain or reuse the identifiers, then upload the file unchanged",
+        "D": "Upload the file unchanged and mark the summary confidential before it reaches the adjuster"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D16",
+        "C": "D06",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Redaction before entry is the control that lets restricted work proceed: with the regulated identifiers removed or anonymized, the claim narrative can be summarized without breaching the regulatory restriction, and privacy is protected by what never entered the tool. Abandoning the task was not required.",
+        "distractors": {
+          "B": "The policy restricts the regulated data, not the work; a redacted file still carries the claim narrative the adjuster needs.",
+          "C": "An instruction to the model is a request about behavior, not a control over data that has already left the team’s hands.",
+          "D": "A confidentiality marking describes how the summary should be treated, after the identifiers were already sent."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q66",
+      "domain": "d6",
+      "primary_concept": "C-066",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "executive search firm",
+      "keywords": [
+        "Memory controls",
+        "data sensitivity"
+      ],
+      "type": "single_choice",
+      "question": "A research associate at an executive search firm discusses candidate dossiers with Claude across several surfaces during one search: a shared team workspace with Memory switched on, a connector into the firm’s document store, and a personal chat. The dossiers include compensation histories and references given in confidence. Which consideration should decide where this work happens?",
+      "options": {
+        "A": "Whether the surfaces sit under the firm's single enterprise agreement, which makes them equivalent",
+        "B": "Whether Memory can be cleared at the end of the search, once the dossiers have been discussed",
+        "C": "Whether pasting short excerpts instead of whole dossiers keeps the volume of data low",
+        "D": "Where the dossier content comes to rest on each surface — retention, Memory, connector scope"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D07",
+        "C": "D05"
+      },
+      "rationale": {
+        "correct": "Different entry points carry different retention and handling properties, so the destination is part of the data sensitivity decision: a private session, Memory controls, and the scope of a connector each change where confidential references end up. The surface is chosen before the dossier is discussed, not audited afterward.",
+        "distractors": {
+          "A": "One commercial agreement does not make retention, Memory and connector scope identical across surfaces; the handling properties differ per entry point.",
+          "B": "Clearing Memory at the end treats a retention decision as cleanup, and the confidential references were retained for the weeks in between.",
+          "C": "Excerpting lowers the volume while leaving the sensitive content on the same surface with the same retention properties."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q67",
+      "domain": "d6",
+      "primary_concept": "C-067",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "credit union member services",
+      "keywords": [
+        "retention",
+        "privacy considerations"
+      ],
+      "type": "single_choice",
+      "question": "A member services team at a credit union routes support drafting through Claude and keeps every prompt and response in a debugging log held indefinitely. The logs contain member account numbers and dispute details, and the team values them because a full history makes tracing a bad draft quick. What should change?",
+      "options": {
+        "A": "Nothing, as a full history is what makes tracing a bad draft quick and the log stays internal",
+        "B": "Switch the logging off, so no member data can be retained anywhere in the workflow",
+        "C": "Keep identifiers out of what is logged, and hold the rest only as long as policy allows",
+        "D": "Leave the logs as they are and restrict access to the two support supervisors"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D13",
+        "B": "D16",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Retention and logging scope are governed decisions: sensitive content is kept only as policy allows, and debugging convenience is not a basis for holding account numbers forever. Stripping identifiers at the point of logging leaves the team the trace it relies on and settles the privacy considerations in the same change.",
+        "distractors": {
+          "A": "Internal storage still stores; an indefinite log of member account numbers widens the exposure every day it is kept.",
+          "B": "Removing the log removes the traceability the team depends on, when the question was what the log holds and for how long.",
+          "D": "Narrowing who can read the log leaves the account numbers retained indefinitely, which is the decision under question."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q68",
+      "domain": "d6",
+      "primary_concept": "C-068",
+      "syllabus_rule": "6.01",
+      "theme": "T4",
+      "vertical": "mining site procurement office",
+      "keywords": [
+        "organizational AI policies",
+        "compensating controls"
+      ],
+      "type": "single_choice",
+      "question": "A procurement officer at a mining site office is asked by the site manager to run supplier tender documents through Claude for comparison. Organizational policy blocks tender material from external tools until a review is signed off. The site manager argues that the risk the policy targets does not arise at this remote site, and that the tender closes on Monday. What is the most appropriate response?",
+      "options": {
+        "A": "Run the comparison for this tender, as the policy's risk does not arise at this site",
+        "B": "Take an exception request to the named policy owner, with the process and compensating controls",
+        "C": "Ask Claude whether the intended use falls inside the policy, and act on its reading",
+        "D": "Park the comparison until the policy comes up at its next scheduled review"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "E02",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Organizational AI policies bind even where a use looks locally harmless, and the exception path runs through a named human authority with a documented process and compensating controls. A closing date is a reason to raise the exception quickly, not a reason for the practitioner to grant one.",
+        "distractors": {
+          "A": "A local reading of the risk substitutes the practitioner’s judgment for the control; the policy binds until a named authority says otherwise.",
+          "C": "A model’s reading of a policy carries no authority to permit an exception to it.",
+          "D": "Waiting for the next review lets the tender close with no answer, when the exception process exists to be used at speed."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q69",
+      "domain": "d6",
+      "primary_concept": "C-069",
+      "syllabus_rule": "6.03",
+      "theme": "T6",
+      "vertical": "engineering standards secretariat",
+      "keywords": [
+        "a Skill is software",
+        "source and permissions"
+      ],
+      "type": "single_choice",
+      "question": "A documentation officer at an engineering standards secretariat finds a community-published Skill that formats draft standards into the house layout. It carries thousands of installs and strong ratings, and it would save the team hours every week. What should happen before it is enabled?",
+      "options": {
+        "A": "Enable it, as thousands of installs and strong ratings are the evidence that matters here",
+        "B": "Enable it and watch the first few formatted drafts for anything unexpected",
+        "C": "Ban community Skills at the secretariat and build the formatter in-house",
+        "D": "Evaluate the Skill's source and the permissions it requests, as with any installed software"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D07",
+        "C": "D16"
+      },
+      "rationale": {
+        "correct": "A Skill is software: its source and permissions are evaluated before enabling it, because extending capability is a supply-chain decision and not a convenience toggle. Popularity describes how many other teams took the same risk, not what the Skill can reach once it runs inside the secretariat’s Project.",
+        "distractors": {
+          "A": "Install counts and ratings measure popularity, not what permissions the Skill requests or where its code comes from.",
+          "B": "Watching the output catches formatting mistakes; it does not reveal what the Skill reached while producing them.",
+          "C": "A blanket ban gives up a real capability to avoid a review that takes an afternoon."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q70",
+      "domain": "d6",
+      "primary_concept": "C-070",
+      "syllabus_rule": "6.03",
+      "theme": "T8",
+      "vertical": "industrial safety training company",
+      "keywords": [
+        "baseline",
+        "staged rollout"
+      ],
+      "type": "single_choice",
+      "question": "A curriculum lead at an industrial safety training company learns that a newer model tier has been released. The team’s Projects generate course assessments from regulator-approved material. Half the group wants everything moved across today; the other half wants the current tier frozen for the year. What is the most appropriate course of action?",
+      "options": {
+        "A": "Compare the new tier against the current baseline on the same assessments, then stage the rollout",
+        "B": "Move every Project to the new tier now, as a newer release supersedes the one it replaces",
+        "C": "Freeze the current tier for the year, so nothing that works today can change",
+        "D": "Adopt the new tier and refresh the Project instructions and prompts in the same pass"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D16",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "A vendor model change enters the organization's change-control path like any release: a like-for-like comparison against a baseline, a staged rollout, and a rollback path. Regulator-approved material raises the cost of an unmeasured switch, and it does not turn an indefinite freeze into a governance position.",
+        "distractors": {
+          "B": "Being newer is a release fact, not a fitness result for these assessments; the comparison is what makes the tier’s behavior known.",
+          "C": "A permanent freeze avoids the comparison instead of running it, and the current tier ages against the material it is asked to assess.",
+          "D": "Changing the tier and the instructions together leaves no way to attribute any difference in the assessments to either one."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q71",
+      "domain": "d6",
+      "primary_concept": "C-071",
+      "syllabus_rule": "6.01",
+      "theme": "T5",
+      "vertical": "language school admissions",
+      "keywords": [
+        "responsible use",
+        "escalation"
+      ],
+      "type": "single_choice",
+      "question": "An admissions officer at a language school is asked by a partner agent to have Claude draft visa-supporting statements for applicants from their immigration paperwork. Policy blocks immigration documents from the tool, the agent is a major referral source, and enrollment closes this week. What is the most appropriate way to handle the request?",
+      "options": {
+        "A": "Split the paperwork into extracts small enough that no single request meets the blocked description",
+        "B": "Do it quietly this once for the referral relationship, and raise the policy question later",
+        "C": "Name the boundary to the agent, offer the permitted alternative, and log the escalation",
+        "D": "Reply that the request is not permitted and close the conversation there"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D13",
+        "B": "D17",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Refusing well is part of responsible use: name the boundary, offer the permitted alternative — a statement drafted from the applicant's own school records — and follow the escalation and logging policy. A referral relationship and a closing date shape how quickly the alternative is offered, not whether the control holds.",
+        "distractors": {
+          "A": "Decomposing the request keeps the immigration content flowing while defeating the control that was written to stop it.",
+          "B": "Quiet compliance leaves the school exposed and the policy untested, and the pressure is the condition the control exists for.",
+          "D": "A flat refusal holds the line and abandons the agent, when a permitted route to a supporting statement exists."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q72",
+      "domain": "d6",
+      "primary_concept": "C-072",
+      "syllabus_rule": "6.05",
+      "theme": "T7",
+      "vertical": "hospice volunteer coordination",
+      "keywords": [
+        "ambiguous cases",
+        "screening criteria"
+      ],
+      "type": "single_choice",
+      "question": "A volunteer coordinator at a hospice service wants Claude to summarize volunteers' visit notes into a weekly care-team digest. The notes describe families' circumstances in ordinary, unremarkable language, and nobody on the team can say whether this crosses a line. The coordinator's instinct is that it feels wrong. How should the case be settled?",
+      "options": {
+        "A": "Follow the instinct, as a use that feels uncomfortable to the coordinator is one to leave alone",
+        "B": "Reason it through against the four screening criteria and record the verdict and its grounds",
+        "C": "Treat it as settled by another region's approval of the same volunteer-note summaries",
+        "D": "Send it to the ethics committee, which is what ambiguous cases are escalated for"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "D12",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Ethical risk hides in ordinary outputs, and ambiguous cases are reasoned through against the stated screening criteria instead of resolved by instinct: the same reversibility, consequence, human element and accountability questions decide the hard case, and the recorded reasoning is what makes the verdict defensible to the care team.",
+        "distractors": {
+          "A": "Discomfort is a prompt to run the screen, not a verdict, and an unrecorded instinct cannot be reviewed or applied to the next case.",
+          "C": "Another region's approval was a verdict on its own facts; what transfers between cases is the criteria, not the conclusion.",
+          "D": "Escalating skips a screen the coordinator can run today, and the digest waits on a committee for a call the criteria already answer."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q73",
+      "domain": "d6",
+      "primary_concept": "C-073",
+      "syllabus_rule": "6.05",
+      "theme": "T4",
+      "vertical": "community college registrar",
+      "keywords": [
+        "disclosure",
+        "fairness"
+      ],
+      "type": "single_choice",
+      "question": "A registrar's office at a community college uses Claude to draft the outcome paragraph in financial-aid appeal letters. A staff member reads and signs every letter before it goes out, and students receive the letter as the decision on their appeal. What does this workflow still owe the student?",
+      "options": {
+        "A": "Nothing further, as naming the drafting tool would invite challenges to sound decisions",
+        "B": "Nothing further, as the staff member's signature is the accountability the student needs",
+        "C": "A disclosure line added once a student asks whether the letter was AI-drafted",
+        "D": "Disclosure of the AI involvement and a named route to contest the outcome"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D17",
+        "B": "D12",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Where an output affects a person's decision, disclosure of AI involvement and a route to contest the outcome belong in the design of the workflow. They are due-process obligations owed to the student, and fairness is what they protect — they are not courtesies added once someone complains.",
+        "distractors": {
+          "A": "Withholding how the letter was produced protects the office from questions, at the cost of the student’s ability to ask them.",
+          "B": "A signature records who is accountable; it does not tell the student how the decision was produced or how to challenge it.",
+          "C": "A disclosure that appears only when a student thinks to ask is not part of the design, and most students will never know to ask."
+        }
+      }
     }
   ]
 }

@@ -1419,7 +1419,7 @@
         "A": "Sort the steps into two bins, automate or keep, so the mapping stays simple to run",
         "B": "Classify by which steps the admissions staff most dislike doing by hand",
         "C": "Adopt the step classification a conference speaker presented for language schools",
-        "D": "Rate each step on reversibility, stakes, and accountability, and classify it as AI-appropriate, human-retained, or collaborative"
+        "D": "Rate each step on reversibility, stakes, and accountability, and give it a three-way verdict"
       },
       "answer": "D",
       "distractor_patterns": {

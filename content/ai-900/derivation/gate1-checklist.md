@@ -106,3 +106,5 @@ stage: `bank-shape` (0 of 57 items), `concept-coverage` (57 uncovered concepts) 
 `selection-shape` (empty form) — all consequences of `questions.json`/`selection.json` being
 S4/S6 outputs. Everything structural and provenance-related is green, and `concept-convergence`
 emits zero warnings (no priority divergences).
+
+> **Gate 1 DISPOSITION (Oliver, 2026-08-17): PARKED as archival** — AI-900 retired 2026-06-30; slot pivots to AI-901 (fresh S1–S3). This inventory is preserved; authoring may proceed later as a labeled archive.

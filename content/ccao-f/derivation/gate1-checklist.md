@@ -97,3 +97,5 @@ consequence of `questions.json`/`selection.json` being S4/S6 outputs: `bank-shap
 `style-policy`, `mojibake`, `near-duplicate-stems`. The 34 `concept-convergence` warnings match
 the enumerated family-convention set exactly — 34 expected, 34 observed, ids verified against
 `master-inventory.md` §priority-convention.
+
+> **Gate 1 SIGN-OFF (Oliver, 2026-08-17): APPROVED for S4** — batch approval "Approve all". Open decisions in this checklist resolve per their recommended defaults unless amended at Gate 2.

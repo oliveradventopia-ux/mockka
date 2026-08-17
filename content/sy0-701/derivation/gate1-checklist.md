@@ -92,3 +92,5 @@ stage: `bank-shape` (0 of 122 items), `concept-coverage` (122 uncovered concepts
 `selection-shape` (empty form) — all consequences of `questions.json`/`selection.json` being S4/S6
 outputs. Everything structural and provenance-related is green, and `concept-convergence` emits
 zero warnings (no priority divergences; priorities are computed, not asserted).
+
+> **Gate 1 SIGN-OFF (Oliver, 2026-08-17): APPROVED for S4** — batch approval "Approve all". Open decisions in this checklist resolve per their recommended defaults unless amended at Gate 2.

@@ -102,3 +102,5 @@ Produced at the end of S3 (exam-author, 2026-08-16) per `methodology/00-pipeline
 and provenance-related passes (`manifest-shape`, `intro-presence`, `concept-inventory`,
 `blueprint-arithmetic`, `provenance-sources`, `concept-source-registry`, `source-derivation-link`),
 and `concept-convergence` emits zero warnings (no priority divergences).
+
+> **Gate 1 SIGN-OFF (Oliver, 2026-08-17): APPROVED for S4** — batch approval "Approve all". Open decisions in this checklist resolve per their recommended defaults unless amended at Gate 2.

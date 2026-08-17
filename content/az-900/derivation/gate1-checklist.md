@@ -99,3 +99,5 @@ outputs. Everything structural and provenance-related is green; `concept-converg
 **exactly the five intended WARNs** (C-001, C-012, C-057, C-058, C-061 — the same-author rule,
 documented in `master-inventory.md`), and any different WARN set is a defect against this
 checklist.
+
+> **Gate 1 SIGN-OFF (Oliver, 2026-08-17): APPROVED for S4** — batch approval "Approve all". Open decisions in this checklist resolve per their recommended defaults unless amended at Gate 2.

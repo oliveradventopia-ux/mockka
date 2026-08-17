@@ -1,4 +1,397 @@
 {
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "gcp-cdl-d1-01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "theme": "G3",
+      "vertical": "regional tourism board",
+      "keywords": ["digital transformation", "cloud", "infrastructure"],
+      "type": "single_choice",
+      "question": "A regional tourism board has approved a program that will change how the organization operates and delivers value to visitors, with cloud services as the enabler. In the kickoff briefing, the program director wants to name this organizational change precisely for the board. Which term names it?",
+      "options": {
+        "A": "A hybrid cloud deployment",
+        "B": "Digital transformation",
+        "C": "The cloud",
+        "D": "A modernized infrastructure estate"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E02", "C": "E05", "D": "E07" },
+      "rationale": {
+        "correct": "Digital transformation is the organizational change itself: new ways of operating and delivering value that cloud and infrastructure make possible. The term covers the change program, not the technology underneath it.",
+        "distractors": {
+          "A": "A hybrid cloud deployment is one way to consume cloud services; naming a deployment model does not name the organizational change the board approved.",
+          "C": "The cloud is the consumption model that enables the change, delivering technology on demand as services. It is the enabler, not the change in how the board operates.",
+          "D": "Infrastructure is the underlying capability being modernized; it is one ingredient of the program, not the organizational change the director needs to name."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "theme": "G3",
+      "vertical": "ceramics manufacturer",
+      "keywords": ["agentic AI"],
+      "type": "single_choice",
+      "question": "A ceramics manufacturer pilots two AI tools. The first answers a question about a glaze defect and stops. The second is given the goal of clearing a production backlog: it checks kiln schedules, drafts a revised firing plan, reserves maintenance windows, and confirms the outcome. What makes the second tool agentic AI?",
+      "options": {
+        "A": "It was trained on a much larger dataset than the first tool",
+        "B": "It generates novel content rather than analyzing existing records",
+        "C": "It runs on infrastructure purpose-built for AI workloads",
+        "D": "It pursues a goal through multiple steps and actions"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D19", "B": "E05", "C": "E06" },
+      "rationale": {
+        "correct": "Agentic AI is defined by behavior: the system pursues a goal through multiple steps and actions, deciding what to do next until the goal is met. A single model call that answers and stops, however capable, is not agentic.",
+        "distractors": {
+          "A": "Training data volume says nothing about agency; a model trained on more data can still only answer once and stop.",
+          "B": "Producing novel content describes generative AI. A generative model that drafts one plan and stops is still a single call, not goal pursuit.",
+          "C": "Where a tool runs is an infrastructure fact. It may be true of either tool and does not distinguish goal-directed, multi-step behavior."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "theme": "G3",
+      "vertical": "credit union",
+      "keywords": ["open source", "open standard"],
+      "type": "single_choice",
+      "question": "A credit union is negotiating with a core-banking software vendor. Its technology committee has one firm requirement: the credit union must be able to inspect the code it will depend on, and modify it if the vendor's roadmap stalls. Which commitment should it ask the vendor to make?",
+      "options": {
+        "A": "Ship the product as open source software",
+        "B": "Build the product on an open standard",
+        "C": "Support deployment across multiple cloud providers",
+        "D": "Publish integration APIs for the product"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E06", "D": "D06" },
+      "rationale": {
+        "correct": "Open source is the commitment that matches the requirement: the code is inspectable and modifiable, so the committee can read what it depends on and change it if the vendor stalls. An open standard is a different commitment, a shared specification anyone may implement.",
+        "distractors": {
+          "B": "An open standard is a shared specification anyone may implement. It protects interoperability between implementations, but it does not let the credit union inspect or modify the vendor's own code.",
+          "C": "Multicloud portability is a real safeguard against provider lock-in, but it answers where the product runs, not whether its code can be inspected and modified.",
+          "D": "Published APIs open the integration layer only; they expose none of the product's internals, so the committee still could not read or change the code."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "theme": "G1",
+      "vertical": "cinema chain",
+      "keywords": ["scalability", "cost-effectiveness", "agility"],
+      "type": "single_choice",
+      "question": "A cinema chain's online ticketing site fails every time tickets for a major release go on sale, because its servers are sized for a quiet weekday. The digital director is drafting the cloud business case and wants to lead with the property that most directly relieves this pain. Which framing should lead?",
+      "options": {
+        "A": "Cost-effectiveness: the chain pays only for resources it actually uses",
+        "B": "Agility: new customer-facing features ship more frequently",
+        "C": "Scalability: capacity grows with each on-sale peak and shrinks after it",
+        "D": "Permanent capacity provisioned for the largest anticipated on-sale peak"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E05", "D": "D03" },
+      "rationale": {
+        "correct": "The stated pain is capacity pressure: demand spikes overwhelm servers sized for a quiet weekday. Scalability is the cloud property that answers capacity pressure, expanding with each peak and contracting afterward so the failure mode disappears.",
+        "distractors": {
+          "A": "Cost-effectiveness is a true cloud benefit, but it answers a question about spend structure. The site is failing on capacity, not on cost.",
+          "B": "Agility and speed answer slow change: shipping features faster would not keep the ticketing site up during an on-sale peak.",
+          "D": "Provisioning permanently for the largest peak throws fixed capacity at an elastic problem: it sits idle on quiet days and still fails when a bigger release breaks the estimate."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "theme": "G1",
+      "vertical": "national postal service",
+      "keywords": ["global reach and high availability"],
+      "type": "single_choice",
+      "question": "A national postal service runs its parcel-tracking portal from a single data center in the capital. Customers tracking parcels from abroad see slow page loads, and one outage took the portal down for a full day. The board asks what a cloud provider's global footprint would buy beyond more machines. What is the accurate answer?",
+      "options": {
+        "A": "Serving users everywhere while staying up through failures",
+        "B": "More total compute capacity than the current data center offers",
+        "C": "Offsite backups that restore the portal after an outage",
+        "D": "Lower infrastructure cost through pay-as-you-go pricing"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D03", "C": "E07", "D": "E06" },
+      "rationale": {
+        "correct": "Global reach and high availability are what the footprint buys: services positioned near users everywhere, and continuity through failures because no single facility is a single point of failure. Neither outcome is about raw capacity.",
+        "distractors": {
+          "B": "Raw capacity is exactly what the board was told to look past: more machines in one capital data center would neither speed up access from abroad nor survive that facility failing.",
+          "C": "Backups shorten recovery after an outage; they do not keep the portal serving during one, and they move nothing closer to customers abroad.",
+          "D": "Pay-as-you-go pricing is a real benefit with a different address: it answers cost structure, not reach or availability."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "theme": "G1",
+      "vertical": "garden centre chain",
+      "keywords": ["enhanced security", "data-driven insights"],
+      "type": "multiple_response",
+      "question": "A garden centre chain's CFO has framed the cloud business case entirely as cheaper servers and more seasonal capacity. The CIO wants the case to also name benefits that are not about cost or capacity at all. Select the TWO benefits that belong in that addition.",
+      "options": {
+        "A": "A security baseline stronger than the chain can operate on its own",
+        "B": "Near-unlimited capacity for the spring rush without buying hardware",
+        "C": "Insights drawn from the sales and stock data the chain already holds",
+        "D": "Paying only for the resources each store actually consumes",
+        "E": "A provider that takes over the chain's regulatory compliance obligations"
+      },
+      "select_count": 2,
+      "answer": ["A", "C"],
+      "distractor_patterns": { "B": "E06", "D": "E05", "E": "D19" },
+      "rationale": {
+        "correct": "Enhanced security and data-driven insights are the benefits that are not about cost or capacity: a provider-operated security baseline exceeding what the chain could run alone, and analysis that turns existing data into decisions. Together with strategic value and focus, they widen a case the CFO had reduced to servers and spend.",
+        "distractors": {
+          "B": "Elastic seasonal capacity is a genuine cloud benefit, but it is precisely the capacity story the CIO was asked to look beyond.",
+          "D": "Consumption-based pricing is cost-effectiveness, the other axis the addition must avoid: it strengthens the spend argument, not the beyond-cost one.",
+          "E": "No provider takes over a customer's compliance obligations; responsibility is shared, so this overstates what any cloud purchase delivers."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "theme": "G3",
+      "vertical": "wine importer and distributor",
+      "keywords": ["factors that motivate organizations to transform"],
+      "type": "single_choice",
+      "question": "A wine importer and distributor is debating whether to launch a transformation program. Four reasons are raised in the leadership meeting. Which one is the kind of factor that genuinely motivates organizations to transform?",
+      "options": {
+        "A": "A high-profile generative AI launch suggests the newest platforms are the best ones",
+        "B": "Managed cloud services have recently become available in the importer's region",
+        "C": "The IT budget is showing an unspent balance as the fiscal year closes",
+        "D": "A competitor now confirms restaurant orders in half the importer's turnaround time"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D19", "B": "E06", "C": "D11" },
+      "rationale": {
+        "correct": "The factors that motivate organizations to transform are competitive, customer and market pressures, and a rival serving customers measurably better is exactly such a driver. Technology availability and internal budget positions describe means and timing, not the pressure that justifies the change.",
+        "distractors": {
+          "A": "A vendor launch is news about technology, and newest is not a business reason; without a competitive or customer pressure attached it motivates nothing.",
+          "B": "Regional availability of managed services is true and useful, but it is an enabler: it explains how a program could run, not why the business needs one.",
+          "C": "An unspent budget is an internal accounting fact. Spending it is not a transformation driver, and programs justified that way stall when the balance is gone."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "theme": "G3",
+      "vertical": "municipal fire service",
+      "keywords": ["common hurdles that can affect transformation"],
+      "type": "single_choice",
+      "question": "A municipal fire service moved its incident-reporting system to the cloud a year ago. The platform performs well in every test, yet crews still file paper reports and station officers have quietly stopped chasing them. The program has stalled. Which hurdle does this describe?",
+      "options": {
+        "A": "The platform cannot handle peak incident volume",
+        "B": "A skills and culture hurdle: crews were never brought along",
+        "C": "The service selected the wrong cloud deployment model",
+        "D": "Too little of the annual budget was reserved for software licensing"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "D19", "C": "E02", "D": "D11" },
+      "rationale": {
+        "correct": "This is one of the common hurdles that can affect transformation: the technology works, but adoption failed because skills, habits and ownership on the ground were never addressed. Transformation programs stall on people and culture at least as often as on platforms.",
+        "distractors": {
+          "A": "The evidence rules this out: the platform performs well in every test. Blaming capacity contradicts the stall as described.",
+          "C": "Nothing in the stall points at where the system is deployed; crews avoiding a working tool is the same problem under any deployment model.",
+          "D": "No licensing shortfall is described, and buying more licenses would not make crews use the system they already have."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "theme": "G1",
+      "vertical": "campus bookstore chain",
+      "keywords": ["implications and risks of not adopting cloud"],
+      "type": "single_choice",
+      "question": "A campus bookstore chain has declined a proposed cloud program for the third year running, and its board minutes record the decision as prudent cost avoidance. Meanwhile its online competitors keep widening their lead in delivery speed and personalization each term. What is the chain actually accepting by standing still?",
+      "options": {
+        "A": "A compounding competitive disadvantage that grows harder to close each year",
+        "B": "Only a delay: the same benefits will be available at the same cost later",
+        "C": "A genuine reduction in overall technology spending",
+        "D": "The retraining effort that cloud adoption would have required"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D15", "C": "D19", "D": "E06" },
+      "rationale": {
+        "correct": "The implications and risks of not adopting cloud are stated as risk, not savings: while the chain stands still, competitors improve faster every cycle, so the gap compounds and the eventual catch-up costs more than the avoided program. Declining to move is a decision with a price.",
+        "distractors": {
+          "B": "Deferral is not neutral: each year of standing still adds competitor gains and legacy drift, so the same move later closes a wider gap at a higher price.",
+          "C": "The savings are not real reductions: the aging estate still consumes maintenance and refresh spending while buying no competitive ground.",
+          "D": "Retraining is a cost of adopting, not of declining; naming it here answers the wrong side of the decision."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "theme": "G1",
+      "vertical": "physiotherapy clinic chain",
+      "keywords": ["AI-ready data platform", "AI Hypercomputer"],
+      "type": "single_choice",
+      "question": "A physiotherapy clinic chain is choosing a strategic cloud partner for a data and AI roadmap. The board's stated concern is specific: years of appointment and outcome records must become usable for AI without rebuilding the data estate. Which of Google's claimed differentiators answers that concern?",
+      "options": {
+        "A": "World-leading AI models",
+        "B": "AI Hypercomputer",
+        "C": "An AI-ready data platform",
+        "D": "The prestige of partnering with a recognized AI leader"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E05", "D": "D11" },
+      "rationale": {
+        "correct": "The concern is about the data estate, and the AI-ready data platform is the differentiator that answers it: the claim that existing data becomes usable for AI where it already lives, without a rebuild. Matching the differentiator to the question the stakeholder actually raised is the judgment this decision needs.",
+        "distractors": {
+          "A": "World-leading AI is a real claim answering a different question: model capability does nothing for records that are not yet usable as AI input.",
+          "B": "AI Hypercomputer is the infrastructure-scale sibling on the same list; it answers training and serving horsepower, not whether the chain's records are AI-ready.",
+          "D": "Prestige is not a differentiator or a decision criterion; a partner's brand answers no question about the chain's data estate."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "theme": "G3",
+      "vertical": "radio broadcasting network",
+      "keywords": ["hybrid cloud", "multicloud", "private cloud"],
+      "type": "single_choice",
+      "question": "A radio broadcasting network must keep its broadcast playout systems in its own facilities under the terms of its transmission license, while its listener analytics should run on a public cloud's elastic capacity. The network wants both managed as one estate. Which deployment model is this?",
+      "options": {
+        "A": "Multicloud",
+        "B": "Hybrid cloud",
+        "C": "Private cloud for the whole estate",
+        "D": "Public cloud with data residency settings for the playout systems"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E02", "C": "E07", "D": "D06" },
+      "rationale": {
+        "correct": "A hybrid cloud combines an organization's own facilities with public cloud capacity under central management, which is exactly the described split: license-pinned playout on premises, elastic analytics in the public cloud, one estate.",
+        "distractors": {
+          "A": "Multicloud means deliberately using more than one public cloud provider; the scenario combines one provider with the network's own facilities, which is a different model.",
+          "C": "Keeping everything private satisfies the license and surrenders the elastic analytics capacity the network wanted; it answers half the requirement.",
+          "D": "Residency settings choose where data sits inside the provider's estate; the license requires the network's own facilities, which no provider-side setting delivers."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "theme": "G3",
+      "vertical": "motorway toll operator",
+      "keywords": ["domain name service (DNS)", "IP address"],
+      "type": "single_choice",
+      "question": "A motorway toll operator is moving its customer portal to the cloud, and its program lead must explain to executives what happens when a driver types the portal's web address. Which explanation is correct at the level a leader needs?",
+      "options": {
+        "A": "The domain name is the numeric identifier, and the IP address is the readable name drivers type",
+        "B": "Available bandwidth determines which server receives the request",
+        "C": "A firewall translates the typed name into a network route",
+        "D": "DNS resolves the typed name to the IP address that identifies the right server"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "D19", "C": "D06" },
+      "rationale": {
+        "correct": "The purpose-level reading is that the domain name service (DNS) resolves the human-readable name into an IP address, and the IP address identifies the server that should receive the traffic. Name resolution and addressing are the two primitives a non-engineer still needs to keep straight.",
+        "distractors": {
+          "A": "This swaps the two terms: the IP address is the numeric identifier and the domain name is the readable form, not the reverse.",
+          "B": "Bandwidth is how much data can move at once; it moves traffic, it does not decide where a typed name points.",
+          "C": "A firewall permits or blocks traffic; turning names into addresses is name resolution, a different job at a different layer."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "theme": "G3",
+      "vertical": "artisan food cooperative",
+      "keywords": ["latency", "bandwidth"],
+      "type": "single_choice",
+      "question": "An artisan food cooperative's member portal feels sluggish: every individual page click takes a noticeable moment to respond, yet the co-op's large nightly catalog uploads always finish quickly. Which network property does the complaint implicate?",
+      "options": {
+        "A": "Latency: how long one round trip takes",
+        "B": "Bandwidth: how much data can move at once",
+        "C": "Storage capacity on the portal's database server",
+        "D": "The choice between public and private deployment"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "D19", "D": "E02" },
+      "rationale": {
+        "correct": "Slow individual interactions alongside fast bulk transfers is the signature of a latency problem: each round trip takes too long, while bandwidth is clearly ample because large uploads finish quickly. The two properties answer different questions, and this complaint names the round-trip one.",
+        "distractors": {
+          "B": "Bandwidth is the property the evidence clears: nightly uploads moving large volumes quickly show the pipe is wide enough.",
+          "C": "Storage capacity governs how much can be kept, not how long a page click waits; the described symptom is a network property.",
+          "D": "Deployment model is not implicated by the evidence; a private estate with the same round-trip time would feel exactly as sluggish."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "theme": "G3",
+      "vertical": "heavy-equipment leasing firm",
+      "keywords": ["regions", "zones", "edge locations"],
+      "type": "single_choice",
+      "question": "A heavy-equipment leasing firm is drafting an internal briefing on where its fleet-telemetry workloads will physically run on Google Cloud. Which statement should the briefing use, because it describes Google's geography correctly?",
+      "options": {
+        "A": "Zones are collections of regions, so choosing a zone spreads workloads across several regions",
+        "B": "Availability districts sit between regions and zones as an intermediate tier",
+        "C": "Regions are collections of zones, and edge locations bring content closer to users",
+        "D": "A region is one data center building, so which zone is selected makes no practical difference"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E03", "B": "E08", "D": "D19" },
+      "rationale": {
+        "correct": "The tiers nest one way: regions are collections of zones, zones are the deployment areas within a region, and edge locations extend the network to bring content closer to users. Getting the nesting right is what makes placement and resilience discussions meaningful.",
+        "distractors": {
+          "A": "This inverts the hierarchy: a zone sits inside a region, so choosing one zone concentrates a workload rather than spreading it across regions.",
+          "B": "No such tier exists in Google's geography; the plausible-sounding name does not correspond to anything the briefing could rely on.",
+          "D": "A region is not a single building, and zone selection is exactly what separates workloads from shared failure; the claim erases the tier that matters."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "theme": "G3",
+      "vertical": "public library system",
+      "keywords": ["Platform as a Service (PaaS)", "Infrastructure as a Service (IaaS)", "Software as a Service (SaaS)"],
+      "type": "single_choice",
+      "question": "A public library system is classifying three shortlisted platforms for its new catalog service. For one of them, the provider provisions the servers and patches the operating system and runtime, while the library controls only its catalog application and its data. Which service model is that platform?",
+      "options": {
+        "A": "Infrastructure as a Service (IaaS)",
+        "B": "Platform as a Service (PaaS)",
+        "C": "Software as a Service (SaaS)",
+        "D": "Serverless computing"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E02", "C": "E05", "D": "D06" },
+      "rationale": {
+        "correct": "Service models are read from the responsibility boundary. When the provider operates the servers, operating system and runtime while the customer keeps the application and data, that boundary is Platform as a Service (PaaS): control of the application retained, operational burden below it traded away.",
+        "distractors": {
+          "A": "Under Infrastructure as a Service (IaaS) the library would be patching the operating system itself; the described boundary places that burden with the provider.",
+          "C": "Under Software as a Service (SaaS) the library would consume a finished application; here it still builds and controls its own catalog application.",
+          "D": "Serverless is a compute abstraction, not one of the service models being classified; it answers how code runs, not who is responsible for which layer."
+        }
+      }
+    }
+  ]
 }

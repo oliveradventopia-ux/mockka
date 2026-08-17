@@ -1,4 +1,349 @@
 {
+  "$comment": "CCAO-F question bank, authored at S4 (exam-author) per methodology/03-authoring-guide.md from content/ccao-f/{concepts.json,authoring.json,manifest.json,syllabus-rules.json,derivation/} ONLY (clean-room). Every concept is the primary concept of exactly one item; themes are the CCAO-F T1-T8 set in authoring.json; distractor tags reference methodology/distractor-patterns.json + extensions E01/E02. Style: vendor card in derivation/source-ccas-guide-samples.md (en-US, scenario stems, generic roles, stated deciding constraint, superlative framing, option-length parity).",
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "ccao-f-d1-q01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "syllabus_rule": "2.01",
+      "theme": "T2",
+      "vertical": "hotel banquet and catering sales",
+      "keywords": ["effective prompts", "business purpose"],
+      "type": "single_choice",
+      "question": "A banquet sales coordinator at a hotel banquet and catering sales office is setting up a prompt that will draft proposals for wedding clients. A colleague shares a long template prompt admired across the team for its confident, polished wording, and the coordinator must decide what standard to judge a prompt against before adopting one. Which standard is the most appropriate?",
+      "options": {
+        "A": "Judge a prompt by whether the proposals it produces are fit for the business purpose the team needs",
+        "B": "Adopt the shared template on the strength of the results colleagues across the team vouch for",
+        "C": "Judge the prompt by how confident and polished the drafts it returns sound on a first read",
+        "D": "Prefer the longest, most detailed prompt available, since detailed prompts are accepted best practice"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "E02",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "A prompt is a specification: it states the work, the inputs that govern it, and what a good result looks like, and its quality is judged by the output's fitness for the business purpose — effective prompts are measured against the proposal the team actually needs, not against length or register.",
+        "distractors": {
+          "B": "A colleague's endorsement is an anecdote, not a measure; the template still has to be judged against the output it produces for this team's proposals.",
+          "C": "Confident, polished wording is a register, not a fitness signal; a fluent draft can still miss what the client asked for.",
+          "D": "Length is not a quality standard; a long prompt that never states what a good result looks like is a weaker specification than a short one that does."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "syllabus_rule": "2.01",
+      "theme": "T2",
+      "vertical": "airline loyalty program office",
+      "keywords": ["constraints", "format", "role"],
+      "type": "multiple_response",
+      "question": "A program associate at an airline loyalty program office asks Claude to draft a member communication about changes to tier benefits. The prompt assigns a role, pastes the briefing document as context, and states the task. The draft comes back well written, but it runs far past the required two-page limit and arrives as flowing prose instead of the required benefits table. Which TWO changes to the prompt would most directly address the problem? (Select TWO.)",
+      "options": {
+        "A": "State the constraints the draft must respect, including the two-page limit",
+        "B": "Assign a more senior-sounding role so the draft takes on an executive register",
+        "C": "Specify the format the output must arrive in, naming the required benefits table",
+        "D": "Convert the prose into the benefits table by hand after each draft arrives",
+        "E": "Ask Claude to review its own draft and correct any problems it can find"
+      },
+      "select_count": 2,
+      "answer": ["A", "C"],
+      "distractor_patterns": {
+        "B": "D04",
+        "D": "D05",
+        "E": "D20"
+      },
+      "rationale": {
+        "correct": "The five components — role, context, task, constraints, format — run as a checklist. This prompt already carries a role, context, and the task, and the two failures map exactly onto the two missing components: constraints, which own the two-page limit, and format, which owns the benefits table. Naming both fixes the specification, where the correction holds for every future draft.",
+        "distractors": {
+          "B": "A role changes register, not correctness; it is one component of five and cannot substitute for the missing constraints and format.",
+          "D": "Reformatting by hand treats the symptom each time while the prompt keeps producing prose; the missing components stay missing.",
+          "E": "Self-review runs inside the context that produced the draft; it cannot supply constraints and format the request never stated."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "syllabus_rule": "2.02",
+      "theme": "T2",
+      "vertical": "regional tourism board",
+      "keywords": ["context gap", "model limitation"],
+      "type": "single_choice",
+      "question": "A content officer at a regional tourism board asks Claude to draft social posts promoting the spring campaign. The drafts come back grammatical and on topic, yet generic enough to fit any destination. The officer knows the campaign's audience, hook, and headline events well, none of which appear in the request, and is close to concluding the model cannot handle marketing work. What is the most appropriate next step?",
+      "options": {
+        "A": "Move the task to the most capable model tier and run the same request again",
+        "B": "Add the audience, hook, and headline events the request never stated, then rerun it",
+        "C": "Keep the drafts and hand edit distinctive local detail into each post after every run",
+        "D": "Take campaign writing back from the tool and produce the posts manually from now on"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "D05",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Claude cannot see what exists only in the requester's head, so generic, on-topic output is diagnosed as a context gap before it is blamed on a model limitation. Supplying the audience, hook, and headline events closes the gap the drafts are exposing.",
+        "distractors": {
+          "A": "Upgrading capability does not supply the missing campaign specifics; a stronger tier fills the same gap with better-worded generic material.",
+          "C": "Hand editing rewrites the symptom on every run while the request keeps omitting what makes the campaign distinct.",
+          "D": "Walking away treats a fixable context gap as a permanent limitation; nothing here shows the task is beyond the tool."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "syllabus_rule": "2.03",
+      "theme": "T2",
+      "vertical": "charity grant administration",
+      "keywords": ["ordered steps", "checkable result"],
+      "type": "single_choice",
+      "question": "A grants officer at a charity grant administration team delegates a monthly job to Claude: screen applications against eligibility criteria, check each budget against policy limits, and draft a funding memo. Run as one large prompt, the memos read smoothly — but when one is wrong, the officer cannot tell which part of the job failed. What is the most appropriate way to restructure the work?",
+      "options": {
+        "A": "Split the job into ordered steps and check each stage's result before the next stage consumes it",
+        "B": "Keep the single prompt and expand it with more detailed instructions covering every stage",
+        "C": "Commission an automated multi-agent pipeline in which each stage is handled by its own agent",
+        "D": "Keep the current prompt and pass the memos that read fluent and complete without further checks"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "D01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Task decomposition techniques split complex work into ordered steps, each producing a checkable result before the next step consumes it. Checkable intermediates are what make delegated multi-stage work diagnosable: when a memo is wrong, the failing stage is visible instead of buried in one opaque pass.",
+        "distractors": {
+          "B": "More instructions make the single prompt longer, not more diagnosable; a failure still cannot be traced to a stage.",
+          "C": "An agent pipeline adds machinery a monthly three-stage job does not warrant, and building one sits beyond an Associate's scope besides.",
+          "D": "Fluent, complete-sounding memos are not evidence of correctness; the officer already knows some of them are wrong."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "syllabus_rule": "2.03",
+      "theme": "T2",
+      "vertical": "market research fieldwork agency",
+      "keywords": ["structure complex requests", "dependency"],
+      "type": "single_choice",
+      "question": "A project lead at a market research fieldwork agency has decomposed a client study into steps: design the questionnaire, build the fieldwork schedule, brief the interviewers, and draft the client summary. Every later step depends on the questionnaire, and the client is eager to see something polished early. Which step should the lead build with Claude and verify first?",
+      "options": {
+        "A": "The client summary, because a polished early deliverable is what the client is waiting to see",
+        "B": "The interviewer briefing, leaving the questionnaire for the end when requirements are clearest",
+        "C": "The questionnaire, verified before any later step is allowed to build on top of it",
+        "D": "All four steps in a single pass, keeping the study whole instead of fragmenting it into stages"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D11",
+        "B": "D15",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "How to structure complex requests is decided by dependency and stakes: the step everything else rests on is built and verified first, because every later step inherits its errors. The questionnaire governs the fieldwork schedule, the interviewer briefing, and the client summary alike.",
+        "distractors": {
+          "A": "A polished early deliverable is client optics, not a build order; a summary drafted before the questionnaire exists rests on nothing.",
+          "B": "Deferring the load-bearing step compounds its cost; a briefing built without the questionnaire will need redoing once it exists.",
+          "D": "Running the study as one undivided pass removes the checkpoints the decomposition just created and makes failures untraceable again."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "syllabus_rule": "2.03",
+      "theme": "T8",
+      "vertical": "dental clinic network operations",
+      "keywords": ["decomposition", "attributable"],
+      "type": "single_choice",
+      "question": "An operations coordinator at a dental clinic network runs one long-standing prompt that produces patient recall letters, drafts follow-up scheduling blocks, and assigns insurance codes in a single pass. Output is intermittently wrong, and the coordinator cannot tell which of the three functions produces the errors. What is the most appropriate change?",
+      "options": {
+        "A": "Keep the prompt and correct whichever letters, blocks, or codes turn out wrong after each run",
+        "B": "Tighten the prompt's wording and reduce the latitude it grants, leaving its structure as it is",
+        "C": "Retire and rewrite the prompt periodically, as prompts accumulate errors the longer they are reused",
+        "D": "Restructure the single prompt into separate stages so each function returns its own result"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "A single opaque prompt covering many stages cannot be diagnosed when it fails. The remedy for complex requests is decomposition: each function returns a result that can be checked on its own, so errors become attributable to a stage instead of hiding somewhere in one pass.",
+        "distractors": {
+          "A": "Correcting outputs downstream treats the symptoms one at a time while the source of the errors stays unlocated.",
+          "B": "Wording and latitude are knobs; neither makes a three-function prompt traceable, and the failing function stays hidden.",
+          "C": "Prompts do not accumulate errors with reuse; that claim invents a mechanism, and a rewritten monolith is exactly as undiagnosable."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "syllabus_rule": "2.04",
+      "theme": "T8",
+      "vertical": "corporate travel desk",
+      "keywords": ["diagnostic", "iterate prompts"],
+      "type": "single_choice",
+      "question": "An agent at a corporate travel desk uses Claude to summarize the company travel policy for new hires. The first draft is accurate but comes back at twice the length requested. On earlier tasks the agent responded to a flawed draft by rewriting the entire prompt from scratch, and the results swung unpredictably between rounds. What is the most appropriate way to run the next round?",
+      "options": {
+        "A": "Read the draft as a diagnostic, identify the one component it points at, and change only that",
+        "B": "Rewrite the role, context, and format lines together so the next round improves on every front at once",
+        "C": "Swap in a prompt another team praises for its policy summaries and run that one instead",
+        "D": "Stop iterating and write the summary by hand, treating the over-long draft as the tool's ceiling"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D12",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "The output is read as a diagnostic naming which component of the request failed — an accurate draft at twice the length requested points at the length constraint — and exactly one component changes per round, so the effect is attributable. That is how to iterate prompts toward better quality without the swings whole-prompt rewrites produce.",
+        "distractors": {
+          "B": "Changing several components at once means no improvement or regression can be attributed to any of them — the same confounding the from-scratch rewrites produced.",
+          "C": "Another team's admired prompt is an anecdote about a different task; adopting it discards the diagnostic the current draft just supplied.",
+          "D": "One over-long draft is not a capability ceiling; the output points at a fixable component, not at the tool."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "syllabus_rule": "2.04",
+      "theme": "T8",
+      "vertical": "independent bookstore chain",
+      "keywords": ["rounds", "monthly sales figures"],
+      "type": "single_choice",
+      "question": "A marketing coordinator at an independent bookstore chain has spent five rounds rewording a prompt for a staff-picks newsletter that must cite each store's monthly sales figures. Improvement stopped at round three: the drafts remain fluent, the figures are still invented, and no sales data has ever been attached to the request. What is the most appropriate next step?",
+      "options": {
+        "A": "Run a further round of still more elaborate wording spelling out exactly what the drafts should contain",
+        "B": "Stop rewording and attach the monthly sales figures the newsletter must cite",
+        "C": "Move the task to the most capable model tier and rerun the current prompt unchanged",
+        "D": "Conclude the newsletter cannot be delegated and return to writing it manually each month"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D03",
+        "C": "D01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Iteration terminates: when successive rounds stop improving the result, the remaining gap is a task or evidence problem, not a wording problem. The drafts invent figures because no sales data was ever supplied, and attaching the monthly sales figures closes a gap no phrasing change can reach.",
+        "distractors": {
+          "A": "Improvement already stopped at round three; more elaborate wording keeps working on a component that is not the problem.",
+          "C": "A more capable tier cannot cite data it was never given; the invented figures are an evidence gap, not a capability gap.",
+          "D": "Delegation is not the failure; a request without the sales data could never have succeeded, and supplying it has not been tried."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "syllabus_rule": "2.04",
+      "theme": "T2",
+      "vertical": "veterinary clinic group",
+      "keywords": ["worked examples", "improve output quality"],
+      "type": "single_choice",
+      "question": "A triage administrator at a veterinary clinic group uses Claude to sort incoming owner messages into urgent and routine queues. The category definitions in the prompt are already thorough, and clear-cut messages sort correctly — but borderline messages, like an older dog refusing one meal or a cat hiding since yesterday, keep landing in the wrong queue. What is the most appropriate revision?",
+      "options": {
+        "A": "Extend the definitions with additional paragraphs describing each category in finer detail",
+        "B": "Ask owners to mark their own messages as urgent or routine when they write in",
+        "C": "Add worked examples of borderline messages, each labeled with the correct queue",
+        "D": "Have staff re-sort the borderline messages by hand at the end of each day"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D18",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "When definitions are already adequate and boundary cases still fail, the missing component is worked examples that mark the boundary. Labeled borderline cases show where the line sits, which more definition cannot — the reliable way to improve output quality on edge cases.",
+        "distractors": {
+          "A": "The definitions are not the failing component — clear-cut messages already sort correctly; more definition is the wrong fix for boundary cases.",
+          "B": "Pushing the classification onto owners makes the failure the user's problem and hands the triage call to the least qualified party.",
+          "D": "A daily hand re-sort treats the symptom after the queue damage is done and leaves the prompt misrouting tomorrow's messages."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "syllabus_rule": "2.05",
+      "theme": "T2",
+      "vertical": "orchestra development office",
+      "keywords": ["latitude", "brainstorming"],
+      "type": "single_choice",
+      "question": "A development associate at an orchestra development office uses one heavily constrained prompt template — fixed structure, fixed tone, fixed length — for every task. It performs well on donor-report analysis, but when the associate uses it to brainstorm next season's fundraising campaign themes, every run returns the same three predictable ideas. What is the most appropriate adjustment?",
+      "options": {
+        "A": "Keep maximum constraints on every task, as tightly specified prompts are accepted best practice",
+        "B": "Reuse whichever prompt produced last year's most admired campaign and adapt its wording",
+        "C": "Drop the constraints from every task's prompt so that no request is over-specified again",
+        "D": "Keep the constraints for the analysis work and grant the brainstorming prompt deliberate latitude"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D14",
+        "B": "D12",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "Task type sets how much latitude the prompt grants: convergent analysis is constrained, divergent brainstorming is deliberately left open. Control and range trade off, and one prompt cannot maximize both — the fixed template is right for donor-report analysis and wrong for campaign brainstorming.",
+        "distractors": {
+          "A": "Tight specification is not a universal best practice; applied to divergent work, it is exactly what keeps returning the same three predictable ideas.",
+          "B": "Last year's admired campaign is an anecdote; copying its prompt neither diagnoses the template nor sets latitude by task type.",
+          "C": "Removing constraints everywhere trades one mismatch for another: the donor-report analysis needs the control the template currently provides."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "syllabus_rule": "2.05",
+      "theme": "T2",
+      "vertical": "furniture manufacturer export desk",
+      "keywords": ["research", "task type"],
+      "type": "single_choice",
+      "question": "An export desk coordinator at a furniture manufacturer asks Claude for a polished briefing on current import duties in two target markets, prompting it exactly as they would for drafting work: a role, the audience, and a request for finished prose. The briefing comes back reading authoritative. What is the most appropriate way to handle this task?",
+      "options": {
+        "A": "Accept the briefing as finished; its authoritative, polished register shows the duties are reliable",
+        "B": "Treat the job as a research task first, grounding the duties in current sources before any drafting",
+        "C": "Rely on the model's training staying current, as duty rates are refreshed into it when they change",
+        "D": "Publish now and schedule a quarterly hand check to catch any duty figures that have gone stale"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "D19",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "The four task types — analysis, research, drafting, brainstorming — each fail in a characteristic way when the wrong strategy is applied. Import duties in two target markets are a research task type: current information must be brought to the task first, and drafting begins only once the facts are grounded.",
+        "distractors": {
+          "A": "An authoritative register is fluency, not currency; polished prose is exactly how a drafting strategy dresses stale or invented duty figures.",
+          "C": "Pretrained knowledge carries no currency guarantee, and no mechanism refreshes duty rates into it as they change; that claim invents one.",
+          "D": "A quarterly check detects damage after the briefing has circulated; a research task needs facts grounded before drafting, not audited after."
+        }
+      }
+    }
+  ]
 }

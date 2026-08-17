@@ -784,6 +784,398 @@
           "D": "Wiring the gateway into each team's system makes the meters aware of every consumer, so adding a fourth team means changing the gateway, the coupling the firm asked to avoid."
         }
       }
+    },
+    {
+      "id": "gcp-cdl-d3-01",
+      "domain": "d3",
+      "primary_concept": "C-031",
+      "theme": "G3",
+      "vertical": "ferry and port operator",
+      "keywords": ["artificial intelligence", "machine learning", "generative AI"],
+      "type": "single_choice",
+      "question": "A ferry and port operator's board is reviewing two projects. One trains a model on ten years of sailing records so it can predict which crossings will be cancelled; the other drafts passenger notices in three languages from a short prompt. A director asks how the two relate to each other in the field's vocabulary. Which statement is correct?",
+      "options": {
+        "A": "Both are generative AI, as each produces an output the operator did not have before",
+        "B": "Both are artificial intelligence: the first is machine learning, the second is generative AI",
+        "C": "Neither is machine learning, which by definition needs labeled data the operator lacks",
+        "D": "The first is machine learning, and so is the second, as a trained model produced it"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "D19", "D": "E07" },
+      "rationale": {
+        "correct": "The terms nest. Artificial intelligence is the field; machine learning is the subset that learns patterns from data, which is what a cancellation predictor does; and generative AI is the newer branch that produces novel content, which is what a notice drafter does. Naming the level correctly is what stops a board discussion confusing a prediction with a piece of writing.",
+        "distractors": {
+          "A": "A cancellation prediction is a value drawn from historical patterns, not novel content, so calling both projects generative AI stretches the newer branch over work it does not describe.",
+          "C": "Machine learning covers far more than labeled training data, and a predictor built on ten years of sailing records is the plainest example of it.",
+          "D": "Generative AI is indeed built with machine learning, and stopping there leaves the board without the term for the branch that produces content it has never seen before."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-02",
+      "domain": "d3",
+      "primary_concept": "C-032",
+      "theme": "G3",
+      "vertical": "flower delivery network",
+      "keywords": ["data analytics", "business intelligence", "generative AI"],
+      "type": "single_choice",
+      "question": "A flower delivery network's marketing lead says the team uses AI for everything. In practice the team does two things: it runs a dashboard that explains why margins fell over the peak gifting week, and it runs a tool that writes a fresh product description for every new bouquet. The finance director asks which of the two is generative AI. What is the accurate answer?",
+      "options": {
+        "A": "Both: a dashboard also produces an explanation the team did not previously have",
+        "B": "The dashboard, where explaining why margins fell means generating an account of them",
+        "C": "Neither: both run on models the network licenses rather than trains for itself",
+        "D": "The description writer, which produces content that did not exist before"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "D19", "C": "E06" },
+      "rationale": {
+        "correct": "Data analytics and business intelligence describe and explain what already happened, and a margin dashboard is an account of past sales however sophisticated it looks. Generative AI produces content that did not exist, which is what writing a fresh product description is. The line is not how clever the tool looks; it is whether the output is new content or an explanation of existing records.",
+        "distractors": {
+          "A": "A dashboard assembles and explains figures the network already holds, and presenting them in a new arrangement is business intelligence rather than the creation of new content.",
+          "B": "Explaining why margins fell is exactly the job of data analytics, and describing a cause found in the data is not the same as producing content that was not there.",
+          "C": "Whether a model is licensed or trained in-house says nothing about what it does, and both tools keep their categories under either arrangement."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-03",
+      "domain": "d3",
+      "primary_concept": "C-033",
+      "theme": "G1",
+      "vertical": "furniture manufacturer",
+      "keywords": ["customer support", "workforce productivity", "sales experiences"],
+      "type": "single_choice",
+      "question": "A furniture manufacturer has deployed one agentic AI capability. Given a complaint about a delayed order, it checks stock, reschedules the delivery, issues a goodwill credit and confirms all three back to the customer, with no person touching the case. The transformation report records each capability against the function whose work it changes. Which function does this one belong to?",
+      "options": {
+        "A": "Customer support, where cases are resolved end to end instead of routed to a person",
+        "B": "Workforce productivity, where staff finish routine work faster with assistance",
+        "C": "Operations, where the scheduling and stock systems are the ones being changed",
+        "D": "Sales experiences, where the goodwill credit is an offer made to retain a customer"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E06", "D": "E07" },
+      "rationale": {
+        "correct": "Agentic AI is recorded against the function whose work changes. Here a customer support case is resolved end to end, checked, rescheduled, credited and confirmed, with no handoff to a person at any point. Workforce productivity, sales experiences, product innovation, operations and research are the other functions the same technology transforms, each in a different way.",
+        "distractors": {
+          "B": "Workforce productivity is where a person still does the work and finishes it sooner, and here nobody touches the case at all, which is a different kind of change.",
+          "C": "The scheduling and stock systems are consulted rather than changed, and operations would be the answer if the agent were reshaping how production or logistics run.",
+          "D": "The goodwill credit is one step inside the resolution, so picking it out records a fragment of the case instead of the function whose work the agent now performs."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-04",
+      "domain": "d3",
+      "primary_concept": "C-034",
+      "theme": "G1",
+      "vertical": "home renovation marketplace",
+      "keywords": ["pre-built AI agents and applications", "all-in-one AI developer platform", "best infrastructure for AI"],
+      "type": "single_choice",
+      "question": "A home renovation marketplace employs no data scientists and needs an AI-powered helpdesk assistant answering customers before its spring campaign opens. Its chief executive has read Google's list of AI advantages and asks which one speaks to the marketplace's situation. Which advantage does?",
+      "options": {
+        "A": "Sophisticated first-party models, developed by Google rather than licensed in",
+        "B": "The best infrastructure for AI, so the assistant serves its answers quickly",
+        "C": "Pre-built AI agents and applications, adopted without building a model",
+        "D": "An all-in-one AI developer platform, on which the marketplace builds the assistant"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E05", "B": "E06", "D": "D01" },
+      "rationale": {
+        "correct": "Each claimed advantage answers a different question, and the question here is how an organization with no data scientists gets a capability live before a campaign. Pre-built AI agents and applications is the claim that answers it, because the capability is adopted rather than built. Sophisticated models, the best infrastructure for AI and the all-in-one AI developer platform all matter to organizations that are building.",
+        "distractors": {
+          "A": "Model quality is a real advantage, and it answers what an assistant could do rather than how a marketplace with no data scientists gets one running before the campaign.",
+          "B": "Infrastructure strength shows up in how fast and how cheaply a model serves, which is a question the marketplace has not asked and could not act on either way.",
+          "D": "The developer platform is the route for teams that intend to build, and this marketplace has nobody to build with, so choosing it adds work the deadline cannot absorb."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-05",
+      "domain": "d3",
+      "primary_concept": "C-035",
+      "theme": "G5",
+      "vertical": "hospitality staffing agency",
+      "keywords": ["replacing or simplifying rule-based systems", "scaling business decisions", "deriving business insights from large datasets"],
+      "type": "multiple_response",
+      "question": "A hospitality staffing agency is shortlisting candidate problems for its first machine learning project, and its head of operations wants only the ones machine learning is genuinely the right tool for. Select the TWO problems that qualify.",
+      "options": {
+        "A": "A shift-matching rulebook grown to hundreds of conditions that nobody can maintain",
+        "B": "Choosing which of two payroll providers offers the agency better contract terms",
+        "C": "Retaining five years of timesheet history instead of deleting it after one year",
+        "D": "Forecasting which of thousands of weekly postings will go unfilled, one by one",
+        "E": "Sending each worker the confirmation email for a shift they have just accepted"
+      },
+      "select_count": 2,
+      "answer": ["A", "D"],
+      "distractor_patterns": { "B": "E06", "C": "E07", "E": "E05" },
+      "rationale": {
+        "correct": "Machine learning earns its place in two of these: replacing or simplifying rule-based systems, where a rulebook has grown past what anyone can maintain, and scaling business decisions, where a judgment must be made thousands of times over and no team can make each one by hand. The third problem it suits, deriving business insights from large datasets, is not on this shortlist.",
+        "distractors": {
+          "B": "Choosing between two suppliers is a commercial negotiation with a handful of variables and no pattern to learn, so it is settled by reading the terms.",
+          "C": "Keeping more history is a genuine prerequisite for training anything, and it is data management rather than the business problem a model would solve.",
+          "E": "Sending a confirmation when a shift is accepted is deterministic automation: the rule is one line, there is nothing to learn, and calling it machine learning stretches the term."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-06",
+      "domain": "d3",
+      "primary_concept": "C-036",
+      "theme": "G3",
+      "vertical": "independent record label",
+      "keywords": ["uniqueness", "consistency", "timeliness"],
+      "type": "single_choice",
+      "question": "An independent record label's royalty run keeps failing reconciliation. Investigation shows that one recording is listed four times under slightly different spellings of its title, so each quarter's payment is split across the four entries and none of them matches the contract. Which dimension of data quality does that defect violate?",
+      "options": {
+        "A": "Consistency, where two records of the same thing disagree with one another",
+        "B": "Uniqueness would be broken only if the duplicates were identical rather than spelled differently",
+        "C": "Timeliness, where the duplicates accumulated over several years of catalog entry",
+        "D": "Uniqueness, where one real-world thing is recorded more than once"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "D19", "C": "E06" },
+      "rationale": {
+        "correct": "Uniqueness is the dimension that says one real-world entity should appear once. Four entries for one recording break it, which is why the royalty run splits a payment that should have been whole. Completeness, timeliness, validity, accuracy and consistency each name a different defect, and none of them describes a thing recorded more than once.",
+        "distractors": {
+          "A": "Consistency covers records that contradict each other, such as two royalty rates for one contract, and these entries do not disagree about anything; there are simply too many of them.",
+          "B": "Duplicates rarely arrive identical, and near-identical spellings of one title are exactly the case uniqueness exists to catch.",
+          "C": "How long the duplicates took to accumulate is true and beside the point, as timeliness is about data being current and these entries are wrong the day they are created."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-07",
+      "domain": "d3",
+      "primary_concept": "C-037",
+      "theme": "G6",
+      "vertical": "industrial bakery",
+      "keywords": ["explainable and responsible AI"],
+      "type": "single_choice",
+      "question": "An industrial bakery has built a model that scores supplier batches on arrival and rejects the poorest. In trial it graded more reliably than the quality team. When a supplier disputed a rejection, nobody at the bakery could say which properties of that batch drove its score. The commercial director wants to go live next month on the strength of the trial. What should the bakery recognize?",
+      "options": {
+        "A": "The trial settles it: a model that grades more reliably than the quality team has earned deployment",
+        "B": "A decision the bakery cannot explain is a decision it cannot defend, which blocks going live",
+        "C": "A notice should be published telling suppliers that rejections are scored by a model",
+        "D": "The quality team should review each rejection afterwards and reverse the ones that look wrong"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "D14", "C": "D09", "D": "D07" },
+      "rationale": {
+        "correct": "Explainability is a condition of deployment, not a refinement after it. A rejection the bakery cannot explain is a rejection it cannot defend to the supplier who disputes it, and explainable and responsible AI is what makes the decision reviewable at all. Strong trial results describe how often the model is right and say nothing about whether its reasoning can be shown.",
+        "distractors": {
+          "A": "Grading more reliably is the usual reason to adopt a model and is not sufficient here, as the constraint the dispute exposed is whether a rejection can be explained.",
+          "C": "Telling suppliers that a model made the decision is honest and leaves the dispute where it was, given that the bakery still cannot say why this batch was rejected.",
+          "D": "Reviewing rejections afterwards catches errors after a supplier has already been refused, and the reviewers face the same unexplainable score the disputing supplier did."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-08",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "theme": "G6",
+      "vertical": "language school network",
+      "keywords": ["explainable and responsible AI"],
+      "type": "single_choice",
+      "question": "A language school network's innovation group brings four generative AI proposals to its ethics review, and every one is technically feasible with the tools the network already licenses. The review is asked to identify the proposal that responsible use rules out. Which proposal should it refuse?",
+      "options": {
+        "A": "Publishing thousands of machine-written course reviews under invented student names",
+        "B": "Drafting lesson plans that a teacher reviews and signs before any class uses them",
+        "C": "Generating practice dialogues at a volume no human author could write by hand",
+        "D": "Scoring student essays, with marks released only after a tutor confirms each one"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E06", "C": "D11", "D": "E07" },
+      "rationale": {
+        "correct": "Responsible use is a legitimacy judgment, not a feasibility one. Reviews attributed to students who do not exist produce volume with no accountable business purpose and deceive the readers they are aimed at, which is what explainable and responsible AI rules out. Every other proposal has a named purpose and a person who answers for the output.",
+        "distractors": {
+          "B": "A teacher who reviews and signs a lesson plan is the accountable owner of it, which is the arrangement responsible use asks for rather than the one it forbids.",
+          "C": "Producing more material than a human author could write describes scale, and scale is not what makes a use illegitimate; practice dialogues have an obvious teaching purpose.",
+          "D": "A tutor confirming each mark before release keeps a person accountable for every decision that reaches a student, so the safeguard the review looks for is present."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-09",
+      "domain": "d3",
+      "primary_concept": "C-039",
+      "theme": "G5",
+      "vertical": "microfinance lender",
+      "keywords": ["potential for business differentiation", "implementation speed", "technical expertise requirements"],
+      "type": "single_choice",
+      "question": "A microfinance lender wants an AI capability that competitors cannot simply buy: its own loan-performance history is the asset, and the board says the capability must be built on it. The lender employs two experienced data scientists and has set no launch date. Which factor should dominate its choice of AI approach?",
+      "options": {
+        "A": "Implementation speed, so a capability reaches the field as early as possible",
+        "B": "Technical expertise requirements, keeping the approach inside a small team's reach",
+        "C": "Potential for business differentiation, which the lender's own history can buy",
+        "D": "Development effort, taking whichever approach is cheapest to build and run"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E05", "D": "D11" },
+      "rationale": {
+        "correct": "Approach selection turns on the constraint that actually binds. Here it is potential for business differentiation: the lender's own loan-performance history is the asset a competitor cannot copy, and only an approach that builds on it converts that into an advantage. Implementation speed, development effort, technical expertise requirements and choice and flexibility are the other factors, and none of them is under pressure in this situation.",
+        "distractors": {
+          "A": "Implementation speed matters where a date binds, and the board has set none, so optimizing for it would trade away the differentiation the lender said it wants.",
+          "B": "Expertise is a real constraint for organizations without specialists, and this lender has two experienced data scientists, so the approaches that need them are open to it.",
+          "D": "Taking the cheapest thing to build is a budget instinct rather than a selection factor, and it points at exactly the generic capability a competitor could buy tomorrow."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-10",
+      "domain": "d3",
+      "primary_concept": "C-040",
+      "theme": "G2",
+      "vertical": "minor-league sports franchise",
+      "keywords": ["Gemini Enterprise Agent Platform", "Gemini"],
+      "type": "single_choice",
+      "question": "A minor-league sports franchise now runs four AI agents built separately by its ticketing, merchandising and community teams. Nobody can say what data each agent may reach, two teams have built the same lookup twice, and no one approved any of them. The chief operating officer wants one place to build, deploy and govern all agents. Which Google Cloud offering is that?",
+      "options": {
+        "A": "Gemini, the general-purpose model the three teams are already calling",
+        "B": "Looker, so every team reports from one governed set of figures",
+        "C": "Agent Registry, the catalog where deployed agents are listed and approved",
+        "D": "The Gemini Enterprise Agent Platform, for building, deploying and governing agents"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E01", "B": "E06", "C": "E08" },
+      "rationale": {
+        "correct": "What the franchise needs is not another model or another report; it is one place where agents are built, deployed and governed across the organization. That is what the Gemini Enterprise Agent Platform is for in business terms, and it is what turns duplicated agents and unclear data access from a per-team accident into something visible and manageable.",
+        "distractors": {
+          "A": "Gemini is the model an agent calls, which is exactly what the three teams already do; a model supplies capability, not a place to govern what is built with it.",
+          "B": "Governed reporting puts every team on the same figures and says nothing about which agents exist, what each may reach, or who approved them.",
+          "C": "No Google Cloud offering carries that name, and a catalog alone would list the problem rather than provide the build-and-deploy surface the officer asked for."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-11",
+      "domain": "d3",
+      "primary_concept": "C-041",
+      "theme": "G2",
+      "vertical": "museum and heritage trust",
+      "keywords": ["Speech-to-Text API", "Vision API", "Cloud Translation API"],
+      "type": "single_choice",
+      "question": "A museum and heritage trust holds three thousand hours of recorded oral-history interviews on tape. Researchers can currently find a passage only by listening through a recording, so the trust wants the spoken words available as searchable text. It employs no machine learning staff. Which Google Cloud offering should the trust use?",
+      "options": {
+        "A": "The Speech-to-Text API, which converts recorded audio into text",
+        "B": "The Cloud Translation API, which converts text between language pairs",
+        "C": "AutoML on Agent Platform, training a transcription model on the tapes",
+        "D": "Cloud Storage for the tapes, so researchers can stream any recording in full"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "D01", "D": "E07" },
+      "rationale": {
+        "correct": "Matching the modality to a solved task is the judgment here: audio to the Speech-to-Text API, images to the Vision API, language pairs to the Cloud Translation API. The trust needs spoken words as text and has no machine learning staff, so a pre-trained API that already performs the task is the route, and building anything would repeat finished work.",
+        "distractors": {
+          "B": "The Cloud Translation API moves text between languages and needs text to start from, which is precisely what the trust does not yet have.",
+          "C": "Training a transcription model reproduces a solved task, and the trust has nobody to train, evaluate or maintain it.",
+          "D": "Storing the tapes makes them playable and not searchable, so a researcher still listens through recordings to find the passage they want."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-12",
+      "domain": "d3",
+      "primary_concept": "C-042",
+      "theme": "G2",
+      "vertical": "natural-gas distributor",
+      "keywords": ["Gemini", "Agent Platform API"],
+      "type": "single_choice",
+      "question": "A natural-gas distributor wants its engineers' typed field notes turned into incident summaries: each note must be read, a probable cause inferred, a severity suggested and a plain-language summary drafted for the regulator. The distributor wants all of that called from its own back-office system. Which route fits the job?",
+      "options": {
+        "A": "The Vision API, which extracts information from documents and images",
+        "B": "Gemini through the Agent Platform API, which handles broad generative work",
+        "C": "The Cloud Translation API, so summaries reach the regulator in its language",
+        "D": "A classification model trained on past notes to predict a severity band"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "E06", "D": "E07" },
+      "rationale": {
+        "correct": "The job needs broad generative capability over free text: reading, inferring, judging and drafting in one pass. Gemini is the general-purpose model for that, and the Agent Platform API is the programmatic route to it from the distributor's own back-office system. A single-task perception API answers one modality-specific question and none of these four.",
+        "distractors": {
+          "A": "The Vision API is for images and scanned pages, and these notes are already typed text, so extraction is not the problem left to solve.",
+          "C": "Translation is a real need if the regulator reads another language, and it operates on a summary that something else must first infer and draft.",
+          "D": "A severity classifier delivers one of the four outputs and leaves the reading, the inferred cause and the drafted summary undone."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-13",
+      "domain": "d3",
+      "primary_concept": "C-043",
+      "theme": "G2",
+      "vertical": "office furniture rental",
+      "keywords": ["AutoML on Agent Platform", "Agent Studio on Agent Platform"],
+      "type": "single_choice",
+      "question": "An office furniture rental firm holds ten years of its own inspection photographs, each labeled with the damage grade an assessor gave it, and wants new photographs graded the same way. The work would be done by two business analysts who are comfortable with data and have never trained a model. Which route fits both the data and the expertise?",
+      "options": {
+        "A": "Agent Studio on Agent Platform, assembling an agent over the photograph library",
+        "B": "The Vision API, which recognizes objects and text in images out of the box",
+        "C": "Hiring a machine learning engineer to build a custom model from scratch",
+        "D": "AutoML on Agent Platform, training a custom model on the labeled photographs"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E01", "B": "E07", "C": "D01" },
+      "rationale": {
+        "correct": "Two facts decide the route: the firm has its own labeled data, and nobody on the team has trained a model. AutoML on Agent Platform is built for that pair, training a custom model on your own data without deep machine learning skills, while Agent Studio on Agent Platform is the low-code route when the job is assembling an agent rather than training a model.",
+        "distractors": {
+          "A": "Assembling an agent is the low-code route to orchestrating tasks, and this firm's problem is a grading model trained on its own labeled photographs.",
+          "B": "A pre-trained vision service recognizes general objects and text, and it has never seen this firm's grading scale, so it cannot reproduce an assessor's grade.",
+          "C": "Hiring a specialist to build from scratch is real capability and more machinery than the situation needs, given that a managed training service covers the same ground with the team the firm already has."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-14",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "theme": "G1",
+      "vertical": "orchard and packhouse cooperative",
+      "keywords": ["AI Hypercomputer", "GPUs and TPUs", "flexible consumption models"],
+      "type": "single_choice",
+      "question": "An orchard and packhouse cooperative is presenting the infrastructure section of its AI business case to its members, who are growers. They want to know what the cooperative is buying when the paper says AI infrastructure, and why it is not simply a bigger machine. Which description states what that layer is?",
+      "options": {
+        "A": "A private cloud region reserved for the cooperative's own AI workloads",
+        "B": "A managed warehouse keeping the cooperative's harvest data ready for training",
+        "C": "AI Hypercomputer, integrating GPUs and TPUs with leading software and open standards",
+        "D": "A fixed annual allocation of accelerator hours bought before the season starts"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E02", "B": "E01", "D": "E06" },
+      "rationale": {
+        "correct": "The AI infrastructure layer is the compute that models are trained and served on. AI Hypercomputer integrates GPUs and TPUs with industry-leading software and open standards, so what the cooperative buys is an integrated stack rather than loose hardware, and its cost is controlled through flexible consumption models, which is what lets a seasonal business pay for accelerators in the weeks it uses them.",
+        "distractors": {
+          "A": "A reserved private region describes where capacity sits and who else may use it, which is a deployment model rather than the accelerator layer the paper is naming.",
+          "B": "Keeping harvest data ready for training is the data platform's job, and the growers are asking about the layer that the training itself runs on.",
+          "D": "Buying a fixed allocation in advance is one way to pay for accelerators, and paying for them is not what the layer is; flexible consumption is what keeps a seasonal business from buying capacity it will not use."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-15",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "theme": "G5",
+      "vertical": "outdoor advertising operator",
+      "keywords": ["BigQuery ML", "standard SQL queries"],
+      "type": "single_choice",
+      "question": "An outdoor advertising operator holds every campaign's impression and pricing history in BigQuery, and its three analysts are fluent in SQL and in nothing else. They want to predict which advertising sites will go unsold next quarter. The data team will not allow the warehouse to be copied into a separate environment. What should the operator use?",
+      "options": {
+        "A": "BigQuery ML, which trains and serves models from standard SQL queries",
+        "B": "AutoML on Agent Platform, after exporting the campaign history to it",
+        "C": "Looker, which would chart unsold inventory by site and by quarter",
+        "D": "A weekly report of last quarter's unsold sites, compiled by the analysts"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "E06", "D": "D08" },
+      "rationale": {
+        "correct": "Two constraints point the same way: the analysts speak standard SQL, and the data may not leave the warehouse. BigQuery ML trains and serves models with standard SQL queries where the data already lives, so the prediction is built by the people who already query it and nothing is copied anywhere.",
+        "distractors": {
+          "B": "Exporting the campaign history into a separate training environment is exactly the copy the data team refuses, and it moves the work somewhere the analysts do not work.",
+          "C": "Charting unsold inventory shows what has already happened by site and by quarter, and the operator asked which sites will go unsold next.",
+          "D": "A report of last quarter's unsold sites records the outcome after the fact, which arrives far too late to change what a seller does about next quarter."
+        }
+      }
     }
   ]
 }

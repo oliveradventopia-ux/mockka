@@ -3456,6 +3456,870 @@
           "D": "Dashboards show a trend over a period, which is the wrong altitude for a single message. Volume over the past month cannot name a relaying server."
         }
       }
+    },
+    {
+      "id": "d5-q01",
+      "domain": "d5",
+      "primary_concept": "C-099",
+      "theme": "S1",
+      "vertical": "parcel locker network",
+      "keywords": [
+        "procedure",
+        "standard",
+        "guideline",
+        "playbook"
+      ],
+      "type": "single_choice",
+      "question": "A parcel locker network is reorganizing its security documentation. One document sets out, step by step, exactly what a field technician does when replacing a locker bank's lock, in the order the steps must occur, leaving no discretion to the technician. Under which class does that document belong?",
+      "options": {
+        "A": "A standard, which specifies the technical requirement the lock must meet",
+        "B": "A procedure, which instructs the technician in the order the steps occur",
+        "C": "A guideline, which technicians must follow exactly at every replacement",
+        "D": "A playbook, which sequences the response to a locker tamper alarm"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Governance documents are ordered by how binding they are: guidelines advise, policies commit, standards specify, and procedures instruct. A document that fixes the steps and their order and leaves no discretion is a procedure, the most prescriptive of the four and the one a technician executes.",
+        "distractors": {
+          "A": "A standard specifies what something must be: the grade of lock, the key management scheme. It sets the target and never tells the technician what to do first.",
+          "C": "Guidelines advise, and they carry recommended practice a technician may adapt to the situation. Describing one as mandatory gives it binding force only a policy or a procedure has.",
+          "D": "A playbook sequences a response to an event. Replacing a lock is planned maintenance rather than a triggered response, so this is the right kind of artifact for a different situation."
+        }
+      }
+    },
+    {
+      "id": "d5-q02",
+      "domain": "d5",
+      "primary_concept": "C-100",
+      "theme": "S6",
+      "vertical": "pharmaceutical wholesaler",
+      "keywords": [
+        "regulatory",
+        "legal",
+        "industry",
+        "national"
+      ],
+      "type": "single_choice",
+      "question": "A pharmaceutical wholesaler distributing in two countries must notify a regulator after a breach of prescription records. A national law in its main market requires notification within three days, the industry's distribution standard allows five working days, and the wholesaler's own policy allows ten. Which obligation determines the deadline?",
+      "options": {
+        "A": "The industry standard, as the trade body audits the wholesaler each year",
+        "B": "The internal policy, as the wholesaler set it knowing its own markets",
+        "C": "The national law, which binds every distributor operating in that market",
+        "D": "Whichever the affected regulator names in its request after the breach"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D11",
+        "B": "E05",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "External obligations arrive as regulatory, legal, and industry requirements scoped local, national, or global, and scope decides which rule wins. A national legal requirement binds every organization distributing in that market, and neither an industry requirement nor an internal policy can extend a deadline the law has fixed. Industry and internal rules may be stricter than the legal floor and never looser.",
+        "distractors": {
+          "A": "An annual trade body audit is a commercial pressure, not the basis of a legal deadline. Industry requirements sit alongside the law and cannot relax it.",
+          "B": "This inverts the direction of authority. An internal policy is the organization binding itself, and it cannot grant the organization more time than a regulator allows.",
+          "D": "Waiting for the regulator to specify a deadline spends the deadline. The obligation is known in advance, and the notification clock starts at the breach."
+        }
+      }
+    },
+    {
+      "id": "d5-q03",
+      "domain": "d5",
+      "primary_concept": "C-101",
+      "theme": "S6",
+      "vertical": "professional sports franchise",
+      "keywords": [
+        "monitoring and revision",
+        "committee",
+        "board",
+        "centralized"
+      ],
+      "type": "single_choice",
+      "question": "A professional sports franchise wrote its information security policy five years ago and has never revised it. There is no forum where security decisions are taken; matters reach the board only after an incident. In the meantime the club has launched a stadium ticketing app and opened a youth academy with its own systems. Which governance change should come first?",
+      "options": {
+        "A": "Stand up a security committee with a standing remit to monitor and revise policy",
+        "B": "Rewrite the information security policy to cover the app and the academy",
+        "C": "Adopt the league's published security policy set in place of the club's own",
+        "D": "Have the board approve each new system individually before it goes live"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "E02",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Governance is maintained, not written once. A standing committee is the structure that owns monitoring and revision, so the policies track the estate as it changes instead of aging in place. Whether the function is centralized in one committee or distributed across business units is a design choice; having no forum at all is what leaves a policy unrevised for years.",
+        "distractors": {
+          "B": "A rewrite closes today's gap and creates the next one. Nothing changes about who notices the following system, so the new policy begins aging on the day it is signed.",
+          "C": "The league's policies were written for the league's risks and its estate. Adopting them wholesale still leaves nobody inside the club responsible for keeping any policy current.",
+          "D": "Per-system board approval puts the most senior forum in the path of routine decisions. It slows delivery and gives no one a remit to revise the policies those systems are approved against."
+        }
+      }
+    },
+    {
+      "id": "d5-q04",
+      "domain": "d5",
+      "primary_concept": "C-102",
+      "theme": "S1",
+      "vertical": "property title registry",
+      "keywords": [
+        "controller",
+        "processor",
+        "owner",
+        "custodian"
+      ],
+      "type": "single_choice",
+      "question": "A property title registry contracts a scanning bureau to digitize paper deeds. The registry decides which deeds are scanned and why, and its written instruction forbids the bureau from using the images for any other purpose. The registry's own systems team keeps the resulting archive encrypted and backed up. Which role does the bureau hold?",
+      "options": {
+        "A": "Controller, deciding the purpose and the means of the scanning work",
+        "B": "Custodian, holding the deed images safe day to day on registry storage",
+        "C": "Owner, accountable for the deed records the registry has outsourced",
+        "D": "Processor, acting on the deed images only on the registry's instruction"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The four data roles are separated by what each may decide. The registry decides why the deeds are scanned and how, which makes it the controller and leaves it accountable as owner. A bureau that scans and stores strictly on written instruction, with no permission to use the images for its own purposes, is a processor: it acts, it does not decide.",
+        "distractors": {
+          "A": "This inverts the deciding attribute. Purpose and means are set by the registry's written instruction, and a party that may not deviate from that instruction is not determining anything.",
+          "B": "The custodian keeps data safe day to day, which is what the registry's own systems team does with the archive. The bureau produces the images; it does not run the storage they land on.",
+          "C": "Accountability does not transfer with the work. Outsourcing the scanning moves the activity to the bureau and leaves the registry answerable for the records."
+        }
+      }
+    },
+    {
+      "id": "d5-q05",
+      "domain": "d5",
+      "primary_concept": "C-103",
+      "theme": "S6",
+      "vertical": "regional blood bank",
+      "keywords": [
+        "risk identification",
+        "recurring",
+        "ad hoc",
+        "continuous"
+      ],
+      "type": "single_choice",
+      "question": "A regional blood bank assesses risk once a year in a half-day workshop. Since the last one it has commissioned a donor booking app, replaced its cold-chain monitoring, and taken on two hospital supply contracts, none of which has been assessed. The board wants a cadence that fits how the organization actually changes. Which approach fits?",
+      "options": {
+        "A": "Keep the annual workshop and extend it to a full day to cover more ground",
+        "B": "Assess risk ad hoc whenever a manager raises a concern about a system",
+        "C": "Run recurring assessments on a set cadence, triggering one at each major change",
+        "D": "Move to continuous assessment tooling across every system the blood bank runs"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D02",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "A risk must be identified before it can be assessed, and cadence is itself a design choice: ad hoc, one-time, recurring, or continuous. A recurring cadence with change-triggered assessments catches both the slow drift a periodic review exists for and the new app, the replaced monitoring, and the new contracts that arrived between reviews.",
+        "distractors": {
+          "A": "A longer workshop covers more ground on one day of the year. Everything commissioned or replaced in the remaining weeks stays unassessed until the next one.",
+          "B": "Concerns raised by managers surface the risks managers already know about. Risk identification that depends on someone speaking up misses whatever nobody has noticed.",
+          "D": "Continuous assessment is the most responsive cadence and the most expensive to run. An organization that is not yet assessing at change points does not need every system watched in real time to fix that."
+        }
+      }
+    },
+    {
+      "id": "d5-q06",
+      "domain": "d5",
+      "primary_concept": "C-104",
+      "theme": "S6",
+      "vertical": "rural electricity cooperative",
+      "keywords": [
+        "qualitative",
+        "quantitative",
+        "likelihood",
+        "impact"
+      ],
+      "type": "single_choice",
+      "question": "A rural electricity cooperative's risk register prices substation intrusion as a currency figure. The auditor traced the figure to one guessed asset value and a probability the operations manager described as what felt about right. The cooperative holds no incident history and no valuation for the substation. What is the most defensible correction?",
+      "options": {
+        "A": "Recompute the figure using the insured replacement value of the substation",
+        "B": "Express the risk qualitatively by ranked likelihood and impact until inputs exist",
+        "C": "Keep the currency figure and record the assumptions that produced it alongside",
+        "D": "Average the estimates of three managers to produce a more reliable probability"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D05",
+        "C": "D09",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Qualitative and quantitative analysis are two honesty regimes. Quantitative analysis computes from measured inputs; qualitative analysis ranks by judged probability, likelihood, and impact, and says that is what it is doing. Producing a currency figure from a guessed value and a felt probability claims the second regime while working in the first, which is the failure the auditor found.",
+        "distractors": {
+          "A": "An insured value fixes one input and leaves the other invented. A currency figure built on a felt probability still presents judgment as measurement.",
+          "C": "Recording the assumptions discloses the weakness without removing it. The register still carries a computed-looking figure that decisions will be taken against.",
+          "D": "Averaging opinions produces a more confident number from the same absence of data. Agreement between managers is not evidence about how often substations are broken into."
+        }
+      }
+    },
+    {
+      "id": "d5-q07",
+      "domain": "d5",
+      "primary_concept": "C-105",
+      "theme": "S6",
+      "vertical": "ski resort operations",
+      "keywords": [
+        "single loss expectancy",
+        "annualized rate of occurrence",
+        "annualized loss expectancy"
+      ],
+      "type": "single_choice",
+      "question": "A ski resort's lift ticketing system fails in a way that costs 40,000 dollars in refunds and lost sales each time it happens, and the resort's records show it happening twice a season. A vendor offers a redundant ticketing gateway for 50,000 dollars a year. Which comparison should decide the purchase?",
+      "options": {
+        "A": "The annualized loss expectancy of 80,000 dollars against the 50,000 dollars a year",
+        "B": "The single loss expectancy of 40,000 dollars against the 50,000 dollars a year",
+        "C": "The annualized rate of occurrence against the vendor's service-level commitment",
+        "D": "The 40,000 dollars an outage costs against the resort's total revenue for a season"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E02",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The three quantities compose. The single loss expectancy is what one occurrence costs, the annualized rate of occurrence is how often it happens in a year, and their product is the annualized loss expectancy, which is the annual figure a control's annual cost is weighed against. Two occurrences at 40,000 dollars gives 80,000 dollars a year to set against the subscription.",
+        "distractors": {
+          "B": "The single loss expectancy prices one outage. Comparing a per-occurrence figure with an annual subscription understates the exposure whenever the event happens more than once a year.",
+          "C": "A rate of occurrence is a frequency and a service-level commitment is a promise about availability. Neither is a money figure, so the comparison cannot say whether the gateway is worth buying.",
+          "D": "Season revenue describes the size of the business, not the value of the control. A loss is worth preventing when its annualized cost exceeds the cost of preventing it."
+        }
+      }
+    },
+    {
+      "id": "d5-q08",
+      "domain": "d5",
+      "primary_concept": "C-106",
+      "theme": "S1",
+      "vertical": "stock photography agency",
+      "keywords": [
+        "risk register",
+        "key risk indicators",
+        "risk owners",
+        "risk threshold"
+      ],
+      "type": "single_choice",
+      "question": "A stock photography agency keeps what it calls a risk register: a spreadsheet listing every security incident of the past two years, each row naming the date, what happened, and the firewall rule numbers changed afterwards. An auditor has said the agency does not have a risk register. What must change?",
+      "options": {
+        "A": "Add the remediation taken after each incident to the rows already recorded",
+        "B": "Move the spreadsheet into the ticketing system so incidents and risks sit together",
+        "C": "Publish the spreadsheet to the leadership team each quarter as a risk report",
+        "D": "Record forward-looking risks with owners, indicators, and action thresholds"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "E02",
+        "C": "D09"
+      },
+      "rationale": {
+        "correct": "A risk register is a living tracking artifact, not a historical record. Each row names something that has not yet happened, the risk owners accountable for it, the key risk indicators that would show it developing, and the risk threshold at which action becomes required. A list of past incidents with firewall rule numbers attached is an incident log carrying configuration detail.",
+        "distractors": {
+          "A": "More detail about what already happened makes a better incident record. Nothing in the spreadsheet becomes forward-looking, and no one becomes accountable for a risk still ahead.",
+          "B": "The ticketing system tracks work items well. Relocating the same backward-looking rows changes where they live, not what they are.",
+          "C": "Quarterly publication reports the artifact rather than fixing it. Leadership receives a well-formatted history and still has no owned risks or thresholds to act on."
+        }
+      }
+    },
+    {
+      "id": "d5-q09",
+      "domain": "d5",
+      "primary_concept": "C-107",
+      "theme": "S1",
+      "vertical": "textile mill group",
+      "keywords": [
+        "risk appetite",
+        "risk tolerance",
+        "expansionary",
+        "conservative"
+      ],
+      "type": "single_choice",
+      "question": "The board of a textile mill group has agreed to launch an online fabric marketplace and stated it will knowingly take on more risk than the group ever has in order to win the channel. In the same resolution it fixed one hard limit: no outage of the mill's production scheduling system beyond a single shift. Which pair of terms describes the two statements?",
+      "options": {
+        "A": "An expansionary tolerance and a conservative appetite",
+        "B": "A neutral appetite and a recorded risk exception for scheduling",
+        "C": "An expansionary appetite and a tolerance of one shift of downtime",
+        "D": "A conservative appetite and a key risk indicator for scheduling"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Risk appetite is how much risk the organization wants to take in pursuit of an objective, stated as a posture: expansionary, conservative, or neutral. Risk tolerance is how much it can bear before something has to change. Choosing to take on more risk to win a new channel is an expansionary appetite, and the hard ceiling on production scheduling downtime is the tolerance bounding it.",
+        "distractors": {
+          "A": "The two terms are transposed. Appetite is the posture toward pursuing the objective, and tolerance is the limit; naming the ceiling as the posture reverses both.",
+          "B": "Neutral describes a board taking neither more nor less risk than before, which contradicts the resolution. An exception records a specific accepted deviation, not a standing limit.",
+          "D": "A key risk indicator is a measure watched for early warning. The board did not name something to watch; it named a limit that must not be crossed."
+        }
+      }
+    },
+    {
+      "id": "d5-q10",
+      "domain": "d5",
+      "primary_concept": "C-108",
+      "theme": "S6",
+      "vertical": "university research computing",
+      "keywords": [
+        "accept",
+        "transfer",
+        "avoid",
+        "exception"
+      ],
+      "type": "single_choice",
+      "question": "A university research computing group runs a genome pipeline on a cluster whose operating system is no longer supported. The grant funding the rebuild starts in nine months, and the department head has decided to keep the pipeline running until then. What makes that a legitimate risk acceptance rather than an unmanaged one?",
+      "options": {
+        "A": "A note in the change log stating that the department head is aware of the flaw",
+        "B": "A recorded exception naming an owner, an expiry, and the consequence accepted",
+        "C": "A cyber insurance policy covering losses arising from the cluster's compromise",
+        "D": "Taking the cluster off the network until the rebuild grant becomes available"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D09",
+        "C": "E01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "The four treatments are transfer, accept, avoid, and mitigate, and acceptance is the one most often done badly. Acceptance becomes legitimate when it is recorded as an exception with a named owner, an expiry date, and an explicit statement of the consequence being carried, so somebody is accountable and the decision is revisited instead of forgotten.",
+        "distractors": {
+          "A": "Awareness is not acceptance. A note that someone knows carries no owner, no expiry, and no statement of what the department has agreed to bear.",
+          "C": "Insurance is transfer: it moves the financial consequence to a third party. The cluster keeps running unsupported, and the treatment being described is a different one.",
+          "D": "Removing the cluster from the network is avoidance, and it ends the pipeline the grant exists to rebuild. The department chose to keep the service running, and that choice needs recording rather than reversing."
+        }
+      }
+    },
+    {
+      "id": "d5-q11",
+      "domain": "d5",
+      "primary_concept": "C-109",
+      "theme": "S1",
+      "vertical": "veterinary clinic chain",
+      "keywords": [
+        "recovery time objective",
+        "recovery point objective",
+        "business impact analysis",
+        "mean time to repair"
+      ],
+      "type": "single_choice",
+      "question": "A veterinary clinic chain is documenting what its clinical records system owes the business. The practice manager states that clinics can run on printed day sheets for up to four hours, but that losing more than fifteen minutes of consultation notes would force animals to be re-examined. Which pair of objectives has the manager described?",
+      "options": {
+        "A": "A recovery time objective of four hours and a recovery point objective of fifteen minutes",
+        "B": "A recovery point objective of four hours and a recovery time objective of fifteen minutes",
+        "C": "A mean time to repair of four hours and a mean time between failures of fifteen minutes",
+        "D": "A service-level target of four hours agreed with the records system vendor"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "A business impact analysis identifies the critical processes and the recovery metrics each one needs. Tolerable downtime is the recovery time objective, and the clinics can work on paper for four hours. Tolerable data loss is the recovery point objective, and losing more than fifteen minutes of consultation notes forces animals to be re-examined, so that is how far back the backups must reach.",
+        "distractors": {
+          "B": "The two objectives are transposed. Downtime the business can absorb is a time objective, and notes the business can afford to lose is a point objective.",
+          "C": "Those two metrics describe equipment behavior: how long a repair takes and how long a component runs between failures. Neither expresses what the business can tolerate.",
+          "D": "A service-level target is a commitment the vendor makes. The manager was describing what the clinics can survive, which is what the target would have to be set against."
+        }
+      }
+    },
+    {
+      "id": "d5-q12",
+      "domain": "d5",
+      "primary_concept": "C-110",
+      "theme": "S6",
+      "vertical": "wind farm control center",
+      "keywords": [
+        "right-to-audit",
+        "independent assessment",
+        "supply chain analysis",
+        "internal audits"
+      ],
+      "type": "multiple_response",
+      "question": "A wind farm control center is contracting a remote turbine diagnostics provider that will hold a persistent connection into the control network. The operator wants an enforceable means of examining the provider's controls itself at any point during the contract, and evidence of the provider's security posture produced by someone who does not work for the provider. Which TWO instruments deliver those? (Select TWO).",
+      "options": {
+        "A": "The provider's own annual internal audit summary, shared under the contract",
+        "B": "A supply chain analysis of the components the provider ships to the site",
+        "C": "A right-to-audit clause the operator may exercise during the contract term",
+        "D": "A vendor questionnaire completed by the provider before contract signature",
+        "E": "An independent assessment of the provider's controls by an outside firm"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D20",
+        "B": "E02",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Each instrument proves something the others cannot. A right-to-audit clause is the enforceable route to look for yourself, at a time of the operator's choosing, and it exists only if it is written into the agreement. An independent assessment supplies evidence produced by people with no stake in the result, which is what the second requirement asks for.",
+        "distractors": {
+          "A": "Evidence of internal audits shows the provider examines itself and has a process worth having. It is still the provider grading its own work, which is the independence the operator set out to obtain.",
+          "B": "Supply chain analysis examines what the provider sources and ships, which matters for component integrity. It says nothing about the provider's controls over the connection into the control network.",
+          "D": "A questionnaire captures what the provider asserts before signature. It is neither examinable by the operator during the contract nor produced by anyone outside the provider."
+        }
+      }
+    },
+    {
+      "id": "d5-q13",
+      "domain": "d5",
+      "primary_concept": "C-111",
+      "theme": "S5",
+      "vertical": "ambulance service dispatch",
+      "keywords": [
+        "due diligence",
+        "conflict of interest",
+        "vendor monitoring",
+        "questionnaire"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance service is selecting a call-handling platform. After the award it emerged that the evaluation panel's technical lead is the brother of the winning vendor's sales director, and that neither had mentioned it. The panel's financial and technical checks on the vendor were otherwise thorough. Which control was missing at the stage that failed?",
+      "options": {
+        "A": "Vendor monitoring by quarterly questionnaire once the platform is live",
+        "B": "A right-to-audit clause in the platform contract before it is signed",
+        "C": "Due diligence on the vendor's financial standing before shortlisting",
+        "D": "A conflict of interest declaration from every member of the evaluation panel"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E02",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Choosing a vendor honestly needs two different things. Due diligence establishes what the vendor is; a conflict of interest declaration establishes that the people judging the vendor are independent of it. This panel's checks on the vendor may have been diligent, and the impartiality of the judgment cannot be demonstrated, which is the specific failure here.",
+        "distractors": {
+          "A": "Vendor monitoring measures trust on an ongoing basis after the award. It is the right instrument at the wrong stage: the selection is already compromised before the first questionnaire goes out.",
+          "B": "A right-to-audit clause buys the service the ability to examine the vendor's controls later. It says nothing about who chose the vendor or on what basis.",
+          "C": "Financial due diligence was performed and is a different check. It establishes whether the vendor can deliver, not whether the panel was free to judge that."
+        }
+      }
+    },
+    {
+      "id": "d5-q14",
+      "domain": "d5",
+      "primary_concept": "C-112",
+      "theme": "S6",
+      "vertical": "casino resort operations",
+      "keywords": [
+        "service-level agreement",
+        "memorandum of understanding",
+        "non-disclosure agreement",
+        "statement of work"
+      ],
+      "type": "scenario_matching",
+      "question": "A casino resort's legal and security teams are filing this year's third-party paperwork, and each arrangement needs the right instrument on the front page. For each arrangement described below, select the agreement type that fits it. Options may be used more than once.",
+      "matching_options": [
+        "Service-level agreement (SLA)",
+        "Memorandum of understanding (MOU)",
+        "Non-disclosure agreement (NDA)",
+        "Statement of work (SOW)"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "The resort commits its card-processing vendor to restoring payment authorization within two hours of an outage, with credits owed when the target is missed."
+        },
+        {
+          "id": "s2",
+          "text": "Before any figures change hands, the resort binds a prospective analytics partner not to disclose the guest data model it is about to be shown."
+        },
+        {
+          "id": "s3",
+          "text": "The resort and the neighboring convention center record a shared intent to cooperate on evacuation drills, with neither side obliged to fund anything."
+        },
+        {
+          "id": "s4",
+          "text": "The resort sets out the deliverables, milestones, and acceptance tests for the surveillance system upgrade a contractor will carry out this year."
+        },
+        {
+          "id": "s5",
+          "text": "The resort's incident response retainer fixes that an analyst will be on site within four hours of a declared incident, and what follows if that slips."
+        }
+      ],
+      "answer": {
+        "s1": "Service-level agreement (SLA)",
+        "s2": "Non-disclosure agreement (NDA)",
+        "s3": "Memorandum of understanding (MOU)",
+        "s4": "Statement of work (SOW)",
+        "s5": "Service-level agreement (SLA)"
+      },
+      "rationale": {
+        "correct": "Seven agreement types do seven different jobs, and the discriminator is what each one actually commits. A service-level agreement commits to measurable service levels with consequences attached, which covers both the payment authorization target and the responder arrival time. A non-disclosure agreement protects what is shared before any work begins. A memorandum of understanding records intent and binds neither party to spend anything. A statement of work scopes the deliverables, milestones, and acceptance of one specific engagement."
+      }
+    },
+    {
+      "id": "d5-q15",
+      "domain": "d5",
+      "primary_concept": "C-113",
+      "theme": "S1",
+      "vertical": "children's hospital network",
+      "keywords": [
+        "rules of engagement",
+        "right-to-audit",
+        "due diligence",
+        "penetration test"
+      ],
+      "type": "single_choice",
+      "question": "A children's hospital network has commissioned an external penetration test. Before work starts the hospital must fix which systems are in scope, the hours during which testing may run, the exclusion of clinical device networks entirely, and who the testers call if a system destabilizes. Which document carries those terms?",
+      "options": {
+        "A": "The right-to-audit clause in the testing firm's master agreement",
+        "B": "The due diligence pack completed when the testing firm was selected",
+        "C": "The rules of engagement agreed with the testing firm before work starts",
+        "D": "The hospital's incident response plan, which names who is called if systems fail"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E01",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "The rules of engagement fix a third-party test's terms and boundaries before it starts: what is in scope, when testing may run, what is excluded, and how to stop it. That is distinct from the contractual clause permitting an audit and from the diligence that selected the firm, both of which concern whether the firm may be engaged at all rather than how this engagement will be conducted.",
+        "distractors": {
+          "A": "A right-to-audit clause establishes that the hospital may examine a third party. It grants the standing permission and never sets the scope or hours of a particular test.",
+          "B": "Due diligence assessed the firm before it was chosen. It describes the tester, not the boundaries of the work the tester is about to perform.",
+          "D": "The incident response plan governs what the hospital does when something breaks in the ordinary course. It belongs to a different process, and testers working to it would have no agreed scope or exclusions."
+        }
+      }
+    },
+    {
+      "id": "d5-q16",
+      "domain": "d5",
+      "primary_concept": "C-114",
+      "theme": "S6",
+      "vertical": "container port terminal",
+      "keywords": [
+        "fines",
+        "sanctions",
+        "loss of license",
+        "reputational damage"
+      ],
+      "type": "single_choice",
+      "question": "A container port terminal has failed a customs data handling inspection. The finance director has budgeted for the maximum published fine, entered it as a one-off cost, and told the board the matter is now closed. Which consequence is that plan most likely to have missed?",
+      "options": {
+        "A": "The cost of the remediation work the finding itself requires",
+        "B": "Loss of the license to handle customs-controlled cargo at the terminal",
+        "C": "The higher insurance premium the terminal will be quoted at renewal",
+        "D": "A repeat inspection scheduled by the regulator later in the year"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "E01",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Non-compliance costs more than the fines it attracts. Sanctions, reputational damage, contractual impacts, and loss of license all follow a finding, and for a regulated operator the license is the consequence that ends the business rather than merely charging it. Budgeting the maximum fine treats the cheapest and most predictable consequence as the whole exposure.",
+        "distractors": {
+          "A": "Remediation cost is real and it is an internal project expense the terminal controls. It is not a consequence the regulator imposes, and it does not threaten the operation.",
+          "C": "A premium increase is another financial consequence in the same family as the fine. It is the kind of cost the director's plan already reasons about, only later.",
+          "D": "A repeat inspection is the next step of the same compliance process, not the consequence of failing it. It is what would discover that the terminal is still non-compliant."
+        }
+      }
+    },
+    {
+      "id": "d5-q17",
+      "domain": "d5",
+      "primary_concept": "C-115",
+      "theme": "S5",
+      "vertical": "credit union branch network",
+      "keywords": [
+        "compliance monitoring",
+        "attestation",
+        "due diligence",
+        "automation"
+      ],
+      "type": "single_choice",
+      "question": "A credit union proves compliance once a year by having each branch manager sign an attestation during the week before the audit. Between audits nothing is checked, and the last audit found two branches whose controls had lapsed in the first month and been signed for anyway. Which change most improves the reliability of the evidence?",
+      "options": {
+        "A": "Automate the checks so control operation is evidenced throughout the year",
+        "B": "Have branch managers attest monthly instead of in the week before the audit",
+        "C": "Have the internal audit team re-perform the annual attestation independently",
+        "D": "Publish the attestation results to the board with a due care statement"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D10",
+        "C": "E01",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Compliance monitoring is a continuous discipline, not an annual one. Attestation and acknowledgement record that somebody asserts a control operates; automation records that it did, every day, with nobody having to remember to look. That is what turns due diligence and due care from a statement made in audit week into evidence covering the year.",
+        "distractors": {
+          "B": "A shorter interval produces twelve assertions instead of one and leaves them assertions. The branches that signed for lapsed controls would have signed twelve times.",
+          "C": "Re-performance by internal audit raises the independence of the check and keeps it a point-in-time exercise. The months between remain unevidenced.",
+          "D": "Reporting to the board communicates the result of a weak measurement. The board learns what the attestations said, which is exactly what was unreliable."
+        }
+      }
+    },
+    {
+      "id": "d5-q18",
+      "domain": "d5",
+      "primary_concept": "C-116",
+      "theme": "S6",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "data subject",
+        "controller",
+        "processor",
+        "global"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line is incorporated in one country, runs its reservation systems in a second, and takes bookings from passengers resident in a third whose privacy law grants its residents rights wherever their personal data is processed. Legal counsel is asked which obligation governs those bookings. Which answer is correct?",
+      "options": {
+        "A": "The law of the country where the reservation systems are hosted",
+        "B": "The law of the country in which the cruise line is incorporated",
+        "C": "The strictest of the three, applied globally as an internal standard",
+        "D": "The law of the passengers' country of residence, which follows the subject"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "Privacy obligations are scoped by jurisdiction, and some of them follow the data subject rather than the organization. Where a national law grants rights to its residents wherever their personal data is processed, the cruise line is the controller of those bookings, its hosting operator is the processor acting on its instruction, and the obligation is the controller to carry, whichever country its systems or its incorporation sit in.",
+        "distractors": {
+          "A": "Hosting location decides where processing physically happens and is one basis among several. It does not displace a law written to follow its own residents.",
+          "B": "This inverts whose location matters. The obligation attaches to the passengers whose data is processed, not to the address on the cruise line's registration.",
+          "C": "Applying the strictest standard everywhere is defensible practice and a good internal policy. It is a choice the line makes, and it does not answer which law governs these bookings."
+        }
+      }
+    },
+    {
+      "id": "d5-q19",
+      "domain": "d5",
+      "primary_concept": "C-117",
+      "theme": "S6",
+      "vertical": "defense subcontractor",
+      "keywords": [
+        "data inventory",
+        "retention",
+        "right to be forgotten"
+      ],
+      "type": "single_choice",
+      "question": "A defense subcontractor receives an erasure request from an engineer who left two years ago. Human resources deletes the personnel file and confirms the request is complete. The same engineer's details also sit in the badge system, in a backup archive, and in a vetting spreadsheet kept by a team nobody has a list of. Which capability does the subcontractor most need?",
+      "options": {
+        "A": "A retention schedule setting how long each personnel file is kept",
+        "B": "A policy stating that erasure requests are answered within one month",
+        "C": "A data inventory recording where personal data is held across systems",
+        "D": "An exemption claiming defense contracts override the erasure right"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D09",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "You cannot erase what you cannot find. The right to be forgotten is answerable only when the organization knows what personal data it holds and where, which is what a data inventory records; retention rules then decide how long each copy may remain. Deleting the copy human resources remembers leaves the badge system, the archive, and the unlisted spreadsheet untouched.",
+        "distractors": {
+          "A": "A retention schedule says how long data may be kept, which is the other half of the same objective and a real gap. It still does not say which systems hold this engineer's details.",
+          "B": "A published deadline commits the subcontractor to answering quickly. Answering quickly and incorrectly is what has just happened.",
+          "D": "Some records are genuinely retained under contractual obligation, which is why this sounds workable. Claiming a blanket override refuses the request instead of scoping it to the records that must be kept."
+        }
+      }
+    },
+    {
+      "id": "d5-q20",
+      "domain": "d5",
+      "primary_concept": "C-118",
+      "theme": "S7",
+      "vertical": "newspaper printing group",
+      "keywords": [
+        "self-assessment",
+        "internal",
+        "independent third-party audit",
+        "attestation"
+      ],
+      "type": "single_choice",
+      "question": "A newspaper printing group's largest customer will renew its contract only on evidence that the group's security controls operate as described, and it has specified that the evidence must come from someone with no reporting line into the group. Which artifact satisfies that condition?",
+      "options": {
+        "A": "The group's self-assessment against the control framework, signed by its IT manager",
+        "B": "An independent third-party audit report on the operation of the controls",
+        "C": "The internal audit team's report presented to the group's audit committee",
+        "D": "An attestation from the group's directors that the controls are in place"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D20",
+        "C": "E01",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Audits examine compliance at three levels of independence: self-assessment, internal audit reporting to an audit committee, and independent external or regulatory examination. The customer's condition is entirely about who produced the evidence, and only an independent third-party audit is performed by people outside the group's reporting lines.",
+        "distractors": {
+          "A": "A self-assessment is the group examining itself against the framework it chose. The reviewer sits inside the same assumptions that produced the controls, which is what the customer excluded.",
+          "C": "Internal audit reports to an audit committee and is deliberately separated from the operational teams it reviews. It is still employed by the group, so its reporting line ends inside the organization.",
+          "D": "An attestation is a formal assertion by the group's own officers. It commits them to the claim and offers no examination of whether the controls operate."
+        }
+      }
+    },
+    {
+      "id": "d5-q21",
+      "domain": "d5",
+      "primary_concept": "C-119",
+      "theme": "S2",
+      "vertical": "energy retailer billing",
+      "keywords": [
+        "unknown environment",
+        "known environment",
+        "integrated",
+        "physical"
+      ],
+      "type": "single_choice",
+      "question": "An energy retailer wants to know what an attacker starting from the public internet, with no inside information, could achieve against its billing portal. It also wants to find out whether its own monitoring team notices the attempt while it is happening. Which engagement design answers both questions?",
+      "options": {
+        "A": "An unknown-environment offensive test run without notifying the monitoring team",
+        "B": "A known-environment offensive test with full architecture documents supplied",
+        "C": "An integrated exercise in which testers and defenders work through attacks together",
+        "D": "A physical test of access to the retailer's billing floor and print room"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The knowledge dial sets what a test can prove. An unknown environment test starts where an internet attacker starts, so whatever the testers reach is evidence about what an outsider could reach. Keeping the monitoring team unaware turns the same engagement into a test of detection as well, which is the second question the retailer asked.",
+        "distractors": {
+          "B": "Supplying architecture documents produces a deeper test of the portal and inverts the condition the retailer set. Findings would describe what an informed attacker could do, not an anonymous one.",
+          "C": "An integrated exercise puts attackers and defenders in the same room, which teaches both sides quickly. Defenders who know the attack is coming cannot demonstrate whether they would have noticed it.",
+          "D": "A physical test examines access to premises and the controls protecting them. The retailer asked about an attacker reaching the billing portal from the public internet."
+        }
+      }
+    },
+    {
+      "id": "d5-q22",
+      "domain": "d5",
+      "primary_concept": "C-120",
+      "theme": "S4",
+      "vertical": "city council IT department",
+      "keywords": [
+        "reconnaissance",
+        "passive",
+        "active"
+      ],
+      "type": "single_choice",
+      "question": "A city council IT department is preparing an assessment of a supplier-run planning portal. The contract permits assessment, and the supplier has asked that nothing be done which could affect the portal's availability during the statutory consultation period now under way. The council wants to map the portal's exposed surface. Which approach fits?",
+      "options": {
+        "A": "Active scanning of the portal's exposed ports, throttled to a low rate",
+        "B": "A full active vulnerability scan run overnight outside consultation hours",
+        "C": "Asking the supplier to send its most recent internal scan report instead",
+        "D": "Passive gathering from public registries, certificates, and archived pages"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "E01",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "Reconnaissance splits by touch. Passive gathering reads what third parties already publish, including registries, certificate records, and archived pages, and leaves no trace on the target, so it cannot affect availability. Active gathering probes the target directly and sees more, and that depth is what the council trades away to meet the supplier's condition.",
+        "distractors": {
+          "A": "Throttling reduces the load without changing the nature of the activity. The portal is still being probed during the consultation period the supplier asked to protect.",
+          "B": "Moving an active scan to the night keeps it active. A statutory consultation runs around the clock, and an overnight scan is exactly what the supplier asked not to have.",
+          "C": "The supplier's own report describes what the supplier chose to scan and to share. It is an assertion about the portal, not the council's own view of its exposed surface."
+        }
+      }
+    },
+    {
+      "id": "d5-q23",
+      "domain": "d5",
+      "primary_concept": "C-121",
+      "theme": "S3",
+      "vertical": "high school district",
+      "keywords": [
+        "risky",
+        "unexpected",
+        "unintentional",
+        "recognizing a phishing attempt"
+      ],
+      "type": "single_choice",
+      "question": "After a simulated phishing campaign, a high school district reviews three behaviors. A teacher clicked the link and reported it within a minute. An administrator forwarded the message to four colleagues asking whether it looked genuine. A facilities manager entered credentials on the page, as in the two previous campaigns, and had removed the reporting add-in from the mail client. Which behavior is risky?",
+      "options": {
+        "A": "The teacher's click, which put credentials one step from disclosure",
+        "B": "The administrator's forward, which spread the message to more staff",
+        "C": "The facilities manager's repeat submission after removing the add-in",
+        "D": "All three, as each one interacted with the simulated message"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Observed behavior gets one of three diagnoses, and only one of them implies intent. Unintentional behavior is a lapse in recognizing a phishing attempt. Unexpected behavior is a response nobody trained for. Risky behavior is the deliberate part: repeating the submission across campaigns after removing the reporting route is a choice, and it calls for a different response from more training.",
+        "distractors": {
+          "A": "Clicking and reporting within a minute is the campaign working. The click is unintentional and the report is precisely the trained response the district wants to see.",
+          "B": "Forwarding to colleagues for a second opinion is unexpected: it is not the reporting route staff were taught, and it is a good-faith attempt to check. Nothing in it implies intent.",
+          "D": "Treating every interaction as risky collapses the distinction the three diagnoses exist to draw, and it answers a well-handled click the same way as a repeated deliberate submission."
+        }
+      }
+    },
+    {
+      "id": "d5-q24",
+      "domain": "d5",
+      "primary_concept": "C-122",
+      "theme": "S2",
+      "vertical": "commodity trading desk",
+      "keywords": [
+        "insider threat",
+        "social engineering",
+        "hybrid/remote work",
+        "removable media"
+      ],
+      "type": "multiple_response",
+      "question": "A commodity trading desk is rebuilding its security awareness program around three exposures from the past year: traders work from client offices and hotels as often as from the desk, a leaver copied position data to a personal cloud drive before resigning, and a supplier's finance contact was impersonated by phone to change bank details. Which THREE topics must the recurring delivery cover? (Select THREE).",
+      "options": {
+        "A": "Password management, covering length and reuse across the desk's systems",
+        "B": "Hybrid and remote work environments, covering client offices and hotel networks",
+        "C": "Insider threat, covering the signals around departures and how to report them",
+        "D": "Removable media and cables, covering unknown drives and charging cables",
+        "E": "Social engineering, covering impersonation of a known contact by telephone"
+      },
+      "select_count": 3,
+      "answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "An awareness program carries the named training topics to the people who need them, and these three exposures map onto three of those topics. Hybrid/remote work environments covers traders working from client offices and hotels. Insider threat covers the signals around a departing employee moving position data and the route for reporting them. Social engineering covers the impersonation of a known contact to redirect payment. Recurring delivery is what keeps all three current after the initial session.",
+        "distractors": {
+          "A": "Password management is a standard topic and belongs in the program's rotation. None of the three exposures the desk named turns on password length or reuse, so it does not earn one of the three places.",
+          "D": "Removable media and cables is the near neighbor of the second exposure and not the same thing. The leaver used a personal cloud drive, which no guidance about unknown drives and cables addresses."
+        }
+      }
     }
   ]
 }

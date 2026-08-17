@@ -9,7 +9,10 @@
       "syllabus_rule": "2.01",
       "theme": "T2",
       "vertical": "hotel banquet and catering sales",
-      "keywords": ["effective prompts", "business purpose"],
+      "keywords": [
+        "effective prompts",
+        "business purpose"
+      ],
       "type": "single_choice",
       "question": "A banquet sales coordinator at a hotel banquet and catering sales office is setting up a prompt that will draft proposals for wedding clients. A colleague shares a long template prompt admired across the team for its confident, polished wording, and the coordinator must decide what standard to judge a prompt against before adopting one. Which standard is the most appropriate?",
       "options": {
@@ -40,7 +43,11 @@
       "syllabus_rule": "2.01",
       "theme": "T2",
       "vertical": "airline loyalty program office",
-      "keywords": ["constraints", "format", "role"],
+      "keywords": [
+        "constraints",
+        "format",
+        "role"
+      ],
       "type": "multiple_response",
       "question": "A program associate at an airline loyalty program office asks Claude to draft a member communication about changes to tier benefits. The prompt assigns a role, pastes the briefing document as context, and states the task. The draft comes back well written, but it runs far past the required two-page limit and arrives as flowing prose instead of the required benefits table. Which TWO changes to the prompt would most directly address the problem? (Select TWO.)",
       "options": {
@@ -51,7 +58,10 @@
         "E": "Ask Claude to review its own draft and correct any problems it can find"
       },
       "select_count": 2,
-      "answer": ["A", "C"],
+      "answer": [
+        "A",
+        "C"
+      ],
       "distractor_patterns": {
         "B": "D04",
         "D": "D05",
@@ -73,7 +83,10 @@
       "syllabus_rule": "2.02",
       "theme": "T2",
       "vertical": "regional tourism board",
-      "keywords": ["context gap", "model limitation"],
+      "keywords": [
+        "context gap",
+        "model limitation"
+      ],
       "type": "single_choice",
       "question": "A content officer at a regional tourism board asks Claude to draft social posts promoting the spring campaign. The drafts come back grammatical and on topic, yet generic enough to fit any destination. The officer knows the campaign's audience, hook, and headline events well, none of which appear in the request, and is close to concluding the model cannot handle marketing work. What is the most appropriate next step?",
       "options": {
@@ -104,7 +117,10 @@
       "syllabus_rule": "2.03",
       "theme": "T2",
       "vertical": "charity grant administration",
-      "keywords": ["ordered steps", "checkable result"],
+      "keywords": [
+        "ordered steps",
+        "checkable result"
+      ],
       "type": "single_choice",
       "question": "A grants officer at a charity grant administration team delegates a monthly job to Claude: screen applications against eligibility criteria, check each budget against policy limits, and draft a funding memo. Run as one large prompt, the memos read smoothly — but when one is wrong, the officer cannot tell which part of the job failed. What is the most appropriate way to restructure the work?",
       "options": {
@@ -135,7 +151,10 @@
       "syllabus_rule": "2.03",
       "theme": "T2",
       "vertical": "market research fieldwork agency",
-      "keywords": ["structure complex requests", "dependency"],
+      "keywords": [
+        "structure complex requests",
+        "dependency"
+      ],
       "type": "single_choice",
       "question": "A project lead at a market research fieldwork agency has decomposed a client study into steps: design the questionnaire, build the fieldwork schedule, brief the interviewers, and draft the client summary. Every later step depends on the questionnaire, and the client is eager to see something polished early. Which step should the lead build with Claude and verify first?",
       "options": {
@@ -166,7 +185,10 @@
       "syllabus_rule": "2.03",
       "theme": "T8",
       "vertical": "dental clinic network operations",
-      "keywords": ["decomposition", "attributable"],
+      "keywords": [
+        "decomposition",
+        "attributable"
+      ],
       "type": "single_choice",
       "question": "An operations coordinator at a dental clinic network runs one long-standing prompt that produces patient recall letters, drafts follow-up scheduling blocks, and assigns insurance codes in a single pass. Output is intermittently wrong, and the coordinator cannot tell which of the three functions produces the errors. What is the most appropriate change?",
       "options": {
@@ -197,7 +219,10 @@
       "syllabus_rule": "2.04",
       "theme": "T8",
       "vertical": "corporate travel desk",
-      "keywords": ["diagnostic", "iterate prompts"],
+      "keywords": [
+        "diagnostic",
+        "iterate prompts"
+      ],
       "type": "single_choice",
       "question": "An agent at a corporate travel desk uses Claude to summarize the company travel policy for new hires. The first draft is accurate but comes back at twice the length requested. On earlier tasks the agent responded to a flawed draft by rewriting the entire prompt from scratch, and the results swung unpredictably between rounds. What is the most appropriate way to run the next round?",
       "options": {
@@ -228,7 +253,10 @@
       "syllabus_rule": "2.04",
       "theme": "T8",
       "vertical": "independent bookstore chain",
-      "keywords": ["rounds", "monthly sales figures"],
+      "keywords": [
+        "rounds",
+        "monthly sales figures"
+      ],
       "type": "single_choice",
       "question": "A marketing coordinator at an independent bookstore chain has spent five rounds rewording a prompt for a staff-picks newsletter that must cite each store's monthly sales figures. Improvement stopped at round three: the drafts remain fluent, the figures are still invented, and no sales data has ever been attached to the request. What is the most appropriate next step?",
       "options": {
@@ -259,7 +287,10 @@
       "syllabus_rule": "2.04",
       "theme": "T2",
       "vertical": "veterinary clinic group",
-      "keywords": ["worked examples", "improve output quality"],
+      "keywords": [
+        "worked examples",
+        "improve output quality"
+      ],
       "type": "single_choice",
       "question": "A triage administrator at a veterinary clinic group uses Claude to sort incoming owner messages into urgent and routine queues. The category definitions in the prompt are already thorough, and clear-cut messages sort correctly — but borderline messages, like an older dog refusing one meal or a cat hiding since yesterday, keep landing in the wrong queue. What is the most appropriate revision?",
       "options": {
@@ -290,7 +321,10 @@
       "syllabus_rule": "2.05",
       "theme": "T2",
       "vertical": "orchestra development office",
-      "keywords": ["latitude", "brainstorming"],
+      "keywords": [
+        "latitude",
+        "brainstorming"
+      ],
       "type": "single_choice",
       "question": "A development associate at an orchestra development office uses one heavily constrained prompt template — fixed structure, fixed tone, fixed length — for every task. It performs well on donor-report analysis, but when the associate uses it to brainstorm next season's fundraising campaign themes, every run returns the same three predictable ideas. What is the most appropriate adjustment?",
       "options": {
@@ -321,7 +355,10 @@
       "syllabus_rule": "2.05",
       "theme": "T2",
       "vertical": "furniture manufacturer export desk",
-      "keywords": ["research", "task type"],
+      "keywords": [
+        "research",
+        "task type"
+      ],
       "type": "single_choice",
       "question": "An export desk coordinator at a furniture manufacturer asks Claude for a polished briefing on current import duties in two target markets, prompting it exactly as they would for drafting work: a role, the audience, and a request for finished prose. The briefing comes back reading authoritative. What is the most appropriate way to handle this task?",
       "options": {
@@ -352,7 +389,11 @@
       "syllabus_rule": "3.02",
       "theme": "T3",
       "vertical": "apprenticeship training provider",
-      "keywords": ["requirements", "source material", "professional standards"],
+      "keywords": [
+        "requirements",
+        "source material",
+        "professional standards"
+      ],
       "type": "single_choice",
       "question": "A program coordinator at an apprenticeship training provider uses Claude to draft employer progress reports, some routine and some feeding funding decisions. The coordinator is writing the team's standing evaluation step for these drafts and wants it to hold for both kinds of report. Which evaluation discipline is the most appropriate?",
       "options": {
@@ -383,7 +424,10 @@
       "syllabus_rule": "3.03",
       "theme": "T3",
       "vertical": "employee benefits consultancy",
-      "keywords": ["completeness", "accuracy"],
+      "keywords": [
+        "completeness",
+        "accuracy"
+      ],
       "type": "single_choice",
       "question": "An analyst at an employee benefits consultancy has Claude draft a renewal comparison memo for a client choosing between two health plans. The analyst fact-checks every figure and every plan feature named in the memo and finds them all accurate. The client will decide directly from this memo. What should the analyst do before sending it?",
       "options": {
@@ -414,7 +458,10 @@
       "syllabus_rule": "3.01",
       "theme": "T4",
       "vertical": "insurance claims intake team",
-      "keywords": ["accountability", "review"],
+      "keywords": [
+        "accountability",
+        "review"
+      ],
       "type": "single_choice",
       "question": "A supervisor at an insurance claims intake team is rolling out Claude to draft claim acknowledgment and status letters that go out under the supervisor's name. A teammate asks who is answerable if a drafted letter misstates a policyholder's coverage position. Which working assumption is the most appropriate?",
       "options": {
@@ -445,7 +492,10 @@
       "syllabus_rule": "3.03",
       "theme": "T3",
       "vertical": "private wealth client reporting",
-      "keywords": ["fabricated specifics", "hallucinations"],
+      "keywords": [
+        "fabricated specifics",
+        "hallucinations"
+      ],
       "type": "single_choice",
       "question": "An associate at a private wealth client reporting desk has Claude draft a quarterly letter that cites a specific benchmark return and the effective date of a new reporting regulation. The letter goes to clients who act on it. The draft reads clean and the model, asked directly, rates its own confidence as high. What must happen before the letter is sent?",
       "options": {
@@ -476,7 +526,10 @@
       "syllabus_rule": "3.03",
       "theme": "T3",
       "vertical": "executive search firm",
-      "keywords": ["confident uncertainty", "fact-checking and validation techniques"],
+      "keywords": [
+        "confident uncertainty",
+        "fact-checking and validation techniques"
+      ],
       "type": "single_choice",
       "question": "A researcher at an executive search firm has Claude compile a background brief on a shortlisted candidate. Asked directly how confident it is, the model answers that it is highly confident, and the brief reads polished and specific. The brief goes to the client panel tomorrow. Which verification approach is the most appropriate?",
       "options": {
@@ -507,7 +560,10 @@
       "syllabus_rule": "6.05",
       "theme": "T3",
       "vertical": "public health outreach unit",
-      "keywords": ["bias", "routine review"],
+      "keywords": [
+        "bias",
+        "routine review"
+      ],
       "type": "single_choice",
       "question": "A communications officer at a public health outreach unit uses Claude to draft campaign materials for different neighborhoods. The team's review step checks accuracy and formatting. Over several weeks, the drafts keep framing the same neighborhoods around risk and the same others around wellness, and each draft has passed review. What is the most appropriate change to the process?",
       "options": {
@@ -538,7 +594,10 @@
       "syllabus_rule": "3.04",
       "theme": "T3",
       "vertical": "import customs brokerage",
-      "keywords": ["validation", "authoritative current source"],
+      "keywords": [
+        "validation",
+        "authoritative current source"
+      ],
       "type": "single_choice",
       "question": "A broker at an import customs brokerage asks Claude which duty classifications apply to a client's new product line. Several relevant classifications were revised two months ago, and the broker knows rulings in this area change frequently. What is the most appropriate way to get a usable answer?",
       "options": {
@@ -569,7 +628,11 @@
       "syllabus_rule": "3.04",
       "theme": "T3",
       "vertical": "pharmacy chain compliance team",
-      "keywords": ["restrict to sources", "auditable citations", "prevention"],
+      "keywords": [
+        "restrict to sources",
+        "auditable citations",
+        "prevention"
+      ],
       "type": "multiple_response",
       "question": "A compliance specialist at a pharmacy chain compliance team uses Claude with an uploaded pack of current state regulations to draft store-level compliance summaries. Fabricated regulatory detail in a summary would be costly, and the specialist wants the protection built in at request time. Which TWO prompt provisions most directly reduce that risk? (Select TWO.)",
       "options": {
@@ -580,7 +643,10 @@
         "E": "Ask the model to attach a confidence score to every claim so weak ones stand out"
       },
       "select_count": 2,
-      "answer": ["B", "D"],
+      "answer": [
+        "B",
+        "D"
+      ],
       "distractor_patterns": {
         "A": "D04",
         "C": "D07",
@@ -602,7 +668,10 @@
       "syllabus_rule": "3.06",
       "theme": "T1",
       "vertical": "b2b software customer success",
-      "keywords": ["code execution", "computed"],
+      "keywords": [
+        "code execution",
+        "computed"
+      ],
       "type": "single_choice",
       "question": "A customer success manager at a b2b software company prepares quarterly business reviews from a raw usage export. Claude drafts the narrative well, and the manager has also been letting it state the renewal metrics — totals and percentage changes — directly in the prose. The client's renewal hinges on those figures. What is the most appropriate way to produce the metrics?",
       "options": {
@@ -633,7 +702,11 @@
       "syllabus_rule": "3.05",
       "theme": "T4",
       "vertical": "medical device sales support",
-      "keywords": ["stakes", "reversibility", "regulatory exposure"],
+      "keywords": [
+        "stakes",
+        "reversibility",
+        "regulatory exposure"
+      ],
       "type": "multiple_response",
       "question": "A sales support lead at a medical device sales support team is writing the standing rule for when Claude-drafted materials must receive human review before going out, so the decision is settled in advance rather than argued at each deadline. Which TWO factors belong in that rule? (Select TWO.)",
       "options": {
@@ -644,7 +717,10 @@
         "E": "The audience receiving the material and the regulatory exposure it carries"
       },
       "select_count": 2,
-      "answer": ["C", "E"],
+      "answer": [
+        "C",
+        "E"
+      ],
       "distractor_patterns": {
         "A": "E02",
         "B": "D19",
@@ -666,7 +742,10 @@
       "syllabus_rule": "3.05",
       "theme": "T4",
       "vertical": "nonprofit donor relations",
-      "keywords": ["human review", "qualified"],
+      "keywords": [
+        "human review",
+        "qualified"
+      ],
       "type": "single_choice",
       "question": "A donor relations manager at a nonprofit uses Claude to draft gift acknowledgment letters containing tax receipt language, a category the organization classes as requiring mandatory review. Currently an intern skims each letter for tone, without access to the donation records. What is the most appropriate way to discharge the review obligation?",
       "options": {
@@ -697,7 +776,10 @@
       "syllabus_rule": "3.02",
       "theme": "T3",
       "vertical": "city library outreach team",
-      "keywords": ["intended audience", "re-verification"],
+      "keywords": [
+        "intended audience",
+        "re-verification"
+      ],
       "type": "single_choice",
       "question": "An outreach coordinator at a city library team has a fully verified annual-report summary and asks Claude to adapt it for a council briefing — plainer vocabulary, less detail, sharper framing for the intended audience. In the adapted version, a carefully qualified usage statistic now reads as a stronger, simpler claim. What is the most appropriate handling?",
       "options": {
@@ -728,7 +810,10 @@
       "syllabus_rule": "3.02",
       "theme": "T3",
       "vertical": "consumer goods trade marketing",
-      "keywords": ["compare outputs", "criterion"],
+      "keywords": [
+        "compare outputs",
+        "criterion"
+      ],
       "type": "single_choice",
       "question": "A trade marketing associate at a consumer goods company has two candidate promotional one-pagers, produced from different prompts, for a retailer meeting. The team gathers to choose between them. What is the most appropriate way to run the comparison?",
       "options": {
@@ -759,7 +844,10 @@
       "syllabus_rule": "3.06",
       "theme": "T1",
       "vertical": "packaging design studio",
-      "keywords": ["structured data", "select appropriate output formats"],
+      "keywords": [
+        "structured data",
+        "select appropriate output formats"
+      ],
       "type": "single_choice",
       "question": "A studio manager at a packaging design studio has Claude turn client briefs into production specifications — dimensions, materials, finishes — delivered as flowing prose. The production team re-keys the values into their system, and transcription errors keep surfacing at the printer. Which change is the most appropriate?",
       "options": {
@@ -790,7 +878,10 @@
       "syllabus_rule": "1.05",
       "theme": "T3",
       "vertical": "specialty coffee importer",
-      "keywords": ["evaluate", "production conditions"],
+      "keywords": [
+        "evaluate",
+        "production conditions"
+      ],
       "type": "single_choice",
       "question": "An operations lead at a specialty coffee importer built a Claude workflow that summarizes supplier contracts for the buying team. It was tested on five sample contracts the team wrote for the trial, every summary passed, and the lead plans to roll it out. Real supplier contracts arrive scanned, sometimes incomplete, and occasionally with clauses that contradict each other. What should happen before rollout?",
       "options": {
@@ -821,7 +912,10 @@
       "syllabus_rule": "1.05",
       "theme": "T3",
       "vertical": "credit union member services",
-      "keywords": ["inconsistencies", "variation"],
+      "keywords": [
+        "inconsistencies",
+        "variation"
+      ],
       "type": "single_choice",
       "question": "A member services lead at a credit union runs the same Claude request for rate-explanation letters twice and gets noticeably different letters; one draft also describes the same fee two ways in different paragraphs. One teammate wants it reported as a product defect; another says nothing can be done. What is the most appropriate response?",
       "options": {
@@ -852,7 +946,10 @@
       "syllabus_rule": "3.05",
       "theme": "T4",
       "vertical": "film production coordination office",
-      "keywords": ["severity", "stop condition"],
+      "keywords": [
+        "severity",
+        "stop condition"
+      ],
       "type": "single_choice",
       "question": "A production coordinator at a film production coordination office reviews a week's batch of Claude-drafted daily call sheets: 96% of entries are accurate, above the team's 95% target, but one sheet listed the wrong stunt safety contact. A colleague proposes accepting the batch on its average. What is the most appropriate call?",
       "options": {
@@ -883,7 +980,10 @@
       "syllabus_rule": "1.01",
       "theme": "T1",
       "vertical": "architecture firm bid team",
-      "keywords": ["entry point", "recurring work"],
+      "keywords": [
+        "entry point",
+        "recurring work"
+      ],
       "type": "single_choice",
       "question": "A bid coordinator at an architecture firm runs every Claude task in a plain chat out of habit — including a bid-review task that recurs every few weeks and requires re-uploading the same firm boilerplate, past project summaries, and style guide at the start of each session. The re-uploading is eating time and sessions start inconsistently. What is the most appropriate move?",
       "options": {
@@ -914,7 +1014,10 @@
       "syllabus_rule": "1.01",
       "theme": "T1",
       "vertical": "art museum membership office",
-      "keywords": ["research mode", "current multi-source information"],
+      "keywords": [
+        "research mode",
+        "current multi-source information"
+      ],
       "type": "single_choice",
       "question": "A membership officer at an art museum needs a comparison of how a dozen peer institutions currently price and structure their membership tiers, drawing on each institution's latest published offering. The officer is deciding where to run the task. Which choice best fits the task?",
       "options": {
@@ -945,7 +1048,10 @@
       "syllabus_rule": "1.01",
       "theme": "T1",
       "vertical": "botanical garden events office",
-      "keywords": ["escalate", "human-reviewed"],
+      "keywords": [
+        "escalate",
+        "human-reviewed"
+      ],
       "type": "single_choice",
       "question": "An events coordinator at a botanical garden drafts sponsor thank-you letters with Claude about twice a quarter, and the events manager reviews each letter before it goes out. A teammate proposes commissioning an automated agent pipeline connected to the sponsor database so the letters generate and send themselves. What is the most appropriate response?",
       "options": {
@@ -976,7 +1082,11 @@
       "syllabus_rule": "1.02",
       "theme": "T1",
       "vertical": "building materials distributor",
-      "keywords": ["Skills", "Code Execution", "capability layers"],
+      "keywords": [
+        "Skills",
+        "Code Execution",
+        "capability layers"
+      ],
       "type": "multiple_response",
       "question": "A finance associate at a building materials distributor is setting up Claude for monthly rebate statements. Two needs are on the table: the statements must follow the team's exact multi-step checking procedure the same way every month, and the rebate totals must be verifiably correct rather than plausible. Which TWO capability layers address these two needs? (Select TWO.)",
       "options": {
@@ -987,7 +1097,10 @@
         "E": "An added instruction telling the model to be especially meticulous with arithmetic"
       },
       "select_count": 2,
-      "answer": ["A", "D"],
+      "answer": [
+        "A",
+        "D"
+      ],
       "distractor_patterns": {
         "B": "D06",
         "C": "D12",
@@ -1009,7 +1122,11 @@
       "syllabus_rule": "1.03",
       "theme": "T1",
       "vertical": "commercial real estate leasing",
-      "keywords": ["Haiku", "Sonnet", "Opus"],
+      "keywords": [
+        "Haiku",
+        "Sonnet",
+        "Opus"
+      ],
       "type": "single_choice",
       "question": "A leasing operations manager at a commercial real estate firm is assigning model tiers to three workloads: extracting standard terms from hundreds of routine lease documents, everyday drafting and analysis for the leasing team, and a complex portfolio consolidation strategy where quality matters far more than speed. Which assignment best fits the three workloads?",
       "options": {
@@ -1040,7 +1157,10 @@
       "syllabus_rule": "1.03",
       "theme": "T1",
       "vertical": "community college registrar",
-      "keywords": ["task requirements", "quality bar"],
+      "keywords": [
+        "task requirements",
+        "quality bar"
+      ],
       "type": "single_choice",
       "question": "A registrar's office at a community college sends thousands of transcript-request acknowledgment emails each term — short, structured, high-volume work where speed and cost matter more than deep reasoning. In testing, both the lightest tier and the mid tier cleared the office's quality bar for these emails. Which selection is the most appropriate?",
       "options": {
@@ -1071,7 +1191,10 @@
       "syllabus_rule": "1.03",
       "theme": "T1",
       "vertical": "conference and exhibitions organizer",
-      "keywords": ["speed-capability trade-off", "capability"],
+      "keywords": [
+        "speed-capability trade-off",
+        "capability"
+      ],
       "type": "single_choice",
       "question": "The operations team at a conference and exhibitions organizer routes every Claude task — including bulk attendee-list cleanups and simple confirmation drafts — to the most capable model tier, describing the habit as a safety margin. Turnaround on bulk jobs is slow and the program's costs are climbing. What is the most appropriate assessment?",
       "options": {
@@ -1102,7 +1225,10 @@
       "syllabus_rule": "1.04",
       "theme": "T8",
       "vertical": "craft brewery sales cooperative",
-      "keywords": ["context is a budget", "model failure"],
+      "keywords": [
+        "context is a budget",
+        "model failure"
+      ],
       "type": "single_choice",
       "question": "A sales planner at a craft brewery cooperative has kept one continuous Claude conversation running all week for seasonal planning — uploads, drafts, and revisions all in the same thread. By Friday the responses are noticeably weaker and earlier instructions are being dropped, and a teammate concludes the model itself has degraded. What is the most likely explanation?",
       "options": {
@@ -1133,7 +1259,10 @@
       "syllabus_rule": "1.04",
       "theme": "T1",
       "vertical": "e-bike rental operator",
-      "keywords": ["summarize", "persist"],
+      "keywords": [
+        "summarize",
+        "persist"
+      ],
       "type": "single_choice",
       "question": "A pricing analyst at an e-bike rental operator is deep in a long Claude conversation exploring seasonal pricing. The conclusions reached so far will drive the next phase of work; the exploratory back-and-forth behind them will not be needed again. Quality has not dropped yet, but the conversation is growing fast. What is the most appropriate move?",
       "options": {
@@ -1164,7 +1293,10 @@
       "syllabus_rule": "1.02",
       "theme": "T6",
       "vertical": "engineering standards secretariat",
-      "keywords": ["Memory", "context window"],
+      "keywords": [
+        "Memory",
+        "context window"
+      ],
       "type": "single_choice",
       "question": "A committee secretary at an engineering standards secretariat is confused: details discussed in yesterday's Claude session are missing from today's, yet some working preferences do seem to carry over between sessions. The secretary wants a reliable mental model before configuring anything further. Which understanding is the most appropriate?",
       "options": {
@@ -1195,7 +1327,10 @@
       "syllabus_rule": "4.02",
       "theme": "T2",
       "vertical": "facilities management contractor",
-      "keywords": ["traceable", "testable"],
+      "keywords": [
+        "traceable",
+        "testable"
+      ],
       "type": "single_choice",
       "question": "An operations associate at a facilities management contractor has a folder of stakeholder emails, complaint threads, and meeting notes about a new maintenance-request process, and wants Claude's help turning the mess into something the implementation team can act on. Which request makes the best use of the tool here?",
       "options": {
@@ -1226,7 +1361,10 @@
       "syllabus_rule": "4.02",
       "theme": "T5",
       "vertical": "ferry and harbor operations",
-      "keywords": ["delegate", "checked"],
+      "keywords": [
+        "delegate",
+        "checked"
+      ],
       "type": "single_choice",
       "question": "A planning officer at a ferry and harbor operations authority is deciding which steps of the seasonal timetable process to hand to Claude. A colleague asks what property should qualify a step for delegation in the first place. Which criterion is the most appropriate?",
       "options": {
@@ -1257,7 +1395,10 @@
       "syllabus_rule": "4.03",
       "theme": "T3",
       "vertical": "food safety auditing firm",
-      "keywords": ["verified numbers", "code execution"],
+      "keywords": [
+        "verified numbers",
+        "code execution"
+      ],
       "type": "single_choice",
       "question": "A scheduling manager at a food safety auditing firm is building the annual audit-capacity plan with Claude: a narrative for the leadership team, resting on auditor-day totals and utilization percentages derived from the firm's booking export. The manager is deciding how the plan should be produced. Which design is the most appropriate?",
       "options": {
@@ -1288,7 +1429,10 @@
       "syllabus_rule": "7.04",
       "theme": "T8",
       "vertical": "hospice volunteer coordination",
-      "keywords": ["instrument", "friction"],
+      "keywords": [
+        "instrument",
+        "friction"
+      ],
       "type": "single_choice",
       "question": "A coordinator at a hospice volunteer program wants to point Claude at the program's biggest time sink, which the coordinator is sure is the scheduling email back-and-forth. Nothing about the workflow has been measured. What should happen before any step is delegated?",
       "options": {
@@ -1319,7 +1463,10 @@
       "syllabus_rule": "4.01",
       "theme": "T4",
       "vertical": "industrial safety training company",
-      "keywords": ["checkpoint", "human judgment"],
+      "keywords": [
+        "checkpoint",
+        "human judgment"
+      ],
       "type": "single_choice",
       "question": "A course designer at an industrial safety training company develops new curricula with Claude in stages — outline, module drafts, assessments — reviewing each stage before the next begins. A manager proposes handing the whole design over in one pass to save review time, since the drafts have been strong. What is the most appropriate response?",
       "options": {
@@ -1350,7 +1497,10 @@
       "syllabus_rule": "2.04",
       "theme": "T8",
       "vertical": "internal communications department",
-      "keywords": ["iteration", "component"],
+      "keywords": [
+        "iteration",
+        "component"
+      ],
       "type": "single_choice",
       "question": "An internal communications manager reviews a Claude-assisted intranet redesign proposal built to the department's brief. The information architecture is strong, but the tone-of-voice section misses the company's plain-language standard. A teammate suggests starting the whole proposal again. What is the most appropriate next round?",
       "options": {
@@ -1381,7 +1531,10 @@
       "syllabus_rule": "4.01",
       "theme": "T5",
       "vertical": "landscaping services franchise",
-      "keywords": ["delegate deliberately", "checkpoints"],
+      "keywords": [
+        "delegate deliberately",
+        "checkpoints"
+      ],
       "type": "single_choice",
       "question": "An operations manager at a landscaping services franchise is bringing Claude into the quoting workflow: site notes are summarized, materials are itemized, prices are calculated against the rate card, and a franchise owner approves each quote before it is sent. A consultant proposes automating the workflow end to end, approval included. What is the most appropriate design?",
       "options": {
@@ -1412,7 +1565,11 @@
       "syllabus_rule": "4.04",
       "theme": "T5",
       "vertical": "language school admissions",
-      "keywords": ["reversibility", "stakes", "accountability"],
+      "keywords": [
+        "reversibility",
+        "stakes",
+        "accountability"
+      ],
       "type": "single_choice",
       "question": "An admissions manager at a language school is mapping the enrollment workflow — inquiry replies, placement-test scoring, offer letters, visa-document checks — to decide Claude's role in each step. Which classification approach is the most appropriate?",
       "options": {
@@ -1443,7 +1600,10 @@
       "syllabus_rule": "4.04",
       "theme": "T5",
       "vertical": "mining site procurement office",
-      "keywords": ["gate", "irreversible"],
+      "keywords": [
+        "gate",
+        "irreversible"
+      ],
       "type": "multiple_response",
       "question": "A procurement officer at a mining site is adding Claude to the purchase-order workflow: requests are drafted and validated, and a released purchase order is an irreversible payment commitment. The team is designing the human approval gate. Which TWO properties must the gate have? (Select TWO.)",
       "options": {
@@ -1454,7 +1614,10 @@
         "E": "It has a named gatekeeper who is accountable for staffing the decision"
       },
       "select_count": 2,
-      "answer": ["B", "E"],
+      "answer": [
+        "B",
+        "E"
+      ],
       "distractor_patterns": {
         "A": "D07",
         "C": "D02",
@@ -1476,7 +1639,10 @@
       "syllabus_rule": "4.04",
       "theme": "T5",
       "vertical": "paralegal support bureau",
-      "keywords": ["structured workflow", "autonomy"],
+      "keywords": [
+        "structured workflow",
+        "autonomy"
+      ],
       "type": "single_choice",
       "question": "A team lead at a paralegal support bureau is designing Claude's role in court-filing preparation, a process with fixed steps in a fixed order and a fixed validation checklist at each step. A colleague proposes granting the tool open-ended autonomy to find the best approach for each filing, pointing to an impressive pilot demonstration. Which design is the most appropriate?",
       "options": {
@@ -1507,7 +1673,10 @@
       "syllabus_rule": "4.01",
       "theme": "T1",
       "vertical": "port authority communications",
-      "keywords": ["simplest design", "requirement"],
+      "keywords": [
+        "simplest design",
+        "requirement"
+      ],
       "type": "single_choice",
       "question": "A communications officer at a port authority needs Claude to draft notices to mariners from incident reports. The stated requirement: drafts that follow the notice template, reviewed by the duty officer before publication. An enthusiastic teammate sketches a pipeline that generates several candidate drafts in parallel, scores them against a rubric, and auto-selects a winner. Which design should the officer choose?",
       "options": {
@@ -1538,7 +1707,10 @@
       "syllabus_rule": "4.05",
       "theme": "T5",
       "vertical": "professional certification body",
-      "keywords": ["capability claims", "human review gates"],
+      "keywords": [
+        "capability claims",
+        "human review gates"
+      ],
       "type": "multiple_response",
       "question": "A program manager at a professional certification body is briefing the executive team on a Claude rollout for candidate communications, and wants the briefing to earn durable trust rather than a quick yes. Which TWO elements belong in the briefing? (Select TWO.)",
       "options": {
@@ -1549,7 +1721,10 @@
         "E": "A year-end commitment to fully automated candidate communications with no review step"
       },
       "select_count": 2,
-      "answer": ["A", "B"],
+      "answer": [
+        "A",
+        "B"
+      ],
       "distractor_patterns": {
         "C": "D17",
         "D": "D12",
@@ -1571,7 +1746,10 @@
       "syllabus_rule": "4.05",
       "theme": "T5",
       "vertical": "recruitment process outsourcing",
-      "keywords": ["escalate", "Claude Developer"],
+      "keywords": [
+        "escalate",
+        "Claude Developer"
+      ],
       "type": "single_choice",
       "question": "A delivery lead at a recruitment process outsourcing firm has configured Claude Projects and prompts that produce excellent candidate summaries. The operations director now asks the lead to also build an API integration that pushes each summary automatically into the client's applicant tracking system. What is the most appropriate course of action?",
       "options": {
@@ -1592,6 +1770,353 @@
           "A": "A self-built integration on borrowed administrator credentials crosses the scope boundary and widens the client's exposure while it does.",
           "C": "Escalating work the lead is qualified to finish is over-escalation; the summaries and configuration are exactly Associate-scope deliverables.",
           "D": "Letting the request lapse without saying so absorbs the scope problem silently; the director decides next steps only if told the boundary exists."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q52",
+      "domain": "d5",
+      "primary_concept": "C-052",
+      "syllabus_rule": "5.01",
+      "theme": "T6",
+      "vertical": "renewable energy permitting consultancy",
+      "keywords": [
+        "configuration is leverage",
+        "recurring"
+      ],
+      "type": "single_choice",
+      "question": "A consultant at a renewable energy permitting consultancy runs the same permit-application review with Claude every week, starting a fresh chat each time and re-uploading the same standards documents and checking conventions. Setting up a configured Project would take about an afternoon. What is the most appropriate way to weigh that afternoon?",
+      "options": {
+        "A": "Postpone any setup until the busy season ends and the calendar has more slack",
+        "B": "Skip the setup: a peer consultant tried a Project for one-off analyses and found it added nothing",
+        "C": "Invest the afternoon: the recurring weekly review means the setup pays back on every later conversation",
+        "D": "Skip the setup, as the firm bills by the hour and configuration work is not billable to a client"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D15",
+        "B": "D12",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The afternoon is justified because configuration is leverage: set up once, benefit on every subsequent conversation. The weekly recurring review is exactly the recurrence profile that repays setup, and a configured environment is what separates operating the tool from merely using it.",
+        "distractors": {
+          "A": "Deferral compounds the cost: every week of the busy season repeats the manual re-uploading the setup would retire.",
+          "B": "The peer's experience is an anecdote about one-off work; leverage comes from recurrence, which their tasks lacked and this review has.",
+          "D": "Billability is budget optics, not an engineering criterion; the unbillable afternoon buys back billable hours every week after."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q53",
+      "domain": "d5",
+      "primary_concept": "C-053",
+      "syllabus_rule": "5.02",
+      "theme": "T6",
+      "vertical": "school district facilities office",
+      "keywords": [
+        "instructions",
+        "knowledge",
+        "Skill"
+      ],
+      "type": "single_choice",
+      "question": "A facilities office at a school district configured a Project for work-order triage: the maintenance vendor directory was written into the Project's instructions, and the office's step-by-step triage procedure was uploaded as a memo in knowledge. The configuration looks complete, yet triage output wanders from the procedure and vendor details come back garbled. What is the most appropriate fix?",
+      "options": {
+        "A": "Move the vendor directory into knowledge, define the triage procedure as a Skill, keep instructions for behavior",
+        "B": "Expand the instructions to hold the full directory plus the procedure spelled out in more detail",
+        "C": "Report the Project as defective, as a configured Project should follow whatever it has been given",
+        "D": "Leave the configuration alone and correct each mis-triaged work order by hand as it appears"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "D19",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Instructions govern behavior, knowledge supplies facts, Skills define procedures, scoped Memory holds continuity. A vendor directory is facts and belongs in knowledge; a step-by-step procedure is a Skill's job. A need placed in the wrong mechanism produces exactly this: a configuration that looks complete and does not hold.",
+        "distractors": {
+          "B": "Loading everything into instructions swells one mechanism to do three jobs; the mismatch that causes the wandering remains.",
+          "C": "Nothing is defective: each mechanism is doing its own job on material that belongs to a different one.",
+          "D": "Hand-correcting work orders treats the output symptom while the misplaced configuration keeps generating it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q54",
+      "domain": "d5",
+      "primary_concept": "C-054",
+      "syllabus_rule": "5.03",
+      "theme": "T6",
+      "vertical": "sports league match operations",
+      "keywords": [
+        "connector",
+        "capability edge"
+      ],
+      "type": "single_choice",
+      "question": "A match operations coordinator at a sports league uses a file-storage connector so Claude can read fixture documents. A request to have Claude reorganize the storage folders themselves and change their sharing permissions keeps failing, and the coordinator has rewritten the prompt four times. What is the most appropriate reading of the failures?",
+      "options": {
+        "A": "The prompt still is not worded clearly enough, and a fifth, more precise rewrite is the next step",
+        "B": "The request sits beyond the connector's capability edge — a scope problem no prompt wording will fix",
+        "C": "More connectors should be installed until one of them manages the reorganization",
+        "D": "Connectors let Claude do whatever the connected app can do, so the storage service must be down"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D04",
+        "C": "D01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Every connector extends reach up to a capability edge, and a request that fails at the boundary is a scope problem, not a prompt problem. Knowing the connector's edge is what prevents misrouted fixes — four rewrites have already shown that wording is not the variable.",
+        "distractors": {
+          "A": "A fifth rewrite iterates on the component that four failures have already cleared; the boundary does not move for phrasing.",
+          "C": "Stacking connectors adds machinery in the hope one exceeds its design; the task belongs in the storage service's own admin tools.",
+          "D": "A connector exposes a defined slice of an app's capability, not all of it; inferring an outage from a scope limit invents a mechanism."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q55",
+      "domain": "d5",
+      "primary_concept": "C-055",
+      "syllabus_rule": "5.05",
+      "theme": "T6",
+      "vertical": "wine distribution cooperative",
+      "keywords": [
+        "authority",
+        "currency",
+        "review cadence"
+      ],
+      "type": "multiple_response",
+      "question": "A member services manager at a wine distribution cooperative is about to load a shared folder — supplier price lists, tasting notes going back years, assorted policy PDFs, none with a clear owner — into a Project's knowledge for answering member questions. Which TWO controls should be applied before the folder becomes Project knowledge? (Select TWO.)",
+      "options": {
+        "A": "Upload the entire folder unfiltered so retrieval has the most possible material to draw on",
+        "B": "Trust the files as they stand, since everything in the folder came from inside the cooperative",
+        "C": "Add a standing notice to outputs warning members that the underlying knowledge may be outdated",
+        "D": "Screen each file for authority and currency, and record an owner for what stays",
+        "E": "Scope the upload to what member questions actually need, with a review cadence for keeping it current"
+      },
+      "select_count": 2,
+      "answer": [
+        "D",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D13",
+        "C": "D09"
+      },
+      "rationale": {
+        "correct": "Uploaded knowledge needs provenance — authority, currency, scope, and a review cadence — or stale and unowned content is treated as authoritative. Retrieval scope is a quality control, not a recall maximizer: screening for authority and currency with a named owner, and scoping the upload with a review cadence, are the two controls that give the knowledge a warrant.",
+        "distractors": {
+          "A": "Maximum material is maximum unvetted authority; years-old tasting notes answer member questions with the same standing as current price lists.",
+          "B": "Internal origin is not authority or currency; the folder's problem is age and ownerlessness, which residing inside the cooperative does not cure.",
+          "C": "A staleness notice discloses the defect to members instead of fixing it; the knowledge underneath stays unowned and unscreened."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q56",
+      "domain": "d5",
+      "primary_concept": "C-056",
+      "syllabus_rule": "5.02",
+      "theme": "T6",
+      "vertical": "airline loyalty program office",
+      "keywords": [
+        "precedence",
+        "scope"
+      ],
+      "type": "single_choice",
+      "question": "A program specialist at an airline loyalty program office maintains a Project whose knowledge holds last year's policy manual and a newer benefits bulletin, and the two disagree on upgrade-voucher rules. Depending on which document retrieval surfaces, member replies cite different rules. What is the most appropriate resolution?",
+      "options": {
+        "A": "Leave both documents in place, as the model reliably prefers the newer document when sources disagree",
+        "B": "Remove the older manual from knowledge entirely so no conflict can ever arise",
+        "C": "Have Claude merge the two documents into one combined summary and answer from that",
+        "D": "Record which document governs which scope, apply that precedence, and state the resolution in replies"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D16",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "When two knowledge authorities conflict, the resolution is by documented scope and precedence, stated in the output — never silently averaged or decided by which source is newer. The manual and the bulletin each govern something; writing down which governs the voucher rules is the fix that holds.",
+        "distractors": {
+          "A": "No mechanism guarantees the newer source wins retrieval; the claim invents a preference and leaves replies to chance.",
+          "B": "Deleting the manual removes everything else it still governs; the conflict needed a precedence decision, not an amputation.",
+          "C": "A blended summary launders the disagreement into unattributed prose; members get a rule neither document actually states."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q57",
+      "domain": "d5",
+      "primary_concept": "C-057",
+      "syllabus_rule": "5.05",
+      "theme": "T3",
+      "vertical": "apprenticeship training provider",
+      "keywords": [
+        "provenance",
+        "upload timestamp"
+      ],
+      "type": "single_choice",
+      "question": "A funding coordinator at an apprenticeship training provider re-uploaded the Project's entire folder of funding-rule PDFs last week, so every file shows a fresh date. A teammate points to those dates as proof the Project's knowledge is current. The coordinator knows one agency revised its rules two months ago. What is the most appropriate response?",
+      "options": {
+        "A": "Agree with the teammate: files uploaded last week are current by any reasonable standard",
+        "B": "Re-upload the folder monthly from now on so the file dates never age more than a few weeks",
+        "C": "Check the content against the agency's current rules — a fresh upload timestamp is not provenance",
+        "D": "Keep the files as they are and add a caveat to outputs that funding rules may have changed"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D10",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "File-level metadata is not content provenance: a fresh upload timestamp says nothing about whether the content is current, and treating one as the other is how stale knowledge acquires authority. The agency revised its rules two months ago; only checking the content against the current rules answers the currency question.",
+        "distractors": {
+          "A": "The date records when the file moved, not when the rules did; the two-month-old revision is invisible to the timestamp.",
+          "B": "A monthly re-upload refreshes the metadata on the same stale content; shrinking the interval never touches the actual rules.",
+          "D": "A caveat discloses the risk to readers instead of resolving it; the outdated rule keeps flowing into funded decisions."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q58",
+      "domain": "d5",
+      "primary_concept": "C-058",
+      "syllabus_rule": "5.04",
+      "theme": "T6",
+      "vertical": "architecture firm bid team",
+      "keywords": [
+        "standing instructions",
+        "testable"
+      ],
+      "type": "single_choice",
+      "question": "A bid manager at an architecture firm added a standing instruction to the team's Project months ago: \"keep our bid responses compelling and on-brand.\" Bid drafts look the same as before the instruction existed; nothing has errored and nothing has visibly changed. What is the most appropriate fix?",
+      "options": {
+        "A": "Rewrite the instruction into precise, testable rules whose effect on a draft can be observed",
+        "B": "Strengthen the wording — \"always make every response truly compelling\" — so the model takes it seriously",
+        "C": "Ask Claude whether it has been following the instruction, and close the matter if it says yes",
+        "D": "Leave it for now and put a full instructions overhaul on next quarter's improvement list"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D04",
+        "C": "D20",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Standing instructions must be precise and testable: a vague instruction fails silently — nothing errors and nothing changes, exactly what the bid drafts show. Each rule is written so its effect on an output can be observed, which is what makes the instruction verifiable rather than decorative.",
+        "distractors": {
+          "B": "Adding intensity to vagueness is still vagueness; no observable behavior is specified, so silence continues.",
+          "C": "A self-report is not an observation; the instruction's problem is that compliance and non-compliance look identical.",
+          "D": "Deferral leaves a silent failure in place for a quarter; the fix is one rewritten instruction, not a program."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q59",
+      "domain": "d5",
+      "primary_concept": "C-059",
+      "syllabus_rule": "5.02",
+      "theme": "T6",
+      "vertical": "art museum membership office",
+      "keywords": [
+        "instructions",
+        "knowledge sources"
+      ],
+      "type": "single_choice",
+      "question": "A membership officer at an art museum notices two habits in the team's renewal-letter Project. The office's durable drafting rules are restated by hand in every request, and drafts have recently begun calling one donor \"the museum's premier partner\" — phrasing that turns out to come from a line inside a sponsor-supplied PDF in the Project's knowledge. What is the most appropriate correction?",
+      "options": {
+        "A": "Print the drafting rules on a cover page added to each uploaded document so the rules travel with the files",
+        "B": "Keep both habits and strip the premier-partner phrasing out of each draft after generation",
+        "C": "Restate the drafting rules more emphatically in each request so they outweigh anything in the files",
+        "D": "Put the durable rules into the Project's instructions, and treat uploaded content as data with no instruction authority"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D06",
+        "B": "D05",
+        "C": "D04"
+      },
+      "rationale": {
+        "correct": "A rule that must always hold lives in trusted, durable configuration — never restated per request and never inside the material it governs. Content in knowledge sources is data: the sponsor PDF's self-serving line acquired the authority of an instruction, which is precisely what the separation exists to prevent.",
+        "distractors": {
+          "A": "A cover page puts the rules inside the governed material itself — the layer whose contents must never carry instruction authority.",
+          "B": "Post-editing removes the phrase draft by draft while the PDF keeps issuing it; the authority confusion is untouched.",
+          "C": "Emphatic per-request restatement is the fragile habit the fix should retire; volume does not make the placement right."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q60",
+      "domain": "d5",
+      "primary_concept": "C-060",
+      "syllabus_rule": "5.05",
+      "theme": "T6",
+      "vertical": "b2b software customer success",
+      "keywords": [
+        "quality decay",
+        "scheduled reviews"
+      ],
+      "type": "single_choice",
+      "question": "A customer success lead at a b2b software company configured a Project a year ago: product names in the instructions, packaging documents in knowledge, and a report-formatting Skill. The product line has since been renamed and repackaged. Account summaries have grown subtly off-target, and at no point did anything error or warn. What is the most appropriate lesson to draw?",
+      "options": {
+        "A": "Configurations surface their own problems eventually, and customer complaints will say when to act",
+        "B": "Configurations age against a changing world, so reviews must be scheduled — the decay sends no signal",
+        "C": "The Project should be rebuilt from scratch every month so no element can ever age",
+        "D": "Configured Projects are unreliable, and the team should paste fresh context into every session instead"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D08",
+        "C": "D01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Instructions, knowledge, Skills versions, and Memory all age against a changing world, and because the quality decay produces no warning signal, maintenance runs on scheduled reviews rather than on triggers. A year of renames and repackaging drifting silently into summaries is the signature of unscheduled configuration.",
+        "distractors": {
+          "A": "Complaints are the decay finally reaching customers; a lagging alarm made of other people's frustration is not a maintenance plan.",
+          "C": "A monthly rebuild scraps working configuration wholesale; the discipline is a scheduled review of what changed, not perpetual reconstruction.",
+          "D": "Abandoning configuration trades silent aging for loud, daily re-keying; the leverage was real, it just needed maintenance."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q61",
+      "domain": "d5",
+      "primary_concept": "C-061",
+      "syllabus_rule": "5.05",
+      "theme": "T6",
+      "vertical": "botanical garden events office",
+      "keywords": [
+        "inform",
+        "maintenance"
+      ],
+      "type": "single_choice",
+      "question": "An events coordinator at a botanical garden tightens the shared Project's instructions, changing how event budget summaries are structured. Three other teams pull those summaries into their own reporting. The new configuration is live and producing better output. What else does the change require?",
+      "options": {
+        "A": "Nothing — the summaries improved, and drawing attention to the change would invite needless debate",
+        "B": "A line in the Project description noting that configurations may change at any time",
+        "C": "Telling the three teams what changed in the summaries their reporting depends on",
+        "D": "Holding the news for the annual configuration review, where all changes are presented together"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D17",
+        "B": "D09",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "A configuration change that alters shared outputs is announced to the people who depend on them — to inform dependents is part of the maintenance obligation, not a courtesy. Three teams' reporting consumes these summaries; their pipelines meet the new structure either by notice or by surprise.",
+        "distractors": {
+          "A": "Better output does not excuse a silent interface change; the downstream teams absorb the breakage without knowing why.",
+          "B": "A may-change disclaimer discloses the possibility of change while communicating nothing about this change.",
+          "D": "An annual digest informs the dependents months after their reporting already hit the new structure."
         }
       }
     }

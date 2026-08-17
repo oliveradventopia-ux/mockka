@@ -1,0 +1,1047 @@
+{
+  "$comment": "S5 round 1 judge rubric - az-900, methodology/05-eval-rubric.md #judge. Examiner: exam-examiner, fresh session (authored nothing in this bank). Date 2026-08-18 (SGT). Bank: 65 items (57 SC / 5 MR 2-of-5 / 3 SM) at questions.json commit f649943. Every item was scored only after the strongest honest case FOR each distractor was written; items[].case records that argument and why it loses. Dimension-5 policy declared for this bank: score = min(content pitch, echo score), where the echo score grades the FUNCTIONAL-ECHO cue (BO-1 below) - 3 when the keyed option restates the stem's operative requirement in near-identical vocabulary AND no distractor contests that vocabulary (so lexical matching succeeds without product knowledge), 4 when the overlap is partial or a distractor makes a competing claim on the same words, 5 when the surface points away from the key. Thresholds applied: any dimension <=2 bounces; any 3 joins the Gate 2 sample; 4s and 5s ship silently.",
+  "slug": "az-900",
+  "round": 1,
+  "date": "2026-08-18",
+  "bank_commit": "f649943",
+  "score_distribution": {
+    "1_single_defensible_best_answer": {
+      "5": 64,
+      "4": 0,
+      "3": 1,
+      "2": 0,
+      "1": 0
+    },
+    "2_distractor_plausibility": {
+      "5": 39,
+      "4": 25,
+      "3": 1,
+      "2": 0,
+      "1": 0
+    },
+    "3_concept_alignment": {
+      "5": 65,
+      "4": 0,
+      "3": 0,
+      "2": 0,
+      "1": 0
+    },
+    "4_rationale_traceability": {
+      "5": 63,
+      "4": 1,
+      "3": 1,
+      "2": 0,
+      "1": 0
+    },
+    "5_difficulty_pitch": {
+      "5": 20,
+      "4": 29,
+      "3": 16,
+      "2": 0,
+      "1": 0
+    },
+    "6_scenario_realism": {
+      "5": 64,
+      "4": 1,
+      "3": 0,
+      "2": 0,
+      "1": 0
+    }
+  },
+  "surface_cue_screen": {
+    "$comment": "Run before judging, on the keyless form, because the aif-c01 round-1 defects (BD-1 key-position-constant, BD-2 answer-surface-cue) were both invisible to a key-blind solver's accuracy and visible in the surface. Both ratchet checks that came out of that round are live in the validator and pass here; these are the examiner's independent numbers.",
+    "key_position": {
+      "single_choice": {
+        "A": 15,
+        "B": 14,
+        "C": 14,
+        "D": 14
+      },
+      "multiple_response_pairs": [
+        "B,D",
+        "A,C",
+        "C,E",
+        "A,D",
+        "B,E"
+      ],
+      "scenario_matching_maps": {
+        "1.18": "C,A,B,C",
+        "2.14": "C,A,D,B,C",
+        "3.11": "C,A,B,C"
+      },
+      "reading": "Clean. SC keys are near-uniform across four letters, all five MR key pairs are distinct, and no SM map follows the listed option order."
+    },
+    "answer_length": {
+      "sc_keyed_longest": "28/57 (49%)",
+      "sc_keyed_shortest": "9/57 (16%)",
+      "keyed_vs_longest_distractor_ratio": {
+        "median": 0.99,
+        "max": 1.33,
+        "min": 0.65
+      },
+      "items_at_or_above_1.25": [
+        "2.25"
+      ],
+      "reading": "Clean. No length or hedging cue: the keyed option is as often the shortest as the longest, and the single item above 1.25 (2.25) is a set of bare product names where length carries no information."
+    },
+    "verdict": "No bank-wide surface defect of the aif-c01 BD-1/BD-2 class. The one bank-wide observation this round is BO-1 below, which is a content-surface cue, not a mechanical one."
+  },
+  "bank_observations": [
+    {
+      "id": "BO-1",
+      "title": "functional-echo cue on service-selection items",
+      "severity": "observation (no item scored <=2; 16 items scored dimension-5 = 3)",
+      "finding": "On 16 items the keyed option's descriptive clause restates the stem's operative requirement in near-identical vocabulary while no distractor makes a competing claim on those words - e.g. 3.21 stem 'told the moment queue depth crosses its agreed threshold, and wants the processing job restarted' / key 'firing at the threshold and triggering the restart'; 2.17 'continuously mirrored ... stay in step' / 'continuously synchronized'; 2.22 device-and-location signals; 3.19 'collects ... and can act on'. A candidate who matches words without knowing the services can select the key on those items.",
+      "items": [
+        "1.16",
+        "2.08",
+        "2.17",
+        "2.21",
+        "2.22",
+        "2.25",
+        "3.04",
+        "3.05",
+        "3.07",
+        "3.13",
+        "3.17",
+        "3.18",
+        "3.19",
+        "3.20",
+        "3.21",
+        "3.22"
+      ],
+      "concentration": "11 of 16 are theme Z2 (service selection) or the cost-surface pairs in d3; the pattern tracks the item shape (need-statement stem + option that must describe what the service does), not any one author decision.",
+      "why_not_a_bounce": "Dimension 5 = 3 by the policy above, not <=2: on every one of these items the distractors are real and the discrimination is genuine for a candidate reasoning from concepts, and the format_coverage note commits this exam to 'describe'-altitude recognition items. Bouncing 16 items would rewrite the bank's pitch rather than fix a defect.",
+      "gate_2_question": "Is functional echo acceptable at AZ-900 altitude, or should the counter-measure (make one distractor claim the stem's own vocabulary, as 3.08 option A and 3.09 option C already do - both scored dimension-5 = 4) become an authoring rule? 3.08 and 3.09 are the in-bank models to copy.",
+      "ratchet_proposal": "If Gate 2 rules echo unacceptable, the candidate check is mechanical: flag any single-choice item where the keyed option shares >=N content-word bigrams with the stem AND no distractor shares any. Proposed as an authoring-guide rule first (methodology/00-pipeline.md #ratchet), not a validator check, until a second exam shows the same class."
+    },
+    {
+      "id": "BO-2",
+      "title": "retired-name distractor at 2.25",
+      "severity": "observation (dimension 1 = 3, Gate 2 decision)",
+      "finding": "2.25 keys 'Microsoft Defender for Cloud' with 'Azure Security Center' (pattern E05) as a distractor. The two names denote the same product across a rename, so option C loses on vocabulary currency rather than on the concept's own terms. The rationale is honest about this ('Security Center is the service's former name'), which is why dimension 4 stays at 5.",
+      "items": [
+        "2.25"
+      ],
+      "gate_2_question": "Accept (the 2026-07-20 outline knows only the successor, and recognising retired names is legitimate exam content) or replace the distractor with a genuine near-neighbour service. Examiner leans accept-with-note; it is a human call, not an examiner call.",
+      "note": "This is also the only item in the bank whose stem is a capability list rather than a scenario (dimension 6 = 4) and whose options are bare product names (dimension 5 = 3). If Gate 2 wants one item reworked this round, it is this one."
+    },
+    {
+      "id": "BO-3",
+      "title": "vertical reuse across domains",
+      "severity": "observation only (no score effect)",
+      "finding": "13 scenario verticals appear in exactly two items each, always in different domains (e.g. county courthouse system 1.13 + 3.10; ferry operator 1.03 + 3.13; container shipping line 2.01 + 3.14). No item is internally inconsistent, and no answer leaks between paired items, so dimension 6 is unaffected.",
+      "note": "Recorded so Gate 2 sees it deliberately rather than discovering it. One pair carries a mild cross-item tension worth a glance if the two ever land on the same form: 1.13 puts the courthouse pre-adoption with a two-person IT team, 3.10 has it running an Azure estate with four resource-group owners."
+    }
+  ],
+  "gate2_sample": {
+    "$comment": "methodology/05-eval-rubric.md #handoff. Every item carrying any dimension-3 score. No cross-model disagreements are listed because the Codex advisory cross-solve was skipped this round (see eval/blind-solve.json codex_cross_solve); no adjudications are open (blind solve 65/65); no bounce survivors exist (zero bounces).",
+    "size": 17,
+    "items": [
+      {
+        "id": "1.16",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): key restates the stem's OS/runtime/middleware triple"
+      },
+      {
+        "id": "2.08",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): key restates 'identical instances that rise and fall with demand'"
+      },
+      {
+        "id": "2.17",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'continuously mirrored / stay in step' -> 'continuously synchronized'"
+      },
+      {
+        "id": "2.21",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'accounts they already have' repeated verbatim"
+      },
+      {
+        "id": "2.22",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): device-state and location signals repeated"
+      },
+      {
+        "id": "2.25",
+        "flags": {
+          "1": 3,
+          "5": 3
+        },
+        "why": "BO-2 retired-name distractor (dimension 1) plus bare-product-name recall pitch; also the bank's only dimension-6 = 4"
+      },
+      {
+        "id": "3.04",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'by resource, by service, over time' repeated from the stem"
+      },
+      {
+        "id": "3.05",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'as consumption approaches it' repeats 'climbing toward the line'"
+      },
+      {
+        "id": "3.07",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): discover/classify/track repeats the stem's find/label/keep-track"
+      },
+      {
+        "id": "3.12",
+        "flags": {
+          "4": 3
+        },
+        "why": "option B's rationale argues a self-review idea in vocabulary the AZ-900 syllabus does not carry - a candidate cannot trace it to study material"
+      },
+      {
+        "id": "3.13",
+        "flags": {
+          "2": 3,
+          "5": 3
+        },
+        "why": "option D ('ask the platform team') is eliminable without engaging the scenario; key restates the stem's constraints"
+      },
+      {
+        "id": "3.17",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): key restates 'derived from how these resources are configured' plus the board's categories"
+      },
+      {
+        "id": "3.18",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'this subscription's services and regions' repeated"
+      },
+      {
+        "id": "3.19",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'collects ... and can act on' repeated"
+      },
+      {
+        "id": "3.20",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'where collected log data is queried' repeats 'interrogate what was collected'"
+      },
+      {
+        "id": "3.21",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): threshold-and-restart pairing repeated verbatim"
+      },
+      {
+        "id": "3.22",
+        "flags": {
+          "5": 3
+        },
+        "why": "functional echo (BO-1): 'request failures and usage' repeats the stem's own ask"
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "1.01",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: colocation is routinely sold and budgeted as 'moving to the cloud', and the server room genuinely closes. FOR C: a hosted web plan is off-premises, rented and metered. FOR D: internal self-service VM requests look exactly like cloud consumption to a newsroom user. All three lose on the same term: nothing is delivered on demand from capacity someone else operates - the group still owns and staffs (A, D) or buys one narrow service class (C)."
+    },
+    {
+      "id": "1.02",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: OS patching feels like the customer's job to anyone whose mental model is IaaS. FOR C: teams that run their own middleware today assume they still would. FOR E: physical access control is a real duty in someone's hands. A and C lose because PaaS is defined by the provider absorbing exactly those layers; E loses because physical security never sits with the tenant at any service type. E is the weakest option in the item - no practitioner would claim it - which is what holds dimension 2 at 4."
+    },
+    {
+      "id": "1.03",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the environment is off-premises, in someone else's building, operated by a service provider - the everyday shorthand for 'public cloud'. FOR D: two parties are involved, which sounds like a combination. FOR B: two companies are named. A loses because public means shared multi-tenant capacity and this hardware is shared with nobody; D loses because nothing is combined; B is the weakest - multicloud is not one of the deployment models under classification. The stem's geography is a deliberate pull away from the key."
+    },
+    {
+      "id": "1.04",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: cloud-first modernisation is a real board mandate and one estate is cheaper to run than two. FOR C: private-only is the only option that obviously satisfies the statute. FOR D: a sovereign region is genuinely built for government obligations. B and D both lose on the statute's exact wording - infrastructure the office operates itself - which a provider-operated region does not satisfy; C satisfies the statute but pays for filing-season capacity all year. Two constraints pointing opposite ways is what makes this good-vs-best."
+    },
+    {
+      "id": "1.05",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR C: a discounted committed rate is a real cloud pricing model and finance directors like fixed rates. FOR A: a flat monthly charge is what many managed contracts actually look like. FOR B: peak provisioning is what the manufacturer does today. C is the strongest wrong answer and loses precisely because the job is idle half the year, so the commitment is paid through the idle months; A and B are not consumption billing at all."
+    },
+    {
+      "id": "1.06",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR C: multi-year cloud commitments really are capitalised under some accounting treatments, so 'subscriptions are long-lived' is not absurd. FOR A: both spends support revenue. FOR D: reclassification often does wait for the auditors. C is the sharpest and loses because classification follows ownership, not duration; A confuses purpose with ownership; D is deferral, not an answer to what changes."
+    },
+    {
+      "id": "1.07",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: pay-as-you-go is already in place, needs no procurement work, and preserves optionality - a real purchasing position. FOR C: spot carries the deepest discount, which is what purchasing was told to chase. FOR D: waiting for the provider's next price cut is a genuine treasury instinct. B loses because the flexibility premium buys an option this workload will never exercise; C loses on eviction risk against a core ledger; D pays the premium indefinitely. The surface (an existing arrangement, a deeper discount) points away from the key."
+    },
+    {
+      "id": "1.08",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: 'interruptible capacity is unsuitable for production' is advice given in real shops and is right most of the time. FOR A: reservations remove eviction risk entirely. FOR D: more parallel machines finish sooner. B is the strongest and loses on its own precondition - the rule protects work that loses progress or misses deadlines, and this job checkpoints and has no deadline; A pays a premium for continuity nobody needs; D answers a deadline that does not exist."
+    },
+    {
+      "id": "1.09",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: capacity planning feels like it must live somewhere. FOR C: someone patches the OS under every runtime. FOR A: 'serverless means the platform handles everything' is a genuine marketing-formed belief. B and C lose because instances and OS images are exactly what serverless removes; A loses because the code, its configuration and its data never transfer. A is the weakest - absolutist by construction - holding dimension 2 at 4."
+    },
+    {
+      "id": "1.10",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: buying more reliable hardware is a real availability strategy and reduces failure frequency. FOR C: nightly backup is what many operators actually rely on for continuity. FOR D: fast detection genuinely shortens outages. All three lose against the stated requirement - keep selling seats through a failure mid-evening - which only redundancy satisfies: better parts still fail, restores presuppose the outage, and watching prevents nothing."
+    },
+    {
+      "id": "1.11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: vertical resize is simpler operationally and the surge is predictable (a final is scheduled). FOR C: a permanent 90,000-viewer fleet never fails to serve. FOR D: a maintenance-window resize is how many shops actually change capacity. A loses on the shape - resizing tops out and leaves an oversized machine; C pays peak cost every ordinary day; D cannot react within minutes. The scheduled-final detail is a real pull toward A and D."
+    },
+    {
+      "id": "1.12",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the two definitions in A are both correct definitions - they are simply attached to the wrong terms, which is the hardest kind of wrong option to see. FOR C: dashboards are what most people point at when asked to demonstrate reliability. FOR B: proposals do repeat themselves. A is the strongest and loses only on which label carries which definition; C confuses detection with the property; B is the weakest, since a platform can recover well and forecast badly."
+    },
+    {
+      "id": "1.13",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: providers do carry a large share of security duties, and small teams hear 'the cloud is more secure' as transfer. FOR B: layered third-party appliances are a real enterprise pattern. FOR D: keeping controls in-house is a defensible conservative posture for a court. A loses on shared responsibility - duties are shared, never transferred; B loses because the benefit is what the platform supplies natively; D forfeits the benefit under discussion rather than describing it."
+    },
+    {
+      "id": "1.14",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: Advisor really does produce the recommendations an admin would act on, so 'Advisor takes over administration' is a small step from the truth. FOR C: hardware standardisation genuinely eases manual administration. FOR D: a change report is a real manageability artifact. B loses because Advisor recommends and never acts; C leaves the work manual, which is the thing being replaced; D is retrospective where manageability is the ability to act."
+    },
+    {
+      "id": "1.15",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: many teams on IaaS do have the provider patching the guest OS via a managed update service, so 'only the code' feels close. FOR C: 'maximum control' is IaaS's own selling line, and the hypervisor is the next layer down. FOR B: hardware support contracts are a real on-premises reflex. All three lose at the line IaaS draws - the guest OS and above is the tenant's, the hypervisor and below is not, and there is no tenant hypervisor surface at all."
+    },
+    {
+      "id": "1.16",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: IaaS is the safe default for a team that wants control of its stack. FOR C: SaaS removes the most work, which is what the school says it wants. FOR D: functions genuinely remove idle cost. A loses because control is exactly what the school does not want; C loses because the school is writing the application; D re-architects a question nobody asked. Dimension 5 is a 3: the key restates the stem's own triple (operating system, runtime, middleware) almost verbatim, so a candidate matching words rather than concepts lands on it."
+    },
+    {
+      "id": "1.17",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: real configuration work does remain with the practice, and 'configuration means PaaS' is a common shorthand. FOR D: at SaaS the customer's surface is so thin that governance can look like the vendor's problem. FOR B: runtime versions before a filing deadline is a real anxiety. A is the strongest and loses because feature-and-user configuration is exactly the residue SaaS leaves - no deployable application of the practice's own exists; D loses because identity and access governance never transfers."
+    },
+    {
+      "id": "1.18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR IaaS on s3: continuous deployment is often done onto VMs the team controls. FOR PaaS on s2: app services can pin runtimes, so 'certified patch level' might feel satisfiable. FOR PaaS on s1/s4: a finished product still needs configuring, which sounds platform-ish. Each loses on the deciding constraint the scenario states: s2 needs OS-level control, which only IaaS gives; s3 explicitly refuses runtime and middleware duty; s1 and s4 are licensed products with nothing built. Option reuse across s1/s4 is real discrimination work, not padding."
+    },
+    {
+      "id": "2.01",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: 'a pair stays identical' is an intuitive and widely held reading of region pairing, and B's first clause about a set of nearby datacenters is correct. FOR A: 'region = datacenter' is the single most common beginner model. FOR D: subscriptions do choose regions. B is the strongest wrong answer in the bank's networking set and loses on one word - updates are sequenced across a pair precisely so a bad update cannot land on both; A loses on scale and on distance; D inverts who defines platform geography."
+    },
+    {
+      "id": "2.02",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: governments really do build isolated clouds for themselves, and the trust's data is nationally classified. FOR C: a region inside the borders satisfies the naive reading of data residency. FOR D: an allowed-locations policy is the control most estates actually use for residency. All three lose on the definition: sovereignty is a separately bounded, nationally isolated instance of the provider's platform - not a customer build (A), not geography alone (C), not a placement rule inside the shared cloud (D)."
+    },
+    {
+      "id": "2.03",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: fault and update domains are genuine resilience constructs, and 'a larger availability set' sounds like more of the protection already in place. FOR B: scale sets are the answer to most 'make it survive' questions in practice. FOR C: a replicated copy is real data protection. All three lose to the stated failure class - the loss of the whole facility including power and cooling - which every in-datacenter construct shares. The existing availability set in the stem is the pull toward A."
+    },
+    {
+      "id": "2.04",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: dual membership is what both teams actually want, and portal views make it look plausible. FOR C: resource groups do carry a location, so 'members must share it' is a reasonable inference from the UI. FOR D: subscription owner rights would in fact make the database visible to analytics. B loses on the exclusive-membership rule; C loses because group location is metadata about the group, not a constraint on members; D solves visibility by handing over the estate. The engineer's false claim is planted in the stem, so the surface argues for C."
+    },
+    {
+      "id": "2.05",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR C: resource groups plus cost-center tags are how most organisations actually do internal chargeback. FOR A: 'every subscription needs a tenant' is half-true and tenant separation does separate everything. FOR D: a filtered report is what finance usually receives. C is the strongest and loses on the word invoiced - tags slice a report, the subscription is the invoice; A fractures sign-in for no billing gain; D describes the shared bill after the fact."
+    },
+    {
+      "id": "2.06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: per-subscription assignment is concrete, works today and needs no new hierarchy. FOR B: assigning close to resources is a real defence-in-depth instinct. FOR C: onboarding runbooks are how many platform teams actually propagate standards. A loses on 'least ongoing effort' and on future subscriptions; B multiplies the work further; C documents rather than enforces. The stem's forty subscriptions make A superficially attractive."
+    },
+    {
+      "id": "2.07",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: 'containerise everything' is a real, defensible platform strategy and standardises operations. FOR C: uniform VMs are the lowest-skill path and preserve the legacy app. FOR D: the mapping is not random - functions and containers are both modern choices. B is the strongest and loses on the first workload's stated need to own and configure the OS, which containers abstract away; C hands the team three OSes to patch and pays around the clock for a webhook; D crosses every requirement."
+    },
+    {
+      "id": "2.08",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: availability sets are the other 'group of identical VMs' construct and are frequently confused with scale sets. FOR D: one big VM is a real capacity answer. FOR B: AVD does deliver managed instances, as its own description says. A loses because it never changes instance count; D pays for the peak permanently and cannot react; B is the weakest - a public reservation tier is not a desktop workload. Dimension 5 is a 3: the key restates the stem's requirement (identical instances that rise and fall with demand) close to verbatim while no distractor claims it."
+    },
+    {
+      "id": "2.09",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: nearly every VM tutorial creates a public IP, so it feels mandatory. FOR D: Bastion is how administrators actually reach a machine with no public address, which the stem's requirement invites. FOR E: availability sets are chosen at deployment time and look structural. B loses because the stem explicitly rules out internet reachability; D and E are optional by definition. D is the trap that rewards reading 'must not be reachable from the internet' as 'must have Bastion'."
+    },
+    {
+      "id": "2.10",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: containers are the modern default and give the team the same host abstraction. FOR C: VMs give full control, which some web teams want. FOR D: Front Door does serve pages from the edge. A is the strongest and loses on an explicit stem constraint - the team does not want image adoption; C hands back exactly the patching the team asked to avoid; D is not a hosting service and a dynamic booking site still needs a host. Dimension 4 is a 4 because D's rationale argues partly from the exam outline ('outside the outline's hosting options') rather than from the concept."
+    },
+    {
+      "id": "2.11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: 'subnets are isolated until you connect them' is one of the most common networking misconceptions, and it sounds like sound segmentation practice. FOR B: the Microsoft backbone is real, so 'VNets route to each other automatically' has a plausible mechanism behind it. FOR C: keeping DNS on separate infrastructure with separate credentials is a genuine security-team position. A and B invert the actual defaults (isolation is at the VNet boundary; subnets route by default); C loses because Azure DNS is an Azure resource managed like any other."
+    },
+    {
+      "id": "2.12",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: site-to-site VPN connects the right two parties, is encrypted, and is what most operations centres actually deploy first. FOR C: point-to-site is genuinely simpler to stand up. FOR D: peering does run over Microsoft's backbone, which sounds like 'not the public internet'. B is the strongest and loses on the regulator's requirement - an internet path cannot be promised a predictable latency; C misreads who is connecting; D has no on-premises end."
+    },
+    {
+      "id": "2.13",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: 'private' does often mean 'encrypted tunnel over the internet' in everyday usage, and service endpoints do keep traffic on the backbone without a private address. FOR A: DNS resolution subtleties make 'same address underneath' superficially arguable. FOR D: putting data on VMs inside the VNet is the classic pre-private-endpoint answer. B loses because private endpoint traffic never transits the internet; A loses because the endpoint is an address inside the VNet; D loses because no redeployment is needed."
+    },
+    {
+      "id": "2.14",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR Files on s1: scans are files in the everyday sense, and a library would call this a file share. FOR Blob on s2: blob can serve documents to staff. FOR Files on s3: a VM can mount a file share as a volume. FOR Blob on s4: small messages are objects too. Each loses on access pattern: only Azure Files presents SMB at a UNC path (s2), only Disk is the attached VM volume (s3), only Queue carries transient inter-component messages (s4), and s1/s5 are unstructured objects at scale. Holding blobs apart from files across five scenarios with reuse is the item's real work."
+    },
+    {
+      "id": "2.15",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: 'contractually retained means keep it hot for safety' is exactly how a compliance-minded finance team reasons, and the stem primes it by saying each manuscript must remain retrievable. FOR C: archive genuinely has the lowest holding price, which is the stated goal. FOR D: deferring avoids reversal costs. A loses because every tier is durable - importance is not a tier criterion; C loses because manuscripts read constantly in month one would pay the archive access price; D pays the hot price for years of unread material."
+    },
+    {
+      "id": "2.16",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: 'maximum redundancy is safest' is a defensible risk posture and the current default. FOR B: the review was triggered by cost, and LRS for everything is the cheapest answer. FOR C: 'the rungs are just price points' is a genuine simplification people carry. A loses because regenerable telemetry does not need the distance it is paying for; B loses because contract-anchoring records cannot survive a site loss on LRS; C loses because the rungs differ in the failure class they survive. Differentiating two datasets in one account is the good-vs-best move."
+    },
+    {
+      "id": "2.17",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR B: AzCopy scripted on a schedule is how a lot of shops actually keep a cloud copy fresh. FOR D: Data Box moves a large design-file estate that a branch uplink would struggle with. FOR C: Storage Explorer is the tool most admins already have open. B is the strongest and loses because each run is a one-way snapshot with divergence between runs; D leaves the copies divergent between shipments; C is manual. Dimension 5 is a 3: the stem's 'continuously mirrored ... stay in step' is restated by the key as 'continuously synchronized' while no other option claims continuity, so lexical matching wins without product knowledge."
+    },
+    {
+      "id": "2.18",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: compression is real and Azure Migrate is a real migration tool, so A pairs a true tool with a plausible knob. FOR B: an uplink upgrade is the structurally correct long-term fix. FOR D: phased migration under bandwidth constraint is standard practice. A loses on arithmetic - no ratio closes 900 TB into a 40 TB window; B consumes the six weeks it needs; D redefines the requirement. The numbers, not a service name, decide the item."
+    },
+    {
+      "id": "2.19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: self-run domain controllers in Azure definitely supply the protocols and is the most common real-world answer. FOR A: SSO is the usual modernisation move for legacy apps. FOR C: Entra ID is the identity authority, so 'it speaks every protocol' is an easy assumption. B is the strongest and loses on the stated constraint - the laundry is retiring servers, and B rebuilds the operations burden; A does not supply domain-join; C is false about legacy protocol support."
+    },
+    {
+      "id": "2.20",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR C: the reversal reads fluently and 'authorization' sounds like the act of granting a sign-in. FOR A: identity checks and scope decisions do happen in one continuous sign-in experience. FOR D: a one-time code is genuinely a passwordless factor in other flows. C loses on the definitions; A erases the boundary the terms exist to mark; D loses because a password is still present, making this multifactor, and no factor grants permissions."
+    },
+    {
+      "id": "2.21",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR B: admin-created guest accounts with mailed passwords is what many small charities actually do. FOR D: one shared partner account is common and cheap. FOR C: MFA is genuinely part of admitting outside users safely. B loses because account creation and management is precisely what the charity is avoiding; D destroys individual identity and revocation; C strengthens proof for accounts that already exist rather than admitting anyone. Dimension 5 is a 3: the key restates 'the accounts they already have' straight from the stem while no distractor makes that claim."
+    },
+    {
+      "id": "2.22",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: a stronger password policy is the first control most organisations reach for. FOR B: RBAC scoped to a network really is how some teams try to express location rules. FOR D: sign-in log review is a real, funded practice. A loses because it is signal-blind and cannot vary by device or location; B decides what a signed-in identity may do, not what is required at sign-in; D detects after the fact. Dimension 5 is a 3: the key hands back the stem's own signals (device state, location, at sign-in)."
+    },
+    {
+      "id": "2.23",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the colleague's model - broadest scope wins - is stated in the stem and matches how firewall and GPO precedence work elsewhere. FOR B: 'most restrictive wins' is the intuition carried over from NTFS deny semantics. FOR C: upward inheritance is a reasonable guess for anyone who knows inheritance exists but not its direction. All three lose to the union rule: assignments add, nothing overrides, and inheritance flows downward only. The stem plants A as the pull."
+    },
+    {
+      "id": "2.24",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: layered independent controls is genuinely excellent security practice and appears in almost every Zero Trust deck. FOR D: hardening the perimeter is real work that real teams fund. FOR A: network-position trust is still how most corporate estates behave. B is the sharpest near-miss in the bank - it is correct security advice attached to the wrong model (defence in depth), which is exactly what the stem asks the draft to separate; A is the assumption Zero Trust rejects; D is perimeter thinking."
+    },
+    {
+      "id": "2.25",
+      "scores": {
+        "1": 3,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR C: Azure Security Center is not a wrong description of the capability - it is the same product's former name, and posture assessment plus regulatory compliance is what it did. FOR B: Purview does compliance work and carries a compliance portal. FOR D: Advisor has a security category and does assess configuration. B and D lose cleanly on scope (data governance; advisory recommendations). C is the problem: it loses only on vocabulary currency, not on the concept's own terms, which is what holds dimension 1 at 3 - a candidate who learned Azure before the rename can argue co-reference. Dimension 5 is a 3 (bare product names against a capability list - recall, not judgment) and dimension 6 a 4 (the consultancy is wardrobe on a definition, with no constraint to reason from). Recommend a Gate 2 human ruling on whether the retired-name distractor (E05) is acceptable here or should be replaced."
+    },
+    {
+      "id": "3.01",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: 'the resource group is still billing' is a very common misreading of a bill organised by group. FOR C: deallocation does release something, so 'it releases the disks' is a small step from the truth and would explain a foreign charge. FOR E: resizing is a real cost lever. B loses because a group is a free container; C is false - disks stay provisioned, which is the actual answer; E changes the rate on a meter that is already stopped. The controller's stated expectation makes the wrong model explicit."
+    },
+    {
+      "id": "3.02",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: volume-tiered ingest pricing sounds plausible and the stem does mention batch differences implicitly. FOR C: separate resource groups are a real difference between deployments. FOR D: retention is a genuine storage cost lever. All three lose to the controlled comparison the stem builds - identical size, identical volume - leaving placement as the only variable, and the meter that placement creates is outbound cross-region transfer. Ingress is not billed, groups are free, and both sites hold the same data."
+    },
+    {
+      "id": "3.03",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the firm has two years of invoices, so filtering its own history to the relevant services is a genuinely defensible estimation method and arguably more accurate than list prices. FOR B: a budget is what the finance director will ultimately set. FOR D: TCO against print production is the comparison the board actually cares about. A is the strongest and loses because the proposed platform has metered nothing - its services, sizes and quantities do not exist in the history; B states intent; D prices nothing in the design."
+    },
+    {
+      "id": "3.04",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR B: pricing the current configuration gives a reference the owner could compare the bill against. FOR C: a budget at last month's total would catch a repeat. FOR D: tagging is the right long-term fix for attribution. All three lose on tense - the money has been spent, and only cost analysis reads what was actually metered, by resource, service and day. Dimension 5 is a 3: the key restates the stem's own three slices, so word matching succeeds without knowing the cost-management surfaces."
+    },
+    {
+      "id": "3.05",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: month-end review against the ceiling is what the trustees do today and is accurate. FOR B: weekly review genuinely shortens the blind window. FOR C: modelling the intake in the calculator sets the expectation before the season. A and B are detective controls that still report after the line is crossed; C watches no actual consumption. B is the weakest (interval-shrink keeps the same shape), holding dimension 2 at 4. Dimension 5 is a 3: the key restates 'while spend is still climbing toward the line' as 'fire as consumption approaches it'."
+    },
+    {
+      "id": "3.06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: unit-aligned resource groups is the structurally cleanest answer and what a greenfield estate would do. FOR C: role assignments do record who owns what and are already maintained. FOR D: an even split is how shared costs are often settled in practice. A loses on the stem's explicit exclusion - rebuilding is ruled out; C authorises rather than attributes and carries no cost dimension; D is an assumption where a measurement is required. The environment-based grouping is a real-world detail that makes tags the only cross-cutting instrument."
+    },
+    {
+      "id": "3.07",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR B: Defender for Cloud protects the storage accounts holding the files and has a compliance view. FOR C: policy preventing non-approved storage accounts genuinely limits where data can spread. FOR D: a data-handling notice is a real control that auditors accept. B loses on an explicit stem exclusion - infrastructure posture was reviewed separately; C governs containers, not contents; D documents intent and discovers nothing. Dimension 5 is a 3: the key restates the stem's three verbs (find/label/track) as discover/classify/track."
+    },
+    {
+      "id": "3.08",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: A asserts that a lock can stop creation in a region - a candidate who knows locks exist but not their scope will find this convincing, and it competes on the stem's own 'refused at creation' vocabulary. FOR B: centralising deployments does stop rogue regions and is a real governance response. FOR D: monthly reporting is what the network already does. A loses because locks protect existing resources; B removes the engineers' ability to work and a central team can still pick the wrong region; D is after-the-fact removal, which is the failure being fixed."
+    },
+    {
+      "id": "3.09",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR C: 'policy only affects new deployments' is a widely held belief and C states it as a premise, making the redeploy plan follow logically. FOR A: Advisor's operational-excellence recommendations really do scan the existing estate. FOR D: an alert rule is a plausible ongoing-assurance mechanism. C is the strongest and loses on the false premise - an assigned policy evaluates resources already in scope and reports compliance; A does not evaluate a standard the company wrote; D notifies rather than evaluates."
+    },
+    {
+      "id": "3.10",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR C: a policy denying deletion of storage accounts in the group would also stop an owner, and policy is the more scalable instrument - this is a genuinely strong competitor. FOR B: reducing owners to a lesser role addresses the actual cause of last year's incident. FOR D: activity logs provide accountability. C loses on the clerk's stated requirement of a deliberate separate step on this resource, which is a lock's defining behaviour; B leaves the next role up able to delete; D records rather than refuses."
+    },
+    {
+      "id": "3.11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR RBAC on s2: removing delete permission from everyone is the instinctive answer to 'nobody may delete'. FOR policy on s2: a deny-delete policy also stops owners. FOR RBAC on s1/s4: restricting who may deploy is a real region and tagging control. Each loses on the qualifier the scenario carries: s2 says not even a subscription owner and names a guard that must be deliberately removed, which is a lock; s1 and s4 refuse the deployment itself, which is policy; s3 is a pure permission question. The reuse of Azure Policy across s1 and s4 forces the discrimination rather than allowing elimination by counting."
+    },
+    {
+      "id": "3.12",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 3,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: building from a written checklist in the portal is what most small teams genuinely do, and familiarity is a real operational value. FOR B: applying a change resource by resource and reopening each to confirm it is careful administration, not obviously wrong. FOR C: screenshot libraries as build documentation exist in real runbooks. All three lose on repeatability and reviewability - clicks cannot be versioned, compared or replayed - leaving exploration and one-off inspection as the portal's genuine strength. Dimension 4 is a 3: option B's rationale ('checks the work from inside the context that produced it') argues a self-review-anchoring idea in vocabulary AZ-900 study material does not carry, so a candidate cannot trace it back to the syllabus; the first sentence alone would be traceable."
+    },
+    {
+      "id": "3.13",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: the Azure CLI is genuinely the cross-platform command language and the sentence about it is true. FOR C: the portal needs no install and the manager is already signed in - the strongest competitor here. FOR D: escalating to the platform team is real practice on a shared terminal. A loses on the no-install constraint; C gives clicks where a command was asked for. Dimension 2 is a 3 because D is eliminable without engaging any part of the scenario - it proposes not answering the question. Dimension 5 is a 3: the key restates the stem's constraints (browser, already authenticated, nothing installed) almost verbatim."
+    },
+    {
+      "id": "3.14",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: migrating first and governing natively is the strategically cleanest end-state. FOR B: a site-to-site connection is what most teams build first and makes the servers reachable. FOR D: Azure Monitor collecting into one workspace genuinely puts the port servers 'alongside' the Azure ones. A loses on the berth-side contract, which the stem makes binding; B provides reachability, not management - no inventory entry, no policy target; D provides observation, not governance. D is the sharpest miss because it satisfies 'alongside' without satisfying 'policy assignments'."
+    },
+    {
+      "id": "3.15",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR D: desired-state tooling that continuously reconciles drift genuinely exists, so 'the estate becomes self-correcting' is the most defensible wrong answer in the item. FOR A: definition validation really does catch a class of errors an approver would otherwise find. FOR C: a platform team applying definitions does feel like responsibility moving. D loses because plain IaC makes drift visible and correcting it is still a deployment somebody runs; A confuses well-formedness with correctness; C does not move accountability for what is declared."
+    },
+    {
+      "id": "3.16",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: per-surface configuration is how many multi-tool estates actually behave (each CI system with its own credentials), so 'keep three configurations aligned' is an experienced answer. FOR C: standardising on one surface is a real, defensible governance decision. FOR D: log reconciliation is a genuine audit practice. All three lose to where enforcement happens: every surface is a client of Azure Resource Manager, so there are no per-surface rule copies to align, removing tools changes nothing about enforcement, and reconciling logs describes rather than enforces."
+    },
+    {
+      "id": "3.17",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR D: Defender for Cloud's secure score is personalised, derived from the actual estate, and prioritised - it fails only on breadth. FOR C: a policy assignment reports against the importer's own standards, which is arguably more relevant than generic best practice. FOR A: the calculator addresses the 'cheaper' third of the ask. D covers security only where the board asked for cost, reliability and security together; C enforces a standard instead of proposing improvements; A reads no resource configuration. Dimension 5 is a 3: the key restates 'derived from how these resources are configured' plus the board's own categories."
+    },
+    {
+      "id": "3.18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: the public status page is the reflex first click during an outage and does report platform incidents. FOR B: resource health is the same family and would be right if the question were about one machine. FOR D: a latency alert is what actually woke the team. A loses on scope - unfiltered, so silence there does not clear the league's own regions; B answers one resource; D reports the symptom already known. Dimension 5 is a 3: the key repeats 'this subscription's services and regions' from the stem."
+    },
+    {
+      "id": "3.19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: Log Analytics is where the correlated query would actually be written, so it feels like the answer. FOR B: Application Insights is the surface the ticketing team would reach for. FOR C: per-team dashboards are the pragmatic small-venue answer. A and B lose on altitude - each is a part of the platform being asked for, one for querying and one for a single application; C reproduces the isolation the venue is trying to end. Dimension 5 is a 3: the key restates 'collects ... and can act on' from the stem."
+    },
+    {
+      "id": "3.20",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR C: instrumenting with Application Insights genuinely produces failed-request data, and the failure is in a delivery-tracking application. FOR B: an alert rule on failed requests is the operational follow-up. FOR D: Advisor is the weakest - configuration recommendations contain no events. C loses because the data is already collected and the engineer needs to interrogate it, not gather it again; B notifies rather than answers a new question. Dimension 5 is a 3: the key restates 'interrogate what was collected' as 'where collected log data is queried'."
+    },
+    {
+      "id": "3.21",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: a saved query run each morning is a real, cheap operational routine. FOR B: a wall-screen dashboard in a staffed operations room does surface the climb to a human. FOR C: hourly summaries shorten the delay. All three lose on the two stated requirements - notification at the threshold and an automatic restart - which only an alert rule with an action satisfies. Dimension 5 is a 3: the key repeats the stem's threshold-and-restart pairing verbatim."
+    },
+    {
+      "id": "3.22",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "FOR A: a longer metrics window is the standard next step when the first look at infrastructure is clean. FOR B: platform logs are already collected and querying them costs nothing new. FOR D: resizing is the classic response to 'slow'. A and B lose on altitude - both interrogate the layer the team has already cleared, and the failing requests were never in that data; D adds capacity where nothing is constrained. Dimension 5 is a 3: the key restates the stem's own ask (request failures and which pages customers reach)."
+    }
+  ],
+  "bounces": []
+}

@@ -323,11 +323,11 @@
         "cutover"
       ],
       "type": "single_choice",
-      "question": "An apartment listings portal must move its listings database to AWS while agents keep writing to it around the clock; the cutover window is minutes, not hours. The database administrator proposes keeping the on-premises database and a cloud copy synchronized until the moment of switchover. Which migration approach is this?",
+      "question": "An apartment listings portal must move its listings database to AWS. Agents add and edit listings around the clock, the operations team has a cutover window of minutes, not hours, and no write made during the move may be lost. Which migration approach fits these constraints?",
       "options": {
         "A": "Deferring the database move until the rest of the estate has migrated and accepting a stale copy meanwhile",
         "B": "A one-time bulk export restored into the cloud database during a scheduled overnight outage window",
-        "C": "Database replication, keeping the on-premises source and the cloud copy synchronized until the moment of cutover",
+        "C": "Database replication, with ongoing change capture applied to the cloud target until the switch",
         "D": "Rebuilding the listings data in a different database engine as part of the move to avoid carrying the old schema"
       },
       "answer": "C",
@@ -337,9 +337,9 @@
         "D": "D01"
       },
       "rationale": {
-        "correct": "Keeping the source and the cloud copy synchronized until switchover is database replication - the classic approach for moving a data tier with minimal disruption. It fits a system that takes writes around the clock and a cutover window measured in minutes.",
+        "correct": "Writes that never stop and a cutover window measured in minutes imply database replication: the source database stays in service while its changes are captured and applied to the cloud target as they commit, so the switch has only the newest changes left to settle. It is the worked example of moving a data tier with minimal disruption, and identifying appropriate migration strategies from constraints like these is the judgment the question asks for.",
         "distractors": {
-          "A": "Deferral leaves the hardest move for later while its cost compounds; the scenario asks to identify the approach proposed, and postponement is not it.",
+          "A": "Deferral postpones the hardest move while its cost compounds: the writes keep arriving, the copy left behind drifts further from the source, and none of the stated constraints is met by waiting.",
           "B": "A bulk export needs an outage window and misses writes that land after the export; the stem rules out exactly that downtime.",
           "D": "Changing the database engine mid-move adds a redesign the problem does not require; the task is moving the data tier with minimal disruption, not re-architecting it."
         }

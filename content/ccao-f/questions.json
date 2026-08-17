@@ -875,6 +875,318 @@
           "D": "Fixing the single instance leaves the mechanism that produced it unexamined; the next wrong contact ships on schedule."
         }
       }
+    },
+    {
+      "id": "ccao-f-d3-q29",
+      "domain": "d3",
+      "primary_concept": "C-029",
+      "syllabus_rule": "1.01",
+      "theme": "T1",
+      "vertical": "architecture firm bid team",
+      "keywords": ["entry point", "recurring work"],
+      "type": "single_choice",
+      "question": "A bid coordinator at an architecture firm runs every Claude task in a plain chat out of habit — including a bid-review task that recurs every few weeks and requires re-uploading the same firm boilerplate, past project summaries, and style guide at the start of each session. The re-uploading is eating time and sessions start inconsistently. What is the most appropriate move?",
+      "options": {
+        "A": "Stay in chat and keep a ready-made snippet of the boilerplate to paste in faster each session",
+        "B": "Stay in chat and paste in even more firm context each session so no detail is ever missing",
+        "C": "Switch to whichever surface a partner firm mentioned works well for their bid reviews",
+        "D": "Choose the entry point from the task's shape first, then build the prompt for that surface"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D03",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "The entry point is selected before the prompt is written, because the surface determines what context is available and what the output can be. Recurring work with stable context is a task shape with a surface built for it; choosing by habit is exactly the failure this decision exists to prevent.",
+        "distractors": {
+          "A": "A paste snippet speeds up the workaround without questioning it; every session still rebuilds context a better surface would hold.",
+          "B": "More pasted context enlarges each session's setup; volume does not fix a task sitting on the wrong surface.",
+          "C": "Another firm's mention is an anecdote about their tasks; the surface is chosen from this task's shape, not from hearsay."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q30",
+      "domain": "d3",
+      "primary_concept": "C-030",
+      "syllabus_rule": "1.01",
+      "theme": "T1",
+      "vertical": "art museum membership office",
+      "keywords": ["research mode", "current multi-source information"],
+      "type": "single_choice",
+      "question": "A membership officer at an art museum needs a comparison of how a dozen peer institutions currently price and structure their membership tiers, drawing on each institution's latest published offering. The officer is deciding where to run the task. Which choice best fits the task?",
+      "options": {
+        "A": "Run it in research mode, matching a task that needs current information from many sources",
+        "B": "Run it anywhere, as every surface reaches the same information and the choice is cosmetic",
+        "C": "Set up a dedicated Project with uploaded knowledge and standing instructions before starting",
+        "D": "Run it in a plain chat and draw the comparison from the model's built-in knowledge"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D01",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "The four surfaces answer four different problems — chat for one-off work, Projects for recurring work with stable context, artifacts for deliverable outputs, and research mode for tasks needing current multi-source information. A dozen institutions' latest published offerings is squarely the research mode problem.",
+        "distractors": {
+          "B": "The surfaces differ in exactly what this task needs — what information they can reach; the claim that they are interchangeable invents an equivalence.",
+          "C": "A Project suits recurring work with stable context; standing up one for a one-off comparison is setup with no recurring payoff.",
+          "D": "A plain chat leans on built-in knowledge for facts that are current and scattered across many sources — the one problem shape it does not answer."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q31",
+      "domain": "d3",
+      "primary_concept": "C-031",
+      "syllabus_rule": "1.01",
+      "theme": "T1",
+      "vertical": "botanical garden events office",
+      "keywords": ["escalate", "human-reviewed"],
+      "type": "single_choice",
+      "question": "An events coordinator at a botanical garden drafts sponsor thank-you letters with Claude about twice a quarter, and the events manager reviews each letter before it goes out. A teammate proposes commissioning an automated agent pipeline connected to the sponsor database so the letters generate and send themselves. What is the most appropriate response?",
+      "options": {
+        "A": "Adopt the proposal and build the automated pipeline with the database connection",
+        "B": "Hand the entire letters task to the IT team so they can decide how to build and own it",
+        "C": "Keep the letters in the interactive surface with the manager's review, and skip the automation",
+        "D": "Adopt the automation for the visibility it gives the office when the sponsor board hears of it"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "D15",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "For occasional, human-reviewed work with no integration requirement, the interactive surface is the right answer. Automation here is a cost with no payer — twice a quarter, already reviewed — and building an agent pipeline sits beyond Associate scope besides; the moment to escalate is when a real integration need appears.",
+        "distractors": {
+          "A": "An agent pipeline adds machinery a twice-a-quarter reviewed task cannot repay, and removes the review that makes the letters safe.",
+          "B": "Handing the whole task away defers a decision the coordinator can already make; nothing here needs IT to own letter writing.",
+          "D": "Board visibility is spectacle, not a decision criterion; the task's shape, volume, and review need have not changed."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q32",
+      "domain": "d3",
+      "primary_concept": "C-032",
+      "syllabus_rule": "1.02",
+      "theme": "T1",
+      "vertical": "building materials distributor",
+      "keywords": ["Skills", "Code Execution", "capability layers"],
+      "type": "multiple_response",
+      "question": "A finance associate at a building materials distributor is setting up Claude for monthly rebate statements. Two needs are on the table: the statements must follow the team's exact multi-step checking procedure the same way every month, and the rebate totals must be verifiably correct rather than plausible. Which TWO capability layers address these two needs? (Select TWO.)",
+      "options": {
+        "A": "A Skill that defines the team's checking procedure so it runs the same way each month",
+        "B": "Memory, so the way earlier statements were handled carries over month to month",
+        "C": "Running each statement twice in separate chats and keeping the totals that match",
+        "D": "Code Execution, so the rebate totals are computed rather than generated",
+        "E": "An added instruction telling the model to be especially meticulous with arithmetic"
+      },
+      "select_count": 2,
+      "answer": ["A", "D"],
+      "distractor_patterns": {
+        "B": "D06",
+        "C": "D12",
+        "E": "D04"
+      },
+      "rationale": {
+        "correct": "The four capability layers own four distinct jobs — Projects carry context, Skills define repeatable procedures, Code Execution verifies computation, Memory persists continuity. The two stated needs are a repeatable procedure and verified computation, which map to a Skill and to Code Execution; combining layers is fine, substituting one for another is not.",
+        "distractors": {
+          "B": "Memory persists continuity across sessions; it does not define or enforce a procedure, so the checking steps would still drift.",
+          "C": "Two generated runs agreeing measures consistency, not correctness — both can carry the same wrong total.",
+          "E": "An exhortation to be meticulous changes register, not mechanism; generated arithmetic stays generated."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q33",
+      "domain": "d3",
+      "primary_concept": "C-033",
+      "syllabus_rule": "1.03",
+      "theme": "T1",
+      "vertical": "commercial real estate leasing",
+      "keywords": ["Haiku", "Sonnet", "Opus"],
+      "type": "single_choice",
+      "question": "A leasing operations manager at a commercial real estate firm is assigning model tiers to three workloads: extracting standard terms from hundreds of routine lease documents, everyday drafting and analysis for the leasing team, and a complex portfolio consolidation strategy where quality matters far more than speed. Which assignment best fits the three workloads?",
+      "options": {
+        "A": "The most capable tier for all three workloads, so no task is ever under-served",
+        "B": "Haiku for the high-volume extraction, Sonnet for the everyday work, Opus for the consolidation strategy",
+        "C": "The fastest, lowest-cost tier for all three workloads to keep the program's spend minimal",
+        "D": "Whichever tier answers quickest in a short trial on each workload, measured with a stopwatch"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "D16",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The three tiers trade speed and cost against capability, each with a characteristic task shape: Haiku for structured high-volume work like the extraction, Sonnet for most professional work, and Opus for complex high-stakes work where quality outranks speed, like the consolidation strategy.",
+        "distractors": {
+          "A": "Maximum capability on structured bulk work spends cost and latency for nothing; capability is not a free upgrade.",
+          "C": "Forcing the strategy work onto the lightest tier hits the cost goal by giving up the quality that workload exists to buy.",
+          "D": "Response speed is one axis of a trade-off, not the decision; a stopwatch trial ignores what each workload demands."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q34",
+      "domain": "d3",
+      "primary_concept": "C-034",
+      "syllabus_rule": "1.03",
+      "theme": "T1",
+      "vertical": "community college registrar",
+      "keywords": ["task requirements", "quality bar"],
+      "type": "single_choice",
+      "question": "A registrar's office at a community college sends thousands of transcript-request acknowledgment emails each term — short, structured, high-volume work where speed and cost matter more than deep reasoning. In testing, both the lightest tier and the mid tier cleared the office's quality bar for these emails. Which selection is the most appropriate?",
+      "options": {
+        "A": "The most capable tier, so the office holds a quality margin beyond the bar it set",
+        "B": "The tier whose test emails read the most polished when the team compared them side by side",
+        "C": "The mid tier, as the recommended default for professional work of any kind",
+        "D": "The fastest, lowest-cost tier that cleared the quality bar in the office's testing"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "E02",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "Once several tiers clear the quality bar the task actually requires, selection is a constrained optimization on cost and speed: the cheapest, fastest option that still meets the task requirements wins. Both tiers passed, so the lighter one is the correct choice for thousands of emails a term.",
+        "distractors": {
+          "A": "A margin beyond a bar the task already meets buys nothing; it converts cleared requirements into standing cost and latency.",
+          "B": "Side-by-side polish is register; both tiers already cleared the bar that actually governs these emails.",
+          "C": "A default is a starting point, not a verdict; applied after a lighter tier cleared the bar, it is dogma overriding the measured result."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q35",
+      "domain": "d3",
+      "primary_concept": "C-035",
+      "syllabus_rule": "1.03",
+      "theme": "T1",
+      "vertical": "conference and exhibitions organizer",
+      "keywords": ["speed-capability trade-off", "capability"],
+      "type": "single_choice",
+      "question": "The operations team at a conference and exhibitions organizer routes every Claude task — including bulk attendee-list cleanups and simple confirmation drafts — to the most capable model tier, describing the habit as a safety margin. Turnaround on bulk jobs is slow and the program's costs are climbing. What is the most appropriate assessment?",
+      "options": {
+        "A": "Route straightforward bulk work to a lighter tier and reserve the top tier for tasks that need it",
+        "B": "Keep the routing: the top tier also completes bulk work faster, so there is no trade-off to manage",
+        "C": "Keep the routing and pack more attendee rows into each request so fewer requests are needed",
+        "D": "Keep the routing, as maximum capability for everything is the prudent default for a serious program"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D03",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Defaulting to the most capable tier for everything is a cost and latency failure, not a safety margin. The speed-capability trade-off is real: capability is not a free upgrade, and over-provisioning straightforward work spends both cost and speed for nothing — exactly what the slow queue and climbing spend are showing.",
+        "distractors": {
+          "B": "The claim inverts the trade-off; the heaviest tier is not also the fastest, and the slow bulk queue is the evidence in hand.",
+          "C": "Packing requests fuller optimizes around the mis-assignment; the work is still over-provisioned on every row.",
+          "D": "Prudence that ignores measured cost and latency is a slogan; the default is producing the failure it claims to prevent."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q36",
+      "domain": "d3",
+      "primary_concept": "C-036",
+      "syllabus_rule": "1.04",
+      "theme": "T8",
+      "vertical": "craft brewery sales cooperative",
+      "keywords": ["context is a budget", "model failure"],
+      "type": "single_choice",
+      "question": "A sales planner at a craft brewery cooperative has kept one continuous Claude conversation running all week for seasonal planning — uploads, drafts, and revisions all in the same thread. By Friday the responses are noticeably weaker and earlier instructions are being dropped, and a teammate concludes the model itself has degraded. What is the most likely explanation?",
+      "options": {
+        "A": "The model was silently swapped for a weaker version partway through the week",
+        "B": "The requests need to be phrased more forcefully for the model to keep taking them seriously",
+        "C": "The week-long conversation has been filling its finite context, degrading output gradually as it fills",
+        "D": "The tool is unsuited to planning work, and the seasonal plan should be finished by hand"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D04",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Context is a budget: a long conversation degrades output quality as the budget fills, and the degradation is gradual enough to look like a model failure. That resemblance is why this is a diagnosis to reach — the week of accumulated uploads and drafts, not the model, explains Friday's weaker responses.",
+        "distractors": {
+          "A": "A silent midweek swap is an invented mechanism; the gradual decline tracks the conversation's growth, not a version change.",
+          "B": "Forceful phrasing is a register knob; it does not recover a budget the conversation has already spent.",
+          "D": "The tool handled Monday's planning well; abandoning it misreads a managed, finite budget as a fixed limitation."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q37",
+      "domain": "d3",
+      "primary_concept": "C-037",
+      "syllabus_rule": "1.04",
+      "theme": "T1",
+      "vertical": "e-bike rental operator",
+      "keywords": ["summarize", "persist"],
+      "type": "single_choice",
+      "question": "A pricing analyst at an e-bike rental operator is deep in a long Claude conversation exploring seasonal pricing. The conclusions reached so far will drive the next phase of work; the exploratory back-and-forth behind them will not be needed again. Quality has not dropped yet, but the conversation is growing fast. What is the most appropriate move?",
+      "options": {
+        "A": "Keep working in the thread until quality visibly drops, and decide what to do at that point",
+        "B": "Summarize the conclusions now and carry them into a fresh session before quality slips",
+        "C": "Start a clean session without carrying anything over, re-deriving conclusions if they come up",
+        "D": "Stay in the same thread and rely on the long context to keep holding everything relevant"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D15",
+        "C": "D02",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "The three context remedies are chosen by what must survive the transition: restart when nothing must, summarize when the conclusions must, persist when continuity must outlive the session. Here the conclusions must survive and the exploration need not — and the choice is made before quality visibly drops, not after.",
+        "distractors": {
+          "A": "Waiting for visible degradation makes the decision after damage begins; the discipline is to decide early, while the choice is still cheap.",
+          "C": "A bare restart discards the conclusions the next phase depends on; re-deriving them repays work already done.",
+          "D": "Leaning on a growing thread spends a finite budget toward exactly the degradation the analyst can see coming."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q38",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "syllabus_rule": "1.02",
+      "theme": "T6",
+      "vertical": "engineering standards secretariat",
+      "keywords": ["Memory", "context window"],
+      "type": "single_choice",
+      "question": "A committee secretary at an engineering standards secretariat is confused: details discussed in yesterday's Claude session are missing from today's, yet some working preferences do seem to carry over between sessions. The secretary wants a reliable mental model before configuring anything further. Which understanding is the most appropriate?",
+      "options": {
+        "A": "Everything from every past session is retained and automatically recalled whenever it is relevant",
+        "B": "Cross-session continuity should not be relied on at all, and each session must rebuild from documents",
+        "C": "Writing the committee's standing rules into each day's first message is how continuity is maintained",
+        "D": "The context window carries the current conversation; Memory persists continuity across sessions"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D16",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Memory is a distinct mechanism from the conversation's context window: the context window carries the current session, while Memory persists continuity across sessions. Confusing the two misroutes both configuration and diagnosis — which is exactly the confusion the missing-details puzzle is exposing.",
+        "distractors": {
+          "A": "Total recall of every past session is an invented mechanism; what persists is what the continuity layer holds, not everything said.",
+          "B": "Refusing continuity altogether discards a mechanism that exists for the job; the fix is understanding it, not abandoning it.",
+          "C": "Restating standing rules per session parks a durable requirement in the most transient mechanism available — the wrong layer for it."
+        }
+      }
     }
   ]
 }

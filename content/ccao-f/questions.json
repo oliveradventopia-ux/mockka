@@ -1162,7 +1162,7 @@
         "quality bar"
       ],
       "type": "single_choice",
-      "question": "A registrar's office at a community college sends thousands of transcript-request acknowledgment emails each term — short, structured, high-volume work where speed and cost matter more than deep reasoning. In testing, both the lightest tier and the mid tier cleared the office's quality bar for these emails. Which selection is the most appropriate?",
+      "question": "A registrar's office at a community college sends thousands of transcript-request acknowledgment emails each term. The messages are short and follow a fixed structure, so what the office optimizes on this work is turnaround and per-message cost, not analytical depth. In testing, both the lightest tier and the mid tier cleared the office's quality bar for these emails. Which selection is the most appropriate?",
       "options": {
         "A": "The most capable tier, so the office holds a quality margin beyond the bar it set",
         "B": "The tier whose test emails read the most polished when the team compared them side by side",
@@ -2242,7 +2242,7 @@
         "regulatory"
       ],
       "type": "single_choice",
-      "question": "A claims analyst on an insurance claims intake team needs a summary of a disputed claim file that contains policyholder national identification numbers and medical notes. Organizational policy restricts sharing regulated personal data with external tools, and the adjuster has asked for the summary within the hour. What is the most appropriate action?",
+      "question": "A claims analyst on an insurance claims intake team needs a summary of a disputed claim file that contains policyholder national identification numbers and medical notes. Under the team's handling rules, regulated identifiers must not leave the team's own systems for any outside service, though the claim narrative itself carries no such restriction. The adjuster has asked for the summary within the hour. What is the most appropriate action?",
       "options": {
         "A": "Remove or anonymize the regulated identifiers, then run the summary on the redacted file",
         "B": "Do this summary by hand, as regulated claim files cannot involve an external tool at all",

@@ -1187,6 +1187,413 @@
           "C": "Restating standing rules per session parks a durable requirement in the most transient mechanism available — the wrong layer for it."
         }
       }
+    },
+    {
+      "id": "ccao-f-d4-q39",
+      "domain": "d4",
+      "primary_concept": "C-039",
+      "syllabus_rule": "4.02",
+      "theme": "T2",
+      "vertical": "facilities management contractor",
+      "keywords": ["traceable", "testable"],
+      "type": "single_choice",
+      "question": "An operations associate at a facilities management contractor has a folder of stakeholder emails, complaint threads, and meeting notes about a new maintenance-request process, and wants Claude's help turning the mess into something the implementation team can act on. Which request makes the best use of the tool here?",
+      "options": {
+        "A": "Ask for a short readable summary of what the stakeholders seem to want overall",
+        "B": "Ask for structured requirements, each traceable to its source input and testable by the team",
+        "C": "Ask Claude to design the entire new maintenance-request process end to end from the folder",
+        "D": "Ask for a first-pass requirements narrative and circulate it as final if it reads complete"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "D01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Requirements analysis is the canonical delegation of analysis work: messy stakeholder input becomes structured, traceable, testable requirements that others can act on. The output is a working artefact — each requirement traceable to a source and testable — not a summary of sentiment.",
+        "distractors": {
+          "A": "A summary flattens the mess into prose; it drops the structure and traceability the implementation team needs to act.",
+          "C": "Designing the whole process leaps past the analysis step and hands over decisions the stakeholders have not yet made.",
+          "D": "Reading complete is register; a requirements set is judged by whether each item is traceable and testable, not by its flow."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q40",
+      "domain": "d4",
+      "primary_concept": "C-040",
+      "syllabus_rule": "4.02",
+      "theme": "T5",
+      "vertical": "ferry and harbor operations",
+      "keywords": ["delegate", "checked"],
+      "type": "single_choice",
+      "question": "A planning officer at a ferry and harbor operations authority is deciding which steps of the seasonal timetable process to hand to Claude. A colleague asks what property should qualify a step for delegation in the first place. Which criterion is the most appropriate?",
+      "options": {
+        "A": "Steps where the tool's output consistently reads reliable and assured",
+        "B": "Steps that other harbor operators mention they already delegate successfully",
+        "C": "Steps whose output the team can check before anything downstream consumes it",
+        "D": "Steps that are repetitive, as repetitive work is always appropriate to delegate"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D12",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "A step is safe to delegate when its output can be checked: checkability, not confidence in the tool, is the qualifying property. A checkable output lets the team verify each result before it is used, which is what keeps the delegated step trustworthy.",
+        "distractors": {
+          "A": "An assured register is not a property of the step; it is how wrong output looks as well as right output.",
+          "B": "Other operators' habits are anecdotes about their workflows and their risk tolerances, not a criterion for this one.",
+          "D": "Repetitive is a slogan, not a safety property; a repetitive step whose output cannot be checked is still unsafe to hand over."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q41",
+      "domain": "d4",
+      "primary_concept": "C-041",
+      "syllabus_rule": "4.03",
+      "theme": "T3",
+      "vertical": "food safety auditing firm",
+      "keywords": ["verified numbers", "code execution"],
+      "type": "single_choice",
+      "question": "A scheduling manager at a food safety auditing firm is building the annual audit-capacity plan with Claude: a narrative for the leadership team, resting on auditor-day totals and utilization percentages derived from the firm's booking export. The manager is deciding how the plan should be produced. Which design is the most appropriate?",
+      "options": {
+        "A": "Generate the whole plan, then schedule a fact-check of the figures just before publication",
+        "B": "Base the figures on last year's utilization as the team remembers it, and generate the narrative",
+        "C": "Give the model more of the firm's spreadsheets so its generated estimates land closer",
+        "D": "Pair the synthesis with code execution so the figures are computed from the export as the plan is built"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "D12",
+        "C": "D03"
+      },
+      "rationale": {
+        "correct": "Plans are built on verified numbers: the synthesis may be generated, but the figures underneath are computed — and pairing generation with code execution is a design choice made when the plan is built, not a check bolted on afterwards.",
+        "distractors": {
+          "A": "An end-stage fact-check inspects generated figures after the plan is shaped around them; the design decision was to compute them.",
+          "B": "Remembered utilization is an assumption standing in for the booking export the firm actually holds.",
+          "C": "More spreadsheets feed better guesses; the figures are still generated, and closeness is not verification."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q42",
+      "domain": "d4",
+      "primary_concept": "C-042",
+      "syllabus_rule": "7.04",
+      "theme": "T8",
+      "vertical": "hospice volunteer coordination",
+      "keywords": ["instrument", "friction"],
+      "type": "single_choice",
+      "question": "A coordinator at a hospice volunteer program wants to point Claude at the program's biggest time sink, which the coordinator is sure is the scheduling email back-and-forth. Nothing about the workflow has been measured. What should happen before any step is delegated?",
+      "options": {
+        "A": "Instrument the workflow to find where the time actually goes, then aim Claude at the friction that shows up",
+        "B": "Proceed on the coordinator's recollection, which comes from living inside the workflow daily",
+        "C": "Automate the whole volunteer workflow at once so every possible time sink is covered",
+        "D": "Delegate the scheduling emails now and watch the quarterly volunteer survey for improvement"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "D01",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "You cannot optimize what is not instrumented at the level where the cause lives. Process optimization starts from an instrumented workflow, so the friction being removed is the real one and not the remembered one — the certainty about scheduling emails is exactly the assumption the measurement exists to test.",
+        "distractors": {
+          "B": "Living inside a workflow produces vivid impressions, not measurements; the loudest annoyance is often not the largest cost.",
+          "C": "Automating everything to avoid choosing spends effort across steps that were never the friction, and removes checkpoints besides.",
+          "D": "A quarterly survey is a lagging, indirect readout; it cannot attribute any change to the step that was delegated."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q43",
+      "domain": "d4",
+      "primary_concept": "C-043",
+      "syllabus_rule": "4.01",
+      "theme": "T4",
+      "vertical": "industrial safety training company",
+      "keywords": ["checkpoint", "human judgment"],
+      "type": "single_choice",
+      "question": "A course designer at an industrial safety training company develops new curricula with Claude in stages — outline, module drafts, assessments — reviewing each stage before the next begins. A manager proposes handing the whole design over in one pass to save review time, since the drafts have been strong. What is the most appropriate response?",
+      "options": {
+        "A": "Adopt the single-pass handover and recover the review hours the stages were consuming",
+        "B": "Adopt the single-pass handover but review the finished curriculum thoroughly at the end",
+        "C": "Keep the delegation stepwise, with a checkpoint where human judgment re-enters at each stage",
+        "D": "Keep the stages but skip the checkpoints on drafts that come back reading polished"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D07",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Design work is delegated step by step with checkpoints rather than handed over whole — each checkpoint is where human judgment re-enters, and removing them is what turns support into abdication. For safety curricula, the checkpoints are the mechanism that keeps errors from compounding across stages.",
+        "distractors": {
+          "A": "Recovered hours are bought by removing every point where judgment could intervene; strong past drafts do not retire that need.",
+          "B": "One review at the end inspects a finished structure whose early-stage errors every later stage has already built on.",
+          "D": "Polish is register, not correctness; skipping checkpoints for confident-looking drafts filters review by exactly the wrong signal."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q44",
+      "domain": "d4",
+      "primary_concept": "C-044",
+      "syllabus_rule": "2.04",
+      "theme": "T8",
+      "vertical": "internal communications department",
+      "keywords": ["iteration", "component"],
+      "type": "single_choice",
+      "question": "An internal communications manager reviews a Claude-assisted intranet redesign proposal built to the department's brief. The information architecture is strong, but the tone-of-voice section misses the company's plain-language standard. A teammate suggests starting the whole proposal again. What is the most appropriate next round?",
+      "options": {
+        "A": "Revise the architecture, tone, and scope together so the next version improves everywhere at once",
+        "B": "Keep the architecture and rework only the tone-of-voice section the review identified",
+        "C": "Take the design back from the tool and rewrite the proposal by hand from the brief",
+        "D": "Shelve the proposal and revisit the redesign in next quarter's planning cycle"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D16",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Iteration on a delegated design follows the same diagnostic loop as prompt iteration: the result names the component that failed — here the tone-of-voice section — and that component, not the whole design, is what changes in the next round. The strong architecture is kept, and the fix is attributable.",
+        "distractors": {
+          "A": "Changing everything at once discards working material and makes the next version's gains and losses unattributable.",
+          "C": "Abandoning the delegation over one failed section throws away a strong architecture and the diagnostic the review produced.",
+          "D": "Deferral leaves a nearly-right proposal idle; the review already named the one section standing between it and done."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q45",
+      "domain": "d4",
+      "primary_concept": "C-045",
+      "syllabus_rule": "4.01",
+      "theme": "T5",
+      "vertical": "landscaping services franchise",
+      "keywords": ["delegate deliberately", "checkpoints"],
+      "type": "single_choice",
+      "question": "An operations manager at a landscaping services franchise is bringing Claude into the quoting workflow: site notes are summarized, materials are itemized, prices are calculated against the rate card, and a franchise owner approves each quote before it is sent. A consultant proposes automating the workflow end to end, approval included. What is the most appropriate design?",
+      "options": {
+        "A": "Choose the steps Claude performs and keep the owner's approval checkpoint in place",
+        "B": "Automate every step including the approval so quotes leave the system untouched",
+        "C": "Automate whichever steps will make the demonstration most impressive at the franchise convention",
+        "D": "Keep Claude out of the quoting workflow entirely so the question of automation never arises"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D11",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "The value in a workflow comes from choosing which steps Claude performs — the discipline is to delegate deliberately, not automate indiscriminately. A workflow handed over whole loses the checkpoints that made it trustworthy, and the owner's approval is exactly such a checkpoint.",
+        "distractors": {
+          "B": "End-to-end automation grants autonomy the quoting process does not need and removes the approval that catches a bad quote before a customer sees it.",
+          "C": "Convention spectacle is not a selection criterion; steps are chosen by value and checkability, not by demo impact.",
+          "D": "Refusing every step forfeits the real gains in summarizing and itemizing; the checkpoint question had a better answer than abstinence."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q46",
+      "domain": "d4",
+      "primary_concept": "C-046",
+      "syllabus_rule": "4.04",
+      "theme": "T5",
+      "vertical": "language school admissions",
+      "keywords": ["reversibility", "stakes", "accountability"],
+      "type": "single_choice",
+      "question": "An admissions manager at a language school is mapping the enrollment workflow — inquiry replies, placement-test scoring, offer letters, visa-document checks — to decide Claude's role in each step. Which classification approach is the most appropriate?",
+      "options": {
+        "A": "Sort the steps into two bins, automate or keep, so the mapping stays simple to run",
+        "B": "Classify by which steps the admissions staff most dislike doing by hand",
+        "C": "Adopt the step classification a conference speaker presented for language schools",
+        "D": "Rate each step on reversibility, stakes, and accountability, and classify it as AI-appropriate, human-retained, or collaborative"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D11",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "Each workflow step is classified against reversibility, stakes, and accountability into a three-way verdict — AI-appropriate, human-retained, or collaborative — and the middle verdict is the common one. A visa-document check and an inquiry reply land differently on all three criteria, which is the point of rating each step.",
+        "distractors": {
+          "A": "A two-bin sort deletes the collaborative middle where most real steps belong, forcing them into over- or under-delegation.",
+          "B": "Staff preference measures comfort, not risk; the steps people most want to hand off can be the ones the criteria retain.",
+          "C": "A conference template is someone else's mapping; the criteria have to be applied to this school's steps and stakes."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q47",
+      "domain": "d4",
+      "primary_concept": "C-047",
+      "syllabus_rule": "4.04",
+      "theme": "T5",
+      "vertical": "mining site procurement office",
+      "keywords": ["gate", "irreversible"],
+      "type": "multiple_response",
+      "question": "A procurement officer at a mining site is adding Claude to the purchase-order workflow: requests are drafted and validated, and a released purchase order is an irreversible payment commitment. The team is designing the human approval gate. Which TWO properties must the gate have? (Select TWO.)",
+      "options": {
+        "A": "It sits immediately after each purchase order releases, so errors are caught quickly",
+        "B": "It sits after validation and before the irreversible release",
+        "C": "It clears by default after four hours so the workflow never stalls on an absent approver",
+        "D": "It records every release in a log the office reviews at the end of each month",
+        "E": "It has a named gatekeeper who is accountable for staffing the decision"
+      },
+      "select_count": 2,
+      "answer": ["B", "E"],
+      "distractor_patterns": {
+        "A": "D07",
+        "C": "D02",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "The approval gate sits after validation and before the irreversible action, and it must have a real gatekeeper. A gate placed after the release reviews a payment already committed, and a gate nobody staffs is not a control — position and a named, accountable gatekeeper are the two properties that make it one.",
+        "distractors": {
+          "A": "After release, the commitment is already made; a fast catch of an irreversible action is a report, not a gate.",
+          "C": "A default-clear timeout is the gate approving by absence; the workflow never stalls because the control never operates.",
+          "D": "A monthly log review is a lagging record of what already left; it informs trends and stops nothing."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q48",
+      "domain": "d4",
+      "primary_concept": "C-048",
+      "syllabus_rule": "4.04",
+      "theme": "T5",
+      "vertical": "paralegal support bureau",
+      "keywords": ["structured workflow", "autonomy"],
+      "type": "single_choice",
+      "question": "A team lead at a paralegal support bureau is designing Claude's role in court-filing preparation, a process with fixed steps in a fixed order and a fixed validation checklist at each step. A colleague proposes granting the tool open-ended autonomy to find the best approach for each filing, pointing to an impressive pilot demonstration. Which design is the most appropriate?",
+      "options": {
+        "A": "Grant broad autonomy and add more tools so the approach can adapt filing by filing",
+        "B": "Grant autonomy as the modern default, since agent-style designs are where the field is heading",
+        "C": "Mirror the fixed steps and validation in an explicit, structured workflow, granting autonomy nowhere it is not needed",
+        "D": "Adopt the autonomous design on the strength of the pilot demonstration the colleague showed"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "D14",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "A process with fixed steps and fixed validation argues for an explicit, structured workflow; autonomy is granted only where the process actually needs it, never as a default posture. Court filings are the strong case: the order and the checklist are the requirement, and the design should enforce them.",
+        "distractors": {
+          "A": "Adaptability is the property this process is required not to have; more tools and latitude loosen exactly what the checklist fixes.",
+          "B": "Where the field is heading is a slogan; this process's binding constraint is fixed order and fixed validation, which points the other way.",
+          "D": "A demonstration is a curated best run; it measures nothing about how open-ended autonomy behaves across a docket of real filings."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q49",
+      "domain": "d4",
+      "primary_concept": "C-049",
+      "syllabus_rule": "4.01",
+      "theme": "T1",
+      "vertical": "port authority communications",
+      "keywords": ["simplest design", "requirement"],
+      "type": "single_choice",
+      "question": "A communications officer at a port authority needs Claude to draft notices to mariners from incident reports. The stated requirement: drafts that follow the notice template, reviewed by the duty officer before publication. An enthusiastic teammate sketches a pipeline that generates several candidate drafts in parallel, scores them against a rubric, and auto-selects a winner. Which design should the officer choose?",
+      "options": {
+        "A": "A single drafting step against the template, followed by the duty officer's review",
+        "B": "The parallel-drafts pipeline with rubric scoring and automatic selection",
+        "C": "The pipeline, as its sophistication will demonstrate the program's rigor to leadership",
+        "D": "A middle path that generates five drafts per notice for the duty officer to choose among"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D11",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Complexity in a solution design is justified by requirements, never by ambition or the appearance of rigor. The stated requirement is template-true drafts plus duty-officer review; the simplest design that meets the stated requirement is the professional answer, and the single step with review is that design.",
+        "distractors": {
+          "B": "Parallel generation, scoring, and auto-selection answer requirements nobody stated; the machinery adds failure modes, not fitness.",
+          "C": "Impressing leadership is ambition wearing an engineering costume; rigor is meeting the requirement, not displaying apparatus.",
+          "D": "Five drafts per notice quintuples review load for a template task; volume is not a requirement anyone set."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q50",
+      "domain": "d4",
+      "primary_concept": "C-050",
+      "syllabus_rule": "4.05",
+      "theme": "T5",
+      "vertical": "professional certification body",
+      "keywords": ["capability claims", "human review gates"],
+      "type": "multiple_response",
+      "question": "A program manager at a professional certification body is briefing the executive team on a Claude rollout for candidate communications, and wants the briefing to earn durable trust rather than a quick yes. Which TWO elements belong in the briefing? (Select TWO.)",
+      "options": {
+        "A": "The capability claims stated together with their limits",
+        "B": "The human review gates that make the claimed capabilities safe to rely on",
+        "C": "A version of the briefing that leaves the limits out so adoption is not discouraged",
+        "D": "Sample outputs selected for how impressive they read in front of executives",
+        "E": "A year-end commitment to fully automated candidate communications with no review step"
+      },
+      "select_count": 2,
+      "answer": ["A", "B"],
+      "distractor_patterns": {
+        "C": "D17",
+        "D": "D12",
+        "E": "D01"
+      },
+      "rationale": {
+        "correct": "Capability claims are stated together with their limits and the human review gates that make them safe. Overstating value is the stakeholder-trust failure, and accurate limits are what earn the trust back — a briefing built on claims-with-limits plus the gates is the one that survives contact with the first imperfect output.",
+        "distractors": {
+          "C": "Omitting the limits to smooth adoption is silent overstatement; the trust it buys is spent the first time an output falls short.",
+          "D": "Hand-picked impressive samples are demo theatre; they measure the curator's taste, not the system the executives are approving.",
+          "E": "A no-review automation pledge grants the program autonomy nobody requires and stakes its credibility on removing the gates that protect it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q51",
+      "domain": "d4",
+      "primary_concept": "C-051",
+      "syllabus_rule": "4.05",
+      "theme": "T5",
+      "vertical": "recruitment process outsourcing",
+      "keywords": ["escalate", "Claude Developer"],
+      "type": "single_choice",
+      "question": "A delivery lead at a recruitment process outsourcing firm has configured Claude Projects and prompts that produce excellent candidate summaries. The operations director now asks the lead to also build an API integration that pushes each summary automatically into the client's applicant tracking system. What is the most appropriate course of action?",
+      "options": {
+        "A": "Build the integration personally, using shared administrator credentials the client once provided",
+        "B": "Deliver the Projects and prompt work, and escalate the API integration to a Claude Developer",
+        "C": "Escalate the entire request, including the Projects and prompt work already in hand",
+        "D": "Deliver the Projects and prompt work, and let the integration half of the request quietly lapse"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D13",
+        "C": "D15",
+        "D": "D17"
+      },
+      "rationale": {
+        "correct": "Recognizing the edge of Associate scope is itself a competency: API integration belongs to a Claude Developer, and the professional move is to do the in-scope part and escalate the rest. Both polarities are errors — attempting the build personally and handing away work that is squarely in scope.",
+        "distractors": {
+          "A": "A self-built integration on borrowed administrator credentials crosses the scope boundary and widens the client's exposure while it does.",
+          "C": "Escalating work the lead is qualified to finish is over-escalation; the summaries and configuration are exactly Associate-scope deliverables.",
+          "D": "Letting the request lapse without saying so absorbs the scope problem silently; the director decides next steps only if told the boundary exists."
+        }
+      }
     }
   ]
 }

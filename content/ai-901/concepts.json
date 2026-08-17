@@ -1,5 +1,632 @@
 {
-  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 per methodology/02-master-inventory.md; schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) and surfaced by the validator concept-convergence WARN check; divergence is allowed as documented authoring judgment.",
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-18) per methodology/02-master-inventory.md from content/ai-901/derivation/* ONLY; reasoning, merge log and the convergence discount in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) with zero hand-tuned divergences, so concept-convergence emits no warnings. READ THE DISCOUNT BEFORE READING THE NUMBER: two of the three attesting sources are Microsoft (blueprint + curriculum) and the third is an LLM-generated bank written against that same blueprint, so a `high` here means 'attested twice', NOT 'independently corroborated'. derivation/master-inventory.md reports the stricter vendor-external statistic alongside it. sources[].items are derivation-doc row ids: b-x.y-z rows in source-ms-ai901-blueprint.md, c-x.y-z rows in source-ms-ai901-curriculum.md, Qn item rows in source-akashp-ai901-simulator.md. akashp is deliberately NOT listed where its only attestation is bound to a superseded product name (Azure OpenAI deployment tiers, Document Intelligence model selection, Azure AI Vision/Speech service selection) — that is a product fact, not a concept attestation, and counting it would inflate convergence on exactly the concepts the April 2026 blueprint moved away from.",
   "version": "0.1.0",
-  "concepts": []
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "A fairness consideration asks where a system could hand out opportunity or accuracy unevenly across groups of people, and what would have to be measured across those groups to know whether it does",
+      "vocabulary": ["fairness", "considerations for fairness in an AI solution", "responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q1", "Q41", "Q117", "Q158"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "A reliability-and-safety consideration asks how the system behaves when conditions degrade or fall outside what it was built for, and what fallback catches it when they do",
+      "vocabulary": ["reliability and safety", "responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q10", "Q55", "Q161"] }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "A privacy-and-security consideration asks what data the solution holds, who can reach it, and how it resists attempts to pull that data back out through the model itself",
+      "vocabulary": ["privacy and security", "responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q30", "Q54", "Q162"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "An inclusiveness consideration asks whether the solution can actually be used by, and works for, people across abilities and circumstances rather than only the population it was convenient to build for",
+      "vocabulary": ["inclusiveness", "responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-4"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q17", "Q159"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "A transparency consideration asks what users must be told about how the system works, what its limits are, and that they are dealing with an AI system at all",
+      "vocabulary": ["transparency", "responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-5"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q26", "Q127", "Q163"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "An accountability consideration asks who remains answerable for an outcome and through what governance, which is a different question from what the system is able to explain",
+      "vocabulary": ["accountability", "responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-6"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q20", "Q53"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "One design decision can engage two principles at once, and sometimes they pull in opposite directions, so the judgment is which obligation the decision actually discharges rather than which principle it can be labelled with",
+      "vocabulary": ["responsible AI", "transparency", "privacy and security", "accountability", "fairness"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.1-7"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q5", "Q45", "Q141", "Q157"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "A generative model breaks input into tokens and produces output one token at a time, choosing each from patterns learned during pre-training rather than from a stored record of anything it was shown",
+      "vocabulary": ["Describe how generative AI models work", "Large language models (LLMs)", "Tokenization"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.2-1"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.2-1", "c-1.3-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q24", "Q35", "Q194"] }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "Two limits follow directly from that mechanism: output can be fluent, specific and entirely unsupported, and there is a fixed amount of text the model can attend to in one request",
+      "vocabulary": ["Describe how generative AI models work", "Large language models (LLMs)", "Prompts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.2-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q4", "Q192", "Q196"] }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Model choice is driven by the capability a requirement needs — chat and text generation, embeddings, image generation, speech, or a multimodal model that accepts more than one input type — not by which model is best known",
+      "vocabulary": ["Identify an appropriate AI model, based on capabilities", "Generative AI models", "multimodal model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.2-2"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.2-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q61", "Q64", "Q68", "Q77"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "A model is deployed before anything can use it, and the deployment carries choices about how that model is made available rather than being a single fixed act",
+      "vocabulary": ["appropriate model deployment options", "Microsoft Foundry for AI", "Using Microsoft Foundry endpoints"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.2-3"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.1-3", "c-2.1-4"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "Inference behaviour is governed by configuration parameters set around the deployment, and each parameter moves output in a stated direction, so the judgment is which parameter produces the behaviour asked for",
+      "vocabulary": ["configuration parameters", "Prompts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.2-4"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q12", "Q22", "Q190"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "A described business situation belongs to one of the named AI workload classes — generative and agentic AI, text and natural language, speech, computer vision, or information extraction — and naming it correctly is what decides everything downstream",
+      "vocabulary": ["scenarios for common AI workloads", "generative and agentic AI", "text analysis", "speech", "computer vision", "information extraction"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-1"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.1-1", "c-1.1-2", "c-1.1-3", "c-1.1-4", "c-1.1-5", "c-1.1-6"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q49", "Q56", "Q58", "Q59"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "Agentic AI is its own workload class rather than a larger generative model: the distinguishing property is that the solution pursues a goal across steps and takes actions, not that it produces better text",
+      "vocabulary": ["agentic AI", "AI agents", "generative and agentic AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-2"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.2-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q33", "Q104", "Q109"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d1",
+      "statement": "Keyword extraction returns the salient terms a text is about, which is what a business wants when it needs to index, route or trend content rather than read a condensed version of it",
+      "vocabulary": ["keyword extraction", "text analysis", "Text and natural language"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-3"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.1-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q184"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d1",
+      "statement": "Entity detection returns typed spans naming real things in the text — people, places, organisations, dates, quantities — which is a different output from a list of the terms that happen to be salient",
+      "vocabulary": ["entity detection", "text analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-4"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q119", "Q129"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d1",
+      "statement": "Sentiment analysis returns polarity, and the granularity matters: one score for a whole document answers a different question from a score attached to each thing the writer commented on",
+      "vocabulary": ["sentiment analysis", "text analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-5"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q59", "Q189"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d1",
+      "statement": "Summarization returns shorter prose that preserves the substance of the original, which is what a reader needs when the goal is to act on the content rather than to catalogue what it mentions",
+      "vocabulary": ["summarization", "text analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-6"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q58"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d1",
+      "statement": "Speech recognition takes audio in and produces text out, so it is the capability a scenario needs whenever the useful artifact is a transcript that something else will then read",
+      "vocabulary": ["speech recognition", "Speech-enabled solutions", "speech"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-7"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.4-1", "c-1.4-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q92", "Q120"] }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d1",
+      "statement": "Speech synthesis takes text in and produces audio out, so it is the capability a scenario needs whenever a person has to hear something rather than read it",
+      "vocabulary": ["speech synthesis", "Speech-enabled solutions", "speech"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-8"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.4-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q93", "Q186"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d1",
+      "statement": "What a vision model can be asked to report about an image differs by granularity — a label for the whole image, located instances within it, or a description of what is happening — and the business need picks the granularity",
+      "vocabulary": ["features and capabilities of computer vision", "Computer vision tasks and techniques", "computer vision"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-9"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.5-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q56", "Q178", "Q181"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d1",
+      "statement": "Image generation is a separate capability class from image analysis: one produces new visual content from a description, the other reports on visual content that already exists",
+      "vocabulary": ["image-generation models", "Image generation", "computer vision"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-10"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.5-5"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q121"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d1",
+      "statement": "Information extraction is one workload that spans four content types — text, images, audio and video — so recognising which content type a scenario actually presents is the first decision, not an implementation detail",
+      "vocabulary": ["techniques to extract information from text, images, audio, and videos", "Overview of information extraction", "Information extraction"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-11", "b-1.3-12", "b-1.3-13", "b-1.3-14"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.1-6", "c-1.6-1"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d1",
+      "statement": "Reading the characters off content is not the same as extracting fields from it: character reading returns text in the order it appears, while field extraction returns named values a downstream system can use without further parsing",
+      "vocabulary": ["Optical character recognition (OCR)", "Field extraction and mapping", "techniques to extract information from text"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-1.3-11", "b-1.3-12"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.6-2", "c-1.6-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q80", "Q116"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "Standing behaviour — persona, boundaries and rules that must hold for every turn — belongs in the system prompt, while the user prompt carries the request that changes from turn to turn",
+      "vocabulary": ["effective system and user prompts", "system prompt", "user prompt", "Prompts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-1"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.2-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q32", "Q123", "Q131", "Q191"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "Putting worked examples inside the prompt is the low-effort correction when the model understands the task but returns the wrong shape, format or register of answer",
+      "vocabulary": ["effective system and user prompts", "Prompts", "user prompt"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q28", "Q37"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "Asking the model to work through its reasoning step by step is the correction for a task that fails partway through a multi-step chain, which is a different failure from returning the wrong format",
+      "vocabulary": ["effective system and user prompts", "Prompts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q37", "Q47"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "A model has to be deployed in the Foundry portal before anything can interact with it, so a scenario in which nobody can call the model yet is a deployment step that has not happened",
+      "vocabulary": ["Deploy a model and interact with it in the Foundry portal", "Foundry portal", "Microsoft Foundry for AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-2"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.1-3", "c-2.2-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q29"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d2",
+      "statement": "Anything deployed in Foundry is reached through an endpoint, which is what an application outside the portal actually talks to and what has to be configured for it to do so",
+      "vocabulary": ["Using Microsoft Foundry endpoints", "Microsoft Foundry for AI", "Developing AI apps on Azure"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.1-4", "c-2.1-1", "c-2.1-2"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d2",
+      "statement": "The Foundry portal offers a place to try a deployed model interactively before any application exists, which is the right route when the question is whether the model can do the job at all",
+      "vocabulary": ["Deploy a model and interact with it in the Foundry portal", "Foundry portal", "Get started with Microsoft Foundry"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q78", "Q125"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d2",
+      "statement": "The Foundry SDK is what turns a deployed model into part of an application: a lightweight chat client is code that connects to the deployment, sends the prompts and handles what comes back",
+      "vocabulary": ["lightweight chat client application", "Foundry SDK", "Using a generative AI model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-3"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.2-2"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d2",
+      "statement": "Creating a single-agent solution in the portal includes testing it there, so a plan that treats the agent as finished once it is defined has skipped a step the task itself names",
+      "vocabulary": ["single-agent solution", "create and test", "Creating an agent"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-4"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.2-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q50", "Q195"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d2",
+      "statement": "An agent gets its own client application, which is not the same code as a chat client over a bare model because the agent already carries the instructions, tools and state the chat client would have had to supply",
+      "vocabulary": ["lightweight client application for an agent", "Foundry SDK", "Creating an agent"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-5"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.2-3"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d2",
+      "statement": "The same platform builds several different things, and a requirement picks a rung: a model answering from a prompt, an agent that calls tools and takes actions, or several agents coordinated — over-reaching costs more and under-reaching cannot meet the requirement",
+      "vocabulary": ["single-agent solution", "AI agents", "agentic AI", "Creating an agent"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.1-4", "b-2.1-6"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.2-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q33", "Q104", "Q109", "Q195"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d2",
+      "statement": "An agent is grounded in an organisation's own content by connecting it to a knowledge base, so its answers are drawn from approved material and carry citations back to it",
+      "vocabulary": ["Knowledge bases", "Connect an agent to Foundry IQ", "What is Foundry IQ?", "grounded, citation-backed responses"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.7-1", "c-2.7-2", "c-2.7-3"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d2",
+      "statement": "A grounded answer and a fluent answer are different things: output that reads well but cannot be traced back to the content it was supposed to draw on is the failure grounding exists to prevent",
+      "vocabulary": ["grounded, citation-backed responses", "Understand retrieval-augmented generation", "Evaluate a RAG solution"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.7-1", "c-1.7-4", "c-2.7-4"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q108", "Q138"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d2",
+      "statement": "Building an application that performs text analysis means picking which technique the application actually calls for each stage of the work, then handling the structured result it returns",
+      "vocabulary": ["lightweight application that includes text analysis", "Understand text analysis in Foundry", "Create a client application that analyzes text"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.2-1"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.3-1", "c-2.3-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q3", "Q95", "Q185"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d2",
+      "statement": "Text analysis can be attached to an agent as a capability the agent uses when it needs it, rather than being a separate service the application calls on its own before the agent ever runs",
+      "vocabulary": ["Use Azure Language with an agent", "Understand text analysis in Foundry", "AI agents"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.3-3"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d2",
+      "statement": "A deployed multimodal model can respond to spoken prompts directly, which means the audio goes to the model itself instead of through a separate transcription step first",
+      "vocabulary": ["Respond to spoken prompts by using a deployed multimodal model", "multimodal model", "Vision transformers and multimodal models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.2-2"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.5-4", "c-2.4-3"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d2",
+      "statement": "Azure Speech in Foundry Tools is the dedicated route for speech work, implementing recognition and synthesis as capabilities an application configures and calls rather than as behaviour prompted out of a model",
+      "vocabulary": ["Azure Speech in Foundry Tools", "Speech recognition", "Speech synthesis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.2-3"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.4-1", "c-2.4-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q13", "Q44"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d2",
+      "statement": "Speech has two supported routes on this platform — the dedicated speech capability or a deployed multimodal model — and a stated constraint such as control over the voice, latency or how many capabilities the solution has to carry decides between them",
+      "vocabulary": ["Azure Speech in Foundry Tools", "Respond to spoken prompts by using a deployed multimodal model", "multimodal model"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.2-4"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d2",
+      "statement": "A speech-capable agent is built by composing recognition and synthesis around an agent, so that a spoken request reaches the agent's reasoning and the agent's answer comes back as audio",
+      "vocabulary": ["Creating a speech-capable agent", "Speech recognition", "Speech synthesis", "AI agents"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.4-3"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d2",
+      "statement": "Inside a capability there is a build-or-buy decision: a purpose-built capability that already performs the task can beat prompting a general-purpose model when cost, latency or consistency dominate the requirement",
+      "vocabulary": ["lightweight application that includes text analysis", "Generative AI models", "text analysis"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "akashp-ai901-simulator", "items": ["Q97", "Q136"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d2",
+      "statement": "A voice workload runs in a fixed order: the audio is turned into text first, and only then can any text technique be applied to it, so a design that analyses before it recognises has no input to analyse",
+      "vocabulary": ["Azure Speech in Foundry Tools", "lightweight application that includes text analysis", "speech recognition"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.2-1", "b-2.2-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q99", "Q137"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d2",
+      "statement": "Visual input can be supplied inside a prompt to a deployed multimodal model, and what comes back is a natural-language answer about the image shaped by what the prompt asked for",
+      "vocabulary": ["Interpret visual input in prompts", "deployed multimodal model", "Multimodal models for image analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.3-1"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.5-1", "c-1.5-4"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d2",
+      "statement": "New images are produced by generative models from a description of what is wanted, which is a different call with a different model class from anything that reads an existing image",
+      "vocabulary": ["Create new visual outputs by using generative models", "Image generation models", "image-generation models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.3-2"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.5-2"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q121"] }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d2",
+      "statement": "Video generation is taught as its own capability alongside image generation, so a requirement for moving visual output is served by a different model class from the one that produces stills",
+      "vocabulary": ["Video generation models", "Create new visual outputs by using generative models"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.5-3"] }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d2",
+      "statement": "Analysing images and generating them sit in the same area of work but are opposite directions of travel, so a solution that needs both needs two model classes rather than one that does everything visual",
+      "vocabulary": ["Interpret visual input in prompts", "Create new visual outputs by using generative models", "computer vision"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.3-4"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-1.5-1", "c-1.5-5"] }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d2",
+      "statement": "An application carries vision capability end to end when it gets the image in, sends it with a prompt that states what is wanted, and turns the answer into something the business process can act on",
+      "vocabulary": ["lightweight application that includes vision capabilities", "Multimodal models for image analysis", "deployed multimodal model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.3-3"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.5-1"] }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d2",
+      "statement": "One visual requirement often needs more than one distinct visual task in the same pipeline — describing a scene, locating instances in it and reading the characters on them are separate asks that a single call does not cover",
+      "vocabulary": ["lightweight application that includes vision capabilities", "Computer vision tasks and techniques", "Interpret visual input in prompts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.3-1", "b-2.3-3"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q86", "Q144", "Q183"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d2",
+      "statement": "Information is pulled out of documents and forms with Azure Content Understanding in Foundry Tools, which returns the named values a business process needs rather than a rendering of the page",
+      "vocabulary": ["Extract information from documents and forms", "Azure Content Understanding in Foundry Tools", "Extract information from documents"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.4-1"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.6-1"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d2",
+      "statement": "The same Content Understanding tool extracts information from images, so a photographed label, sign or whiteboard is handled by the extraction path rather than by a separate image service",
+      "vocabulary": ["Extract information from images by using Content Understanding", "Azure Content Understanding in Foundry Tools", "Content Understanding"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.4-2"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.6-1", "c-2.6-3"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d2",
+      "statement": "The same tool also extracts information from audio and video, which means recorded media is a content type the extraction path handles rather than a job that has to be transcribed elsewhere first",
+      "vocabulary": ["Extract information from audio and video", "Azure Content Understanding in Foundry Tools", "Content Understanding"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.4-3"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.6-2"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d2",
+      "statement": "One tool spans all four content types, so a solution facing mixed content does not need a different service per modality — the unifying claim is what the four parallel extraction tasks are stating together",
+      "vocabulary": ["Content Understanding", "Azure Content Understanding in Foundry Tools", "Foundry Tools"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.4-5"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.6-3"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d2",
+      "statement": "An application with information-extraction capability submits the content, receives the extracted values and passes them into whatever the business already does with those values, which is where the capability earns anything",
+      "vocabulary": ["lightweight application with information extraction capabilities", "Azure Content Understanding in Foundry Tools", "Field extraction and mapping"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.4-4"] },
+        { "artefact": "ms-ai901-curriculum", "items": ["c-2.6-1"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d2",
+      "statement": "A mixed archive is sorted by content type before any type-specific extraction runs, because extraction configured for one kind of document produces nothing useful when it is handed another kind",
+      "vocabulary": ["Extract information from documents and forms", "Azure Content Understanding in Foundry Tools", "Field extraction and mapping"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai901-blueprint", "items": ["b-2.4-1"] },
+        { "artefact": "akashp-ai901-simulator", "items": ["Q90"] }
+      ]
+    }
+  ]
 }

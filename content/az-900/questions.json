@@ -1,4 +1,634 @@
 {
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "1.01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "regional newspaper group",
+      "keywords": [
+        "cloud computing",
+        "on demand"
+      ],
+      "type": "single_choice",
+      "question": "A regional newspaper group is retiring its aging server room and has collected four replacement proposals. The IT director wants the one that actually moves the group to cloud computing. Which proposal is it?",
+      "options": {
+        "A": "Move the group's servers into a rented cage at a nearby colocation facility, where its own staff continue to operate them",
+        "B": "Subscribe to compute, storage, and networking delivered on demand over the internet from capacity the provider operates",
+        "C": "Replace the server room with a hosted web plan that serves the group's public news site from a shared server",
+        "D": "Virtualize the existing machines in place so newsroom teams can request virtual servers from the internal IT queue"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D02",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Cloud computing is the delivery of computing services as a whole — compute, storage, networking, and more — over the internet, on demand, from capacity someone else operates and the customer rents as needed. The proposal that subscribes to provider-operated capacity on demand is the only one that changes who operates the infrastructure and how it is consumed, which is what the term names.",
+        "distractors": {
+          "A": "Colocation changes the building, not the operating model: the newspaper group still owns, operates, and staffs the servers, so nothing is delivered as an on-demand service.",
+          "C": "A hosted website is a single service class. Cloud computing describes computing services as a whole, not one narrow offering such as websites or storage.",
+          "D": "Virtualizing in place eases hardware management but treats a symptom: the group still owns and operates all the capacity, and nothing arrives on demand from a provider."
+        }
+      }
+    },
+    {
+      "id": "1.02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "dental practice group",
+      "keywords": [
+        "shared responsibility model",
+        "PaaS"
+      ],
+      "type": "multiple_response",
+      "question": "A dental practice group runs its patient-booking application on an Azure platform as a service (PaaS) offering. Under the shared responsibility model, which TWO responsibilities remain with the practice group? (Select TWO.)",
+      "options": {
+        "A": "Applying monthly security patches to the operating system beneath the booking application",
+        "B": "Protecting and classifying the patient data the application stores",
+        "C": "Upgrading the runtime and middleware the application runs on",
+        "D": "Managing the staff accounts and identities that sign in to the application",
+        "E": "Controlling physical access to the datacenters where the application is hosted"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D06",
+        "E": "D19"
+      },
+      "rationale": {
+        "correct": "Under the shared responsibility model, information and data, devices, and accounts and identities always remain with the customer, whatever the service type. In a PaaS arrangement the provider absorbs the physical stack, the operating system, the runtime, and the middleware, while the practice group keeps its data and its user identities — the two duties that never move.",
+        "distractors": {
+          "A": "Operating-system patching is the customer's job under IaaS; in a PaaS arrangement the provider maintains the operating system it supplies.",
+          "C": "The runtime and middleware are exactly the layers PaaS lifts off the customer's plate; they sit with the provider here.",
+          "E": "Physical datacenter security belongs to the provider under every cloud service type, including the most customer-managed rungs of the ladder."
+        }
+      }
+    },
+    {
+      "id": "1.03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "ferry operator",
+      "keywords": [
+        "private cloud",
+        "tenancy"
+      ],
+      "type": "single_choice",
+      "question": "A ferry operator pays a hosting company to run a cloud environment that is dedicated solely to the operator, hosted in the hosting company's own facility in another city. No other customer shares the hardware. Which cloud deployment model is this?",
+      "options": {
+        "A": "A public cloud",
+        "B": "A multicloud deployment",
+        "C": "A private cloud",
+        "D": "A hybrid cloud"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E05",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Ownership and tenancy decide the deployment model, not geography. An environment dedicated to a single organization is a private cloud wherever it physically sits — including in a third party's facility that the organization pays to run it. What matters is that no other tenant shares the environment, not whose building it stands in.",
+        "distractors": {
+          "A": "Off-premises hosting does not make a cloud public. A public cloud is shared multi-tenant capacity operated for many customers at once; this environment serves exactly one.",
+          "B": "Multicloud describes using more than one cloud provider at the same time, and it is not one of the deployment models this classification chooses among; a single environment from a single company is involved here.",
+          "D": "Hybrid describes connected private and public environments working together; a single dedicated environment in one facility combines nothing."
+        }
+      }
+    },
+    {
+      "id": "1.04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "municipal tax office",
+      "keywords": [
+        "hybrid cloud",
+        "taxpayer records"
+      ],
+      "type": "single_choice",
+      "question": "A statute requires a municipal tax office to keep taxpayer records on infrastructure it operates itself, inside its own facility. During the annual filing season, the office's public web portal needs far more capacity than it owns. Which cloud deployment model do these constraints force?",
+      "options": {
+        "A": "A hybrid cloud that keeps records on the office's own infrastructure and bursts portal capacity to a public cloud",
+        "B": "A full public cloud migration, moving the records off-premises to modernize the whole estate at once",
+        "C": "A private cloud only, sized so that filing-season demand is met from owned capacity all year round",
+        "D": "A sovereign region, which satisfies government obligations without changing where the records are kept"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "D16",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "The statute fixes taxpayer records to infrastructure the office itself operates, which is the private side; the filing-season burst needs rented public capacity the office does not own. Constraints pointing in both directions force a hybrid cloud — connected private and public environments, each carrying the workload it suits.",
+        "distractors": {
+          "B": "Cloud-first is a preference, not an override: moving the records off-premises breaks the statutory requirement that the office operate the infrastructure itself.",
+          "C": "A private-only estate meets the statute but answers the seasonal burst by buying capacity that sits idle most of the year, refusing the elasticity the portal needs.",
+          "D": "A sovereign region is a nationally isolated instance of a public cloud operated by the provider — the records would still leave infrastructure the office operates itself, so the statute is not met."
+        }
+      }
+    },
+    {
+      "id": "1.05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "ice cream manufacturer",
+      "keywords": [
+        "consumption-based model",
+        "bill"
+      ],
+      "type": "single_choice",
+      "question": "An ice cream manufacturer runs a wholesale order-processing job that is busy through summer and nearly idle in winter. The finance director asks what adopting a consumption-based model would mean for this job's cost. Which answer is correct?",
+      "options": {
+        "A": "A flat monthly charge agreed in advance, so summer and winter invoices are identical",
+        "B": "Permanent servers provisioned to the summer peak, so capacity never runs short in season",
+        "C": "A discounted rate held all year in exchange for paying for the provisioned capacity even while the job is idle",
+        "D": "No upfront purchase, charges that track actual use, and a bill that falls when orders stop"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D03",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "The consumption-based model means paying for what is actually used rather than what is provisioned: no upfront purchase, cost that stops when use stops, and a bill that tracks demand. For a job that is busy in summer and nearly idle in winter, that produces high summer invoices, low winter invoices, and nothing paid for capacity that is not being consumed.",
+        "distractors": {
+          "A": "A flat fee is the opposite of consumption billing: it buys predictability by charging the same whether or not the job runs, which is a fixed subscription, not pay-for-use.",
+          "B": "Provisioning to the peak is the pattern consumption pricing exists to replace — capacity bought for the busiest weeks is paid for through every idle month.",
+          "C": "Paying for provisioned capacity at a discount describes committed or reserved pricing, and it suits steady workloads; a seasonal job would pay through the idle months for a discount it cannot use."
+        }
+      }
+    },
+    {
+      "id": "1.06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "furniture retailer",
+      "keywords": [
+        "capital expenditure",
+        "operational expenditure"
+      ],
+      "type": "single_choice",
+      "question": "A furniture retailer shuts the datacenter it owns, sells the hardware, and moves its inventory systems to Azure services billed monthly. How should the finance team expect the spending profile to change?",
+      "options": {
+        "A": "Both the old datacenter and the new cloud services count as capital expenditure, as each supports revenue-generating operations",
+        "B": "Spending shifts from capital expenditure on owned assets to operational expenditure on rented services",
+        "C": "Spending shifts from operational expenditure to capital expenditure, as cloud subscriptions are long-lived commitments",
+        "D": "The profile is unchanged for now, and reclassification can wait until a multiyear commitment is signed"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Owned datacenter assets are capital expenditure (CapEx): money invested up front in things the retailer owns and depreciates. Rented cloud services are operational expenditure (OpEx): an ongoing cost of operating, paid as it is incurred. Closing the owned facility and renting services converts one spending profile into the other — that conversion is the financial signature of a migration.",
+        "distractors": {
+          "A": "Supporting revenue does not make spending capital expenditure; the classification follows ownership. Monthly fees for services the retailer does not own are operational expenditure however important the workload.",
+          "C": "This reverses the definitions: long-lived or not, subscription fees for rented services remain operational expenditure, while capital expenditure is the upfront purchase of owned assets — exactly what was sold off.",
+          "D": "The change is immediate, not deferred: from the first monthly invoice the retailer is renting rather than owning, and the books should reflect operational expenditure without waiting for any commitment."
+        }
+      }
+    },
+    {
+      "id": "1.07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "credit union",
+      "keywords": [
+        "pay-as-you-go",
+        "commitment"
+      ],
+      "type": "single_choice",
+      "question": "A credit union's core ledger runs on virtual machines whose load has been flat and continuous for years, around the clock, with no change expected. Purchasing is reviewing how the VMs are paid for. Which decision fits this workload?",
+      "options": {
+        "A": "Commit to a one-year or three-year term for the ledger VMs, trading flexibility for a lower rate",
+        "B": "Keep the pay-as-you-go arrangement already in place, which avoids reopening the procurement file",
+        "C": "Move the ledger VMs to interruptible spare capacity, which carries the deepest compute discount",
+        "D": "Hold at current rates until the provider's next price reduction, then revisit the question"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D11",
+        "C": "E03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "A steady, long-lived workload is the case for committed capacity: the discount rewards giving up flexibility the credit union demonstrably does not need, and flexibility is what the discount costs. Load that has been flat and continuous for years, around the clock, is the textbook profile for a term commitment among cloud pricing models.",
+        "distractors": {
+          "B": "Convenience of the existing arrangement is not a purchasing rationale: pay-as-you-go charges a premium for the freedom to stop at any time, and this workload will never exercise that freedom.",
+          "C": "The deepest discount is paid for with eviction risk. Interruptible capacity suits work that tolerates being stopped and resumed, which a continuously running core ledger does not.",
+          "D": "Waiting compounds cost rather than reducing it: every month at the flexible rate pays for an option the workload never uses, and a future price cut would apply to committed terms as well."
+        }
+      }
+    },
+    {
+      "id": "1.08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "genealogy research service",
+      "keywords": [
+        "eviction",
+        "checkpoints"
+      ],
+      "type": "single_choice",
+      "question": "A genealogy research service rebuilds its historical-records search index in a batch job that checkpoints its progress and can resume cleanly after being stopped. The rebuild has no deadline. Which way of buying compute fits this job?",
+      "options": {
+        "A": "A one-year reserved term, so the rebuild is never at risk of interruption",
+        "B": "Standard on-demand rates, as interruptible capacity is unsuitable for production workloads",
+        "C": "Interruptible spare capacity at the lowest compute price, accepting possible eviction",
+        "D": "Additional parallel machines at standard rates, so the rebuild finishes before any interruption"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D14",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Interruptible spare capacity carries the lowest compute price, and eviction risk is what that price buys. The right buyers are workloads that tolerate being stopped and resumed — exactly what a checkpointed, deadline-free batch rebuild is. The job loses nothing when evicted and simply resumes, so the service collects the discount without paying a real cost.",
+        "distractors": {
+          "A": "Reserving capacity pays a premium for continuity this job does not need; a rebuild that resumes cleanly from checkpoints is not harmed by interruption.",
+          "B": "The blanket rule misses its own precondition: interruptible capacity is unsuitable where stopping loses work or misses deadlines, and this job has checkpoints and no deadline.",
+          "D": "Buying more machines answers a question nobody asked — the job has no deadline. Extra parallel capacity at standard rates raises the bill without addressing how the compute is priced."
+        }
+      }
+    },
+    {
+      "id": "1.09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "flower delivery service",
+      "keywords": [
+        "serverless",
+        "configuration"
+      ],
+      "type": "single_choice",
+      "question": "A flower delivery service runs its order-notification code on a serverless platform. A newly hired engineer asks what the team still owns now that the platform is serverless. Which answer is accurate?",
+      "options": {
+        "A": "Nothing at all, as serverless moves every responsibility, including the code, to the platform",
+        "B": "Choosing instance sizes and a scaling schedule so the notification code has capacity at peak",
+        "C": "Patching the operating system images that the notification code runs on",
+        "D": "The notification code itself, its configuration, and the data it works with"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Serverless removes the infrastructure concerns from the customer's plate: there are no instances to provision, scale, or pay for while idle. What it does not remove is the workload itself — the code, its configuration, and its data remain the team's responsibility. The platform runs the code on demand; the team still decides what the code does and owns what it touches.",
+        "distractors": {
+          "A": "Serverless is not responsibility-free: the platform absorbs servers and scaling, but the code, its configuration, and its data never transfer to the provider.",
+          "B": "Instance sizes and scaling schedules are precisely what serverless eliminates — the platform allocates capacity on demand, so there are no instances for the team to size.",
+          "C": "There is no operating system surface for the team to patch on a serverless platform; the layers beneath the code are the provider's to maintain."
+        }
+      }
+    },
+    {
+      "id": "1.10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "cinema chain",
+      "keywords": [
+        "high availability",
+        "redundancy"
+      ],
+      "type": "single_choice",
+      "question": "A cinema chain's online ticketing must keep selling seats even when a single component fails mid-evening on a premiere weekend. The operations lead asks how high availability is actually achieved. Which answer is right?",
+      "options": {
+        "A": "Run redundant components so the service continues through a failure, with the goal stated as an uptime expectation",
+        "B": "Buy the most failure-resistant single server available, so that components fail as rarely as possible",
+        "C": "Take a full backup every night so the ticketing data can be restored after any outage",
+        "D": "Watch an uptime dashboard closely so any outage is spotted within moments of starting"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "E03",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "High availability is a designed property: the service stays available through component failure when redundancy removes single points of failure, and the target is expressed as an uptime expectation. Better parts fail less often but still fail; only duplication lets the system keep functioning while one component is down.",
+        "distractors": {
+          "B": "A stronger single server lowers the failure rate without changing the design: when that one component does fail on a premiere weekend, ticketing still stops. Availability comes from redundancy, not from better individual parts.",
+          "C": "Backups protect data, not availability: restoring after an outage means the outage happened and sales stopped. High availability is about continuing to operate, not recovering afterward.",
+          "D": "A dashboard detects the outage; it does not prevent it. Fast detection shortens the response, but staying available through failure requires redundant components, not sharper watching."
+        }
+      }
+    },
+    {
+      "id": "1.11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "e-sports league",
+      "keywords": [
+        "horizontal scaling",
+        "vertical"
+      ],
+      "type": "single_choice",
+      "question": "An e-sports league's streaming stats platform serves 2,000 concurrent viewers on ordinary days but must reach 90,000 within minutes when a championship final begins, then shrink back afterward. Which scaling approach matches this demand pattern?",
+      "options": {
+        "A": "Vertical scaling, resizing the platform's server to a much larger size ahead of each final",
+        "B": "Horizontal scaling, adding instances as the final begins and removing them afterward",
+        "C": "A fleet kept permanently sized for 90,000 viewers, so no scaling is ever required",
+        "D": "A resize scheduled into the nightly maintenance window before each match day"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D03",
+        "D": "D10"
+      },
+      "rationale": {
+        "correct": "Adding or removing instances is horizontal scaling, and it is the axis a fast, temporary surge points at: capacity grows from 2,000 toward 90,000 viewers by joining instances to the pool within minutes, then shrinks back by removing them. Scalability on the vertical axis resizes one resource, which is slower, bounded by the largest available size, and wasteful once the surge ends.",
+        "distractors": {
+          "A": "Resizing the existing server is the vertical axis: it typically requires downtime, tops out at the largest size sold, and leaves an oversized machine running after the final ends.",
+          "C": "A permanent fleet meets the peak by paying for it every ordinary day; the demand pattern is a brief surge, which elasticity should absorb, not standing capacity.",
+          "D": "A nightly schedule cannot meet a surge that arrives within minutes of a final starting — the mechanism is wrong, not the frequency; demand-driven scaling has to react when demand moves."
+        }
+      }
+    },
+    {
+      "id": "1.12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "wine importer",
+      "keywords": [
+        "reliability",
+        "predictability"
+      ],
+      "type": "single_choice",
+      "question": "A wine importer's board is reading a cloud proposal that promises both reliability and predictability. A director asks whether the two words are just synonyms. Which reply separates them correctly?",
+      "options": {
+        "A": "Reliability means knowing what costs and performance will be in advance; predictability means surviving hardware failure and continuing on",
+        "B": "The two are interchangeable labels for one benefit, so the proposal is repeating itself",
+        "C": "Reliability comes from dashboards that report incidents the moment they happen",
+        "D": "Reliability is recovering from failure and continuing to function; predictability is knowing performance and cost in advance"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D02",
+        "C": "D07"
+      },
+      "rationale": {
+        "correct": "Reliability is the ability of a system to recover from failures and continue to function; predictability is confidence about what performance and cost will look like in advance. They are separate benefits: one is about how the platform behaves when things go wrong, the other about how well the future — load, latency, spend — can be forecast.",
+        "distractors": {
+          "A": "This assigns each definition to the other term: surviving failure and continuing on is reliability, and advance knowledge of performance and cost is predictability.",
+          "B": "Flattening the two words into one label discards a real distinction — a platform can recover superbly from failure while its costs remain hard to forecast, and the reverse.",
+          "C": "Incident dashboards are detection, and detection is neither definition: reliability is the recovering and continuing itself, not the reporting of what went wrong."
+        }
+      }
+    },
+    {
+      "id": "1.13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "county courthouse system",
+      "keywords": [
+        "governance",
+        "patch"
+      ],
+      "type": "single_choice",
+      "question": "A county courthouse system with a two-person IT team is assessing what cloud adoption would change about its security and governance workload. Which statement captures the benefit correctly?",
+      "options": {
+        "A": "Adoption transfers the security and governance duties entirely to the cloud provider",
+        "B": "The benefit arrives only after third-party security appliances are placed in front of every cloud service",
+        "C": "The platform supplies policy controls, patch currency, and network protections the team would otherwise build and staff",
+        "D": "The prudent course is keeping every security control in-house and using the cloud for raw capacity alone"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Security and governance arrive as platform capabilities: policy control over what may be deployed, infrastructure the provider keeps patched and current, and network protections built into the platform. A two-person team inherits controls it could never build and staff alone — that inheritance, not a transfer of duty, is the benefit.",
+        "distractors": {
+          "A": "Responsibility is shared, never transferred outright: the courthouse keeps duties for its data, identities, and configuration choices while the platform covers the layers it operates.",
+          "B": "Extra appliances are not a precondition — the point of the benefit is that policy, patching, and network protections come supplied by the platform itself.",
+          "D": "Refusing the platform's controls forfeits the benefit under discussion and leaves a two-person team building everything itself, which is the situation adoption was meant to relieve."
+        }
+      }
+    },
+    {
+      "id": "1.14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "home appliance repair network",
+      "keywords": [
+        "manageability",
+        "automation"
+      ],
+      "type": "single_choice",
+      "question": "A home appliance repair network's IT manager currently drives between field offices to administer servers one at a time. A cloud proposal lists manageability as a benefit. What does that benefit actually mean?",
+      "options": {
+        "A": "The estate is administered through the platform's own tooling and automation, from wherever the manager is",
+        "B": "Azure Advisor takes over day-to-day administration, applying its recommendations without the manager",
+        "C": "Standardizing every field office on one hardware vendor, so manual administration becomes simpler",
+        "D": "A weekly summary report from the platform describing what changed across the estate"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D05",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "Manageability in the cloud means administering the estate through the platform's own management tooling and automation: scaling, monitoring, and deployment are handled by the platform and reachable from anywhere, replacing hands-on, one-server-at-a-time work. The drives between offices end because administration happens through the platform, not at the machine.",
+        "distractors": {
+          "B": "Azure Advisor recommends best-practice improvements for existing resources; it does not administer an estate or apply changes on anyone's behalf — administration remains the manager's, done through platform tooling.",
+          "C": "Uniform hardware makes the manual routine a little smoother while leaving it manual; the benefit being described replaces hands-on administration with platform tooling and automation, not with tidier logistics.",
+          "D": "A report tells the manager what already happened; manageability is the ability to act — to scale, monitor, and deploy through the platform — not a retrospective summary."
+        }
+      }
+    },
+    {
+      "id": "1.15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "construction contractor",
+      "keywords": [
+        "IaaS",
+        "operating system"
+      ],
+      "type": "single_choice",
+      "question": "A construction contractor moves its estimating application onto Azure virtual machines, an infrastructure as a service arrangement. The provider now runs the physical hosts, storage, and network. What stays on the contractor's plate?",
+      "options": {
+        "A": "Only the application code, with the guest operating system patched by the provider",
+        "B": "Replacing failed physical disks beneath its virtual machines through a hardware support contract",
+        "C": "Hardening the hypervisor, as maximum control extends to the virtualization layer",
+        "D": "The operating system and everything above it: patching, runtime, middleware, and the application's data"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D06",
+        "C": "D01"
+      },
+      "rationale": {
+        "correct": "Infrastructure as a service (IaaS) draws the line at virtualized infrastructure: the provider supplies and operates the physical hosts, storage, and network, and the customer owns the operating system and everything above it — patching, runtime, middleware, applications, and data. Maximum control is the draw, and maximum responsibility is its price.",
+        "distractors": {
+          "A": "Code-only responsibility describes platform as a service; under IaaS the guest operating system is the contractor's to patch and maintain, not the provider's.",
+          "B": "Physical hardware sits below the line IaaS draws — failed disks in the provider's datacenter are the provider's to replace, invisible to the tenant.",
+          "C": "The virtualization layer is part of the infrastructure the provider supplies; a tenant has no hypervisor surface to harden, however much control the arrangement grants above it."
+        }
+      }
+    },
+    {
+      "id": "1.16",
+      "domain": "d1",
+      "primary_concept": "C-016",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "language school network",
+      "keywords": [
+        "PaaS",
+        "middleware"
+      ],
+      "type": "single_choice",
+      "question": "A language school network wants its four developers spending their time on the lesson-booking application they are writing, with nobody assigned to operating systems, runtime upgrades, or middleware. Which cloud service type matches this intent?",
+      "options": {
+        "A": "Infrastructure as a service, keeping the fullest possible control of the platform beneath the application",
+        "B": "Platform as a service, where the provider absorbs the operating system, runtime, and middleware",
+        "C": "Software as a service, so the booking capability arrives finished with nothing left to build",
+        "D": "A rewrite into event-driven functions, removing idle cost along with the servers"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D02",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Platform as a service (PaaS) is the middle position on the responsibility ladder: the provider takes the operating system, runtime, and middleware off the customer's plate, while the application and its data remain the customer's. That split is exactly the school's intent — four developers writing the application, nobody staffing the layers beneath it.",
+        "distractors": {
+          "A": "Fullest control is the opposite of the stated intent: infrastructure as a service hands back the operating system and everything above it, which is precisely the work the school wants nobody doing.",
+          "C": "A finished product leaves nothing for the developers to write, and the school's whole premise is a custom application of its own; software as a service removes the build the intent requires.",
+          "D": "Re-architecting into functions solves a problem nobody stated: the school asked where its existing style of application should run, not for an event-driven redesign of it."
+        }
+      }
+    },
+    {
+      "id": "1.17",
+      "domain": "d1",
+      "primary_concept": "C-017",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "chartered accountancy practice",
+      "keywords": [
+        "SaaS",
+        "licensed"
+      ],
+      "type": "single_choice",
+      "question": "A chartered accountancy practice licenses a cloud bookkeeping product. Its administrators configure client ledgers, features, and user seats, and touch nothing else. Which statement describes this arrangement accurately?",
+      "options": {
+        "A": "It is platform as a service, as real configuration work remains with the practice",
+        "B": "The practice should also manage the product's runtime version before each filing deadline",
+        "C": "It is software as a service: the practice controls features and users, with the least responsibility and the least control",
+        "D": "With everything below the feature level invisible, the practice needs no user-access governance process of its own"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D06",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Licensing a finished application and configuring only features and users is software as a service (SaaS): the customer sits at the top of the responsibility ladder with the least responsibility and, symmetrically, the least control. Everything beneath the product — application code, runtime, operating system, infrastructure — is the provider's, and the product is licensed rather than built.",
+        "distractors": {
+          "A": "Configuring features and users is exactly the residue SaaS leaves; platform as a service would put a runtime and a deployable application of the practice's own in the picture, and neither exists here.",
+          "B": "The runtime is beneath the line SaaS draws — the provider maintains and upgrades it. There is no product runtime for the practice to manage, before deadlines or otherwise.",
+          "D": "Least responsibility is not zero: accounts, identities, and access decisions stay with the customer in every service type, so who can reach which client ledger remains the practice's own governance duty."
+        }
+      }
+    },
+    {
+      "id": "1.18",
+      "domain": "d1",
+      "primary_concept": "C-018",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "museum consortium",
+      "keywords": [
+        "IaaS",
+        "PaaS"
+      ],
+      "type": "scenario_matching",
+      "question": "A museum consortium is modernizing four systems, and its architect must place each on the cloud service type its constraints force. For each system below, select the service type. Options may be used more than once.",
+      "matching_options": [
+        "Infrastructure as a service (IaaS)",
+        "Platform as a service (PaaS)",
+        "Software as a service (SaaS)"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Membership email campaigns should come from a finished product the team starts using immediately, configuring only sender lists and user seats."
+        },
+        {
+          "id": "s2",
+          "text": "The legacy collections catalog is certified by its vendor only at a specific operating-system patch level, which the consortium must control itself."
+        },
+        {
+          "id": "s3",
+          "text": "The web team wants to deploy its custom exhibition-booking code continuously without managing any runtime or middleware."
+        },
+        {
+          "id": "s4",
+          "text": "Donor accounting should be a licensed, ready-to-use product with nothing operated by the consortium beneath its features."
+        }
+      ],
+      "answer": {
+        "s1": "Software as a service (SaaS)",
+        "s2": "Infrastructure as a service (IaaS)",
+        "s3": "Platform as a service (PaaS)",
+        "s4": "Software as a service (SaaS)"
+      },
+      "rationale": {
+        "correct": "The deciding constraint in each case is how much of the stack the consortium must control. Needing to pin the operating-system patch level forces IaaS, the only service type that hands the customer the operating system. Deploying custom code with no runtime or middleware duties is the PaaS split. A finished product configured at the feature-and-user level — the email campaigns and the donor accounting — is SaaS, licensed rather than built, with the least responsibility and the least control."
+      }
+    }
+  ]
 }

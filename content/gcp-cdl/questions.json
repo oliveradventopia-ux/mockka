@@ -1431,7 +1431,7 @@
       "answer": "B",
       "distractor_patterns": { "A": "E01", "C": "D02", "D": "E02" },
       "rationale": {
-        "correct": "Cloud Run is for teams that want their own language and tools with minimal infrastructure management: the container is the unit of deployment, the platform runs and scales it, and nothing is left running when traffic falls away. Two developers who have already packaged their own container and want to manage no infrastructure describe that product precisely.",
+        "correct": "Cloud Run leaves the language and tooling choice with the developers and takes over everything below the container: the container is the unit of deployment, the platform runs and scales it, and nothing is left running when traffic falls away. Two developers who have already packaged their own container and want to manage no infrastructure describe that product precisely.",
         "distractors": {
           "A": "A managed cluster still has to be configured and maintained, which is infrastructure management under another name and more than two developers should be carrying.",
           "C": "Starting the container with a script on a virtual machine leaves the network operating that machine, patching it, and paying for it through every quiet night.",

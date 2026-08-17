@@ -1,0 +1,984 @@
+{
+  "$comment": "S5 blind solve ROUND 1 (methodology/05-eval-rubric.md #blind-solve). exam-examiner, fresh session, 2026-08-18 — this session authored nothing in this bank and opened NO key, rationale, distractor tag, concept row or prior eval artifact until the pre-key record was written (preserved in the session scratchpad as blind-answers-r1.json). The keyless form was generated mechanically from questions.json (stems and options only; no answer, rationale, pattern tag or concept metadata) and solved item by item with confidence and a one-line reason recorded before the diff. Encoding: single_choice chosen/keyed are option letters; multiple_response are sorted letters comma-joined; scenario_matching are 'sN=Option text' pairs semicolon-joined. RESULT: 121/122 match (99.2%), one confident miss (d4-q02) carrying a proposed verdict for Gate 2, zero low-confidence misses. The score is NOT cue-confounded: SC key letters are A28/B26/C29/D27, keyed-option length is median 0.97x and max 1.32x the longest distractor with no item at or above 1.35x, all nine multiple_response key sets differ, and all three scenario_matching maps are non-identity with option reuse — so 121/122 stands as an uncontaminated key-correctness signal. Codex advisory cross-solve attempted and skipped (CLI unauthenticated, 401 — eval/codex-solve.json); per-item `codex` fields are absent and the Gate 2 sample carries no cross-model signal.",
+  "items": [
+    {
+      "id": "d1-q01",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Patrol rounds are people executing a documented process — operational; fencing is physical, badge readers technical, budget policy managerial.",
+      "match": true
+    },
+    {
+      "id": "d1-q02",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Signage with no hardware behind it can only discourage, not prevent or detect — deterrent.",
+      "match": true
+    },
+    {
+      "id": "d1-q03",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "An electronic lock is a technology implementation (technical category) whose function is to stop entry (preventive type).",
+      "match": true
+    },
+    {
+      "id": "d1-q04",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Data altered without authorization, nothing exfiltrated and service stayed up — integrity only.",
+      "match": true
+    },
+    {
+      "id": "d1-q05",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Non-repudiation needs a private key only the partner holds; hashes give integrity, TLS confidentiality, shared PINs destroy attribution.",
+      "match": true
+    },
+    {
+      "id": "d1-q06",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Who did what and when, reported after the fact, is accounting in AAA.",
+      "match": true
+    },
+    {
+      "id": "d1-q07",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "The PEP is the gate that enforces per-session allow/block; the engine decides and the administrator brokers.",
+      "match": true
+    },
+    {
+      "id": "d1-q08",
+      "chosen": "B,E",
+      "keyed": "B,E",
+      "confidence": "high",
+      "reasoning": "Bollards physically stop the vehicle ram; infrared sensors detect after-hours presence — the two stated requirements exactly.",
+      "match": true
+    },
+    {
+      "id": "d1-q09",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A fake credential planted to alarm on use is a honeytoken; honeyfile is bait content, honeypot/honeynet are whole systems.",
+      "match": true
+    },
+    {
+      "id": "d1-q10",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Emergency change track keeps approval, impact analysis and backout while compressing the timeline — bypassing them is the trap.",
+      "match": true
+    },
+    {
+      "id": "d1-q11",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Documentation/diagram updates and version control are the post-change step that was skipped; responders worked from stale maps.",
+      "match": true
+    },
+    {
+      "id": "d1-q12",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "OCSP is the per-certificate status query; CRL is the whole-list download they want to avoid.",
+      "match": true
+    },
+    {
+      "id": "d1-q13",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "FDE only protects powered-off media; column/record-level encryption keeps the field opaque to an authenticated DBA query.",
+      "match": true
+    },
+    {
+      "id": "d1-q14",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A shared tamper-resistant appliance generating and serving keys across sites is an HSM; TPM/enclave are per-host, KMS is software lifecycle.",
+      "match": true
+    },
+    {
+      "id": "d1-q15",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Salting defeats precomputed tables and key stretching raises per-guess cost; another fast hash repeats the mistake.",
+      "match": true
+    },
+    {
+      "id": "d2-q01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Year-long dwell, bespoke tooling, research data taken, no monetization — nation-state.",
+      "match": true
+    },
+    {
+      "id": "d2-q02",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Destruction plus a taunt tied to the dismissal, nothing stolen or demanded — revenge, not espionage or gain.",
+      "match": true
+    },
+    {
+      "id": "d2-q03",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A department procuring unsanctioned cloud services with no malicious intent is shadow IT.",
+      "match": true
+    },
+    {
+      "id": "d2-q04",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Credential-harvesting delivered by SMS is smishing; vishing is voice, plain phishing is email.",
+      "match": true
+    },
+    {
+      "id": "d2-q05",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Mail from the CFO's own genuine mailbox pressing a wire transfer is business email compromise, not lookalike impersonation.",
+      "match": true
+    },
+    {
+      "id": "d2-q06",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A niche site the target sector frequents is compromised to serve exploits to its visitors — watering hole.",
+      "match": true
+    },
+    {
+      "id": "d2-q07",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "The vector is the removable USB device itself; the lure was the label.",
+      "match": true
+    },
+    {
+      "id": "d2-q08",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Telnet, default credentials and unused Bluetooth are unhardened as-shipped attack surface, not an exploit event.",
+      "match": true
+    },
+    {
+      "id": "d2-q09",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Compromise of the vendor's build system delivered through a legitimately signed update is a supply chain attack.",
+      "match": true
+    },
+    {
+      "id": "d2-q10",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Oversized input crashing the service and then executing supplied instructions is a classic buffer overflow.",
+      "match": true
+    },
+    {
+      "id": "d2-q11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Script persisted in the page and executed in every later viewer's browser — stored XSS.",
+      "match": true
+    },
+    {
+      "id": "d2-q12",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Vendor support ended with no further patches ever — end-of-life platform.",
+      "match": true
+    },
+    {
+      "id": "d2-q13",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Another tenant's data recovered from memory with no code leaving the VM is resource reuse, not an escape.",
+      "match": true
+    },
+    {
+      "id": "d2-q14",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Removing the platform's own restrictions entirely is jailbreaking; side loading alone would not require that.",
+      "match": true
+    },
+    {
+      "id": "d2-q15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Vendor never saw it, no patch, no signature, discovered by exploitation — zero-day.",
+      "match": true
+    },
+    {
+      "id": "d2-q16",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Self-propagation across 240 hosts with zero user action is a worm.",
+      "match": true
+    },
+    {
+      "id": "d2-q17",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Badge still held by the owner but its identifier accepted over the radio interface — RFID cloning.",
+      "match": true
+    },
+    {
+      "id": "d2-q18",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Spoofed source queries to open resolvers whose large answers land on the victim is reflected, amplified DDoS.",
+      "match": true
+    },
+    {
+      "id": "d2-q19",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Rogue AP relaying and modifying traffic in flight is on-path/MITM; nothing replayed or downgraded.",
+      "match": true
+    },
+    {
+      "id": "d2-q20",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Parent-directory sequences in a file parameter reaching config files is directory traversal.",
+      "match": true
+    },
+    {
+      "id": "d2-q21",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Few passwords tried once each against many accounts, paced to dodge lockout — password spraying.",
+      "match": true
+    },
+    {
+      "id": "d2-q22",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Active C2 and lateral movement in progress — isolate first; segmentation and rule blocks are slower/partial.",
+      "match": true
+    },
+    {
+      "id": "d2-q23",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Blast radius came from over-broad modify rights; least privilege scoped to role is the direct fix.",
+      "match": true
+    },
+    {
+      "id": "d2-q24",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Only-approved-software policy is enforced by an allow list; deny lists cannot cover unknown utilities.",
+      "match": true
+    },
+    {
+      "id": "d2-q25",
+      "chosen": "s1=Account-state indicator;s2=Resource indicator;s3=Logging indicator;s4=Account-state indicator;s5=Logging indicator",
+      "keyed": "s1=Account-state indicator;s2=Resource indicator;s3=Logging indicator;s4=Account-state indicator;s5=Logging indicator",
+      "confidence": "high",
+      "reasoning": "Concurrent session and lockout are account-state; disk exhaustion/inaccessibility is resource; missing and out-of-cycle logging are logging.",
+      "match": true
+    },
+    {
+      "id": "d2-q26",
+      "chosen": "B,C,E",
+      "keyed": "B,C,E",
+      "confidence": "high",
+      "reasoning": "Hardening = change defaults, disable unneeded ports/protocols/services, remove unnecessary software; log review is detective, guest VLAN is not hardening the device.",
+      "match": true
+    },
+    {
+      "id": "d2-q27",
+      "chosen": "A,D",
+      "keyed": "A,D",
+      "confidence": "high",
+      "reasoning": "Keep patching while it is still in production, then decommission properly with sanitization and account/DNS removal.",
+      "match": true
+    },
+    {
+      "id": "d3-q01",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "The shared responsibility matrix is the artifact that assigns each control; the SLA covers availability, and model names are not contractual.",
+      "match": true
+    },
+    {
+      "id": "d3-q02",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Hybrid means securing on-prem plus cloud plus the interconnection — responsibility is shared, not halved.",
+      "match": true
+    },
+    {
+      "id": "d3-q03",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Reviewable-before-deploy and reproducible-after is exactly infrastructure as code from a reviewed repo.",
+      "match": true
+    },
+    {
+      "id": "d3-q04",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Only an air gap makes a misconfiguration-created path impossible; VLANs, firewalls and microsegmentation are all configurable.",
+      "match": true
+    },
+    {
+      "id": "d3-q05",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "SDN centralizes the control plane in a controller that programs the forwarding devices; the data plane still moves packets.",
+      "match": true
+    },
+    {
+      "id": "d3-q06",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Containers share the host kernel, so one kernel exploit crosses every container; VMs have their own kernels.",
+      "match": true
+    },
+    {
+      "id": "d3-q07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "When patching is impossible on an RTOS/ICS timeline, compensating controls — segmentation plus monitoring — are the standard answer.",
+      "match": true
+    },
+    {
+      "id": "d3-q08",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Placement follows the traffic to be inspected: the zone boundary the requirement names.",
+      "match": true
+    },
+    {
+      "id": "d3-q09",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Life safety wins at the door (fail-open for egress); the firewall fails closed so nothing passes unfiltered.",
+      "match": true
+    },
+    {
+      "id": "d3-q10",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Blocking in real time requires an inline IPS; taps and passive sensors only alert.",
+      "match": true
+    },
+    {
+      "id": "d3-q11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Authentication before the port carries traffic is 802.1X/EAP port-based access control.",
+      "match": true
+    },
+    {
+      "id": "d3-q12",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "HTTP payload inspection for one site is a WAF; L4 firewalls cannot read payloads and NGFW/UTM are network-wide.",
+      "match": true
+    },
+    {
+      "id": "d3-q13",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Individual remote workers over household broadband = remote-access TLS VPN; site-to-site is for fixed sites.",
+      "match": true
+    },
+    {
+      "id": "d3-q14",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Regulated data type carries externally imposed obligations an internal label cannot override.",
+      "match": true
+    },
+    {
+      "id": "d3-q15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Decrypted in memory during processing is data in use; there is no fourth 'archive' state.",
+      "match": true
+    },
+    {
+      "id": "d3-q16",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Which nation's legal process can reach data stored in a jurisdiction is data sovereignty.",
+      "match": true
+    },
+    {
+      "id": "d3-q17",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Realistic surrogate values with controlled reversal through a vault is tokenization; hashing and masking are not recoverable.",
+      "match": true
+    },
+    {
+      "id": "d3-q18",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Access denied by location regardless of credentials is a geographic restriction.",
+      "match": true
+    },
+    {
+      "id": "d3-q19",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "A load balancer distributes but does not itself carry state/failover through a node loss — clustering closes that gap.",
+      "match": true
+    },
+    {
+      "id": "d3-q20",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "The postmortem names people and technology and infrastructure together — capacity planning across all three; D is self-defeating.",
+      "match": true
+    },
+    {
+      "id": "d3-q21",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Validating roles and escalation without touching production is a tabletop.",
+      "match": true
+    },
+    {
+      "id": "d3-q22",
+      "chosen": "C,E",
+      "keyed": "C,E",
+      "confidence": "high",
+      "reasoning": "Offsite tested backups survive ransomware corruption of primary storage; generator plus UPS covers an eight-hour outage that UPS alone cannot.",
+      "match": true
+    },
+    {
+      "id": "d4-q01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "The baseline was established and deployed correctly; the failed stage is maintain/monitor against drift — re-imaging only resets the symptom.",
+      "match": true
+    },
+    {
+      "id": "d4-q02",
+      "chosen": "C",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "BYOD plus a managed container gives enterprise control over corporate data without claiming the whole personal device.",
+      "match": false,
+      "adjudication": "legitimately_hard",
+      "adjudication_status": "open_proposed",
+      "adjudication_note": "Confident miss, so a human verdict is required (methodology/05-eval-rubric.md #blind-solve). PROPOSED VERDICT legitimately_hard, not miskeyed and not co_correct: the examiner chose C (BYOD handset with a managed container) because that is the standard resolution to 'we cannot control hardware we do not own' and it preserves the one-phone promise. It fails a stated requirement — the security team asked for full-device encryption and remote wipe enforced through MDM, which a work container does not provide, and legal has said neither can be imposed on hardware the distributor does not own. Only company ownership (COPE) satisfies all three constraints at once, which is concept C-066's own claim that ownership decides what MDM may enforce. The key stands; the item is hard in the intended way and is the sharpest good-vs-best item in the bank. Oliver confirms or overrides at Gate 2."
+    },
+    {
+      "id": "d4-q03",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Per-user attribution needs WPA3-Enterprise with RADIUS/802.1X; rotating a shared passphrase never attributes.",
+      "match": true
+    },
+    {
+      "id": "d4-q04",
+      "chosen": "A,C",
+      "keyed": "A,C",
+      "confidence": "high",
+      "reasoning": "Input validation stops the malformed-record crash; sandboxing isolates the unvetted third-party library.",
+      "match": true
+    },
+    {
+      "id": "d4-q05",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Prevention lives at the acquisition/procurement stage of the asset lifecycle, where ownership is assigned on receipt.",
+      "match": true
+    },
+    {
+      "id": "d4-q06",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Drive-by-drive auditor proof is the certification of destruction/sanitization naming method per serial.",
+      "match": true
+    },
+    {
+      "id": "d4-q07",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "An unauthenticated remote scan missing a known local software flaw is a false negative — rerun credentialed.",
+      "match": true
+    },
+    {
+      "id": "d4-q08",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Sector ISAC gives peer-verified, industry-specific advisories at near-zero analyst cost.",
+      "match": true
+    },
+    {
+      "id": "d4-q09",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Published route, safe harbor, no payment, no contract = responsible disclosure program, not a bounty or a pen test.",
+      "match": true
+    },
+    {
+      "id": "d4-q10",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "CVSS base is environment-blind; exposure and business impact make the internet-facing 6.5 the higher real risk.",
+      "match": true
+    },
+    {
+      "id": "d4-q11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Unpatchable certified medical device: compensating segmentation plus a recorded, owned exception.",
+      "match": true
+    },
+    {
+      "id": "d4-q12",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Flow records give peer, time and volume without touching the closed controller; SNMP, DLP and syslog each miss part.",
+      "match": true
+    },
+    {
+      "id": "d4-q13",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Tune the known-benign behavior out so real detections stop drowning; disabling the whole signature blinds the detection.",
+      "match": true
+    },
+    {
+      "id": "d4-q14",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Locked appliances that accept no agent and connect only when docked call for agentless benchmark checks at dock time.",
+      "match": true
+    },
+    {
+      "id": "d4-q15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "The pattern is only visible when authentication logs from all systems are aggregated and correlated in a SIEM.",
+      "match": true
+    },
+    {
+      "id": "d4-q16",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Requirement is inbound from the hostile range to the server, all ports — source and destination in that order.",
+      "match": true
+    },
+    {
+      "id": "d4-q17",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Valid credentials, permitted access, anomalous time/host/volume — only behavioral analytics flags it.",
+      "match": true
+    },
+    {
+      "id": "d4-q18",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "medium",
+      "reasoning": "SSH satisfies encryption; only a host-level policy that pins the cleartext service off stops an engineer restarting it, which a perimeter block does not.",
+      "match": true
+    },
+    {
+      "id": "d4-q19",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "SPF and DKIM without DMARC leave no enforcement instruction; a reject policy tells receivers to drop unaligned mail.",
+      "match": true
+    },
+    {
+      "id": "d4-q20",
+      "chosen": "A,C,E",
+      "keyed": "A,C,E",
+      "confidence": "high",
+      "reasoning": "NAC posture keeps personal laptops off the admin network, DLP stops record exports via webmail, DNS filtering blocks malicious domain resolution — one control per stated requirement.",
+      "match": true
+    },
+    {
+      "id": "d4-q21",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "The account was created for a person who does not exist — identity proofing before provisioning is the missing step.",
+      "match": true
+    },
+    {
+      "id": "d4-q22",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Only a manager generating unique credentials breaks derivation from the previous password without adding memory burden.",
+      "match": true
+    },
+    {
+      "id": "d4-q23",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Cross-organization access with no account creation and no directory copy is federation on trusted assertions.",
+      "match": true
+    },
+    {
+      "id": "d4-q24",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Decisions on department plus project assignment plus network origin and time are attributes — ABAC; no labels rules out MAC, no author discretion rules out DAC.",
+      "match": true
+    },
+    {
+      "id": "d4-q25",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Password plus security answer is two of the same factor; a hardware security key adds possession and works with no cellular path.",
+      "match": true
+    },
+    {
+      "id": "d4-q26",
+      "chosen": "A,C",
+      "keyed": "A,C",
+      "confidence": "high",
+      "reasoning": "Per-session checkout through a vault gives attribution; ephemeral credentials expire at session close.",
+      "match": true
+    },
+    {
+      "id": "d4-q27",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Automated provisioning and deprovisioning driven by the authoritative roster removes the human memory step at both ends.",
+      "match": true
+    },
+    {
+      "id": "d4-q28",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Named consideration is the downside of automation: single point of failure and unowned, unmaintained scripts before scaling further.",
+      "match": true
+    },
+    {
+      "id": "d4-q29",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Containment and identification are done; removing the persistence mechanism and dropped binaries is eradication, which precedes recovery.",
+      "match": true
+    },
+    {
+      "id": "d4-q30",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "One evening, volunteers, no production impact, testing decision points — tabletop.",
+      "match": true
+    },
+    {
+      "id": "d4-q31",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Recurrence after a clean restore means the entry path was never found; root cause analysis is what stops a third round.",
+      "match": true
+    },
+    {
+      "id": "d4-q32",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Court admissibility turns on an unbroken chain of custody; powering down destroys volatile evidence and copying to a share breaks it.",
+      "match": true
+    },
+    {
+      "id": "d4-q33",
+      "chosen": "s1=Firewall logs;s2=OS-specific security logs;s3=Application logs;s4=Endpoint logs;s5=Firewall logs",
+      "keyed": "s1=Firewall logs;s2=OS-specific security logs;s3=Application logs;s4=Endpoint logs;s5=Firewall logs",
+      "confidence": "high",
+      "reasoning": "Allowed/blocked at the boundary is firewall; local group change is the OS security log; app-level request handling is application; process writing a file is endpoint.",
+      "match": true
+    },
+    {
+      "id": "d4-q34",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Message headers/metadata carry each relaying server and timestamp and survive gateway log rotation.",
+      "match": true
+    },
+    {
+      "id": "d5-q01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Mandatory ordered steps with no discretion is a procedure; standards state requirements, guidelines are advisory.",
+      "match": true
+    },
+    {
+      "id": "d5-q02",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Law outranks industry standard and internal policy; the shortest legally binding deadline governs.",
+      "match": true
+    },
+    {
+      "id": "d5-q03",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "The root gap is the absence of a governance body; a committee with a standing remit makes revision recurring rather than one-off.",
+      "match": true
+    },
+    {
+      "id": "d5-q04",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "The bureau acts only on the registry's documented instruction — processor; the registry is controller and its team custodian.",
+      "match": true
+    },
+    {
+      "id": "d5-q05",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Recurring cadence plus change-triggered ad hoc assessments matches how the organization actually changes.",
+      "match": true
+    },
+    {
+      "id": "d5-q06",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "With no valuation and no incident history the quantitative inputs do not exist; qualitative ranking is the defensible fallback.",
+      "match": true
+    },
+    {
+      "id": "d5-q07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "SLE 40k x ARO 2 = ALE 80k, compared against the 50k annual control cost.",
+      "match": true
+    },
+    {
+      "id": "d5-q08",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A risk register is forward-looking risks with owners, indicators and thresholds; a list of past incidents is an incident log.",
+      "match": true
+    },
+    {
+      "id": "d5-q09",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Willingness to take more risk for the channel is an expansionary appetite; the one-shift outage limit is a tolerance threshold.",
+      "match": true
+    },
+    {
+      "id": "d5-q10",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Managed acceptance requires a recorded exception with owner, expiry and the accepted consequence.",
+      "match": true
+    },
+    {
+      "id": "d5-q11",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Four hours of downtime tolerable = RTO; fifteen minutes of data loss tolerable = RPO.",
+      "match": true
+    },
+    {
+      "id": "d5-q12",
+      "chosen": "C,E",
+      "keyed": "C,E",
+      "confidence": "high",
+      "reasoning": "Right-to-audit is the enforceable examination mechanism; independent assessment is evidence from outside the provider.",
+      "match": true
+    },
+    {
+      "id": "d5-q13",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "The failure was at vendor selection: an undeclared conflict of interest on the evaluation panel.",
+      "match": true
+    },
+    {
+      "id": "d5-q14",
+      "chosen": "s1=Service-level agreement (SLA);s2=Non-disclosure agreement (NDA);s3=Memorandum of understanding (MOU);s4=Statement of work (SOW);s5=Service-level agreement (SLA)",
+      "keyed": "s1=Service-level agreement (SLA);s2=Non-disclosure agreement (NDA);s3=Memorandum of understanding (MOU);s4=Statement of work (SOW);s5=Service-level agreement (SLA)",
+      "confidence": "high",
+      "reasoning": "Measurable targets with credits/consequences are SLAs; confidentiality before disclosure is an NDA; non-binding shared intent is an MOU; deliverables and acceptance are a SOW.",
+      "match": true
+    },
+    {
+      "id": "d5-q15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Scope, timing, exclusions and escalation contacts for a test are the rules of engagement.",
+      "match": true
+    },
+    {
+      "id": "d5-q16",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "medium",
+      "reasoning": "Fines are only one consequence class; loss of the operating license is the existential one a fine budget cannot cover — though remediation cost and premium rises are also uncovered.",
+      "match": true
+    },
+    {
+      "id": "d5-q17",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Point-in-time self-attestation is weak evidence; automated continuous control monitoring evidences operation all year.",
+      "match": true
+    },
+    {
+      "id": "d5-q18",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A law granting residents rights wherever their data is processed follows the data subject extraterritorially.",
+      "match": true
+    },
+    {
+      "id": "d5-q19",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "You cannot honor erasure across systems you have not inventoried; a data inventory/map is the missing capability.",
+      "match": true
+    },
+    {
+      "id": "d5-q20",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Evidence from someone with no reporting line = external third-party audit; internal audit still reports inside the group.",
+      "match": true
+    },
+    {
+      "id": "d5-q21",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "No inside information = unknown-environment test; testing whether defenders notice requires not notifying them.",
+      "match": true
+    },
+    {
+      "id": "d5-q22",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Availability must not be risked during the consultation, so map the surface passively from public sources.",
+      "match": true
+    },
+    {
+      "id": "d5-q23",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Repeat credential submission plus removing the reporting add-in is the risky pattern; clicking then reporting fast and asking colleagues are recoverable.",
+      "match": true
+    },
+    {
+      "id": "d5-q24",
+      "chosen": "B,C,E",
+      "keyed": "B,C,E",
+      "confidence": "high",
+      "reasoning": "One topic per named exposure: remote/hybrid work, insider threat around departures, and social engineering by phone impersonation.",
+      "match": true
+    }
+  ]
+}

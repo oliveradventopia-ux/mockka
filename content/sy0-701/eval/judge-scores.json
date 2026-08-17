@@ -1,0 +1,1469 @@
+{
+  "$comment": "S5 judge rubric ROUND 1 (methodology/05-eval-rubric.md #judge). exam-examiner, fresh session, 2026-08-18 — this session authored nothing in this bank; the blind solve was written and frozen before any key, rationale, pattern tag or concept row was opened (pre-key record in eval/blind-solve.json). Method: every one of the 122 items read in full with its key, distractor pattern tags, rationale and primary-concept row; the strongest honest case FOR each distractor argued before scoring, and recorded in `case`. Calibration (house-comparable with aif-c01 round 2): dim2 5 = every wrong option is a near-neighbour a practitioner would offer, 4 = one option is a slogan or off-axis but a real belief, 3 = one option is a throwaway (self-marking rider, self-contradicting against the stem, non-parallel, or an invented framework item) so the item effectively runs on three options; dim5 5 = good-vs-best with two or more actionable options, 4 = near-neighbour separation requiring the concept, 3 = the stem recites the key's definition or hands over the discriminating keyword. Surface-cue check run before scoring so dim5 is not cue-confounded: SC key letters A28/B26/C29/D27, keyed-option length median 0.97x and max 1.32x the longest distractor (2 items >=1.25, none >=1.35), key is longest in 49/110 SC but by a median margin of only 1.04x, all 9 MR key sets vary (BE/BCE/AD/CE/AC/ACE/AC/CE/BCE), all 3 SM maps are non-identity with option reuse. RESULT: zero dimensions <=2 anywhere — no bounces in round 1. Gate 2 auto-flags from 3s are listed in derivation/eval-report.md alongside the one confident blind miss.",
+  "items": [
+    {
+      "id": "d1-q01",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 4
+      },
+      "case": "FOR A: fencing is the most visible new measure after a theft; FOR B: badge readers are the classic 'security control' a manager names; FOR D: the budget policy is the only board-level act. All three lose to the category axis — only patrol rounds are people executing a documented process. Dim2 4: D is managerial by construction and eliminable once the axis is known. Dim5/6 4: one-hop categorisation over a thin scenario wrapper."
+    },
+    {
+      "id": "d1-q02",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: a sign claiming alarms may make tampering feel futile, which reads as prevention; FOR C: the sign asserts monitoring; FOR D: it is an instruction bolted to an asset. B loses because nothing is removed, C because no hardware exists, D because directives address staff. Strong sibling set."
+    },
+    {
+      "id": "d1-q03",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the asset is a physical door, the strongest tempter in the set; FOR C: a person presents the badge; FOR B: locks are sometimes justified as deterrents. Category follows what implements, so technical/preventive stands. Two-axis item, still one hop."
+    },
+    {
+      "id": "d1-q04",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR A: recipes are secret; FOR C: an unauthorised session is an availability event to many; FOR D: nobody can now prove who changed what. All lose to 'altered'. Dim5 3: the stem states 'nothing was copied out' and 'stayed online', which eliminates A and C on the surface rather than on the concept."
+    },
+    {
+      "id": "d1-q05",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: a stored hash is the reflex integrity answer and does bind the document; FOR C: TLS is what most filings actually run over; FOR D: a PIN is what small practices really use. Only the private key binds an individual. Dim2 4: D is self-defeating once read."
+    },
+    {
+      "id": "d1-q06",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR A: the report is about what accounts were permitted to do; FOR B: it names accounts; FOR D: it compares practice against expectation. Accounting is the usage trail. Dim2 4: gap analysis is outside AAA and eliminable. Dim5 3: the stem recites the accounting definition."
+    },
+    {
+      "id": "d1-q07",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the engine is where the decision is genuinely made; FOR C: the administrator is the component that acts on the decision; FOR D: enforcement historically lived in the trusted zone. The stem's 'once the decision has been made' settles it. Dim2 4: D is the removed-assumption option."
+    },
+    {
+      "id": "d1-q08",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: badge readers are the standard locker-door control; FOR C: signage is cheap deterrence for unlit lots; FOR D: recorded review is what most operators actually do. Each answers a requirement the stem did not state — barrier plus live detection is the pairing. Clean two-requirement mapping."
+    },
+    {
+      "id": "d1-q09",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: a honeyfile in a config repository is highly plausible bait; FOR C/D: a decoy host or network catches the same attacker. All lose to 'alert the moment a harvested credential is used' — the trigger is authentication, not file access. Scope ladder tested cleanly."
+    },
+    {
+      "id": "d1-q10",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the change window exists for a reason; FOR B: emergency patching outside process happens daily in real shops; FOR C: speed is the stated pressure. Emergency track keeps the spine. Dim2 3: B and C announce their own defectiveness in the option text ('write it up only if something breaks', 'to save time'), leaving A as the only distractor a practitioner would offer straight."
+    },
+    {
+      "id": "d1-q11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: unforeseen impact is a real cause of stalled response; FOR B: unauthorised change is the usual suspect; FOR D: cutover timing is a genuine change activity. All are pre-change steps; the July symptom is post-change documentation drift. Good stage discrimination."
+    },
+    {
+      "id": "d1-q12",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: CRLs are the canonical revocation mechanism and browsers do consume them; FOR C: escrow is key machinery; FOR D: wildcards reduce certificate count. A is precisely what the stem excludes. Dim2 4: C and D are out-of-function PKI vocabulary. Keyed option is 1.31x the longest distractor — inside tolerance, noted in the report."
+    },
+    {
+      "id": "d1-q13",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: longer keys are the reflex 'stronger encryption' answer; FOR B: TLS is genuinely missing from the description; FOR C: partition encryption is the near-neighbour a DBA would propose. All lose because a mounted volume decrypts transparently for the querying DBA. Genuine good-vs-best on encryption level."
+    },
+    {
+      "id": "d1-q14",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: TPMs are tamper-resistant key hardware; FOR B: enclaves are the modern isolation story; FOR D: a KMS is exactly 'manage the organisation's keys'. The stem's 'one appliance serving four plants' defeats the platform-bound and software options. D is a strong tempter."
+    },
+    {
+      "id": "d1-q15",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: encrypting the table is a real design some vendors ship; FOR C: replacing the broken-looking algorithm is the instinctive fix; FOR D: iteration sounds like stretching. Only salt + stretching addresses both precomputation and speed. Dim2 4: D is thin."
+    },
+    {
+      "id": "d2-q01",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: hospitals are the archetypal organised-crime target; FOR C: research on rare disease invites ideological framing; FOR D: a year of quiet access reads as internal. Custom tooling plus no monetisation plus research staging is the nation-state fingerprint. Distractors are all real analyst calls."
+    },
+    {
+      "id": "d2-q02",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: pricing models are exactly what a competitor would want; FOR B: a trading desk is a money target; FOR C: destruction without demand reads as chaos. The taunt referencing the dismissal is the discriminator. Motivation-vs-base-rate is well built."
+    },
+    {
+      "id": "d2-q03",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: most frameworks would call a department exposing crew lists an unintentional insider, and this is genuinely arguable; FOR C: the cloud service does process the data; FOR D: external attribution is the reflex. Key wins because the source of exposure is the unsanctioned adoption, not intent or a contracted party. Dim1 4: B's case is respectable and defeated only by the intent criterion the rationale states."
+    },
+    {
+      "id": "d2-q04",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR A: phishing is the umbrella term and many would answer it; FOR B: card-freeze cons are usually voice; FOR D: the lookalike portal is brand impersonation. Channel naming settles it. Dim5 3: 'text messages' hands the channel over; dim2 4 because D is the only non-channel option."
+    },
+    {
+      "id": "d2-q05",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: it is an email lure; FOR C: urgency plus a berth story is a fabricated pretext; FOR D: the signature impersonates the company. The mailbox being the CFO's own is what makes it BEC rather than a lookalike. Three genuinely competing impersonation levels — good-vs-best."
+    },
+    {
+      "id": "d2-q06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: sector-specific domains are typosquatted constantly; FOR B: identical malware across weeks reads as a campaign; FOR C: a trade forum is arguably part of the sector's supply chain. Victims came by habit to a genuine address — watering hole. C is a strong tempter and the rationale separates it correctly."
+    },
+    {
+      "id": "d2-q07",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR A: a file executed, so file-based is the reflex; FOR C: the payroll label is a social lure; FOR D: autorun is client software. The taxonomy classifies by arrival path. Dim5 3: 'plugs in a USB stick' hands the vector over."
+    },
+    {
+      "id": "d2-q08",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: an exploitable press-control workstation sounds like a zero-day; FOR B: Telnet plus Bluetooth invites an interception story; FOR D: the vendor did ship it this way. 'No compromise has occurred' plus documented defaults is as-shipped attack surface. Dim2 4: B is eliminable from the stem alone."
+    },
+    {
+      "id": "d2-q09",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: pick-and-place machines are long-lived and often unsupported; FOR B: the maintenance portal is a site the plant visits; FOR C: the compromise surfaced inside the plant. The traced path is the vendor's build system through a signed channel. Strong sibling set including the watering-hole near miss."
+    },
+    {
+      "id": "d2-q10",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: crashes under crafted input are often timing bugs; FOR C: attacker instructions executing is memory injection to many; FOR D: an account-name field suggests a query. Length past a boundary is the overflow signature. Memory-injection is a genuinely fine near neighbour."
+    },
+    {
+      "id": "d2-q11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: comment storage implies a database write; FOR C: session tokens are the CSRF prize; FOR D: drawings are files on a server. Execution in the reviewer's browser is the dividing line. All three are real practitioner answers."
+    },
+    {
+      "id": "d2-q12",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR A: an unpatched scanner OS is often called a misconfiguration; FOR B: scanners are firmware-shaped devices. Support status is the class discriminator. Dim2 3: option D self-contradicts the stem by asserting the vendor still supports it, so it is eliminable without engaging the concept. Dim5 3: the stem recites the end-of-life definition."
+    },
+    {
+      "id": "d2-q13",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: cross-tenant data recovery is what escape looks like from the tenant's chair — a strong tempter; FOR C: memory analysis is an active tool. 'No guest executed code outside its VM' forces resource reuse. Dim2 3: option D is phrased as an assertion ('must exist') rather than a candidate answer and marks itself. Dim5 5: the escape/reuse discrimination is genuinely fine."
+    },
+    {
+      "id": "d2-q14",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: removing restrictions is a setting change to many; FOR C: side loading is what the reps actually wanted to do. Jailbreaking is the act that enabled it. Dim2 3: option C's 'alone' rider marks it as the partial answer, and option A (cryptographic) is out of family — only B pulls full weight."
+    },
+    {
+      "id": "d2-q15",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 4
+      },
+      "case": "FOR A: no patch exists, which resembles abandonment; FOR B: platform teams get blamed by default; FOR D: unapplied patches are the commoner reality. Dim2 4: D inverts the defining property and is eliminable. Dim5 3: the stem states the zero-day definition almost term by term."
+    },
+    {
+      "id": "d2-q16",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: virus is the everyday word for this; FOR C: mass infection usually implies something users ran; FOR D: districts are ransomware targets. 'No user action of any kind' is the worm discriminator, and virus is a genuinely close sibling."
+    },
+    {
+      "id": "d2-q17",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: forced entry is the physical reflex; FOR C: replay is the right family, wrong medium — a strong tempter; FOR D: environmental attacks do defeat readers. The badge never left her possession plus identifier-only acceptance is cloning. Dim2 4: D is thin here."
+    },
+    {
+      "id": "d2-q18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: it is a distributed flood; FOR B: the traffic is DNS; FOR C: third parties sit between attacker and victim. Forged source plus open resolvers plus size multiplication is reflection with amplification. B is the near miss the rationale separates well."
+    },
+    {
+      "id": "d2-q19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: quotations are resent, which sounds like replay; FOR C: rogue APs commonly force weaker crypto; FOR D: a fake venue network usually spoofs DNS. Live alteration from a relaying position is on-path by definition. Clean."
+    },
+    {
+      "id": "d2-q20",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: crafted parameters read as injection; FOR B: reaching server config is an escalation of what the attacker can see; FOR D: the requests are forged in the everyday sense. Parent-directory sequences in a file parameter is traversal. Injection is the strongest tempter."
+    },
+    {
+      "id": "d2-q21",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: guessing passwords is brute force in ordinary speech; FOR B: 40,000 accounts implies a stolen list; FOR C: birthday is the cryptographic guessing option. Few passwords across many accounts with no lockouts is spraying. The brute-force sibling is properly close."
+    },
+    {
+      "id": "d2-q22",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: VLAN segmentation is the textbook containment control; FOR C: blocking the C2 address is the fastest keystroke; FOR D: rebuilds are how this ends. All are real first moves; 'actively beaconing and moving laterally right now' forces the severe end of the same judgment. Good-vs-best on containment severity."
+    },
+    {
+      "id": "d2-q23",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: endpoint protection is what most shops buy after ransomware; FOR B: access audits are the compliance answer; FOR D: password strength reduces compromise probability. The question asks about reach after compromise, which only least privilege bounds. Well-pitched."
+    },
+    {
+      "id": "d2-q24",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the people installing utilities are the proximate cause; FOR C: deny lists are real malware controls; FOR D: scanning is the incumbent control. 'Only the approved applications may ever run' is an allow-list default. Deny list is the intended inversion and works."
+    },
+    {
+      "id": "d2-q25",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR alternatives: s2's encrypted files invite a 'logging' or account reading, s5's larger export invites 'resource'. Each scenario carries one family-defining fact (concurrent session, disk exhaustion, missing entries, lockout, out-of-cycle timing) and the option set is reused non-identically. Mapping is unambiguous once the families are known."
+    },
+    {
+      "id": "d2-q26",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: log review is a genuine post-deployment control; FOR D: network placement is what many teams do with untrusted devices and is a real misconception. Both fail 'before the scanners join the network' and 'hardening actions'. Dim2 4: only two distractors for a select-three, and A is weak."
+    },
+    {
+      "id": "d2-q27",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: freezing change on a retiring server is common practice; FOR C: backups during migration are prudent; FOR E: keeping a rollback host racked is what most teams do. Each is a real decision defeated by 'still production' and 'stops being attack surface'. E is an excellent half-done-decommissioning tempter."
+    },
+    {
+      "id": "d3-q01",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the SLA is the contract everyone reads; FOR B: SaaS does move most layers to the provider; FOR C: the service model does imply a rough split. The matrix is the artefact that states it. Dim2 4: B is a slogan, though a widely held one."
+    },
+    {
+      "id": "d3-q02",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the provider genuinely takes on layers; FOR C: decentralisation is a real resilience argument; FOR D: air-gapped grid control is safer in practice. Hybrid adds a second estate plus the interconnect. Dim2 4: C is off-axis."
+    },
+    {
+      "id": "d3-q03",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: serverless removes hosts to configure; FOR C: microservices make changes smaller and independently deployable; FOR D: a wiki is what most operations teams actually keep. Reviewable-before and reproducible-after is IaC. Dim2 4: D is the weak option."
+    },
+    {
+      "id": "d3-q04",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: VLANs are the standard enclave answer; FOR B: an NGFW is the stronger boundary and would satisfy most regulators; FOR D: microsegmentation is the most modern control. All are configuration, and the condition is phrased to exclude configuration. Genuine good-vs-best."
+    },
+    {
+      "id": "d3-q05",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: SDN fabrics are often sold with encryption — a real misconception; FOR C: the controller is central so it feels like a relay; FOR D: switches do keep local forwarding tables. Controller decides, devices forward. Dim2 4: A is a false-mechanism claim."
+    },
+    {
+      "id": "d3-q06",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: container images are frequently stale in practice; FOR B: the stem invites confusion about what shares what; FOR C: scanning gaps are a real container complaint. The shared kernel is the architectural answer. Dim2 4: C is factually wrong and eliminable."
+    },
+    {
+      "id": "d3-q07",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: patch-first is the correct default almost everywhere; FOR C: replacing unpatchable equipment is the strategic answer; FOR D: waiting for a certified update is what many plants do. The months-long recertification is what moves this to compensating controls. Dim2 4: C is economically absurd at this timescale."
+    },
+    {
+      "id": "d3-q08",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the internet edge is where most inspection appliances go; FOR B: endpoint coverage is genuinely broader. Both lose to 'traffic crossing between two internal zones'. Dim2 3: option D ('wherever is convenient — a device this capable protects regardless of position') is self-marking and no practitioner would select it."
+    },
+    {
+      "id": "d3-q09",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR C: sealing a containment suite on failure is a genuinely defensible biosafety instinct and is the strongest tempter; FOR A/B: each is a coherent single principle. Life safety on the door and no-unfiltered-traffic on the firewall splits them. Dim2 4: A and B are dogma options, real but shallow."
+    },
+    {
+      "id": "d3-q10",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: an IDS on a tap is the commonest deployment; FOR D: alerting with follow-up is real operational practice. 'Alerting after the fact is not acceptable' forces inline. Dim2 4: the jump server is out of family."
+    },
+    {
+      "id": "d3-q11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: disabling the jacks certainly stops it; FOR C: posture checking is a real NAC deployment and the closest miss; FOR D: guest VLANs are what most firms actually do. 'Before its switch port carries any traffic' is the discriminator. Three genuinely deployed answers."
+    },
+    {
+      "id": "d3-q12",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: an L4 firewall does front the site; FOR B: UTM bundles a WAF in many products; FOR D: NGFW is application-aware. 'Reads and filters HTTP payloads for this one site' is the WAF. NGFW/UTM are strong siblings."
+    },
+    {
+      "id": "d3-q13",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: SD-WAN is the modern connectivity answer; FOR C: IPSec is the stronger tunnel protocol and home routers do support it. Individual staff on household links is remote access. Dim2 4: D expands exposure and is eliminable."
+    },
+    {
+      "id": "d3-q14",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the label is what handling procedures key off day to day and is a strong tempter; FOR B: readability changes protection options. Regulated type carries obligations the label cannot relabel away — and both datasets share the label, which is the item's whole point. Dim2 4: C is thin."
+    },
+    {
+      "id": "d3-q15",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the arrays hold the same records; FOR B: analytics reads over the network. Both are covered states, which is the intended trap and works. Dim2 3: option D invents a fourth state and is eliminable by anyone who knows the model has three."
+    },
+    {
+      "id": "d3-q16",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the warning is about a location fact; FOR C: restricting access by geography is the adjacent control. Whose law binds the provider is sovereignty. Dim2 3: option D is a non-parallel 'notify passengers' remedy rather than a concept name, and is eliminable without engaging the distinction."
+    },
+    {
+      "id": "d3-q17",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: salted hashing is the strongest one-way protection; FOR B: masking is what most teams use for dev data and is the closest miss; FOR C: steganography does conceal. 'Recoverable only through a controlled lookup' selects tokenization. Masking is a genuinely strong competitor."
+    },
+    {
+      "id": "d3-q18",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: stronger encryption is the reflex export-control answer; FOR C: watermark plus logging is what many defence primes deploy. 'Regardless of who holds valid credentials' is a reach question. Dim2 4: D is off-axis."
+    },
+    {
+      "id": "d3-q19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: more nodes is the natural scaling answer; FOR C: a warm site is the continuity answer; FOR D: backups are the recovery answer. Each solves a different property; surviving a node failure mid-session is clustering. Well-separated near neighbours."
+    },
+    {
+      "id": "d3-q20",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: platform diversity directly addresses the outage cause and is genuinely defensible as the leading fix; FOR B: headcount addresses the two-person bottleneck; FOR D: COOP is the named continuity discipline. Key wins on 'the full gap' — people plus technology plus infrastructure. Dim1 4: A's case is strong and defeated only by the word 'full'."
+    },
+    {
+      "id": "d3-q21",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a real failover is the only convincing proof; FOR B: simulation is more realistic than talk; FOR C: parallel processing is continuous assurance. 'Without touching any production system' at a first validation is the tabletop rung. Ladder is properly ordered."
+    },
+    {
+      "id": "d3-q22",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: snapshots are the fastest ransomware recovery story and are the best tempter; FOR B: UPS is literally the power control; FOR D: mirroring survives array failure. Snapshots and mirrors sit inside the corrupted blast radius, and UPS covers minutes not hours. Two-requirement mapping with two excellent near misses."
+    },
+    {
+      "id": "d4-q01",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: re-imaging is what most teams would actually do and is a strong tempter; FOR C: tighter settings is the security instinct; FOR D: broader targets is the maturity instinct. The build is correct and deployed — the failed verb is maintain. Excellent lifecycle-stage pitch."
+    },
+    {
+      "id": "d4-q02",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 4
+      },
+      "case": "FOR C: BYOD plus a managed container is the standard resolution to 'we cannot control personal hardware' and preserves the one-phone promise — this examiner chose it blind, with high confidence; FOR B: a model list looks like a compromise; FOR D: signed consent is what many firms rely on. Key wins because the stated requirement is full-device encryption and remote wipe, which a container does not deliver and which legal says cannot be imposed on hardware the firm does not own. Dim1 4: C's case is strong and loses only on the stated scope of the requirement. Dim6 4: real handsets ship encrypted regardless of ownership, so the encryption half of the requirement is slightly stylised. Confident blind miss — queued for human adjudication."
+    },
+    {
+      "id": "d4-q03",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: rotation is the incumbent hygiene answer; FOR B: separate SSIDs is real segmentation practice; FOR D: 'strongest protocol' is the reflex. Attribution is an authentication-layer requirement answered by RADIUS enterprise mode. Dim2 4: A is weak once attribution is read."
+    },
+    {
+      "id": "d4-q04",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: code signing is a genuine supply-chain control for third-party code; FOR D: static analysis catches parser bugs; FOR E: secure cookies are real application hardening. Each is a legitimate control aimed at a problem the stem did not state. Build-time versus run-time split is cleanly tested."
+    },
+    {
+      "id": "d4-q05",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: enumeration genuinely finds the missing laptops and is the strongest tempter; FOR B: notification is the lightweight process fix; FOR C: encryption addresses the client tax files. Only routing purchases through procurement prevents the next batch. Prevention-versus-detection well pitched."
+    },
+    {
+      "id": "d4-q06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: overwriting is the correct method and reads like the answer; FOR C: shredding is the strongest disposal; FOR D: the register is the asset record the auditor would ask for. The auditor asks what happened to each drive and how the council knows — that is certification. Three genuinely competing artefacts."
+    },
+    {
+      "id": "d4-q07",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: advisories do overstate applicability; FOR C: scanner placement is a real cause of blind spots and is the strongest miss; FOR D: the flaw is in vendor code. Unauthenticated scanning inferring versions from outside is the false-negative signature. Excellent pitch."
+    },
+    {
+      "id": "d4-q08",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a paid feed is the 'serious' answer; FOR B: dark web monitoring is peer-verified in a sense; FOR D: OSINT fits a one-analyst budget. Sector-specific plus operator-verified plus affordable is the ISAC. All three constraints do work."
+    },
+    {
+      "id": "d4-q09",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a quarterly pen test finds the same flaws; FOR B: a bounty is the same open invitation and is the strongest tempter; FOR C: a security contact in the terms is the minimal version. 'No payment, no contractual relationship, safe harbor' is responsible disclosure. B is defeated only by the explicit no-payment condition."
+    },
+    {
+      "id": "d4-q10",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: 9.8 first is defensible policy in many shops and is the intended dogma trap; FOR C: re-scoring sounds rigorous. Environmental context is what converts a shared score into a local queue. Dim2 4: D (older CVE first) is thin."
+    },
+    {
+      "id": "d4-q11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: patching is the primary remediation; FOR C: insurance is a named treatment; FOR D: acceptance is legitimate when recorded. Medical certification blocks A, insurance transfers without reducing, and D is acceptance without an owner. Segmentation plus a recorded exception is the pairing."
+    },
+    {
+      "id": "d4-q12",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: SNMP is the classic network telemetry; FOR B: DLP watches data movement; FOR D: syslog is the richest per-host record. Only flow records give peer, time and volume with nothing installed on an RTOS controller. Three-part requirement does the work."
+    },
+    {
+      "id": "d4-q13",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: quarantine is the safe response; FOR B: more analysts is the management answer; FOR C: disabling the signature is the fastest silence and is the strongest miss. Tuning removes the known-good behaviour without removing the detection. Alert-fatigue judgment well built."
+    },
+    {
+      "id": "d4-q14",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: an agent sees the most and is the usual answer; FOR C: manual checklists are what many retailers do; FOR D: reusing the server benchmark is a real shortcut. Locked appliances plus dock-time connectivity forces agentless. B is defeated by an explicit constraint."
+    },
+    {
+      "id": "d4-q15",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: lockout thresholds are the standard authentication control; FOR B: per-system review is the incumbent process; FOR D: retention preserves evidence. One failure per account per system is invisible without cross-source correlation. Distractors reproduce the blindness in three different ways."
+    },
+    {
+      "id": "d4-q16",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the transposed rule reads plausibly to anyone skimming; FOR C: 443 is where web traffic is; FOR D: permit-and-log is real triage practice. Direction plus scope is the whole answer. This is the PBQ-approximation item and the transposition trap is the right one."
+    },
+    {
+      "id": "d4-q17",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: IPS is the general-purpose detection control; FOR B: FIM watches the share in question; FOR C: DLP is the exfiltration control. The stem removes signatures, modification and the mail path in turn, leaving behavioural profiling. Elimination is by concept, not by surface."
+    },
+    {
+      "id": "d4-q18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: SSH plus a perimeter block is what most teams would call done, and it is the strongest tempter — this examiner rated only medium confidence here; FOR C: tunnelling telnet is a real legacy pattern; FOR D: port obscurity plus source restriction is a common compromise. Only the OS-level enforcement stops an engineer restarting the service. Two-requirement item, genuinely good-vs-best."
+    },
+    {
+      "id": "d4-q19",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: tightening SPF is the natural next step and is the strongest miss; FOR B: a longer DKIM key sounds like strengthening. Neither tells a receiver what to do on failure, which is DMARC's job. Dim2 4: D (staff banner) addresses inbound mail and is eliminable from the direction of the problem."
+    },
+    {
+      "id": "d4-q20",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR D: a categorising proxy genuinely blocks malicious sites and overlaps the third requirement — the closest thing to a fourth correct option in the bank; FOR B: EDR is the broadest endpoint control. Key wins because the requirement says 'resolving', which is name resolution, and the rationale states the overlap explicitly. Dim1 4: the discrimination rests on one word in the stem, which is fair but fine."
+    },
+    {
+      "id": "d4-q21",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: confirming the start date is the obvious agency control; FOR C: expiry closes the account eventually; FOR D: read-only limits the damage. The account was issued to a person who does not exist, so proofing is the missing step — and D is neatly defeated because reading is exactly what was abused."
+    },
+    {
+      "id": "d4-q22",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: more complexity is the incumbent lever; FOR B: shorter intervals is the compliance instinct; FOR C: length genuinely beats complexity and is the strongest miss. Only removing the human from credential generation stops derivation. Every distractor is a lever a real policy uses."
+    },
+    {
+      "id": "d4-q23",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: SSO is the everyday word for what the booksellers want; FOR C: directory sync is how many acquisitions are actually integrated. Both are excluded by explicit conditions. Dim2 4: D (one shared account) is weak in an exam context though common in practice."
+    },
+    {
+      "id": "d4-q24",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: department-based roles is the pragmatic answer most shops build; FOR B: authors granting access is how shared drives really work; FOR D: MAC is the strongest-sounding model. Three attributes plus time-of-day plus no labels plus no author discretion is ABAC. Role-based is a genuinely close miss."
+    },
+    {
+      "id": "d4-q25",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: a PIN is a real second prompt; FOR B: SMS OTP is the commonest second factor and would be correct without the coverage constraint; FOR C: biometrics are the strongest-sounding factor. Category plus offline operation selects the security key. Two constraints, three good tempters."
+    },
+    {
+      "id": "d4-q26",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: rotation is the incumbent hygiene answer; FOR D: named permanent accounts genuinely deliver attribution and is the strongest miss; FOR E: approval creates a record. Only vaulted checkout plus ephemeral credentials meets both attribution and expiry. D is defeated by the second requirement only."
+    },
+    {
+      "id": "d4-q27",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a checklist step is the cheapest fix; FOR C: a shared seasonal account is what small operations do; FOR D: dormancy review is the standard audit control. 'Without anyone having to remember to act' rules out every human-triggered option. Clean automation pitch."
+    },
+    {
+      "id": "d4-q28",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: the saving is real and is what leadership is asking about; FOR D: baseline enforcement is a genuine benefit. Both cite benefits as the deciding criterion, which is the trap. Dim2 4: C (stay manual for familiarity) is the weakest of the three."
+    },
+    {
+      "id": "d4-q29",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: restoring service is what the business wants and is the strongest stage-slip; FOR B: documenting the mechanism is valuable now; FOR D: precautionary disconnection is a real incident instinct. Containment and analysis are done, so eradication is next. Ordered-process item with a good forward and backward slip."
+    },
+    {
+      "id": "d4-q30",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a surprise simulation is the most convincing test; FOR B: awareness training is cheap and recurring; FOR C: an external read-through is a real assurance activity. Volunteers, one evening, no production impact, decision points — tabletop. Constraints all load-bearing."
+    },
+    {
+      "id": "d4-q31",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: threat hunting is the sophisticated answer and is the strongest miss; FOR C: vendor media removes the tainted-backup hypothesis; FOR D: scanning is the compliance answer. Recurrence on a rebuilt host asks how it is reached, which is root cause. Single-budget constraint makes it a genuine choice."
+    },
+    {
+      "id": "d4-q32",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: powering down and locking up feels like preservation; FOR C: giving the fraud team the data is the business need; FOR D: a legal hold is a correct instruction and is the strongest miss. Court usability turns on documented handling. Volatility ordering neatly defeats B."
+    },
+    {
+      "id": "d4-q33",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR alternatives: s1 invites endpoint logs (the server did the sending), s3 invites endpoint or OS logs, s4 invites OS security logs. Each scenario names the layer that can testify — permitted-or-not at a boundary, local group change, application accept/reject, process writing a file — and the firewall option is reused twice with a different subject. Unambiguous once the layers are held apart."
+    },
+    {
+      "id": "d4-q34",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a capture would show the relays if one existed; FOR B: the gateway report covers the right day; FOR D: the dashboard covers the period. Retention has removed the logs, and the relay history travels inside the message. Good 'not every source is a log' pitch."
+    },
+    {
+      "id": "d5-q01",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a lock document sounds like a standard; FOR C: many organisations treat guidelines as mandatory, which is the intended inversion; FOR D: a playbook is the sequenced-response sibling. Ordered mandatory steps with no discretion is a procedure. Dim2 4: C's rider makes it self-contradicting for a candidate who knows the definition."
+    },
+    {
+      "id": "d5-q02",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the trade body actually audits them, which is real commercial pressure; FOR B: the policy is theirs to set. Law sets the floor and neither can relax it. Dim2 4: D (wait for the regulator to name a deadline) is eliminable on its face."
+    },
+    {
+      "id": "d5-q03",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: the policy genuinely does not cover the app or the academy, and rewriting first is a defensible sequencing choice; FOR C: adopting the league's set is fast; FOR D: board approval is real oversight. Key wins because with no forum the rewrite ages immediately. Dim1 4: B's case is respectable and turns on 'first'."
+    },
+    {
+      "id": "d5-q04",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the bureau decides how scanning is done operationally; FOR B: it holds the images while working; FOR C: outsourcing feels like transferring accountability. Deciding purpose and means versus acting on instruction is the discriminator, and all three roles are genuinely in play in the scenario."
+    },
+    {
+      "id": "d5-q05",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: a longer workshop is the incremental answer; FOR B: ad hoc is responsive to real concerns; FOR D: continuous is the most thorough and is the strongest miss. Recurring plus change-triggered fits how the organisation actually changes. Cadence ladder well used."
+    },
+    {
+      "id": "d5-q06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the insured value is a real, defensible number and is the strongest tempter; FOR C: recording assumptions is standard practice; FOR D: averaging estimates is a real technique. All three preserve a computed-looking figure built on a felt probability. Honesty-regime judgment well pitched."
+    },
+    {
+      "id": "d5-q07",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: SLE is the headline loss figure; FOR C: comparing frequency to an SLA is a real procurement move; FOR D: revenue framing is how boards talk. ALE against annual cost is the only like-for-like comparison. Arithmetic is consistent (40k x 2 = 80k)."
+    },
+    {
+      "id": "d5-q08",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: richer incident rows look like better risk data; FOR B: co-locating them in the ticketing system is a real consolidation; FOR C: quarterly reporting is what auditors often ask for. All keep the artefact backward-looking. Forward-looking with owners, indicators and thresholds is the register."
+    },
+    {
+      "id": "d5-q09",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the transposition reads naturally to anyone who has not held the terms apart; FOR B: the downtime limit could be recorded as an exception; FOR D: a shift limit could be a threshold to watch. Appetite is the posture, tolerance is the limit. Transposition is the right trap."
+    },
+    {
+      "id": "d5-q10",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: a change-log note does record the decision; FOR C: insurance is a named treatment and is a strong tempter; FOR D: taking it off the network is the safe answer. Only a recorded exception with owner, expiry and accepted consequence makes acceptance managed rather than a shrug."
+    },
+    {
+      "id": "d5-q11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR B: the transposition is the classic error; FOR C: MTTR/MTBF are the other two recovery metrics; FOR D: a vendor SLA is what such numbers often become. Tolerable downtime versus tolerable data loss maps cleanly. Both numbers do work."
+    },
+    {
+      "id": "d5-q12",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: an internal audit summary is real evidence of a working process and is the strongest miss on the independence requirement; FOR B: supply chain analysis is a named instrument; FOR D: a questionnaire is the commonest vendor control. Enforceable self-examination plus outside-produced evidence selects the pair. Excellent instrument discrimination."
+    },
+    {
+      "id": "d5-q13",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: ongoing monitoring would catch problems later; FOR B: a right-to-audit clause is the standard contract control; FOR C: financial due diligence is the named selection check and the stem says it was thorough. The failure is the panel's independence, not the vendor's fitness. Stage-plus-object discrimination."
+    },
+    {
+      "id": "d5-q14",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR alternatives: s5 invites SOW because a retainer scopes work, s1 invites SOW because it names a deliverable, s3 invites SLA because drills are a commitment. The discriminator is what each instrument commits — measurable levels with consequences, confidentiality before disclosure, non-binding intent, deliverables and acceptance. s5 reusing SLA is the item's hardest and best step."
+    },
+    {
+      "id": "d5-q15",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: the right-to-audit clause is the contractual permission; FOR B: due diligence covers the firm; FOR D: the IR plan does name who is called. Scope, hours, exclusions and stop conditions for this engagement are the rules of engagement. Three real documents, one right altitude."
+    },
+    {
+      "id": "d5-q16",
+      "scores": {
+        "1": 3,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: the finance director budgeted only the fine, so the remediation the finding requires is genuinely a cost the plan missed — on the stem's plain wording ('most likely to have missed') A is a strong reading and this examiner hesitated here; FOR C: a premium rise is a real uncovered cost; FOR D: a repeat inspection is near-certain. Key wins only on the concept's taxonomy — the blueprint's consequences are fines, sanctions, reputational damage, loss of license, contractual impacts, and remediation cost is an internal project expense rather than an imposed consequence. Dim1 3: A's best case is close and is defeated by a distinction the stem does not signpost; 'most likely' also cuts toward the commoner consequences rather than the severest. Gate 2 read: either accept as-is or tighten the stem to ask which consequence the plan is most exposed to."
+    },
+    {
+      "id": "d5-q17",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: monthly attestation is the obvious frequency fix; FOR C: independent re-performance genuinely raises reliability and is the strongest miss; FOR D: board reporting adds due care language. All three keep the evidence point-in-time or assertion-based. Continuous automated evidence is the concept."
+    },
+    {
+      "id": "d5-q18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: hosting location is the commonest jurisdiction answer; FOR B: incorporation is the legal-entity answer; FOR C: applying the strictest standard globally is genuinely good practice and is the strongest miss. The law described follows its own residents, so it governs. Three defensible-sounding positions."
+    },
+    {
+      "id": "d5-q19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: a retention schedule is the paired capability and is the strongest miss; FOR B: a response deadline is the compliance answer; FOR D: defence contracts do carry genuine retention obligations. You cannot erase what you cannot find — the inventory is prior. Strong near neighbours throughout."
+    },
+    {
+      "id": "d5-q20",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: a signed self-assessment is formal evidence; FOR C: internal audit is deliberately separated from operations and is the strongest miss; FOR D: a directors' attestation carries personal accountability. 'No reporting line into the group' excludes all three. Independence ladder cleanly tested."
+    },
+    {
+      "id": "d5-q21",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR B: a known-environment test finds more flaws and is what most buyers want; FOR C: an integrated exercise trains both sides; FOR D: physical testing is a named shape. Two requirements — outsider start point and unannounced — select the design. Both halves load-bearing."
+    },
+    {
+      "id": "d5-q22",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: throttled active scanning is the pragmatic compromise most assessors would propose and is an excellent miss; FOR B: overnight scanning respects business hours; FOR C: asking the supplier avoids touch entirely. A statutory consultation runs around the clock and the council wants its own view. Passive-versus-active trade cleanly forced."
+    },
+    {
+      "id": "d5-q23",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "FOR A: clicking does put credentials one step away; FOR B: forwarding genuinely spreads the lure; FOR D: all three did interact. Only repeat submission after removing the reporting route implies intent, which is what 'risky' names in the taxonomy. Three-diagnosis discrimination is the point and it holds."
+    },
+    {
+      "id": "d5-q24",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "FOR A: password management is a standard programme topic; FOR D: removable media is the near neighbour of the cloud-drive exfiltration and is the intended miss. Each named exposure maps to exactly one topic, and the two distractors are both real curriculum items that no stated exposure supports."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$comment": "S5 Codex advisory cross-solve (methodology/05-eval-rubric.md #codex), sy0-701 round 1, 2026-08-18. Attempted once and skipped: the codex CLI is not on PATH, and the binary bundled with the VS Code ChatGPT extension reports 'Not logged in' and fails 401 Unauthorized on `codex exec`. Establishing auth needs an interactive `codex login` by Oliver; the examiner does not sign in or sign up (free-first rule, CLAUDE.md). Per #codex, a missing advisory instrument is recorded and not blocking: the Gate 2 sample for this exam carries NO cross-model signal, and derivation/eval-report.md and the Gate 2 checklist say so.",
+  "status": "advisory_skipped",
+  "round": 1,
+  "attempted_at": "2026-08-18",
+  "attempts": [
+    {
+      "binary": "~/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex",
+      "version": "codex-cli 0.148.0-alpha.9",
+      "login_status": "Not logged in",
+      "exec_result": "401 Unauthorized: Missing bearer or basic authentication in header (wss and https transports, 5 reconnect attempts)"
+    }
+  ],
+  "path_checks": [
+    "`which codex` -> not found",
+    "bundled binaries present under ~/.vscode/extensions/openai.chatgpt-* (4 versions); newest and oldest both unauthenticated"
+  ],
+  "unblock": "Oliver runs `codex login` once in an interactive terminal; S5 can then be re-run for the cross-model matrix without re-authoring anything.",
+  "items": []
+}

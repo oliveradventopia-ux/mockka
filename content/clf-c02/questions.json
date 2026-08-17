@@ -1,4 +1,552 @@
 {
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "1.01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "theme": "C1",
+      "vertical": "building materials supplier",
+      "keywords": [
+        "value proposition",
+        "on-demand"
+      ],
+      "type": "single_choice",
+      "question": "The finance director of a building materials supplier is reviewing an AWS proposal just after the company negotiated a bulk discount on replacement servers for its own data center. She asks what AWS actually means by the value proposition of the AWS Cloud. Which statement captures it?",
+      "options": {
+        "A": "Computing spend becomes a fixed annual fee that stays flat no matter how much capacity the company consumes",
+        "B": "Up-front purchases of owned capacity are replaced with on-demand resources that are started and stopped as demand requires",
+        "C": "AWS takes over responsibility for operating and securing everything the company runs, including its applications and data",
+        "D": "The strongest argument is that most large suppliers in the building trade have already moved their systems to the cloud"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E02",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "The value proposition of the AWS Cloud is trading capital-heavy, slow-to-change owned infrastructure for on-demand capacity: the company provisions resources when demand appears and releases them when it fades, instead of buying hardware years ahead of need. The recent server discount does not change that structural argument.",
+        "distractors": {
+          "A": "This inverts the pricing model: AWS charges are usage-driven and variable, not a flat annual fee independent of consumption.",
+          "C": "The shared responsibility model leaves the customer responsible for its applications, data, and configuration; AWS does not absorb everything the company runs.",
+          "D": "What other suppliers have done is an observation about the market, not the value proposition; the argument rests on the cost-structure change, not on imitation."
+        }
+      }
+    },
+    {
+      "id": "1.02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "theme": "C1",
+      "vertical": "adventure tour operator",
+      "keywords": [
+        "global reach",
+        "speed of deployment",
+        "global infrastructure"
+      ],
+      "type": "single_choice",
+      "question": "An adventure tour operator based in Auckland wants to start selling guided trips to customers in Chile, Norway, and Japan next quarter, with the booking system responding quickly in each market. The operations lead assumes this requires leasing server space in each country first. Which benefit of the AWS global infrastructure answers this concern?",
+      "options": {
+        "A": "Elasticity, which adjusts the capacity of the booking system up and down as seasonal demand changes",
+        "B": "AWS Direct Connect, which provides a dedicated private network link from the Auckland office into AWS",
+        "C": "A phased plan that delays each market launch until a local hosting contract has been signed in that country",
+        "D": "Global reach with speed of deployment: infrastructure launches in AWS Regions near each market as a configuration step"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E01",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Presence in many geographies is itself the benefit: the AWS global infrastructure turns entering a new market into a configuration step. Global reach and speed of deployment mean the operator can run the booking system close to customers in each country without leasing anything locally.",
+        "distractors": {
+          "A": "Elasticity matches provisioned capacity to demand in both directions; it says nothing about where in the world that capacity runs.",
+          "B": "AWS Direct Connect links a fixed site into AWS; it is a connectivity service for the office, not a mechanism for serving customers in new geographies.",
+          "C": "Waiting for local hosting contracts recreates the slow path the global infrastructure exists to remove; the capacity is already deployed in Regions near each market."
+        }
+      }
+    },
+    {
+      "id": "1.03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "theme": "C1",
+      "vertical": "campus shuttle service",
+      "keywords": [
+        "elasticity",
+        "high availability",
+        "agility"
+      ],
+      "type": "single_choice",
+      "question": "A campus shuttle service runs a bus-tracking backend that automatically grows to forty instances during term time and shrinks to four each summer, and riders have never noticed an outage. When the university asks which cloud benefit the automatic growing and shrinking demonstrates, what is the correct answer?",
+      "options": {
+        "A": "Elasticity: provisioned capacity follows demand in both directions, expanding for the term and contracting for the summer",
+        "B": "Agility: the path from an idea to a running system is shorter than it would be in a traditional data center",
+        "C": "AWS Auto Scaling: the service that adds instances to the fleet and removes them as load changes",
+        "D": "High availability: a fleet that resizes itself is automatically protected against outages of any kind"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Matching provisioned capacity to demand in both directions is the definition of elasticity. The question asks for the cloud benefit being demonstrated, and elasticity is exactly the property the growing and shrinking fleet exhibits.",
+        "distractors": {
+          "B": "Agility describes shortening the path from idea to running system; the scenario describes capacity following demand, not delivery speed.",
+          "C": "AWS Auto Scaling is the service that implements the behavior; the question asks for the property being demonstrated, and a service name is not a cloud benefit.",
+          "D": "High availability keeps a service reachable through failure. Resizing a fleet with demand does not by itself protect against outages, and the absence of outages is a separate property from capacity matching demand."
+        }
+      }
+    },
+    {
+      "id": "1.04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "theme": "C1",
+      "vertical": "chartered surveying practice",
+      "keywords": [
+        "AWS Well-Architected Framework",
+        "AWS Well-Architected Tool"
+      ],
+      "type": "single_choice",
+      "question": "A chartered surveying practice has been running its mapping workloads on AWS for two years and wants structured design guidance to review them against AWS best practices. Which instrument provides the review lens?",
+      "options": {
+        "A": "The AWS Cloud Adoption Framework (AWS CAF), which organizes an enterprise's journey into the cloud",
+        "B": "An AWS Support case asking a support engineer to review the architecture and report back with findings",
+        "C": "The AWS Well-Architected Framework, the set of pillars and design principles for workloads already on the cloud",
+        "D": "The AWS Well-Architected Tool, the console service that records and tracks workload reviews"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D15",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Design guidance for workloads already running on the cloud is the AWS Well-Architected Framework: its pillars and design principles are the review lens the practice applies to its own architecture.",
+        "distractors": {
+          "A": "The AWS Cloud Adoption Framework (AWS CAF) governs the journey into the cloud - organizing an adoption effort, not reviewing workloads that already run there.",
+          "B": "Handing the review to a support case defers the practice's own judgment; the published framework exists precisely so the team can apply the review lens itself.",
+          "D": "The AWS Well-Architected Tool runs and records a review; the guidance itself - the lens the review applies - comes from the framework, not the tool."
+        }
+      }
+    },
+    {
+      "id": "1.05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "theme": "C1",
+      "vertical": "city zoning department",
+      "keywords": [
+        "operational excellence",
+        "sustainability",
+        "pillars"
+      ],
+      "type": "multiple_response",
+      "question": "A city zoning department is preparing its permit-application workload for a first AWS Well-Architected review and wants the team to know the framework's actual pillars before the session. Which TWO of the following are pillars of the AWS Well-Architected Framework? (Select TWO.)",
+      "options": {
+        "A": "Fault tolerance",
+        "B": "Operational excellence",
+        "C": "Increased revenue",
+        "D": "Sustainability",
+        "E": "Elasticity"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "D11",
+        "E": "E04"
+      },
+      "rationale": {
+        "correct": "The six pillars are operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability. Of the options offered, operational excellence and sustainability are the two genuine members of the set.",
+        "distractors": {
+          "A": "Fault tolerance sounds like a plausible member, but it is not a pillar; designing for failure lives inside the reliability pillar.",
+          "C": "Increased revenue is one of the business outcomes AWS associates with the AWS Cloud Adoption Framework, not a Well-Architected pillar.",
+          "E": "Elasticity is a benefit of the AWS Cloud - capacity matching demand - not one of the six pillars of the framework."
+        }
+      }
+    },
+    {
+      "id": "1.06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "theme": "C1",
+      "vertical": "beverage bottling plant",
+      "keywords": [
+        "reliability",
+        "cost optimization",
+        "performance efficiency"
+      ],
+      "type": "single_choice",
+      "question": "During a Well-Architected review at a beverage bottling plant, the discussion turns to the line-telemetry workload: it must keep operating through the loss of an Availability Zone and recover quickly from any disruption. The plant manager keeps steering the conversation back to the size of the monthly bill. Under which pillar does the recover-from-disruption concern belong?",
+      "options": {
+        "A": "Cost optimization, the pillar the plant manager's concern about the monthly bill falls under",
+        "B": "Reliability, the pillar that owns a workload's ability to recover from disruption and continue operating",
+        "C": "Performance efficiency, the pillar about matching resources to the demands of the workload",
+        "D": "High availability, the pillar dedicated to keeping services reachable through component failure"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "E04",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Recovering from disruption is the reliability pillar's territory: identifying differences between the pillars means placing a stated design concern under the pillar that owns it, and continuing to operate through the loss of an Availability Zone is a reliability concern.",
+        "distractors": {
+          "A": "The bill is a real concern, but it is a different concern; assigning the recovery question to cost optimization answers the loudest voice in the room instead of the stated design issue.",
+          "C": "Performance efficiency owns matching resources to demand; the concern described is disruption recovery, which belongs to a different pillar.",
+          "D": "High availability is a cloud benefit, not a Well-Architected pillar; the pillar that owns recovery from disruption is reliability."
+        }
+      }
+    },
+    {
+      "id": "1.07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "theme": "C1",
+      "vertical": "agricultural seed distributor",
+      "keywords": [
+        "cloud adoption strategies"
+      ],
+      "type": "single_choice",
+      "question": "The board of an agricultural seed distributor has approved a move to AWS and assumes this means shutting the data center and moving every system in a single weekend cutover. What should the IT director explain about how organizations adopt the cloud?",
+      "options": {
+        "A": "Adoption follows a chosen strategy: the organization selects among cloud adoption strategies and sequences workloads deliberately",
+        "B": "A single undifferentiated cutover is correct, since running cloud and data-center systems side by side only adds confusion",
+        "C": "Adoption should be postponed until every system has been rewritten for the cloud, and then completed in one final step",
+        "D": "Every system must be moved unchanged first in all cases, because that is the universally recommended migration practice"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D02",
+        "C": "D15",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Cloud adoption is a planned strategy rather than a single lift event: an organization chooses among cloud adoption strategies and sequences workloads deliberately, which is exactly what the board's weekend-cutover picture misses.",
+        "distractors": {
+          "B": "Collapsing the move into one undifferentiated cutover removes the sequencing an adoption effort needs; mixed environments during a transition are normal, not a defect.",
+          "C": "Waiting for every system to be rewritten postpones value indefinitely and converts a manageable sequence into one large, riskier event.",
+          "D": "Moving everything unchanged is one available strategy, not a universal rule; applying it in all cases ignores the choice the organization is supposed to make."
+        }
+      }
+    },
+    {
+      "id": "1.08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "theme": "C6",
+      "vertical": "coffee equipment importer",
+      "keywords": [
+        "Migration Evaluator",
+        "business case"
+      ],
+      "type": "single_choice",
+      "question": "A coffee equipment importer wants a data-driven business case - an inventory of its current servers, their utilization, and a projected AWS run cost - before the board will approve a migration, and it has no budget yet for outside help. Which resource supplies this?",
+      "options": {
+        "A": "AWS Pricing Calculator, which estimates the monthly cost of a planned AWS architecture",
+        "B": "A paid engagement with a consulting firm to produce a bespoke migration assessment",
+        "C": "AWS Migration Hub, which tracks the progress of migrations that are already underway",
+        "D": "Migration Evaluator, which analyzes the current environment and builds a projected business case"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D01",
+        "C": "E04"
+      },
+      "rationale": {
+        "correct": "Among the resources that support the cloud migration journey, Migration Evaluator is the one that starts from the existing environment - inventory and utilization - and produces a data-driven business case, before any paid engagement is bought.",
+        "distractors": {
+          "A": "AWS Pricing Calculator estimates a design you specify going forward; it does not analyze the importer's current environment or produce a business case from it.",
+          "B": "A paid assessment buys machinery the problem does not yet warrant; a no-cost resource that produces exactly this business case already exists.",
+          "C": "AWS Migration Hub tracks migrations in progress; the importer needs the analysis that comes before a migration starts."
+        }
+      }
+    },
+    {
+      "id": "1.09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "theme": "C1",
+      "vertical": "actuarial consulting firm",
+      "keywords": [
+        "AWS Cloud Adoption Framework (AWS CAF)",
+        "Reduced business risk",
+        "Increased revenue"
+      ],
+      "type": "multiple_response",
+      "question": "An actuarial consulting firm at the start of its cloud journey adopts the AWS Cloud Adoption Framework (AWS CAF) to organize the effort, and the partners ask what business outcomes AWS associates with it. Which TWO are among them? (Select TWO.)",
+      "options": {
+        "A": "Reduced business risk",
+        "B": "Performance efficiency",
+        "C": "Increased revenue",
+        "D": "A flat monthly AWS bill that does not vary with usage",
+        "E": "Transfer of the customer's security responsibilities to AWS"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "E04",
+        "D": "E05",
+        "E": "E02"
+      },
+      "rationale": {
+        "correct": "The AWS Cloud Adoption Framework (AWS CAF) is the instrument that organizes an adoption effort, and four business outcomes are attached to it: reduced business risk; improved environmental, social, and governance (ESG) performance; increased revenue; and increased operational efficiency.",
+        "distractors": {
+          "B": "Performance efficiency is a pillar of the AWS Well-Architected Framework, a different instrument; it is not one of the AWS CAF business outcomes.",
+          "D": "AWS pricing remains usage-driven; a flat bill is not how cloud charges work and is not an outcome the framework promises.",
+          "E": "The shared responsibility model still applies after adoption; the customer keeps its side, and the AWS CAF does not transfer it."
+        }
+      }
+    },
+    {
+      "id": "1.10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "theme": "C1",
+      "vertical": "apartment listings portal",
+      "keywords": [
+        "database replication",
+        "cutover"
+      ],
+      "type": "single_choice",
+      "question": "An apartment listings portal must move its listings database to AWS while agents keep writing to it around the clock; the cutover window is minutes, not hours. The database administrator proposes keeping the on-premises database and a cloud copy synchronized until the moment of switchover. Which migration approach is this?",
+      "options": {
+        "A": "Deferring the database move until the rest of the estate has migrated and accepting a stale copy meanwhile",
+        "B": "A one-time bulk export restored into the cloud database during a scheduled overnight outage window",
+        "C": "Database replication, keeping the on-premises source and the cloud copy synchronized until the moment of cutover",
+        "D": "Rebuilding the listings data in a different database engine as part of the move to avoid carrying the old schema"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D15",
+        "B": "E04",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Keeping the source and the cloud copy synchronized until switchover is database replication - the classic approach for moving a data tier with minimal disruption. It fits a system that takes writes around the clock and a cutover window measured in minutes.",
+        "distractors": {
+          "A": "Deferral leaves the hardest move for later while its cost compounds; the scenario asks to identify the approach proposed, and postponement is not it.",
+          "B": "A bulk export needs an outage window and misses writes that land after the export; the stem rules out exactly that downtime.",
+          "D": "Changing the database engine mid-move adds a redesign the problem does not require; the task is moving the data tier with minimal disruption, not re-architecting it."
+        }
+      }
+    },
+    {
+      "id": "1.11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "theme": "C1",
+      "vertical": "cold-chain trucking fleet",
+      "keywords": [
+        "fixed costs",
+        "variable costs",
+        "cost savings of moving to the cloud"
+      ],
+      "type": "single_choice",
+      "question": "The CFO of a cold-chain trucking fleet budgets a large hardware purchase every few years plus fixed data-center contracts, and asks what structurally changes about costs if the telematics platform moves to AWS. Which answer describes the change?",
+      "options": {
+        "A": "Up-front capital spending on owned capacity becomes usage-driven, variable operating spend that tracks actual consumption",
+        "B": "Variable operating costs are converted into fixed capital costs, making the annual budget easier to predict",
+        "C": "Total cost is guaranteed to fall for every workload the fleet moves, whatever its usage pattern",
+        "D": "Logistics firms that moved report large savings, so the same percentage can be booked into next year's budget without analysis"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D19",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "The cost-structure change funds every other cloud economic argument: up-front, capital, fixed spending on owned capacity becomes usage-driven, variable operating spend. Fixed costs give way to variable costs that track consumption, which is where the cost savings of moving to the cloud actually originate.",
+        "distractors": {
+          "B": "This states the change backwards: cloud spending moves away from fixed capital outlays toward variable, usage-driven operating costs, not the other way around.",
+          "C": "Cloud economics changes the cost structure; it does not guarantee a lower total for every workload regardless of usage pattern.",
+          "D": "Other firms' outcomes are anecdotes about different workloads; the structural change is what the analysis should highlight, and savings still have to be assessed, not booked on imitation."
+        }
+      }
+    },
+    {
+      "id": "1.12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "theme": "C1",
+      "vertical": "art print marketplace",
+      "keywords": [
+        "costs that are associated with on-premises environments",
+        "hardware refresh"
+      ],
+      "type": "multiple_response",
+      "question": "An art print marketplace is comparing the full cost of its co-located server room with a proposed AWS deployment. Which TWO cost line items would disappear from its budget entirely once the workloads run on AWS? (Select TWO.)",
+      "options": {
+        "A": "Rack space, power, and cooling charges for the server room",
+        "B": "Spending on compute capacity for the storefront during business hours",
+        "C": "License fees for the commercial database engine the storefront uses",
+        "D": "Periodic hardware refresh purchases as servers reach end of life",
+        "E": "Operating system patching effort, which AWS performs for every service after migration"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E04",
+        "E": "E02"
+      },
+      "rationale": {
+        "correct": "Facility costs - space, power, cooling - and the hardware refresh cycle are costs that are associated with on-premises environments and have no cloud equivalent: AWS owns the buildings and the servers. Comparisons that omit them understate what the server room really costs.",
+        "distractors": {
+          "B": "Compute spending does not disappear; it changes shape, from owned capacity to usage-driven charges for what the storefront consumes.",
+          "C": "A commercial license can travel with the workload under a Bring Your Own License model or be replaced by an included license; either way the line item does not simply vanish.",
+          "E": "Patching duty depends on the service: on Amazon EC2 the guest operating system remains the customer's to patch, so the effort does not disappear for every service."
+        }
+      }
+    },
+    {
+      "id": "1.13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "theme": "C4",
+      "vertical": "athletic footwear brand",
+      "keywords": [
+        "Bring Your Own License [BYOL] model",
+        "included licenses"
+      ],
+      "type": "single_choice",
+      "question": "An athletic footwear brand owns perpetual licenses for a commercial database engine and intends to keep using those entitlements when the database moves onto AWS compute. Which licensing model describes this arrangement?",
+      "options": {
+        "A": "A conversion model in which the one-time license purchase becomes a flat monthly software fee charged by AWS",
+        "B": "An AWS Marketplace subscription that replaces the perpetual licenses with software procured through the catalog",
+        "C": "License-included pricing, in which the cost of the software license is bundled into the hourly rate of the service",
+        "D": "The Bring Your Own License (BYOL) model, in which the entitlements the brand already owns travel with the workload"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "C": "E04"
+      },
+      "rationale": {
+        "correct": "Using licenses the organization already owns on cloud infrastructure is the Bring Your Own License [BYOL] model: the entitlement travels with the workload instead of arriving with the service. The alternative - included licenses - would mean paying for the license as part of the service rate.",
+        "distractors": {
+          "A": "No such conversion happens; a perpetual license the brand owns stays owned, and AWS does not restate it as a flat monthly software fee.",
+          "B": "AWS Marketplace is a procurement channel for acquiring new software; the brand is reusing entitlements it already holds, not buying replacements.",
+          "C": "License-included pricing describes the opposite arrangement: the license arrives with the service and is paid for in its rate, not carried in by the customer."
+        }
+      }
+    },
+    {
+      "id": "1.14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "theme": "C4",
+      "vertical": "car wash franchise",
+      "keywords": [
+        "rightsizing",
+        "observed demand"
+      ],
+      "type": "single_choice",
+      "question": "A car wash franchise runs its booking system on instances sized three years ago; average utilization now sits below ten percent even at peak. Finance wants the monthly bill reduced without changing how the application works. What is the appropriate first action?",
+      "options": {
+        "A": "Rewrite the booking system as event-driven serverless functions so idle capacity disappears altogether",
+        "B": "Rightsize the instances: match the provisioned resource size to the demand that is actually observed",
+        "C": "Purchase Reserved Instances for the existing instances to obtain a discount on the current shape",
+        "D": "Set a billing alarm on the account so finance is alerted whenever monthly spend rises any further"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "E03",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "Rightsizing is the deliberate cost action that matches provisioned resource size to observed demand. Utilization evidence is already in hand, the application does not need to change, and resizing the oversized instances is the direct, reversible first step.",
+        "distractors": {
+          "A": "A serverless rewrite redesigns the workload, which the franchise explicitly did not ask for; rightsizing is distinct from re-architecting.",
+          "C": "A Reserved Instance discount on an oversized shape locks in the oversizing; buying a discount is distinct from correcting the size.",
+          "D": "A billing alarm watches spend after the fact; the cause - oversized instances - is already known and can be acted on directly."
+        }
+      }
+    },
+    {
+      "id": "1.15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "theme": "C4",
+      "vertical": "animal shelter network",
+      "keywords": [
+        "benefits of automation",
+        "provisioning"
+      ],
+      "type": "single_choice",
+      "question": "Across an animal shelter network, staff create a test copy of the adoption system by hand each week and often forget to delete it, leaving idle environments running for weeks. The operations lead asks what automating the provisioning and teardown would actually change. What is the answer?",
+      "options": {
+        "A": "Little would change; the better fix is one larger shared test environment with enough capacity for every team",
+        "B": "It would mainly improve reporting, with a quarterly audit catching any environments left running too long",
+        "C": "It removes both the staff time spent on manual setup and the spend on forgotten idle environments",
+        "D": "The same result comes from a checklist that makes each staff member responsible for remembering the deletion step"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D07",
+        "D": "D18"
+      },
+      "rationale": {
+        "correct": "The benefits of automation are a cost lever as well as a speed lever: automated provisioning and teardown remove the weekly manual toil and stop the meter on environments nobody remembered to delete. The saving shows up in staff time and in the monthly bill at the same time.",
+        "distractors": {
+          "A": "A larger shared environment adds capacity where the problem is process; the waste comes from environments outliving their use, not from having too little room.",
+          "B": "A quarterly audit discovers idle environments long after they started costing money; automation prevents the idle time instead of reporting on it.",
+          "D": "A checklist pushes the failure onto the people who already forget; automating the teardown removes the reliance on memory altogether."
+        }
+      }
+    },
+    {
+      "id": "1.16",
+      "domain": "d1",
+      "primary_concept": "C-016",
+      "theme": "C1",
+      "vertical": "board-game publisher",
+      "keywords": [
+        "economies of scale"
+      ],
+      "type": "single_choice",
+      "question": "The CFO of a board-game publisher notices that an hour of compute on AWS costs less than the equivalent hour on the publisher's own rack servers, even before staffing is counted, and asks what makes that price possible. Which explanation is correct?",
+      "options": {
+        "A": "The publisher's own usage volume has reached the level at which AWS grants automatic volume discounts",
+        "B": "Shifting spending from capital purchases to operating expense is what lowers the price of each compute hour",
+        "C": "The lower price comes from Reserved Instance discounts that AWS applies to all customers by default",
+        "D": "Economies of scale: AWS aggregates demand from a large customer base, and its lower unit costs show up in pricing"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E05",
+        "C": "E03"
+      },
+      "rationale": {
+        "correct": "Economies of scale are the mechanism: a provider aggregating enormous demand achieves lower unit costs - hardware, power, operations - than any single customer can, and those unit costs surface in the published price. The publisher's own volume or commitments are separate, additional levers.",
+        "distractors": {
+          "A": "This attributes the price to the customer's own volume; the mechanism in question is the provider's aggregate scale, which benefits every customer at any size.",
+          "B": "The capital-to-operating shift changes the structure of the publisher's spending; it does not by itself make a compute hour cheaper to deliver.",
+          "C": "Reserved Instance discounts are a commitment the customer chooses, not a default applied to everyone; the baseline price is already lower for a different reason."
+        }
+      }
+    }
+  ]
 }

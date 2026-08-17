@@ -1482,6 +1482,767 @@
           "E": "Powering off is the first step of decommissioning left half-done: a racked, configured server with live accounts and DNS records returns to the attack surface the moment anyone powers it back on."
         }
       }
+    },
+    {
+      "id": "d3-q01",
+      "domain": "d3",
+      "primary_concept": "C-043",
+      "theme": "S4",
+      "vertical": "property title registry",
+      "keywords": [
+        "responsibility matrix",
+        "cloud",
+        "data classification"
+      ],
+      "type": "single_choice",
+      "question": "A property title registry moves its document archive to a cloud software service. During onboarding, the registry's security lead and the provider disagree about who configures tenant access controls and who classifies the deed records. What should the registry rely on to settle who secures what?",
+      "options": {
+        "A": "The provider's service-level agreement and its uptime commitments",
+        "B": "The assumption that the provider secures every layer in a software service",
+        "C": "The service model's name, which fixes a standard division of duties",
+        "D": "The provider's published shared responsibility matrix"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E05",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "In someone else's cloud, the responsibility matrix — not a service-model acronym — states who secures what. And whatever the split says elsewhere, the customer always keeps identity, data classification, and tenant configuration, so the registry classifies its own deed records.",
+        "distractors": {
+          "A": "A service-level agreement commits the provider to measurable service levels like availability; it divides no security duties.",
+          "B": "No service model transfers everything: tenant configuration, identity, and data classification remain with the customer even in the most provider-managed model.",
+          "C": "Treating the model's name as a fixed division of duties is the mistake the matrix exists to correct — the split moves provider by provider and service by service."
+        }
+      }
+    },
+    {
+      "id": "d3-q02",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "theme": "S4",
+      "vertical": "rural electricity cooperative",
+      "keywords": [
+        "hybrid",
+        "on-premises",
+        "centralized"
+      ],
+      "type": "single_choice",
+      "question": "A rural electricity cooperative plans to move member billing to a cloud platform while keeping its grid-control systems on-premises. A board member asks what the move means for the security program. Which answer is correct?",
+      "options": {
+        "A": "The security workload halves, as the provider assumes responsibility for half the estate",
+        "B": "The cooperative must now secure two environments plus the connection between them",
+        "C": "Decentralizing all control among the sites will remove the single point of failure",
+        "D": "On-premises systems are inherently more secure, so the billing move raises risk by definition"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E01",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Hybrid considerations cut the other way from intuition: running on-premises and cloud together roughly doubles what must be secured — two environments with different control sets, plus the link that joins them, each with its own failure and compromise modes.",
+        "distractors": {
+          "A": "Inverting the arithmetic is the classic hybrid mistake — the provider takes on some layers of one environment, while the cooperative gains a whole second environment and an interconnect.",
+          "C": "Centralized versus decentralized control is a real architecture choice about where a failure or compromise lands, but it is a different axis — it is not what a billing migration decides.",
+          "D": "That is a slogan, not an assessment: where a workload is safer depends on the controls each environment actually gets, not on the hosting model's name."
+        }
+      }
+    },
+    {
+      "id": "d3-q03",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "theme": "S4",
+      "vertical": "ski resort operations",
+      "keywords": [
+        "infrastructure as code",
+        "serverless",
+        "microservices"
+      ],
+      "type": "single_choice",
+      "question": "A ski resort is rebuilding its lift-ticketing platform. The security team's stated requirement: every change to the hosting environment must be reviewable before deployment and reproducible afterward, exactly like an application code change. Which architecture choice delivers that property?",
+      "options": {
+        "A": "Defining the infrastructure as code, deployed from a reviewed repository",
+        "B": "Moving the ticketing functions to a serverless platform",
+        "C": "Splitting the ticketing monolith into microservices",
+        "D": "Documenting environment changes in an operations wiki after each deployment"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Infrastructure as code is precisely the property asked for: the environment is defined in files that can be reviewed before deployment and re-applied to reproduce the same state — environment changes become reviewable and reproducible the way application changes are.",
+        "distractors": {
+          "B": "Serverless removes servers to harden, which changes what must be secured — it does not by itself make environment changes reviewable or reproducible.",
+          "C": "Microservices change what is patchable and deployable independently; the review property attaches to how the environment is defined, not to how the application is divided.",
+          "D": "After-the-fact wiki notes remove the structure the requirement demands: nothing is reviewed before deployment, and prose cannot be re-applied to reproduce a state."
+        }
+      }
+    },
+    {
+      "id": "d3-q04",
+      "domain": "d3",
+      "primary_concept": "C-046",
+      "theme": "S4",
+      "vertical": "university research computing",
+      "keywords": [
+        "air-gapped",
+        "logical segmentation",
+        "physical isolation"
+      ],
+      "type": "single_choice",
+      "question": "A university research computing group hosts an export-controlled dataset. The regulator's condition is absolute: no configuration error anywhere in the network may ever be able to create a path between this enclave and the internet. Which design satisfies the condition?",
+      "options": {
+        "A": "Logical segmentation of the enclave onto its own VLANs",
+        "B": "A next-generation firewall between the enclave and the campus network",
+        "C": "An air-gapped enclave with no physical connection to any other network",
+        "D": "Software-defined microsegmentation around every enclave workload"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Separation by physics is not separation by configuration: an air gap is physical isolation, removing the path entirely. With no physical connection, no rule change, VLAN edit, or policy error can create a path — the only way to satisfy a condition phrased as no configuration error may ever.",
+        "distractors": {
+          "A": "Logical segmentation depends on the correctness of whatever enforces it; a VLAN exists as switch configuration, and configuration is exactly what the regulator refuses to trust.",
+          "B": "A firewall is a strong boundary control, but it is a configured device on a connected path — one bad rule is a path, and the condition rules that out.",
+          "D": "Finer-grained segmentation multiplies the machinery, and every added policy is more configuration that can be wrong — sophistication does not convert configured separation into physical separation."
+        }
+      }
+    },
+    {
+      "id": "d3-q05",
+      "domain": "d3",
+      "primary_concept": "C-047",
+      "theme": "S1",
+      "vertical": "coastal shipping line",
+      "keywords": [
+        "software-defined networking",
+        "controller",
+        "forwarding"
+      ],
+      "type": "single_choice",
+      "question": "A coastal shipping line is adopting software-defined networking across its port offices. A network engineer preparing for the rollout asks how the roles are divided once SDN is in place. Which statement is correct?",
+      "options": {
+        "A": "SDN encrypts all east-west traffic between offices by default",
+        "B": "A centralized controller makes the forwarding decisions and programs the switching devices",
+        "C": "The controller sits in the data plane, relaying every packet between devices",
+        "D": "Each switch keeps its own autonomous control plane, with the controller only monitoring"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E05",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Software-defined networking centralizes the control plane in a controller that programs the forwarding devices: the controller decides, the devices forward. Keeping those two planes straight is the whole model.",
+        "distractors": {
+          "A": "SDN reorganizes where decisions are made; it makes no encryption promise — attributing a security property to the architecture that it does not have is how SDN gets misdeployed.",
+          "C": "Placing the controller in the data plane inverts the design — the controller programs forwarding but does not carry the packets.",
+          "D": "Autonomous per-switch control planes describe the traditional network SDN replaces; leaving the control plane in the devices is exactly what the controller centralizes away."
+        }
+      }
+    },
+    {
+      "id": "d3-q06",
+      "domain": "d3",
+      "primary_concept": "C-048",
+      "theme": "S4",
+      "vertical": "veterinary clinic chain",
+      "keywords": [
+        "containers",
+        "host kernel",
+        "hypervisor",
+        "virtual machines"
+      ],
+      "type": "single_choice",
+      "question": "A veterinary clinic chain runs its practice-management application as containers on shared hosts, and its finance system as virtual machines on a hypervisor. The operations manager asks why security treats a container compromise on a shared host as the more urgent event. Which answer is correct?",
+      "options": {
+        "A": "Container images are usually less patched than virtual machine images",
+        "B": "Virtual machines share the host kernel just as containers do",
+        "C": "Container images cannot be scanned for vulnerabilities before deployment",
+        "D": "Containers share the host kernel, so one kernel exploit can reach every container"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "E05",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "Containers share the host kernel while virtual machines isolate at the hypervisor — that is why the two differ in isolation strength. A kernel exploit from inside one container threatens everything on that host; a virtual machine guest must break the hypervisor boundary first.",
+        "distractors": {
+          "A": "Patch levels vary by team and pipeline, not by packaging — assuming containers are worse-patched substitutes a stereotype for the architectural difference the question asks about.",
+          "B": "That inverts the distinction: virtual machines each run their own kernel above the hypervisor, which is precisely why their isolation is stronger.",
+          "C": "Container images are routinely scanned before deployment; the urgency difference comes from what a compromise reaches at runtime, not from any scanning gap."
+        }
+      }
+    },
+    {
+      "id": "d3-q07",
+      "domain": "d3",
+      "primary_concept": "C-049",
+      "theme": "S4",
+      "vertical": "bottling and beverage plant",
+      "keywords": [
+        "inability to patch",
+        "compensating",
+        "ICS",
+        "RTOS"
+      ],
+      "type": "single_choice",
+      "question": "A bottling plant's filling-line controllers run a real-time operating system that cannot be patched without a vendor recertification cycle measured in months. A serious vulnerability in the controllers is published today. What is the appropriate protection approach?",
+      "options": {
+        "A": "Compensating controls: segment the control network and monitor for exploit attempts",
+        "B": "Apply the patch to the controllers immediately, since patching is always the primary response",
+        "C": "Replace the entire controller fleet with conventional servers that can be patched normally",
+        "D": "Accept the exposure quietly and wait for the vendor's recertified update"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "D16",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "ICS and RTOS equipment cannot be treated like servers, and inability to patch is the defining comparison axis: when the patch path is closed for months, protection must be compensating by design — segmentation to cut the exploit path and monitoring to catch attempts, applied now.",
+        "distractors": {
+          "B": "Patch-first is a best practice whose precondition fails here: an unpatchable window measured in months is exactly when the rule's context does not hold, and forcing an uncertified patch risks the production line itself.",
+          "C": "Replacing the fleet abandons the operational constraint instead of working within it — filling lines run on real-time controllers for reasons a patching preference does not override.",
+          "D": "Waiting converts a cheap mitigation into a months-long open exposure, and silent acceptance is not a treatment — it is deferral while the vulnerability is public."
+        }
+      }
+    },
+    {
+      "id": "d3-q08",
+      "domain": "d3",
+      "primary_concept": "C-050",
+      "theme": "S4",
+      "vertical": "automotive parts distributor",
+      "keywords": [
+        "placement",
+        "security zones",
+        "attack surface"
+      ],
+      "type": "single_choice",
+      "question": "An automotive parts distributor buys an inspection appliance after its e-commerce servers probed its internal ERP system during a red-team exercise. The stated requirement is to inspect and control traffic crossing from the e-commerce zone into the ERP zone. Where should the appliance be placed?",
+      "options": {
+        "A": "At the internet edge, where all external attacks first arrive",
+        "B": "On every endpoint in both zones, for maximum coverage",
+        "C": "At the boundary between the e-commerce zone and the ERP zone",
+        "D": "Wherever is convenient — a device this capable protects the network regardless of position"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "D01",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "Where a device sits determines what it can see and protect: placement and security zones define the attack surface a control covers. Traffic crossing between two internal zones is only visible at the boundary between them — which is where the stated requirement points.",
+        "distractors": {
+          "A": "The internet edge sees north-south traffic; the requirement names movement between two internal zones, which never crosses the edge — that placement watches the wrong boundary.",
+          "B": "Blanketing every endpoint deploys everywhere what the requirement needs in one place, multiplying cost and management for coverage the zone boundary already provides.",
+          "D": "Buying capability instead of matching placement to the requirement decides on product prestige — even the most capable appliance inspects nothing that does not flow through it."
+        }
+      }
+    },
+    {
+      "id": "d3-q09",
+      "domain": "d3",
+      "primary_concept": "C-051",
+      "theme": "S4",
+      "vertical": "biotech research laboratory",
+      "keywords": [
+        "fail-open",
+        "fail-closed",
+        "failure modes"
+      ],
+      "type": "single_choice",
+      "question": "A biotech research laboratory is configuring failure modes for two systems: the electronic locks on its containment-suite doors, and the firewall guarding its research data enclave. If either system loses power or crashes, which configuration is correct?",
+      "options": {
+        "A": "Both systems fail-closed, because security must always be preserved",
+        "B": "Both systems fail-open, because availability must always be preserved",
+        "C": "Doors fail-closed to keep the suite sealed; firewall fails-open to keep research traffic flowing",
+        "D": "Doors fail-open so people can always exit; firewall fails-closed so unfiltered traffic never flows"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D14",
+        "B": "E05",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Failure mode is a design choice with no universal answer — it flips with the asset. A door's failure must never trap people, so life safety dictates fail-open; a firewall that fails open passes unfiltered traffic, so preserving control dictates fail-closed.",
+        "distractors": {
+          "A": "Always-fail-secure is a slogan applied where its precondition fails: on a door, failing closed can trap people inside, and no security posture overrides life safety.",
+          "B": "Always-fail-available inverts the firewall's purpose — an open firewall is not an available control but an absent one.",
+          "C": "This is the exact swap of the correct pairing: it seals people in during an emergency and lets unfiltered traffic through, the worst outcome on both assets."
+        }
+      }
+    },
+    {
+      "id": "d3-q10",
+      "domain": "d3",
+      "primary_concept": "C-052",
+      "theme": "S2",
+      "vertical": "city council IT department",
+      "keywords": [
+        "inline",
+        "intrusion prevention system",
+        "tap",
+        "block"
+      ],
+      "type": "single_choice",
+      "question": "A city council IT department must stop known exploit traffic from reaching a legacy HR application in real time — alerting after the fact is explicitly not acceptable. Which deployment meets the requirement?",
+      "options": {
+        "A": "An intrusion prevention system deployed inline in the traffic path",
+        "B": "An intrusion detection system fed from a tap on the HR segment",
+        "C": "A jump server through which administrators reach the HR application",
+        "D": "A passive sensor forwarding alerts to the on-call analyst for follow-up"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E02",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "An inline active device can block what a passive tap can only report — that is the IPS/IDS split in one property. Sitting inline in the traffic path is what lets an intrusion prevention system drop the exploit before it arrives.",
+        "distractors": {
+          "B": "A detection system on a tap sees a copy of the traffic; by the time it recognizes the exploit, the original packets have already reached the application.",
+          "C": "A jump server controls the administrative path to the application; exploit traffic aimed at the application's service port never passes through it.",
+          "D": "A sensor plus human follow-up is detection with a response loop — diligent, and still after the fact, which the requirement explicitly rules out."
+        }
+      }
+    },
+    {
+      "id": "d3-q11",
+      "domain": "d3",
+      "primary_concept": "C-053",
+      "theme": "S2",
+      "vertical": "architectural engineering firm",
+      "keywords": [
+        "802.1X",
+        "port security",
+        "EAP",
+        "authenticate"
+      ],
+      "type": "single_choice",
+      "question": "Visitors to an architectural engineering firm routinely plug laptops into meeting-room wall jacks and receive addresses on the internal network, reaching the project file servers. The requirement: every device must authenticate before its switch port carries any traffic. Which control implements this?",
+      "options": {
+        "A": "Physically disabling the wall jacks in the meeting rooms",
+        "B": "802.1X port security using EAP at every access port",
+        "C": "Network posture checks that run after devices receive an address",
+        "D": "Statically assigning the meeting-room jacks to a guest VLAN"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "E01",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "Port security puts an identity check at the point of physical attachment: with 802.1X and EAP, the switch port carries no traffic until the connecting device authenticates — which is the requirement, stated as a mechanism.",
+        "distractors": {
+          "A": "Killing the jacks meets an adjacent requirement — nobody connects at all — but the firm's requirement is authenticated connection, not no connection.",
+          "C": "Posture checking that runs after an address is issued authenticates too late: the port has already carried traffic, which the requirement forbids.",
+          "D": "A static guest VLAN sorts unauthenticated devices instead of authenticating them — an addressing-layer answer to an authentication-layer requirement, and any device on the jack still gets carried."
+        }
+      }
+    },
+    {
+      "id": "d3-q12",
+      "domain": "d3",
+      "primary_concept": "C-054",
+      "theme": "S2",
+      "vertical": "commercial bakery chain",
+      "keywords": [
+        "web application firewall",
+        "Layer 4",
+        "HTTP"
+      ],
+      "type": "single_choice",
+      "question": "A commercial bakery chain's online ordering site has been hit by SQL injection attempts and manipulated session cookies. The security team wants a control that reads and filters the HTTP payloads of requests to this one site. Which control matches the requirement?",
+      "options": {
+        "A": "A Layer 4 firewall filtering on ports and addresses",
+        "B": "A unified threat management appliance at the network edge",
+        "C": "A web application firewall in front of the ordering site",
+        "D": "A next-generation firewall identifying applications across the network"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Firewall variants are separated by the layer they understand. A web application firewall reads HTTP payloads — request bodies, parameters, cookies — which is exactly where SQL injection strings and manipulated session cookies live.",
+        "distractors": {
+          "A": "Layer 4 filtering sees ports and addresses; injection payloads travel inside perfectly legitimate connections to the site's public port, invisible at the transport layer.",
+          "B": "Unified threat management bundles many functions into one box — a breadth answer to a depth requirement that names one site's HTTP traffic.",
+          "D": "A next-generation firewall is application-aware in the sense of identifying which application a flow belongs to; parsing one web application's HTTP payloads for injection is the specialist job the requirement describes."
+        }
+      }
+    },
+    {
+      "id": "d3-q13",
+      "domain": "d3",
+      "primary_concept": "C-055",
+      "theme": "S2",
+      "vertical": "ambulance service dispatch",
+      "keywords": [
+        "virtual private network",
+        "remote access",
+        "tunneling",
+        "TLS"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance service must let dispatchers work from home over their household internet connections, with all traffic to the dispatch console encrypted end to end. Which solution fits the requirement?",
+      "options": {
+        "A": "A remote access virtual private network using TLS tunneling",
+        "B": "An SD-WAN deployment linking the service's branch stations",
+        "C": "IPSec site-to-site tunnels terminating at each dispatcher's home router",
+        "D": "Publishing the dispatch console to the internet behind strong passwords"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "Carrying private traffic across networks you do not own is the virtual private network's job: a remote access VPN with TLS tunneling gives each dispatcher an encrypted path from wherever they are to the dispatch console.",
+        "distractors": {
+          "B": "SD-WAN chooses paths between an organization's own sites — the overlay for offices, not for individual staff on household connections.",
+          "C": "Site-to-site tunnels join two fixed networks; treating every dispatcher's home as a managed site inverts the remote access model and puts the service's tunnel endpoint on hardware it does not control.",
+          "D": "Exposing the console directly makes every home connection and every password-guessing bot part of the attack surface — the goal was to shrink what can reach the console, not to widen it."
+        }
+      }
+    },
+    {
+      "id": "d3-q14",
+      "domain": "d3",
+      "primary_concept": "C-056",
+      "theme": "S6",
+      "vertical": "casino resort operations",
+      "keywords": [
+        "regulated",
+        "trade secret",
+        "classification"
+      ],
+      "type": "single_choice",
+      "question": "A casino resort labels both its gaming-commission player records and its proprietary odds-setting models as Confidential. A new analyst asks what actually determines the handling obligations for the commission-mandated player records. What is the correct answer?",
+      "options": {
+        "A": "The internal classification label, which defines all handling requirements by itself",
+        "B": "Whether the records are stored in human-readable or non-human-readable form",
+        "C": "The storage platform the records currently reside on",
+        "D": "The records' regulated data type, which carries obligations the resort cannot relabel away"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "What the data is decides how it must be handled: a regulated data type carries an external obligation that exists regardless of the internal label, while a trade secret's obligations flow from business value. Two datasets can share a classification and still owe different handling.",
+        "distractors": {
+          "A": "The label demands a handling level, but it is assigned by the resort — it cannot reduce obligations a regulator imposes on the data type itself.",
+          "B": "Human- versus non-human-readable is a separate property again — it changes how the data is processed and protected, not which external obligations attach.",
+          "C": "Obligations attach to the data, not the platform; moving regulated records to a different system moves the duty with them."
+        }
+      }
+    },
+    {
+      "id": "d3-q15",
+      "domain": "d3",
+      "primary_concept": "C-057",
+      "theme": "S1",
+      "vertical": "children's hospital network",
+      "keywords": [
+        "data in use",
+        "data at rest",
+        "data in transit"
+      ],
+      "type": "single_choice",
+      "question": "A children's hospital network encrypts patient records on its storage arrays and uses TLS for every network connection. An auditor observes that the analytics service holds thousands of decrypted records in memory while it processes them. In which state is the hospital's data unprotected?",
+      "options": {
+        "A": "Data at rest",
+        "B": "Data in transit",
+        "C": "Data in use",
+        "D": "Data in archive, the fourth state in the model"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Data exists in three states, and each needs a different control. Storage encryption covers data at rest and TLS covers data in transit — but records decrypted in memory during processing are data in use, the state the hospital has not addressed.",
+        "distractors": {
+          "A": "Data at rest is the state the storage-array encryption already protects; naming it here mistakes the covered sibling for the gap.",
+          "B": "Data in transit is covered by TLS on every connection; memory inside one server is not a transmission path.",
+          "D": "The model has exactly three states — inventing an archive state misstates the framework the question is testing, since archived data is simply data at rest."
+        }
+      }
+    },
+    {
+      "id": "d3-q16",
+      "domain": "d3",
+      "primary_concept": "C-058",
+      "theme": "S6",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "data sovereignty",
+        "geolocation",
+        "jurisdiction"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line stores European passenger reservations in a cloud region physically located in the European Union, operated by a provider headquartered elsewhere. Counsel warns the data may nonetheless be reachable by the provider's home-country legal process. Which concept does the warning describe?",
+      "options": {
+        "A": "Geolocation",
+        "B": "Data sovereignty",
+        "C": "Geographic restrictions",
+        "D": "A gap solvable by notifying passengers where their data is stored"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E02",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Data sovereignty asks whose law applies to the bytes; geolocation asks where they physically are. The records sit in the European Union and can still fall under another jurisdiction through the provider — safe, legal, and in the right place, yet under the wrong law.",
+        "distractors": {
+          "A": "Geolocation is the paired sibling and it is already satisfied — the physical location is known and European; the warning is about law, not location.",
+          "C": "Geographic restrictions are an access control that limits where data can be reached from; they do not change which legal process binds the provider.",
+          "D": "Telling passengers where the data lives discloses the arrangement without changing it — the jurisdictional exposure remains exactly as counsel described."
+        }
+      }
+    },
+    {
+      "id": "d3-q17",
+      "domain": "d3",
+      "primary_concept": "C-059",
+      "theme": "S2",
+      "vertical": "stock photography agency",
+      "keywords": [
+        "tokenization",
+        "masking",
+        "hashing",
+        "reversibility"
+      ],
+      "type": "single_choice",
+      "question": "A stock photography agency must populate its development and analytics environments with realistic-looking contributor tax IDs, while ensuring the real values are recoverable only by the payments team through a controlled lookup. Which method fits?",
+      "options": {
+        "A": "Hashing the tax IDs with a strong salted hash",
+        "B": "Masking the tax IDs in every environment",
+        "C": "Steganographically embedding the IDs in image files",
+        "D": "Tokenization backed by a secured token vault"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "The methods differ by mechanism and reversibility. Tokenization substitutes a realistic-looking token for each value and keeps the real mapping in a vault, so development sees plausible data while only the payments team's controlled lookup can recover the original.",
+        "distractors": {
+          "A": "Hashing never reverses — it satisfies the unusable-if-taken half and destroys the recoverability the payments team requires.",
+          "B": "Masking substitutes for display purposes, but the substitution is not designed to be reversed through a controlled lookup — recoverability is the requirement it misses.",
+          "C": "Steganography hides data rather than transforming it — concealment in images protects nothing once the hiding place is known, and it is no substitute mechanism at all."
+        }
+      }
+    },
+    {
+      "id": "d3-q18",
+      "domain": "d3",
+      "primary_concept": "C-060",
+      "theme": "S2",
+      "vertical": "defense subcontractor",
+      "keywords": [
+        "geographic restrictions",
+        "segmentation",
+        "access"
+      ],
+      "type": "single_choice",
+      "question": "A defense subcontractor's contract requires that naval CAD drawings never be accessible from outside the country, regardless of who holds valid credentials. The drawings must remain usable by domestic engineering teams. Which control family addresses the requirement directly?",
+      "options": {
+        "A": "Geographic restrictions on where the drawings can be accessed from",
+        "B": "Encrypting the drawings with a stronger algorithm",
+        "C": "Watermarking the drawings and logging every access for review",
+        "D": "Shortening the retention period for completed drawings"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D07",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "One family of data protections stops the data from being reached at all: geographic restrictions, segmentation, and permission restrictions act on access. The contract's condition is about where access can occur — a reach question, answered by a reach control.",
+        "distractors": {
+          "B": "Encryption acts on the bytes, not on reach — a credentialed engineer abroad decrypts exactly as a domestic one does, which is the case the contract forbids.",
+          "C": "Watermarks and access logs identify a leak after it happens; the requirement is that foreign access never occur, not that it be traceable.",
+          "D": "Retention shortens how long the data exists — an adjacent data-lifecycle control that does nothing about where it can be reached from meanwhile."
+        }
+      }
+    },
+    {
+      "id": "d3-q19",
+      "domain": "d3",
+      "primary_concept": "C-061",
+      "theme": "S4",
+      "vertical": "energy retailer billing",
+      "keywords": [
+        "clustering",
+        "load balancing",
+        "node"
+      ],
+      "type": "single_choice",
+      "question": "An energy retailer's billing platform must continue serving customers without interruption when a server node fails outright. The platform team proposes adding a load balancer, noting it already distributes requests across the nodes evenly. What is the gap in the proposal?",
+      "options": {
+        "A": "More nodes are needed behind the load balancer to absorb the load",
+        "B": "Clustering is needed to keep the service running through a node failure",
+        "C": "A warm recovery site is needed instead of local redundancy",
+        "D": "Nightly backups of the billing databases are the missing piece"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D03",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "More than one machine has two different meanings: load balancing spreads work, clustering survives failure. Distributing requests says nothing about what happens to in-flight sessions and service state when a node dies — surviving that is the clustering job the requirement names.",
+        "distractors": {
+          "A": "Adding capacity multiplies what the load balancer already does — spreading work — without adding the failure-survival property the requirement is about.",
+          "C": "Site readiness tiers like warm answer a different question — recovering a whole facility — at a different timescale than keeping one platform continuously serving through a node loss.",
+          "D": "Backups protect recoverability of data after loss; the requirement is continuity of service during failure, which backups do not provide."
+        }
+      }
+    },
+    {
+      "id": "d3-q20",
+      "domain": "d3",
+      "primary_concept": "C-062",
+      "theme": "S4",
+      "vertical": "newspaper printing group",
+      "keywords": [
+        "capacity planning",
+        "platform diversity",
+        "continuity of operations"
+      ],
+      "type": "single_choice",
+      "question": "A newspaper printing group's presses sat idle through a cloud provider's regional outage: every production system ran on that one platform, and only two employees knew the manual print workflow — both unreachable. Which planning discipline addresses the full gap the postmortem describes?",
+      "options": {
+        "A": "Moving only the print-queue service to a second cloud provider",
+        "B": "Hiring additional cloud engineers for the operations team",
+        "C": "Capacity planning that covers people, technology, and infrastructure together",
+        "D": "A continuity of operations plan that assumes the IT systems stay available"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D03",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Continuity is an input problem before it is a technology problem, and capacity planning covers people and infrastructure as well as technology: platform diversity for the systems, and enough trained staff that the manual workflow does not depend on two individuals.",
+        "distractors": {
+          "A": "Diversifying one service trims the visible symptom while the platform concentration and the two-person knowledge bottleneck both remain.",
+          "B": "Adding headcount is capacity thrown at one corner of the gap — more engineers on the same single platform would have idled beside the presses.",
+          "D": "A continuity of operations plan exists precisely for running the business without IT; assuming the systems stay available inverts its premise."
+        }
+      }
+    },
+    {
+      "id": "d3-q21",
+      "domain": "d3",
+      "primary_concept": "C-063",
+      "theme": "S5",
+      "vertical": "container port terminal",
+      "keywords": [
+        "tabletop",
+        "fail over",
+        "simulation",
+        "parallel processing"
+      ],
+      "type": "single_choice",
+      "question": "A container port terminal has a newly written disaster recovery plan that has never been exercised. Management wants to validate the roles, decision points, and escalation paths first, without touching any production system. Which exercise fits this stage?",
+      "options": {
+        "A": "A full fail over of berth operations to the recovery site",
+        "B": "A simulation of a crane-control outage in the operational environment",
+        "C": "Continuous parallel processing at the recovery site",
+        "D": "A tabletop exercise walking the response team through the plan"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "C": "E05"
+      },
+      "rationale": {
+        "correct": "A recovery plan is proven at increasing levels of realism and cost, and a tabletop exercise is the first rung: the team talks the plan through scenario by scenario, exposing unclear roles and broken escalation paths with zero production risk.",
+        "distractors": {
+          "A": "Failing over for real is a later rung — running it against a never-validated plan risks the very outage the plan exists to survive.",
+          "B": "A simulation exercises the event with operational realism; it belongs after the plan's logic has survived a talk-through, not before.",
+          "C": "Parallel processing is the top of the ladder — the most realistic and most expensive proof, inverted from what a first validation of roles and decision points needs."
+        }
+      }
+    },
+    {
+      "id": "d3-q22",
+      "domain": "d3",
+      "primary_concept": "C-064",
+      "theme": "S4",
+      "vertical": "credit union branch network",
+      "keywords": [
+        "offsite",
+        "generator",
+        "uninterruptible power supply",
+        "recovery"
+      ],
+      "type": "multiple_response",
+      "question": "A credit union's branch data center must survive two planned-for events: a ransomware attack that corrupts primary storage, and a grid outage lasting up to eight hours. Which TWO measures address the two events as stated? (Select TWO).",
+      "options": {
+        "A": "Increase the frequency of storage snapshots on the primary array",
+        "B": "Deploy uninterruptible power supply units sized for the server room",
+        "C": "Maintain encrypted offsite backups with a tested recovery procedure",
+        "D": "Mirror the primary array to a second array in the same room",
+        "E": "Install a generator with uninterruptible power supply units bridging the start-up gap"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D10",
+        "B": "E05",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Surviving data loss and power loss are designed, not improvised. Offsite backups with tested recovery survive ransomware that corrupts everything the production environment can reach, and a generator carries an eight-hour outage with the uninterruptible power supply bridging the seconds until it starts.",
+        "distractors": {
+          "A": "More frequent snapshots shrink the interval, not the exposure: snapshots on the primary array sit inside the environment the ransomware corrupts.",
+          "B": "Uninterruptible power supply units alone cover minutes — sizing them for the room does not change which timescale they serve, and the outage is specified in hours.",
+          "D": "Mirroring is the sibling that survives hardware failure; replication faithfully copies the corruption to the second array within moments."
+        }
+      }
     }
   ]
 }

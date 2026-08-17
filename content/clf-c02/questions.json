@@ -547,6 +547,719 @@
           "C": "Reserved Instance discounts are a commitment the customer chooses, not a default applied to everyone; the baseline price is already lower for a different reason."
         }
       }
+    },
+    {
+      "id": "2.01",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "theme": "C1",
+      "vertical": "ambulance dispatch service",
+      "keywords": [
+        "AWS shared responsibility model",
+        "recognizing the components"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance dispatch service is briefing new engineers who have never worked with a cloud provider, and its head of platform wants them to be able to state plainly what the AWS shared responsibility model divides. Which description states what the model divides?",
+      "options": {
+        "A": "It splits duties between the AWS Regions a workload runs in and the Availability Zones inside those Regions",
+        "B": "It assigns every security duty to AWS, which operates the infrastructure and everything a customer places on it",
+        "C": "It splits security duties into security of the cloud, which AWS operates, and security in the cloud, which the customer owns",
+        "D": "It ranks security duties by severity, giving the customer the highest-risk items and AWS the remainder"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E02",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The AWS shared responsibility model answers one question: who secures what. Recognizing the components means naming both halves - security of the cloud, the infrastructure AWS operates, and security in the cloud, the data, configuration and access decisions the customer owns. Every AWS service inherits that division.",
+        "distractors": {
+          "A": "Regions and Availability Zones describe where a workload runs, not who secures it; the model's division is unrelated to that geography.",
+          "B": "Handing every duty to AWS collapses the model into one side; the customer keeps its data, its access decisions, and the configuration of what it runs.",
+          "D": "Severity ranking is a risk-management activity the customer performs afterwards; it is not the line the model draws."
+        }
+      }
+    },
+    {
+      "id": "2.02",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "theme": "C3",
+      "vertical": "aquaculture farming group",
+      "keywords": [
+        "describing the customer's responsibilities on AWS",
+        "describing AWS responsibilities"
+      ],
+      "type": "multiple_response",
+      "question": "An aquaculture farming group runs its harvest-tracking application on Amazon EC2 instances that were launched from a standard Linux image. During an insurance audit the group's IT lead is asked which security duties belong to the group itself. Which TWO of the following are the customer's responsibilities? (Select TWO.)",
+      "options": {
+        "A": "Classifying the harvest records the application stores and deciding who may open them",
+        "B": "Maintaining the physical security of the facilities that house the instance hardware",
+        "C": "Configuring the virtualization layer that isolates one customer's instances from another's",
+        "D": "Applying operating system patches to the guest instances the group has launched",
+        "E": "Signing the audit report that certifies the underlying infrastructure as compliant"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D06",
+        "E": "E01"
+      },
+      "rationale": {
+        "correct": "Describing the customer's responsibilities on AWS means naming the duties the customer can actually reach: data classification and access decisions, and guest configuration such as patching the operating system on instances it launched. Describing AWS responsibilities covers the rest - facilities, hardware, and the virtualization layer beneath the instance.",
+        "distractors": {
+          "B": "Physical security of the facilities is squarely security of the cloud; the group has no access to those buildings and no duty over them.",
+          "C": "The virtualization layer sits below the customer boundary, so this is a real control the group cannot configure at all.",
+          "E": "AWS Artifact supplies audit reports and attestations to the customer; the customer does not certify AWS's infrastructure."
+        }
+      }
+    },
+    {
+      "id": "2.03",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "theme": "C3",
+      "vertical": "community college district",
+      "keywords": [
+        "responsibilities that the customer and AWS share"
+      ],
+      "type": "single_choice",
+      "question": "A community college district's auditor insists that every control in the security plan name exactly one owner. The district's cloud lead objects, pointing to patch management, where AWS patches the platform beneath the workload and the district patches its own guest instances. What does the shared responsibility model say about controls of this kind?",
+      "options": {
+        "A": "They are shared controls: AWS and the customer each carry the control at a different layer",
+        "B": "They belong to AWS, whose patching of the underlying platform also covers the guest instances",
+        "C": "They should be recorded as exceptions and disclosed to the auditor as controls without an owner",
+        "D": "They are inherited controls, which the customer takes over in full on the day it adopts the platform"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D09",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Patch management is the model's third category - responsibilities that the customer and AWS share. AWS patches the infrastructure and its managed-service internals; the district patches the guest instances it runs. One control name, two owners, each at a different layer, is a valid entry in a security plan.",
+        "distractors": {
+          "B": "AWS patching stops at the boundary of what it operates; a guest instance the district launched stays the district's to patch.",
+          "C": "Recording the control as an unowned exception documents the confusion instead of resolving it, and both owners are in fact identifiable.",
+          "D": "Inherited controls are those the customer gains without action, such as data center access control; patch management is not handed over in full."
+        }
+      }
+    },
+    {
+      "id": "2.04",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "theme": "C3",
+      "vertical": "concrete supply company",
+      "keywords": [
+        "Amazon EC2",
+        "Amazon RDS",
+        "AWS Lambda"
+      ],
+      "type": "single_choice",
+      "question": "A concrete supply company runs its scheduling database on Amazon EC2 and is about to move it to Amazon RDS. Its security committee wants the standing task apply database engine patches to stay with the company's own operations team after the move. What changes about that task?",
+      "options": {
+        "A": "Nothing changes: engine patching stays with the company on every AWS service it runs",
+        "B": "The company keeps the task and now performs it from the AWS Management Console instead",
+        "C": "The task disappears altogether, and no party patches the engine once the data has moved",
+        "D": "AWS takes over engine patching, and the company is left with data, access, and configuration"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The responsibility boundary moves with the service model. On Amazon EC2 the company owns the guest operating system and the database engine installed on it. On Amazon RDS, as on AWS Lambda, AWS operates those internals, and what remains for the company is its data, its access decisions, and the service configuration.",
+        "distractors": {
+          "A": "Treating the boundary as fixed is the error the move exposes: the same duty sits on different sides depending on the service.",
+          "B": "Changing where a task is performed is a surface change; the question is which party performs it, and after the move it is not the company.",
+          "C": "The engine is still patched - by AWS, on its own schedule; a managed service does not leave the software unmaintained."
+        }
+      }
+    },
+    {
+      "id": "2.05",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "theme": "C1",
+      "vertical": "conference organizing bureau",
+      "keywords": [
+        "benefits of cloud security",
+        "encryption"
+      ],
+      "type": "single_choice",
+      "question": "A conference organizing bureau has just closed the server cupboard where a locked door and a visitor sign-in sheet were its only physical controls. Its operations manager, who expects little to change, asks what the bureau actually gains on the security side by running on AWS. Which answer is correct?",
+      "options": {
+        "A": "Its applications become immune to stolen credentials once they run on AWS infrastructure",
+        "B": "It inherits the physical and infrastructure controls AWS operates, and gets encryption as configuration",
+        "C": "It transfers the whole security program to AWS, including its applications and its stored data",
+        "D": "It replaces its own security controls with the products it buys through AWS Marketplace"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The benefits of cloud security begin with inheritance: the bureau gets the physical and infrastructure controls AWS already operates, audited at a scale a server cupboard cannot reach. On top of that, capabilities that were projects in a small office - encryption of stored data and of traffic, centralized logging - become configuration choices.",
+        "distractors": {
+          "A": "No platform makes an application immune to stolen credentials; identity and access management stays a customer duty on AWS.",
+          "C": "Security in the cloud does not transfer: the bureau still owns its applications, its data, and who may reach them.",
+          "D": "AWS Marketplace is a procurement channel for additional products; the inherited platform controls arrive with the service itself."
+        }
+      }
+    },
+    {
+      "id": "2.06",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "theme": "C5",
+      "vertical": "cooking school network",
+      "keywords": [
+        "encryption in transit",
+        "encryption at rest"
+      ],
+      "type": "single_choice",
+      "question": "A cooking school network's payment processor requires that the keys protecting stored card data sit in dedicated cryptographic hardware the network itself controls, in a module holding a recognized validation. The network already terminates every connection with TLS. Which control does that requirement call for?",
+      "options": {
+        "A": "TLS on every connection already meets it, as the card data is protected all the way to storage",
+        "B": "A managed key service, in which AWS creates and holds the keys on shared infrastructure",
+        "C": "AWS CloudHSM, dedicated cryptographic hardware the network controls for protecting stored data",
+        "D": "Nothing further, as AWS encrypts everything written to its storage as a platform property"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D06",
+        "B": "E03",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The two states are distinct. TLS delivers encryption in transit, which protects data while it moves; the processor's requirement is about encryption at rest, and specifically about who controls the module holding the keys. Dedicated, validated cryptographic hardware under the network's own control is what a mandate of that kind names.",
+        "distractors": {
+          "A": "Protecting the journey is a real control at the wrong point: once the card data lands, transit protection no longer applies to it.",
+          "B": "A managed key service is the usual answer for key management, but it does not give the network its own validated hardware module.",
+          "D": "Storage encryption is a customer configuration on AWS, not an automatic property, and it would still not satisfy a dedicated-hardware mandate."
+        }
+      }
+    },
+    {
+      "id": "2.07",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "theme": "C2",
+      "vertical": "corporate travel desk",
+      "keywords": [
+        "auditing with AWS CloudTrail and AWS Config",
+        "monitoring with Amazon CloudWatch"
+      ],
+      "type": "single_choice",
+      "question": "A corporate travel desk discovers that a security group was widened overnight and must establish which identity made the change, from which address, and at what time. Its dashboards already carry CPU and network graphs for every instance. Which service holds that record?",
+      "options": {
+        "A": "Amazon CloudWatch, whose metric graphs already cover activity across the account",
+        "B": "AWS Config, which reports the security group's configuration against the desk's rules",
+        "C": "The operating system logs on the instances, which record administrative actions on the host",
+        "D": "AWS CloudTrail, whose event history names the API call and the identity that made it"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Auditing with AWS CloudTrail and AWS Config answers two different governance questions. CloudTrail keeps the account-wide event history of API activity - which identity called what, when, and from where - which is exactly the record a change investigation needs. Monitoring with Amazon CloudWatch covers metrics and logs about how resources are performing, which is where the CPU and network graphs come from.",
+        "distractors": {
+          "A": "Metrics describe how resources behave, not who acted on them; no CPU or network graph names the caller behind a change.",
+          "B": "AWS Config audits resource configuration and its history, so it shows that the rule was broken, not which identity broke it.",
+          "C": "Host logs are a real record at the wrong layer: the security group was changed through the AWS API, never on the instance."
+        }
+      }
+    },
+    {
+      "id": "2.08",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "theme": "C6",
+      "vertical": "courthouse records office",
+      "keywords": [
+        "AWS Artifact"
+      ],
+      "type": "single_choice",
+      "question": "A courthouse records office must give its external auditor a current copy of an AWS compliance report before the audit window closes at the end of the week. The office has no support plan beyond basic account access. Where does it obtain that report?",
+      "options": {
+        "A": "AWS Config, after enabling the rule set that matches the auditor's control framework",
+        "B": "AWS Artifact, which provides AWS audit reports and attestations for download on demand",
+        "C": "AWS Support, by opening a case that asks for the current report to be sent to the office",
+        "D": "AWS Security Hub, whose posture scores stand in for the compliance report the auditor wants"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D15",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "AWS Artifact is the self-service source of AWS audit reports and attestations: the office signs in, accepts the terms, and downloads the current document itself. That is a different job from monitoring, configuration auditing, or threat detection, none of which produce a third-party attestation.",
+        "distractors": {
+          "A": "AWS Config evaluates the office's own resources against rules; it does not publish AWS's audit reports.",
+          "C": "Routing the request to a support case adds a wait that the self-service source removes, and the deadline is days away.",
+          "D": "A posture score describes the office's own configuration; an auditor asking for an AWS attestation will not accept it."
+        }
+      }
+    },
+    {
+      "id": "2.09",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "theme": "C1",
+      "vertical": "crane hire company",
+      "keywords": [
+        "compliance requirements that vary among AWS services",
+        "compliance needs among geographic locations or industries"
+      ],
+      "type": "single_choice",
+      "question": "A crane hire company working across three countries has confirmed that AWS holds the compliance certification its safety regulator names. Its project manager concludes that every AWS service the company adopts is therefore covered by that certification. What is wrong with the conclusion?",
+      "options": {
+        "A": "A service's presence in a compliance program varies by service, so coverage is checked per service",
+        "B": "Nothing is wrong; a certification held by AWS extends to every service offered in the account",
+        "C": "The obligation belongs to AWS, so confirming coverage for each service is AWS's task and not the company's",
+        "D": "The gap is closed by buying a compliance product for each service through AWS Marketplace"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Compliance obligations are not uniform. They differ by geography and by industry, which is why compliance needs among geographic locations or industries have to be established first, and there are compliance requirements that vary among AWS services, so a program that covers one service does not automatically cover the next. Checking the specific service against the program's scope is part of selecting it.",
+        "distractors": {
+          "B": "Certification is granted for named services in named scopes; treating it as an account-wide property is the misreading the audit will find.",
+          "C": "AWS publishes which services are in scope for which program, but choosing services that satisfy the regulator remains the company's decision.",
+          "D": "AWS Marketplace sells software; it does not add a service to the scope of a compliance program."
+        }
+      }
+    },
+    {
+      "id": "2.10",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "theme": "C2",
+      "vertical": "crop insurance agency",
+      "keywords": [
+        "Amazon Macie",
+        "Amazon Inspector",
+        "Amazon GuardDuty"
+      ],
+      "type": "single_choice",
+      "question": "A crop insurance agency has been warned by its legal team that claim documents carrying policyholder identifiers may have been uploaded over the past year into a general-purpose Amazon S3 bucket. The agency needs to find out which stored objects actually contain those identifiers. Which service does that job?",
+      "options": {
+        "A": "Amazon Inspector, whose assessments cover software vulnerabilities and network exposure",
+        "B": "Amazon GuardDuty, whose threat detection flags the uploads as suspicious data movement",
+        "C": "Amazon Macie, which discovers and classifies sensitive data held in Amazon S3",
+        "D": "Server-side encryption on the bucket, which removes the need to identify the objects"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Each detection service answers a different question. Discovery and classification of sensitive data already sitting in Amazon S3 is Amazon Macie's job: it inspects the objects and reports which of them carry identifiers of the kind the legal team named.",
+        "distractors": {
+          "A": "Amazon Inspector assesses software vulnerabilities and unintended network exposure; it does not read the contents of stored objects.",
+          "B": "Amazon GuardDuty detects threat activity such as unusual API calls, so an ordinary upload by an authorized user raises nothing.",
+          "D": "Encryption protects the objects but answers no part of the question the agency asked, which is which documents hold identifiers."
+        }
+      }
+    },
+    {
+      "id": "2.11",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "theme": "C5",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "AWS Identity and Access Management [IAM]",
+        "groups",
+        "managed policies"
+      ],
+      "type": "multiple_response",
+      "question": "A cruise line reservations team is setting up AWS Identity and Access Management [IAM] for a dozen new analysts who all need the same permissions and who will work across two AWS Regions. Which TWO statements about IAM are correct? (Select TWO.)",
+      "options": {
+        "A": "Permissions attach to an individual IAM user only, so each analyst needs a policy written for them",
+        "B": "Groups collect users, so one permission set can serve every analyst on the team at once",
+        "C": "IAM users are Regional, so each analyst needs a separate user in each Region they work in",
+        "D": "One shared sign-in for the analysts is acceptable while their permissions are identical",
+        "E": "AWS managed policies can be attached as they are, with custom policies covering the rest"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "D19",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "AWS Identity and Access Management [IAM] gives each building block its own role: users carry long-lived identity, groups aggregate users so a single permission set serves many, and managed policies or custom policies carry the permissions themselves. IAM identities are global constructs, so the same user works in every Region.",
+        "distractors": {
+          "A": "Writing one policy per analyst removes the structure groups exist to provide and multiplies the maintenance for no gain.",
+          "C": "IAM is global, not Regional; duplicating users per Region would be maintenance work that the service does not require.",
+          "D": "A shared sign-in destroys attribution and widens exposure: any action taken traces back to the team rather than to a person."
+        }
+      }
+    },
+    {
+      "id": "2.12",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "theme": "C5",
+      "vertical": "dance studio chain",
+      "keywords": [
+        "principle of least privilege"
+      ],
+      "type": "single_choice",
+      "question": "A dance studio chain hands a contractor full administrator permissions for a two-week booking-system migration, on the reasoning that a short engagement is low risk and that scoping the access down would slow the work. Which principle does the arrangement violate?",
+      "options": {
+        "A": "Multi-factor authentication, which the contractor should have been enrolled in first",
+        "B": "The principle of least privilege, which grants only the permissions a task requires",
+        "C": "Delegated administration, under which an administrator approves each action taken",
+        "D": "Root user protection, which forbids sharing account credentials outside the chain"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "D01",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "The principle of least privilege sizes every permission set to the task in hand: the contractor needs the permissions the migration requires and nothing beyond them. Duration does not change the principle - a short engagement with administrator permissions is still an oversized grant, and the studio can scope it without slowing the work.",
+        "distractors": {
+          "A": "A second authentication factor proves who is signing in; it says nothing about how much the signed-in identity may do.",
+          "C": "Approving each individual action is heavier than the situation warrants and still leaves the oversized permission set in place.",
+          "D": "Root user protection is a real obligation at a different layer: what was granted here is an administrator permission set, not the root account."
+        }
+      }
+    },
+    {
+      "id": "2.13",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "theme": "C5",
+      "vertical": "debt collection agency",
+      "keywords": [
+        "multi-factor authentication [MFA]",
+        "importance of protecting the AWS root user account"
+      ],
+      "type": "multiple_response",
+      "question": "At a debt collection agency the finance director signs in as the account root user every morning to look at the bill, and a long-lived root access key sits in the nightly billing script. Which TWO measures protect the root user? (Select TWO.)",
+      "options": {
+        "A": "Attach a read-only IAM policy to the root user so the morning check can change nothing",
+        "B": "Rotate the root access key each quarter and write the new value into the billing script",
+        "C": "Enable multi-factor authentication [MFA] on the root user and keep the device secured",
+        "D": "Share the root credentials with a second director so that no one person holds them",
+        "E": "Delete the root access key and give the finance director an IAM identity for daily work"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D05",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "The importance of protecting the AWS root user account comes from what it can do: it is the one identity whose permissions cannot be reduced. The measures that hold are a strong unique password with multi-factor authentication [MFA] enabled, no standing access keys at all, and everyday work moved to an IAM identity so the root user is reached only for the tasks that genuinely require it.",
+        "distractors": {
+          "A": "The root user's authority does not come from an attached policy, so attaching a restrictive one does not limit what it can do.",
+          "B": "Rotation shortens the life of each key while leaving a standing root credential in a script, which is the exposure worth removing.",
+          "D": "Splitting knowledge of the credentials across two people widens who can act as root and blurs which of them did."
+        }
+      }
+    },
+    {
+      "id": "2.14",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "theme": "C6",
+      "vertical": "diamond certification lab",
+      "keywords": [
+        "tasks that only the account root user can perform"
+      ],
+      "type": "single_choice",
+      "question": "A diamond certification lab has moved all of its daily work onto IAM identities and now asks whether the root user can be retired entirely, since nobody has needed it for months. Which task still requires the account root user?",
+      "options": {
+        "A": "Closing the AWS account and changing the registered account name and email address",
+        "B": "Creating IAM users and attaching the managed policies each laboratory team needs",
+        "C": "Viewing the account's bills and downloading the monthly invoices for the finance team",
+        "D": "Deleting an Amazon S3 bucket that holds the lab's archived certification records"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D19",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "The tasks that only the account root user can perform are a short list of account-level operations - closing the account, changing the registered account name, email address, or payment details, and a handful of similar changes to the account itself. That list is why the root user stays reachable, protected, and otherwise unused.",
+        "distractors": {
+          "B": "Identity administration is exactly what an IAM administrator does, which is why the lab has managed without the root user for months.",
+          "C": "Access to billing information can be delegated to IAM identities once the account activates it, so it is not a root-only task.",
+          "D": "Deleting a bucket is a resource action governed by permissions; any identity with those permissions can perform it."
+        }
+      }
+    },
+    {
+      "id": "2.15",
+      "domain": "d2",
+      "primary_concept": "C-031",
+      "theme": "C5",
+      "vertical": "document shredding service",
+      "keywords": [
+        "access keys",
+        "AWS Secrets Manager",
+        "credential storage"
+      ],
+      "type": "single_choice",
+      "question": "A document shredding service runs a nightly reconciliation job on Amazon EC2 that reads a database password and a third-party courier token. Both values sit in the job's source file, which is committed to the team's repository. Where do those two secrets belong?",
+      "options": {
+        "A": "In environment variables set on the instance at launch, so the source file no longer holds them",
+        "B": "In an encrypted copy of the source file, with the decryption password held by the team lead",
+        "C": "In the access keys of an IAM user, rotated on the schedule the security policy names",
+        "D": "In AWS Secrets Manager, which stores them and returns them to the job at run time"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D06",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Credential storage follows the access path. Access keys serve programmatic calls, passwords governed by a password policy serve console sign-in, and key pairs serve operating system access to an instance. Application secrets such as a database password or a courier token belong in AWS Secrets Manager or AWS Systems Manager, which hand them to the job at run time and keep them out of source code.",
+        "distractors": {
+          "A": "The same plaintext secret is simply moved to another place on the same host, where it is still readable and still unmanaged.",
+          "B": "Encrypting the file is a real control placed where it cannot help: the decryption password now has to live somewhere too.",
+          "C": "Access keys authenticate a caller to AWS; they are not a store for a database password or a third-party token."
+        }
+      }
+    },
+    {
+      "id": "2.16",
+      "domain": "d2",
+      "primary_concept": "C-032",
+      "theme": "C5",
+      "vertical": "e-sports league operator",
+      "keywords": [
+        "IAM Identity Center",
+        "cross-account IAM roles"
+      ],
+      "type": "single_choice",
+      "question": "An e-sports league operator keeps its tournament platform in one AWS account and its analytics workload in another. The analytics application, running on Amazon EC2, authenticates to the tournament account with an access key pasted into its configuration file. Which capability replaces that arrangement?",
+      "options": {
+        "A": "AWS IAM Identity Center, giving the analytics team single sign-on across both accounts",
+        "B": "Multi-factor authentication on the analytics account, adding a second factor to the key",
+        "C": "An IAM role in the tournament account that the analytics application assumes when it runs",
+        "D": "A second copy of the access key, held in the tournament account for the application to use"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D06",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "A workload that needs access in another account should assume a role there instead of holding a static key: cross-account IAM roles issue temporary credentials that expire on their own and can be scoped to exactly what the analytics workload reads. Nothing is pasted into a configuration file, so there is no long-lived secret to leak or rotate.",
+        "distractors": {
+          "A": "AWS IAM Identity Center is the answer for workforce sign-in, and this caller is an application rather than a person at a console.",
+          "B": "A second factor applies to interactive sign-in; an unattended application cannot present one, so the pasted key would remain.",
+          "D": "Copying the key into the other account multiplies the places a long-lived credential exists without shortening its life."
+        }
+      }
+    },
+    {
+      "id": "2.17",
+      "domain": "d2",
+      "primary_concept": "C-033",
+      "theme": "C1",
+      "vertical": "electrical contracting firm",
+      "keywords": [
+        "types of identity management",
+        "federated"
+      ],
+      "type": "single_choice",
+      "question": "An electrical contracting firm already keeps every employee record in its corporate directory and refuses to maintain a second set of AWS sign-in credentials for the same people. Its identity lead asks what federating the existing directory with AWS actually changes. Which statement is correct?",
+      "options": {
+        "A": "Each employee record is copied into IAM, which becomes the firm's system of record",
+        "B": "Employees sign in against the corporate directory, which stays where the identity lives",
+        "C": "The firm has to replace its corporate directory with an AWS-hosted one before sign-in works",
+        "D": "Federating removes the need to define AWS permissions for the employees who sign in"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "D01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Among the types of identity management available, the federated option leaves the identity where it already lives: employees authenticate against the firm's own corporate directory, and AWS trusts the result. What changes is where sign-in happens, not who owns the employee record - which is exactly the second credential set the firm wanted to avoid.",
+        "distractors": {
+          "A": "Copying records into IAM is the opposite of federating and recreates the duplicate identity store the firm objected to.",
+          "C": "Replacing a working directory is a large project the firm does not need; federation is built to reuse the directory in place.",
+          "D": "Authentication and authorization stay separate: the firm still decides what a federated employee may do inside AWS."
+        }
+      }
+    },
+    {
+      "id": "2.18",
+      "domain": "d2",
+      "primary_concept": "C-034",
+      "theme": "C2",
+      "vertical": "escrow services company",
+      "keywords": [
+        "AWS WAF",
+        "AWS Shield"
+      ],
+      "type": "multiple_response",
+      "question": "An escrow services company's public settlement portal has been hit twice this month: once by a traffic flood that saturated the front end, and once by injection strings submitted through its claim form. Which TWO services address these two threats? (Select TWO.)",
+      "options": {
+        "A": "Amazon Inspector, which assesses the portal's software for known vulnerabilities",
+        "B": "AWS Firewall Manager, which administers protection policies across the company's accounts",
+        "C": "AWS Shield, which defends the portal against distributed denial of service floods",
+        "D": "AWS WAF, which inspects web requests and blocks malicious ones such as injection strings",
+        "E": "AWS CloudTrail, whose event history shows the requests once the attack has ended"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "E": "D07"
+      },
+      "rationale": {
+        "correct": "The security capabilities that AWS provides map onto threats one by one. A volumetric flood against a public endpoint is what AWS Shield is built to absorb, and malicious web requests carried in form fields are what AWS WAF inspects and blocks at the request layer. Two different threats, two different protective services.",
+        "distractors": {
+          "A": "Amazon Inspector assesses software for known vulnerabilities; it does not stand in the traffic path and blocks nothing.",
+          "B": "AWS Firewall Manager administers protection policies across accounts, so it needs those protections to exist before it can help.",
+          "E": "An event history is a detective record produced after the fact, which is of no use while the portal is being saturated."
+        }
+      }
+    },
+    {
+      "id": "2.19",
+      "domain": "d2",
+      "primary_concept": "C-035",
+      "theme": "C6",
+      "vertical": "exhibition stand builder",
+      "keywords": [
+        "AWS Security Blog",
+        "AWS Knowledge Center",
+        "AWS Security Center"
+      ],
+      "type": "single_choice",
+      "question": "An exhibition stand builder has one part-time security engineer who wants a standing source of AWS's own written analysis of new security features and practices, as reading material rather than an answer to a specific question. Which destination fits that need?",
+      "options": {
+        "A": "The AWS Knowledge Center, which answers the questions AWS customers ask most often",
+        "B": "The AWS Security Center, the landing page gathering bulletins and compliance material",
+        "C": "A case raised in AWS Support Center, answered in writing by an AWS support engineer",
+        "D": "The AWS Security Blog, where AWS publishes its analysis of security features and practices"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Among the security-related documentation that AWS provides, each destination answers a different need. Ongoing analysis of new features and practices, written by AWS and published as reading material, is what the blog carries - which is what a single engineer keeping current actually wants.",
+        "distractors": {
+          "A": "The AWS Knowledge Center is organized around frequently asked questions, so it answers a question already formed rather than supplying reading.",
+          "B": "The AWS Security Center gathers bulletins and compliance material, which is reference rather than the running commentary described.",
+          "C": "Opening a case routes a specific problem to a support engineer, and no case is open here; it also puts a wait in front of public material."
+        }
+      }
+    },
+    {
+      "id": "2.20",
+      "domain": "d2",
+      "primary_concept": "C-036",
+      "theme": "C6",
+      "vertical": "eyewear retail chain",
+      "keywords": [
+        "AWS Marketplace",
+        "third-party security products"
+      ],
+      "type": "single_choice",
+      "question": "An eyewear retail chain has standardized on an intrusion-prevention appliance from an independent vendor and wants it running in front of its AWS workloads. Its procurement team is at capacity and will not open a new vendor onboarding process this quarter. How does the chain obtain the product?",
+      "options": {
+        "A": "Through AWS Marketplace, which lists third-party security products for purchase in the account",
+        "B": "Through AWS Artifact, where vendor software is downloaded with its compliance documents",
+        "C": "Through AWS Support, by asking the account team to arrange a license with the vendor",
+        "D": "By dropping the appliance and using the nearest native AWS service in its place"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D15",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Third-party security products are procured through AWS Marketplace: the vendor's software is subscribed to inside the account and billed with AWS usage, which extends protection beyond the native services without opening a separate procurement channel. That is precisely the constraint the chain's procurement team imposed.",
+        "distractors": {
+          "B": "AWS Artifact supplies AWS's own audit reports and attestations; no vendor software is distributed through it.",
+          "C": "Asking support to broker a license hands the task to someone else and still ends in a procurement process.",
+          "D": "Abandoning a standardized appliance answers the procurement constraint by giving up the requirement it was meant to serve."
+        }
+      }
+    },
+    {
+      "id": "2.21",
+      "domain": "d2",
+      "primary_concept": "C-037",
+      "theme": "C2",
+      "vertical": "farm equipment dealership",
+      "keywords": [
+        "AWS Trusted Advisor"
+      ],
+      "type": "single_choice",
+      "question": "A farm equipment dealership wants a recurring list of its own account hygiene problems - buckets left open to the public, IAM users without multi-factor authentication - rather than alerts about attacks under way. Which service produces that list?",
+      "options": {
+        "A": "Amazon GuardDuty, whose findings identify threat activity as it occurs in the account",
+        "B": "AWS Config, which stores the configuration history of each recorded resource",
+        "C": "AWS Trusted Advisor, whose security checks recommend fixes for the account's exposures",
+        "D": "Amazon CloudWatch alarms on account metrics, raised whenever a threshold is crossed"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "AWS Trusted Advisor inspects an account and returns recommendations, and its security checks are aimed at exactly the hygiene issues named: public access where it was not intended, identities without multi-factor authentication, and similar standing exposures. It reports on the account's configuration, not on attacks in progress.",
+        "distractors": {
+          "A": "Amazon GuardDuty detects active threats, which is the opposite of what the dealership asked for.",
+          "B": "AWS Config records how resources are configured and how that changed; turning that history into recommendations is a separate job.",
+          "D": "A metric alarm fires once a threshold is crossed, so it reports symptoms after the fact instead of listing standing exposures."
+        }
+      }
     }
   ]
 }

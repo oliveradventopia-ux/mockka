@@ -1,0 +1,20 @@
+{
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, gcp-cdl round 1, 2026-08-18. The instrument is unavailable in this session, as it has been for aif-c01 (both rounds), az-900, clf-c02, sy0-701 and ccao-f. The same record is summarized inline in eval/blind-solve.json -> codex_cross_solve, where methodology/05 asks for the matrix to live; this file is the per-exam house convention and the two must not diverge.",
+  "round": 1,
+  "status": "advisory_skipped",
+  "attempts": [
+    {
+      "n": 1,
+      "action": "`which codex` / `codex --version` on PATH",
+      "result": "codex not found - no binary on PATH"
+    },
+    {
+      "n": 2,
+      "action": "located the bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.5810.52044-darwin-arm64/bin/macos-aarch64/codex; checked ~/.codex/auth.json, then ran one `codex exec --skip-git-repo-check` probe",
+      "result": "~/.codex/auth.json: No such file or directory. exec probe failed with `401 Unauthorized: Missing bearer or basic authentication in header` against wss://api.openai.com/v1/responses, then https://api.openai.com/v1/responses after 5 reconnect attempts (request id req_717c0bcb895f4113802664bb2d4f514b)"
+    }
+  ],
+  "reason": "No Codex CLI authentication is available to this session. The VS Code extension's auth is not exposed to the CLI, and establishing it requires an interactive `codex login` by Oliver - outside the examiner's authority under the project free-first rule (no account signups or spend without Oliver's approval). One probe pair was budgeted and no more.",
+  "consequence": "Per methodology/05 #codex a missing advisory instrument is noted, not blocking. S5 round 1 proceeds on the Claude blind solve alone: no three-way Claude/Codex/key disagreement matrix exists, and the Gate 2 sample was assembled WITHOUT any cross-model signal. That matters more than usual here, because this blind solve returned 83/83 with every answer at high confidence. A perfect single-family score is evidence of a clean bank ONLY under the assumption that the authoring session and the examining session are independent - they are procedurally independent (fresh context, no shared conversation) but they are not independent in weights. The convergent-miss check, which methodology/05 calls the strongest miskey signal in the protocol, was not run. The Gate 2 deep-read on the 10 sampled items is the compensating control and should carry adjudication-grade scrutiny.",
+  "retry_path": "If Oliver runs `codex login` (or signs into the ChatGPT VS Code extension in a way that exposes CLI auth), re-run the cross-solve on the same keyless form before Gate 2 sign-off. The keyless form regenerates deterministically from questions.json: project each item to id, domain, type, question and options only - no answer, rationale, distractor_patterns, primary_concept, theme or keywords."
+}

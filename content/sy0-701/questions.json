@@ -1,4 +1,535 @@
 {
   "version": "0.1.0",
-  "questions": []
+  "questions": [
+    {
+      "id": "d1-q01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "theme": "S1",
+      "vertical": "livestock auction house",
+      "keywords": [
+        "operational",
+        "physical",
+        "technical",
+        "managerial"
+      ],
+      "type": "single_choice",
+      "question": "After a series of overnight thefts from its holding pens, a livestock auction house adds several new security measures. Which of the following is an operational control?",
+      "options": {
+        "A": "Perimeter fencing around the holding pens and loading chutes",
+        "B": "Badge readers installed on the sale-barn and office doors",
+        "C": "Staff patrol rounds that follow a documented nightly route",
+        "D": "A board-approved policy setting the annual security budget"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E02",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Control categories describe what kind of thing implements the control. Patrol rounds are carried out by people executing a documented process, which is the defining feature of an operational control — the staff, not a device or a management decision, deliver the protection.",
+        "distractors": {
+          "A": "Fencing is a physical control: a barrier object stops or channels movement on its own, with no person executing a process.",
+          "B": "Badge readers are a technical control — technology enforces the restriction, even though what it protects is a door.",
+          "D": "Budget approval is a managerial control: a management decision that directs security rather than performing it."
+        }
+      }
+    },
+    {
+      "id": "d1-q02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "theme": "S1",
+      "vertical": "motorway toll operator",
+      "keywords": [
+        "deterrent",
+        "preventive",
+        "detective",
+        "directive"
+      ],
+      "type": "single_choice",
+      "question": "A motorway toll operator has suffered repeated tampering with roadside equipment cabinets. It bolts a sign to each cabinet stating that cabinets are alarmed, monitored, and traceable. The signs go up before any alarm hardware is fitted. Which control type do the signs represent?",
+      "options": {
+        "A": "Deterrent",
+        "B": "Preventive",
+        "C": "Detective",
+        "D": "Directive"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The sign changes the attacker's decision without removing the ability to tamper — that influence on the adversary's choice is exactly what defines a deterrent control, and it operates even though no alarm exists yet.",
+        "distractors": {
+          "B": "A preventive control removes the option to act, the way a lock physically resists entry; the sign leaves the cabinet exactly as accessible as before.",
+          "C": "A detective control identifies an event during or after it occurs. With no alarm hardware fitted, nothing detects anything — the wording only claims monitoring.",
+          "D": "A directive control instructs employees through policies and procedures; these signs are aimed at outsiders' decisions, not staff behavior."
+        }
+      }
+    },
+    {
+      "id": "d1-q03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "theme": "S1",
+      "vertical": "county court administration",
+      "keywords": [
+        "category",
+        "control type",
+        "technical",
+        "preventive"
+      ],
+      "type": "single_choice",
+      "question": "A county court administration is building its first control register, with one column for control category and one for control type. An analyst must file the new electronic badge lock on the records-room door. Which classification is correct?",
+      "options": {
+        "A": "Physical category, preventive type",
+        "B": "Technical category, deterrent type",
+        "C": "Operational category, preventive type",
+        "D": "Technical category, preventive type"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Category and control type are independent axes, and every control carries exactly one of each. The lock is implemented by technology, so its category is technical; it blocks unauthorized entry before it happens, so its type is preventive.",
+        "distractors": {
+          "A": "The asset protected is a physical door, but category follows what implements the control — an electronic lock is technology, not a barrier object like a bollard or a fence.",
+          "B": "Deterrent would mean the lock works by influencing an intruder's decision; a lock that actually blocks entry removes the option, which is preventive.",
+          "C": "Operational controls are executed by people, such as guard patrols; no person performs this control at each entry."
+        }
+      }
+    },
+    {
+      "id": "d1-q04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "theme": "S1",
+      "vertical": "microbrewery cooperative",
+      "keywords": [
+        "integrity",
+        "confidentiality",
+        "availability",
+        "non-repudiation"
+      ],
+      "type": "single_choice",
+      "question": "A microbrewery cooperative discovers that grain-order quantities in its shared recipe database were altered during the night by an unauthorized session. Nothing was copied out, and the database stayed online throughout. Which security property was violated?",
+      "options": {
+        "A": "Confidentiality",
+        "B": "Integrity",
+        "C": "Availability",
+        "D": "Non-repudiation"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Integrity is trustworthiness of content: the attack changed data, so the recipes can no longer be trusted to say what the brewers wrote. Nothing secret was disclosed and the service stayed usable, so integrity is the property destroyed.",
+        "distractors": {
+          "A": "Confidentiality is violated when information is disclosed to someone not entitled to it — the stem states nothing was copied out, and secret recipes being involved does not change what the attack actually did.",
+          "C": "Availability concerns the ability to use the service at all; the database remained online for the whole incident.",
+          "D": "Non-repudiation is an actor being unable to deny an action later — a property the cooperative might now wish it had for tracing the change, not the property the attack destroyed."
+        }
+      }
+    },
+    {
+      "id": "d1-q05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "theme": "S2",
+      "vertical": "chartered accountancy practice",
+      "keywords": [
+        "digital signature",
+        "non-repudiation",
+        "private key",
+        "hash"
+      ],
+      "type": "single_choice",
+      "question": "A chartered accountancy practice must be able to prove to a regulator that a specific partner approved each client filing, in a way the partner cannot later deny. Which mechanism meets the requirement?",
+      "options": {
+        "A": "A digital signature applied with each partner's private key",
+        "B": "A cryptographic hash of every filing stored alongside it",
+        "C": "TLS encryption on the channel used to submit filings",
+        "D": "An approval PIN shared by the partners in each office"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D06",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Non-repudiation requires binding the actor to the act. A digital signature made with a private key only that partner holds does exactly that: the signature verifies against the partner's public key, so the approval cannot be disowned.",
+        "distractors": {
+          "B": "Hashing proves the filing was not altered, but a hash is computable by anyone and binds no identity to the approval.",
+          "C": "Transport encryption protects the filing in transit; it operates on the channel and says nothing about who approved the document.",
+          "D": "The idea that a shared PIN identifies an individual is false by construction — any partner in the office could have entered it, which is precisely what the regulator would object to."
+        }
+      }
+    },
+    {
+      "id": "d1-q06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "theme": "S1",
+      "vertical": "regional blood bank",
+      "keywords": [
+        "Accounting",
+        "AAA",
+        "authorization",
+        "authentication"
+      ],
+      "type": "single_choice",
+      "question": "A regional blood bank produces a monthly report listing which staff accounts viewed donor records, what each account did, and when. A new analyst asks which element of the AAA framework this reporting activity represents. What is the correct answer?",
+      "options": {
+        "A": "Authorization",
+        "B": "Authentication",
+        "C": "Accounting",
+        "D": "Gap analysis"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Accounting is the AAA function that records what an authenticated, authorized account actually did — the usage trail this monthly report is built from.",
+        "distractors": {
+          "A": "Authorization is the decision about what an account is allowed to do; the report grants and denies nothing, it records what happened.",
+          "B": "Authentication answers who you are at sign-in; the report is about actions taken after sign-in, which inverts what the question describes.",
+          "D": "Gap analysis measures current security state against a required state — an assessment exercise, not a record of account activity."
+        }
+      }
+    },
+    {
+      "id": "d1-q07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "theme": "S1",
+      "vertical": "wind farm control center",
+      "keywords": [
+        "Zero Trust",
+        "Policy Enforcement Point",
+        "control plane",
+        "data plane"
+      ],
+      "type": "single_choice",
+      "question": "A wind farm control center is deploying a Zero Trust architecture for access to its turbine-management application. An engineer asks which component actually permits or blocks each individual session once the access decision has been made. Which component does this?",
+      "options": {
+        "A": "The Policy Engine",
+        "B": "The Policy Enforcement Point",
+        "C": "The Policy Administrator",
+        "D": "An implicit trust zone"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Zero Trust splits deciding from enforcing: control plane components make the policy-driven access decision, and the Policy Enforcement Point sits in the data plane, applying that decision to permit or block each session.",
+        "distractors": {
+          "A": "The Policy Engine evaluates policy and decides — it lives in the control plane and never carries or blocks session traffic itself.",
+          "C": "The Policy Administrator communicates the engine's decision to the enforcement point; it coordinates, it does not sit in the traffic path.",
+          "D": "An implicit trust zone is the thing Zero Trust removes — the claim that a network location can serve as an enforcement component is the assumption the model rejects."
+        }
+      }
+    },
+    {
+      "id": "d1-q08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "theme": "S2",
+      "vertical": "parcel locker network",
+      "keywords": [
+        "bollards",
+        "infrared",
+        "sensors",
+        "detect"
+      ],
+      "type": "multiple_response",
+      "question": "A parcel locker network operates unstaffed outdoor locker banks. Two incidents shaped this year's security budget: a vehicle rammed a locker bank at night, and thieves worked undisturbed for an hour in an unlit lot. The new design must physically stop vehicle intrusion and detect after-hours human presence at the banks. Which TWO controls best meet the two stated requirements? (Select TWO).",
+      "options": {
+        "A": "Badge readers on the locker service doors",
+        "B": "Bollards ringing each locker bank",
+        "C": "Signs stating the lots are monitored and recorded",
+        "D": "A staff review of surveillance recordings every morning",
+        "E": "Infrared sensors covering each locker approach"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "D09",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "The two requirements name a barrier job and a detection job. Bollards are the barrier that physically stops vehicle intrusion, and infrared sensors detect the heat of a person approaching in darkness — after-hours detection at the moment it happens.",
+        "distractors": {
+          "A": "Badge readers control who opens the service doors — a real control, but it neither stops a vehicle nor detects a person standing at the bank.",
+          "C": "Signage discloses that monitoring exists instead of providing it; a sign may deter some intruders, but it detects no one and stops no vehicle.",
+          "D": "A morning review is detection after the fact — the requirement is to detect presence during the intrusion, while a response is still possible."
+        }
+      }
+    },
+    {
+      "id": "d1-q09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "theme": "S2",
+      "vertical": "film post-production studio",
+      "keywords": [
+        "honeytoken",
+        "honeyfile",
+        "honeypot",
+        "honeynet"
+      ],
+      "type": "single_choice",
+      "question": "A film post-production studio suspects someone is harvesting credentials from its internal configuration repository. The security team wants an alert the moment any harvested credential is actually used, without exposing a real account. Which deception asset should be planted in the repository?",
+      "options": {
+        "A": "A honeytoken",
+        "B": "A honeyfile",
+        "C": "A honeypot",
+        "D": "A honeynet"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E02",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Deception assets are graded by scope, and the thing the attacker should touch here is a credential. A honeytoken is a planted, valid-looking but unused credential, so any authentication attempt with it is a high-confidence alert.",
+        "distractors": {
+          "B": "A honeyfile is bait at file scope — it signals when a document is opened or moved, not when a harvested credential is used to authenticate.",
+          "C": "A honeypot is a decoy host; it draws attackers to a system, a wider scope than the single planted credential the team wants triggered.",
+          "D": "A honeynet is an entire decoy network — the largest scope on the deception ladder, far beyond alerting on one credential's use."
+        }
+      }
+    },
+    {
+      "id": "d1-q10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "theme": "S5",
+      "vertical": "ambulance service dispatch",
+      "keywords": [
+        "emergency change",
+        "backout plan",
+        "impact analysis",
+        "change management"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance service's computer-aided dispatch server is exposed to a vulnerability being actively exploited against other agencies. The vendor's patch must go on today, but the standard change window is two weeks out. What should the operations team do?",
+      "options": {
+        "A": "Schedule the patch for the next approved maintenance window",
+        "B": "Apply the patch outside the change process and write it up only if something breaks",
+        "C": "Apply the patch as a standard change, skipping impact analysis and the backout plan to save time",
+        "D": "Run the emergency change track: expedited approval, impact analysis, and a backout plan, then patch"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D15",
+        "B": "D17",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "An emergency change takes an expedited track through the same change management process — approval still happens, impact is still analyzed, and the backout plan remains a precondition, only faster. Urgency changes the schedule, not the spine.",
+        "distractors": {
+          "A": "Waiting two weeks defers a decision the exploitation evidence has already made; the exposure compounds while the vulnerability is actively exploited.",
+          "B": "Patching silently and documenting only on failure hides the change from the process that exists to track it — the record must exist whether or not something breaks.",
+          "C": "Dropping impact analysis and the backout plan removes exactly the structure an urgent change needs most; the backout plan is a precondition, not an optional extra."
+        }
+      }
+    },
+    {
+      "id": "d1-q11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "theme": "S5",
+      "vertical": "gas pipeline operator",
+      "keywords": [
+        "version control",
+        "diagrams",
+        "impact analysis",
+        "maintenance window"
+      ],
+      "type": "single_choice",
+      "question": "A gas pipeline operator re-segmented its control network in March. In July, an incident response stalls for hours as responders work from network diagrams that still show the old segmentation. Which change management activity was missed after the March change?",
+      "options": {
+        "A": "Performing an impact analysis for the segmentation work",
+        "B": "Obtaining stakeholder approval for the segmentation work",
+        "C": "Updating the network diagrams and their version control record",
+        "D": "Declaring a maintenance window for the cutover"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The environment drifts from its record unless documentation is updated after the change: refreshed diagrams kept under version control are what let responders work from the network as it is, not as it was.",
+        "distractors": {
+          "A": "Impact analysis happens before a change, to predict its effects; the July delay was caused by stale records after the change, not by unforeseen impact.",
+          "B": "Approval is also a pre-change step, and nothing suggests the work was unauthorized — the diagrams, not the authorization, were left behind.",
+          "D": "A maintenance window governs when the cutover happens; it has no bearing on whether the documentation matches the network afterward."
+        }
+      }
+    },
+    {
+      "id": "d1-q12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "theme": "S2",
+      "vertical": "independent bookstore chain",
+      "keywords": [
+        "Online Certificate Status Protocol",
+        "certificate revocation list",
+        "key escrow",
+        "wildcard"
+      ],
+      "type": "single_choice",
+      "question": "An independent bookstore chain runs its online store behind a TLS certificate. The web team wants browsers to confirm the certificate has not been revoked without downloading the certificate authority's entire revocation list on every visit. Which mechanism should the team rely on?",
+      "options": {
+        "A": "A certificate revocation list",
+        "B": "The Online Certificate Status Protocol",
+        "C": "Key escrow",
+        "D": "A wildcard certificate"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E02",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "The Online Certificate Status Protocol answers a status query about a single certificate in real time, which is what lets a browser check revocation without fetching the authority's full list — the two revocation-checking mechanisms differ in exactly that cost profile.",
+        "distractors": {
+          "A": "The certificate revocation list is the mechanism the team is trying to avoid: the client downloads the authority's whole list to check one certificate's status.",
+          "C": "Key escrow keeps a recoverable copy of a private key — a recovery arrangement with its own risk, and no role in revocation checking.",
+          "D": "A wildcard certificate broadens which hostnames one certificate covers — a scope decision, unrelated to how revocation status is checked."
+        }
+      }
+    },
+    {
+      "id": "d1-q13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "theme": "S4",
+      "vertical": "casino resort operations",
+      "keywords": [
+        "record",
+        "full-disk",
+        "encryption",
+        "partition"
+      ],
+      "type": "single_choice",
+      "question": "A casino resort already protects its loyalty-program database server with full-disk encryption. An audit finds that database administrators can still read members' payment card numbers with an ordinary query. The resort must make that column unreadable even to administrators querying the running database. What should it implement?",
+      "options": {
+        "A": "A longer encryption key for the full-disk volume",
+        "B": "TLS on all connections between applications and the database",
+        "C": "Partition-level encryption for the database's storage volume",
+        "D": "Record-level encryption of the payment card column"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D06",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "The level of encryption follows how the data is accessed. Full-disk and partition encryption protect powered-off storage, but a running database decrypts them transparently for every query. Only record-level encryption of the column keeps card numbers unreadable inside the live database.",
+        "distractors": {
+          "A": "Key length is a strength decision inside the same design — a longer full-disk key still decrypts transparently for anyone querying the running system.",
+          "B": "Transport encryption protects data moving on the wire; the administrators read data at rest inside the database, a different layer entirely.",
+          "C": "Partition encryption sits at the same level as full-disk: once the partition is mounted for the database, every query sees plaintext."
+        }
+      }
+    },
+    {
+      "id": "d1-q14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "theme": "S2",
+      "vertical": "textile mill group",
+      "keywords": [
+        "hardware security module",
+        "Trusted Platform Module",
+        "secure enclave",
+        "key management system"
+      ],
+      "type": "single_choice",
+      "question": "A textile mill group needs one tamper-resistant appliance in its data center to hold the organization's code-signing and database encryption keys, generate new keys, and serve signing operations to systems across all four plants. Which technology fits the requirement?",
+      "options": {
+        "A": "A Trusted Platform Module",
+        "B": "A secure enclave",
+        "C": "A hardware security module",
+        "D": "A key management system"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E05",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Hardware roots of trust are chosen by job: an organization's shared keys, generated and used inside one dedicated tamper-resistant appliance that serves many systems, is the hardware security module's job description.",
+        "distractors": {
+          "A": "A Trusted Platform Module is a platform-bound chip: it protects one machine's secrets and boot measurements and cannot serve keys to systems across four plants.",
+          "B": "A secure enclave isolates computation on a single device's processor — the inverse of a shared, network-served key appliance.",
+          "D": "A key management system manages the key lifecycle in software; it orchestrates keys but is not itself the tamper-resistant hardware the requirement names."
+        }
+      }
+    },
+    {
+      "id": "d1-q15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "theme": "S2",
+      "vertical": "orchestra and concert hall",
+      "keywords": [
+        "salting",
+        "key stretching",
+        "hashing",
+        "SHA-256"
+      ],
+      "type": "single_choice",
+      "question": "A concert hall's ticketing platform stores customer passwords as unsalted SHA-256 digests. After a database copy leaked, most passwords were recovered within days using precomputed tables. Which change best protects the stored passwords going forward?",
+      "options": {
+        "A": "Salt each password and hash it with a key-stretching algorithm",
+        "B": "Encrypt the password table with a symmetric key kept on the same server",
+        "C": "Replace SHA-256 with a different fast general-purpose hash",
+        "D": "Hash each password twice with the same function"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D13",
+        "C": "D05",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Salting defeats precomputed tables by making every digest unique, and key stretching turns a fast hash into a deliberately slow computation, so each guess costs the attacker real time. Together they address both weaknesses the leak exposed in the hashing design.",
+        "distractors": {
+          "B": "Reversible encryption with a key stored beside the data widens the exposure: whoever copies the database can copy the key, turning every password into plaintext at once.",
+          "C": "Swapping one fast hash for another moves the name, not the mechanism — precomputed tables and high-speed guessing work the same way against the replacement.",
+          "D": "Double hashing is more of the same fast computation; it adds one negligible step for defender and attacker alike."
+        }
+      }
+    }
+  ]
 }

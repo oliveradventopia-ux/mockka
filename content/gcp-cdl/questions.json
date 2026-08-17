@@ -1960,6 +1960,216 @@
           "D": "Staff clearance governs who inside the brokerage may handle the records, which leaves untouched the question of which government could compel their disclosure."
         }
       }
+    },
+    {
+      "id": "gcp-cdl-d6-01",
+      "domain": "d6",
+      "primary_concept": "C-076",
+      "theme": "G7",
+      "vertical": "industrial bakery",
+      "keywords": ["capital expenditures (CapEx)", "operational expenditures (OpEx)", "total cost of ownership (TCO)"],
+      "type": "single_choice",
+      "question": "An industrial bakery's finance director compares five years of cloud subscription against the purchase price of the replacement servers the estate would otherwise need, and concludes that the cloud is the more expensive option. The IT manager replies that the comparison is not a like-for-like one. Which comparison would be honest?",
+      "options": {
+        "A": "Add the electricity, cooling and server-room space to the purchase price",
+        "B": "Compare only the cash leaving the business each year under either option",
+        "C": "Treat the two as equivalent, as the same workload runs under either one",
+        "D": "Count hardware investment, operational overhead and opportunity cost together"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E07", "B": "E06", "C": "D19" },
+      "rationale": {
+        "correct": "Adopting cloud moves spend from capital expenditures (CapEx) toward operational expenditures (OpEx), and a total cost of ownership (TCO) comparison is honest only when it counts hardware investment, operational overhead and opportunity cost together. Any one of them alone flatters a side: purchase price ignores what running the estate costs, and both ignore what the bakery's people could have been doing instead.",
+        "distractors": {
+          "A": "Power, cooling and floor space are real operational overhead and one part of the picture, and a comparison that stops there still omits what the estate costs in people and in forgone work.",
+          "B": "Cash leaving the business each year is a treasury view rather than a cost of ownership, and it hides the capital already sunk into hardware the bakery owns.",
+          "C": "The same workload does not cost the same to run in both places, which is the whole reason the comparison is being made."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-02",
+      "domain": "d6",
+      "primary_concept": "C-077",
+      "theme": "G7",
+      "vertical": "private university",
+      "keywords": ["cloud financial governance", "people, process, and technology"],
+      "type": "multiple_response",
+      "question": "A private university's cloud spend has doubled in a year. Each faculty runs its own projects, a central dashboard already shows every cost down to the service, and no faculty head has ever been asked to explain a rise. The finance committee wants cloud financial governance that actually works. Select the TWO changes that would establish it.",
+      "options": {
+        "A": "Each project's owner is also made accountable for what that project spends",
+        "B": "A monthly report of the largest-spending projects is circulated to the deans",
+        "C": "Every faculty is given the same fixed budget regardless of what it runs",
+        "D": "A better cost dashboard is bought so that the figures are easier to read",
+        "E": "A standing review is established, with named people and agreed thresholds"
+      },
+      "select_count": 2,
+      "answer": ["A", "E"],
+      "distractor_patterns": { "B": "D07", "C": "D14", "D": "D03" },
+      "rationale": {
+        "correct": "Cloud financial governance answers who manages cloud costs, and it works through people, process, and technology together. Pairing each project's ownership with financial accountability gives the spend a named owner, and a standing review with named people and agreed thresholds is the process that makes the ownership operate. Visibility on its own changes nothing while nobody is answerable for what it shows.",
+        "distractors": {
+          "B": "A circulated report tells the deans what has already been spent, and the university's problem is that nobody is ever asked to account for it.",
+          "C": "One fixed budget across faculties ignores what each of them actually runs, starving the heavy workloads and leaving the light ones with headroom nobody watches.",
+          "D": "The university already has a dashboard showing every cost, so a clearer one is technology answering a question about people and process."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-03",
+      "domain": "d6",
+      "primary_concept": "C-078",
+      "theme": "G3",
+      "vertical": "museum and heritage trust",
+      "keywords": ["projects", "folders", "organization node", "inheritance and propagation"],
+      "type": "single_choice",
+      "question": "A museum and heritage trust must apply one data-retention policy to everything its digital preservation department runs, without anyone having to set it on each new project as it is created. The department's work sits in a dozen projects today and will spread into more. Other departments must not be bound by this policy. Where should it be applied?",
+      "options": {
+        "A": "On each project, so that every project's policy is explicit",
+        "B": "On a folder holding the department's projects, so new projects inherit it",
+        "C": "On the organization node, so the whole trust is covered in one action",
+        "D": "In a documented standard that every project owner is asked to follow"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E03", "C": "D13", "D": "D09" },
+      "rationale": {
+        "correct": "The hierarchy runs resources inside projects, projects inside folders, and folders under the organization node, each element having exactly one parent. What the tree buys is inheritance and propagation: a policy set on a folder reaches every project beneath it, including projects that do not exist yet, which is precisely what the trust asked for.",
+        "distractors": {
+          "A": "Setting the policy on each project is the work the trust asked to avoid, and every project created next year starts without it until somebody remembers.",
+          "C": "The organization node does cover the department, and it also binds every other part of the trust to a retention rule written for digital preservation.",
+          "D": "A written standard depends on each owner reading and following it, and nothing in the hierarchy enforces it, so the first project that skips it is invisible."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-04",
+      "domain": "d6",
+      "primary_concept": "C-079",
+      "theme": "G7",
+      "vertical": "textile mill",
+      "keywords": ["resource quota policies", "budget threshold rules", "Dynamic Workload Scheduler", "Spot VMs"],
+      "type": "single_choice",
+      "question": "A textile mill's finance team has two distinct cost problems. A research team occasionally launches far more machines than anyone expected, and separately the monthly pattern-simulation run is simply expensive at list price, although it can wait days for capacity. Which pairing of controls addresses both problems?",
+      "options": {
+        "A": "Budget threshold rules for both, as alerts cover overspend of any kind",
+        "B": "Resource quota policies for the simulation run, and Spot VMs for the research team",
+        "C": "Cloud Billing reports for both, so the finance team can see where the money goes",
+        "D": "Resource quota policies for the research team, and Dynamic Workload Scheduler for the run"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E07", "B": "E01", "C": "E06" },
+      "rationale": {
+        "correct": "The two problems need different kinds of control. Unexpected launches are capped before the money is spent, which is what resource quota policies and budget threshold rules do. A job that is expensive by nature and can wait is instead bought on the platform's terms, which is what Dynamic Workload Scheduler and Spot VMs are for.",
+        "distractors": {
+          "A": "Budget threshold rules would tell the mill that the research team has overspent, and they do nothing about the price of a run that is expensive by design.",
+          "B": "The two controls are pointed at the wrong problems, as a quota on a scheduled run does not make it cheaper and interruptible capacity does not stop a team launching too much.",
+          "C": "Billing reports answer where the money went, which is analysis rather than control, and neither problem is that the finance team cannot see the spend."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-05",
+      "domain": "d6",
+      "primary_concept": "C-080",
+      "theme": "G7",
+      "vertical": "language school network",
+      "keywords": ["Cloud Billing reports"],
+      "type": "single_choice",
+      "question": "A language school network's board wants to know which of its cost centres drove last quarter's increase and which services the money went on, before it decides anything at all. No decision has yet been taken about caps, commitments or discounts. Which capability answers the board's question?",
+      "options": {
+        "A": "Cloud Billing reports, which show what was spent and where it went",
+        "B": "Budget threshold rules, which alert when spend passes a set level",
+        "C": "Resource quota policies, which cap what each project may consume",
+        "D": "Spot VMs, which lower the price of the network's batch workloads"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "E05", "D": "E06" },
+      "rationale": {
+        "correct": "The board has asked an analysis question: what was spent, by whom, and on which services. Cloud Billing reports answer exactly that. Controls that cap consumption and mechanisms that discount it both act on future spend, and neither explains a quarter that has already closed.",
+        "distractors": {
+          "B": "A threshold alert fires when spend crosses a level and reports nothing about which cost centre or which service drove a quarter that has already closed.",
+          "C": "A quota limits what a project may consume from now on, so it shapes the next quarter and explains nothing about the last one.",
+          "D": "Cheaper capacity for batch work reduces future bills, and the board has asked what happened rather than what to change."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-06",
+      "domain": "d6",
+      "primary_concept": "C-081",
+      "theme": "G2",
+      "vertical": "parcel locker network",
+      "keywords": ["Cloud Trace", "Cloud Monitoring", "Cloud Logging", "Cloud Profiler", "Google Cloud's Observability"],
+      "type": "single_choice",
+      "question": "A parcel locker network's checkout has become slow, and its dashboards show every individual service comfortably inside its own latency limits. The team needs to see where the time actually goes across the chain of services that one checkout request passes through. Which product answers that?",
+      "options": {
+        "A": "Cloud Monitoring, which would chart each service's latency metrics",
+        "B": "Cloud Logging, which would let the team search each service's logs",
+        "C": "Cloud Trace, which follows one request through the services it visits",
+        "D": "Cloud Profiler, which shows where a service's code consumes resources"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "E07", "D": "E06" },
+      "rationale": {
+        "correct": "Each product in Google Cloud's Observability answers a different operational question. Cloud Monitoring charts metrics, Cloud Logging searches and alerts on logs, Cloud Profiler shows where code consumes resources, Error Reporting surfaces failures, and Cloud Trace follows a single request along its path, which is the only one of them that shows where time is spent between services that each look healthy alone.",
+        "distractors": {
+          "A": "Per-service metrics are what the dashboards already show, and they report every service inside its limits, which is how a chain can be slow while no link in it is.",
+          "B": "Searching logs service by service can reconstruct part of a journey by hand, and nothing joins those entries into one request's path.",
+          "D": "Profiling shows where one service's code spends resources, which is the next question to ask once the slow step in the chain has been identified."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-07",
+      "domain": "d6",
+      "primary_concept": "C-082",
+      "theme": "G7",
+      "vertical": "ferry and port operator",
+      "keywords": ["redundancy", "replication", "backups", "high availability", "reliability"],
+      "type": "single_choice",
+      "question": "A ferry and port operator's booking platform runs redundant instances spread across three zones and takes nightly backups, all inside one region. The board has set a new requirement: a ticket must still be sellable if that entire region is lost. Which change meets the requirement?",
+      "options": {
+        "A": "Add more zones within the region so the redundancy is deeper",
+        "B": "Replicate into a second region, with traffic routed to whichever is healthy",
+        "C": "Increase the backup frequency so less is lost when the region fails",
+        "D": "Publish a service level agreement committing to a stated recovery time"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E03", "C": "D10", "D": "D09" },
+      "rationale": {
+        "correct": "Redundancy, replication, scalable infrastructure and backups are the design moves, while reliability, high availability and operational excellence are the commitments those moves deliver. A design that never leaves one region survives nothing regional however many zones it spans, so meeting this requirement means replication into a second region with traffic able to reach it.",
+        "distractors": {
+          "A": "Zones are subdivisions of a region, so adding more of them deepens redundancy inside the very failure domain the requirement says can be lost.",
+          "C": "More frequent backups shrink how much data is lost and keep no tickets selling, as a backup still has to be restored somewhere that is running.",
+          "D": "A published commitment states what the operator promises, and the platform's ability to keep selling through a regional loss is unchanged by the promise."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-08",
+      "domain": "d6",
+      "primary_concept": "C-083",
+      "theme": "G3",
+      "vertical": "recycling cooperative",
+      "keywords": ["service level indicator", "service level objective", "service level agreement", "latency", "traffic", "saturation", "errors"],
+      "type": "single_choice",
+      "question": "A recycling cooperative's collection app measures the share of booking requests completed in under one second. Its platform team has committed internally to holding that share above a stated level, and the cooperative's contract with the councils it serves promises a credit if the share falls below a lower level. Which terms name those three things, in that order?",
+      "options": {
+        "A": "Service level agreement, service level objective, service level indicator",
+        "B": "Saturation, latency and traffic, the signals that each of these measures",
+        "C": "All three are service level objectives, differing only in who is told",
+        "D": "Service level indicator, service level objective, service level agreement"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "E06", "C": "D19" },
+      "rationale": {
+        "correct": "The three terms are told apart by who they bind. A service level indicator measures something, and the share of bookings completed in under one second is a measurement. A service level objective commits the team to a target for that measurement. A service level agreement commits the business to its customer, with a consequence attached. Latency, traffic, saturation and errors are the signals an indicator can be built from.",
+        "distractors": {
+          "A": "This reverses the order: the measurement comes first, the internal target sits on top of it, and the external promise carrying a consequence comes last.",
+          "B": "Latency, traffic, saturation and errors name what can be measured, and the question asks what the measurement, the internal target and the external promise are called.",
+          "C": "An objective binds the team while an agreement binds the business to its customer with a consequence, so collapsing the three loses the distinction that matters when a credit is owed."
+        }
+      }
     }
   ]
 }

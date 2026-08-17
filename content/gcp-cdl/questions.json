@@ -392,6 +392,398 @@
           "D": "Serverless is a compute abstraction, not one of the service models being classified; it answers how code runs, not who is responsible for which layer."
         }
       }
+    },
+    {
+      "id": "gcp-cdl-d2-01",
+      "domain": "d2",
+      "primary_concept": "C-016",
+      "theme": "G1",
+      "vertical": "bus and coach operator",
+      "keywords": ["generating real-time business insights", "identifying trends", "fueling AI"],
+      "type": "single_choice",
+      "question": "A bus and coach operator has fitted every vehicle with a position beacon and every conductor with a ticket scanner. Today, when a motorway closure splits a route, the control room only learns how badly the diverted services were overcrowded from the following morning's report. The operations director wants the same data to reach controllers while the disruption is still running. Which business value of data is that initiative pursuing?",
+      "options": {
+        "A": "Identifying trends, so each season's timetable reflects where demand has moved",
+        "B": "Timelier reporting, from running the same overnight report on an hourly cycle",
+        "C": "Generating real-time business insights, so controllers can act during the disruption",
+        "D": "Fueling AI, once enough incident history exists to train a disruption model"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E05", "B": "D10", "D": "D15" },
+      "rationale": {
+        "correct": "Generating real-time business insights is the value at stake: the data has to inform a decision while the disruption is still running, and an answer that arrives the following morning has already lost its worth. Identifying trends, informing strategic decision making and fueling AI are the other values this data can deliver, each answering a different question.",
+        "distractors": {
+          "A": "Identifying trends is a genuine value of the same data, and it shapes future timetables over a season; it does nothing for a control room deciding what to do while services are still diverted.",
+          "B": "An hourly rerun of an overnight report is fresher and still a snapshot: between runs the control room is reading history, which is the shape of answer the director is trying to replace.",
+          "D": "Fueling AI is a real value of accumulated incident data, and it postpones what the controllers need during this disruption until a model exists that nobody has trained yet."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-02",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "theme": "G3",
+      "vertical": "environmental testing laboratory",
+      "keywords": ["data lake", "data warehouse", "semi-structured"],
+      "type": "single_choice",
+      "question": "An environmental testing laboratory holds three kinds of evidence for every job: instrument readings in fixed columns, sensor logs that gain new fields whenever firmware changes, and scanned chain-of-custody forms. Most of the volume is the readings, and the lab's analysts already query them with SQL. Accreditation requires that the scans and the raw instrument traces be retained exactly as produced. Which storage archetype should hold all three?",
+      "options": {
+        "A": "A data lake, which holds structured, semi-structured and unstructured data in native form",
+        "B": "A data warehouse, which organizes the evidence into a defined schema for analysis",
+        "C": "A data warehouse for the readings, with the scans left on the existing file share",
+        "D": "A data governance process that assigns an owner to each of the three kinds of evidence"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E07", "D": "E06" },
+      "rationale": {
+        "correct": "The discriminator is the shape of the data, not its volume. A data lake takes structured, semi-structured and unstructured data in native form, which is exactly what fixed-column readings, evolving sensor logs and scanned forms are together, and native form is what the accreditation rule demands.",
+        "distractors": {
+          "B": "A data warehouse is built for structured data under a defined schema, so the scanned forms and the evolving sensor logs would have to be reshaped or excluded, and reshaping is what accreditation forbids.",
+          "C": "Warehousing the readings and leaving the scans on a file share serves the analysts' half of the problem and leaves the evidence accreditation cares about outside the storage decision entirely.",
+          "D": "Assigning an owner to each kind of evidence is real data governance work, and it answers who may do what with the data rather than which archetype can hold all three."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-03",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "theme": "G3",
+      "vertical": "commercial real estate developer",
+      "keywords": ["first-party", "second-party", "third-party"],
+      "type": "single_choice",
+      "question": "A commercial real estate developer buys a footfall dataset from a company that compiles anonymized movement counts from many retailers and mobile apps, none of which the developer has any relationship with. The developer pays a licence fee and may use the counts freely in its site appraisals. How should this dataset be classified in the developer's data register?",
+      "options": {
+        "A": "Second-party data, shared directly by the organization that collected it",
+        "B": "Third-party data, acquired from an aggregator that collected none of it itself",
+        "C": "Brokered data, a separate class for information resold by an intermediary",
+        "D": "First-party data, because the licence fee transfers ownership to the developer"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "E08", "D": "D19" },
+      "rationale": {
+        "correct": "Origin is what classifies data, not price or licence terms. Third-party data is acquired from an external aggregator that collected it from neither the developer's own customers nor a named partner, which is why its coverage and accuracy have to be taken on the supplier's word.",
+        "distractors": {
+          "A": "Second-party data comes directly from a partner the organization deals with, and the developer deals with none of the retailers or apps behind these counts.",
+          "C": "No such class exists in the first-party, second-party and third-party scheme, and resale through an intermediary is precisely what makes data third-party.",
+          "D": "Paying for data does not change where it came from. A licence grants use, while first-party data is data the developer collected itself."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-04",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "theme": "G3",
+      "vertical": "customs brokerage",
+      "keywords": ["data supply chain", "data processing", "data collection"],
+      "type": "single_choice",
+      "question": "A customs brokerage receives declaration files from thirty carriers, each using its own country codes, date formats and commodity labels. A team now runs every file through a step that normalizes the codes, drops duplicate line items and rejects malformed rows before anything is written to the brokerage's store. Which stage of the data supply chain is that team working in?",
+      "options": {
+        "A": "Data collection, the stage that brings the declarations in from the carriers",
+        "B": "Data governance, the stage that decides who may alter a commodity label",
+        "C": "Data activation, with each report mapping the carrier codes as it needs them",
+        "D": "Data processing, the stage that turns raw declarations into a usable form"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "E06", "C": "D15" },
+      "rationale": {
+        "correct": "Normalizing codes, removing duplicates and rejecting malformed rows is data processing: the stage of the data supply chain that turns what was collected into something later stages can rely on. Data collection has already finished, and data storage, data analysis and data activation all come after.",
+        "distractors": {
+          "A": "Data collection is the stage that already completed here, because the declaration files arrived from the carriers before this team touched them.",
+          "B": "Deciding who may alter a commodity label is data governance, an ongoing process that runs alongside the whole supply chain instead of occupying a stage in it.",
+          "C": "Mapping each carrier's codes inside every report moves the same work to data activation and repeats it for every consumer, leaving the store full of the inconsistencies processing exists to remove."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-05",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "theme": "G6",
+      "vertical": "dental practice group",
+      "keywords": ["data governance process"],
+      "type": "single_choice",
+      "question": "A dental practice group's clinical audit has stalled. Two systems disagree about which patients are due for recall, nobody can say who is permitted to correct a record, and a spreadsheet of decayed contact details has been circulating between practices for a year. The IT manager proposes buying a data quality tool. What does the group need first?",
+      "options": {
+        "A": "A data quality tool that finds duplicate and stale patient records in both systems",
+        "B": "A data lake holding both systems' records in native form, so no version is discarded",
+        "C": "A data governance process that sets ownership, access and quality rules for patient data",
+        "D": "Encryption of the patient records at rest, so the circulating spreadsheet cannot be read"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D05", "B": "E06", "D": "D06" },
+      "rationale": {
+        "correct": "Every failure described is an ownership failure: unowned quality, uncontrolled access, and data nobody is accountable for. A data governance process is what decides who may do what with which data, and without one the group has no basis for saying which recall list is right or who may correct it.",
+        "distractors": {
+          "A": "A tool would find the duplicate and stale records and none of the reasons they keep reappearing; with no owner for the recall list, the same defects return after every clean-up.",
+          "B": "Landing both systems in native form preserves every version and settles nothing, because the group still cannot say which recall list is authoritative or who may change it.",
+          "D": "Encryption protects records from people outside the group's access controls, and this spreadsheet is circulating among staff who are inside them, which is a question of who may hold and share the data."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-06",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "theme": "G1",
+      "vertical": "civil engineering consultancy",
+      "keywords": ["openness and interoperability", "data silos", "vendor lock-in"],
+      "type": "multiple_response",
+      "question": "A civil engineering consultancy is choosing a platform for its project data. Each discipline currently keeps its model files in a tool that exports only to its own format, and the partners are determined not to repeat that. Their technology adviser asks which failure modes a commitment to openness and interoperability is meant to prevent. Select the TWO failure modes it addresses.",
+      "options": {
+        "A": "Losing access to project data while a regional outage is in progress",
+        "B": "Data silos, where each discipline's information stays trapped inside its own team",
+        "C": "Copies of one model drifting apart as each discipline exports its own version",
+        "D": "Format decay, the recognized term for fidelity lost at every export conversion",
+        "E": "Vendor lock-in, where changing platform means rebuilding or abandoning the data"
+      },
+      "select_count": 2,
+      "answer": ["B", "E"],
+      "distractor_patterns": { "A": "E06", "C": "E07", "D": "E08" },
+      "rationale": {
+        "correct": "Openness and interoperability answer two named failure modes: data silos, which trap value inside a team, and vendor lock-in, which traps it inside a platform. Both are questions about whether information can move, between disciplines and off a supplier's product, which is what open formats and open standards protect.",
+        "distractors": {
+          "A": "An outage is an availability problem answered by redundancy and replication, and open formats do not keep a platform serving while a region is down.",
+          "C": "Drifting copies are a symptom that silos produce, not the failure mode itself, so naming the symptom leaves the reason each discipline keeps its own copy untouched.",
+          "D": "No such named failure mode belongs to this vocabulary. Lossy exports are one way lock-in bites, and the failure mode is the lock-in."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-07",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "theme": "G2",
+      "vertical": "car rental agency",
+      "keywords": ["Spanner", "BigQuery", "Bigtable"],
+      "type": "single_choice",
+      "question": "A car rental agency is rebuilding its booking ledger. A vehicle must never be double-booked, and one booking service will serve branches in North America, Europe and Asia, all reading and writing the same reservations. The agency wants a relational database it does not have to shard by region. Which Google Cloud product fits?",
+      "options": {
+        "A": "BigQuery, so reservation history can be analyzed alongside branch performance",
+        "B": "Bigtable, which scales to very high write volumes across large key ranges",
+        "C": "Spanner, a relational database with globally consistent transactions",
+        "D": "Cloud SQL in one region, with read replicas serving the other two continents"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E01", "D": "E07" },
+      "rationale": {
+        "correct": "Two constraints decide this: relational transactions that stay consistent everywhere, and no regional sharding. Spanner is the managed relational product built for globally consistent transactional writes at scale, and a double-booking is exactly the anomaly that global consistency prevents.",
+        "distractors": {
+          "A": "BigQuery is the analytics warehouse, so it is where the agency would examine reservation history, not where a booking is written and read back moments later by another branch.",
+          "B": "Bigtable serves enormous wide-column write volumes and offers no relational transactions, so nothing in it would stop two branches booking the same vehicle.",
+          "D": "Read replicas spread reads across continents while every write still lands in one region, which leaves the agency sharding or accepting distant writes, the outcome the requirement rules out."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-08",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "theme": "G3",
+      "vertical": "auction house",
+      "keywords": ["relational", "non-relational", "object storage", "NoSQL"],
+      "type": "single_choice",
+      "question": "An auction house is planning storage for three new workloads: bidder account records with fixed fields and enforced links between them, high-resolution lot photographs and condition videos, and a catalogue where each lot carries whatever attributes its category needs. Before any product is shortlisted, the architect asks the team to classify all three. Which classification is correct?",
+      "options": {
+        "A": "All three are non-relational: only fixed rows and columns count as relational",
+        "B": "Relational for accounts, object storage for the media, non-relational for the catalogue",
+        "C": "Relational for accounts and the catalogue, with object storage for the media",
+        "D": "Non-relational for accounts and the catalogue, with object storage for the media"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "D19", "C": "E07", "D": "E05" },
+      "rationale": {
+        "correct": "Classification comes before product choice. Fixed fields with enforced links are relational and belong to structured query language; photographs and videos are files, which is object storage; a catalogue whose attributes vary by category is non-relational, the NoSQL shape. Getting these right is what makes the product shortlist short.",
+        "distractors": {
+          "A": "Relational describes an enforced structure of related tables, not a spreadsheet layout, and bidder accounts with fixed fields and enforced links are the textbook relational case.",
+          "C": "Treating the catalogue as relational forces every category's attributes into one schema, which is the constraint a non-relational model exists to lift; the other two assignments here are right.",
+          "D": "Bidder accounts with fixed fields and enforced links are the relational case, so classifying them as non-relational discards the referential integrity the auction house depends on."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-09",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "theme": "G7",
+      "vertical": "architectural design practice",
+      "keywords": ["Standard", "Nearline", "Archive"],
+      "type": "single_choice",
+      "question": "An architectural design practice keeps every completed project's drawing set in Cloud Storage. Once a building is handed over, its set is opened only if a defect claim arrives, which for any given project happens perhaps once or twice in a decade, yet professional indemnity rules require the practice to keep every set for fifteen years. The sets are large. Which storage class should the handed-over sets use?",
+      "options": {
+        "A": "Standard, so the drawings are available the moment a defect claim arrives",
+        "B": "Nearline, the class priced for data that is read about once a month",
+        "C": "Whatever class the practice's other buckets use, to keep billing lines consistent",
+        "D": "Archive, the class priced for data retained for years and rarely read"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E06", "B": "E05", "C": "D11" },
+      "rationale": {
+        "correct": "Storage class follows access frequency, not data size. Drawing sets opened perhaps once or twice in a decade but kept for fifteen years are retention data, and Archive is priced for exactly that: the lowest storage cost, with a retrieval cost accepted on the rare occasion a claim arrives.",
+        "distractors": {
+          "A": "Immediate availability is what Standard is priced for, and it answers the wrong question here, leaving the practice paying hot-data rates every month for sets almost nobody opens.",
+          "B": "Nearline is priced for data read about once a month, and these sets are read far less often than that, so the practice would pay a premium the access pattern does not justify.",
+          "C": "Matching the other buckets keeps the invoice tidy and ignores the only fact that decides a storage class, which is how often this data is actually read."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-10",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "theme": "G2",
+      "vertical": "bicycle-share operator",
+      "keywords": ["Autoclass", "Standard", "Archive"],
+      "type": "single_choice",
+      "question": "A bicycle-share operator has just launched in a new city and is putting ride telemetry and docking-station images into Cloud Storage. Nobody can yet say which of it will be read daily and which will go untouched, and the operator expects the pattern to keep shifting as routes settle. A junior analyst offers to review the buckets each quarter and move objects between classes by hand. What should the operator do instead?",
+      "options": {
+        "A": "Enable Autoclass so each object moves between classes on its own access pattern",
+        "B": "Run the analyst's review monthly instead of quarterly, so misplaced objects cost less",
+        "C": "Put every bucket in Standard until the access pattern is understood, then revisit",
+        "D": "Put every bucket in Archive, the cheapest storage rate, and accept retrieval costs"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D10", "C": "D15", "D": "D11" },
+      "rationale": {
+        "correct": "When access patterns are unknown and expected to shift, choosing classes by hand is a guess that has to be repeated forever. Autoclass removes the guess: the platform observes how each object is actually accessed and moves it between classes, so the operator sets a policy once instead of running a review cycle.",
+        "distractors": {
+          "B": "A monthly cycle shortens the window in which an object sits in the wrong class and does nothing about nobody being able to predict which objects those are, so the review still runs forever.",
+          "C": "Holding everything in Standard until the pattern is understood pays hot-data rates for data that is already going cold, and the operator has said the pattern will keep changing.",
+          "D": "The cheapest storage rate is not the cheapest outcome: telemetry that turns out to be read daily would be retrieved from Archive every time, and retrieval is what that class charges for."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-11",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "theme": "G4",
+      "vertical": "commercial laundry service",
+      "keywords": ["migrate", "modernize", "managed service"],
+      "type": "single_choice",
+      "question": "A commercial laundry service runs its route-scheduling system on a self-managed database server that is three years past its support window. The application vendor will not certify any change to the database engine, and the service employs no developers of its own. The board wants the server out of the basement before winter. Which route should the service take?",
+      "options": {
+        "A": "Refactor the scheduling application onto a cloud-native database to lift the vendor constraint",
+        "B": "Retain the server in the basement and revisit once the vendor certifies a change",
+        "C": "Migrate the database as it is onto a managed service running the same engine",
+        "D": "Modernize onto an analytics product so route history can be queried at scale"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E04", "B": "D15", "D": "E06" },
+      "rationale": {
+        "correct": "The route is decided by what the organization can actually change. A certification that forbids an engine change and the absence of developers rule out modernizing the application, while an unsupported server rules out standing still, which leaves migrating the database as it is onto a managed service running the same engine, where the operational burden transfers and the application sees no difference.",
+        "distractors": {
+          "A": "Refactoring is the route for organizations that intend to change the application, and this one may not: the vendor will not certify an engine change, and there are no developers to make it.",
+          "B": "Retaining the server keeps an unsupported database in the basement through another winter, and nothing suggests the vendor's position is about to change.",
+          "D": "An analytics product answers questions about route history and would not run the scheduling system's transactional workload, which is the workload that has to move."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-12",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "theme": "G1",
+      "vertical": "childcare centre network",
+      "keywords": ["Looker", "democratizes access to data"],
+      "type": "single_choice",
+      "question": "A childcare centre network employs one analyst, and every manager's question about occupancy, staffing ratios or waiting lists becomes a ticket in that analyst's queue. Managers wait days for numbers they needed the same morning, and some have started keeping private spreadsheets. The operations director wants managers answering their own questions from the same governed figures. Which capability delivers that?",
+      "options": {
+        "A": "A data warehouse consolidating every centre's records into one queryable store",
+        "B": "Looker, which democratizes access to data by putting governed analysis in managers' hands",
+        "C": "An access review that grants each manager rights to query the underlying tables",
+        "D": "A second analyst, so the queue is served at twice the current rate"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "D06", "D": "D03" },
+      "rationale": {
+        "correct": "The bottleneck is reach, not storage and not permissions: the numbers already exist, and one person is the only route to them. Looker democratizes access to data, so managers explore governed, consistent figures for themselves and analysis reaches people who are not analysts.",
+        "distractors": {
+          "A": "Consolidating every centre's records into one store is worth doing and changes nothing about who can ask a question, so the analyst's queue survives intact.",
+          "C": "Granting rights to the underlying tables answers who may read the data, not who can use it, and a manager with table access and no way to interpret it still files a ticket.",
+          "D": "Doubling the analyst team halves the wait at best and keeps every question routed through a specialist, which is the arrangement the director wants to end."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-13",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "theme": "G1",
+      "vertical": "driving school franchise",
+      "keywords": ["real-time reports", "dashboards", "BigQuery"],
+      "type": "single_choice",
+      "question": "A driving school franchise runs its business intelligence tool against a nightly extract copied out of BigQuery into a separate reporting database. Branch managers complain that pass-rate dashboards are always a day behind, and that they have to leave the booking system to look at them at all. What does connecting the tool directly to BigQuery buy the franchise?",
+      "options": {
+        "A": "Lower storage cost, with the separate reporting database no longer maintained",
+        "B": "Fresher figures, from copying the extract into the reporting database hourly",
+        "C": "Dashboards that refresh on demand, with the booking system left as it is",
+        "D": "Real-time reports and dashboards fed by BigQuery, with analysis inside the booking workflow"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E06", "B": "D10", "C": "E07" },
+      "rationale": {
+        "correct": "Putting business intelligence on top of the warehouse rather than beside one removes the copy. Real-time reports and dashboards are fed directly by BigQuery, so what a manager sees is the current state, and integrating data into workflows puts the answer where the work already happens instead of in a separate tool.",
+        "distractors": {
+          "A": "Retiring the reporting database does save its cost, and cost is not what the managers are describing: they are describing stale numbers and a context switch.",
+          "B": "Copying more often narrows the gap and keeps the design that creates it, so between copies the dashboard still shows a snapshot and the manager still leaves the booking system to read it.",
+          "C": "On-demand refresh answers the day-behind complaint alone, and the second complaint is that analysis lives outside the workflow, which an unchanged booking system leaves exactly as it was."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-14",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "theme": "G5",
+      "vertical": "elder-care residence operator",
+      "keywords": ["real-time streaming analytics"],
+      "type": "single_choice",
+      "question": "An elder-care residence operator runs one nightly batch over all of its data and is deciding which of four needs would justify real-time streaming analytics as well. Which need has the shape that a batch window cannot serve?",
+      "options": {
+        "A": "A resident's wearable reports a fall, and night staff must be sent to the right room",
+        "B": "Occupancy by wing is set against the same month last year for the trustees' pack",
+        "C": "The nightly batch is rerun hourly so the duty manager sees a fresher picture",
+        "D": "Shift incident reports are summarized for the weekly quality review meeting"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E06", "C": "D10", "D": "D08" },
+      "rationale": {
+        "correct": "Real-time streaming analytics earns its place where the answer expires. A fall detected at night is worth acting on in the moment and worth nothing in tomorrow's report, and recognizing that shape, a decision whose value decays faster than the batch window, is what separates a streaming need from a reporting need.",
+        "distractors": {
+          "B": "Setting occupancy against the same month last year is what a batch is for, and the trustees' pack is prepared on a schedule with nothing in it decaying overnight.",
+          "C": "Rerunning the same batch more often shortens the gap and keeps the design, so every hour the duty manager is still reading a snapshot and a fall still waits for the next run.",
+          "D": "Shift reports summarized for a weekly meeting describe what already happened, which is how the operator learns about incidents afterwards rather than how staff are directed during one."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-15",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "theme": "G2",
+      "vertical": "facilities management firm",
+      "keywords": ["Pub/Sub", "Dataflow", "Managed Service for Apache Spark"],
+      "type": "single_choice",
+      "question": "A facilities management firm has fitted client buildings with meters that emit a reading every few seconds, and three teams, covering alarms, billing and an energy dashboard, each want every reading. The firm needs a layer that accepts readings as they arrive and delivers them to all consumers, without the meters having to know who is listening. Which product performs that job?",
+      "options": {
+        "A": "Dataflow, which processes each reading as it passes through the pipeline",
+        "B": "A frequent file export from the meter gateway that each team collects for itself",
+        "C": "Pub/Sub, which ingests the readings and distributes them to every subscriber",
+        "D": "Direct connections from the meter gateway into each of the three teams' systems"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "D10", "D": "D02" },
+      "rationale": {
+        "correct": "Ingestion and distribution is Pub/Sub's stage of the pipeline: it accepts events as they arrive and delivers them to every subscriber, so publishers and consumers never need to know about each other. Dataflow's stage comes next, processing what has been ingested, and Managed Service for Apache Spark runs Spark workloads, which is a third stage again.",
+        "distractors": {
+          "A": "Dataflow processes readings that something else has already ingested, so it is the neighbouring stage, and pointing the meters at it leaves nothing decoupling publishers from consumers.",
+          "B": "A file export on a schedule holds every reading until the next file and makes each team responsible for fetching it, which is neither ingestion as events arrive nor distribution to subscribers.",
+          "D": "Wiring the gateway into each team's system makes the meters aware of every consumer, so adding a fourth team means changing the gateway, the coupling the firm asked to avoid."
+        }
+      }
     }
   ]
 }

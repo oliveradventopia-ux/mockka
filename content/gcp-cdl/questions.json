@@ -1176,6 +1176,398 @@
           "D": "A report of last quarter's unsold sites records the outcome after the fact, which arrives far too late to change what a seller does about next quarter."
         }
       }
+    },
+    {
+      "id": "gcp-cdl-d4-01",
+      "domain": "d4",
+      "primary_concept": "C-046",
+      "theme": "G4",
+      "vertical": "parcel locker network",
+      "keywords": ["workload", "discovery and assessment"],
+      "type": "single_choice",
+      "question": "A parcel locker network's board has approved a cloud program and asked the IT director for a completion date. The estate grew through three acquisitions, and nobody holds a list of what runs where or what depends on what. A supplier has offered to start moving servers next week. What should happen first?",
+      "options": {
+        "A": "Move the least critical servers first, so the program shows visible progress",
+        "B": "Pick one migration path and apply it consistently to every server in the estate",
+        "C": "Run discovery and assessment to inventory the workloads and their dependencies",
+        "D": "Give the supplier a date and refine the plan as the servers are being moved"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D11", "B": "E07", "D": "D17" },
+      "rationale": {
+        "correct": "What gets migrated is workloads, not buildings full of servers, and an organization cannot choose a path for an estate it has not inventoried. Discovery and assessment is the step that produces that inventory, covering what runs, what depends on what, and what each workload actually needs, and every later decision including the date the board wants rests on it.",
+        "distractors": {
+          "A": "Starting with the least critical servers gives the board something to see and tells nobody which of those servers a critical system quietly depends on.",
+          "B": "One path across a mixed estate assumes every workload has the same constraints, which is what discovery and assessment exists to test instead of assume.",
+          "D": "Naming a date before anyone knows what has to move builds a promise on nothing, and the acquired systems are where the surprises will be."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-02",
+      "domain": "d4",
+      "primary_concept": "C-047",
+      "theme": "G4",
+      "vertical": "photography equipment retailer",
+      "keywords": ["rehost", "replatform", "refactor", "retain"],
+      "type": "single_choice",
+      "question": "A photography equipment retailer's warehouse system runs on a server in a leased building whose lease ends in five months. The system's source code was written by a contractor who has since retired, and the retailer can make no change to it. The system is still needed and must keep behaving exactly as it does. Which migration path does that force?",
+      "options": {
+        "A": "Rehost, moving the system as it is so that no code changes",
+        "B": "Replatform, taking modest improvements while the system moves",
+        "C": "Refactor, rewriting the system so it fits the platform properly",
+        "D": "Retain, keeping the system in place until the code can be understood"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E04", "C": "D01", "D": "D15" },
+      "rationale": {
+        "correct": "The path follows what the organization will and will not change. Nobody can change this code and the behavior must not change, which rules out replatform, refactor and reimagine; the ending lease rules out retain; and the system is still needed, which rules out retire. Rehost, or lift and shift, is what remains, and it is the path for a workload that has to move without changing.",
+        "distractors": {
+          "B": "Replatform means accepting some change in exchange for a modest improvement, and the retailer has stated it can make no change to a system nobody can modify.",
+          "C": "Refactoring rewrites the application, which needs exactly the capability the retailer lost when the contractor retired, and the lease will not wait for it.",
+          "D": "Retaining the system in place is a real option right up to the day the lease ends, after which the building is not available at any price."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-03",
+      "domain": "d4",
+      "primary_concept": "C-048",
+      "theme": "G4",
+      "vertical": "private university",
+      "keywords": ["virtual machines", "serverless computing", "managed services"],
+      "type": "single_choice",
+      "question": "A private university's research office employs one part-time systems administrator and runs an application portal that is idle for most of the year and heavily used during two enrolment weeks. The office wants to hand over as much day-to-day operation as it possibly can, while keeping the portal's own code. Which rung of the compute ladder does that point to?",
+      "options": {
+        "A": "Virtual machines, keeping full control of the operating system in the office",
+        "B": "Serverless computing, where the platform runs the code and scales it to demand",
+        "C": "Containers on a cluster the office would operate through the quiet months",
+        "D": "A managed service, replacing the portal with a product the university buys"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "D01", "D": "E06" },
+      "rationale": {
+        "correct": "The ladder runs from virtual machines through containers and serverless computing to managed services, and each rung hands more operation to the platform. This office can absorb almost no operational involvement, wants to keep the portal's own code, and sees demand near zero for most of the year, which is the serverless rung: the platform runs and scales the code, and nothing has to be kept running in the quiet months.",
+        "distractors": {
+          "A": "Virtual machines leave the operating system, its patching and its capacity with the office, which is the heaviest burden on the ladder and more than a part-time administrator can carry.",
+          "C": "A container cluster is a middle rung that still has to be operated, and it would sit there being maintained through every month the portal is idle.",
+          "D": "Handing the whole capability to a bought product is the lightest rung of all, and it means giving up the portal's own code, which the office wants to keep."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-04",
+      "domain": "d4",
+      "primary_concept": "C-049",
+      "theme": "G3",
+      "vertical": "recycling cooperative",
+      "keywords": ["microservices"],
+      "type": "single_choice",
+      "question": "A recycling cooperative's collection platform is one application. A change to the weighbridge screen means the whole platform is rebuilt, retested and redeployed, so route planning and member billing are frozen every time the weighbridge team ships anything. A consultant proposes decomposing the platform into microservices. What does that decomposition buy the cooperative?",
+      "options": {
+        "A": "The platform runs faster, as each part is smaller than the whole was",
+        "B": "Fewer defects reach production, as each part is tested on its own",
+        "C": "Each part gets its own data store, so no team waits on another's schema",
+        "D": "One capability can be changed and deployed without redeploying the others"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D19", "B": "E06", "C": "E07" },
+      "rationale": {
+        "correct": "Microservices decompose an application into independently deployable parts. The point is not speed and not size; it is that the weighbridge team can change and deploy its capability while route planning and member billing keep running, so one team's release stops freezing everyone else's work.",
+        "distractors": {
+          "A": "Splitting an application does not make it faster, and calls that used to happen inside one process now cross a network, which usually costs a little rather than saves it.",
+          "B": "Smaller parts are easier to test in isolation, and that is a consequence of the split rather than its purpose; the freeze the cooperative described is a deployment problem.",
+          "C": "Separate data per service is a common design choice inside this approach, so it describes one arrangement rather than what the decomposition is for."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-05",
+      "domain": "d4",
+      "primary_concept": "C-050",
+      "theme": "G3",
+      "vertical": "regional airline catering",
+      "keywords": ["Kubernetes", "autoscaling", "load balancing"],
+      "type": "single_choice",
+      "question": "A regional airline catering company's ordering service is containerized and runs across a fleet of machines. During the morning peak, requests pile onto a handful of instances while others sit idle. Total capacity is ample and the platform team confirms the instance count is correct for the load. Which mechanism is failing to do its job?",
+      "options": {
+        "A": "Kubernetes, which places and coordinates containers across the machines",
+        "B": "Load balancing, which spreads incoming traffic across what is running",
+        "C": "Autoscaling, which adds and removes capacity as demand changes",
+        "D": "The per-instance connection limit, which should be raised in the configuration"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "E06", "D": "D04" },
+      "rationale": {
+        "correct": "Each term names one job. Kubernetes coordinates containers across machines, autoscaling adjusts how much capacity exists, and load balancing decides which running instance receives each request. With total capacity ample and the instance count correct, what has failed is distribution, and distribution is load balancing's job.",
+        "distractors": {
+          "A": "Kubernetes is placing and coordinating the containers, and the evidence says it succeeded: instances are running across the fleet and some of them are idle.",
+          "C": "Autoscaling answers how much capacity exists, and the team has confirmed the instance count is right, so adding more would leave the same instances idle.",
+          "D": "Raising a connection limit is a plausible setting to reach for and treats the crowded instances as the fault, when the question is why requests reach those instances instead of the idle ones."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-06",
+      "domain": "d4",
+      "primary_concept": "C-051",
+      "theme": "G4",
+      "vertical": "regional hospital network",
+      "keywords": ["spot VMs"],
+      "type": "single_choice",
+      "question": "A regional hospital network runs two batch jobs overnight. The first re-renders imaging thumbnails from stored scans and can be restarted from any point with nothing lost. The second posts the day's pharmacy dispensing records into the patient record system, where a partial run leaves entries that a pharmacist must reconcile by hand. Which job may run on spot VMs?",
+      "options": {
+        "A": "Both, as each runs overnight when an interruption costs the least",
+        "B": "The dispensing job, since its records can be reposted after any interruption",
+        "C": "The thumbnail job, which can restart from any point with nothing lost",
+        "D": "Neither, because clinical systems should never run on interruptible capacity"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "D19", "D": "D14" },
+      "rationale": {
+        "correct": "Spot VMs trade a sharply lower compute price for the possibility of preemption, so the judgment is workload fit: can this work stop mid-task and resume at no cost? Re-rendering thumbnails can, because a restarted run simply redoes work. Posting dispensing records cannot, because a partial run leaves a reconciliation task for a person.",
+        "distractors": {
+          "A": "Running overnight is true of both jobs and says nothing about whether either tolerates being stopped, which is the only property that decides this.",
+          "B": "The scenario states the opposite: a partial dispensing run leaves entries that a pharmacist reconciles by hand, which is exactly the cost preemption would impose.",
+          "D": "A blanket rule against interruptible capacity would also exclude the thumbnail job, which loses nothing when it restarts and saves real money when it is not interrupted."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-07",
+      "domain": "d4",
+      "primary_concept": "C-052",
+      "theme": "G2",
+      "vertical": "specialty coffee roaster",
+      "keywords": ["Compute Engine"],
+      "type": "single_choice",
+      "question": "A specialty coffee roaster's roast-profile software is licensed per host, requires one specific operating system build, and is supported by its vendor only while the roaster controls the host itself. The roaster wants this workload running in Google Cloud without renegotiating any of that. Which product should it land on?",
+      "options": {
+        "A": "Compute Engine, where the roaster runs and controls its own virtual machines",
+        "B": "Cloud Run, which runs the roaster's container with no servers to manage",
+        "C": "GKE, which would orchestrate the software's containers across a cluster",
+        "D": "A managed service replacing the roast-profile software altogether"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "D01", "D": "E06" },
+      "rationale": {
+        "correct": "Some constraints keep a workload on virtual machines: licensing tied to a host, one required operating system build, and vendor support conditioned on controlling the machine. Compute Engine is the product for exactly that, since the roaster runs its own virtual machines with full control of the operating system, and it is the natural landing place for a lift and shift.",
+        "distractors": {
+          "B": "A serverless container platform removes the servers the roaster is required to control, and the vendor's support terms are written around that control.",
+          "C": "Orchestrating containers assumes the software has been containerized, which is a change both the license and the support terms push back on.",
+          "D": "Replacing the software answers a different question, since the roaster asked how to move this workload without renegotiating anything and a replacement renegotiates everything."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-08",
+      "domain": "d4",
+      "primary_concept": "C-053",
+      "theme": "G1",
+      "vertical": "stock photography marketplace",
+      "keywords": ["enhanced scalability and resilience", "accelerated deployment processes through managed services", "cost optimization"],
+      "type": "multiple_response",
+      "question": "A stock photography marketplace is writing the business case for modernizing its application estate. The board has already accepted the cost argument and has asked for two further outcomes, stated in business terms, that are not about spending less. Select the TWO outcomes that belong in that section.",
+      "options": {
+        "A": "Cost optimization, with capacity paid for only while it is actually in use",
+        "B": "A smaller operations team once the modernized estate is running",
+        "C": "Enhanced scalability and resilience, so peaks and failures stop being incidents",
+        "D": "A faster page load for every visitor browsing the marketplace",
+        "E": "Faster deployment through managed services, so features reach customers sooner"
+      },
+      "select_count": 2,
+      "answer": ["C", "E"],
+      "distractor_patterns": { "A": "E06", "B": "D19", "D": "E07" },
+      "rationale": {
+        "correct": "Modern application development is argued in outcomes. Enhanced scalability and resilience means demand peaks and failures stop being incidents, and accelerated deployment processes through managed services means features reach customers sooner because nobody is operating the platform underneath them. Cost optimization, flexible architectures like microservices and improved operational efficiency are the other outcomes on that list.",
+        "distractors": {
+          "A": "Paying only for capacity in use is cost optimization, and the board has said the cost argument is already accepted.",
+          "B": "Modernizing changes what an operations team spends its time on, and a smaller team is a promise the approach does not make and a business case should not carry.",
+          "D": "A faster page is a technical improvement that may well follow, and it is not one of the business outcomes this section was asked to state."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-09",
+      "domain": "d4",
+      "primary_concept": "C-054",
+      "theme": "G2",
+      "vertical": "textile mill",
+      "keywords": ["GKE"],
+      "type": "single_choice",
+      "question": "A textile mill runs forty containerized services with hand-written Kubernetes manifests, node pools sized per service, and a scheduling policy its platform team maintains deliberately. The team is content to keep owning all of that. What it will not keep doing is patching and upgrading the Kubernetes control plane itself. Which product fits?",
+      "options": {
+        "A": "Cloud Run, which removes cluster concepts from the team's work entirely",
+        "B": "Compute Engine, with the team still running Kubernetes on its own machines",
+        "C": "Cloud Run functions for each service, triggered by the events they handle",
+        "D": "GKE, which runs the control plane while the team keeps its manifests and policy"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E06", "B": "E01", "C": "D01" },
+      "rationale": {
+        "correct": "The team has been explicit about what it keeps and what it hands over: manifests, node pools and scheduling policy stay, and the control plane goes. GKE is managed Kubernetes at exactly that line, with Google operating the control plane while the team retains orchestration control, which is the abstraction a containerized estate with deliberate policy needs.",
+        "distractors": {
+          "A": "A serverless container platform takes the cluster away along with the control plane, and the mill's node pools and scheduling policy are the parts it deliberately keeps.",
+          "B": "Running Kubernetes on the mill's own machines leaves the control plane precisely where it is, which is the one part of the job the team has said it will not keep doing.",
+          "C": "Rebuilding forty long-running services as event-triggered functions is a re-architecture nobody asked for, and it discards the orchestration control the team maintains on purpose."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-10",
+      "domain": "d4",
+      "primary_concept": "C-055",
+      "theme": "G2",
+      "vertical": "veterinary clinic network",
+      "keywords": ["Cloud Run"],
+      "type": "single_choice",
+      "question": "A veterinary clinic network's two developers have built a booking service in a language of their own choosing and packaged it as a container so it behaves identically on their laptops. Traffic is spiky during clinic hours and near zero overnight. They want to keep their language and tooling and to manage no infrastructure at all. Which product fits?",
+      "options": {
+        "A": "GKE, which would run the container on a cluster the developers configure",
+        "B": "Cloud Run, which runs their container with no infrastructure to manage",
+        "C": "Compute Engine, with the container started by a script on a virtual machine",
+        "D": "A shared server in the network's head office, hosting the service internally"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "D02", "D": "E02" },
+      "rationale": {
+        "correct": "Cloud Run is for teams that want their own language and tools with minimal infrastructure management: the container is the unit of deployment, the platform runs and scales it, and nothing is left running when traffic falls away. Two developers who have already packaged their own container and want to manage no infrastructure describe that product precisely.",
+        "distractors": {
+          "A": "A managed cluster still has to be configured and maintained, which is infrastructure management under another name and more than two developers should be carrying.",
+          "C": "Starting the container with a script on a virtual machine leaves the network operating that machine, patching it, and paying for it through every quiet night.",
+          "D": "Hosting the service on a head-office server puts clinic booking traffic on hardware nobody is scaling, and a spiky pattern is what that arrangement handles worst."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-11",
+      "domain": "d4",
+      "primary_concept": "C-056",
+      "theme": "G2",
+      "vertical": "vocational training institute",
+      "keywords": ["Cloud Run functions"],
+      "type": "single_choice",
+      "question": "Whenever a student uploads a certificate scan into a vocational training institute's document store, a short piece of code must stamp it with an audit reference and notify the registrar. The code runs for a second or two, fires a few dozen times a day, and does so at unpredictable moments. Where should that code run?",
+      "options": {
+        "A": "On a Compute Engine instance kept running so it is ready for each upload",
+        "B": "On the GKE cluster the institute already operates for its learning portal",
+        "C": "On Cloud Run functions, triggered by the upload event itself",
+        "D": "In a nightly batch that stamps and notifies for all of the day's uploads"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "D01", "D": "D10" },
+      "rationale": {
+        "correct": "Small pieces of code that run in response to events belong on Cloud Run functions: the upload is the trigger, the code runs for as long as it takes, and nothing is kept running in between. A cluster or a virtual machine held ready for work that fires a few dozen times a day is capacity paid for and idle almost all of it.",
+        "distractors": {
+          "A": "An instance kept running is billed through every hour when nothing is uploaded, and the institute would own its patching and its capacity as well.",
+          "B": "The learning portal's cluster can certainly run the code, and it brings orchestration this task never needs while still leaving someone to operate it.",
+          "D": "A nightly batch means a certificate uploaded in the morning carries no audit reference all day, and the registrar hears about it a day late."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-12",
+      "domain": "d4",
+      "primary_concept": "C-057",
+      "theme": "G2",
+      "vertical": "waste management utility",
+      "keywords": ["BigQuery Omni", "AlloyDB Omni", "GKE Enterprise"],
+      "type": "single_choice",
+      "question": "A waste management utility has bid for a municipal contract whose terms require the collection data to stay on the rival cloud the council already uses, while the utility's own analytics stay on Google Cloud. The utility will not run two analytics stacks. Which capability lets its analysts query the data held on the other provider?",
+      "options": {
+        "A": "BigQuery Omni, which runs BigQuery analytics against data in other clouds",
+        "B": "Cloud Interconnect, giving a private link between the two environments",
+        "C": "A scheduled copy of the other cloud's data into BigQuery every night",
+        "D": "GKE Enterprise, which manages the utility's clusters across both providers"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D06", "C": "D10", "D": "E01" },
+      "rationale": {
+        "correct": "Some products follow an organization off Google Cloud: BigQuery Omni runs analytics against data held in other clouds, AlloyDB Omni runs the database engine in other environments, GKE Enterprise spans fleets, and Cloud SQL and Looker connect across clouds. The requirement here is analytics reach over data that has to stay elsewhere, which is what BigQuery Omni answers without a second stack.",
+        "distractors": {
+          "B": "A private link moves packets between environments and answers nothing about where a query runs or which engine the analysts work in.",
+          "C": "Copying the data every night takes it out of the environment the contract requires it to stay in, and it makes every answer a day old.",
+          "D": "Managing clusters across providers is the same idea applied to container workloads, and this utility's problem is analytics rather than where its clusters run."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-13",
+      "domain": "d4",
+      "primary_concept": "C-058",
+      "theme": "G1",
+      "vertical": "wind-farm operator",
+      "keywords": ["application programming interface", "API"],
+      "type": "single_choice",
+      "question": "A wind-farm operator is commissioning a new maintenance-scheduling application that must read turbine availability from a twenty-year-old control system nobody intends to replace. The project brief says the two will be joined by an API. In plain terms, what is the operator's board being told?",
+      "options": {
+        "A": "That the turbine data will be copied into the new application's own store",
+        "B": "That the new application will ask the existing system for data in an agreed way",
+        "C": "That the control system's hardware will be managed from the new application",
+        "D": "That both systems will move onto one platform so they share a single store"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E06", "C": "D19", "D": "D01" },
+      "rationale": {
+        "correct": "An application programming interface is the agreed way one system asks another for something. It is the connector between a new application and an existing system: the maintenance scheduler asks, the control system answers, and neither has to be rebuilt or replaced for that to work.",
+        "distractors": {
+          "A": "Copying the data into a second store is a different integration approach and leaves two copies to keep in step, where an interface asks the source each time.",
+          "C": "Managing hardware is not what an interface does. The connection carries requests and answers, and the turbine control equipment stays exactly where it is.",
+          "D": "Moving both systems onto one platform is a migration program, and the operator has said the control system is not being replaced."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-14",
+      "domain": "d4",
+      "primary_concept": "C-059",
+      "theme": "G1",
+      "vertical": "regional tourism board",
+      "keywords": ["exposing and monetizing public-facing APIs", "new business opportunities"],
+      "type": "single_choice",
+      "question": "A regional tourism board has spent years assembling an accommodation and events dataset that hotel booking sites, map applications and airlines all keep asking for by email. Its finance committee wants a proposal for turning those requests into income. What should the proposal recommend?",
+      "options": {
+        "A": "Publishing the dataset as a free download so the requests stop arriving",
+        "B": "Licensing a nightly export to each requester under an individual contract",
+        "C": "Building a public website where visitors can search the dataset themselves",
+        "D": "Exposing and monetizing a public-facing API that partners call directly"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D16", "B": "E07", "C": "E06" },
+      "rationale": {
+        "correct": "An interface can be a product rather than plumbing. Exposing and monetizing public-facing APIs turns a capability the board already has into something partners pay to call, which is how internal data opens new business opportunities instead of generating email traffic.",
+        "distractors": {
+          "A": "A free download ends the requests and the income together, which is the opposite of what the finance committee asked for.",
+          "B": "Individually negotiated exports do earn money, and each new partner needs its own contract and its own file, so the arrangement stops paying as demand grows.",
+          "C": "A public search site serves visitors, and the demand described comes from businesses that want the data inside their own products."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-15",
+      "domain": "d4",
+      "primary_concept": "C-060",
+      "theme": "G2",
+      "vertical": "ceramics manufacturer",
+      "keywords": ["Apigee API Management"],
+      "type": "single_choice",
+      "question": "A ceramics manufacturer already exposes an ordering interface that a dozen distributors call. It now wants to open the same interface to hundreds of independent retailers, with per-partner credentials, rate limits, published documentation and a record of who called what. Its two backend engineers cannot build all of that. What should the manufacturer adopt?",
+      "options": {
+        "A": "Cloud Armor, to protect the interface from abusive traffic at the edge",
+        "B": "A second copy of the ordering service, sized for the retailers' traffic",
+        "C": "Apigee API Management, which publishes, secures and meters the interface",
+        "D": "One shared credential issued to all retailers, with usage reviewed monthly"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "D03", "D": "D13" },
+      "rationale": {
+        "correct": "An interface and the management layer around it are different things. Apigee API Management is that layer: it publishes the interface with documentation, secures it with per-partner credentials, meters and rate-limits its use, and analyzes usage at scale, which is the work two backend engineers would otherwise have to build and then operate forever.",
+        "distractors": {
+          "A": "Edge protection blocks abusive traffic, and it issues no partner credentials, publishes no documentation and meters nothing.",
+          "B": "A second copy of the service adds capacity to a problem that is about governing hundreds of callers, and it doubles what the two engineers maintain.",
+          "D": "One credential shared by hundreds of retailers cannot be rate-limited per partner or revoked for one of them, and a monthly review finds the misuse after it has happened."
+        }
+      }
     }
   ]
 }

@@ -257,3 +257,168 @@ Versioning convention (inherited from aif-c01): when round 2 runs, the round-1 J
 preserved as `eval/blind-solve-r1.json` and `eval/judge-scores-r1.json`, and the unsuffixed files
 always carry the **current** bank revision, because the publication preflight parses those exact
 paths.
+
+---
+
+## Round 2 — 2026-08-18 {#round-2}
+
+**Bank under judgment:** `questions.json` @ `42fbd3f` (83 items, unchanged in shape; the only
+delta since round 1 is the reworked `rationale.correct` of `gcp-cdl-d4-10`).
+
+**Independence (`#independence`):** a second fresh session, which authored nothing in this bank
+and has never seen it before. `questions.json` was read-only throughout — this round made no edit
+to it, and `git diff` confirms the bank was untouched by the examiner. The blind solve was
+recorded to a slug- and round-scoped scratch file (`gcp-cdl-r2-blind-answers-examiner.json`)
+**before** any key, rationale, concept field or round-1 eval artifact was opened; the shape of
+`questions.json` was inspected only through an `id`/`domain`/`type`/`question`/`options`
+projection, so no `answer` value was materialized pre-solve.
+
+**Precondition — validator:** unchanged from round 1. `pnpm validate gcp-cdl` is red with the same
+20 errors, all `selection-shape` (8) and `selection-format-mix` (12), because `selection.json` is
+still the empty S6 placeholder. All 18 bank-quality and provenance checks pass. S5 proceeded on
+the same reading as round 1, and **nothing here signs off S6.**
+
+### 1 · Blind solve — 83/83 again
+
+Full bank re-solved, not just the reworked item: a fresh examiner's independence covers the whole
+bank, and re-solving only the rework would leave the other 82 items resting on a different
+session's judgment.
+
+| | |
+|---|---|
+| Items | 83 |
+| Matched | **83 (100%)** |
+| Confident misses | 0 |
+| Low-confidence misses | 0 |
+| Adjudication queue | empty |
+
+Every answer was graded `high` confidence. Two independent fresh sessions have now returned
+83/83 on this bank — strong evidence the keys are right, and **weak** evidence about anything a
+Claude-family author and a Claude-family examiner would both get wrong, which is the gap the
+Codex instrument exists to close (see §2).
+
+### 2 · Codex advisory cross-solve — ADVISORY-SKIPPED (again)
+
+One probe pair, per budget: `ls ~/.codex/auth.json` → absent; the newest bundled binary
+(`openai.chatgpt-26.810.52044-darwin-arm64`) → `codex login status` reports **"Not logged in"**.
+No exec probe spent — round 1 already documents the 401 that follows. Recorded in
+`eval/codex-solve.json`; `blind-solve.json` carries `codex.status: advisory_skipped` on all 83
+items. Per `#codex` a missing advisory instrument is noted, not blocking.
+
+**Consequence for Gate 2:** no three-way disagreement matrix exists for either round, so the Gate
+2 sample is assembled **without any cross-model signal** and `signoff.md` must say so. Unblock is
+one interactive `codex login` by Oliver; a standalone cross-solve can then fill the matrix without
+re-running S5.
+
+### 3 · Judge rubric — 0 bounces, 12 items carrying a 3
+
+All 83 items re-scored fresh on all six dimensions, arguing FOR each distractor before scoring.
+498 scores: **404 fives, 81 fours, 13 threes, and no score of 1 or 2 anywhere** — zero rubric
+bounces.
+
+| Dimension | 5 | 4 | 3 |
+|---|---|---|---|
+| 1 · single defensible best answer | 82 | 1 | 0 |
+| 2 · distractor plausibility | 49 | 29 | 5 |
+| 3 · concept alignment | 83 | 0 | 0 |
+| 4 · rationale traceability | 83 | 0 | 0 |
+| 5 · difficulty pitch | 28 | 47 | 8 |
+| 6 · scenario realism | 79 | 4 | 0 |
+
+The threes sit where round 1 found them, and for the same reasons:
+
+- **Dimension 5 (8 items).** Definitional recall in the vocabulary-heavy domains: the stem states
+  the concept and the item asks for its name (d1-01, d1-02, d1-12, d1-14, d3-11, d5-05), or the
+  stem eliminates the wrong options clause by clause so the key is reachable by matching negations
+  rather than by holding the concept (d5-04, d5-09).
+- **Dimension 2 (5 items).** One wrong option is disarmed by the stem's own wording rather than by
+  the concept (d1-05, d1-06, d1-08), all three wrong options are one error in three costumes
+  (d1-01), or an option is phrased as a rebuttal that telegraphs the keyed term (d3-06 — the same
+  construction that produced round 1's R-3 ratchet proposal).
+
+**Delta against round 1.** All ten round-1 Gate 2 items still carry a 3 on the same dimensions —
+independent agreement across two sessions on where this bank is soft. Two items were added
+(`d5-04`, `d5-09`: the elimination-shape pitch described above; round 1 scored both at 4), and one
+dimension-1 score was lowered from 5 to 4 (`d3-01`, where option D "both are machine learning" is
+true-but-incomplete rather than wrong, so the key wins on best-answer convention — a 4 ships, and
+the case is recorded for the deep-read). Two candidates for a dim-5 three were weighed and held at
+4 (`d1-04`, `d4-13`): in both, the wrong options are real practitioner positions rather than
+pre-cleared foils.
+
+**Dimension 5 is this bank's signature, not its defect.** Cloud Digital Leader is a
+describe-and-explain certification with no hands-on objectives; a bank with zero recall-shaped
+items would be mispitched in the other direction. The Gate 2 question is not "why are there
+threes" but "are eight recall-pitched items out of 83 the right proportion for this exam" — a
+judgment for Oliver, not for the examiner, and the reason those items are sampled rather than
+bounced.
+
+### 4 · Overlap screen — round-1 finding discharged, no new findings
+
+`eval/overlap-report.md` (round 1 preserved at `overlap-report-r1.md`). The mechanical screen was
+re-run (n = 5/6/7 over the five source and inventory artefacts; 47 seven-gram hits, all canonical
+vocabulary or Mockka's own prose), and the decisive targeted pass — every quoted run of ≥3 words
+in the three source-distillation documents, 21 runs, tested against all 83 items — returns **no
+bank match at all** beyond the bare canonical term "as-a-Service".
+
+Round-1 Finding O-1 is **discharged**: rework commit `42fbd3f` re-expressed the opening clause of
+`gcp-cdl-d4-10`'s `rationale.correct` and touched nothing else (one insertion, one deletion; stem,
+options and key unchanged, exactly as the `required_fix` specified). Neither vendor phrase appears
+anywhere in the bank.
+
+One residual watch item, **RW-1**, is recorded rather than buried: `d6-01`'s "hardware investment,
+operational overhead and opportunity cost" also appears in the samples artefact's concept column —
+but unquoted, as the distiller's own classification, and in standard TCO vocabulary. Logged for
+the deep-read, not a finding.
+
+**The root cause is still open.** The bank was fixed; the artefact was not.
+`derivation/source-gcp-cdl-samples.md` still quotes vendor sample-item prose at lines 151 and 157,
+contradicting its own no-reproduction header. That is S1 distillation work and outside the
+examiner's write surface, so ratchet proposals **R-1** (forbid quoted source prose in Artefact-A
+documents) and **R-2** (a `derivation-quote-leak` validator check) are re-raised unchanged — the
+targeted pass in this round's overlap report is a working prototype of R-2. **R-3** (option
+parallelism, from d3-06) also stands: that item still scores dimension 2 at 3 for the same reason.
+
+### 5 · Gate 2 sample — 13 items
+
+| Item | Why it is sampled |
+|---|---|
+| `gcp-cdl-d1-01` | dim2 3, dim5 3 — definitional recall; three wrong options are one error in three costumes |
+| `gcp-cdl-d1-02` | dim5 3 — the key restates the stem's multi-step narrative |
+| `gcp-cdl-d1-05` | dim2 3 — option B is eliminated by the stem's own "beyond more machines" clause |
+| `gcp-cdl-d1-06` | dim2 3 — two wrong options are excluded by the stem's exclusion clause |
+| `gcp-cdl-d1-08` | dim2 3 — one option contradicted by the stem, two unsupported |
+| `gcp-cdl-d1-12` | dim5 3 — textbook DNS recall |
+| `gcp-cdl-d1-14` | dim5 3 — geography-hierarchy recall |
+| `gcp-cdl-d3-06` | dim2 3 — option B is a rebuttal that telegraphs the keyed dimension |
+| `gcp-cdl-d3-11` | dim5 3 — direct modality match (audio → Speech-to-Text) |
+| `gcp-cdl-d4-10` | **bounce survivor** — round-1 overlap bounce, reworked, re-scored clean (§handoff) |
+| `gcp-cdl-d5-04` | dim5 3 — the stem negates the three wrong properties in turn |
+| `gcp-cdl-d5-05` | dim5 3 — the stem states the zero-trust definition, then asks for its name |
+| `gcp-cdl-d5-09` | dim5 3 — same elimination shape; option D duplicates option B's pattern |
+
+Sampled **without cross-model signal** (§2). No blind-solve adjudications are open in either
+round. `d3-01` (dim1 4) and RW-1 (`d6-01`) are not sampled by rule but their cases are written up
+in `eval/judge-scores.json` and `eval/overlap-report.md` for the deep-read.
+
+### 6 · Handoff
+
+- **To exam-author:** nothing. Zero bounces this round; the round-1 bounce is discharged.
+- **To S6 / Gate 2 (Oliver):** the 13-item sample above; the open S1 artefact finding
+  (`source-gcp-cdl-samples.md` lines 151, 157) with ratchet proposals R-1/R-2/R-3; the missing
+  cross-model signal, which `signoff.md` must record; and the pitch question — whether eight
+  recall-pitched items in 83 is right for a describe-and-explain certification.
+- **Not done here, by scope:** S6. `selection.json` is still the empty placeholder and
+  `manifest.status` is still `draft`; the 20 validator errors are exactly that placeholder and
+  nothing else.
+
+**Round 2 verdict:** all 83 items pass S5. 0 bounces, 0 dimensions ≤2, 13 items to Gate 2.
+
+### Artifact index (round 2)
+
+| File | Contents |
+|---|---|
+| `eval/blind-solve.json` | round 2 — 83 items, 83/83, advisory-skipped Codex record per item |
+| `eval/judge-scores.json` | round 2 — 83 items × 6 dimensions with argued-FOR cases, distribution, round-1 delta, Gate 2 sample, empty `bounces[]`, bounce-resolution and open-process-finding records |
+| `eval/overlap-report.md` | round 2 — re-run shingle screen, targeted quoted-run pass, O-1 discharged, RW-1, open root cause |
+| `eval/codex-solve.json` | both rounds' advisory-skipped record, with round 1 preserved under `rounds[0]` |
+| `eval/blind-solve-r1.json`, `eval/judge-scores-r1.json`, `eval/overlap-report-r1.md` | round 1, preserved verbatim |

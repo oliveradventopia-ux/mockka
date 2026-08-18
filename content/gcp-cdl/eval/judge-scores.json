@@ -1,55 +1,6 @@
 {
-  "$comment": "S5 judge rubric ROUND 1 (methodology/05-eval-rubric.md #judge). exam-examiner, fresh session, 2026-08-18 - this session authored nothing in this bank (independence precondition, #independence). Method: every item was scored only AFTER writing the strongest honest case FOR each distractor; the surviving case, and why it lost, is recorded in each item's `case` field. Order of work was blind solve -> key diff -> Codex attempt -> rubric, so the argued-FOR pass ran against a bank whose key had already been confirmed, never against an unread one. Thresholds applied: any dimension <=2 bounces; any 3 joins the Gate 2 sample; 4s and 5s ship. Result: no dimension <=2 anywhere in the bank (498 scores: 403 fives, 82 fours, 13 threes), so ZERO rubric bounces. One item bounces on the separate overlap-screen trigger (#overlap) - see bounces[]. Precondition note: `pnpm validate gcp-cdl` is red on this tree with 20 errors, ALL of them in selection-shape and selection-format-mix because selection.json is still the empty S6 placeholder (`forms[0].items: []`). Every bank-quality check - bank-shape, item-metadata, rationale-anti-drift, rationale-letter-reference, distractor-patterns, pattern-frequency-caps, key-position-distribution, answer-length-cue, concept-coverage, near-duplicate-stems, style-policy, provenance - passes. S5 therefore proceeded: the bank is well-formed and the red checks belong to a stage that has not run.",
-  "dimension_summary": {
-    "per_dimension": {
-      "1": {
-        "5": 77,
-        "4": 6
-      },
-      "2": {
-        "5": 45,
-        "4": 34,
-        "3": 4
-      },
-      "3": {
-        "5": 83
-      },
-      "4": {
-        "5": 83
-      },
-      "5": {
-        "5": 36,
-        "4": 38,
-        "3": 9
-      },
-      "6": {
-        "5": 79,
-        "4": 4
-      }
-    },
-    "totals": {
-      "5": 403,
-      "4": 82,
-      "3": 13
-    },
-    "note": "The 13 threes cluster in two places: dimension 5 (9 items pitched right-vs-wrong rather than good-vs-best) and dimension 2 (4 items where one wrong option is disarmed by the stem's own wording rather than by the concept). Seven of the nine dim-5 threes are in d1, which is the bank's definitional domain - see derivation/eval-report.md for whether that is a defect or the correct pitch for Digital Leader altitude."
-  },
-  "gate2_sample": {
-    "count": 10,
-    "basis": "every item carrying any 3 on any dimension (#judge). No cross-model additions were possible - the Codex advisory cross-solve is advisory-skipped (see eval/blind-solve.json), so Gate 2 samples WITHOUT the cross-model signal and must record that. No blind-solve adjudications are open (83/83 match).",
-    "items": [
-      "gcp-cdl-d1-01",
-      "gcp-cdl-d1-02",
-      "gcp-cdl-d1-05",
-      "gcp-cdl-d1-06",
-      "gcp-cdl-d1-08",
-      "gcp-cdl-d1-12",
-      "gcp-cdl-d1-14",
-      "gcp-cdl-d3-06",
-      "gcp-cdl-d3-11",
-      "gcp-cdl-d5-05"
-    ]
-  },
+  "$comment": "S5 judge rubric ROUND 2 (methodology/05-eval-rubric.md #judge) - all 83 items scored fresh on all six dimensions by an examiner who wrote the strongest honest case FOR every distractor before scoring, and who did not open the round-1 scores until the blind solve and key diff were on disk. The reworked item (gcp-cdl-d4-10) was re-scored fresh with no partial credit, per #bounce. Result: no dimension <=2 anywhere in the bank, so ZERO rubric bounces; the round-1 overlap bounce is discharged (see overlap-report.md). Round 1 preserved at judge-scores-r1.json. Precondition note: `pnpm validate gcp-cdl` is red on this tree with 20 errors, ALL of them selection-shape / selection-format-mix because selection.json is still the empty S6 placeholder; every bank-quality check passes, so S5 proceeded on a well-formed bank.",
+  "round": 2,
   "items": [
     {
       "id": "gcp-cdl-d1-01",
@@ -61,7 +12,7 @@
         "5": 3,
         "6": 4
       },
-      "case": "Argued FOR each: A (hybrid deployment) - the board approved a cloud-enabled program, so a director could reach for the deployment noun; loses because nothing in the scenario describes an on-premises/public split. C (the cloud) - the stem names cloud services as the enabler, so a candidate who has fused the two picks it; loses on the guide's own separation of the consumption model from the change. D (modernized infrastructure estate) - infrastructure is genuinely being modernized; loses because it names an ingredient. Dim1 holds: only B names an organizational change. Dim2 capped at 3 - all three wrong options are one error in three costumes (name the enabler, not the change), and C in particular is thin. Dim5 capped at 3: the stem paraphrases the definition ('change how the organization operates and delivers value') and then asks for the word, which is recall, not good-vs-best. Dim6 4: the setting is real but does almost no work."
+      "case": "Argued FOR: A (hybrid cloud deployment) - the board approved a cloud-enabled program, so a director reaching for a concrete noun could pick the deployment model; loses because no on-premises/public split is described and a deployment model is not an organizational change. C (the cloud) - the stem names cloud services as the enabler and many boards fuse the two; loses on the guide's own separation of the consumption model from the change it enables. D (modernized infrastructure estate) - infrastructure genuinely is being modernized; loses because it names an ingredient of the program. Dim2 3: all three wrong options are one error in three costumes (name the enabler, not the change) and C in particular is thin. Dim5 3: the stem paraphrases the definition and then asks for the word, which is recall rather than good-vs-best. Dim6 4: the tourism-board wrapper does almost no work."
     },
     {
       "id": "gcp-cdl-d1-02",
@@ -73,7 +24,7 @@
         "5": 3,
         "6": 5
       },
-      "case": "Argued FOR: B (generates novel content) is the live tempter - the second tool DOES draft a firing plan, so a candidate reading 'drafts' as the discriminator lands on generative AI; loses because drafting once and stopping is a single call. A (bigger training set) is a real folk explanation of capability. C (AI infrastructure) is true-of-either. Dim5 capped at 3: the stem enumerates the multi-step goal pursuit ('checks... drafts... reserves... confirms') and the key restates it almost word for word, so the surface points AT the principle rather than away from it."
+      "case": "Argued FOR: B (generates novel content) is the live tempter because the second tool DOES draft a firing plan, so a candidate reading 'drafts' as the discriminator lands on generative AI; loses because drafting once and stopping is a single call, not goal pursuit. A (bigger training set) is a real folk explanation of capability. C (AI infrastructure) is true of either tool. Dim5 3: the stem enumerates the multi-step pursuit ('checks... drafts... reserves... confirms') and the key restates it, so the surface points AT the principle."
     },
     {
       "id": "gcp-cdl-d1-03",
@@ -85,7 +36,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (open standard) is strong - a committee seeking independence from a vendor roadmap plausibly asks for standards, and 'open' is the shared word doing the tempting; loses because a specification governs interfaces between implementations, not access to the vendor's own source. C (multicloud) is a genuine lock-in safeguard aimed at the wrong axis; D (published APIs) opens the integration surface only. The open-source vs open-standard confusion is the real tested error and the stem does not resolve it for the candidate."
+      "case": "Argued FOR: B (open standard) is the strongest case in the item - a technology committee protecting itself from a stalled vendor genuinely does ask for standards-based products; loses because a shared specification governs interoperability, not access to the vendor's source. C (multicloud) is a real lock-in safeguard about where the product runs. D (published APIs) opens the integration layer only. Dim2 5: three distinct, live commitments a real committee would table. Dim5 4: the inspect-and-modify requirement points fairly directly at source access, but B is close enough to keep the discrimination honest."
     },
     {
       "id": "gcp-cdl-d1-04",
@@ -97,7 +48,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (cost-effectiveness) is the strongest - a CFO drafting the same case would lead with pay-for-use, and over-provisioned weekday servers are a cost story too; loses because the stated pain is a failure mode, not a spend structure. D (permanent peak capacity) is the on-prem instinct the business case exists to retire. B (agility) is the weak option - shipping features faster is visibly unrelated to an on-sale outage, which caps dim2 at 4."
+      "case": "Argued FOR: A (cost-effectiveness) is the CFO's instinct and true of cloud generally - servers sized for a peak that happens twice a year are wasted money; loses because the stated pain is a site that fails, not a bill that is too high. B (agility) answers slow change. D (permanent peak capacity) is the wrong-lever option and a real board proposal. Dim2 4: D is a policy rather than a cloud property, which makes it slightly off-pattern. Dim5 4: the surface points at capacity, but three of the four options are true cloud benefits, so choosing the one that addresses the failure mode is a leader-level judgment rather than a match."
     },
     {
       "id": "gcp-cdl-d1-05",
@@ -109,7 +60,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (offsite backups) is the strongest - a board that has just lost a day of service reasonably hears 'footprint' as 'somewhere else to restore to'; loses because backups do not keep the portal serving or move it nearer to users abroad. D (pay-as-you-go) is a true benefit at a different address. Dim2 capped at 3 because B (more total compute) is pre-excluded by the stem's own phrase 'beyond more machines' - the option is eliminated by reading the question, not by holding the concept."
+      "case": "Argued FOR: C (offsite backups) is the strongest wrong case - a board that has just lost a portal for a day thinks about recovery, and backups are what recovery usually means; loses because a backup restores after an outage rather than serving through one, and it moves nothing closer to users abroad. D (pay-as-you-go) is a real benefit at the wrong address. B (more total capacity) is disarmed by the stem's own 'beyond more machines' clause and can be eliminated without engaging the concept - that caps dim2 at 3. Dim5 4: the two symptoms in the stem (slow from abroad, one long outage) point at reach and availability, but A vs C still needs the distinction."
     },
     {
       "id": "gcp-cdl-d1-06",
@@ -118,46 +69,46 @@
         "2": 3,
         "3": 5,
         "4": 5,
-        "5": 3,
+        "5": 4,
         "6": 4
       },
-      "case": "Argued FOR: E (provider takes over compliance obligations) is the one live distractor and a genuinely common executive belief; loses on shared responsibility. B (capacity) and D (cost) are argued only to be dismissed - the stem's constraint 'not about cost or capacity at all' removes both before the concept is engaged, which leaves an effectively three-option item. Dim2 and dim5 both capped at 3 on that: a candidate who knows only that security and insight are neither cost nor capacity answers correctly without recalling the benefit list. Dim6 4 - the CFO/CIO framing is serviceable but generic."
+      "case": "Argued FOR: B (near-unlimited seasonal capacity) is a genuine cloud benefit and the one a garden centre feels most; loses because the CIO explicitly asked for benefits that are not about capacity. D (paying only for what each store consumes) is the same exclusion on the cost axis. E (provider takes over compliance obligations) is the factually false option and the only one that fails on its own terms. Dim2 3: two of the three wrong options are eliminated by the stem's own exclusion clause rather than by the concept. Dim6 4: the CFO/CIO framing is plausible but the setting does little work beyond supplying the exclusion."
     },
     {
       "id": "gcp-cdl-d1-07",
       "scores": {
         "1": 5,
-        "2": 5,
+        "2": 4,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (unspent budget) is the strongest because it is exactly how real programs get funded in Q4, and the item's point is that it is not a driver; B (regional availability) is a true enabler mistaken for a reason; A (a vendor launch) is the hype instinct. Three distinct wrong shapes, none contradicted by the stem - the candidate must hold 'competitive, customer and market pressure' to sort them."
+      "case": "Argued FOR: A (a high-profile AI launch) is exactly how transformation programs actually get proposed, and 'newest is best' is a real boardroom argument; loses because it is news about technology with no customer or competitive pressure attached. B (regional availability) is an enabler mistaken for a driver. C (unspent budget) is a real organizational behaviour and a famously bad reason. Dim2 4: C is a weaker practitioner answer than the other two. Dim5 4: the rival's halved turnaround is a clear signal, but all four options are things leadership teams really say."
     },
     {
       "id": "gcp-cdl-d1-08",
       "scores": {
         "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 3,
-        "6": 5
-      },
-      "case": "Argued FOR: C (wrong deployment model) is the strongest survivor - deployment choice is a real cause of stalled programs and nothing in the stem rules it out by name; loses because crews avoiding a working tool behaves identically under any model. D (licensing budget) is a plausible procurement scapegoat. A is contradicted outright by 'performs well in every test', which caps dim2 at 4. Dim5 3: the stem narrates the culture failure and the keyed rider restates it ('crews were never brought along')."
-    },
-    {
-      "id": "gcp-cdl-d1-09",
-      "scores": {
-        "1": 5,
-        "2": 5,
+        "2": 3,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (only a delay) is the strongest - it is the precise rationalization a board minute would record, and it is defensible if you believe cloud capability is a commodity that waits; loses because competitor gains compound. C (genuine reduction in spend) has the board minutes on its side. D (retraining) answers the adopting side. Strong, distinct set."
+      "case": "Argued FOR: A (peak volume) - performance hurdles are the usual suspect when a program stalls; loses because the stem states the platform performs well in every test, so A is contradicted rather than outargued. C (wrong deployment model) and D (licensing budget) have no support in the scenario at all. Dim2 3: one option is disarmed by the stem's own wording and the other two are unsupported filler rather than real practitioner answers. Dim5 4: crews filing paper against a working system points at people, but the candidate still has to name the hurdle class."
+    },
+    {
+      "id": "gcp-cdl-d1-09",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B (only a delay) is the strongest case and is precisely what the board minutes assert - the same benefits will be there later; loses because competitors' gains and legacy drift compound, so the later move closes a wider gap. C (a genuine reduction in spend) is what 'prudent cost avoidance' means to a finance committee. D (retraining avoided) names a real cost of adopting. Dim2 4: D answers the wrong side of the decision and is the weakest of the three. Dim5 4: the stem describes competitors widening the lead, which points at the answer without handing over the compounding framing."
     },
     {
       "id": "gcp-cdl-d1-10",
@@ -169,19 +120,19 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (AI Hypercomputer) is the strongest - it sits on the same differentiator list and a board hearing 'usable for AI' may reach for the AI-named infrastructure claim; loses because horsepower does nothing for records that are not yet AI-ready. A (world-leading models) is the same error one rung up. D (prestige) is the weak option - a non-criterion nobody would defend in writing - which caps dim2 at 4."
+      "case": "Argued FOR: A (world-leading AI models) is a real Google differentiator and the obvious pick for anything called an AI roadmap; loses because model quality does nothing for records that are not yet usable as input. B (AI Hypercomputer) is the infrastructure sibling on the same list and a genuine tempter. D (prestige) is not a differentiator at all. Dim2 4: D is decorative next to A and B. Dim5 4: matching the differentiator to the stakeholder's stated concern is real good-vs-best work, but 'without rebuilding the data estate' points fairly directly."
     },
     {
       "id": "gcp-cdl-d1-11",
       "scores": {
         "1": 5,
-        "2": 5,
+        "2": 4,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: D (public cloud with residency settings) is the strongest and the most modern-sounding - residency controls are a real product surface and a leader might believe they satisfy a facilities clause; loses because the licence names the network's own buildings, which no provider-side setting delivers. A (multicloud) is the classic term-slip; C (private everywhere) satisfies the licence and forfeits the elasticity."
+      "case": "Argued FOR: A (multicloud) is the term most often misused for exactly this arrangement; loses because multicloud means two or more public providers, not provider-plus-own-facilities. D (public cloud with residency settings) is the subtle one - a leader may believe residency controls satisfy a facilities clause; loses because residency chooses where inside the provider's estate the data sits. C (private for everything) satisfies the licence and surrenders the elasticity. Dim2 4: C is a half-answer rather than a distinct misconception. Dim5 4: the split is stated plainly, so the mapping is direct, but D is a genuine trap."
     },
     {
       "id": "gcp-cdl-d1-12",
@@ -193,7 +144,7 @@
         "5": 3,
         "6": 4
       },
-      "case": "Argued FOR: A (the inversion) is the only real tempter and it catches precisely the candidate who half-remembers the pair; C (firewall translates the name) is a wrong-layer answer with some surface plausibility; B (bandwidth decides the server) is thin. Dim5 capped at 3 - 'which explanation is correct' is a recall item with one true statement and three false ones, which is right-vs-wrong by construction. Dim6 4: the toll-operator wardrobe is decorative."
+      "case": "Argued FOR: A (the swap) is the real trap - candidates who half-remember the pair get the direction wrong; loses on the definitions. C (a firewall translates the name) is a live confusion for non-engineers. B (bandwidth decides the server) is the weakest. Dim5 3: this is textbook recall of what DNS does, with no misdirection in the surface. Dim6 4: the toll-operator wrapper is scenery rather than scenario."
     },
     {
       "id": "gcp-cdl-d1-13",
@@ -205,7 +156,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (bandwidth) is the intended near-miss and a candidate who has not internalized the pair picks it; loses on the stem's own evidence that large uploads finish quickly. C (storage capacity) is a plausible first guess for 'sluggish'. D (deployment model) is weak, capping dim2 at 4. The two-sided evidence (slow clicks, fast bulk) is what makes the item work."
+      "case": "Argued FOR: B (bandwidth) is the intended trap and a real one, since the stem mentions large uploads and volume language pulls toward throughput; loses because those uploads finishing quickly is the evidence that clears bandwidth. C (storage capacity) is a plausible layperson answer for 'sluggish'. D (deployment model) is thin. Dim2 4: D is filler next to B. Dim5 4: the two-signal design (slow clicks, fast bulk) is genuine discrimination work."
     },
     {
       "id": "gcp-cdl-d1-14",
@@ -217,19 +168,19 @@
         "5": 3,
         "6": 4
       },
-      "case": "Argued FOR: A (zones contain regions) is the inversion that catches a genuinely confused reader; B (availability districts) is an invented tier that sounds like it belongs; D (a region is one building) is the flattening error. All three are recognizable, but as with d1-12 this is a 'which statement is correct' recall item - dim5 3. Dim6 4: the leasing firm is wardrobe only."
+      "case": "Argued FOR: A (zones are collections of regions) is the inversion trap and the answer a candidate who has the words but not the nesting gives. B (availability districts) is an invented tier that sounds official. D (a region is one building) is the flattening misconception. Dim2 4: B is eliminable by anyone who knows the vocabulary at all. Dim5 3: this is recall of the geography hierarchy; the briefing wrapper adds no misdirection. Dim6 4: the leasing-firm setting does little work."
     },
     {
       "id": "gcp-cdl-d1-15",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: D (serverless) is the strongest - it also hides the operating system and a candidate may read 'provider patches the OS and runtime' as serverless; loses because serverless is a compute abstraction, not one of the three service models under classification. A (IaaS) is refuted by who patches. C (SaaS) is refuted by the library still building its application, which makes it the weak option and caps dim2 at 4."
+      "case": "Argued FOR: A (IaaS) is one rung away and the strongest case - a library that controls an application on provisioned servers can feel like an IaaS tenant; loses because the provider patches the OS and runtime here. C (SaaS) is where the library would consume a finished product. D (serverless) is the category error a reader who knows compute but not service models makes. Dim2 5: three distinct, real misreadings. Dim5 4: the responsibility boundary is stated cleanly, which makes the mapping direct but not free."
     },
     {
       "id": "gcp-cdl-d2-01",
@@ -241,7 +192,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (timelier reporting on an hourly cycle) is the strongest and is the interval-shrink trap in its best form - it is genuinely fresher and a real operations answer; loses because between runs the control room still reads history. A (identifying trends) and D (fueling AI) are both true values of the same data pointed at different questions. Four live options, good-vs-best throughout."
+      "case": "Argued FOR: B (timelier reporting from an hourly rerun) is the strongest wrong case and what most operations teams actually do; loses because between runs the control room is still reading history. A (identifying trends) is a genuine value of the same data on a seasonal horizon. D (fueling AI) is real and postponed. Dim5 5: all four options are true values of data, and the discriminator is whether the answer expires - the surface points away from the principle."
     },
     {
       "id": "gcp-cdl-d2-02",
@@ -253,7 +204,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (warehouse) is strong - most of the volume is fixed-column readings and the analysts already use SQL, so the warehouse serves the majority workload; loses on the accreditation clause requiring native retention. C (warehouse plus file share) is the pragmatic split a real architect would propose and is the best distractor in the item. D (governance) is off-axis. The volume/shape misdirection is exactly the surface pointing away from the principle."
+      "case": "Argued FOR: B (data warehouse) is the live tempter because the analysts already query with SQL and most of the volume is structured; loses because accreditation requires native retention of scans and traces. C (warehouse plus file share) is what most labs really do. D (governance) is real work aimed at a different question. Dim5 5: the majority-volume and SQL cues point at the warehouse, so the surface misdirects."
     },
     {
       "id": "gcp-cdl-d2-03",
@@ -265,43 +216,43 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (second-party) is the live tempter - the aggregator did share the data directly with the developer, so a reader who anchors on 'directly' picks it; loses because second-party means a partner sharing what it collected itself. C (brokered data) is an invented class that sounds like a register category. D (first-party via licence) is the weak option, capping dim2 at 4."
+      "case": "Argued FOR: A (second-party) is the strongest case - the developer does have a direct commercial relationship with the seller, which is what second-party usually means; loses because the seller collected none of the data. C (brokered data) is an invented class that sounds like a real register category. D (first-party via licence) misreads ownership. Dim2 4: C is invented and eliminable by vocabulary alone. Dim5 4: the aggregator description points at the answer, but A is a genuine misread of 'directly'."
     },
     {
       "id": "gcp-cdl-d2-04",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (activation, mapping codes per report) is the strongest - it is a real and common architecture, and the item's point is that it relocates the work rather than doing it; loses because the described step runs before the store is written. A (collection) is arguable if you read the whole intake as one stage. B (governance) is the weak option - deciding who may alter a label is visibly not what the team is doing."
+      "case": "Argued FOR: A (collection) is defensible if the reader treats the whole intake pipeline as one stage. B (governance) is the answer for who may alter a label and a real confusion because quality rules feel like governance. C (activation) is the design many teams end up with, mapping codes per report. Dim2 5: three real stages, each a genuine misassignment. Dim5 4: the described work is textbook processing, so the mapping is fairly direct."
     },
     {
       "id": "gcp-cdl-d2-05",
       "scores": {
         "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR: A (data quality tool) is strong enough to be the IT manager's own proposal in the stem, and it genuinely would find the duplicates and stale contacts; loses because nothing keeps them from returning while no one owns the recall list. B (data lake) preserves versions and settles nothing. D (encryption) is the weak option - the spreadsheet circulates among insiders - which caps dim2 at 4. Good-vs-best pitch: the tempting answer is the one that works and does not last."
-    },
-    {
-      "id": "gcp-cdl-d2-06",
-      "scores": {
-        "1": 4,
         "2": 5,
         "3": 5,
         "4": 5,
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: C (copies of one model drifting apart) is strong enough to cost a point on dim1 - a common open format genuinely does prevent per-discipline export drift, so 'openness prevents this' is defensible on its face. It loses only because the item asks for the named failure modes and drift is the symptom silos produce, which the rationale states. D (format decay) is a well-built invented term, A (outage) is a clean availability decoy. Dim1 4 records that C's best case is close rather than collapsed; the canonical vocabulary settles it."
+      "case": "Argued FOR: A (a data quality tool) is the IT manager's own proposal and it does address the duplicate and stale records; loses because nothing stops the defects returning while no one owns the recall list. B (a data lake) preserves both versions and settles nothing. D (encryption) is a control aimed outside the group when the spreadsheet is circulating inside it. Dim5 5: the surface offers a tool and the principle is governance - real misdirection."
+    },
+    {
+      "id": "gcp-cdl-d2-06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: C (copies drifting apart) is the strongest wrong case, since divergent exports are exactly what the partners have lived through; loses because drift is a symptom silos produce rather than the failure mode openness names. A (outage access) is an availability concern answered by replication. D (format decay) is an invented term dressed as canonical. Dim1 holds because select-two forces the two named modes and C is subsumed by B. Dim5 4: the export-only tooling points at lock-in, but C keeps the choice live."
     },
     {
       "id": "gcp-cdl-d2-07",
@@ -313,7 +264,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: D (Cloud SQL in one region with read replicas) is the strongest and is what many teams actually build - it is relational, managed and serves three continents; loses because every write still lands in one region, which is the sharding-or-distant-writes outcome the requirement excludes. B (Bigtable) has the scale story. A (BigQuery) is the analytics-for-transactions swap. Two constraints must both be held to answer."
+      "case": "Argued FOR: D (Cloud SQL with read replicas) is the strongest case and the architecture most teams reach for; loses because every write still lands in one region, which is the sharding the agency refuses. B (Bigtable) is a real scale answer with no relational transactions. A (BigQuery) is where reservation history is analyzed. Dim5 5: three of the four are products a practitioner would defend, and the discriminator is global write consistency."
     },
     {
       "id": "gcp-cdl-d2-08",
@@ -325,10 +276,22 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (catalog as relational) is the live tempter - variable attributes can be modelled relationally with sparse columns or an attribute table, so a practitioner can defend it; loses because that is precisely the constraint the non-relational model exists to lift, and the other two assignments in C are correct, which makes it a near-miss rather than a wrong answer. A and D are weak - both misclassify fixed-field, referentially-linked accounts - which caps dim2 at 4."
+      "case": "Argued FOR: C (accounts and catalog both relational) is the strongest case - many teams do force variable attributes into one schema with nullable columns; loses because per-category attributes are the constraint non-relational models exist to lift. D inverts the accounts assignment. A (all non-relational) is the weakest, resting on a wrong definition. Dim2 4: A is thin next to C. Dim5 4: three workloads described by their shape make the mapping direct, though C is genuinely arguable."
     },
     {
       "id": "gcp-cdl-d2-09",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B (Nearline) is the designed near-miss and the answer of a candidate who knows the classes exist but not their frequency bands; loses because once or twice a decade is far below monthly. A (Standard) is the availability instinct and defensible if retrieval latency worried the practice. C (match the other buckets) is a real billing-hygiene habit. Dim2 4: C is an operational habit rather than a storage answer. Dim5 5: the Nearline/Archive discrimination is the good-vs-best core of the item."
+    },
+    {
+      "id": "gcp-cdl-d2-10",
       "scores": {
         "1": 5,
         "2": 5,
@@ -337,19 +300,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (Nearline) is the strongest and the item's whole point - it is a genuine cold-ish class and a candidate who knows only 'not Standard' stops there; loses on the frequency arithmetic (once or twice a decade, not once a month). A (Standard) has the defect-claim availability argument. C (match the other buckets) is the non-architectural criterion. Textbook good-vs-best."
-    },
-    {
-      "id": "gcp-cdl-d2-10",
-      "scores": {
-        "1": 4,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 5,
-        "6": 5
-      },
-      "case": "Argued FOR: C (Standard until the pattern is understood, then revisit) is strong enough to cost a dim1 point - it is a defensible interim policy and many teams run exactly it. It loses because the operator has already said the pattern will keep shifting, so 'then revisit' never terminates. B (monthly instead of quarterly) is the interval-shrink trap; D (everything in Archive) is the cheapest-rate fallacy. Dim1 4 records that C survives a reasonable reading of a real practitioner's playbook."
+      "case": "Argued FOR: C (Standard until the pattern is understood) is the strongest wrong case and standard advice in most teams; loses because the operator has said the pattern will keep shifting, so the review never ends. B (monthly reviews) is the half-measure that keeps the manual loop. D (Archive everything) is the cheapest-rate trap. Dim5 5: the surface offers a sensible-sounding manual policy and the principle is to stop guessing."
     },
     {
       "id": "gcp-cdl-d2-11",
@@ -358,10 +309,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (refactor to a cloud-native database) is the strongest in the abstract - it is the route that actually lifts the vendor constraint and the one a modernization consultant would push; loses on two stated facts (no certification, no developers). B (retain) is defensible right up to the unsupported-server risk. D (analytics product) is the wrong workload. Every option is killed by a specific constraint, which is what makes the item good rather than lucky."
+      "case": "Argued FOR: A (refactor) is what a modernization-minded board would want and it does lift the vendor constraint; loses because the vendor will not certify a change and there are no developers. B (retain) is defensible right up to the point that support ended three years ago. D (analytics product) is a real product mismatch. Dim5 4: the constraints are stated explicitly, so the elimination is clean, though every option is a real migration decision."
     },
     {
       "id": "gcp-cdl-d2-12",
@@ -373,31 +324,31 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (a data warehouse) is strong - consolidating every centre's records is genuinely worth doing and is a real prerequisite; loses because the numbers already exist and the bottleneck is who can ask. C (grant table access) is the strongest single tempter, since it looks like democratization; loses because access is not capability. D (a second analyst) is the capacity-for-structure answer. All four are things a real director would consider."
+      "case": "Argued FOR: A (a warehouse) is genuinely useful and is what most consultants would propose first; loses because consolidation changes nothing about who can ask a question. C (grant table access) is the IT answer and fails on capability rather than permission. D (a second analyst) is what the budget holder suggests. Dim5 5: three plausible programs of work, and the discriminator is self-service on governed figures."
     },
     {
       "id": "gcp-cdl-d2-13",
       "scores": {
-        "1": 4,
+        "1": 5,
         "2": 5,
         "3": 5,
         "4": 5,
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: C (dashboards that refresh on demand) is strong enough to cost a dim1 point - it answers the first complaint completely and a candidate who reads the second clause as scene-setting will choose it. It loses only because the stem states two complaints and the key answers both. B (hourly copies) is the interval-shrink trap in its best form; A (lower storage cost) is a true consequence at the wrong address. Dim1 4 records that C is defensible on a narrow reading of the stem."
+      "case": "Argued FOR: C (on-demand refresh, booking system unchanged) is the strongest wrong case because it is true as far as it goes - a direct connection does remove the day-old extract; loses on the stem's second complaint, that managers must leave the booking system at all. B (hourly copies) preserves the design that creates staleness. A (storage cost) answers a complaint nobody made. Dim1 holds: C is true-but-partial under the E07 pattern, and the key answers both complaints. Dim5 5."
     },
     {
       "id": "gcp-cdl-d2-14",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (rerun the batch hourly) is the strongest - it is the answer an operator with one nightly job actually reaches for, and the item's point is that it shortens the gap without changing the shape; loses because a fall still waits for the next run. B and D are visibly reporting-shaped, which caps dim2 at 4. The fall/alert case is unambiguous once the decay-of-value test is applied."
+      "case": "Argued FOR: C (hourly rerun) is the strongest wrong case and the cheapest thing an operator can actually do; loses because a fall still waits for the next run. B (trustees' pack) and D (weekly quality review) are real reporting needs with no expiry. Dim5 4: a fall alarm is an obvious streaming case, so the surface points at the principle, but the three reporting foils are well chosen."
     },
     {
       "id": "gcp-cdl-d2-15",
@@ -409,7 +360,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (Dataflow) is the strongest and the intended near-neighbour - it is a streaming product, it handles each reading as it arrives, and a candidate who groups 'streaming' into one box picks it; loses because processing is the next stage and it decouples nobody. B (scheduled file export) and D (direct connections) are the two real-world anti-patterns the firm is trying to escape. Clean stage-boundary discrimination."
+      "case": "Argued FOR: A (Dataflow) is the strongest case by far - it is the neighbouring stage, it does handle each reading, and many readers treat 'streaming' and 'Dataflow' as synonyms; loses because pointing meters at a processing pipeline leaves nothing decoupling publishers from consumers. B (file export) and D (direct connections) are the two architectures the firm is trying to escape. Dim5 5: the adjacent-product trap is exactly the good-vs-best pitch."
     },
     {
       "id": "gcp-cdl-d3-01",
@@ -418,10 +369,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: D ('the first is machine learning, and so is the second, as a trained model produced it') is strong enough to cost a dim1 point, because it is literally true - generative AI is built with machine learning, as the rationale itself concedes. It loses on the question actually asked (how the two relate in the field's vocabulary), where stopping at ML leaves the board without the branch name. A (both generative) is the over-extension; C is a false claim about labelled data. Dim1 4 is the honest score for a distractor whose factual content is not wrong, only insufficient."
+      "case": "Argued FOR: D (both are machine learning) is the strongest wrong case and is defensible on its face, since generative models are built with machine learning; it loses only on the question asked - the board wants the term that distinguishes the two, and D collapses it. A (both generative) stretches the newer branch over a prediction. C (no labelled data, so no ML) is a real half-memory. Dim1 4, not 5: D is true-but-incomplete rather than wrong, so the key wins on best-answer convention rather than on D's own collapse - worth a Gate 2 eye if the deep-read disagrees with the E07 reading. Dim5 4."
     },
     {
       "id": "gcp-cdl-d3-02",
@@ -433,19 +384,19 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (both) is the strongest - a modern dashboard that 'explains why margins fell' may well be narrating with an LLM, and the option's reasoning is superficially sound; loses because explaining existing records is analytics whatever renders it. B (the dashboard alone) is the same conflation pushed further and is the weaker option, capping dim2 at 4. C (licensed vs trained) is a clean category error."
+      "case": "Argued FOR: B (the dashboard) is the intended trap and a real one, since explaining why margins fell feels like generating an account. A (both) rests on the same conflation. C (neither, because the models are licensed) is the weakest - provenance says nothing about function. Dim2 4: C is thin. Dim5 4: the two-tool contrast is clean, so the mapping is fairly direct once the definition is held."
     },
     {
       "id": "gcp-cdl-d3-03",
       "scores": {
-        "1": 4,
+        "1": 5,
         "2": 5,
         "3": 5,
         "4": 5,
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: C (operations) is strong enough to cost a dim1 point - the agent reaches into scheduling and stock, and a reader who classifies by which systems are touched lands there defensibly. It loses because those systems are read, not reshaped, and the work that changed is the support case. B (workforce productivity) is the strongest conceptual near-miss and is refuted only by 'no person touching the case'. D (sales experiences) picks out one step. Dim1 4 records that C requires the concept, not the scenario, to eliminate."
+      "case": "Argued FOR: C (operations) is the strongest wrong case because the agent really does touch scheduling and stock systems; loses because those systems are consulted, not reshaped. B (workforce productivity) is the answer if any person still finished the work, and the stem says none did. D (sales experiences) picks out the goodwill credit. Dim5 5: every option names a function the same technology genuinely transforms, and the surface points at operations."
     },
     {
       "id": "gcp-cdl-d3-04",
@@ -454,22 +405,22 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: D (all-in-one AI developer platform) is the strongest - it is a real advantage, it names an assistant-shaped capability, and 'platform' sounds like the low-effort route; loses because building is exactly what a marketplace with no data scientists cannot do before the campaign. A (first-party models) and B (best infrastructure) are both true claims answering questions nobody asked. Four live advantages, one situation - good-vs-best."
+      "case": "Argued FOR: D (all-in-one AI developer platform) is the strongest case - it is the advantage most cited for building assistants, and a chief executive reading the list would land there; loses because the marketplace has nobody to build with. A (first-party models) answers what the assistant could do. B (best infrastructure) answers serving speed. Dim5 4: 'no data scientists, spring campaign' is a fairly direct cue, but all four are real claims from the same list."
     },
     {
       "id": "gcp-cdl-d3-05",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (choosing between two payroll providers) is the strongest wrong option - it is a decision, and 'ML for decisions' is a live confusion; loses because two options and a handful of terms carry no pattern to learn. C (retention) is a genuine prerequisite mistaken for a use case. E (confirmation emails) is the clean automation-vs-learning split but is easy, which caps dim2 at 4."
+      "case": "Argued FOR: E (confirmation emails) is the strongest wrong case because automation is routinely sold as AI, and volume makes it feel like a scaling problem; loses because the rule is one line with nothing to learn. C (retaining five years of history) is a genuine prerequisite mistaken for the problem. B (choosing between two providers) is a commercial judgment with no pattern. Dim5 4: the two keys are recognisable, but E is a real trap for a head of operations."
     },
     {
       "id": "gcp-cdl-d3-06",
@@ -478,10 +429,10 @@
         "2": 3,
         "3": 5,
         "4": 5,
-        "5": 3,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (consistency) is the real tempter - four differently spelled titles do look like records disagreeing, and consistency is the dimension most often reached for; loses because the entries do not contradict each other, there are simply too many. C (timeliness) is thin. The construction problem is option B: it names the same dimension as the key and is phrased as a rebuttal ('uniqueness would be broken ONLY IF...') rather than as an answer, so the option set is not parallel and the B/D pairing telegraphs that uniqueness is the contested axis. It carries a real misconception (that duplicates must be identical), so it is not eliminable by everyone - dim2 3 rather than 2 - but a test-wise reader eliminates it on form alone, and dim5 falls to 3 for the same reason. Flagged to Gate 2 with a ratchet proposal for an option-parallelism check."
+      "case": "Argued FOR: A (consistency) is the strongest case and a genuinely arguable one - four differently spelled titles do look like records that disagree; loses because they do not contradict each other, there are simply too many. C (timeliness) misreads accumulation over years as currency. B is the problem: it is a defended negative that argues uniqueness applies only to identical duplicates, which both telegraphs the keyed dimension and is self-defeating once read - dim2 3. Dim5 4: A keeps the discrimination alive."
     },
     {
       "id": "gcp-cdl-d3-07",
@@ -493,31 +444,31 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (the trial settles it) is strong and is the commercial director's own position in the stem - superior measured performance IS the usual reason to deploy; loses because reliability and explainability are different properties and only one of them is in dispute. D (human review after the fact) is the strongest governance-flavoured near-miss and is refuted by the reviewers facing the same opaque score. C (disclosure) is honest and changes nothing. Excellent set."
+      "case": "Argued FOR: A (the trial settles it) is a strong commercial case and exactly what the director argues - a model that outperforms the quality team on accuracy has earned its place; loses because accuracy is not defensibility. D (review rejections afterwards) is a real governance compromise that fails on the same unexplainable score. C (publish a notice) is honest and leaves the dispute unresolved. Dim5 5: the surface offers strong trial evidence and the principle is explainability."
     },
     {
       "id": "gcp-cdl-d3-08",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (generating practice dialogues at inhuman volume) is the strongest - 'a volume no human author could write' is written to sound alarming, and a reviewer with a scale reflex refuses it; loses because scale is not what makes a use illegitimate. B and D both name their human-accountability safeguard inside the option text, which makes them easy and caps dim2 at 4. A (fabricated reviews under invented student names) is unambiguously the deception case."
+      "case": "Argued FOR: C (volume no human could write) is the strongest wrong case, since scale is what most reviewers flinch at; loses because scale alone is not illegitimacy and practice dialogues have an obvious purpose. B and D both keep an accountable human in the loop, which is the arrangement responsible use asks for. Dim5 4: fabricated reviews under invented student names is a recognisable refusal, though the three near-misses are well built."
     },
     {
       "id": "gcp-cdl-d3-09",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
-        "5": 4,
+        "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (technical expertise requirements) is the strongest - keeping an approach inside a small team's reach is exactly how most organizations choose, and 'two data scientists' can be read as a constraint rather than a capability; loses because the stem frames them as available. A (implementation speed) is neutralized by 'no launch date'. D (cheapest) is the weak option. Each distractor is disarmed by one stem fact, which is clean but makes the elimination mechanical - dim5 4."
+      "case": "Argued FOR: A (implementation speed) is the default instinct and would dominate if any date existed - the stem removes it. B (technical expertise) is the constraint for most organizations and is removed by the two data scientists. D (development effort) is the budget instinct. Dim5 5: each factor is disarmed by a specific stem fact rather than by wording, which is the good-vs-best shape."
     },
     {
       "id": "gcp-cdl-d3-10",
@@ -529,7 +480,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (Gemini) is the strongest - the teams are already calling it and a candidate who does not separate model from platform stops there; loses because a model supplies capability, not governance. C (Agent Registry) is a well-formed invented name that answers half the requirement, which is what makes it tempting. B (Looker) is the weak option, capping dim2 at 4."
+      "case": "Argued FOR: A (Gemini) is the strongest case because the teams are already calling it and a model does supply the capability; loses because a model is not a place to govern what is built with it. C (Agent Registry) is an invented name that reads plausibly and would list the problem rather than solve it. B (Looker) answers governed reporting. Dim2 4: C is eliminable on vocabulary. Dim5 4: 'build, deploy and govern' points fairly directly at the platform."
     },
     {
       "id": "gcp-cdl-d3-11",
@@ -541,7 +492,7 @@
         "5": 3,
         "6": 5
       },
-      "case": "Argued FOR: C (AutoML to train a transcription model) is the only genuinely live distractor - the trust does hold three thousand hours of domain audio, and custom acoustic training is a real technique; loses because the task is solved and the trust has nobody to train it. B (Translation) and D (Cloud Storage) are modality/utility mismatches. Dim5 capped at 3: 'spoken words as searchable text' maps onto 'Speech-to-Text, which converts recorded audio into text' with no intervening judgment - the only work left is the expertise constraint."
+      "case": "Argued FOR: C (AutoML transcription) is the strongest wrong case - a trust with three thousand hours of domain audio could believe its material needs a custom model; loses because transcription is a solved task and there is nobody to train one. B (Translation API) needs text to start from. D (Cloud Storage) makes tapes playable, not searchable. Dim5 3: 'spoken words available as searchable text' is a direct modality match with no misdirection in the surface."
     },
     {
       "id": "gcp-cdl-d3-12",
@@ -553,7 +504,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: D (a severity classifier) is the strongest - it is a legitimate ML solution to a named part of the job, and a candidate optimizing for precision picks it; loses because it delivers one of four required outputs. A (Vision API) is defensible only if 'field notes' are read as scanned, which the stem forecloses with 'typed'. C (Translation) is a real downstream need. Dim2 4 on A and C being partly disarmed by the stem."
+      "case": "Argued FOR: D (a severity classifier) is the strongest case because severity is one of the four outputs and a trained classifier is the classical answer; loses because it leaves the reading, the inferred cause and the drafted summary undone. C (Translation) is a real downstream need. A (Vision API) is disarmed by the stem's 'typed' notes. Dim2 4: A is eliminable on one word of the stem. Dim5 4: the four-part job points at general generative capability."
     },
     {
       "id": "gcp-cdl-d3-13",
@@ -565,7 +516,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (Vision API out of the box) is the strongest - it is the right modality, it needs no ML skills, and 'out of the box' answers the expertise constraint directly; loses because it has never seen this firm's grading scale. C (hire an ML engineer) is the over-engineering route that would genuinely work. A (Agent Studio) is the sibling-product swap. The labelled-own-data plus no-expertise pairing is a real good-vs-best."
+      "case": "Argued FOR: B (Vision API) is the strongest wrong case and a genuine practitioner error - it is pre-trained, needs no ML skills, and reads images; loses because it has never seen this firm's damage grades. A (Agent Studio) is the low-code route for a different job shape. C (hire an ML engineer) is real capability and more machinery than needed. Dim5 5: the pre-trained-versus-custom line is exactly the pitch, and the surface points at the easy API."
     },
     {
       "id": "gcp-cdl-d3-14",
@@ -577,7 +528,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: D (a fixed annual allocation of accelerator hours) is the strongest - growers asked what they are buying, and a seasonal cooperative buying capacity ahead of the season is a coherent commercial answer; loses because that describes how you pay, not what the layer is. B (managed warehouse) is the adjacent-layer swap. A (private region) is the weak option, capping dim2 at 4."
+      "case": "Argued FOR: D (a fixed annual allocation) is the strongest case because growers think in seasonal purchase commitments; loses because buying capacity is not what the layer is. A (a private region) describes placement. B (a managed warehouse) is the data platform layer, and a genuine confusion for a business audience. Dim2 4: D is a purchasing arrangement rather than a product-role swap. Dim5 4: 'why not simply a bigger machine' cues the integrated-stack answer."
     },
     {
       "id": "gcp-cdl-d3-15",
@@ -586,10 +537,10 @@
         "2": 4,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (AutoML after exporting) is the strongest - it is the right kind of product for the task and would work technically; loses on the stated no-copy constraint, which is the discriminator the item is built on. C (Looker) is the descriptive-for-predictive swap. D (a weekly report) is the lagging-indicator answer and is weak, capping dim2 at 4. Two constraints (SQL-only, no export) must both be held - good pitch."
+      "case": "Argued FOR: B (AutoML after exporting) is the strongest case and would be right in most organizations; loses on the stated constraint that the warehouse may not be copied. C (Looker) charts what happened. D (a manual report) is the status quo. Dim2 4: D is weak next to B. Dim5 4: SQL-only analysts plus a no-copy rule point clearly, but B is a genuine trap for anyone skimming the constraint."
     },
     {
       "id": "gcp-cdl-d4-01",
@@ -598,10 +549,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (pick one path and apply it consistently) is the strongest - consistency is a real program virtue and it answers the board's demand for a date; loses because it assumes the uniformity discovery exists to test. A (least critical first) is a defensible quick-win strategy that hides dependency risk. D (give the date, refine later) is what most programs actually do. Four real management instincts, one right sequence."
+      "case": "Argued FOR: A (least critical first) is real migration practice and gives the board visible progress; loses because nobody knows what the least critical servers are load-bearing for. D (give a date, refine later) is exactly what happens under board pressure. B (one path for everything) is a defensible standardization instinct. Dim5 4: three of the four are things organizations really do, though the missing inventory points hard at discovery."
     },
     {
       "id": "gcp-cdl-d4-02",
@@ -613,7 +564,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (replatform) is the strongest - a modest improvement while moving is what most lift-and-shifts turn into, and 'the system is still needed' invites a little tidying; loses on 'the retailer can make no change to it'. D (retain) is genuinely correct until the lease ends, which is what makes it a good distractor rather than a filler. C (refactor) needs the capability the retired contractor took. Every path is on the table and each is closed by a named fact."
+      "case": "Argued FOR: D (retain) is the strongest wrong case and is correct until the lease date is read - keeping the system in place is legitimate right up to that boundary. B (replatform) is tempting because modest improvements sound harmless. C (refactor) is the right long-run answer with the wrong capability and timeline. Dim5 5: every distractor is a real migration path violating exactly one stated constraint."
     },
     {
       "id": "gcp-cdl-d4-03",
@@ -625,7 +576,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: D (a managed service) is the strongest and is the deliberate trap - the office asked to hand over as much day-to-day operation as it possibly can, and a managed service hands over the most; loses on the second clause, keeping the portal's own code. C (containers on a cluster) is the middle rung a platform-minded reader picks. A (VMs) anchors the ladder. The two-clause requirement is exactly good-vs-best."
+      "case": "Argued FOR: D (a managed service) is the strongest case since it hands over the most operation of all, which is what the office said it wanted; loses on the second requirement, keeping the portal's own code. C (containers on a cluster) is the middle rung a consultant would propose. A (VMs) keeps control the office cannot staff. Dim5 5: the ladder is walked from both ends and the key sits at the intersection of two constraints."
     },
     {
       "id": "gcp-cdl-d4-04",
@@ -637,7 +588,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: C (each part gets its own data store) is the strongest - database-per-service is a real and widely taught property of the pattern, so a well-read candidate can defend it; loses because it describes a design choice inside the approach rather than what the decomposition buys the cooperative, whose stated pain is the deployment freeze. B (fewer defects) is a genuine consequence. A (runs faster) is the common myth. Strong, distinct set."
+      "case": "Argued FOR: C (each part gets its own data store) is the strongest wrong case - it is a genuine microservices design principle and it even names the coupling the co-op feels; loses because it describes an arrangement rather than what the decomposition buys. B (fewer defects) is a real consequence. A (runs faster) is the common misconception and usually false. Dim5 5: a true design property competing with the purpose is the good-vs-best shape."
     },
     {
       "id": "gcp-cdl-d4-05",
@@ -649,7 +600,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: C (autoscaling) is the strongest - uneven load and a morning peak is the textbook autoscaling story, and a candidate who does not read the 'instance count is correct' clause picks it; loses on that clause. A (Kubernetes) is defensible if you believe placement failed, and the item pre-empts it with idle instances existing. D (raise the connection limit) is the knob-twiddling instinct. The diagnosis requires separating three mechanisms that all touch traffic."
+      "case": "Argued FOR: C (autoscaling) is the strongest case because 'requests pile up' reads as a capacity symptom to nearly everyone; loses because the team has confirmed the instance count. A (Kubernetes) is defensible if placement were uneven, and the idle instances show it is not. D (connection limit) is the plausible configuration fix. Dim5 5: the surface points at capacity and the principle is distribution."
     },
     {
       "id": "gcp-cdl-d4-06",
@@ -661,7 +612,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (both) is the strongest - overnight IS when interruption costs least, and the reasoning is superficially sound; loses because timing is not the property that decides preemption tolerance. D (neither, clinical systems never) is the dogma answer and is genuinely held in healthcare IT. B contradicts the stem outright, which caps dim2 at 4."
+      "case": "Argued FOR: D (neither, clinical systems should never be interruptible) is the strongest wrong case and a real hospital policy position; loses because it also excludes a job that loses nothing on restart. A (both) rests on the overnight window rather than on interruptibility. B (the dispensing job) is contradicted by the stem outright. Dim2 4: B is disarmed by the scenario rather than by the concept. Dim5 4: the restartability contrast is stated plainly."
     },
     {
       "id": "gcp-cdl-d4-07",
@@ -670,10 +621,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (Cloud Run) is the strongest for a reader optimizing for managed-ness, and 'no servers to manage' sounds like the modern answer; loses because vendor support is conditioned on the roaster controlling the host. C (GKE) presumes containerization the licence resists. D (replace the software) is the route that solves everything by renegotiating everything, which the stem forbids. Three constraints all point one way and each distractor breaks a different one."
+      "case": "Argued FOR: B (Cloud Run) is the strongest case for a modernization-minded reader and would be right without the licensing and support terms; loses because the vendor supports the software only while the roaster controls the host. C (GKE) assumes containerization the licence resists. D (replace the software) renegotiates everything. Dim5 4: three constraints all pointing the same way make the mapping direct, but each distractor is a real product decision."
     },
     {
       "id": "gcp-cdl-d4-08",
@@ -685,7 +636,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (a smaller operations team) is the strongest wrong option - it is stated in business terms, it is not about spending less on its face, and executives do expect it; loses because modernization changes what operations work on rather than promising fewer people, and a business case should not carry an unearned promise. D (faster page load) is a technical benefit in business clothing. A (cost optimization) is pre-excluded by the stem, capping dim2 at 4."
+      "case": "Argued FOR: B (a smaller operations team) is the strongest wrong case because it is stated in business terms and is what boards hear; loses because modernization changes what operations do rather than promising headcount. A (cost optimization) is excluded by the stem. D (faster page load) is a technical improvement dressed as an outcome. Dim2 4: A is eliminated by the stem's own exclusion. Dim5 4."
     },
     {
       "id": "gcp-cdl-d4-09",
@@ -697,7 +648,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (Cloud Run) is the strongest - it removes the control-plane burden completely and is the obvious 'less operations' answer; loses because it also removes the node pools and scheduling policy the team keeps on purpose. B (Compute Engine) leaves the control plane exactly where the team said it will not keep it. C (functions) is an unrequested re-architecture. The keep/hand-over line is stated precisely and only one product sits on it."
+      "case": "Argued FOR: A (Cloud Run) is the strongest case for a team that wants less operational work; loses because it removes the node pools and scheduling policy the mill deliberately keeps. B (self-managed Kubernetes on VMs) preserves everything including the one job the team refuses. C (functions) is a re-architecture nobody asked for. Dim5 5: the item turns on where the managed boundary sits, which is exactly the good-vs-best line between GKE and serverless containers."
     },
     {
       "id": "gcp-cdl-d4-10",
@@ -709,7 +660,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (GKE) is the strongest - it runs their container and scales it, and two developers may not know a cluster counts as infrastructure; loses on 'manage no infrastructure at all'. C (Compute Engine with a start script) is what a scrappy team actually does. D (head-office server) is a non-cloud strawman that caps dim2 at 4. NOTE: this item bounces on the overlap screen (see bounces[]) for reproduced vendor sample-question phrasing in the rationale; the six dimensions are unaffected and are recorded here as the pre-bounce scores."
+      "case": "Re-scored fresh at round 2 after the round-1 overlap bounce; the stem, options and key are unchanged and only rationale.correct was re-expressed. Argued FOR: A (GKE) is the strongest wrong case since a cluster genuinely runs containers and gives the developers their language; loses because configuring and maintaining a cluster is infrastructure management under another name. C (a VM plus a start script) is what two developers often actually do. D (a head-office server) is the pre-cloud default and handles spiky traffic worst. Dim2 4: D is weak next to A. Dim4 5: the re-expressed rationale now argues the boundary in the bank's own words ('takes over everything below the container') and still names the concept's terms. Dim5 4. In the Gate 2 sample as a bounce survivor."
     },
     {
       "id": "gcp-cdl-d4-11",
@@ -721,7 +672,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (the existing GKE cluster) is the strongest and is genuinely what many institutes would do - the cluster is already operated and paid for, so marginal cost is near zero; loses because it brings orchestration the task never needs and still leaves someone operating it. A (an always-on instance) is the pre-serverless habit. D (a nightly batch) trades the requirement away. Good set; dim5 4 because 'short, event-triggered, sporadic' points fairly directly at functions."
+      "case": "Argued FOR: B (the existing GKE cluster) is the strongest case - the institute already runs one, so marginal cost feels like zero; loses because it brings orchestration the task never needs and someone still operates it. A (a VM kept warm) is the pre-serverless default. D (a nightly batch) is a real design that fails the unpredictable-moment requirement. Dim5 4: run-time, frequency and trigger are all stated, so the mapping is direct."
     },
     {
       "id": "gcp-cdl-d4-12",
@@ -730,10 +681,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (a nightly copy into BigQuery) is the strongest - it is the pragmatic answer, it needs no new product, and many teams would ship it; loses because copying removes the data from the environment the contract pins it to. B (Cloud Interconnect) is the networking-for-analytics swap and is defensible if you think the problem is reach. D (GKE Enterprise) is the same cross-cloud idea aimed at clusters. Contract constraint plus 'no second stack' does the discriminating."
+      "case": "Argued FOR: C (a nightly copy) is the strongest wrong case operationally and is what most teams would build; loses because it moves data the contract requires to stay put and makes every answer a day old. B (Interconnect) is a real cross-environment product answering connectivity rather than query reach. D (GKE Enterprise) is the same idea for clusters. Dim5 4: 'query the data held on the other provider' points fairly directly at Omni."
     },
     {
       "id": "gcp-cdl-d4-13",
@@ -745,7 +696,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (copy the turbine data into the new store) is the strongest - it is a real integration approach, it delivers the stated outcome, and a board would not notice the difference; loses because an interface asks the source each time rather than duplicating it. D (move both onto one platform) is refuted by 'nobody intends to replace'. C (manage the hardware) is weak, capping dim2 at 4."
+      "case": "Argued FOR: A (copy the data into the new store) is the strongest case because integration usually does involve moving data, and boards hear 'API' as 'feed'; loses because an interface asks the source each time. D (one platform, one store) is the migration reading. C (manage the hardware) is the weakest, though control-system audiences really do hear it that way. Dim2 4: C is thin next to A. Dim5 4: the answer is plain once the concept is held, but the three misreadings are the ones non-technical boards actually hold."
     },
     {
       "id": "gcp-cdl-d4-14",
@@ -754,10 +705,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (licensing a nightly export under individual contracts) is the strongest - it genuinely turns the requests into income, which is exactly what the finance committee asked for, and it is what most public bodies actually do; loses because it does not scale past a handful of partners. C (a public search site) serves the wrong audience. A (free download) refuses the mandate. The best distractor satisfies the stated goal and fails on the unstated one - real good-vs-best."
+      "case": "Argued FOR: B (licensed nightly exports under individual contracts) is the strongest wrong case - it does earn money and is what most public bodies do; loses because it stops paying as demand grows, one contract and one file at a time. C (a public search site) serves visitors rather than the businesses asking. A (free download) ends the income with the requests. Dim5 4: 'turn requests into income' cues monetization, but B is a genuinely defensible commercial answer."
     },
     {
       "id": "gcp-cdl-d4-15",
@@ -769,19 +720,19 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (Cloud Armor) is the strongest - hundreds of new callers is a real abuse-surface expansion and edge protection is a genuine part of the answer; loses because it issues no credentials, publishes no documentation and meters nothing. D (one shared credential) is the shortcut a stretched team takes. B (a second copy of the service) is the capacity-for-structure answer. The four-part requirement list makes the discrimination easy, so dim5 4."
+      "case": "Argued FOR: A (Cloud Armor) is the strongest case because opening an interface to hundreds of callers really does raise abuse risk; loses because it issues no credentials, publishes no documentation and meters nothing. D (one shared credential) is what small teams actually ship. B (a second copy of the service) treats a governance problem as capacity. Dim2 4: B is weak. Dim5 4: the requirement list is close to a product feature list."
     },
     {
       "id": "gcp-cdl-d5-01",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
-        "5": 4,
+        "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (ransomware not yet triggered) is the strongest - dwell time before detonation is real, and 'unauthorized software running for months' fits an implant; loses because the described payload is consuming capacity, which is the earning behaviour. C (misconfiguration) is defensible as the enabling condition rather than the threat class. D (DDoS) explains slowness but not installed software, capping dim2 at 4. The power-draw detail is the honest tell."
+      "case": "Argued FOR: D (DDoS) is the strongest wrong case since the visible symptom is slowness and denial-of-service is the reflex diagnosis; loses because a flood installs nothing and stops when it stops. A (ransomware) is defensible as a dormant payload and loses because ransomware exists to be seen. C (misconfiguration) reads spare capacity as self-inflicted exposure. Dim5 5: the surface hands a slowdown and the principle is silent theft of capacity."
     },
     {
       "id": "gcp-cdl-d5-02",
@@ -793,7 +744,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: C (retrain the model on harmful instructions) is the strongest - it is what a well-meaning ML team proposes first, and it does reduce the odds; loses because the mechanism is untrusted content being read as source material, which retraining leaves intact. B (harden the infrastructure) is the reflex for 'secure the stack'. D (a disclosure notice) is the governance-instead-of-fix answer. Indirect prompt injection is correctly located at the data layer and the item makes you find it."
+      "case": "Argued FOR: C (retrain the model on harmful instructions) is the strongest wrong case and is a real defence proposal; loses because the poisoned article is still read as legitimate source material. B (harden the infrastructure) is the classical security answer to any breach. D (a platform notice) is a genuine transparency control aimed at the wrong failure. Dim5 5: the attack arrives through content the assistant was designed to trust, which points away from the data layer for most readers."
     },
     {
       "id": "gcp-cdl-d5-03",
@@ -805,7 +756,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (nothing of substance changes) is the strongest - a security lead can defend it, since the obligations, the data and the access decisions really do stay put; loses because the provider now operates layers the service used to run and misconfiguration replaces hardware as the dominant failure mode. A (responsibility passes) is the belief the model exists to correct. D (physical security stops mattering) is the partial truth stated as an absolute. Strong set."
+      "case": "Argued FOR: A (responsibility passes to the provider) is what many audit committees believe and the reason the question gets asked. B (nothing of substance changes) is the seasoned security lead's scepticism and is half true about obligations. D (physical security stops mattering) is a real misreading of the baseline. Dim5 4: 'what genuinely changes' points at shared responsibility, but each distractor is a position real committees hold."
     },
     {
       "id": "gcp-cdl-d5-04",
@@ -814,10 +765,10 @@
         "2": 4,
         "3": 5,
         "4": 5,
-        "5": 4,
+        "5": 3,
         "6": 5
       },
-      "case": "Argued FOR: A (confidentiality) is the strongest if you argue that corrupted balances could expose customers to wrong entitlements; loses on 'no data left the company'. B (availability) has 'systems stayed usable' against it. C (compliance) is the most arguable - a loyalty scheme could carry contractual duties - but the stem denies it. Each distractor is disarmed by an explicit stem clause, which is legitimate evidence-based elimination but makes the item mechanical: dim2 and dim5 both 4."
+      "case": "Argued FOR: A (confidentiality) would hold if anything had been disclosed; B (availability) if the systems had stopped; C (compliance) if an obligation were engaged. Each is a real property of the security model and each is negated by one clause of the stem. Dim2 4: the options are the right family and distinct, but none survives as a live tempter once the stem's three negations are read. Dim5 3: the stem eliminates three properties in order and each option restates its own definition, so a candidate can reach the key by matching negations rather than by holding the concept."
     },
     {
       "id": "gcp-cdl-d5-05",
@@ -829,22 +780,10 @@
         "5": 3,
         "6": 5
       },
-      "case": "Argued FOR: B (least privilege) is genuinely strong - the contractor's account pulling stock records is also a permissions failure, and least privilege would have limited the damage; loses because the proposal on the table is about verifying every request, not narrowing what an account may do. C (privileged access management) is a real adjacent discipline; D (a firewall rule) fixes this incident and leaves the assumption. Dim5 capped at 3: the stem states the principle in the security lead's own words ('every request be verified whatever its origin') and the keyed rider repeats it, so the item asks only for the label."
+      "case": "Argued FOR: B (least privilege) is the strongest wrong case and a genuinely good answer to the incident - the contractor's account reached stock records it may not have needed; loses because the trust assumption, not the permission set, is what the lead proposed to change. C (privileged access management) is a real discipline for a narrower account class. D (block contractor devices) is the incident-specific fix that leaves the assumption intact. Dim5 3: the stem states the zero-trust definition almost verbatim ('every request be verified whatever its origin') and then asks for its name."
     },
     {
       "id": "gcp-cdl-d5-06",
-      "scores": {
-        "1": 5,
-        "2": 5,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
-      },
-      "case": "Argued FOR: A (test monthly rather than annually) is the strongest and is the interval-shrink trap at its best - more frequent testing is a real improvement and is what most boards fund; loses because between tests the service is still relying on a past result. B (publish the certificate) is a plausible partner-assurance move. D (a stronger firewall) optimizes for the next test. The 'photograph vs position' framing in the stem is a hint but the discrimination still requires the posture concept."
-    },
-    {
-      "id": "gcp-cdl-d5-07",
       "scores": {
         "1": 5,
         "2": 4,
@@ -853,7 +792,19 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (Sensitive Data Protection first) is the strongest - it is a real product, it is genuinely about sensitive records, and 'find then protect' is a coherent sequence; loses because discovery is not encryption and the records are already encrypted at rest. D (encryption once a bucket is tagged) is the plausible-but-false conditional. C (a firewall rule) is the wrong-layer answer and is weak, capping dim2 at 4."
+      "case": "Argued FOR: A (test monthly) is the strongest wrong case because it takes the criticism seriously and is what most boards fund; loses because more photographs are still photographs. B (publish the certificate) is a real partner-assurance move. D (a stronger firewall) optimizes for the next test. Dim2 4: B and D are thinner than A. Dim5 4: the head of technology's 'photograph rather than a position' framing does part of the work for the candidate."
+    },
+    {
+      "id": "gcp-cdl-d5-07",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A (Sensitive Data Protection) is the strongest wrong case - it is a real product, it is about sensitive data, and buying something is what the board expects; loses because discovery and classification are not encryption. C (a firewall rule) is the network reflex. D (encryption on tagging) is a plausible-sounding conditional. Dim5 5: the item's work is rejecting the board's premise, so the surface points away from the principle."
     },
     {
       "id": "gcp-cdl-d5-08",
@@ -865,7 +816,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C ('no further state applies') is the strongest wrong option because it is the belief the item exists to correct, and a candidate who has only ever heard 'at rest and in transit' will pick it confidently. A and B are both pre-covered by the stem, which caps dim2 at 4. Dim5 4: the mapping from 'loads a note into memory to run its analysis' to 'in use' still requires holding the third state, and the shared-tenancy detail is the honest reason it matters."
+      "case": "Argued FOR: C (no further state applies) is the strongest wrong case and the belief most organizations actually hold after covering disk and wire; loses because processing is a recognized third state. A and B are the two states the stem has already cleared. Dim2 4: two of the three options are pre-cleared by the scenario, leaving C as the only live tempter. Dim5 4: C is a genuine misconception, which keeps this above a pure match."
     },
     {
       "id": "gcp-cdl-d5-09",
@@ -874,10 +825,10 @@
         "2": 4,
         "3": 5,
         "4": 5,
-        "5": 4,
+        "5": 3,
         "6": 5
       },
-      "case": "Argued FOR: D (two-step verification should have been required for the deletion) is the strongest - step-up authentication on destructive actions is a real control and a real recommendation; loses because it would prove identity again and leave the role's permissions untouched, which is the item's point. B and C are each disarmed by an explicit stem clause (valid credential plus satisfied MFA; logs recorded every step), capping dim2 at 4. The mapping from 'nobody in that role should ever have been able to' to authorization is genuine work."
+      "case": "Argued FOR: B (authentication) is the reflex answer for any account-related incident and loses because the credential and the MFA challenge both worked. C (auditing) loses because the logs recorded every step. D (two-step verification) is a sub-case of B and overlaps it rather than adding a distinct pattern. Dim2 4: the three A's are the right family, but D duplicates B's pattern and two options are pre-cleared by the stem. Dim5 3: the stem clears authentication and auditing explicitly and each option carries its own definition, so the key is reachable by elimination on the surface."
     },
     {
       "id": "gcp-cdl-d5-10",
@@ -889,7 +840,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (faster detection inside the estate) is the strongest - it is what a security team hearing 'intelligence' usually expects, and it is adjacent to a real product; loses because detection is what the team already has and intelligence is about what has not arrived. D (a consortium severity index) is a well-built invented mechanism. B (certification) is a clean category error and is weak, capping dim2 at 4."
+      "case": "Argued FOR: A (faster detection inside the estate) is the strongest wrong case because it is what the team feels it lacks; loses because detection is the security-operations job and the ask was for foresight. B (certification) is assurance about controls. D (a consortium severity index) is invented and sounds standards-like. Dim2 4: D is eliminable on vocabulary. Dim5 4: 'insight into what is coming' points at threat intelligence, though the three-source detail is real content."
     },
     {
       "id": "gcp-cdl-d5-11",
@@ -901,7 +852,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (Google Security Operations) is the strongest by design - it is the correct product for the cooperative's OTHER gap, stated in the same stem, so a candidate who does not read carefully which gap is asked about takes it. That is a well-built trap rather than a cheap one. C (Cloud Logging) is a real step toward the second gap. D (a quarterly manual review) is the detective-for-continuous answer. Two-gap construction with a single-gap question is exactly good-vs-best."
+      "case": "Argued FOR: A (Google Security Operations) is the strongest wrong case by construction - it is the right product for the cooperative's second gap, so a reader who does not track which gap is asked about picks it. C (Cloud Logging) is a real step toward that same second gap. D (quarterly manual review) is what many organizations actually do. Dim5 5: the two-gap design means the candidate must hold both product roles, not just recognise one."
     },
     {
       "id": "gcp-cdl-d5-12",
@@ -913,19 +864,19 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (the swapped pairing) is the strongest possible distractor - it uses the two correct products and points them the wrong way, so it can only be eliminated by knowing what each one does rather than by recognizing names. B (Model Armor for both) is the over-generalization. C (Cloud Armor plus Security Command Center) is the name-adjacency trap. Securing-AI versus securing-with-AI is a real distinction and the item forces it."
+      "case": "Argued FOR: A (the swapped pairing) is the strongest wrong case in the bank's security domain - both named products are correct, only the assignment is reversed, so a candidate with partial recall lands there. B (Model Armor for both) is the over-generalization. C (Cloud Armor plus Security Command Center) is two real products for other jobs. Dim5 5: securing AI versus securing with AI is exactly the good-vs-best distinction."
     },
     {
       "id": "gcp-cdl-d5-13",
       "scores": {
         "1": 5,
-        "2": 5,
+        "2": 4,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (Confidential Computing) is the strongest - it is a genuine data-protection control and 'records containing national identity numbers' invites it; loses because the obligation is to establish where copies have spread, not to protect records in use. A (Cloud Armor) defends the application and grants no one access. E (Record Scanner) is a well-formed invented name. Dim5 4: two clearly separated obligations make the pairing findable once the products are known."
+      "case": "Argued FOR: A (Cloud Armor) is a real defence for an internet-facing application and loses because it grants no member of staff access. C (Confidential Computing) protects records in use and would be right if the obligation were about processing; it finds none of the copies already in spreadsheets. E (Record Scanner) is invented. Dim2 4: E is eliminable on vocabulary alone. Dim5 4: the two obligations are stated crisply enough to map, though C is a genuine near-miss."
     },
     {
       "id": "gcp-cdl-d5-14",
@@ -937,7 +888,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (a contractual warranty) is the strongest and is a genuinely sophisticated answer - an insurer might well accept a warranty, and it is more than the sales team offered; loses because a warranty allocates consequences if the claims are false rather than establishing that they are true. D (an architecture document) is design rather than operation. C (a guided demo) is the vendor speaking about itself with visuals. Evidence-versus-assertion is a real judgment and every option is defensible to someone."
+      "case": "Argued FOR: B (a contractual warranty) is the strongest wrong case and is exactly what an insurer's lawyer would ask for; loses because a warranty allocates consequences if claims are false rather than showing they are true. D (an architecture document) describes design rather than operation. C (a console demonstration) is the vendor speaking with better visuals. Dim5 5: three commercially sensible asks, and the discriminator is independent evidence."
     },
     {
       "id": "gcp-cdl-d5-15",
@@ -946,22 +897,22 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (a misconfigured bucket) is the strongest - it is the exposure that actually keeps security teams awake and it is unaddressed by 'encrypted and access-controlled' in the loosest sense; loses because the contract's concern is a lawful demand, not an unlawful reach. A (key strength) is the technical-depth answer. D (staff clearance) is the insider answer. The item's discrimination - no security control settles a jurisdiction question - is exactly the concept."
+      "case": "Argued FOR: B (a misconfigured bucket) is the strongest wrong case since exposure is the usual cloud risk story; loses because the contract's concern is a lawful demand, not an unlawful one. A (key strength) is a real control question. D (staff clearance) is a real personnel control. Dim5 4: 'not disclosable to any foreign authority' points at sovereignty, but the security team's report frames the misdirection well."
     },
     {
       "id": "gcp-cdl-d6-01",
       "scores": {
-        "1": 4,
+        "1": 5,
         "2": 5,
         "3": 5,
         "4": 5,
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (add electricity, cooling and server-room space to the purchase price) is strong enough to cost a dim1 point - it is a real correction to the finance director's comparison, it moves in the right direction, and the rationale itself concedes it is 'one part of the picture'. It loses because TCO is defined to include operational overhead AND opportunity cost, and a comparison that stops at facilities still flatters the purchase. B (cash out each year) is a defensible treasury view. C (equivalence) is the null. Dim1 4 records that the best distractor is partially correct rather than defeated."
+      "case": "Argued FOR: A (add electricity, cooling and space) is the strongest wrong case in the domain - it is a real correction to the finance director's comparison and would satisfy most boards; loses because it still omits the people cost and the opportunity cost, which is the completeness the concept is about. B (cash out each year) is a genuine treasury view. C (treat them as equivalent) is the director's own position. Dim5 5: the incomplete-but-improved option is the designed trap and it works."
     },
     {
       "id": "gcp-cdl-d6-02",
@@ -973,7 +924,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: B (circulate a monthly report to the deans) is the strongest - it is a real governance instrument and it adds distribution to visibility; loses because the stem says no faculty head has ever been asked to explain a rise, so more reporting without accountability changes nothing. D (a better dashboard) is pre-empted by the existing one, which is what makes it a fair trap rather than a giveaway. C (equal fixed budgets) is the crude control. People/process/technology is the discriminator and the item makes you apply it."
+      "case": "Argued FOR: B (a monthly report to the deans) is the strongest wrong case because it looks exactly like governance and is what most finance committees adopt; loses because it adds visibility to a university that already has a dashboard and still asks nobody to account. D (a better dashboard) is technology answering a people-and-process question, and the stem says the dashboard already exists. C (fixed equal budgets) is a real but blunt control. Dim5 5."
     },
     {
       "id": "gcp-cdl-d6-03",
@@ -982,10 +933,10 @@
         "2": 5,
         "3": 5,
         "4": 5,
-        "5": 5,
+        "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: C (the organization node) is the strongest - it covers the department in one action, it guarantees inheritance for future projects, and it is what an administrator in a hurry does; loses on the explicit constraint that other departments must not be bound. A (per project) is correct today and fails on the next project created. D (a documented standard) is the governance-without-enforcement answer. The three-clause requirement makes exactly one node the right one."
+      "case": "Argued FOR: C (the organization node) is the strongest wrong case - it is one action, it covers the department, and inheritance works; loses because it binds every other department to a retention rule written for one. A (per project) is explicit and is precisely the work to be avoided. D (a documented standard) is what many trusts actually do. Dim5 4: the two constraints (new projects inherit, others unbound) point squarely at the folder tier."
     },
     {
       "id": "gcp-cdl-d6-04",
@@ -997,19 +948,19 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: A (budget threshold rules for both) is the strongest - alerts genuinely do cover overspend of any kind, and finance teams reach for them first; loses because an alert tells you after the money is committed and does nothing about a run that is expensive by design. B is the correct pair pointed at the wrong problems, which is the best kind of distractor here. C (billing reports) is analysis offered as control. Two distinct problems requiring two different control classes."
+      "case": "Argued FOR: B (the swapped pairing) is the strongest wrong case because both named controls are real and only the assignment is wrong. A (budget alerts for both) is the single-instrument answer most finance teams reach for and it detects rather than prevents. C (billing reports) is analysis offered as control. Dim5 5: two problems with different shapes, and the discriminator is prevent-before-spend versus buy-on-the-platform's-terms."
     },
     {
       "id": "gcp-cdl-d6-05",
       "scores": {
         "1": 5,
-        "2": 4,
+        "2": 5,
         "3": 5,
         "4": 5,
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: B (budget threshold rules) is the strongest - it is a cost-management capability and a board asking about a rise sounds like it wants alerting; loses because a threshold reports a crossing, not which cost centre or service drove a closed quarter. C (quotas) and D (Spot VMs) are both forward-acting and are explicitly de-scoped by 'no decision has yet been taken about caps, commitments or discounts', which caps dim2 at 4. The retrospective-versus-prospective split is the whole item."
+      "case": "Argued FOR: B (budget threshold rules) is the strongest wrong case since alerts are what most boards associate with cost control; loses because a threshold reports nothing about a quarter that has closed. C (quotas) and D (Spot VMs) both act on future spend, which the stem explicitly rules out. Dim5 4: 'before it decides anything at all' is a clear cue, but the three action-oriented distractors are the real instinct."
     },
     {
       "id": "gcp-cdl-d6-06",
@@ -1021,7 +972,7 @@
         "5": 5,
         "6": 5
       },
-      "case": "Argued FOR: D (Cloud Profiler) is the strongest - it is the deepest performance tool in the set and 'where the time goes' sounds like profiling; loses because it answers within one service once you know which service to look at. A (Cloud Monitoring) is pre-empted by the dashboards already showing every service inside its limits, which is the item's key evidence. B (Cloud Logging) can reconstruct a journey by hand. Distributed tracing is correctly the only product that joins the chain."
+      "case": "Argued FOR: A (Cloud Monitoring) is the strongest wrong case because metrics are where every team starts, and the stem says those dashboards look healthy. D (Cloud Profiler) is the right next question once the slow hop is known. B (Cloud Logging) can reconstruct a journey by hand. Dim5 5: four real observability products, and the discriminator is following one request across services."
     },
     {
       "id": "gcp-cdl-d6-07",
@@ -1033,7 +984,7 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (add more zones) is the strongest - deeper redundancy is a genuine resilience move and a board could accept it; loses because zones are subdivisions of the failure domain the requirement says can be lost. C (more frequent backups) is the RPO answer to an availability requirement. D (publish an SLA) is the promise-instead-of-design answer. Dim5 4: 'if that entire region is lost' points fairly directly at a second region."
+      "case": "Argued FOR: A (more zones) is the strongest wrong case and a genuine resilience improvement; loses because zones are subdivisions of the failure domain the requirement says can be lost. C (more frequent backups) is the classical DR answer that still needs somewhere running. D (publish an SLA) confuses a promise with a capability. Dim5 4: 'if that entire region is lost' is close to handing over the multi-region answer, though A is a real trap for anyone who reads zones as independent."
     },
     {
       "id": "gcp-cdl-d6-08",
@@ -1045,27 +996,84 @@
         "5": 4,
         "6": 5
       },
-      "case": "Argued FOR: A (the reversed order) is the strongest and the only serious contender - a candidate who knows the three terms but not their order picks it, which is precisely the discrimination being tested. C (all three are objectives, differing in who is told) is a real conflation. B (saturation, latency, traffic) is the golden-signals category error. Dim5 4: the three roles are described so cleanly in the stem that ordering them is mechanical once the terms are held."
+      "case": "Argued FOR: A (the reversed order) is the designed trap and catches anyone who knows the three terms but not which binds whom. B (saturation, latency, traffic) is a real vocabulary from the neighbouring golden-signals set. C (all three are objectives) is the flattening misconception. Dim5 4: the three descriptions in the stem are clean, so a candidate holding the definitions maps them directly, but the ordering trap keeps it above recall."
     }
   ],
-  "bounces": [
-    {
-      "id": "gcp-cdl-d4-10",
-      "bounce": 1,
-      "trigger": "overlap-screen",
-      "failing_dimensions": {},
-      "rubric_scores_at_bounce": {
-        "1": 5,
-        "2": 4,
-        "3": 5,
-        "4": 5,
-        "5": 4,
-        "6": 5
+  "bounces": [],
+  "score_distribution": {
+    "per_dimension": {
+      "1": {
+        "4": 1,
+        "5": 82
       },
-      "judge_case": "The item passes all six dimensions and needs no rework as a question. It bounces under methodology/05-eval-rubric.md #overlap, a separate trigger. Its rationale.correct opens 'Cloud Run is for teams that want their own language and tools with minimal infrastructure management'. derivation/source-gcp-cdl-samples.md line 151 records, in quotation marks, that Google's own published sample item 4.2 turns on the phrase \\u201cmy own language and tools, minimal infrastructure management\\u201d. The bank reproduces that construction with a contiguous 4-gram ('own language and tools') and a contiguous 3-gram ('minimal infrastructure management') in the same order and the same argumentative role. Checked against the Artefact B bounded exception and it does not apply: neither phrase appears anywhere in derivation/source-gcp-cdl-guide.md, so this is not canonical blueprint vocabulary - the master inventory itself re-expresses the same idea in its own words as 'own-tools containers' (C-055). It is vendor sample-question prose, which puts it outside 'incidental technical phrases' and inside the repo hard rule (CLAUDE.md, anti-dumps): never reproduce source text. Same class and same reasoning as ccao-f d3-q34 / d6-q65.",
-      "defect_class": "source-phrase-reuse",
-      "required_fix": "Re-express the opening clause of rationale.correct in the bank's own words while keeping the identical decision content - state the two properties directly (the team keeps the runtime and tooling it chose; the platform owns everything below the container) without borrowing the vendor's paired phrasing. Do NOT change the stem, the options or the key: the stem's 'keep their language and tooling and to manage no infrastructure at all' is already an independent re-expression and is fine, and dimensions 1-6 are unaffected. Re-scored fresh at round 2 per #bounce.",
-      "related_process_finding": "The leak is downstream of an S1 control gap, not an S3 authoring failure: the authoring session worked correctly from the derivation artefact, and the artefact is what retained the vendor's wording. derivation/source-gcp-cdl-samples.md carries two direct quotations of sample-item prose (line 151, the phrase above; line 157, \\u201cwithout making any changes to the code\\u201d) despite that document's own header asserting 'No question text, option text or rationale prose is reproduced here'. Line 157 did NOT leak into the bank - d4-02 re-expresses it independently. Scrubbing the artefact is distillation work and is out of the examiner's write surface; it is raised for Gate 2 and for the ratchet in eval/overlap-report.md."
-    }
-  ]
+      "2": {
+        "3": 5,
+        "4": 29,
+        "5": 49
+      },
+      "3": {
+        "5": 83
+      },
+      "4": {
+        "5": 83
+      },
+      "5": {
+        "3": 8,
+        "4": 47,
+        "5": 28
+      },
+      "6": {
+        "4": 4,
+        "5": 79
+      }
+    },
+    "totals": {
+      "3": 13,
+      "4": 81,
+      "5": 404
+    },
+    "total_scores": 498,
+    "note": "The threes cluster where round 1 found them: dimension 5 pitch in the definitional domains (d1) and dimension 2 where a wrong option is disarmed by the stem's own wording rather than by the concept. No dimension scored 1 or 2 on any item."
+  },
+  "round1_delta": {
+    "method": "Round-2 scores were assigned independently, then compared with judge-scores-r1.json.",
+    "carried_over": "All ten round-1 Gate 2 items still carry at least one 3 in round 2 (d1-01, d1-02, d1-05, d1-06, d1-08, d1-12, d1-14, d3-06, d3-11, d5-05) - the same dimensions in each case.",
+    "added": [
+      "gcp-cdl-d5-04 (dim5 3: the stem negates confidentiality, availability and compliance in turn and each option restates its own definition, so the key is reachable by matching negations)",
+      "gcp-cdl-d5-09 (dim5 3: same elimination shape, plus option D two-step verification duplicates option B's authentication pattern)",
+      "gcp-cdl-d4-10 (bounce survivor, added per #handoff rather than by score)"
+    ],
+    "considered_and_kept_at_4": [
+      "gcp-cdl-d1-04 and gcp-cdl-d4-13 were weighed for a dim5 3 and held at 4: in both, the wrong options are real practitioner positions rather than pre-cleared foils, so the discrimination still costs the candidate the concept.",
+      "gcp-cdl-d3-01 dim1 was lowered from 5 to 4 (round 1 scored it 5): option D ('both are machine learning') is true-but-incomplete rather than wrong, so the key wins on best-answer convention. It does not bounce and does not enter the sample by score; the case is recorded for the Gate 2 deep-read."
+    ],
+    "net": "13 threes across 12 items (round 1: 13 threes across 10 items). Gate 2 sample is 13 with the bounce survivor."
+  },
+  "gate2_sample": {
+    "count": 13,
+    "basis": "Every item carrying any 3 on any dimension (#judge), plus the round-1 bounce survivor gcp-cdl-d4-10 (#handoff). No cross-model additions were possible - the Codex advisory cross-solve is advisory_skipped for both rounds (eval/codex-solve.json), so Gate 2 samples WITHOUT the cross-model signal and must record that. No blind-solve adjudications are open (83/83 match, round 1 and round 2).",
+    "items": [
+      "gcp-cdl-d1-01",
+      "gcp-cdl-d1-02",
+      "gcp-cdl-d1-05",
+      "gcp-cdl-d1-06",
+      "gcp-cdl-d1-08",
+      "gcp-cdl-d1-12",
+      "gcp-cdl-d1-14",
+      "gcp-cdl-d3-06",
+      "gcp-cdl-d3-11",
+      "gcp-cdl-d4-10",
+      "gcp-cdl-d5-04",
+      "gcp-cdl-d5-05",
+      "gcp-cdl-d5-09"
+    ]
+  },
+  "bank_defects_resolution": {
+    "gcp-cdl-d4-10": "Round-1 bounce 1 (defect_class source-phrase-reuse, overlap trigger). Rework commit 42fbd3f changed exactly one string - the opening clause of rationale.correct - and left the stem, options and key untouched, which is what the required_fix specified. Re-screened at round 2: neither of the two vendor phrases quoted in derivation/source-gcp-cdl-samples.md appears anywhere in the bank. Re-scored fresh: 5/4/5/5/4/5, no failing dimension. Bounce discharged; item carried into the Gate 2 sample as a bounce survivor."
+  },
+  "open_process_finding": {
+    "id": "S1-artefact-quotation",
+    "status": "still open - outside the examiner's write surface",
+    "detail": "derivation/source-gcp-cdl-samples.md still carries two direct quotations of vendor sample-item prose (lines 151 and 157) despite the document's own header asserting that no question, option or rationale prose is reproduced. Line 151 is the phrase that leaked into the bank at round 1; line 157 never leaked. The bank is clean either way, but the artefact remains a live leak path for any future authoring session against this exam. Raised for Gate 2 and for the ratchet - the fix is distillation work (S1), not eval or authoring work."
+  }
 }

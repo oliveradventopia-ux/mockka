@@ -100,3 +100,36 @@ been copied — plus the derivation artefacts' own explicit no-reproduction stat
 `ms-practice-assessment` is ever accessed, or if the `akashp` repository is ever cloned into the
 workspace for any reason, this screen should be re-run as a real shingle comparison before the next
 status flip.
+
+---
+
+# Round 2 — delta screen (post-bounce re-eval, 2026-08-18)
+
+Scope: rework commit `e2434ad` changed exactly five items — `d1-q15`, `d1-q16`, `d1-q24`,
+`d2-q44`, `d2-q50` — confirmed by a per-item hash diff of `questions.json` against the round-1
+eval commit `29bc9ff`; the other 51 items are byte-identical, so round 1's screen stands for them
+unchanged.
+
+**Method (identical to round 1).** Every surface of each reworked item — stem, all options,
+`rationale.correct` and every `rationale.distractors` entry — 7-gram shingled and compared against
+all five derivation artefacts held in the repository: `sources.md`,
+`source-ms-ai901-blueprint.md`, `source-ms-ai901-curriculum.md`,
+`source-akashp-ai901-simulator.md`, `master-inventory.md`.
+
+**Result: zero shared 7-gram shingles across all five reworked items — no hits of any kind, not
+even concept-statement echoes.** The rework is originally expressed. Bank-wide the shingle picture
+is unchanged from round 1: the same 14 items share at least one shingle (`d1-q03`, `d1-q05`,
+`d1-q21`, `d2-q32`, `d2-q35`, `d2-q36`, `d2-q40`, `d2-q45`, `d2-q46`, `d2-q47`, `d2-q48`,
+`d2-q51`, `d2-q52`, `d2-q54`), every one of them a concept statement echoed in the item's own
+rationale — which dimension 4 actively wants — or a canonical vocabulary term under Artefact B's
+bounded exception. **No reworked item is among them; the rework added no overlap surface.**
+
+**Process control, extended.** The clean-room chain recorded in round 1 now runs
+`55ddbd6` (sources + distillation) → `4900b12` (master inventory / authoring contract) →
+`f071972`, `197da1c` (authoring) → `e2434ad` (bounce-1 rework). The rework session worked from
+the bounce records in `eval/judge-scores.json`, not from any source text, and the derivation
+artefacts it could read carry their own explicit no-source-text statements. Nothing changed the
+standing caveat: no live-exam or third-party source text is held anywhere in this repository, so
+the originality claim rests on the process control plus this negative shingle result.
+
+**No overlap bounce in round 2. No clean-room breach.**

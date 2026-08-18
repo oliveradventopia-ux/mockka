@@ -1,12 +1,27 @@
 {
-  "$comment": "S5 blind solve ROUND 2 (methodology/05-eval-rubric.md #blind-solve), post-bounce re-eval of the reworked bank (rework commit e2434ad: d1-q15, d1-q16, d1-q24, d2-q44, d2-q50). exam-examiner, fresh session, 2026-08-18 — this session authored nothing in this bank and opened NO key, rationale, distractor_patterns, concept metadata or round-1 eval artifact until the pre-key record was written to the session scratchpad (ai901-blind-r2.txt). Round 1 is preserved unmodified at eval/blind-solve-r1.json; this canonical file carries the CURRENT bank revision per the preflight contract. Scope: all 56 items were re-solved fresh this round, not only the five reworked ones — the reasoning lines here are round-2 lines, independently written. Keyless form generated mechanically first: jq -r '.questions[] | \"=== \\(.id) [\\(.type)] \\(.domain)\\nQ: \\(.question)\" + options + scenarios + matching_options' (answer, rationale, distractor_patterns, primary_concept, theme, vertical, keywords all stripped). Encoding: single_choice chosen/keyed are option letters; multiple_response are sorted letters comma-joined; scenario_matching are 'sN=Option' pairs semicolon-joined. RESULT: 56/56 match (55 high confidence, 1 medium — d2-q41), zero misses, zero adjudications required, adjudication queue empty. INTEGRITY DISCLOSURE — one item is contaminated: the rework commit message for e2434ad was read during scope discovery (to establish which items changed) and its d2-q50 paragraph states 'keys B+D unchanged'. The blind answer B,D for d2-q50 is therefore NOT independent evidence of that item's key, and d2-q50 is referred to the Gate 2 sample on that ground alone. All other 55 items are uncontaminated. DISCOUNT (unchanged from round 1): author and examiner share Claude weights and the cross-model instrument is unavailable (eval/codex-solve.json, advisory_skipped round 2), so 100% measures internal consistency, not independent correctness; per-item codex fields carry status only and the Gate 2 sample carries no cross-model column.",
+  "$comment": "S5 blind solve (methodology/05-eval-rubric.md #blind-solve). exam-examiner, 2026-08-18, round 1. FRESH CONTEXT: this session never authored or edited content/ai-901/questions.json. ORDER OF OPERATIONS: the keyless form was generated mechanically from questions.json with `jq '{questions: [.questions[] | {id, type, question, options, matching_options, scenarios} | with_entries(select(.value != null))]}'` (answer, rationale, distractor_patterns, primary_concept, theme, vertical and keywords stripped), every item was answered with confidence and a one-line reason, and those answers were written to disk BEFORE the key, any rationale or any prior eval artifact was read. RESULT: 56/56 match, all high confidence, zero misses and therefore zero open adjudications. Read that number with the discount in codex-solve.json: author and examiner share Claude weights and the cross-model instrument was unavailable, so 56/56 measures internal consistency, not independent correctness. scenario_matching answers are recorded as `s1=Option; s2=Option; ...` strings in scenario order.",
+  "round": 1,
+  "generated": "2026-08-18",
+  "summary": {
+    "items": 56,
+    "match": 56,
+    "miss": 0,
+    "accuracy_pct": 100,
+    "confidence": {
+      "high": 56,
+      "medium": 0,
+      "low": 0
+    },
+    "open_adjudications": 0,
+    "codex": "advisory_skipped"
+  },
   "items": [
     {
       "id": "ai-901-d1-q01",
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Fairness = compare outcome quality across the two population groups and quantify the gap; the rest are transparency/privacy/monitoring.",
+      "reasoning": "Fairness is measured by comparing outcomes across the under-represented group and reporting the disparity, not by notice, encryption or complaint sampling.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -18,7 +33,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Reliability & safety = detect when input quality leaves the model's validated envelope and fail over to humans.",
+      "reasoning": "Reliability and safety means detecting when conditions fall outside what the model can handle and degrading to human control.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -30,7 +45,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Privacy/security beyond storage location = least-privilege scoping plus testing for extraction of personal data.",
+      "reasoning": "Privacy and security requires scoping data access per role and probing for extraction of personal detail, not signage or manual redaction.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -42,7 +57,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Inclusiveness = test with the excluded groups and provide an alternative channel where the modality fails them.",
+      "reasoning": "Inclusiveness means testing with the excluded users and providing an alternative channel where the interface fails them.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -54,7 +69,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Transparency = disclose that it is AI and state its limits at point of use.",
+      "reasoning": "Transparency obliges disclosing that the counterpart is an AI system and what its limits are.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -66,7 +81,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Accountability = named human owner plus governance framework over the decision.",
+      "reasoning": "Accountability is about a named human owner and the governance around the decision; logging and explanation serve other considerations.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -78,7 +93,7 @@
       "chosen": "A,C",
       "keyed": "A,C",
       "confidence": "high",
-      "reasoning": "A states the transparency obligation is met by broad disclosure + contest route; C names privacy/security as the countervailing obligation.",
+      "reasoning": "Transparency is discharged by meaningful disclosure plus contest route; withholding exact weights is the privacy/security obligation in tension with it.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -90,7 +105,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Hallucination: autoregressive token-by-token generation from pre-training patterns, no lookup.",
+      "reasoning": "A generative model predicts tokens from pre-training patterns, which is exactly how a fluent but fabricated credit appears.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -102,7 +117,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "One explanation covers both: generative output from learned patterns + fixed context window drops earlier text.",
+      "reasoning": "Fabricated dates are generation from learned patterns; lost opening pages are the fixed context window - one explanation covers both.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -114,7 +129,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Image + text in one request = multimodal model.",
+      "reasoning": "Image plus text in one request is the definition of a multimodal model.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -126,7 +141,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "A deployment has its own configuration/options fixed at deployment time.",
+      "reasoning": "A deployment carries its own configuration decisions made at deployment time, not just an on switch.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -138,7 +153,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Determinism/repeatability is a temperature (sampling) setting.",
+      "reasoning": "Reproducible identical output from identical input is a sampling-randomness question, so lower the temperature.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -150,7 +165,7 @@
       "chosen": "s1=Speech; s2=Information extraction; s3=Text and natural language; s4=Computer vision; s5=Speech",
       "keyed": "s1=Speech; s2=Information extraction; s3=Text and natural language; s4=Computer vision; s5=Speech",
       "confidence": "high",
-      "reasoning": "Dictation->speech-to-text; scanned tickets->named values; email routing/terms->NLP; camera hazard->vision; read-aloud->speech.",
+      "reasoning": "Dictation-to-text and reading-out are Speech; scanned tickets to named values is information extraction; routing and recurring terms is text/NLP; camera hazard detection is vision.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -162,7 +177,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Agentic = goal pursued across steps with actions taken, not a bigger/better writer.",
+      "reasoning": "Agentic means goal pursuit across steps with actions taken, not a bigger or better-writing model.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -174,7 +189,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Grouping reviews by what they are about + tracking rising subjects month to month = key phrase/keyword extraction.",
+      "reasoning": "Salient terms a document is about is the definition of key phrase / keyword extraction.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -186,7 +201,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Surfacing which people/orgs/places/dates a letter names so records can be linked = entity detection.",
+      "reasoning": "Typed spans for people, places, organizations and dates is named entity recognition; text is already transcribed so OCR is out.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -198,7 +213,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Mixed praise/criticism in one message needs aspect-level (opinion mining) sentiment, not document-level.",
+      "reasoning": "Mixed opinion in one message with a neutral whole-document score is the classic case for aspect-level sentiment.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -210,7 +225,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Act on substance without reading the full set = summarization.",
+      "reasoning": "Needing the substance of long prose without reading it is summarization.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -222,7 +237,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Spoken debrief to indexable text = speech recognition (speech-to-text).",
+      "reasoning": "Spoken audio to searchable text is speech recognition; the text tools then run downstream.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -234,7 +249,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Held text read aloud on the visitor's phone = speech synthesis (text-to-speech).",
+      "reasoning": "Held text to audio for a low-vision listener is speech synthesis.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -246,7 +261,7 @@
       "chosen": "B,E",
       "keyed": "B,E",
       "confidence": "high",
-      "reasoning": "Classify the product in the truck bed (label) + detect/locate each truck to count them.",
+      "reasoning": "Naming the product is image classification / labeling; counting waiting trucks requires located instances, i.e. object detection.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -258,7 +273,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Visuals for garments with no photographs = image generation from text.",
+      "reasoning": "New visuals from written descriptions where no photograph exists is image generation.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -270,7 +285,7 @@
       "chosen": "s1=Images; s2=Audio; s3=Text; s4=Video; s5=Images",
       "keyed": "s1=Images; s2=Audio; s3=Text; s4=Video; s5=Images",
       "confidence": "high",
-      "reasoning": "Content-type classification by the medium each backlog arrives in.",
+      "reasoning": "Content type follows the medium as captured: photographs are images, call recordings audio, typed form entries text, dashcam footage video.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -282,7 +297,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Named values off many layouts with no per-layout code = field/document extraction, not OCR or per-layout templates.",
+      "reasoning": "Named values straight into a system across many layouts, with no per-layout parsing, is field extraction rather than raw OCR.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -294,7 +309,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Persistent role/tone/prohibitions belong in the system prompt; user question stays the user prompt.",
+      "reasoning": "Role, tone and prohibitions belong in the system prompt so they cannot be forgotten by the user.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -306,7 +321,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Facts are right, shape is wrong -> few-shot examples showing the exact output layout.",
+      "reasoning": "The facts are right and only the shape is wrong, which is what few-shot worked examples fix.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -318,7 +333,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Multi-step ordered arithmetic wrong -> chain-of-thought / step-by-step reasoning in the stated order.",
+      "reasoning": "Multi-step ordered arithmetic going wrong in sequence is what step-by-step reasoning prompting addresses.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -330,7 +345,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Catalog entry is not callable; a deployment must exist before a client can call the model.",
+      "reasoning": "A catalog model is not callable until a deployment of it exists; the project being reachable rules out the address.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -342,7 +357,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "External app targets the deployment's endpoint with its address and credentials/key.",
+      "reasoning": "External applications call the deployment's endpoint with its address and credentials.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -354,7 +369,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Fastest unbiased answer = try the deployment in the portal playground with real notes.",
+      "reasoning": "The portal playground is the no-code way to test a model on real data before committing developer time.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -366,7 +381,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Embedding the model in an existing app = write client code with the Foundry SDK against the deployment.",
+      "reasoning": "Embedding the capability in an existing app means writing client code against the deployment with the Foundry SDK.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -378,7 +393,7 @@
       "chosen": "A,D",
       "keyed": "A,D",
       "confidence": "high",
-      "reasoning": "Testing is part of creating the agent, and it must be exercised against realistic branch requests.",
+      "reasoning": "Portal testing against realistic requests is part of agent creation, not an afterthought handed to end users.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -390,7 +405,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "An agent is addressed as an agent via the SDK; it already carries its instructions and tools.",
+      "reasoning": "An agent is addressed as an agent through the SDK; it already carries its instructions and tools, unlike a bare deployment.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -402,7 +417,7 @@
       "chosen": "s1=A model answering from a prompt; s2=An agent that calls tools; s3=An agent that calls tools; s4=Several agents coordinated",
       "keyed": "s1=A model answering from a prompt; s2=An agent that calls tools; s3=An agent that calls tools; s4=Several agents coordinated",
       "confidence": "high",
-      "reasoning": "Rung selection: single prompt, tool-calling agent, autonomous multi-step agent, multi-agent coordination.",
+      "reasoning": "Pasted-facts drafting needs only a prompt; live system lookups and end-to-end booking changes need tool-calling agents; explicit specialists reporting to a coordinator is multi-agent.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -414,7 +429,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Grounding on a knowledge base fixes both wrong-source answers and traceability (citations).",
+      "reasoning": "Grounding the agent in a knowledge base of approved procedures fixes both the wrong-source answers and the missing citation.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -426,7 +441,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Fluency is not grounding; untraceable claims are exactly the failure grounding prevents.",
+      "reasoning": "Fluency is not grounding; an untraceable clearance figure is exactly the failure grounding exists to prevent.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -438,7 +453,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Multi-requirement app = pick the right technique per stage and consume each structured result.",
+      "reasoning": "Three distinct requirements map to three techniques, and the application handles each structured result.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -450,7 +465,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Attach the purpose-built Azure Language text analysis to the agent as a callable capability.",
+      "reasoning": "The agent needs the classification itself, so text analysis is attached as a capability the agent calls.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -462,7 +477,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "A multimodal model accepts the audio directly, removing the separate recognition step.",
+      "reasoning": "A multimodal model accepts the audio directly, removing the separate recognition stage.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -474,7 +489,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Azure Speech in Foundry Tools supplies recognition + synthesis as configured capabilities.",
+      "reasoning": "Speech recognition and synthesis are Azure Speech capabilities in Foundry Tools, configured and called by the application.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -485,8 +500,8 @@
       "id": "ai-901-d2-q41",
       "chosen": "C,E",
       "keyed": "C,E",
-      "confidence": "medium",
-      "reasoning": "Custom/consistent voice under own control and vocabulary tuning + predictable latency are dedicated-speech drivers; B (portal config preference) is the runner-up.",
+      "confidence": "high",
+      "reasoning": "Controlled consistent voice and vocabulary-tuned, latency-predictable recognition are the dedicated speech service's differentiators; the others point to multimodal.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -498,7 +513,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Compose speech recognition and synthesis around the existing agent; the agent keeps its tools.",
+      "reasoning": "Speech is composed around the existing agent: recognition in, synthesis out, agent unchanged.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -510,7 +525,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "High volume, cost/latency ceiling and consistent shape = purpose-built text analysis capability.",
+      "reasoning": "High volume, fixed task, cost and shape constraints are precisely the case for the purpose-built text analysis capability.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -522,7 +537,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Text analysis cannot read audio; recognition must run first and the text step runs on the transcript.",
+      "reasoning": "Text techniques cannot read audio; recognition must precede classification.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -534,7 +549,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Photograph plus a report-shaped question in one request = deployed multimodal model.",
+      "reasoning": "Photograph plus a written question answered in prose is a multimodal call.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -546,7 +561,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Producing new visuals from a brief is image generation, a different model class from image reading.",
+      "reasoning": "Producing images from a brief is a different model class from reading images.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -558,7 +573,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Moving visual output from a written description = video generation model class.",
+      "reasoning": "Moving visual output generated from a description is video generation.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -570,7 +585,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "Reading images and generating images are opposite directions; two model classes needed.",
+      "reasoning": "Reading images and producing images are separate capability classes, so two model classes are needed.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -582,7 +597,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Missing the prompt that asks for the decision the work order needs plus code writing the value into the system.",
+      "reasoning": "A proof of concept becomes an application when the prompt asks for the decision value and code writes it into the downstream system.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -594,20 +609,19 @@
       "chosen": "B,D",
       "keyed": "B,D",
       "confidence": "high",
-      "reasoning": "OCR the windscreen docket for the permit number; object detection to locate and count pallets. NOTE: contaminated - the rework commit message stated \"keys B+D unchanged\" before I solved; flagging.",
+      "reasoning": "Printed permit number needs character reading; counting pallets needs located instances.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
         "chosen": null
-      },
-      "contamination": "rework commit message e2434ad ('keys B+D unchanged') was read before this item was solved; blind match is not independent evidence for this item. Referred to Gate 2."
+      }
     },
     {
       "id": "ai-901-d2-q51",
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Named values from many layouts = Azure Content Understanding in Foundry Tools.",
+      "reasoning": "Named values from many document layouts without per-layout code is Azure Content Understanding.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -619,7 +633,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Content Understanding covers images as well as documents; no separate image service needed.",
+      "reasoning": "Content Understanding covers images as a content type, so no separate image service is needed.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -631,7 +645,7 @@
       "chosen": "D",
       "keyed": "D",
       "confidence": "high",
-      "reasoning": "Content Understanding handles audio and video content types directly.",
+      "reasoning": "Content Understanding takes audio and video directly as content types, so the separate transcription hop is unnecessary.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -643,7 +657,7 @@
       "chosen": "A",
       "keyed": "A",
       "confidence": "high",
-      "reasoning": "One Foundry tool spans text, documents, images and audio; four services are unnecessary.",
+      "reasoning": "One Foundry Tools capability spans text, image, audio and video content types.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -655,7 +669,7 @@
       "chosen": "C",
       "keyed": "C",
       "confidence": "high",
-      "reasoning": "Extraction only pays off when the values are passed into the downstream register the process already uses.",
+      "reasoning": "Extraction only pays off when the downstream system consumes the values; accuracy is already proven.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",
@@ -667,7 +681,7 @@
       "chosen": "B",
       "keyed": "B",
       "confidence": "high",
-      "reasoning": "Extraction is configured per content type; sort by type first, then run each configuration on its own group.",
+      "reasoning": "Extraction configurations are per content type, so route each document type to the configuration built for it.",
       "match": true,
       "codex": {
         "status": "advisory_skipped",

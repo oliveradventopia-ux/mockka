@@ -1765,7 +1765,7 @@
         "A": "A published benchmark score for the underlying model, so the group has an objective figure to consider",
         "B": "A launch date, on the basis that the criteria will become obvious once real sellers are using it",
         "C": "A comparison of the assistant's inference cost against the cost of the current manual onboarding process",
-        "D": "Task-specific evaluation metrics tied to business outcomes — onboarding completion rate, document rejection rate, time to first listing — each with an agreed launch threshold"
+        "D": "Task-specific metrics tied to business outcomes, each with an agreed launch threshold"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -1801,7 +1801,7 @@
       "options": {
         "A": "Full human review of every description, absorbing the throughput cost as the price of quality",
         "B": "Exact matching of each description against a library of approved phrasings",
-        "C": "An LLM-as-judge rubric scored against the editorial guidelines, calibrated periodically against a sample of ratings from human editors",
+        "C": "An LLM-as-judge rubric on the editorial guidelines, calibrated against human editor ratings",
         "D": "Omit tone evaluation, since tone is subjective and therefore cannot be measured"
       },
       "answer": "C",
@@ -1836,7 +1836,7 @@
       "type": "single_choice",
       "question": "A travel booking platform's revised prompt outperforms the current one on the offline suite. The team wants production evidence before replacing it everywhere, and proposes shipping it to half of traffic, watching the dashboards for a week and then deciding. What is missing from that proposal?",
       "options": {
-        "A": "The primary metric and the sample size have to be identified before the experiment runs, or the decision is made by whichever dashboard happens to look most convincing afterwards",
+        "A": "The primary metric and sample size have to be identified before the experiment runs",
         "B": "Nothing of substance — a week at half of traffic is ample exposure to see the effect",
         "C": "The offline suite should be re-run several more times first, to raise confidence in the original result",
         "D": "The experiment should run across all traffic instead, so that significance is reached sooner"
@@ -1913,7 +1913,7 @@
         "A": "Reject the reduction target, on the grounds that any material cost cut will degrade quality",
         "B": "Cut the maximum output tokens across every workload by a third",
         "C": "Accept it, since the model tier is the only cost lever that moves the total meaningfully",
-        "D": "Analyse token usage and cost per workload from production traces to identify the dominant cost driver, then apply the lever that targets it, evaluating quality impact at each step"
+        "D": "Identify the dominant cost driver from production traces, then apply the lever targeting it"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -1948,7 +1948,7 @@
       "question": "An aged-care provider's care-note summarisation pilot has run smoothly in a single home. The board now wants to commit publicly to a rollout date across every home in the group. What must be established before that commitment is made?",
       "options": {
         "A": "Confirmation that staff at the pilot home are satisfied with the summaries they have been receiving",
-        "B": "Cost and latency modelled at full production volume, so the commitment is made against the operating envelope the system will actually run in",
+        "B": "Cost and latency modelled at full production volume",
         "C": "Approval to increase engineering headcount so that the rollout can be supported",
         "D": "A phased onboarding schedule so that homes come online gradually and problems surface early"
       },
@@ -1986,7 +1986,7 @@
       "options": {
         "A": "A rise in formal complaints submitted through the practice feedback form",
         "B": "A monthly review by a clinical lead of a sample of the assistant's answers",
-        "C": "A decline in retrieval relevance scores and a rise in the rate of no-grounded-answer outcomes in the pipeline's own telemetry",
+        "C": "Declining retrieval relevance and rising no-grounded-answer rates in telemetry",
         "D": "An alert when inference spend departs from its established norm"
       },
       "answer": "C",
@@ -2022,7 +2022,7 @@
       "type": "multiple_response",
       "question": "A managed security provider is designing the pre-production evaluation framework for an assistant that will operate in a regulated domain. Which TWO components matter most? (Select TWO)",
       "options": {
-        "A": "An adversarial test suite probing safety boundaries, injected instructions and policy-violating requests",
+        "A": "An adversarial test suite probing safety boundaries and injections",
         "B": "A golden dataset labelled by domain experts, covering both typical and high-risk scenarios",
         "C": "A benchmark comparing the model's general knowledge against competitor models",
         "D": "A live demonstration to the executive committee using selected strong examples",
@@ -2067,7 +2067,7 @@
       "options": {
         "A": "A retrieval failure — the certificate does exist and the lookup did not locate it",
         "B": "A prompt failure — the instructions were not specific enough about the required output format",
-        "C": "A hallucination — content was fabricated rather than grounded in the tool result, so the remedy is grounding discipline together with an explicit path for the empty-result case",
+        "C": "A hallucination: content fabricated rather than grounded in the tool result",
         "D": "A model mismatch — certificate verification exceeds what this model tier handles reliably"
       },
       "answer": "C",
@@ -2103,8 +2103,8 @@
       "question": "A brewery group's demand-forecasting assistant has degraded intermittently over two weeks. The model version, the prompts and the application code are all unchanged over that period. Which TWO data sources are most useful for diagnosing the cause? (Select TWO)",
       "options": {
         "A": "The number of requests served per day across the period",
-        "B": "Analysis of the input distribution for drift — question types, formats or languages the assistant was not designed for",
-        "C": "End-to-end traces of the affected sessions, including retrieved context and tool inputs and outputs",
+        "B": "Input-distribution drift: new question types or languages",
+        "C": "End-to-end traces of the affected sessions",
         "D": "Uptime statistics for the model endpoint",
         "E": "A survey of the demand planners who noticed the degradation"
       },

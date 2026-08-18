@@ -17,7 +17,7 @@
       "question": "A water utility is designing an assistant to triage inbound leak reports. The team has moved straight to debating whether to build it as a fixed workflow or an autonomous agent. Before that debate can be settled, what has to happen?",
       "options": {
         "A": "Adopt the agent pattern, since it can accommodate whichever steps turn out to be required",
-        "B": "Split the work into three buckets — what Claude handles, what existing systems handle, and what people handle — so the pattern is chosen against a defined scope",
+        "B": "Split the work into three buckets — what Claude handles, what existing systems handle, and what people handle",
         "C": "Write the system prompt first, since it determines what the assistant is able to do",
         "D": "Prototype both patterns against a sample of historical leak reports and adopt whichever scores better"
       },
@@ -55,7 +55,7 @@
       "options": {
         "A": "The rate tables sit in the middle of the prompt and should be moved to a boundary where attention is stronger",
         "B": "Sampling is introducing variation and the temperature should be reduced to zero so the arithmetic becomes repeatable",
-        "C": "Deterministic calculation was allocated to the wrong bucket: a rating engine should compute the adjustment and the model should call it, rather than the model being made to perform the arithmetic",
+        "C": "Deterministic calculation was allocated to the wrong bucket: a rating engine should compute the adjustment and the model should call it",
         "D": "The workload has outgrown the model tier and a more capable model should be adopted, since arithmetic reliability improves with capability"
       },
       "answer": "C",
@@ -184,7 +184,7 @@
         "A": "The pattern is sound and the gap is evidential: session logging should be extended so paths can be reconstructed after future events",
         "B": "The standard diagnostic sequence should be written into the system prompt so the agent follows it",
         "C": "The model tier is the constraint, and a more capable model would select more conventional diagnostic paths",
-        "D": "Autonomy was granted beyond what the error cost tolerates — over-granting agentic autonomy — and a pattern with defined steps would have kept each path reconstructable"
+        "D": "Autonomy was granted beyond what the error cost tolerates; a pattern with defined steps would have kept each path reconstructable"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -260,7 +260,7 @@
       "question": "A regional electricity distributor is building a customer assistant to answer questions such as how much a customer currently owes, whether their address is affected by an outage, and when restoration is estimated. The team proposes indexing a nightly export of account balances and outage records into a vector store and answering from retrieval. At design review an architect objects. What is the strongest basis for the objection?",
       "options": {
         "A": "A nightly export is too infrequent for this use case and should be rebuilt hourly so answers stay acceptably fresh",
-        "B": "The data is live state rather than reference material, so it must be read through a tool call against the system of record at request time and not served from a periodic export",
+        "B": "The data is live state, so it must be read through a tool call against the system of record at request time",
         "C": "Retrieval is workable provided the assistant discloses that figures may be up to a day old",
         "D": "Vector stores cannot represent numeric fields such as balances with sufficient precision"
       },
@@ -330,7 +330,7 @@
       "type": "single_choice",
       "question": "A law firm's matter-intake system has two distinct weaknesses. Matters are sometimes directed to the wrong practice group in ways only a specialist notices, and extraction of key dates from client documents fails on unfamiliar layouts. The team is debating whether to adopt the Routing architecture or the evaluator-optimiser document pipeline. What is the strongest recommendation?",
       "options": {
-        "A": "Adopt both, because the two parts of the system break differently — route the matter to its practice group, and run extraction through an evaluator-optimiser loop that checks its own output",
+        "A": "Adopt both: route the matter to its practice group, then run extraction through an evaluator-optimiser loop",
         "B": "Adopt Routing alone, since misdirection happens first and correcting it will reduce the downstream extraction failures",
         "C": "Adopt whichever of the two the team has more experience operating, and revisit the decision once the system has run for two quarters",
         "D": "Adopt neither and design a bespoke architecture matched exactly to this firm's intake process"
@@ -444,7 +444,7 @@
       "type": "single_choice",
       "question": "A construction consultancy asks Claude, in a single prompt, to read a long tender document, assess it against every one of the firm's internal bid criteria, score the opportunity and draft a bid or no-bid note. Output quality is uneven: some criteria are skipped without comment and the scoring reasoning is thin. The prompt wording has already been reworked twice. What is the most effective next step?",
       "options": {
-        "A": "Decompose the task into sequenced subtasks — extract, assess each criteria group, score, then synthesise — passing structured output between steps",
+        "A": "Decompose the task into sequenced subtasks: extract, assess each criteria group, score, then synthesise",
         "B": "Move to the largest available model and raise the maximum output tokens so there is room to cover everything",
         "C": "Lower the temperature so the instructions are followed more literally",
         "D": "Add worked examples of well-written bid and no-bid notes so the model has a clearer target"
@@ -482,7 +482,7 @@
         "A": "Add the library tools now and schedule a prompt rewrite for the following term",
         "B": "Require a tool call on every request so the agent stops answering from general knowledge",
         "C": "Expand the system prompt so each area is described in more detail and the boundaries between them are clearer",
-        "D": "Split the agent into domain-specific agents behind a router, each with a focused toolset and prompt, so library services becomes an addition rather than a further burden"
+        "D": "Split the agent into domain-specific agents behind a router, each with a focused toolset and prompt"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -557,7 +557,7 @@
       "options": {
         "A": "An alert that fires when daily token spend departs from its established norm",
         "B": "A larger model, on the basis that classification accuracy rises with model capability",
-        "C": "A feedback loop that captures the clinician corrections already being made and routes a sample of production classifications into a labelled evaluation set",
+        "C": "A feedback loop that captures clinician corrections into a labelled evaluation set",
         "D": "A monthly review of the system prompt to confirm the triage instructions are still current"
       },
       "answer": "C",

@@ -108,21 +108,29 @@ const tokenBlock = [
 // scenario-matching line, standing-note bullets, the 10-random line), scoped
 // to the "Gate 2 deep-read sample" section so substitute/reserve ids listed
 // elsewhere are never collected. --highlight overrides the parse entirely.
-function parseGate2Sample(md) {
-  const section = md.split(/^## Gate 2 deep-read sample\s*$/m)[1]?.split(/^## /m)[0];
+function parseGate2Sample(md, ids) {
+  const section = md.split(/^#+ .*Gate 2 deep-read sample.*$/m)[1]?.split(/^#+ /m)[0]
+    ?? md.split(/^#+ .*Gate 2 sample.*$/m)[1]?.split(/^#+ /m)[0];
   if (!section) return null;
-  const ids = new Set();
-  const grabIds = (s) => {
-    for (const m of s.matchAll(/\b(\d+\.\d{2})\b/g)) ids.add(m[1]);
-  };
-  for (const m of section.matchAll(/^\|\s*(\d+\.\d{2})\s*\|\s*dim/gm)) ids.add(m[1]); // auto-flag rows
-  const sm = section.match(/\*\*Scenario-matching[\s\S]*?\*\*\s*([0-9., ]+)/);
-  if (sm) grabIds(sm[1]);
-  for (const m of section.matchAll(/^- {0,3}\*\*(\d+\.\d{2})\*\*/gm)) ids.add(m[1]); // standing notes
-  const rnd = section.match(/\*\*10 random[\s\S]*?\*\*\s*([0-9., ]+)/);
-  if (rnd) grabIds(rnd[1]);
-  const declared = section.match(/Total sample:\s*\*\*(\d+)\s*items?\*\*/);
-  return { ids: [...ids], declaredCount: declared ? Number(declared[1]) : null };
+  // Item ids vary by exam ("1.01", "d1-q08"), so match against the real bank
+  // ids rather than a fixed shape. Scoped to the sample section, so reserve and
+  // substitute ids elsewhere in the checklist are not collected.
+  const found = new Set();
+  const esc = (v) => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  for (const id of ids) {
+    // Checklists often write the slug-stripped short form ("d1-q01") of a
+    // slug-prefixed bank id ("ccao-f-d1-q01"); accept either.
+    const forms = [id];
+    if (id.startsWith(`${slug}-`)) forms.push(id.slice(slug.length + 1));
+    for (const form of forms) {
+      if (new RegExp(`(^|[^\\w.-])${esc(form)}([^\\w.-]|$)`, 'm').test(section)) {
+        found.add(id);
+        break;
+      }
+    }
+  }
+  const declared = section.match(/[Tt]otal sample:\s*\**(\d+)/);
+  return { ids: [...found], declaredCount: declared ? Number(declared[1]) : null };
 }
 
 let gate2Ids = [];
@@ -136,21 +144,21 @@ if (highlightArg !== null) {
 } else {
   const checklistPath = join(pkgDir, 'derivation', 'gate2-checklist.md');
   if (existsSync(checklistPath)) {
-    const parsed = parseGate2Sample(readFileSync(checklistPath, 'utf8'));
+    const parsed = parseGate2Sample(readFileSync(checklistPath, 'utf8'), bankIds);
     if (!parsed || parsed.ids.length === 0) {
-      fail(`could not parse the Gate 2 sample from ${checklistPath} — pass --highlight "1.08,2.04,..." explicitly`);
-    }
-    const unknown = parsed.ids.filter((id) => !bankIds.has(id));
-    if (unknown.length > 0) {
-      fail(`Gate 2 parse produced ids not in the bank (${unknown.join(', ')}) — pass --highlight explicitly`);
-    }
-    if (parsed.declaredCount !== null && parsed.ids.length !== parsed.declaredCount) {
-      fail(
-        `Gate 2 parse found ${parsed.ids.length} ids but the checklist declares ${parsed.declaredCount} — pass --highlight explicitly`,
+      // Degrade, never block: the export is a review vehicle in its own right.
+      console.warn(
+        `export-exam: no Gate 2 sample ids recognised in ${checklistPath} — review mode carries no highlights (pass --highlight to set them)`,
       );
+    } else {
+      gate2Ids = parsed.ids;
+      gate2Source = 'derivation/gate2-checklist.md';
+      if (parsed.declaredCount !== null && parsed.ids.length !== parsed.declaredCount) {
+        console.warn(
+          `export-exam: matched ${parsed.ids.length} sample ids but the checklist declares ${parsed.declaredCount} — highlights may be partial`,
+        );
+      }
     }
-    gate2Ids = parsed.ids;
-    gate2Source = 'derivation/gate2-checklist.md';
   } else {
     console.warn(`export-exam: no gate2-checklist.md for ${slug} — review mode will carry no sample highlights`);
   }

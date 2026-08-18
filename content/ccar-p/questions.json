@@ -1010,9 +1010,9 @@
       "options": {
         "A": "Retention of full request and response payloads so access can be reviewed each quarter",
         "B": "A larger context window on consuming applications so a full transaction history can be returned in one call",
-        "C": "A tool surface scoped to least privilege, with state-changing operations such as refunds and reversals excluded or placed behind an explicit approval gate",
+        "C": "A tool surface scoped to least privilege, with refunds and reversals behind an approval gate",
         "D": "A system prompt instruction, shared with every consuming team, directing the model to return only records belonging to the requesting customer",
-        "E": "Identity propagated from the calling end user to the server, which authorises every request against that identity rather than against a shared service credential"
+        "E": "Identity propagated from the calling end user, authorising each request against that identity"
       },
       "select_count": 2,
       "answer": [
@@ -1049,7 +1049,7 @@
       "type": "single_choice",
       "question": "A hospital's discharge-summary assistant retrieves the patient's entire record — including unrelated historical episodes, next-of-kin contact details and billing notes — on the reasoning that additional context can only help the summary. What is the strongest objection at review?",
       "options": {
-        "A": "Only the minimum necessary data belongs in the context window; everything beyond what the summary requires enlarges the exposure without improving the output",
+        "A": "Only the minimum necessary data belongs in the context window",
         "B": "The assistant should be instructed to disregard the portions of the record that are not relevant to discharge",
         "C": "Retrieval is the wrong mechanism here and the model should be fine-tuned on the record corpus instead",
         "D": "The record should be condensed before it enters context so that it fits more comfortably"
@@ -1086,7 +1086,7 @@
       "options": {
         "A": "The assistant should be withdrawn from the desk until instrumentation has been added",
         "B": "The dispute can be settled by re-running the same query today and comparing what comes back",
-        "C": "Observability instrumentation belongs at design time rather than after the first incident, because the evidence needed to answer a dispute has to already exist when the dispute arrives",
+        "C": "Observability instrumentation belongs at design time, not after the first incident",
         "D": "A longer retention period on the existing application logs would have covered this situation"
       },
       "answer": "C",
@@ -1123,7 +1123,7 @@
       "options": {
         "A": "Disable capture in production and reproduce any reported failure in a staging environment",
         "B": "Treat customer-reported failures as the signal for which sessions are worth investigating",
-        "C": "Structured traces with correlation identifiers and key metrics on every session, with full payload capture sampled and additionally triggered on error conditions",
+        "C": "Structured traces with correlation identifiers on every session, full payloads sampled and error-triggered",
         "D": "Capture only the final response of each session and discard the intermediate steps"
       },
       "answer": "C",
@@ -1159,7 +1159,7 @@
       "question": "A sports streaming service monitors its assistant through a single dashboard showing latency percentiles, error rate and token spend aggregated across all traffic. When a subscriber reports a poor answer, support cannot investigate it. When a regional spike appears, engineers cannot tell which sessions are behind it. What is missing from the design?",
       "options": {
         "A": "Additional panels on the aggregate dashboard, broken down by region and by feature",
-        "B": "Per-request observability alongside the aggregate dashboards — the two answer different questions, and only the per-request layer can reconstruct an individual session",
+        "B": "Per-request observability alongside the aggregate dashboards, which answer different questions",
         "C": "A longer retention window on the metrics so historical spikes remain queryable",
         "D": "A request that subscribers report the exact time of a poor answer so the aggregate charts can be read at that point"
       },
@@ -1233,7 +1233,7 @@
       "question": "A biotechnology firm needs three things: a conversational surface for scientists exploring published literature, an embedded classification call inside an existing laboratory pipeline, and a shared connector so any future internal tool can query the compound registry. A platform lead proposes standardising all three on one entry point for consistency. What should the architect advise?",
       "options": {
         "A": "Defer the decision until the firm has run a pilot on each of the available entry points",
-        "B": "Choose each entry point by the work it has to do — the three carry different core trade-offs — and name the trade-off out loud in each case so the firm knows later when to switch",
+        "B": "Choose each entry point by the work it has to do, naming the trade-off each one carries",
         "C": "Standardise on one entry point as proposed, since consistency reduces the long-run maintenance burden",
         "D": "Standardise all three on the direct API, since it offers the deepest control and everything else can be built on top of it"
       },
@@ -1267,7 +1267,7 @@
       "type": "single_choice",
       "question": "A chemicals manufacturer's logistics agent must agree delivery windows with a haulier's independently operated scheduling agent. Neither company will expose its internal systems or tools to the other. Which connection approach fits this requirement best?",
       "options": {
-        "A": "Agent-to-agent communication across an agreed protocol boundary, with each agent mediating access to its own organisation's systems",
+        "A": "Agent-to-agent communication across an agreed protocol boundary, each mediating its own systems",
         "B": "Exchange scheduling files each night and have each agent read whatever its counterpart last published",
         "C": "Replace both agents with a single shared agent operated by a neutral third party",
         "D": "Register the haulier's scheduling tools directly in the manufacturer's tool catalogue"
@@ -1361,8 +1361,8 @@
       "options": {
         "A": "Per-request latency must be minimised above every other consideration",
         "B": "Requests must complete in a single model invocation with no intermediate steps",
-        "C": "The context budget is constrained and loading everything up front is already degrading response quality",
-        "D": "The catalogue of tools and reference material is large, and only a small subset of it is relevant to any single request",
+        "C": "The context budget is constrained and up-front loading degrades quality",
+        "D": "Only a small subset of a large tool and reference catalogue is relevant per request",
         "E": "The service uses three tools, all of which are needed on every request"
       },
       "select_count": 2,
@@ -1401,7 +1401,7 @@
       "type": "single_choice",
       "question": "A semiconductor fab's assistant has three tools whose purposes substantially overlap: one returns lot status, one queries lots by attribute, and one looks a lot up by identifier. The agent frequently invokes the wrong one of the three. Which change most directly reduces the error?",
       "options": {
-        "A": "Consolidate the overlapping tools and rewrite what remains so each tool's purpose, inputs and boundaries are explicit and non-overlapping",
+        "A": "Consolidate the overlapping tools; give each remaining one explicit, non-overlapping boundaries",
         "B": "Instruct the agent to prefer whichever of the three appears first in the list when it is uncertain",
         "C": "Add a further tool whose job is to select which of the three the agent should call",
         "D": "Replace all three with one generic execution tool that accepts a free-text command"
@@ -1475,7 +1475,7 @@
       "options": {
         "A": "Ask buyers to describe the garment in words rather than searching by style code",
         "B": "Replace semantic retrieval with keyword search across the whole catalogue",
-        "C": "Hybrid retrieval combining exact and keyword matching with semantic search, weighted according to the shape of the query",
+        "C": "Hybrid retrieval combining exact matching with semantic search, weighted by query shape",
         "D": "Adopt a larger embedding model so that style codes embed more distinctly from one another"
       },
       "answer": "C",
@@ -1509,7 +1509,7 @@
       "question": "After a nightly catalogue refresh, a museum archive assistant intermittently answers from records that have since been superseded. Which TWO measures most directly address this? (Select TWO)",
       "options": {
         "A": "A weekly manual spot-check of a handful of the assistant's answers",
-        "B": "An automated re-indexing pipeline that validates completeness and embedding consistency after every refresh",
+        "B": "An automated re-indexing pipeline validating completeness after every refresh",
         "C": "Lowering the temperature so that the assistant relies less on the retrieved records",
         "D": "Running the refresh a second time each night in case the first pass was incomplete",
         "E": "Version metadata carried in the index, with retrieval filtering out superseded records"
@@ -1552,8 +1552,8 @@
         "A": "A post-incident review process to be followed after each outage",
         "B": "A longer request timeout so that slow dependencies have more time to respond",
         "C": "A status page telling crews when the assistant is unavailable",
-        "D": "Retries with backoff on transient upstream failures, and a fallback chain so a degraded answer is still produced when the primary path is unavailable",
-        "E": "Circuit breakers that stop calling a dependency that is already failing rather than queueing behind it"
+        "D": "Retries with backoff on transient failures, plus a fallback chain for degraded answers",
+        "E": "Circuit breakers that stop calling an already-failing dependency"
       },
       "select_count": 2,
       "answer": [
@@ -1593,7 +1593,7 @@
         "A": "Adopt re-ranking only for the subset of quotes to which the SLA does not apply",
         "B": "Defer the decision until the SLA can be renegotiated to allow more time",
         "C": "Reject re-ranking, because added latency should never be accepted in a customer-facing system",
-        "D": "Adopt re-ranking: quantified against the SLA, the accuracy gain is material and 500 ms still leaves clear headroom below 3 seconds, so adopt it and monitor p95"
+        "D": "Adopt re-ranking: the accuracy gain is material and 500 ms leaves headroom below 3 seconds"
       },
       "answer": "D",
       "distractor_patterns": {

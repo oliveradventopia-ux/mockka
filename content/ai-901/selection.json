@@ -1,10 +1,53 @@
 {
-  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish.",
+  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish by exam-examiner, 2026-08-18, on the round-2 bank revision (post-rework commit e2434ad, S5 closed at 2df3bb4). ARITHMETIC verified against manifest: 42 items = d1 18 (14 SC + 2 MR + 2 SM) + d2 24 (20 SC + 3 MR + 1 SM); 14 reserve-only concepts (56 bank - 42 exam). SEATING METHOD (methodology/02 #priority + /exam-publish step 1): high-priority (convergent, sources>=2) concepts first, then fill. THE PRIORITY SIGNAL CANNOT DO THE WHOLE JOB HERE and the manifest says why: 49 of 56 concepts compute to high, and the manifest's own convergence-health warning discounts that number (two of the three attesting sources are Microsoft, the third is an LLM-generated bank written against the same blueprint). High priority therefore over-selects 47 seatable concepts for 42 seats, so the documented secondary criterion is BLUEPRINT-BULLET COVERAGE from derivation/source-ms-ai901-blueprint.md (25 bullets in d1, 19 in d2): where two seated-eligible items own the same bullet, the better-judged one is seated and the other becomes a first-line substitute; a bullet is only left uncovered when its discrimination is demonstrably rehearsed elsewhere in the SAME form. RESULT: d2 covers all 19 of its bullets; d1 covers 21 of 25 directly and the other 4 indirectly (below). FORMAT MIX IS FORCED IN THREE PLACES (structural, not judgment): d1 has exactly 2 MR (q07, q21) and exactly 2 SM (q13, q23) in the bank for 2+2 seats, and d2 has exactly 3 MR (q32, q41, q50) and 1 SM (q34) for 3+1 seats - so all eight of those items are seated by arithmetic. That forces normal-priority C-041 (d2-q41) into the form as the only way to fill the third d2 MR seat, and it forces three Gate-2-flagged items (d1-q21, d1-q23, d2-q41) to ship; same-domain SC substitutes cannot replace them without breaking the mix, so if the Gate 2 deep-read rejects any of them the form must be rebuilt around a re-authored replacement, not re-seated. HAND-ADJUSTMENTS, d1 (6 reserves, each with its rationale): (1) q03 (b-1.1-3 privacy/security) and q05 (b-1.1-5 transparency) reserved - both principles are argued inside seated MR q07, whose keyed pair is exactly 'transparency discharged by telling brokers what it broadly weighs' (A) and 'withholding exact weights serves privacy and security' (C); they are also the two lowest-scoring responsible-AI items (28 vs 29). This holds the responsible-AI block at 5 of 18 d1 seats against 7 of 25 d1 bullets. (2) q09 reserved - it shares bullet b-1.2-1 with seated q08, and q08's concept C-008 carries three sources to C-009's two; q08 is itself a fabrication scenario, so the hallucination limit is not lost, and seated d2-q36 rehearses ungrounded output again. (3) q24 reserved - its bullets (b-1.3-11, b-1.3-12) are a strict subset of seated SM q23, whose five scenarios span all four extraction content types (b-1.3-11..14). (4) q15 (b-1.3-3 keyword extraction) reserved - seated SM q13 scenario 3 asks for 'the recurring terms across each month', which is the same discrimination at workload level, and three text-analysis technique items (q16 entity, q17 sentiment, q18 summarization) remain seated. (5) q22 (b-1.3-10 image generation) reserved - the generation-versus-analysis capability split is rehearsed in the implementation half by seated d2-q48 (same area, both capabilities) and d2-q46 (generating new visual outputs). HONESTY NOTE ON (3) AND (4): q15 and q24 were two of the five round-1 bounces. Both cleared their re-eval fresh at 5/4/5/5/4/5 - identical to their unbounced siblings - so neither is benched on quality; both reserves are coverage-duplication choices and both items are first-line substitutes. HAND-ADJUSTMENTS, d2 (8 reserves): (6) six of the eight are the six normal-priority SC concepts - C-029 endpoints, C-035 grounding-by-connecting-content, C-038 text analysis as an agent capability, C-042 speech-capable agent, C-043 build-or-buy inside a capability, C-047 video generation. All six are curriculum-only concepts carrying NO blueprint bullet, so reserving them costs zero bullet coverage; the seventh normal (C-041) is seated by the MR arithmetic above. (7) q37 reserved on quality - it shares bullet b-2.2-1 with seated q44 (which also carries b-2.2-3), and q37 is the one carrying a dimension-5 3 (its keyed option is the abstract-moderate one among three concrete over-commitments) plus a dimension-1 4. Coverage note for Gate 2: b-2.2-1 in form-a therefore rests on q44's pipeline-ordering framing, and BOTH dedicated applied-text-analysis items (q37, q38) are flagged and reserved - if the deep-read wants a dedicated b-2.2-1 seat, q37 is the substitute for q44, not an addition. (8) q27 (chain-of-thought) reserved - bullet b-2.1-1 is specifically 'what makes a system prompt effective and how it differs in role from a user prompt', which seated q25 owns directly and seated q26 (worked examples) extends; q26 and q27 are mirror items that each carry the other's technique as a distractor, so seating q26 keeps the examples-versus-step-by-step discrimination live while flattening b-2.1-1 from three seats to two and leaving b-2.1-2 (the area's own title: deploy a model and interact with it in the portal) at two. FLAGGED ITEMS DELIBERATELY SEATED: d2-q36 (dim2 3) is the form's ONLY grounding item and is seated to honour the Gate-1 RAG/Foundry IQ ruling that admitted grounding at exactly 2 of 56 concepts - 1 of 42 seats is that ruling scaled to the form; substitute is reserve q35. d1-q11 (dim5 3) is seated because it is the sole owner of b-1.2-3 (model deployment options), one of the two bullets the blueprint distillation names as the highest-risk concepts in the concepts half; no other item covers it and there is no substitute - if Gate 2 rejects it, b-1.2-3 goes uncovered until it is re-authored. d1-q12 (referred, dim1 4) is seated as sole owner of b-1.2-4. d2-q50 (referred for blind-solve contamination, not for content) is seated by the MR arithmetic. FLAGGED ITEMS NOT IN THE FORM (bank-only, still published content): d2-q37, d2-q38, d2-q47.",
   "version": "0.1.0",
   "forms": [
     {
       "id": "form-a",
-      "items": []
+      "items": [
+        "ai-901-d1-q01",
+        "ai-901-d1-q02",
+        "ai-901-d1-q04",
+        "ai-901-d1-q06",
+        "ai-901-d1-q07",
+        "ai-901-d1-q08",
+        "ai-901-d1-q10",
+        "ai-901-d1-q11",
+        "ai-901-d1-q12",
+        "ai-901-d1-q13",
+        "ai-901-d1-q14",
+        "ai-901-d1-q16",
+        "ai-901-d1-q17",
+        "ai-901-d1-q18",
+        "ai-901-d1-q19",
+        "ai-901-d1-q20",
+        "ai-901-d1-q21",
+        "ai-901-d1-q23",
+        "ai-901-d2-q25",
+        "ai-901-d2-q26",
+        "ai-901-d2-q28",
+        "ai-901-d2-q30",
+        "ai-901-d2-q31",
+        "ai-901-d2-q32",
+        "ai-901-d2-q33",
+        "ai-901-d2-q34",
+        "ai-901-d2-q36",
+        "ai-901-d2-q39",
+        "ai-901-d2-q40",
+        "ai-901-d2-q41",
+        "ai-901-d2-q44",
+        "ai-901-d2-q45",
+        "ai-901-d2-q46",
+        "ai-901-d2-q48",
+        "ai-901-d2-q49",
+        "ai-901-d2-q50",
+        "ai-901-d2-q51",
+        "ai-901-d2-q52",
+        "ai-901-d2-q53",
+        "ai-901-d2-q54",
+        "ai-901-d2-q55",
+        "ai-901-d2-q56"
+      ]
     }
   ]
 }

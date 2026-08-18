@@ -1,6 +1,6 @@
 {
   "$comment": "S5 judge rubric ROUND 2 (methodology/05-eval-rubric.md #judge), post-bounce re-eval. exam-examiner, fresh session, 2026-08-18. Round 1 preserved unmodified at eval/judge-scores-r1.json; this canonical file carries the CURRENT bank revision per the preflight contract. Scope of the rework under judgment: commit e2434ad reworked exactly five items - d1-q15, d1-q16, d1-q24 (dim5 stem-pretranslates-key-vocabulary), d2-q44 (dim6 scenario-contradicts-key) and d2-q50 (dim5 answer-surface-cue). A per-item hash diff of questions.json against the round-1 eval commit 29bc9ff confirms those five items and ONLY those five changed; the other 51 items are byte-identical, so their round-1 scores and argued-FOR cases carry forward unchanged and are reproduced verbatim here. The five reworked items were re-read in full and re-scored fresh with new argue-FOR cases written before any score, per #bounce ('re-scored fresh - full rubric, no partial credit'). RESULT: zero dimensions <=2 anywhere - no bounces in round 2, no item reaches the cap of 2, nothing escalates to Oliver as below-threshold. Dimension-5 distribution moved from 9x5/38x4/5x3/4x2 (r1) to 9x5/42x4/5x3/0x2; dimension-6 from 54x5/1x4/0x3/1x2 to 55x5/1x4/0x3/0x2; dimension-1 3s fell from 3 to 2 (d2-q44 cleared 3->5); dimension-2 3s from 4 to 2 (d1-q24 and d2-q50 both cleared 3->4); dimension-4 3s from 2 to 1 (d2-q44 cleared 3->4); dimension-3 from 54x5/2x4 to 55x5/1x4 (d2-q44 cleared 4->5, the remaining 4 is d1-q11). No regressions: every dimension of every reworked item scores at or above its round-1 value, and the 51 untouched items are unchanged by construction. Gate 2 auto-flags from 3s are therefore the eight round-1 items whose content was never touched (d2-q41, d2-q38, d1-q11, d1-q21, d1-q23, d2-q36, d2-q37, d2-q47) plus the referred d1-q12 and the blind-solve-contaminated d2-q50.",
-  "round": 1,
+  "round": 2,
   "generated": "2026-08-18",
   "items": [
     {
@@ -722,7 +722,7 @@
     }
   ],
   "gate2_sample": {
-    "count": 9,
+    "count": 10,
     "reason_codes": {
       "ai-901-d1-q11": "dim5 3 — moderate-option test-wiseness cue; key and rationale never name an actual deployment option (dim3/dim4 4)",
       "ai-901-d1-q12": "referred on dim1 4 — D (cache) delivers the literal ask; lower temperature does not guarantee determinism and the rationale overstates it (dim4 4)",
@@ -732,9 +732,11 @@
       "ai-901-d2-q37": "dim5 3 — abstract-moderate option among three concrete over-commitments, plus r=116; dim1 4 on the single-structured-call architecture",
       "ai-901-d2-q38": "dim1 3, dim4 4 — gateway classification is nearly co-correct and the discriminator is not stated in the stem",
       "ai-901-d2-q41": "dim1 3, dim4 3 — distractor B restates the concept's own configured-not-prompted discriminator; the item survives on requirement-versus-preference framing",
-      "ai-901-d2-q47": "dim5 3 — the keyed option carries a self-justifying clause that restates the stem's requirement"
+      "ai-901-d2-q47": "dim5 3 — the keyed option carries a self-justifying clause that restates the stem's requirement",
+      "ai-901-d2-q50": "referred, new in round 2 - scores 4/5 across all six dimensions, but its round-2 blind-solve match is CONTAMINATED: the rework commit message (e2434ad) disclosed its keys during scope discovery before the item was solved. The key needs one independent human read; the reworked option set is the item's second reason to look."
     },
-    "not_included": "The five round-1 bounces (d1-q15, d1-q16, d1-q24, d2-q44, d2-q50) are NOT in the Gate 2 sample: they return to exam-author and re-enter S5 for a fresh blind solve and a full re-score. They join Gate 2 only if they survive a second bounce."
+    "not_included": "The five round-1 bounces (d1-q15, d1-q16, d1-q24, d2-q44, d2-q50) all cleared their re-eval in round 2 and none survived a second bounce, so none is auto-flagged on bounce grounds. d2-q50 is nonetheless in this sample - referred on blind-solve contamination, not on score. The other four are not in the sample.",
+    "corrected_at_s6": "2026-08-18, exam-examiner, /exam-publish step 2: this block and the top-level 'round' field were left at their round-1 values when the round-2 re-eval rewrote the rest of this file. Corrected to match the authoritative round-2 handoff in derivation/eval-report.md section 6 (10 items) and this file's own round-2 $comment. Scores, bounces and bank_defects are untouched; round-1 state is preserved verbatim at eval/judge-scores-r1.json."
   },
   "round1_bounce_resolution": [
     {

@@ -1,10 +1,40 @@
 {
-  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish.",
+  "$comment": "Exam form(s). v1 ships one form; schema is multi-form-ready. Built at S6 per .claude/skills/exam-publish by exam-examiner, 2026-08-18, on the round-2 bank revision (rework commit 42fbd3f; S5 round-2 artifacts in eval/, committed 252c4fb). Selection method (methodology/02 #method + /exam-publish step 1): seat priority:high (convergent, sources>=2) concepts first, then fill to the manifest's per-domain format mix; reserves are substitutes, not rejects. Arithmetic verified against manifest: 60 items = d1 10 (9 SC + 1 MR) + d2 11 (10+1) + d3 11 (10+1) + d4 11 (10+1) + d5 11 (10+1) + d6 6 (5+1); scenario_matching 0 throughout (the real exam has no counterpart - manifest format_coverage). 29 of 30 high-priority concepts seated + 31 fills; 23 reserve-only concepts (= bank 83 - exam 60). Every bank item is the sole item on its concept, so concept uniqueness and the reserve count follow from the id list. Objective coverage: all 14 blueprint objectives are represented and no objective loses more than a third of its bank share (1.1 6/10, 1.2 4/5, 2.1 4/6, 2.2 4/5, 2.3 3/4, 3.1 6/8, 3.2 5/7, 4.1 4/6, 4.2 5/6, 4.3 2/3, 5.1 7/9, 5.2 6/8, 6.1 4/5, 6.2 2/3). Hand-adjustments are itemised in forms[0].notes.",
   "version": "0.1.0",
   "forms": [
     {
       "id": "form-a",
-      "items": []
+      "items": [
+        "gcp-cdl-d1-03", "gcp-cdl-d1-04", "gcp-cdl-d1-06", "gcp-cdl-d1-07", "gcp-cdl-d1-09",
+        "gcp-cdl-d1-10", "gcp-cdl-d1-11", "gcp-cdl-d1-13", "gcp-cdl-d1-14", "gcp-cdl-d1-15",
+        "gcp-cdl-d2-02", "gcp-cdl-d2-04", "gcp-cdl-d2-05", "gcp-cdl-d2-06", "gcp-cdl-d2-07",
+        "gcp-cdl-d2-08", "gcp-cdl-d2-09", "gcp-cdl-d2-11", "gcp-cdl-d2-12", "gcp-cdl-d2-13",
+        "gcp-cdl-d2-15",
+        "gcp-cdl-d3-01", "gcp-cdl-d3-02", "gcp-cdl-d3-03", "gcp-cdl-d3-05", "gcp-cdl-d3-07",
+        "gcp-cdl-d3-08", "gcp-cdl-d3-09", "gcp-cdl-d3-10", "gcp-cdl-d3-11", "gcp-cdl-d3-13",
+        "gcp-cdl-d3-15",
+        "gcp-cdl-d4-01", "gcp-cdl-d4-02", "gcp-cdl-d4-03", "gcp-cdl-d4-06", "gcp-cdl-d4-07",
+        "gcp-cdl-d4-08", "gcp-cdl-d4-09", "gcp-cdl-d4-10", "gcp-cdl-d4-11", "gcp-cdl-d4-13",
+        "gcp-cdl-d4-14",
+        "gcp-cdl-d5-01", "gcp-cdl-d5-02", "gcp-cdl-d5-03", "gcp-cdl-d5-04", "gcp-cdl-d5-07",
+        "gcp-cdl-d5-08", "gcp-cdl-d5-09", "gcp-cdl-d5-12", "gcp-cdl-d5-13", "gcp-cdl-d5-14",
+        "gcp-cdl-d5-15",
+        "gcp-cdl-d6-01", "gcp-cdl-d6-02", "gcp-cdl-d6-03", "gcp-cdl-d6-05", "gcp-cdl-d6-06",
+        "gcp-cdl-d6-07"
+      ],
+      "notes": {
+        "method": "High-priority (convergent) concepts seated first in every domain; the manifest's one-multiple_response-per-domain mix is forced because each domain holds exactly one MR item in the bank (d1-06, d2-06, d3-05, d4-08, d5-13, d6-02 are all seated by arithmetic, not by choice). Remaining seats filled for blueprint-objective breadth first, then judged quality (S5 round-2 dimension scores), then non-overlap with an already-seated concept.",
+        "high_priority_seating": "29 of 30 convergent concepts seated. The single exception is d6: it holds 7 convergent concepts for 6 exam seats (flagged as an anomaly at S3 - master-inventory.md notes the best-corroborated domain carries the lightest weight, a shared practice-source bias rather than a signal). See hand_adjustments[1].",
+        "hand_adjustments": [
+          "(1) d6 high-vs-high drop. C-083 / gcp-cdl-d6-08 (the four signals: latency, traffic, saturation, errors) is the one convergent concept left in reserve. Reason: with 6 seats and a bullet-proportional 6.1/6.2 split of 4/2 (objective 6.1 carries 8 guide bullets, 6.2 carries 5), objective 6.2 keeps two of its three items - C-081 (which observability product answers which question) and C-082 (reliability/high-availability vocabulary + the resilience design moves). C-083 is the most engineer-pitched of the three in a describe-and-explain certification with no hands-on objectives, so it is the one whose absence costs a Digital Leader form least. First-line substitute for any d6 rejection at Gate 2.",
+          "(2) d6 normal reserved: C-079 / gcp-cdl-d6-04 (consumption caps + flexible-consumption levers). Reserving it also removes the spot-VM term collision the inventory flagged (C-051 in d4 vs C-079 in d6) from the served paper - seated gcp-cdl-d4-06 owns the spot-VM judgment on form-a.",
+          "(3) d1 fills broke toward judge-clean items. d1 has 10 normal-priority items for 5 fill seats, and 5 of those 10 carry a round-2 3 (d1-01 dim2+dim5, d1-02 dim5, d1-05 dim2, d1-08 dim2, d1-12 dim5 - the recall-pitch cluster the eval names). The 5 clean normals (d1-03 openness, d1-07 transformation drivers, d1-09 do-nothing risk, d1-10 Google differentiators, d1-13 latency vs bandwidth) fill the seats exactly, so all five flagged normals sit in reserve. Cost recorded honestly: form-a therefore has no item on b-1.1-1 (foundational term discrimination), b-1.1-2 (agentic AI as a definition - but seated gcp-cdl-d3-03 tests agentic AI by business function), b-1.1-5, b-1.1-8 or b-1.2-2. Objective 1.2 gets 4 of 10 d1 seats (bullet-proportional: 6 bullets vs 1.1's 10), which is why clean normal d1-13 outranked the flagged 1.1 normals.",
+          "(4) Two 3-flagged items ARE seated, by the high-priority rule: gcp-cdl-d1-06 (dim2 3) and gcp-cdl-d1-14 (dim5 3), plus gcp-cdl-d3-11, gcp-cdl-d5-04 and gcp-cdl-d5-09 (dim5 3 each). All five are convergent concepts with no same-domain, same-format convergent substitute. They are all in the Gate 2 deep-read sample; same-domain SC reserves exist if the deep-read rejects any.",
+          "(5) Overlap-driven reserves (a seated concept already owns the family): d2-10 Autoclass (seated d2-09 owns storage-class selection), d2-14 streaming rationale (seated d2-15 owns the pipeline stages incl. Pub/Sub), d3-04 Google AI advantages (seated d1-10 already runs the which-Google-claim-answers-which-question pitch), d3-12 Gemini + Agent Platform API (the other half of the b-3.2-3 split, whose sibling d3-11 is seated and convergent), d3-14 AI infrastructure (AI Hypercomputer is already surfaced by seated d1-10), d4-04 microservices decomposition (seated MR d4-08 carries the microservices outcome), d4-05 orchestration vocabulary (seated d4-03 compute-abstraction ladder + d4-09 GKE), d4-15 Apigee management layer (seated d4-13 owns what-an-API-is; d4-14 monetisation was preferred as the leader-altitude API item the distillation calls this bank's own to own), d5-05 access-discipline vocabulary (flagged dim5 3 AND adjacent to seated d5-09's three A's), d5-06 posture (seated d5-07 carries secure-by-default), d5-10 threat intelligence and d5-11 SCC vs Google SecOps (seated MR d5-13 already matches security obligations to the named product families).",
+          "(6) Quality-driven reserve: d3-06 (data-quality dimensions) carries a dim2 3 and is the construction behind ratchet proposal R-3 (option parallelism) in eval/overlap-report.md; a clean same-objective substitute existed, so it is reserved rather than seated."
+        ],
+        "watch_items_seated": "gcp-cdl-d6-01 is seated and carries RW-1 from eval/overlap-report.md (the TCO triple 'hardware investment, operational overhead and opportunity cost' also appears in an artefact's unquoted classification line). gcp-cdl-d3-01 is seated and carries the round-2 dim1 5->4 note (option D 'both are machine learning' is true-but-incomplete, so the key wins on best-answer convention). Both are in the Gate 2 deep-read sample as standing content notes."
+      }
     }
   ]
 }

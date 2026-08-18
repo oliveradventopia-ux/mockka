@@ -632,7 +632,7 @@
       "question": "A retail analytics team runs product classification on Sonnet. Volume has grown and finance has asked whether a smaller tier would serve. An engineer ran a hundred hand-picked examples through both and reports that the outputs look equivalent. The team proposes switching next sprint and watching the support queue for a fortnight, reverting if ticket volume climbs. What must be established before the swap proceeds?",
       "options": {
         "A": "A commitment to stay on the current tier, since the more capable option is the safer default for anything in production",
-        "B": "An eval set defining what better means for this workload, and a rollback criterion agreed before the swap rather than inferred from what happens afterwards",
+        "B": "An eval set defining what better means for this workload, and a rollback criterion agreed before the swap",
         "C": "A published third-party benchmark comparing the two tiers on general reasoning",
         "D": "Nothing further, because watching the support queue after a staged release is itself the rollback mechanism"
       },
@@ -671,7 +671,7 @@
         "A": "Alternate between tiers by time of day so that peak-hour latency improves",
         "B": "Use the mid-tier model as a compromise, which avoids having to repeat this comparison",
         "C": "Use the most capable model, since a moderation error costs more than the compute ever will",
-        "D": "Use the smallest model that meets the accuracy target, and keep validating that it still meets it with ongoing evaluation"
+        "D": "Use the smallest model that meets the accuracy target, with ongoing evaluation"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -703,7 +703,7 @@
       "type": "single_choice",
       "question": "A bank's operations assistant loads its full policy manual, its full product reference and the customer's entire interaction history into context on every request. It performs well today. The roadmap adds two product lines and a regulatory annex over the next year. What should the architect flag now?",
       "options": {
-        "A": "This is monolithic context, which grows until it breaks; moving to progressive context, where each step receives only what it needs, is what holds up across a long-lived deployment",
+        "A": "This is monolithic context; progressive context, where each step receives only what it needs, is what holds up",
         "B": "The policy manual should be condensed so that the new product lines fit alongside it",
         "C": "Nothing yet — the design performs well, and it should be revisited when a request actually fails",
         "D": "The context budget will need to be raised in step with each addition to the roadmap"
@@ -774,7 +774,7 @@
       "question": "A recruitment platform applied chain-of-thought prompting uniformly across its features. It improved a complex candidate-shortlisting feature. A simple endpoint that extracts dates and job titles from a CV is now slower and more expensive with no measurable change in accuracy. What should the architect conclude?",
       "options": {
         "A": "Chain-of-thought should be withdrawn across the platform, since it roughly doubles token use wherever it is applied",
-        "B": "Chain-of-thought earns its tokens on multi-step reasoning and adds cost and latency without benefit on simple extraction, so it should be applied selectively per task on measured benefit",
+        "B": "Chain-of-thought earns its tokens on multi-step reasoning; apply it selectively per task on measured benefit",
         "C": "Chain-of-thought only produces gains on the most capable tier, and the extraction endpoint runs on a smaller one",
         "D": "The extraction endpoint needs a longer and more explicit chain-of-thought prompt before the benefit becomes visible"
       },
@@ -846,7 +846,7 @@
         "A": "Few-shot prompting is unsuited to structured extraction and should be replaced by lowering the temperature",
         "B": "Twelve examples exceed what the model can attend to, and reducing the set to three would restore general performance",
         "C": "The examples belong in the user message rather than the system prompt, where they would be weighted less strongly",
-        "D": "The examples are unrepresentative of the task's real input distribution, so they have narrowed behaviour toward the category they demonstrate rather than teaching the general format rule"
+        "D": "The examples are unrepresentative of the task's real input distribution and have narrowed behaviour toward the category they demonstrate"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -927,7 +927,7 @@
         "B": "Move the static content out of the system prompt and into the user message",
         "C": "Add more worked examples so that the model succeeds on the first attempt more often",
         "D": "Raise the maximum output tokens so that fewer follow-up requests are needed",
-        "E": "Load specialised instructions on demand — modular prompts or Skills — rather than including every instruction in every request"
+        "E": "Load specialised instructions on demand, via modular prompts or Skills"
       },
       "select_count": 2,
       "answer": [

@@ -2585,20 +2585,20 @@
       "question": "A studio coordinator at a packaging design studio has the evidence in hand: the artwork-spec summaries Claude produces omit the print finish and the die-line reference on every job, including jobs whose brief stated both. Several fixes are on the table and each has a supporter. What determines which fix is the right one?",
       "options": {
         "A": "Naming the layer that failed — the prompt, the context, the feature choice or the configuration",
-        "B": "Raising the temperature setting so the summaries stop repeating the same two omissions",
+        "B": "Connecting the studio's job-tracking system so that Claude can pull each job's details for itself",
         "C": "Adding the print finish and die-line reference to each summary by hand as jobs come through",
         "D": "Applying the fix that worked on the client-brief prompts last month, which felt much the same"
       },
       "answer": "A",
       "distractor_patterns": {
-        "B": "D04",
+        "B": "D06",
         "C": "D05",
         "D": "D12"
       },
       "rationale": {
         "correct": "Isolate before you fix: to diagnose here is to name whether the failure is the prompt, the context, the feature choice or the configuration, since each layer implies a different remedy. Briefs that stated both fields and summaries that drop both point at the specification, and a fix applied without a named cause is a guess, however well it worked elsewhere.",
         "distractors": {
-          "B": "A sampling setting has no mechanism connecting it to two fields that are consistently absent from the output.",
+          "B": "The briefs already carry both fields, so access to the job details is not what is missing; extending reach through a connector places the remedy at a layer no evidence points to.",
           "C": "Filling the gaps by hand keeps the summaries usable and leaves whatever drops the fields exactly as it is.",
           "D": "A fix that worked on a different failure is a borrowed conclusion; the layer at fault here has still not been named."
         }

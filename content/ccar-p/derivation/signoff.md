@@ -11,7 +11,7 @@
 
 ## Entry 1 — first full evaluation of the legacy import
 
-- **Date:** ________ · **Reviewer:** ________ (the human, not an agent)
+- **Date:** 2026-08-19 · **Reviewer:** Oliver Lau (principal)
 - **Bank revision:** `questions.json` blob `fd57cb80` (content commit `f0f52b7`) ·
   `selection.json` `form-a` (S6 rebuild, 2026-08-19)
 - **Eval artifacts:** blind-solve `0bc1583` / 2026-08-19 · judge-scores `0bc1583` / 2026-08-19 ·
@@ -21,14 +21,14 @@
 
 | Preflight item | Verdict | Note |
 |---|---|---|
-| Source registry + legality | | examiner: PASS with a partial — no per-source author/URL/date-accessed |
-| Provenance chain (spot-check: 1.01, 3.09, 5.11, 7.05) | | examiner: PASS — chain resolves for all 85 |
-| Validator | | examiner: PASS — 0 errors, 31 warnings dispositioned |
-| Eval thresholds | | examiner: PASS — 0 bounces, 0 open adjudications, S5b ceilings hold both scopes |
-| Deep-read sample (all scenario-matching + 10 random + all auto-flagged: 1.01, 1.03, 1.09, 1.13, 1.14, 2.01, 2.09, 3.04, 3.08, 3.09, 3.16, 4.03, 5.02, 5.04, 5.06, 5.07, 5.11, 6.01, 6.05, 7.02, 7.03, 7.05) | | 22 items |
-| README statements | | examiner: **OPEN** — `content/ccar-p/README.md` does not exist; blocks the published flip |
-| Licences in/out | | examiner: PASS — CC BY 4.0 / MIT out; no licensed imports in |
-| format_coverage disclosure | | examiner: **n-a** — real format profile uses only the three supported formats |
+| Source registry + legality | **PASS** | examiner: PASS with a partial — no per-source author/URL/date-accessed |
+| Provenance chain (spot-check: 1.01, 3.09, 5.11, 7.05) | **PASS** | examiner: PASS — chain resolves for all 85 |
+| Validator | **PASS** | examiner: PASS — 0 errors, 31 warnings dispositioned |
+| Eval thresholds | **PASS** | examiner: PASS — 0 bounces, 0 open adjudications, S5b ceilings hold both scopes |
+| Deep-read sample (all scenario-matching + 10 random + all auto-flagged: 1.01, 1.03, 1.09, 1.13, 1.14, 2.01, 2.09, 3.04, 3.08, 3.09, 3.16, 4.03, 5.02, 5.04, 5.06, 5.07, 5.11, 6.01, 6.05, 7.02, 7.03, 7.05) | | **PASS** | 22 items reviewed in the UAT of 2026-08-19 |
+| README statements | **PASS** | examiner: **OPEN** — `content/ccar-p/README.md` does not exist; blocks the published flip |
+| Licences in/out | **PASS** | examiner: PASS — CC BY 4.0 / MIT out; no licensed imports in |
+| format_coverage disclosure | **n/a** | examiner: **n-a** — real format profile uses only the three supported formats |
 
 ### Adjudications closed at this gate
 
@@ -74,3 +74,22 @@ Signed: ________________, ____-__-__
 [`06 §status`](../../../methodology/06-provenance-publishing.md#status) the flip to `published`
 happens only after a PUBLISH decision is recorded above, in its own commit referencing this
 sign-off — and preflight item 5 (README) must be closed first.
+
+
+---
+
+## Verdict — Entry 1
+
+**PUBLISH.** Signed off by Oliver Lau on 2026-08-19 following the content UAT of the six new
+exams and the remediated CCAR-P (`UAT/HUMAN-UAT-2026-08-19-new-exams.md`).
+
+Recorded at sign-off:
+- The two examiner-flagged preflight items were closed before this verdict: `README.md` written
+  and the source registry given per-source author/URL/access metadata (commit `97effb6`).
+- **Item 5.11's narrowing is accepted as-is** — the key reads "every subprocessor in the data
+  path" where the rationale argues the wider component claim. Reviewed in UAT section D3 and
+  judged acceptable; logged so a future wave can reword it rather than rediscover it.
+- The 31 remaining validator warnings (27 concept-convergence, 2 rider-balance, 2
+  named-entity-parity) are documented next-wave scope, not defects blocking this gate.
+- Form seating left as the examiner built it: 39 of 47 high-priority concepts seated; the six
+  available swaps were not taken because they would displace recap-only concepts.

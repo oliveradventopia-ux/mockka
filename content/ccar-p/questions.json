@@ -1010,9 +1010,9 @@
       "options": {
         "A": "Retention of full request and response payloads so access can be reviewed each quarter",
         "B": "A larger context window on consuming applications so a full transaction history can be returned in one call",
-        "C": "A tool surface scoped to least privilege, with refunds and reversals behind an approval gate",
+        "C": "Identity propagated from the calling end user, authorising each request against that identity",
         "D": "A system prompt instruction, shared with every consuming team, directing the model to return only records belonging to the requesting customer",
-        "E": "Identity propagated from the calling end user, authorising each request against that identity"
+        "E": "A tool surface scoped to least privilege, with refunds and reversals behind an approval gate"
       },
       "select_count": 2,
       "answer": [
@@ -2259,9 +2259,9 @@
       "options": {
         "A": "Log every retrieved document so that injections can be identified in review afterwards",
         "B": "Set the temperature to zero so the assistant does not act on adversarial content",
-        "C": "Place every irreversible operation behind an explicit approval gate that fails closed when the approval is absent",
+        "C": "Scope the tool surface to least privilege",
         "D": "Move to a more capable model, since more capable models are not susceptible to injection",
-        "E": "Scope the tool surface to least privilege"
+        "E": "Place every irreversible operation behind an explicit approval gate that fails closed when the approval is absent"
       },
       "select_count": 2,
       "answer": [
@@ -3152,8 +3152,8 @@
         "A": "A backlog of the Skills to be written during the first quarter",
         "B": "Which development environment each team will standardise on",
         "C": "Which delivery team will pilot the tooling first",
-        "D": "Model and budget guardrails bounding what each team is able to consume",
-        "E": "Skills distribution: org-provisioned, plugins, project Skills, API Skills"
+        "D": "Skills distribution: org-provisioned, plugins, project Skills, API Skills",
+        "E": "Model and budget guardrails bounding what each team is able to consume"
       },
       "select_count": 2,
       "answer": [
@@ -3266,10 +3266,10 @@
       "type": "multiple_response",
       "question": "A financial technology platform team wants to scale AI-assisted development across the organisation without introducing operational risk. Which TWO practices best support that goal? (Select TWO)",
       "options": {
-        "A": "Keep shared configuration and prompt standards in version control",
+        "A": "Constrain what automated tooling may execute",
         "B": "Adopt each new AI development tool as it is released, so the organisation stays current",
         "C": "Prohibit engineers from editing generated code, so that its provenance stays unambiguous",
-        "D": "Constrain what automated tooling may execute",
+        "D": "Keep shared configuration and prompt standards in version control",
         "E": "Give the tooling unrestricted credentials so that friction does not slow adoption down"
       },
       "select_count": 2,

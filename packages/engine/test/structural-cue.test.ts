@@ -309,11 +309,18 @@ test('a key that is the strict longest option in an outsized share trips key-len
   // 5/10 strict-longest keys = 50% > the 45% error tier (chance 25%).
   const bank = Array.from({ length: 10 }, (_, i) => sc(`s${i}`, i < 5 ? 'D' : 'B', LADDER));
   const got = findings(scratch(bank), 'key-length-rank-share');
-  assert.equal(got.length, 1);
-  assert.equal(got[0]!.level, 'warn'); // new checks land at warn this wave
-  assert.match(
-    got[0]!.message,
-    /\[bank\] the key is the strict longest option in 5\/10 single-choice items \(50%, error-tier bound 45%, chance 25%\)/,
+  // The check tests every rank, so a bank that clusters keys at two ranks
+  // reports both. Assert the longest-rank finding is present, not that it is
+  // the only one (L-0038: bounding only the extremes taught keys to hide
+  // at rank 2).
+  assert.ok(got.length >= 1);
+  assert.ok(got.every((f) => f.level === 'warn')); // new checks land at warn this wave
+  assert.ok(
+    got.some((f) =>
+      /\[bank\] the key is the strict longest option in 5\/10 single-choice items \(50%, error-tier bound 45%, chance 25%\)/.test(
+        f.message,
+      ),
+    ),
   );
 });
 
@@ -321,10 +328,11 @@ test('the rank bound is two-sided: a mostly-shortest key trips it too (the L-002
   // 4/10 strict-shortest keys = 40%: over the 35% warn tier, under 45%.
   const bank = Array.from({ length: 10 }, (_, i) => sc(`s${i}`, i < 4 ? 'A' : 'C', LADDER));
   const got = findings(scratch(bank), 'key-length-rank-share');
-  assert.equal(got.length, 1);
-  assert.match(
-    got[0]!.message,
-    /the key is the strict shortest option in 4\/10 single-choice items \(40%, warn-tier bound 35%/,
+  assert.ok(got.length >= 1);
+  assert.ok(
+    got.some((f) =>
+      /the key is the strict shortest option in 4\/10 single-choice items \(40%, warn-tier bound 35%/.test(f.message),
+    ),
   );
 });
 
@@ -355,8 +363,13 @@ test('a tie at the extreme is not a rank cue — tied items are excluded', () =>
 });
 
 test('E7 form scope: a rank-balanced bank still trips on a skewed served form, named as such', () => {
-  // Bank: 8/24 longest-keyed = 33% (inside 35%). Form: exactly those 8 = 100%.
-  const bank = Array.from({ length: 24 }, (_, i) => sc(`s${i}`, i < 8 ? 'D' : 'B', LADDER));
+  // Bank: 8/24 longest-keyed = 33% (inside 35%), the other 16 spread evenly
+  // across the remaining ranks so no interior rank trips either. Form: exactly
+  // those 8 = 100% longest-keyed, so only the form scope reports.
+  const rest = ['C', 'B', 'A'];
+  const bank = Array.from({ length: 24 }, (_, i) =>
+    sc(`s${i}`, i < 8 ? 'D' : rest[(i - 8) % rest.length]!, LADDER),
+  );
   const form = [{ id: 'form-1', items: Array.from({ length: 8 }, (_, i) => `s${i}`) }];
   const got = findings(scratch(bank, undefined, form), 'key-length-rank-share');
   assert.equal(got.length, 1);
@@ -583,7 +596,12 @@ test('a rank warn tier above its error tier fails manifest-shape', () => {
 
 test('in-range rank knobs move the bound', () => {
   // 4/10 longest-keyed = 40%: over the 0.35 default, under a declared 0.45.
-  const bank = Array.from({ length: 10 }, (_, i) => sc(`s${i}`, i < 4 ? 'D' : 'B', LADDER));
+  // The other six are spread 2/2/2 across the remaining ranks (20% each) so the
+  // longest rank is the only one near a bound — otherwise the all-ranks check
+  // would report the leftovers piling at one interior rank, which is the very
+  // cue L-0038 is about.
+  const letters = ['D', 'D', 'D', 'D', 'C', 'C', 'B', 'B', 'A', 'A'];
+  const bank = letters.map((l, i) => sc(`s${i}`, l, LADDER));
   assert.equal(findings(scratch(bank), 'key-length-rank-share').length, 1);
   assert.deepEqual(
     findings(

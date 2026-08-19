@@ -949,7 +949,9 @@ const CHECKS: Check[] = [
           const share = hits / of;
           const bound = share > errB ? 'error-tier' : share > warnB ? 'warn-tier' : null;
           if (bound) {
-            const label = RANK_LABELS[rank] ?? `#${rank + 1} longest`;
+            // Name the extremes plainly; the interior ranks by position.
+            const label =
+              rank === maxOpts - 1 ? 'shortest' : (RANK_LABELS[rank] ?? `#${rank + 1} longest`);
             report(
               'key-length-rank-share',
               'warn',

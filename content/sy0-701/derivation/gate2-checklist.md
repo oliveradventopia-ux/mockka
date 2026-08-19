@@ -211,10 +211,56 @@ required by the eval.** The 13-item quality tail in list A is a set of decisions
 latent-defect escalation raised in `content/aif-c01/derivation/gate2-checklist.md` is still
 open — ccar-p remains `in_review` with 89 warn findings on an unaudited legacy bank.
 
-## What Oliver signs
+## What Oliver signs — **SUPERSEDED 2026-08-20**
+
+> He signed it. `derivation/signoff.md` now records PASS on every preflight row,
+> the adjudication decisions, the waiver block and a **PUBLISH** decision dated
+> 2026-08-20. Preflight item 5 (README) is closed by the file, not waived. The
+> paragraph below is the pre-signature statement, kept for the record.
 
 `derivation/signoff.md` is pre-filled with the revision hashes, the checklist items and this
 sample list; **verdict columns, the adjudication decisions, waivers and the
 PUBLISH / DO-NOT-PUBLISH decision are blank and his.** Two things must close before the
 `published` flip: preflight item 5 (README) and open decision 6(c) (the blueprint revision
 re-check) — each either done or waived in writing.
+
+---
+
+## Gate 2 final pass — 2026-08-20 (re-pin · corrected S5b standard · README closed · sign-off)
+
+**Re-pinned to the shipping revision.** `content/sy0-701/questions.json` @ **`d92c587`** — blob `22dad062f1`, sha256 `9c7911cc8a71bd14…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated.
+
+### Content passes landed after the 2026-08-19 re-pin
+
+**None.** `git log` on `content/sy0-701/questions.json` returns nothing after `d92c587`, and a field-level path diff against that revision returns an empty change set. The re-pin below is a re-statement of the standard, not of the bank.
+
+### Preflight rows restated on this revision
+
+| # | Check | Verdict | Evidence at 2026-08-20 |
+|---|---|---|---|
+| 3 | Validator green | **PASS** | `pnpm validate sy0-701` → **35 checks, 0 errors, 0 warnings** on `d92c587` — zero warnings *(at `published`. The same tree reports 34 at `in_review`: `publication-preflight` is `when: status === 'published'` and runs only after the flip.)* |
+| 4 | Eval thresholds, incl. the S5b ceiling | **PASS** | Re-stated below and in `derivation/eval-report.md` §s5b-final. Both scopes clear the corrected ceiling. |
+| 5 | Per-exam README statements | **CLOSED — PASS** | `content/sy0-701/README.md` now exists and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). *This row read **OPEN — not written** in every previous version of this sheet; it is closed by the file, not waived.* No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. |
+
+### S5b re-stated against the corrected ceiling
+
+| scope | n | blind (recorded 2026-08-19 → now) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 122 | 27.05% → **28.69%** (35/122) | ≤ 31.43% (random 23.28%) | **0.732** | ≥ 0.639 | **PASS** |
+| form-a | 90 | 26.67% → **26.67%** (24/90) | ≤ 30.61% (random 22.67%) | **0.740** | ≥ 0.641 | **PASS** |
+
+The bank is byte-identical to the revision pinned on 2026-08-19, so there is no content delta to attribute: the whole of the movement above is the stronger strategy set. The recorded figure was not wrong for the instrument that produced it; it is superseded because the instrument was.
+
+The two corrections to the instrument — the ceiling now computed by the machine rather than by hand against a pass-mark `ok`, and interior length ranks now inside the committed strategy set — are written out in full in `derivation/eval-report.md` §s5b-final. The **bar is unchanged**; the machine now enforces it and the attacker is stronger.
+
+### Deep-read sample
+
+**Unchanged at 42 items.** No content pass landed after the 2026-08-19 re-pin, so there is nothing new to seat in the sample.
+
+### Residuals a reader should see
+
+- **rider inversion, small-n:** `rider-marks-key` is 0/6 bank and 0/4 form. A rider never marks the key here, which is an *inverse* cue — but at n=6 it is noise, not a finding.
+- **named-entity 34.6% bank / 33.3% form** against 25% chance — the highest of the seven, under the validator's 40% warn bound but the cue most worth a future countermeasure.
+- **stem-echo**, uninstrumented: 29.4% bank / 26.1% form against 25% chance — the lowest of the seven.
+- `d4-q16` still needs a **ruling, not a read** (3-vs-1 surface singleton the `option-pair-similarity` metric cannot see); `d4-q02` is the one confident blind-solve miss, adjudicated `legitimately_hard` with `adjudication_status: open_proposed`.
+- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.

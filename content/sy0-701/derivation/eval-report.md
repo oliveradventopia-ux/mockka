@@ -267,3 +267,54 @@ inverted and was left untouched**: `rider-marks-key` is 0/6 on bank and 0/4 on f
 (`ccao-f`, `ai-901`); sy0-701 did not. (2) `named-entity` reads 34.6% bank / 33.3% form, the
 highest of the six — driven in part by an acronym-expansion policy that makes DMARC-style keys
 intrinsically entity-heaviest (`d4-q19`'s key carries 5 proper-noun tokens against 3/3/0).
+
+---
+
+## S5b · re-measured at the Gate 2 final pass (2026-08-20) {#s5b-final}
+
+Instrument: `node tools/exploit-scan.mjs sy0-701 --json` for form-a scope, and the same tool run against a selection-free copy of the package for bank scope (the tool scopes to the served form whenever a `selection.json` form exists, so bank scope has to be produced deliberately). Bank revision under measurement: `questions.json` @ **`d92c587`** (blob `22dad062f1`, sha256 `9c7911cc8a71bd14…`).
+
+**These numbers supersede the S5b table above.**
+
+### What was corrected in the standard, and what that does to this exam
+
+Two corrections landed on the instrument between the 2026-08-19 re-pin and this pass. Both are
+changes to **how the number is produced and judged**, and they are recorded here rather than
+silently folded into the table, so the audit trail shows the standard was corrected — not that
+the number moved on its own.
+
+1. **`tools/exploit-scan.mjs` was reporting `ok` against the pass-mark floor, not the publication
+   ceiling** (`cda74c8`). The tool's exit status only ever asked "can a zero-knowledge attacker
+   reach the pass mark?" — the [1.35 × random / 0.85 × k_req@random ceiling](../../../methodology/05-eval-rubric.md#cue-only-solve) was computed by hand at S5b and never by
+   the machine. It now computes `random`, `blindCeiling`, `kReq`, `kReqFloor` and `ceilingOk`
+   itself and exits non-zero on a breach.
+2. **The committed strategy set now tests every option length rank, not just the extremes**
+   (`a8c7f4e`). The previous set scored "pick the longest" and "pick the shortest"; the standard
+   parity fix — lift one thin distractor above a rank-1 key — parks keys on rank 2, which reads
+   clean on an argmax check and hands the attacker the same free win one rank in. Every package's
+   S5b section already carried that gap as an explicit *"Residual: the instrument does not test
+   interior length ranks"* table. **That residual is no longer a residual: it is the measured
+   number.** This is why the blind figures below are higher than the ones the 2026-08-19 sheets
+   recorded even where the bank did not change.
+
+The **bar itself is unchanged.** The hand-computed ceilings in the earlier sheets were already
+against the correct 1.35×/0.85× standard, with the strict format-mix `random` rather than the
+rubric's 25% worked-example simplification. What changed is that the machine now enforces it and
+the attacker is stronger.
+
+### The re-stated verdict
+
+| scope | n | blind (recorded 2026-08-19 → now) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 122 | 27.05% → **28.69%** (35/122) | ≤ 31.43% (random 23.28%) | **0.732** | ≥ 0.639 | **PASS** |
+| form-a | 90 | 26.67% → **26.67%** (24/90) | ≤ 30.61% (random 22.67%) | **0.740** | ≥ 0.641 | **PASS** |
+
+The bank is byte-identical to the revision pinned on 2026-08-19, so there is no content delta to attribute: the whole of the movement above is the stronger strategy set. The recorded figure was not wrong for the instrument that produced it; it is superseded because the instrument was.
+
+### Residuals carried to Gate 2
+
+- **rider inversion, small-n:** `rider-marks-key` is 0/6 bank and 0/4 form. A rider never marks the key here, which is an *inverse* cue — but at n=6 it is noise, not a finding.
+- **named-entity 34.6% bank / 33.3% form** against 25% chance — the highest of the seven, under the validator's 40% warn bound but the cue most worth a future countermeasure.
+- **stem-echo**, uninstrumented: 29.4% bank / 26.1% form against 25% chance — the lowest of the seven.
+- `d4-q16` still needs a **ruling, not a read** (3-vs-1 surface singleton the `option-pair-similarity` metric cannot see); `d4-q02` is the one confident blind-solve miss, adjudicated `legitimately_hard` with `adjudication_status: open_proposed`.
+- **No cross-model eval column exists for this bank**, in any round. The Codex CLI on this machine is bundled inside the VS Code extension and is not logged in, so the advisory cross-solve was `advisory_skipped` throughout. Author and examiner share a model family, so no blind-solve score — however clean — excludes a convergent blind spot. The deep-read sample is the compensating control, and this is a standing gap, not a finding against the bank.

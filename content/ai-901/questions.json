@@ -286,7 +286,7 @@
       "options": {
         "A": "Both follow from how the model works: output is generated from learned patterns, and one request can only attend to a fixed amount of text.",
         "B": "Both indicate that the service has outgrown its model and needs one trained on a broader body of genealogical material.",
-        "C": "The invented dates are transcription faults in the registers and the missing detail is the request timing out mid-answer.",
+        "C": "The invented dates are transcription faults in the parish registers, and the missing detail is the request timing out part-way through the answer.",
         "D": "Both are effects of the sampling settings on the deployment and resolve once the temperature is turned down."
       },
       "answer": "A",
@@ -535,7 +535,7 @@
       "type": "single_choice",
       "question": "A heritage museum has already transcribed its donor correspondence, so the full text of every letter is held as text in the collections system. The collection holds a separate catalog record for each individual, each institution and each location it documents, and it files correspondence by year. Curators need every letter to surface which of those records it refers to, so the letter can be linked to each one. Which technique returns that?",
       "options": {
-        "A": "Keyword extraction over each letter, returning the terms that the letter is most about.",
+        "A": "Keyword extraction over each letter, returning the terms the letter is most about, ranked by how strongly they stand out.",
         "B": "Entity detection over each letter, returning typed spans for the people, places, organizations and dates it names.",
         "C": "Summarization of each letter, returning a short account of what the correspondent was writing to say.",
         "D": "Optical character recognition over each letter, returning the words on the page in the order they appear."
@@ -893,7 +893,7 @@
         "A": "Put two or three worked examples of a finished service record into the prompt, showing the exact layout wanted.",
         "B": "Ask the model to work through its reasoning step by step before it writes the service record out.",
         "C": "Fine-tune a copy of the model on several thousand past service records taken from the maintenance system.",
-        "D": "Ask the engineers to write their visit notes in the required layout so the model can copy the shape through."
+        "D": "Ask the engineers to write their visit notes in the required field-per-line layout so the model can copy that shape through."
       },
       "answer": "A",
       "distractor_patterns": {
@@ -1238,7 +1238,7 @@
       "type": "single_choice",
       "question": "An inland waterway freight operator has an assistant that answers crews' navigation-rule questions from the operator's own rulebook. A review of a month of answers finds them clear, confident and well written, and finds that a small share of them state a bridge clearance limit that appears nowhere in the rulebook, with nothing in the answer showing where it came from. Which reading of this review is correct?",
       "options": {
-        "A": "The answers are acceptable while they read clearly, as fluency is what crews judge an assistant on in practice.",
+        "A": "The answers are acceptable while they read clearly, as fluency is what crews actually judge an assistant on when they are under way.",
         "B": "A fluent answer is not a grounded answer, and one that cannot be traced to the rulebook is the failure grounding prevents.",
         "C": "The invented limits will fall away once crews are trained to ask the assistant more precisely worded questions.",
         "D": "Lowering the temperature on the deployment will stop the assistant stating limits the rulebook does not contain."
@@ -1271,7 +1271,7 @@
       "type": "single_choice",
       "question": "A veterinary hospital group is building an application over incoming referral letters. It has to route each letter by the service the referring vet is asking for, flag letters where the vet has expressed concern about waiting time, and link the practices named in the letter to records. A developer proposes one call per letter asking a general model to handle all of it. What does building this application actually involve?",
       "options": {
-        "A": "One call per letter with the whole job described in the prompt, and the answer read out of the reply text.",
+        "A": "One call per letter with the whole job described in the prompt, and the routing, the flag and the links read out of the reply text.",
         "B": "One deployment per requirement, with every letter routed through all three deployments in turn.",
         "C": "Choosing which technique the application calls for each stage of the work, then handling the structured result each returns.",
         "D": "Extracting the fields from each letter first, then deciding which technique to run based on what came back."
@@ -1642,7 +1642,7 @@
       "question": "A paper mill is specifying a maintenance app with two visual requirements: judge from an operator's photograph whether a reel wrap fault is a crease or a tear, and produce an illustrative picture of a correctly wrapped reel for the printed guide. A developer proposes one visual model for the whole app. Which assessment is correct?",
       "options": {
         "A": "The two requirements travel in opposite directions, so the app needs one model class to read images and another to produce them.",
-        "B": "One multimodal deployment covers both, as reading an image and producing one are the same visual capability.",
+        "B": "One multimodal deployment covers both requirements, as reading an image and producing a new one are the same visual capability at heart.",
         "C": "The app should generate a picture of each fault type and compare the operator's photograph against them.",
         "D": "The guide illustration should be made by cropping the clearest wrapped-reel photograph in the mill's archive."
       },
@@ -1877,7 +1877,7 @@
       "type": "single_choice",
       "question": "A fire-safety compliance contractor has extraction running over inspection certificates, and a spot check confirms the values it returns are accurate. Engineers still read each certificate and key the same values into the compliance register, and the pilot review reports no time saved anywhere in the process. What does the application still have to do?",
       "options": {
-        "A": "Improve extraction accuracy further before the compliance register can be expected to benefit from it.",
+        "A": "Improve extraction accuracy further before the compliance register can reasonably be expected to benefit from the extracted values.",
         "B": "Have engineers check every extracted value against the certificate before they key it into the register.",
         "C": "Pass the extracted values into the compliance register the contractor already runs, so the process consumes them.",
         "D": "Hold the extracted values in a new store that reports on how much of the certificate estate is covered."

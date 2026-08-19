@@ -6,13 +6,23 @@ bank revision (rework commit `42fbd3f`; S5 round-2 artifacts in `eval/`, committ
 Oliver's alone, recorded first in `derivation/signoff.md`. Verdict columns in the
 sign-off are left for Oliver; this checklist pre-fills the evidence.
 
+> **Re-pinned 2026-08-19 after the post-S6 cue-rework wave.** The bank under review is now
+> `content/gcp-cdl/questions.json` @ **`56c9db4`** (blob `5aaa81d3f1`, sha256
+> `ea3b5980d44f9243…`) on `fix/cue-rework-wave` — **not** `42fbd3f`, which this checklist
+> originally pinned. `selection.json` is unchanged (item ids are stable). The eval artifacts in
+> `eval/` still date from `252c4fb` and were produced against the **pre-wave option text**;
+> `derivation/signoff.md` §Post-S5 cue-rework wave states what moved, what the prior judge
+> scores still cover, the re-measured S5b numbers, and how the deep-read sample was extended
+> (24 → **38 items**). Validator count also moved 30 → **34 checks** (four cue checks landed
+> after S6; all silent). `manifest.status` is still `in_review` — nothing was flipped.
+
 ## The 7 preflight checks (methodology/06 §preflight), with evidence
 
 | # | Check | Examiner finding | Evidence |
 |---|---|---|---|
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` §Registered sources: 5 entries (2× `public_blueprint`, 2× `public_practice_set`, 1× `public_syllabus`), each carrying type, named author, URL, `date_accessed` 2026-08-16, licence/permission basis and usage constraint. The 5th (`google-skills-cdl-path`) is registered **metadata-only, content never accessed** — registered so the gap is visible, contributing nothing to the inventory (Gate-1 decision 1, still open below). Excluded-source screening is recorded with evidence, not just its outcome (dump corpus checked by content, ids 1/9/13 for whizlabs). Machine: `provenance-sources`, `concept-source-registry`, `source-derivation-link` all green |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree (83/83 concepts attributed). Spot-checked by hand at S6: `d1-04`→C-004→{guide, samples}, `d3-11`→C-041→{guide, whizlabs}, `d5-09`→C-069→{guide, samples, whizlabs}, `d6-01`→C-076→{guide, samples} — every artefact id resolves to a registry entry **and** to an existing `derivation/source-*.md`. Zero `licensed_import` items in the bank: all 83 are originally authored |
-| 3 | Validator green | **PASS** | `pnpm validate gcp-cdl` → **30 checks, 0 errors, 0 warnings** on this tree with `form-a` built. Before S6 the only failures were `selection-shape` (8) + `selection-format-mix` (12) on the empty placeholder form; both now pass, as do `selection-concept-uniqueness`, `key-position-distribution` and `answer-length-cue`. Nothing was dispositioned as an accepted warning — there are none |
+| 3 | Validator green | **PASS** | `pnpm validate gcp-cdl` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree `56c9db4` with `form-a` built (*count corrected 2026-08-19 from "30 checks"; the four cue checks that landed after S6 are all silent*). Before S6 the only failures were `selection-shape` (8) + `selection-format-mix` (12) on the empty placeholder form; both now pass, as do `selection-concept-uniqueness`, `key-position-distribution` and `answer-length-cue`. Nothing was dispositioned as an accepted warning — there are none |
 | 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **83/83**, high confidence on all 83, zero misses ⇒ empty adjudication queue), `eval/judge-scores.json` (r2: 498 dimension scores — 404 fives / 81 fours / **13 threes across 12 items**, **zero ≤2**, zero open bounces), `eval/overlap-report.md` (r2: zero findings; r1 finding O-1 discharged), `eval/codex-solve.json` (`advisory_skipped` — see the cross-model note below). Round-1 artifacts preserved as `*-r1.*`. Bounce ledger: r1 = 1 bounce (`d4-10`), r2 = 0; no item above bounce 1, cap (2) respected, **no waiver required**. Machine dry-run of `publication-preflight` (it only runs at `status: published`) returns clean on every clause except the sign-off file itself, which is Oliver's half |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/gcp-cdl/README.md` does not exist (`content/aif-c01/README.md` is the worked precedent). Required before the `published` flip: provenance/independence, licensed-content (n/a here), prior-art credit (Google's own sample set + Whizlabs, both classification-only), NDA, non-affiliation with Google LLC, licence. The manifest's machine-checked `nda_statement` **is** present and complete, and the `intro.disclaimer` carries the candidate-facing version — the missing artefact is the repo-facing README. **Owner: exam-author** (the examiner does not author package content beyond its eval/selection surface). Does not block `in_review` |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0, content) exist at root; the per-package statement folds into item 5. Inbound: **zero `licensed_import` items** — every item is originally authored, so `licensed-import-license` is green with nothing to discharge, and no attribution obligation exists to satisfy. Both practice sources are `classification-only` under the clean-room rule and are credited as prior art, not licensed in |
@@ -42,8 +52,29 @@ seating rationale and six documented hand-adjustments are in `selection.json`
 
 Per methodology/05 §handoff + `/exam-publish` step 3: **all scenario-matching + 10 random +
 every auto-flagged item.** Scenario-matching contributes **zero** (the format is absent by
-design). Total sample: **24 items** — 13 auto-flagged (6 seated, 7 reserve-only), 10 random
-from the seated form, 1 standing content note. The lists are disjoint.
+design). **Extended 2026-08-19 to 38 items** — the S6 core of 24 (13 auto-flagged: 6 seated,
+7 reserve-only; 10 random from the seated form; 1 standing content note) **plus every item
+touched by the cue-rework wave** (14 new). The lists are disjoint.
+
+**Wave extension (14 new items).** All 11 reworked items seated on form-a are now in the
+sample, plus the 4 reserve-only reworked items, because publication covers the bank:
+
+| Added | Seated? | Wave edit | What to judge |
+|---|---|---|---|
+| `d5-12` | yes | **named entity** — C now says "Google Security Command Center" | Not a canonical Google brand, and inconsistent with `d5-14` C in the same bank. One word — the only string the examiner would send back |
+| `d3-10` | yes | **named entity** — C's E08 fiction became "Agent Registry, the Google Cloud Console catalog" | Now asserts a specific false fact about the Console; freshness risk if Google ships an agent registry |
+| `d5-14` | yes | **named entity** — "Security Command Center" named in | Canonical here; judge the pair with `d5-12` for candidate-facing consistency |
+| `d2-08` | yes | similarity fix — C/D Jaccard 1.000 → 0.000 | **Substantive, not tokenizer evasion**: the old collision came from `shingles()` dropping tokens ≤3 chars, collapsing "Non-relational" onto "Relational". Confirm the semantics still oppose |
+| `d2-15` | yes | **named entity** — "Cloud Storage" named in | specificity parity only |
+| `d2-12` | yes | **named entity** — "BigQuery" named in | already in the random 10; re-read against the new string |
+| `d1-09`, `d2-13`, `d5-15`, `d6-03`, `d6-07` | yes | length parity (`d6-03` A also lost a rider) | distractor argued up — check it did not become co-correct; `d6-03`'s rider deletion is why form `rider-marks-key` moved 28.6% → 33.3% |
+| `d3-14`, `d4-12`, `d4-15`, `d6-04` | **no** (reserve) | entities BigQuery / Kubernetes / Google / Compute Engine named in | bank coverage; rejecting a reserve item is free |
+
+Not one of the 22 edited strings is a keyed option — the key text a candidate sees is exactly
+what S5 round 2 judged. **The pairing that tells you which items need human reading:** all 22
+distractor rewrites left their `rationale.distractors` entry **byte-identical**, so each is
+refuted by an argument written against the pre-wave string. All 22 pairs were re-read at this
+gate and still land, but `rationale-anti-drift` does not test this surface.
 
 **Auto-flagged and SEATED on form-a** (a 3 ships only if this deep-read accepts it):
 

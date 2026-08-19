@@ -422,3 +422,65 @@ in `eval/judge-scores.json` and `eval/overlap-report.md` for the deep-read.
 | `eval/overlap-report.md` | round 2 — re-run shingle screen, targeted quoted-run pass, O-1 discharged, RW-1, open root cause |
 | `eval/codex-solve.json` | both rounds' advisory-skipped record, with round 1 preserved under `rounds[0]` |
 | `eval/blind-solve-r1.json`, `eval/judge-scores-r1.json`, `eval/overlap-report-r1.md` | round 1, preserved verbatim |
+
+---
+
+## S5b · cue-only solve — re-measured after the cue-rework wave (2026-08-19) {#s5b}
+
+Recorded per [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve),
+which requires the blind score, `k_req` and the ceiling verdict for the **bank and each served
+form**. The wave (`56c9db4` on `fix/cue-rework-wave`) changed option text only, so these
+numbers **supersede** any cue figures earlier in this report; the S5 §1 blind solve and the judge
+scores were produced against the pre-wave text and were not regenerated (see
+`derivation/gate2-checklist.md` §Post-S5 cue-rework wave).
+
+Instrument: `node tools/exploit-scan.mjs gcp-cdl` for form scope, and the same tool run against a
+selection-free copy of the package for bank scope — it scopes to the served form when a
+`selection.json` form exists, so bank scope must be produced deliberately. `random` is the
+format-mix expected guess score (single_choice 1/options, multiple_response 1/C(options, |key|),
+scenario_matching 1/options^scenarios, all graded all-or-nothing), which is **stricter** than the
+rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre-wave → post-wave) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 83 | 39.76% → **27.71%** (23/83) | ≤ 32.29% (random 23.92%) | **0.5850** | ≥ 0.5148 (k_req@random 0.6057) | **PASS** |
+| form-a | 60 | 40% → **26.67%** (16/60) | ≤ 31.72% (random 23.5%) | **0.5909** | ≥ 0.5167 (k_req@random 0.6078) | **PASS** |
+
+Per-cue rates on the shipping revision (chance 25% each):
+
+- **bank** — key-longest-rank 17/67 (25.4%) · key-shortest-rank 11/68 (16.2%) · named-entity 2/12 (16.7%) · rider-marks-key 2/12 (16.7%)
+- **form-a** — key-longest-rank 12/47 (25.5%) · key-shortest-rank 7/47 (14.9%) · named-entity 2/9 (22.2%) · rider-marks-key 2/6 (33.3%)
+
+### Residual: the instrument does not test interior length ranks
+
+`key-length-rank-share` and `exploit-scan`'s `key-longest-rank`/`key-shortest-rank` bound only
+rank 1 and rank last, and the standard parity fix — lift one thin distractor above a rank-1 key —
+lands the key deterministically on **rank 2**. Measuring all four ranks by hand on the shipping
+revision:
+
+| scope | key length-rank distribution | best single-rank strategy | rank-aware blind |
+|---|---|---|---|
+| bank | {1:22, 2:26, 3:16, 4:13} | rank 2: 26/77 (33.8%) | 27/83 = **32.53%** |
+| form-a | {1:15, 2:18, 3:12, 4:9} | rank 2: 18/54 (33.3%) | 19/60 = **31.67%** |
+
+"Rank-aware blind" substitutes the best interior rank for the tool's longest-option strategy. It is
+**not** the S5b number — the committed strategy set is the instrument of record — but it is the
+honest upper bound on what a rank-aware test-wise candidate scores, and Gate 2 should see it.
+
+### Residual: the uninstrumented stem-echo cue
+
+No validator check and no exploit-scan strategy measures option↔stem content-word overlap, and the
+wave's own fix mechanism (appending a purpose clause written from the stem's words to lift a key
+off the shortest rank) inflates it. Share of single-choice items where the key is the strict
+maximum-overlap option, chance 25%: bank 24.3 → 21.4%, form-a 36.0 → 31.0% — it
+**fell**.
+
+### Verdict carried to Gate 2
+
+**PASS on both ceilings, both scopes.** Two residuals, neither gating. (1) `rider-marks-key` moved
+*adversely* on form scope (2/7 = 28.6% → 2/6 = 33.3%) because the wave deleted a distractor-side
+rider from `d6-03` A rather than seating a key-side one; the check still passes and n = 6.
+(2) `key-shortest-rank` on form is byte-identical pre- and post-wave at 7/47 = 14.9%, i.e. below
+chance — the inverse cue was neither created nor removed. The bank's rank-aware blind (32.53%) sits
+marginally above its 32.29% ceiling while the tool's own strategy set reads 27.71%; see the
+interior-rank residual above.

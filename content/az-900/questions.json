@@ -123,7 +123,7 @@
       "question": "A statute requires a municipal tax office to keep taxpayer records on infrastructure it operates itself, inside its own facility. During the annual filing season, the office's public web portal needs far more capacity than it owns. Which cloud deployment model do these constraints force?",
       "options": {
         "A": "A hybrid cloud that keeps records on the office's own infrastructure and bursts portal capacity to a public cloud",
-        "B": "A full public cloud migration, moving the records off-premises to modernize the whole estate at once",
+        "B": "A full public cloud migration, moving the records and the filing-season portal off-premises to modernize the whole estate at once",
         "C": "A private cloud only, sized so that filing-season demand is met from owned capacity all year round",
         "D": "A sovereign region, which satisfies government obligations without changing where the records are kept"
       },
@@ -497,7 +497,7 @@
       "question": "A construction contractor moves its estimating application onto Azure virtual machines, an infrastructure as a service arrangement. The provider now runs the physical hosts, storage, and network. What stays on the contractor's plate?",
       "options": {
         "A": "Only the application code, with the guest operating system patched by the provider",
-        "B": "Replacing failed physical disks beneath its virtual machines through a hardware support contract",
+        "B": "Replacing failed physical disks and network cards beneath its virtual machines through a hardware support contract",
         "C": "Hardening the hypervisor, as maximum control extends to the virtualization layer",
         "D": "The operating system and everything above it: patching, runtime, middleware, and the application's data"
       },
@@ -645,7 +645,7 @@
       "question": "A container shipping line is planning where its Azure workloads will run, and its architect is asked to explain what an Azure region actually is and why many regions have a partner region. Which explanation is right?",
       "options": {
         "A": "A region is a single large datacenter building, and its partner is the identical building next door for fast failover",
-        "B": "A region is a set of nearby datacenters, and platform updates roll out to both members of a pair simultaneously so they stay identical",
+        "B": "A region is a set of nearby datacenters, and platform updates roll out to both members of a regional pair simultaneously so the two members stay identical",
         "C": "A region is a set of datacenters connected by a low-latency network, often paired with a distant region for replication and sequenced updates",
         "D": "A region is defined by the subscription that deploys into it, so each customer draws its own regional boundaries"
       },
@@ -1595,7 +1595,7 @@
       "type": "single_choice",
       "question": "An outdoor advertising firm has board approval to design a campaign-imagery platform, and nothing has been deployed for it. The firm already runs a substantial Azure estate with two years of invoices behind it, and the finance director wants a defensible monthly figure for the proposed platform before a single resource is created. Which approach produces that figure?",
       "options": {
-        "A": "Cost analysis over the firm's existing estate, filtered to the services the new platform would be built from",
+        "A": "Cost analysis over the firm's existing estate and its two years of invoices, filtered to the services the new platform would be built from",
         "B": "A budget set at the amount the board is willing to fund, with alerts as consumption approaches that line",
         "C": "The pricing calculator, configured with the proposed services, sizes and regions and priced as a monthly total",
         "D": "A total-cost-of-ownership comparison against what the firm currently spends on print production"
@@ -2159,7 +2159,7 @@
       "question": "An orchestra and concert hall runs ticketing, door access and building-sensor workloads across many Azure resources. Each team reads its own resource's telemetry in isolation, and when ticketing slowed last week nobody could line that up against what the rest of the estate was doing. The venue wants one place that collects metrics and logs from all of those resources and can act on what they show.",
       "options": {
         "A": "Log Analytics on its own, as the workspace in which collected log data is queried",
-        "B": "Application Insights, as the telemetry surface for what happens inside the ticketing application",
+        "B": "Application Insights, as the telemetry surface for what happens inside the ticketing application's own code",
         "C": "A portal dashboard for each team, pinned with the charts for that team's own resources",
         "D": "Azure Monitor, the platform that collects, correlates and acts on telemetry from the whole estate"
       },
@@ -2263,7 +2263,7 @@
         "A": "Azure Monitor metrics for the underlying virtual machines and disks, read over a longer window",
         "B": "Log Analytics queries over the platform logs already collected from those same resources",
         "C": "Application Insights, the application surface of the telemetry platform, which reports request failures and usage",
-        "D": "Move the booking site onto a larger virtual machine size so that the slow requests complete sooner"
+        "D": "Move the booking site onto a larger virtual machine size with faster disks and more memory so that the slow requests complete sooner"
       },
       "answer": "C",
       "distractor_patterns": {

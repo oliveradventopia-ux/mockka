@@ -223,8 +223,8 @@
       "options": {
         "A": "A compounding competitive disadvantage that grows harder to close each year",
         "B": "Only a delay: the same benefits will be available at the same cost later",
-        "C": "A genuine reduction in overall technology spending",
-        "D": "The retraining effort that cloud adoption would have required"
+        "C": "A genuine reduction in overall technology spending, freed up for other campus priorities",
+        "D": "The retraining effort that a cloud adoption program would have required of its staff"
       },
       "answer": "A",
       "distractor_patterns": { "B": "D15", "C": "D19", "D": "E06" },
@@ -719,7 +719,7 @@
       "options": {
         "A": "Lower storage cost, with the separate reporting database no longer maintained",
         "B": "Fresher figures, from copying the extract into the reporting database hourly",
-        "C": "Dashboards that refresh on demand, with the booking system left as it is",
+        "C": "Dashboards that refresh on demand when a manager opens them, with the booking system unchanged",
         "D": "Real-time reports and dashboards fed by BigQuery, with analysis inside the booking workflow"
       },
       "answer": "D",
@@ -1922,7 +1922,7 @@
         "A": "Transparency reports, third-party audit results and the compliance resource manager",
         "B": "A contractual warranty that the provider's controls operate as described",
         "C": "A demonstration of the Security Command Center console by its solutions engineer",
-        "D": "An architecture document explaining how the provider's controls are designed"
+        "D": "An architecture document explaining how the provider's controls are designed and layered"
       },
       "answer": "A",
       "distractor_patterns": { "B": "E06", "C": "D12", "D": "E07" },
@@ -1945,8 +1945,8 @@
       "type": "single_choice",
       "question": "A customs brokerage wins a government contract whose terms require declaration records to remain within the country's borders and not to be disclosable to any foreign authority. The brokerage's security team reports that the records are encrypted and access-controlled. Which concern does the contract raise that the team's report leaves unanswered?",
       "options": {
-        "A": "Whether the encryption keys are strong enough for government records",
-        "B": "Whether an attacker could reach the records through a misconfigured bucket",
+        "A": "Whether the encryption keys protecting the declaration records are strong enough",
+        "B": "Whether an attacker could reach the declaration records through a misconfigured storage bucket",
         "C": "Digital sovereignty and data residency: where records sit and whose law reaches them",
         "D": "Whether the brokerage's staff have been cleared to handle government records"
       },
@@ -2025,7 +2025,7 @@
       "type": "single_choice",
       "question": "A museum and heritage trust must apply one data-retention policy to everything its digital preservation department runs, without anyone having to set it on each new project as it is created. The department's work sits in a dozen projects today and will spread into more. Other departments must not be bound by this policy. Where should it be applied?",
       "options": {
-        "A": "On each project, so that every project's policy is explicit",
+        "A": "On each project as it is created, so every project's policy is explicit",
         "B": "On a folder holding the department's projects, so new projects inherit it",
         "C": "On the organization node, so the whole trust is covered in one action",
         "D": "In a documented standard that every project owner is asked to follow"
@@ -2129,9 +2129,9 @@
       "type": "single_choice",
       "question": "A ferry and port operator's booking platform runs redundant instances spread across three zones and takes nightly backups, all inside one region. The board has set a new requirement: a ticket must still be sellable if that entire region is lost. Which change meets the requirement?",
       "options": {
-        "A": "Add more zones within the region so the redundancy is deeper",
+        "A": "Add more zones within the same region so the redundancy across the platform is deeper",
         "B": "Replicate into a second region, with traffic routed to whichever is healthy",
-        "C": "Increase the backup frequency so less is lost when the region fails",
+        "C": "Increase the backup frequency to hourly so less is lost when the region fails",
         "D": "Publish a service level agreement committing to a stated recovery time"
       },
       "answer": "B",

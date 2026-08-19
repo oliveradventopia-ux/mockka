@@ -15,9 +15,9 @@
       "question": "A rural broadband provider is preparing a model that ranks incoming fault reports so engineers are dispatched to the most disruptive outages first. Its dispatch history is dense for town streets and thin for outlying farms, and the regulator has asked the provider to show that the ranking is fair. Which action addresses the fairness consideration for this solution?",
       "options": {
         "A": "Compare how the model ranks town faults against outlying-farm faults of the same type, and report the gap between the two.",
-        "B": "Encrypt the stored dispatch history and limit access to the ranking data to the operations team who run the dispatch desk.",
+        "B": "Encrypt the stored dispatch history and limit access to the ranking data to the operations team, and log every read of that history.",
         "C": "Publish a notice on the customer portal explaining that the order of engineer dispatch is decided with the help of an AI system.",
-        "D": "Review a weekly sample of closed jobs to see whether any farm customers have complained about how long they waited."
+        "D": "Review a weekly sample of closed jobs from both areas to see whether any farm customers have complained about how long they waited."
       },
       "answer": "A",
       "distractor_patterns": {
@@ -28,9 +28,9 @@
       "rationale": {
         "correct": "A fairness consideration asks where a solution could hand out attention or accuracy unevenly across groups of people, and the only way to answer it is to measure the outcome for each group. Ranking town faults beside outlying-farm faults of the same type turns the responsible AI question into a number the regulator can read.",
         "distractors": {
-          "B": "Encrypting the history and limiting access is a privacy and security control. It protects the data behind the ranking and says nothing about how the ranking treats each group.",
+          "B": "Encrypting the history, limiting access and logging reads are privacy and security controls. They protect the data behind the ranking and say nothing about how the ranking treats each group.",
           "C": "Telling customers that an AI system orders dispatch discharges transparency. It describes the mechanism to people without revealing whether farms consistently wait longer than towns.",
-          "D": "Complaints surface only after people have already waited, and the customers who wait longest are often the least likely to complain, so the gap stays invisible."
+          "D": "Complaints surface only after people have already waited, and the customers who wait longest are often the least likely to complain, so sampling both areas still leaves the gap invisible."
         }
       }
     },
@@ -48,7 +48,7 @@
       "question": "A ferry operator counts boarding passengers with a vision model so that no sailing exceeds its licensed capacity. The model was built on images captured in clear weather at the main terminal. On the exposed northern route, fog and spray leave the camera images washed out for part of the year. Which measure addresses the reliability and safety consideration here?",
       "options": {
         "A": "Install a second camera at every gate so that more images of each boarding passenger reach the model.",
-        "B": "Display the counted figure on a screen at the gate with a note that the number is produced by an AI system.",
+        "B": "Display the counted figure on a screen at the gate with a note explaining that the number is produced by an AI system.",
         "C": "Detect when image quality drops below what the model needs and hand the count to gate staff until it recovers.",
         "D": "Retrain the counting model every quarter on the most recent boarding footage captured across all of the routes."
       },
@@ -536,7 +536,7 @@
       "question": "A heritage museum has already transcribed its donor correspondence, so the full text of every letter is held as text in the collections system. The collection holds a separate catalog record for each individual, each institution and each location it documents, and it files correspondence by year. Curators need every letter to surface which of those records it refers to, so the letter can be linked to each one. Which technique returns that?",
       "options": {
         "A": "Entity detection over each letter, returning typed spans for the people, places, organizations and dates it names.",
-        "B": "Optical character recognition over each letter, returning the words on the page in the order they appear.",
+        "B": "Optical character recognition over each letter, returning the words on the page in the order they appear, line by line.",
         "C": "Keyword extraction over each letter, returning the terms the letter is most about, ranked by how strongly they stand out.",
         "D": "Summarization of each letter, returning a short account of what the correspondent was writing to say."
       },
@@ -635,9 +635,9 @@
       "question": "A driving school network asks instructors to record a spoken debrief in the car at the end of each lesson. Head office wants those debriefs held as searchable text in the pupil record, so that the existing text tools can index them and pull out the terms instructors keep raising. Which capability produces what head office needs?",
       "options": {
         "A": "Speech recognition over the debriefs, producing a transcript of each one that head office can then index.",
-        "B": "A multimodal model that describes the driving scene recorded by the dashboard camera during each lesson.",
+        "B": "A multimodal model that describes the driving scene recorded by the dashboard camera at each stage of the lesson.",
         "C": "Keyword extraction run over the recordings, returning the terms the instructor used during the spoken debrief.",
-        "D": "Speech synthesis over the debriefs, so each pupil receives a spoken version of the instructor's comments."
+        "D": "Speech synthesis over the debriefs, so each pupil receives a spoken version of the comments their instructor recorded."
       },
       "answer": "A",
       "distractor_patterns": {
@@ -859,7 +859,7 @@
       "options": {
         "A": "Move the role, tone and prohibitions into the system prompt and leave the operator's question as the user prompt.",
         "B": "Fine-tune the deployment on past answers so the role and tone are learned and no instruction text is needed at all.",
-        "C": "Keep the block where it is and have the client application paste it in front of every question an operator types.",
+        "C": "Keep the block where it is and have the client application paste it in front of every question before the request is sent.",
         "D": "Lower the temperature on the deployment so the assistant stops volunteering guidance nobody asked it for."
       },
       "answer": "A",
@@ -990,8 +990,8 @@
       "question": "A district heating utility ran its fault-triage pilot inside the portal, and engineers are happy with the answers. The utility now wants its field-service mobile app, which runs outside the portal on the engineers' handsets, to use the same deployed model. What does the app have to be pointed at?",
       "options": {
         "A": "The endpoint the deployment exposes, configured in the app with that endpoint's address and credentials.",
-        "B": "A copy of the model files downloaded into the app so each handset answers without a network round trip.",
-        "C": "The catalog entry for the chosen model, which the app queries by model name whenever an engineer asks.",
+        "B": "A copy of the model files downloaded into the app so each handset answers on its own without a network round trip.",
+        "C": "The catalog entry for the chosen model, which the app queries by model name and version whenever an engineer asks.",
         "D": "Nothing further: an app owned by the same subscription reaches a deployment automatically once it exists."
       },
       "answer": "A",
@@ -1304,8 +1304,8 @@
       "type": "single_choice",
       "question": "A school district already runs an agent that answers staff questions and raises tickets through its connected tools. The district now wants parent messages classified by topic and by how upset the writer sounds, so the agent can prioritize what it raises. A developer proposes doing that classification in the mail gateway and passing only the result to the agent. Which design fits what the district asked for?",
       "options": {
-        "A": "Stand up a second agent whose only job is classification and have the two agents exchange messages.",
-        "B": "Describe in the agent's instructions how to judge topic and tone, so it forms both judgments as it reads.",
+        "A": "Stand up a second agent whose only job is classification and have the two agents exchange messages as each one arrives.",
+        "B": "Describe in the agent's instructions how to judge topic and tone, so it forms both judgments as it reads each message.",
         "C": "Attach Azure Language text analysis to the agent as a capability it calls when a message needs classifying.",
         "D": "Classify in the mail gateway before the agent is involved, and pass the topic and the tone through to the agent as fields."
       },

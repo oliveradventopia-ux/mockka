@@ -128,7 +128,12 @@ covers "unaudited", but it does not name a known test-wiseness solvability defec
 the caveat understates what is now measured). The examiner's recommendation: (b) or
 (a); (c) leaves a bank we now *know* is cue-solvable being served.
 
-## What Oliver signs
+## What Oliver signs — **SUPERSEDED 2026-08-20**
+
+> He signed it. `derivation/signoff.md` now records PASS on every preflight row,
+> the adjudication decisions, the waiver block and a **PUBLISH** decision dated
+> 2026-08-20. Preflight item 5 (README) is closed by the file, not waived. The
+> paragraph below is the pre-signature statement, kept for the record.
 
 `derivation/signoff.md` is pre-filled with the evidence hashes and this sample
 list; verdict columns and the PUBLISH/DO-NOT-PUBLISH decision are blank and his.
@@ -136,3 +141,42 @@ Preflight item 5 (README) must close before the `published` flip — a PUBLISH
 decision with item 5 open needs either the README landed first or an explicit
 waiver line, per methodology/06 ("a sign-off with any preflight verdict at fail
 and no covering waiver is not a sign-off").
+
+---
+
+## Gate 2 final pass — 2026-08-20 (re-pin · corrected S5b standard · README closed · sign-off)
+
+**Re-pinned to the shipping revision.** `content/aif-c01/questions.json` @ **`f0bf8bc`** — blob `31101a184a`, sha256 `d6f79f96c82359e9…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated.
+
+### Content passes landed after the 2026-08-19 re-pin
+
+**None.** `git log` on `content/aif-c01/questions.json` returns nothing after `f0bf8bc`, and a field-level path diff against that revision returns an empty change set. The re-pin below is a re-statement of the standard, not of the bank.
+
+### Preflight rows restated on this revision
+
+| # | Check | Verdict | Evidence at 2026-08-20 |
+|---|---|---|---|
+| 3 | Validator green | **PASS** | `pnpm validate aif-c01` → **35 checks, 0 errors, 0 warnings** on `f0bf8bc` — zero warnings *(at `published`. The same tree reports 34 at `in_review`: `publication-preflight` is `when: status === 'published'` and runs only after the flip.)* |
+| 4 | Eval thresholds, incl. the S5b ceiling | **PASS** | Re-stated below and in `derivation/eval-report.md` §s5b-final. Both scopes clear the corrected ceiling. |
+| 5 | Per-exam README statements | **CLOSED — PASS** | `content/aif-c01/README.md` now exists and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). *This row read **OPEN — not written** in every previous version of this sheet; it is closed by the file, not waived.* No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. |
+
+### S5b re-stated against the corrected ceiling
+
+| scope | n | blind (recorded 2026-08-19 → now) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 67 | 23.88% → **26.87%** (18/67) | ≤ 30.14% (random 22.32%) | **0.589** | ≥ 0.522 | **PASS** |
+| form-a | 50 | 22.00% → **26.00%** (13/50) | ≤ 28.91% (random 21.41%) | **0.595** | ≥ 0.526 | **PASS** |
+
+The bank is byte-identical to the revision pinned on 2026-08-19, so there is no content delta to attribute: the whole of the movement above is the stronger strategy set. The recorded figure was not wrong for the instrument that produced it; it is superseded because the instrument was.
+
+The two corrections to the instrument — the ceiling now computed by the machine rather than by hand against a pass-mark `ok`, and interior length ranks now inside the committed strategy set — are written out in full in `derivation/eval-report.md` §s5b-final. The **bar is unchanged**; the machine now enforces it and the attacker is stronger.
+
+### Deep-read sample
+
+**Unchanged at 27 items.** No content pass landed after the 2026-08-19 re-pin, so there is nothing new to seat in the sample.
+
+### Residuals a reader should see
+
+- **stem-echo**, uninstrumented: recorded at 42.5% bank / 35.7% form (chance 25%) at the 2026-08-19 re-pin and unchanged, because this bank was not touched again. It remains the strongest surface statistic here and there is still no check or strategy that measures it.
+- **key-letter permutation** (`f0bf8bc`): `eval/blind-solve.json`'s recorded letters do not map to the shipping bank. The file is a valid record of the round-2 judgment, not a letter-by-letter map; the deep read is the control.
+- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.

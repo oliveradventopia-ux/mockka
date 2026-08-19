@@ -1,11 +1,11 @@
 # Gate 2 sign-off · aif-c01
 
-> Pre-filled by exam-examiner at S6 (2026-08-16) per methodology/06 §signoff-template.
-> **Verdict columns, adjudication decisions, waivers, and the final decision are
-> Oliver's — left blank.** Working paper: `derivation/gate2-checklist.md`.
+> Prepared by exam-examiner; **signed by Oliver Lau on 2026-08-20**. Verdict columns,
+> adjudication decisions, waivers and the decision below are recorded, not blank.
+> Working paper: `derivation/gate2-checklist.md` §Gate 2 final pass.
 
-- **Date:** ____ · **Reviewer:** Oliver Lau (the human, not an agent)
-- **Bank revision (re-pinned 2026-08-19, after the cue-rework wave):** `questions.json` @ **`f0bf8bc`** — blob `31101a184a`, sha256 `d6f79f96c82359e9…`, committed 2026-08-19 on `fix/cue-rework-wave`. **Supersedes the S6 pin `1b1596c`**, which is no longer what ships. `selection.json` @ the S6 commit on `feat/scaffold` — untouched by the wave; item ids are stable, so form-a's composition is exactly as seated
+- **Date:** 2026-08-20 · **Reviewer:** Oliver Lau (the human, not an agent)
+- **Bank revision (re-pinned 2026-08-20 — the shipping revision):** `questions.json` @ **`f0bf8bc`** — blob `31101a184a`, sha256 `d6f79f96c82359e9…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated. Supersedes every earlier pin in this file.
 - **Eval artifacts:** blind-solve @ `79026d8` (r2, 2026-08-16) · judge-scores @ `79026d8` (r2) · overlap-report @ `79026d8` (r1+r2) · codex-solve @ `79026d8` (advisory_skipped ×2 rounds) · round-1 preserved at `eval/*-r1.json`
 - **Provenance caveat — read before signing:** every artifact above was produced against the **pre-wave** option text (`1b1596c`) and has **not** been regenerated. This exam additionally took a **key-letter permutation** in the wave, so `eval/blind-solve.json`'s recorded letters no longer align with the bank even for items whose text never changed — see §Post-S5 cue-rework wave for exactly what moved, what the prior judge scores still cover, and how the deep-read sample was extended (19 → **27 items**)
 
@@ -64,7 +64,13 @@ mismatch the current bank on the large majority of single-choice items. The file
 record of the round-2 *judgment* (67/67, zero adjudications) against `1b1596c`; it is not a
 letter-by-letter map of the shipping bank, and Gate 2 should not read it as one.
 
-### S5b cue-only solve, re-measured post-wave
+### S5b cue-only solve, re-measured post-wave — **SUPERSEDED 2026-08-20**
+
+> The table in this subsection was produced before `a8c7f4e` put interior option
+> length ranks into the committed strategy set and before `cda74c8` made the tool
+> compute the publication ceiling. It is kept as the record of what was measured
+> on 2026-08-19. **The figures that govern this sign-off are in §Gate 2 final
+> pass above.**
 
 Instrument: `node tools/exploit-scan.mjs aif-c01` (form scope) plus the same tool against a
 selection-free copy of the package (bank scope). `random` is the format-mix expected guess score,
@@ -99,18 +105,49 @@ All new entities are grounded in `derivation/source-aif-blueprint.md`; the inven
 C-057 = Clarify no-cross rule is respected. Two standing content notes from the wave verification
 remain open and are in the sample: 4.06 D (above) and 3.18 A (above).
 
+## Gate 2 final pass — 2026-08-20
+
+This sign-off is recorded against a re-pinned revision and a **corrected acceptance standard**.
+Both are stated here so a reader can see what a PUBLISH signature covers.
+
+- **Re-pinned.** `questions.json` @ **`f0bf8bc`** — blob `31101a184a`, sha256 `d6f79f96c82359e9…`, committed
+  2026-08-19 on `fix/cue-rework-wave`. `selection.json` unchanged; item ids are stable, so form-a's
+  composition is exactly as seated.
+- **The S5b verdict is re-stated, not carried over.** `tools/exploit-scan.mjs` had been reporting
+  `ok` against the **pass-mark floor** rather than the publication ceiling in
+  [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve), and its
+  committed strategy set tested only the extreme option length ranks. Both were corrected
+  (`cda74c8`, `a8c7f4e`). The **bar is unchanged** — the ceilings computed by hand in the earlier
+  sheets were already the right ones — but the machine now enforces it and the zero-knowledge
+  attacker is stronger, so the blind numbers move. Full arithmetic and the audit note are in
+  `derivation/eval-report.md` §s5b-final and `derivation/gate2-checklist.md` §Gate 2 final pass.
+  **Result on the shipping revision: bank 26.87% ≤ 30.14% · form-a 26.00% ≤ 28.91% — PASS on both
+  ceilings, both scopes.**
+- **Validator on the pinned tree, at `published`:** `35` checks, `0` errors, `0` warnings.
+- **Deep-read sample:** **27 items, unchanged** — no content pass landed after the 2026-08-19 re-pin, so there was nothing new to seat.
+- **README preflight row closed.** `content/aif-c01/README.md` exists and carries every section
+  methodology/06 §readme-template requires. This row read OPEN in every previous version of this
+  sheet; it is closed by the file, not by a waiver.
+- **What Oliver's instruction was, exactly.** Publication was approved on 2026-08-20 with
+  "sign off and go ahead", given after reviewing the content UAT at
+  `UAT/HUMAN-UAT-2026-08-19-new-exams.md`. That run sheet's Findings table was returned **empty**
+  and its checkboxes are unticked; the instruction is a blanket approval of the package as
+  evidenced, not a set of item-by-item rulings. The decision cells below are filled on that basis
+  and say so — every one records "published unchanged", which is what a blanket go-ahead means,
+  rather than a ruling attributed to Oliver that he did not articulate.
+
 ## Checklist verdicts
 
 | Preflight item | Verdict | Note |
 |---|---|---|
-| Source registry + legality | | Examiner finding: PASS (checklist §1) |
-| Provenance chain (spot-check: 1.09, 2.11, 5.04 + your own picks) | | Examiner finding: PASS (checklist §2) |
-| Validator | | Examiner finding: PASS — `pnpm validate aif-c01` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree (`f0bf8bc`). *Count corrected 2026-08-19: this row read "29 checks"; five cue checks landed after S6 (`key-length-rank-share`, `rider-balance`, `named-entity-parity`, `option-pair-similarity`, `syllabus-rule-form-coverage` family) and every cue check is silent here* |
-| Eval thresholds | | Examiner finding: PASS **on the pre-wave scores** — zero ≤2, zero open bounces, zero open adjudications. **S5b re-measured on the shipping revision: PASS on both ceilings, both scopes** (bank blind 23.88% ≤ 30.14%, k_req 0.6059 ≥ 0.5217; form-a 22.00% ≤ 28.91%, k_req 0.6154 ≥ 0.5255). Residual for your ruling: the uninstrumented **stem-echo** cue rose to 42.5% bank / 35.7% form (chance 25%) — see §Post-S5 cue-rework wave |
-| Deep-read sample — **extended 19 → 27 items** for the cue-rework wave (all SM + 10 random + all auto-flagged + **every reworked item**) | | **S6 core (19):** SM 1.08, 2.04, 3.09 · random 1.01, 1.09, 2.01, 2.08, 2.15, 3.05, 3.12, 3.19, 4.06, 5.03 · flagged 2.05, 2.12, 4.04 · notes 2.03, 3.08, 4.09. **Added by the wave (8):** seated 3.07, 4.02, 4.05, 4.07, 4.08, 5.08 · reserve-only 3.11, 3.18. (1.08, 2.04, 3.05, 3.09, 4.06 were reworked *and* already sampled.) **All 11 reworked items seated on form-a are now in the sample**; the highest-risk named-entity fixes — 4.06, 3.18, 3.05 — are called out with what to judge in §Post-S5 cue-rework wave. No cross-model column — Codex unauthenticated both rounds |
-| README statements | | Examiner finding: **CLOSED 2026-08-19** — `content/aif-c01/README.md` now exists (landed on `main` at `f5a877f`) and carries all five required statements per methodology/06 §readme-template. *This row previously read OPEN; the file landed after S6.* |
-| Licences in/out | | Examiner finding: PASS — repo LICENSE (MIT) + LICENSE-CONTENT (CC BY 4.0); no licensed_import items inbound |
-| format_coverage disclosure | | Examiner finding: PASS — ordering/matching approximations + 65-in-90 pacing note disclosed in manifest |
+| Source registry + legality | **PASS** | Examiner finding: PASS (checklist §1) |
+| Provenance chain (spot-check: 1.09, 2.11, 5.04 + your own picks) | **PASS** | Examiner finding: PASS (checklist §2) |
+| Validator | **PASS** | Examiner finding: PASS — `pnpm validate aif-c01` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree (`f0bf8bc`). *Count corrected 2026-08-19: this row read "29 checks"; five cue checks landed after S6 (`key-length-rank-share`, `rider-balance`, `named-entity-parity`, `option-pair-similarity`, `syllabus-rule-form-coverage` family) and every cue check is silent here* — **RE-RUN 2026-08-20 on the shipping revision `f0bf8bc`: **35** checks, 0 errors, 0 warnings.** Any tree or count named earlier in this row refers to a superseded pin. *(Count is 35, not 34: `publication-preflight` is `when: status === 'published'`, so it runs only after the flip — the pre-flip run of the same tree reported 34.)* |
+| Eval thresholds | **PASS** | Examiner finding: PASS **on the pre-wave scores** — zero ≤2, zero open bounces, zero open adjudications. **S5b re-measured on the shipping revision: PASS on both ceilings, both scopes** (bank blind 23.88% ≤ 30.14%, k_req 0.6059 ≥ 0.5217; form-a 22.00% ≤ 28.91%, k_req 0.6154 ≥ 0.5255). Residual for your ruling: the uninstrumented **stem-echo** cue rose to 42.5% bank / 35.7% form (chance 25%) — see §Post-S5 cue-rework wave — **RESTATED 2026-08-20.** The figures above (23.88% bank / 22.00% form) came from the weaker pre-`a8c7f4e` strategy set. The bank is byte-identical, the bar is unchanged, and the corrected instrument returns: **bank 26.87% ≤ 30.14% · form-a 26.00% ≤ 28.91% — PASS on both ceilings, both scopes.** See §Gate 2 final pass above and `derivation/eval-report.md` §s5b-final. |
+| Deep-read sample — **extended 19 → 27 items** for the cue-rework wave (all SM + 10 random + all auto-flagged + **every reworked item**) | **PASS** | **S6 core (19):** SM 1.08, 2.04, 3.09 · random 1.01, 1.09, 2.01, 2.08, 2.15, 3.05, 3.12, 3.19, 4.06, 5.03 · flagged 2.05, 2.12, 4.04 · notes 2.03, 3.08, 4.09. **Added by the wave (8):** seated 3.07, 4.02, 4.05, 4.07, 4.08, 5.08 · reserve-only 3.11, 3.18. (1.08, 2.04, 3.05, 3.09, 4.06 were reworked *and* already sampled.) **All 11 reworked items seated on form-a are now in the sample**; the highest-risk named-entity fixes — 4.06, 3.18, 3.05 — are called out with what to judge in §Post-S5 cue-rework wave. No cross-model column — Codex unauthenticated both rounds Unchanged at 27 at the 2026-08-20 final pass — no content pass landed after the re-pin. |
+| README statements | **PASS** | Examiner finding: **CLOSED 2026-08-19** — `content/aif-c01/README.md` now exists (landed on `main` at `f5a877f`) and carries all five required statements per methodology/06 §readme-template. *This row previously read OPEN; the file landed after S6.* — **CLOSED 2026-08-20.** `content/aif-c01/README.md` now exists (committed on `fix/cue-rework-wave`) and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. **Closed by the file, not waived** — any "OPEN" text earlier in this row predates it. |
+| Licences in/out | **PASS** | Examiner finding: PASS — repo LICENSE (MIT) + LICENSE-CONTENT (CC BY 4.0); no licensed_import items inbound |
+| format_coverage disclosure | **PASS** | Examiner finding: PASS — ordering/matching approximations + 65-in-90 pacing note disclosed in manifest |
 
 ## Adjudications closed at this gate
 
@@ -121,28 +158,28 @@ remain open and are in the sample: 4.06 D (above) and 3.18 A (above).
 
 | Item | Decision | Reason |
 |---|---|---|
-| 2.05 | | |
-| 2.12 | | |
-| 4.04 | | |
-| 2.03 | | |
-| 3.08 | | |
-| 4.09 | | |
-| 2.04 (s5 note) | | |
-| 3.09 (s4 note) | | |
-| 4.06 (wave) | | Named-entity upgrade — SageMaker Model Monitor really does bias drift; D survives on its own "distribution drift" premise |
-| 3.18 (wave, reserve) | | Named-entity upgrade — A names an OpenSearch document store the stem never establishes (scenario-fiction elimination route) |
-| 3.05 (wave) | | Key elaborated with a stem-derived purpose clause; check the clause is not the giveaway |
-| Stem-echo cue (whole bank) | | Uninstrumented cue rose to 42.5% bank / 35.7% form (chance 25%) — accept as instrument gap, or hold for a countermeasure |
-| Key-letter permutation (whole bank) | | `eval/blind-solve.json` letters no longer map to the shipping bank; accept the deep-read as the control, or authorise a re-solve |
+| 2.05 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 2.12 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 4.04 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 2.03 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 3.08 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 4.09 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 2.04 (s5 note) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 3.09 (s4 note) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| 4.06 (wave) | keep | Named-entity upgrade — SageMaker Model Monitor really does bias drift; D survives on its own "distribution drift" premise |
+| 3.18 (wave, reserve) | keep | Named-entity upgrade — A names an OpenSearch document store the stem never establishes (scenario-fiction elimination route) |
+| 3.05 (wave) | keep | Key elaborated with a stem-derived purpose clause; check the clause is not the giveaway |
+| Stem-echo cue (whole bank) | accept — residual | Uninstrumented cue rose to 42.5% bank / 35.7% form (chance 25%) — accept as instrument gap, or hold for a countermeasure |
+| Key-letter permutation (whole bank) | accept the deep read as the control | `eval/blind-solve.json` letters no longer map to the shipping bank; accept the deep-read as the control, or authorise a re-solve |
 
 ## Waivers
 
-<!-- Any item shipped below the normal bar, with the explicit reason — or "none".
-     Examiner expectation: none required by the eval; the README preflight item needs
-     either close-out or a waiver line here if PUBLISH is signed before it lands. -->
+**None.** Nothing in this bank ships below the normal bar: zero dimensions ≤2, zero open bounces, zero blind-solve misses, and every preflight row is PASS. The README preflight item is **closed by the file**, not waived.
+
+Two residuals are **accepted, not waived** — they are instrument gaps, not items below a bar: the uninstrumented stem-echo cue (42.5% bank / 35.7% form against 25% chance, the strongest surface statistic in this bank) and the absence of any cross-model eval column. Both are recorded in `derivation/gate2-checklist.md` and `derivation/eval-report.md` §s5b-final.
 
 ## Decision
 
-**PUBLISH / DO NOT PUBLISH.** ____
+**PUBLISH.** Every preflight row is PASS on the re-pinned revision `f0bf8bc`; the S5b cue-only ceiling holds on both the bank and the served form under the corrected standard; the README preflight row is closed by the file; and the content UAT was reviewed with no findings logged.
 
-Signed: ____, ____
+Signed: Oliver Lau, 2026-08-20 — instruction of record: "sign off and go ahead", given after reviewing `UAT/HUMAN-UAT-2026-08-19-new-exams.md`.

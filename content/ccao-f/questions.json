@@ -1437,9 +1437,9 @@
       "question": "A coordinator at a hospice volunteer program wants to point Claude at the program's biggest time sink, which the coordinator is sure is the scheduling email back-and-forth. Nothing about the workflow has been measured. What should happen before any step is delegated?",
       "options": {
         "A": "Instrument the workflow to find where the time actually goes, then aim Claude at the friction that shows up",
-        "B": "Proceed on the coordinator's recollection, which comes from living inside the workflow daily",
+        "B": "Proceed on the coordinator's recollection of the scheduling back-and-forth, which comes from living inside the workflow daily",
         "C": "Automate the whole volunteer workflow at once so every possible time sink is covered",
-        "D": "Delegate the scheduling emails now and watch the quarterly volunteer survey for improvement"
+        "D": "Delegate the scheduling emails now and watch the quarterly volunteer survey afterwards for any sign of improvement"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -1539,7 +1539,7 @@
       "question": "An operations manager at a landscaping services franchise is bringing Claude into the quoting workflow: site notes are summarized, materials are itemized, prices are calculated against the rate card, and a franchise owner approves each quote before it is sent. A consultant proposes automating the workflow end to end, approval included. What is the most appropriate design?",
       "options": {
         "A": "Choose the steps Claude performs and keep the owner's approval checkpoint in place",
-        "B": "Automate every step including the approval so quotes leave the system untouched",
+        "B": "Automate every step including the approval, so quotes leave the system without anyone looking",
         "C": "Automate whichever steps will make the demonstration most impressive at the franchise convention",
         "D": "Keep Claude out of the quoting workflow entirely so the question of automation never arises"
       },
@@ -1646,9 +1646,9 @@
       "type": "single_choice",
       "question": "A team lead at a paralegal support bureau is designing Claude's role in court-filing preparation, a process with fixed steps in a fixed order and a fixed validation checklist at each step. A colleague proposes granting the tool open-ended autonomy to find the best approach for each filing, pointing to an impressive pilot demonstration. Which design is the most appropriate?",
       "options": {
-        "A": "Grant broad autonomy and add more tools so the approach can adapt filing by filing",
-        "B": "Grant autonomy as the modern default, since agent-style designs are where the field is heading",
-        "C": "Mirror the fixed steps and validation in an explicit, structured workflow, granting autonomy nowhere it is not needed",
+        "A": "Grant broad autonomy and add more tools, letting the approach adapt from one filing to the next as the docket moves",
+        "B": "Grant autonomy as the modern default, since agent-style designs are clearly the direction the field is heading",
+        "C": "Mirror the fixed steps and validation in an explicit, structured workflow, with autonomy only where needed",
         "D": "Adopt the autonomous design on the strength of the pilot demonstration the colleague showed"
       },
       "answer": "C",
@@ -1681,7 +1681,7 @@
       "question": "A communications officer at a port authority needs Claude to draft notices to mariners from incident reports. The stated requirement: drafts that follow the notice template, reviewed by the duty officer before publication. An enthusiastic teammate sketches a pipeline that generates several candidate drafts in parallel, scores them against a rubric, and auto-selects a winner. Which design should the officer choose?",
       "options": {
         "A": "A single drafting step against the template, followed by the duty officer's review",
-        "B": "The parallel-drafts pipeline with rubric scoring and automatic selection",
+        "B": "The parallel-drafts pipeline with rubric scoring and automatic selection of the winning notice",
         "C": "The pipeline, as its sophistication will demonstrate the program's rigor to leadership",
         "D": "A middle path that generates five drafts per notice for the duty officer to choose among"
       },
@@ -1755,7 +1755,7 @@
       "options": {
         "A": "Build the integration personally, using shared administrator credentials the client once provided",
         "B": "Deliver the Projects and prompt work, and escalate the API integration to a Claude Developer",
-        "C": "Escalate the entire request, including the Projects and prompt work already in hand",
+        "C": "Escalate the entire request, including the Projects and prompt work the lead has already delivered",
         "D": "Deliver the Projects and prompt work, and let the integration half of the request quietly lapse"
       },
       "answer": "B",

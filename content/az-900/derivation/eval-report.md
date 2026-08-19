@@ -208,3 +208,52 @@ ceiling. This is an instrument gap, not an item defect and not a validator failu
 committed strategy bounds interior ranks. The ask for Oliver is a methodology decision — add a
 rank-*distribution* statistic (all four ranks vs uniform) to `exploit-scan`, and rule on whether
 az-900 ships in the meantime. Nothing here bounces an item.
+
+---
+
+## S5b · re-measured at the Gate 2 final pass (2026-08-20) {#s5b-final}
+
+Instrument: `node tools/exploit-scan.mjs az-900 --json` for form-a scope, and the same tool run against a selection-free copy of the package for bank scope (the tool scopes to the served form whenever a `selection.json` form exists, so bank scope has to be produced deliberately). Bank revision under measurement: `questions.json` @ **`d8632ef`** (blob `7ff8e81027`, sha256 `9bab1e6c6890e2a4…`).
+
+**These numbers supersede the S5b table above.**
+
+### What was corrected in the standard, and what that does to this exam
+
+Two corrections landed on the instrument between the 2026-08-19 re-pin and this pass. Both are
+changes to **how the number is produced and judged**, and they are recorded here rather than
+silently folded into the table, so the audit trail shows the standard was corrected — not that
+the number moved on its own.
+
+1. **`tools/exploit-scan.mjs` was reporting `ok` against the pass-mark floor, not the publication
+   ceiling** (`cda74c8`). The tool's exit status only ever asked "can a zero-knowledge attacker
+   reach the pass mark?" — the [1.35 × random / 0.85 × k_req@random ceiling](../../../methodology/05-eval-rubric.md#cue-only-solve) was computed by hand at S5b and never by
+   the machine. It now computes `random`, `blindCeiling`, `kReq`, `kReqFloor` and `ceilingOk`
+   itself and exits non-zero on a breach.
+2. **The committed strategy set now tests every option length rank, not just the extremes**
+   (`a8c7f4e`). The previous set scored "pick the longest" and "pick the shortest"; the standard
+   parity fix — lift one thin distractor above a rank-1 key — parks keys on rank 2, which reads
+   clean on an argmax check and hands the attacker the same free win one rank in. Every package's
+   S5b section already carried that gap as an explicit *"Residual: the instrument does not test
+   interior length ranks"* table. **That residual is no longer a residual: it is the measured
+   number.** This is why the blind figures below are higher than the ones the 2026-08-19 sheets
+   recorded even where the bank did not change.
+
+The **bar itself is unchanged.** The hand-computed ceilings in the earlier sheets were already
+against the correct 1.35×/0.85× standard, with the strict format-mix `random` rather than the
+rubric's 25% worked-example simplification. What changed is that the machine now enforces it and
+the attacker is stronger.
+
+### The re-stated verdict
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 65 | **24.62%** (16/65) | ≤ 30.69% (random 22.73%) | **0.600** | ≥ 0.520 | **PASS** |
+| form-a | 50 | **24.00%** (12/50) | ≤ 29.77% (random 22.05%) | **0.605** | ≥ 0.523 | **PASS** |
+
+**The previously pinned revision `9c1adb4`, re-measured with the corrected instrument, does not clear the ceiling:** bank 41.54% (FAIL, k_req 0.483) · form-a 46.00% (FAIL, k_req 0.444). That is the honest statement of why this exam needed another content pass, and it is stated here rather than left implicit — the earlier sheet's PASS was produced by an instrument that could not see interior length ranks.
+
+### Residuals carried to Gate 2
+
+- **rank-2 pile-up: CLOSED.** The 2026-08-19 sheet recorded a rank-aware residual of 45.6% bank / 52.4% form (key length-rank distribution `{1:14, 2:26, 3:4, 4:13}`) and flagged it as the widest of the six. This pass is what closed it: the best single-rank strategy is now 15/57 (26.3%) bank / 11/42 (26.2%) form, and interior ranks are inside the instrument.
+- **stem-echo**, uninstrumented: re-checked on the shipping revision with an equivalent content-word-overlap measure at 31.4% bank / 32.1% form against 25% chance — same order as before, no new breach. The exact tokenization used for the 2026-08-19 figure is not committed anywhere, which is itself the instrument gap.
+- **No cross-model eval column exists for this bank**, in any round. The Codex CLI on this machine is bundled inside the VS Code extension and is not logged in, so the advisory cross-solve was `advisory_skipped` throughout. Author and examiner share a model family, so no blind-solve score — however clean — excludes a convergent blind spot. The deep-read sample is the compensating control, and this is a standing gap, not a finding against the bank.

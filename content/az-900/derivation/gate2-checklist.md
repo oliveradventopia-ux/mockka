@@ -172,9 +172,60 @@ latent-defect escalation raised in `content/aif-c01/derivation/gate2-checklist.m
 open (ccar-p remains `in_review` with 7 `key-position-distribution` + 55 `answer-length-cue`
 warn findings on an unaudited legacy bank).
 
-## What Oliver signs
+## What Oliver signs — **SUPERSEDED 2026-08-20**
+
+> He signed it. `derivation/signoff.md` now records PASS on every preflight row,
+> the adjudication decisions, the waiver block and a **PUBLISH** decision dated
+> 2026-08-20. Preflight item 5 (README) is closed by the file, not waived. The
+> paragraph below is the pre-signature statement, kept for the record.
 
 `derivation/signoff.md` is pre-filled with the revision hashes, the checklist findings and
 this sample list; **verdict columns, the adjudication decisions, waivers and the
 PUBLISH / DO-NOT-PUBLISH decision are blank and his.** Preflight item 5 (README) must close
 before the `published` flip.
+
+---
+
+## Gate 2 final pass — 2026-08-20 (re-pin · corrected S5b standard · README closed · sign-off)
+
+**Re-pinned to the shipping revision.** `content/az-900/questions.json` @ **`d8632ef`** — blob `7ff8e81027`, sha256 `9bab1e6c6890e2a4…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated.
+
+### Content pass landed after the 2026-08-19 re-pin
+
+- `85a4506 argue az-900 d1/d2 distractors into the key's length band`
+- `d8632ef argue az-900 d3 distractors into the key's length band`
+
+**26 distractor option strings on 11 items, every one seated on form-a.** The path diff returns exactly one shape — `options.<letter>` — so stems, keys, `answer` fields, `rationale.correct`, the `rationale.distractors` multiset and the `distractor_patterns` multiset are byte-identical bank-wide, and the item-id set is 65 in / 65 out. No key text changed and no key letter moved.
+
+**Items touched:** 1.04, 1.15, 2.01, 2.06, 2.16, 2.23, 3.03, 3.09, 3.16, 3.19, 3.22 (all seated).
+
+Every rewritten option was re-read against the rationale that refutes it. Where a rationale was left unchanged, the distractor's proposition was unchanged too — the edits move length, not meaning — so each refutation still lands on the string it now faces. No distractor was argued into co-correctness; dimensions 1 and 2 stand for the touched items.
+
+### Preflight rows restated on this revision
+
+| # | Check | Verdict | Evidence at 2026-08-20 |
+|---|---|---|---|
+| 3 | Validator green | **PASS** | `pnpm validate az-900` → **35 checks, 0 errors, 5 warnings** on `d8632ef` — the exactly-five intended `concept-convergence` WARNs on C-001, C-012, C-057, C-058, C-061, ratified at Gate 1 (two Microsoft artefacts count as one author). Any different WARN set would be a defect *(at `published`. The same tree reports 34 at `in_review`: `publication-preflight` is `when: status === 'published'` and runs only after the flip.)* |
+| 4 | Eval thresholds, incl. the S5b ceiling | **PASS** | Re-stated below and in `derivation/eval-report.md` §s5b-final. Both scopes clear the corrected ceiling. |
+| 5 | Per-exam README statements | **CLOSED — PASS** | `content/az-900/README.md` now exists and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). *This row read **OPEN — not written** in every previous version of this sheet; it is closed by the file, not waived.* No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. |
+
+### S5b re-stated against the corrected ceiling
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 65 | **24.62%** (16/65) | ≤ 30.69% (random 22.73%) | **0.600** | ≥ 0.520 | **PASS** |
+| form-a | 50 | **24.00%** (12/50) | ≤ 29.77% (random 22.05%) | **0.605** | ≥ 0.523 | **PASS** |
+
+**The previously pinned revision `9c1adb4`, re-measured with the corrected instrument, does not clear the ceiling:** bank 41.54% (FAIL, k_req 0.483) · form-a 46.00% (FAIL, k_req 0.444). That is the honest statement of why this exam needed another content pass, and it is stated here rather than left implicit — the earlier sheet's PASS was produced by an instrument that could not see interior length ranks.
+
+The two corrections to the instrument — the ceiling now computed by the machine rather than by hand against a pass-mark `ok`, and interior length ranks now inside the committed strategy set — are written out in full in `derivation/eval-report.md` §s5b-final. The **bar is unchanged**; the machine now enforces it and the attacker is stronger.
+
+### Deep-read sample
+
+**Extended 40 → 43 items.** Added by the 2026-08-19 pass: 2.06, 2.16, 3.09. Every item that pass touched is now in the sample; the remainder were already in it.
+
+### Residuals a reader should see
+
+- **rank-2 pile-up: CLOSED.** The 2026-08-19 sheet recorded a rank-aware residual of 45.6% bank / 52.4% form (key length-rank distribution `{1:14, 2:26, 3:4, 4:13}`) and flagged it as the widest of the six. This pass is what closed it: the best single-rank strategy is now 15/57 (26.3%) bank / 11/42 (26.2%) form, and interior ranks are inside the instrument.
+- **stem-echo**, uninstrumented: re-checked on the shipping revision with an equivalent content-word-overlap measure at 31.4% bank / 32.1% form against 25% chance — same order as before, no new breach. The exact tokenization used for the 2026-08-19 figure is not committed anywhere, which is itself the instrument gap.
+- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.

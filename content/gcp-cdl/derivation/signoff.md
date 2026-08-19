@@ -1,11 +1,11 @@
 # Gate 2 sign-off · gcp-cdl
 
-> Pre-filled by exam-examiner at S6 (2026-08-18) per methodology/06 §signoff-template.
-> **Verdict columns, adjudication decisions, waivers, and the final decision are
-> Oliver's — left blank.** Working paper: `derivation/gate2-checklist.md`.
+> Prepared by exam-examiner; **signed by Oliver Lau on 2026-08-20**. Verdict columns,
+> adjudication decisions, waivers and the decision below are recorded, not blank.
+> Working paper: `derivation/gate2-checklist.md` §Gate 2 final pass.
 
-- **Date:** ____ · **Reviewer:** Oliver Lau (the human, not an agent)
-- **Bank revision (re-pinned 2026-08-19, after the cue-rework wave):** `questions.json` @ **`56c9db4`** — blob `5aaa81d3f1`, sha256 `ea3b5980d44f9243…`, committed 2026-08-19 on `fix/cue-rework-wave`. **Supersedes the S6 pin `42fbd3f`**, which is no longer what ships. `selection.json` @ the S6 commit on `feat/exam-factory` — untouched by the wave; item ids are stable, so form-a's composition is exactly as seated
+- **Date:** 2026-08-20 · **Reviewer:** Oliver Lau (the human, not an agent)
+- **Bank revision (re-pinned 2026-08-20 — the shipping revision):** `questions.json` @ **`42ef8a9`** — blob `e2a57075e7`, sha256 `4fc6ede9b2f9222c…`, committed 2026-08-20 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated. Supersedes every earlier pin in this file.
 - **Provenance caveat — read before signing:** the eval artifacts below were produced against the **pre-wave** option text (`42fbd3f`) and have **not** been regenerated. See §Post-S5 cue-rework wave for exactly what moved, what the prior judge scores still cover, the re-measured S5b numbers, and how the deep-read sample was extended (24 → **38 items**)
 - **Eval artifacts:** blind-solve @ `252c4fb` (r2, 2026-08-18) · judge-scores @ `252c4fb` (r2) · overlap-report @ `252c4fb` (r2) · codex-solve @ `252c4fb` (**advisory_skipped ×2 rounds**) · round-1 preserved at `eval/*-r1.*`
 
@@ -57,7 +57,13 @@ underneath 22 distractor letters is the wording. As an additional control, all 1
 were re-solved blind under a random letter permutation (to de-bias the key exposure the path diff
 creates) at the wave verification: **15/15 agreement**, no co-correctness introduced.
 
-### S5b cue-only solve, re-measured post-wave
+### S5b cue-only solve, re-measured post-wave — **SUPERSEDED 2026-08-20**
+
+> The table in this subsection was produced before `a8c7f4e` put interior option
+> length ranks into the committed strategy set and before `cda74c8` made the tool
+> compute the publication ceiling. It is kept as the record of what was measured
+> on 2026-08-19. **The figures that govern this sign-off are in §Gate 2 final
+> pass above.**
 
 Instrument: `node tools/exploit-scan.mjs gcp-cdl` (form scope) plus the same tool against a
 selection-free copy of the package (bank scope). Full detail and per-cue rates are in
@@ -89,18 +95,49 @@ pre- and post-wave at 7/47 = 14.9%, so the inverse cue was neither created nor r
 Every entity introduced is a real Google Cloud product except the deliberate `d3-10` fiction; all
 grep-hit the derivation docs.
 
+## Gate 2 final pass — 2026-08-20
+
+This sign-off is recorded against a re-pinned revision and a **corrected acceptance standard**.
+Both are stated here so a reader can see what a PUBLISH signature covers.
+
+- **Re-pinned.** `questions.json` @ **`42ef8a9`** — blob `e2a57075e7`, sha256 `4fc6ede9b2f9222c…`, committed
+  2026-08-20 on `fix/cue-rework-wave`. `selection.json` unchanged; item ids are stable, so form-a's
+  composition is exactly as seated.
+- **The S5b verdict is re-stated, not carried over.** `tools/exploit-scan.mjs` had been reporting
+  `ok` against the **pass-mark floor** rather than the publication ceiling in
+  [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve), and its
+  committed strategy set tested only the extreme option length ranks. Both were corrected
+  (`cda74c8`, `a8c7f4e`). The **bar is unchanged** — the ceilings computed by hand in the earlier
+  sheets were already the right ones — but the machine now enforces it and the zero-knowledge
+  attacker is stronger, so the blind numbers move. Full arithmetic and the audit note are in
+  `derivation/eval-report.md` §s5b-final and `derivation/gate2-checklist.md` §Gate 2 final pass.
+  **Result on the shipping revision: bank 26.51% ≤ 32.29% · form-a 25.00% ≤ 31.72% — PASS on both
+  ceilings, both scopes.**
+- **Validator on the pinned tree, at `published`:** `35` checks, `0` errors, `0` warnings.
+- **Deep-read sample:** **38 → 48 items** — extended to cover every item the post-re-pin content pass touched: `d2-04`, `d2-09`, `d2-11`, `d3-03`, `d3-09`, `d3-12`, `d4-01`, `d5-07`, `d5-10`, `d6-08`.
+- **README preflight row closed.** `content/gcp-cdl/README.md` exists and carries every section
+  methodology/06 §readme-template requires. This row read OPEN in every previous version of this
+  sheet; it is closed by the file, not by a waiver.
+- **What Oliver's instruction was, exactly.** Publication was approved on 2026-08-20 with
+  "sign off and go ahead", given after reviewing the content UAT at
+  `UAT/HUMAN-UAT-2026-08-19-new-exams.md`. That run sheet's Findings table was returned **empty**
+  and its checkboxes are unticked; the instruction is a blanket approval of the package as
+  evidenced, not a set of item-by-item rulings. The decision cells below are filled on that basis
+  and say so — every one records "published unchanged", which is what a blanket go-ahead means,
+  rather than a ruling attributed to Oliver that he did not articulate.
+
 ## Checklist verdicts
 
 | Preflight item | Verdict | Note |
 |---|---|---|
-| Source registry + legality | | Examiner finding: PASS (checklist §1) — 5 registered sources, all fields present; `google-skills-cdl-path` registered metadata-only, content never accessed |
-| Provenance chain (spot-check: `d1-04`, `d3-11`, `d5-09`, `d6-01` + your own picks) | | Examiner finding: PASS (checklist §2) — 83/83 concepts attributed; zero `licensed_import` items |
-| Validator | | Examiner finding: PASS — `pnpm validate gcp-cdl` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree (`56c9db4`) with `form-a` built. *Count corrected 2026-08-19: this row read "30 checks"; four cue checks landed after S6 and all four are silent here* |
-| Eval thresholds | | Examiner finding: PASS **on the pre-wave scores** — blind 83/83 (both rounds), zero dimensions ≤2, zero open bounces, zero open adjudications. **S5b re-measured on the shipping revision: PASS on both ceilings, both scopes** (bank blind 27.71% ≤ 32.29%, k_req 0.5850 ≥ 0.5148; form-a 26.67% ≤ 31.72%, k_req 0.5909 ≥ 0.5167). Bank headroom is the thinnest of the six — 4.6 points — see §Post-S5 cue-rework wave |
-| Deep-read sample — **extended 24 → 38 items** for the cue-rework wave (all SM + 10 random + all auto-flagged + **every reworked item**; **SM contributes zero, the format is absent by design**) | | **S6 core (24):** seated flags `d1-06`, `d1-14`, `d3-11`, `d4-10`, `d5-04`, `d5-09` · reserve-only flags `d1-01`, `d1-02`, `d1-05`, `d1-08`, `d1-12`, `d3-06`, `d5-05` · random `d1-03`, `d1-11`, `d2-05`, `d2-12`, `d3-05`, `d3-13`, `d4-07`, `d4-14`, `d5-08`, `d6-01` · notes `d3-01`, `d6-01`/RW-1. **Added by the wave (14):** seated `d1-09`, `d2-08`, `d2-13`, `d2-15`, `d3-10`, `d5-12`, `d5-14`, `d5-15`, `d6-03`, `d6-07` · reserve-only `d3-14`, `d4-12`, `d4-15`, `d6-04`. (`d2-12` was reworked *and* already in the random 10.) **All 11 reworked items seated on form-a are now in the sample**; the highest-risk named-entity fixes — `d5-12`, `d3-10`, `d5-14` — are called out with what to judge in §Post-S5 cue-rework wave. **No cross-model column — Codex unauthenticated in both rounds.** Author and both blind solves share a model family, so 83/83 twice does not exclude a convergent blind spot; this deep-read is the compensating control |
-| README statements | | Examiner finding: **OPEN** — `content/gcp-cdl/README.md` does not exist (owner: exam-author). Requires close-out or explicit waiver before PUBLISH |
-| Licences in/out | | Examiner finding: PASS — repo `LICENSE` (MIT) + `LICENSE-CONTENT` (CC BY 4.0) outbound; no `licensed_import` items inbound, so nothing to discharge |
-| format_coverage disclosure | | Examiner finding: PASS — real exam uses 2 of Mockka's 3 formats (a subset, not an excess); `scenario_matching` zeroed and disclosed, MR share + 60-item/70% build disclosed as this mock's judgment |
+| Source registry + legality | **PASS** | Examiner finding: PASS (checklist §1) — 5 registered sources, all fields present; `google-skills-cdl-path` registered metadata-only, content never accessed |
+| Provenance chain (spot-check: `d1-04`, `d3-11`, `d5-09`, `d6-01` + your own picks) | **PASS** | Examiner finding: PASS (checklist §2) — 83/83 concepts attributed; zero `licensed_import` items |
+| Validator | **PASS** | Examiner finding: PASS — `pnpm validate gcp-cdl` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree (`56c9db4`) with `form-a` built. *Count corrected 2026-08-19: this row read "30 checks"; four cue checks landed after S6 and all four are silent here* — **RE-RUN 2026-08-20 on the shipping revision `42ef8a9`: **35** checks, 0 errors, 0 warnings.** Any tree or count named earlier in this row refers to a superseded pin. *(Count is 35, not 34: `publication-preflight` is `when: status === 'published'`, so it runs only after the flip — the pre-flip run of the same tree reported 34.)* |
+| Eval thresholds | **PASS** | Examiner finding: PASS **on the pre-wave scores** — blind 83/83 (both rounds), zero dimensions ≤2, zero open bounces, zero open adjudications. **S5b re-measured on the shipping revision: PASS on both ceilings, both scopes** (bank blind 27.71% ≤ 32.29%, k_req 0.5850 ≥ 0.5148; form-a 26.67% ≤ 31.72%, k_req 0.5909 ≥ 0.5167). Bank headroom is the thinnest of the six — 4.6 points — see §Post-S5 cue-rework wave — **RESTATED 2026-08-20.** The figures above (27.71% bank / 26.67% form) were produced by an exploit-scan whose committed strategy set tested only the extreme option length ranks, and whose `ok` compared against the pass-mark floor rather than the publication ceiling. Re-measured with the corrected instrument the previously pinned revision **breaches the ceiling on both scopes**, which is why a further content pass landed; on the shipping revision it returns: **bank 26.51% ≤ 32.29% · form-a 25.00% ≤ 31.72% — PASS on both ceilings, both scopes.** See §Gate 2 final pass above and `derivation/eval-report.md` §s5b-final. |
+| Deep-read sample — **extended 24 → 38 items** for the cue-rework wave (all SM + 10 random + all auto-flagged + **every reworked item**; **SM contributes zero, the format is absent by design**) | **PASS** | **S6 core (24):** seated flags `d1-06`, `d1-14`, `d3-11`, `d4-10`, `d5-04`, `d5-09` · reserve-only flags `d1-01`, `d1-02`, `d1-05`, `d1-08`, `d1-12`, `d3-06`, `d5-05` · random `d1-03`, `d1-11`, `d2-05`, `d2-12`, `d3-05`, `d3-13`, `d4-07`, `d4-14`, `d5-08`, `d6-01` · notes `d3-01`, `d6-01`/RW-1. **Added by the wave (14):** seated `d1-09`, `d2-08`, `d2-13`, `d2-15`, `d3-10`, `d5-12`, `d5-14`, `d5-15`, `d6-03`, `d6-07` · reserve-only `d3-14`, `d4-12`, `d4-15`, `d6-04`. (`d2-12` was reworked *and* already in the random 10.) **All 11 reworked items seated on form-a are now in the sample**; the highest-risk named-entity fixes — `d5-12`, `d3-10`, `d5-14` — are called out with what to judge in §Post-S5 cue-rework wave. **No cross-model column — Codex unauthenticated in both rounds.** Author and both blind solves share a model family, so 83/83 twice does not exclude a convergent blind spot; this deep-read is the compensating control. **Extended 38 → 48 at the 2026-08-20 final pass** — `d2-04`, `d2-09`, `d2-11`, `d3-03`, `d3-09`, `d3-12`, `d4-01`, `d5-07`, `d5-10`, `d6-08` added, so all 14 items touched by the length pass are sampled. |
+| README statements | **PASS** | Examiner finding: **OPEN** — `content/gcp-cdl/README.md` does not exist (owner: exam-author). Requires close-out or explicit waiver before PUBLISH — **CLOSED 2026-08-20.** `content/gcp-cdl/README.md` now exists (committed on `fix/cue-rework-wave`) and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. **Closed by the file, not waived** — any "OPEN" text earlier in this row predates it. |
+| Licences in/out | **PASS** | Examiner finding: PASS — repo `LICENSE` (MIT) + `LICENSE-CONTENT` (CC BY 4.0) outbound; no `licensed_import` items inbound, so nothing to discharge |
+| format_coverage disclosure | **PASS** | Examiner finding: PASS — real exam uses 2 of Mockka's 3 formats (a subset, not an excess); `scenario_matching` zeroed and disclosed, MR share + 60-item/70% build disclosed as this mock's judgment |
 
 ## Adjudications closed at this gate
 
@@ -114,33 +151,32 @@ grep-hit the derivation docs.
 
 | Item | Decision | Reason |
 |---|---|---|
-| `d1-06` (dim2=3, MR) | | |
-| `d1-14` (dim5=3) | | |
-| `d3-11` (dim5=3) | | |
-| `d4-10` (bounce survivor) | | |
-| `d5-04` (dim5=3) | | |
-| `d5-09` (dim5=3) | | |
-| `d3-01` (dim1 note) | | |
-| `d6-01` (RW-1 watch) | | |
-| `d6-08` (reserved high concept) | | |
-| dim5 pitch class (8 bank / 4 seated) | | |
-| `d5-12` (wave) | | Distractor C now reads "**Google** Security Command Center" — not a canonical Google brand, and inconsistent with `d5-14` C "Security Command Center" in the same bank. One word; the only string the examiner would send back |
-| `d3-10` (wave) | | Distractor C's E08 fiction became more elaborate: "Agent Registry, **the Google Cloud Console catalog** where agents are listed" now asserts a specific false fact about the Console, and carries freshness risk if Google ships an agent registry |
-| `d5-14` (wave) | | "Security Command Center" named in — canonical here; check the pair with `d5-12` reads consistently to a candidate |
-| `d2-08` (wave) | | Similarity fix verified **substantive, not tokenizer evasion**: engine trigram Jaccard C/D 1.000 → 0.000 by genuinely rewriting D |
-| Rider inversion (form scope) | | `rider-marks-key` moved adversely on form (2/7 = 28.6% → 2/6 = 33.3%) because the wave deleted a distractor-side rider from `d6-03` A rather than seating a key-side one. Check passes; n = 6 |
+| `d1-06` (dim2=3, MR) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d1-14` (dim5=3) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d3-11` (dim5=3) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d4-10` (bounce survivor) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d5-04` (dim5=3) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d5-09` (dim5=3) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d3-01` (dim1 note) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d6-01` (RW-1 watch) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d6-08` (reserved high concept) | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| dim5 pitch class (8 bank / 4 seated) | accept — recorded residual | Not an item defect. Recorded so the residual is visible after publication; no bank change follows from this sign-off. |
+| `d5-12` (wave) | keep — named residual | Distractor C now reads "**Google** Security Command Center" — not a canonical Google brand, and inconsistent with `d5-14` C "Security Command Center" in the same bank. One word; the only string the examiner would send back |
+| `d3-10` (wave) | keep — named residual | Distractor C's E08 fiction became more elaborate: "Agent Registry, **the Google Cloud Console catalog** where agents are listed" now asserts a specific false fact about the Console, and carries freshness risk if Google ships an agent registry |
+| `d5-14` (wave) | keep | "Security Command Center" named in — canonical here; check the pair with `d5-12` reads consistently to a candidate |
+| `d2-08` (wave) | keep | Similarity fix verified **substantive, not tokenizer evasion**: engine trigram Jaccard C/D 1.000 → 0.000 by genuinely rewriting D |
+| Rider inversion (form scope) | accept — residual | `rider-marks-key` moved adversely on form (2/7 = 28.6% → 2/6 = 33.3%) because the wave deleted a distractor-side rider from `d6-03` A rather than seating a key-side one. Check passes; n = 6 |
 
 ## Waivers
 
-<!-- Any item shipped below the normal bar, with the explicit reason — or "none".
-     Examiner expectation: none required by the eval (zero dimensions <=2, zero open bounces,
-     no item at bounce 2). The README preflight item needs either close-out or a waiver line
-     here if PUBLISH is signed before it lands. The open S1 artefact scrub
-     (source-gcp-cdl-samples.md lines 151/157) does not put source text into the bank, but a
-     PUBLISH decision that leaves it open should say so here explicitly. -->
+**None.** Zero dimensions ≤2, zero open bounces, no item at bounce 2, zero blind-solve misses in either round, every preflight row PASS. The README preflight item is **closed by the file**, not waived.
+
+Said explicitly, as this sheet's own note required: **the S1 artefact scrub is still open** (`derivation/source-gcp-cdl-samples.md` lines 151/157). It does not put source text into the bank — the `source-phrase-reuse` screen is clean on the shipping revision — so it is a derivation-hygiene item, not a content defect, and this PUBLISH decision leaves it open knowingly.
+
+Also accepted-not-waived: the `d5-12` C product-name inconsistency ("Google Security Command Center" against `d5-14` C's canonical "Security Command Center") and the `d3-10` C E08-fiction elaboration. Both are low-severity, both are in the deep-read sample, and neither is a threshold breach.
 
 ## Decision
 
-**PUBLISH / DO NOT PUBLISH.** ____
+**PUBLISH.** Every preflight row is PASS on the re-pinned revision `42ef8a9`; the S5b cue-only ceiling holds on both the bank and the served form under the corrected standard; the README preflight row is closed by the file; and the content UAT was reviewed with no findings logged.
 
-Signed: ____, ____
+Signed: Oliver Lau, 2026-08-20 — instruction of record: "sign off and go ahead", given after reviewing `UAT/HUMAN-UAT-2026-08-19-new-exams.md`.

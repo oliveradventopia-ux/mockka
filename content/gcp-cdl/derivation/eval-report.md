@@ -484,3 +484,54 @@ rider from `d6-03` A rather than seating a key-side one; the check still passes 
 chance — the inverse cue was neither created nor removed. The bank's rank-aware blind (32.53%) sits
 marginally above its 32.29% ceiling while the tool's own strategy set reads 27.71%; see the
 interior-rank residual above.
+
+---
+
+## S5b · re-measured at the Gate 2 final pass (2026-08-20) {#s5b-final}
+
+Instrument: `node tools/exploit-scan.mjs gcp-cdl --json` for form-a scope, and the same tool run against a selection-free copy of the package for bank scope (the tool scopes to the served form whenever a `selection.json` form exists, so bank scope has to be produced deliberately). Bank revision under measurement: `questions.json` @ **`42ef8a9`** (blob `e2a57075e7`, sha256 `4fc6ede9b2f9222c…`).
+
+**These numbers supersede the S5b table above.**
+
+### What was corrected in the standard, and what that does to this exam
+
+Two corrections landed on the instrument between the 2026-08-19 re-pin and this pass. Both are
+changes to **how the number is produced and judged**, and they are recorded here rather than
+silently folded into the table, so the audit trail shows the standard was corrected — not that
+the number moved on its own.
+
+1. **`tools/exploit-scan.mjs` was reporting `ok` against the pass-mark floor, not the publication
+   ceiling** (`cda74c8`). The tool's exit status only ever asked "can a zero-knowledge attacker
+   reach the pass mark?" — the [1.35 × random / 0.85 × k_req@random ceiling](../../../methodology/05-eval-rubric.md#cue-only-solve) was computed by hand at S5b and never by
+   the machine. It now computes `random`, `blindCeiling`, `kReq`, `kReqFloor` and `ceilingOk`
+   itself and exits non-zero on a breach.
+2. **The committed strategy set now tests every option length rank, not just the extremes**
+   (`a8c7f4e`). The previous set scored "pick the longest" and "pick the shortest"; the standard
+   parity fix — lift one thin distractor above a rank-1 key — parks keys on rank 2, which reads
+   clean on an argmax check and hands the attacker the same free win one rank in. Every package's
+   S5b section already carried that gap as an explicit *"Residual: the instrument does not test
+   interior length ranks"* table. **That residual is no longer a residual: it is the measured
+   number.** This is why the blind figures below are higher than the ones the 2026-08-19 sheets
+   recorded even where the bank did not change.
+
+The **bar itself is unchanged.** The hand-computed ceilings in the earlier sheets were already
+against the correct 1.35×/0.85× standard, with the strict format-mix `random` rather than the
+rubric's 25% worked-example simplification. What changed is that the machine now enforces it and
+the attacker is stronger.
+
+### The re-stated verdict
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 83 | **26.51%** (22/83) | ≤ 32.29% (random 23.92%) | **0.589** | ≥ 0.515 | **PASS** |
+| form-a | 60 | **25.00%** (15/60) | ≤ 31.72% (random 23.50%) | **0.600** | ≥ 0.517 | **PASS** |
+
+**The previously pinned revision `56c9db4`, re-measured with the corrected instrument, does not clear the ceiling:** bank 32.53% (FAIL, k_req 0.552) · form-a 31.67% (FAIL, k_req 0.559). That is the honest statement of why this exam needed another content pass, and it is stated here rather than left implicit — the earlier sheet's PASS was produced by an instrument that could not see interior length ranks.
+
+### Residuals carried to Gate 2
+
+- **the thinnest headroom of the seven is now comfortable.** The 2026-08-19 sheet recorded a rank-aware residual of 32.53% bank against a 32.29% ceiling — a latent breach of 0.24 pt that this pass closed; the shipping bank measures 26.51%.
+- **stem-echo**, uninstrumented: 23.4% bank / 30.3% form against 25% chance — the only exam of the seven where the bank figure sits below chance.
+- the `d5-12` C product-name note ("Google Security Command Center" vs the canonical name) and the `d3-10` C E08-fiction note both stand as recorded — low-severity, non-gating, and both items are in the deep-read sample.
+- the **S1 artefact scrub** remains open — recorded as this exam's round-1 root cause, and a process item rather than a bank defect.
+- **No cross-model eval column exists for this bank**, in any round. The Codex CLI on this machine is bundled inside the VS Code extension and is not logged in, so the advisory cross-solve was `advisory_skipped` throughout. Author and examiner share a model family, so no blind-solve score — however clean — excludes a convergent blind spot. The deep-read sample is the compensating control, and this is a standing gap, not a finding against the bank.

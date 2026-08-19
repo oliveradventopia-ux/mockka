@@ -177,10 +177,62 @@ default* and are re-surfaced here only because Gate 2 is the amendment point):
     aif-c01's Gate 2 (`key-position-distribution` 7 + `answer-length-cue` 55 findings on a
     servable legacy `in_review` package) is still open and still wants a decision.
 
-## What Oliver signs
+## What Oliver signs — **SUPERSEDED 2026-08-20**
+
+> He signed it. `derivation/signoff.md` now records PASS on every preflight row,
+> the adjudication decisions, the waiver block and a **PUBLISH** decision dated
+> 2026-08-20. Preflight item 5 (README) is closed by the file, not waived. The
+> paragraph below is the pre-signature statement, kept for the record.
 
 `derivation/signoff.md` is pre-filled with the evidence hashes and this sample list; verdict
 columns and the PUBLISH / DO-NOT-PUBLISH decision are blank and his. The sign-off must record
 the absent cross-model signal explicitly (`eval/blind-solve.json` → `codex_matrix.effect` says
 so), and preflight item 5 must close — README landed or waiver written — before the
 `published` flip.
+
+---
+
+## Gate 2 final pass — 2026-08-20 (re-pin · corrected S5b standard · README closed · sign-off)
+
+**Re-pinned to the shipping revision.** `content/gcp-cdl/questions.json` @ **`42ef8a9`** — blob `e2a57075e7`, sha256 `4fc6ede9b2f9222c…`, committed 2026-08-20 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated.
+
+### Content pass landed after the 2026-08-19 re-pin
+
+- `42ef8a9 argue gcp-cdl distractors up out of the second-longest habit`
+
+**14 distractor option strings on 14 items**, ten seated and four reserve-only. Every edit is a same-proposition elaboration. Stems, keys, `answer` fields, `rationale.correct` and the `distractor_patterns` multiset are byte-identical (83 in / 83 out); one item (`d2-04`) had its distractor rationale rewritten to match.
+
+**Items touched:** `d1-03`, `d2-04`, `d2-09`, `d2-11`, `d3-03`, `d3-09`, `d3-13`, `d4-01`, `d5-07`, `d5-12` (seated) · `d3-12`, `d4-12`, `d5-10`, `d6-08` (reserve).
+
+Every rewritten option was re-read against the rationale that refutes it. Where a rationale was left unchanged, the distractor's proposition was unchanged too — the edits move length, not meaning — so each refutation still lands on the string it now faces. No distractor was argued into co-correctness; dimensions 1 and 2 stand for the touched items.
+
+### Preflight rows restated on this revision
+
+| # | Check | Verdict | Evidence at 2026-08-20 |
+|---|---|---|---|
+| 3 | Validator green | **PASS** | `pnpm validate gcp-cdl` → **35 checks, 0 errors, 0 warnings** on `42ef8a9` — zero warnings *(at `published`. The same tree reports 34 at `in_review`: `publication-preflight` is `when: status === 'published'` and runs only after the flip.)* |
+| 4 | Eval thresholds, incl. the S5b ceiling | **PASS** | Re-stated below and in `derivation/eval-report.md` §s5b-final. Both scopes clear the corrected ceiling. |
+| 5 | Per-exam README statements | **CLOSED — PASS** | `content/gcp-cdl/README.md` now exists and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). *This row read **OPEN — not written** in every previous version of this sheet; it is closed by the file, not waived.* No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. |
+
+### S5b re-stated against the corrected ceiling
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 83 | **26.51%** (22/83) | ≤ 32.29% (random 23.92%) | **0.589** | ≥ 0.515 | **PASS** |
+| form-a | 60 | **25.00%** (15/60) | ≤ 31.72% (random 23.50%) | **0.600** | ≥ 0.517 | **PASS** |
+
+**The previously pinned revision `56c9db4`, re-measured with the corrected instrument, does not clear the ceiling:** bank 32.53% (FAIL, k_req 0.552) · form-a 31.67% (FAIL, k_req 0.559). That is the honest statement of why this exam needed another content pass, and it is stated here rather than left implicit — the earlier sheet's PASS was produced by an instrument that could not see interior length ranks.
+
+The two corrections to the instrument — the ceiling now computed by the machine rather than by hand against a pass-mark `ok`, and interior length ranks now inside the committed strategy set — are written out in full in `derivation/eval-report.md` §s5b-final. The **bar is unchanged**; the machine now enforces it and the attacker is stronger.
+
+### Deep-read sample
+
+**Extended 38 → 48 items.** Added by the 2026-08-20 pass: `d2-04`, `d2-09`, `d2-11`, `d3-03`, `d3-09`, `d3-12`, `d4-01`, `d5-07`, `d5-10`, `d6-08`. Every item that pass touched is now in the sample; the remainder were already in it.
+
+### Residuals a reader should see
+
+- **the thinnest headroom of the seven is now comfortable.** The 2026-08-19 sheet recorded a rank-aware residual of 32.53% bank against a 32.29% ceiling — a latent breach of 0.24 pt that this pass closed; the shipping bank measures 26.51%.
+- **stem-echo**, uninstrumented: 23.4% bank / 30.3% form against 25% chance — the only exam of the seven where the bank figure sits below chance.
+- the `d5-12` C product-name note ("Google Security Command Center" vs the canonical name) and the `d3-10` C E08-fiction note both stand as recorded — low-severity, non-gating, and both items are in the deep-read sample.
+- the **S1 artefact scrub** remains open — recorded as this exam's round-1 root cause, and a process item rather than a bank defect.
+- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.

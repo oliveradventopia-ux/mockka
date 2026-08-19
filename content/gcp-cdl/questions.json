@@ -691,7 +691,7 @@
       "type": "single_choice",
       "question": "A childcare centre network employs one analyst, and every manager's question about occupancy, staffing ratios or waiting lists becomes a ticket in that analyst's queue. Managers wait days for numbers they needed the same morning, and some have started keeping private spreadsheets. The operations director wants managers answering their own questions from the same governed figures. Which capability delivers that?",
       "options": {
-        "A": "A data warehouse consolidating every centre's records into one queryable store",
+        "A": "A BigQuery warehouse consolidating every centre's occupancy records into one queryable store",
         "B": "Looker, which democratizes access to data by putting governed analysis in managers' hands",
         "C": "An access review that grants each manager rights to query the underlying tables",
         "D": "A second analyst, so the queue is served at twice the current rate"
@@ -770,7 +770,7 @@
       "question": "A facilities management firm has fitted client buildings with meters that emit a reading every few seconds, and three teams, covering alarms, billing and an energy dashboard, each want every reading. The firm needs a layer that accepts readings as they arrive and delivers them to all consumers, without the meters having to know who is listening. Which product performs that job?",
       "options": {
         "A": "Dataflow, which processes each reading as it passes through the pipeline",
-        "B": "A frequent file export from the meter gateway that each team collects for itself",
+        "B": "A frequent file export from the meter gateway into Cloud Storage for each team to collect",
         "C": "Pub/Sub, which ingests the readings and distributes them to every subscriber",
         "D": "Direct connections from the meter gateway into each of the three teams' systems"
       },
@@ -1033,7 +1033,7 @@
       "options": {
         "A": "Gemini, the general-purpose model the three teams are already calling",
         "B": "Looker, so every team reports from one governed set of figures",
-        "C": "Agent Registry, the catalog where deployed agents are listed and approved",
+        "C": "Agent Registry, the Google Cloud Console catalog where deployed agents are listed and approved",
         "D": "The Gemini Enterprise Agent Platform, for building, deploying and governing agents"
       },
       "answer": "D",
@@ -1136,7 +1136,7 @@
       "question": "An orchard and packhouse cooperative is presenting the infrastructure section of its AI business case to its members, who are growers. They want to know what the cooperative is buying when the paper says AI infrastructure, and why it is not simply a bigger machine. Which description states what that layer is?",
       "options": {
         "A": "A private cloud region reserved for the cooperative's own AI workloads",
-        "B": "A managed warehouse keeping the cooperative's harvest data ready for training",
+        "B": "A BigQuery warehouse fed by Cloud Storage, keeping the harvest data ready for training",
         "C": "AI Hypercomputer, integrating GPUs and TPUs with leading software and open standards",
         "D": "A fixed annual allocation of accelerator hours bought before the season starts"
       },
@@ -1478,7 +1478,7 @@
         "A": "BigQuery Omni, which runs BigQuery analytics against data in other clouds",
         "B": "Cloud Interconnect, giving a private link between the two environments",
         "C": "A scheduled copy of the other cloud's data into BigQuery every night",
-        "D": "GKE Enterprise, which manages the utility's clusters across both providers"
+        "D": "GKE Enterprise, which manages Kubernetes clusters across both cloud providers"
       },
       "answer": "A",
       "distractor_patterns": { "B": "D06", "C": "D10", "D": "E01" },
@@ -1553,7 +1553,7 @@
       "type": "single_choice",
       "question": "A ceramics manufacturer already exposes an ordering interface that a dozen distributors call. It now wants to open the same interface to hundreds of independent retailers, with per-partner credentials, rate limits, published documentation and a record of who called what. Its two backend engineers cannot build all of that. What should the manufacturer adopt?",
       "options": {
-        "A": "Cloud Armor, to protect the interface from abusive traffic at the edge",
+        "A": "Cloud Armor, to protect the interface from abusive traffic at the Google Cloud edge",
         "B": "A second copy of the ordering service, sized for the retailers' traffic",
         "C": "Apigee API Management, which publishes, secures and meters the interface",
         "D": "One shared credential issued to all retailers, with usage reviewed monthly"
@@ -1867,7 +1867,7 @@
       "options": {
         "A": "Gemini in Google Security Operations for the assistant, and AI Protection for triage",
         "B": "Model Armor for both requests, as the offering that covers anything involving AI",
-        "C": "Cloud Armor for the assistant, and Security Command Center for alert triage",
+        "C": "Cloud Armor for the assistant, and Google Security Command Center for alert triage",
         "D": "Model Armor for the assistant, and Gemini in Google Security Operations for triage"
       },
       "answer": "D",
@@ -1921,7 +1921,7 @@
       "options": {
         "A": "Transparency reports, third-party audit results and the compliance resource manager",
         "B": "A contractual warranty that the provider's controls operate as described",
-        "C": "A demonstration of the provider's security console by its solutions engineer",
+        "C": "A demonstration of the Security Command Center console by its solutions engineer",
         "D": "An architecture document explaining how the provider's controls are designed"
       },
       "answer": "A",
@@ -2052,7 +2052,7 @@
       "question": "A textile mill's finance team has two distinct cost problems. A research team occasionally launches far more machines than anyone expected, and separately the monthly pattern-simulation run is simply expensive at list price, although it can wait days for capacity. Which pairing of controls addresses both problems?",
       "options": {
         "A": "Budget threshold rules for both, as alerts cover overspend of any kind",
-        "B": "Resource quota policies for the simulation run, and Spot VMs for the research team",
+        "B": "Resource quota policies for the simulation run, and Compute Engine Spot VMs for the research team",
         "C": "Cloud Billing reports for both, so the finance team can see where the money goes",
         "D": "Resource quota policies for the research team, and Dynamic Workload Scheduler for the run"
       },

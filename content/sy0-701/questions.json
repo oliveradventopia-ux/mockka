@@ -157,7 +157,7 @@
       "question": "A chartered accountancy practice must be able to prove to a regulator that a specific partner approved each client filing, in a way the partner cannot later deny. Which mechanism meets the requirement?",
       "options": {
         "A": "A digital signature applied with each partner's private key",
-        "B": "A cryptographic hash of every filing stored alongside it",
+        "B": "A cryptographic hash of every filing stored alongside the submitted copy",
         "C": "TLS encryption on the channel used to submit filings",
         "D": "An approval PIN shared by the partners in each office"
       },
@@ -374,7 +374,7 @@
         "A": "Performing an impact analysis for the segmentation work",
         "B": "Obtaining stakeholder approval for the segmentation work",
         "C": "Updating the network diagrams and their version control record",
-        "D": "Declaring a maintenance window for the cutover"
+        "D": "Declaring a maintenance window for the March segmentation cutover"
       },
       "answer": "C",
       "distractor_patterns": {
@@ -1298,10 +1298,10 @@
       "type": "single_choice",
       "question": "At a medical billing clearinghouse, a compromised claims-intake account was able to encrypt the entire billing file share because every intake clerk holds modify rights across all of it. Management asks for the control that would most reduce the damage the next compromised clerk account can do. What should be implemented?",
       "options": {
-        "A": "Additional endpoint protection on all clerk workstations",
-        "B": "A quarterly audit of file share access rights",
+        "A": "Additional endpoint protection deployed on all clerk workstations",
+        "B": "A quarterly audit of access rights held across the billing file share",
         "C": "Least privilege permissions scoped to each role's required folders",
-        "D": "Stronger password complexity requirements for clerk accounts"
+        "D": "Stronger password complexity and rotation requirements for clerk accounts"
       },
       "answer": "C",
       "distractor_patterns": {
@@ -1600,7 +1600,7 @@
       "question": "A university research computing group hosts an export-controlled dataset. The regulator's condition is absolute: no configuration error anywhere in the network may ever be able to create a path between this enclave and the internet. Which design satisfies the condition?",
       "options": {
         "A": "Logical segmentation of the enclave onto its own VLANs",
-        "B": "A next-generation firewall between the enclave and the campus network",
+        "B": "A default-deny next-generation firewall between the enclave and the campus network",
         "C": "An air-gapped enclave with no physical connection to any other network",
         "D": "Software-defined microsegmentation around every enclave workload"
       },
@@ -1773,7 +1773,7 @@
       "options": {
         "A": "Both systems fail-closed, because security must always be preserved",
         "B": "Both systems fail-open, because availability must always be preserved",
-        "C": "Doors fail-closed to keep the suite sealed; firewall fails-open to keep research traffic flowing",
+        "C": "Doors fail-closed to keep the suite sealed; firewall fails-open to keep research traffic flowing during an outage",
         "D": "Doors fail-open so people can always exit; firewall fails-closed so unfiltered traffic never flows"
       },
       "answer": "D",
@@ -2259,7 +2259,7 @@
       "type": "single_choice",
       "question": "An architectural engineering firm established a hardened workstation build 18 months ago and deployed it as a standard image. A configuration audit has just found that most of the fleet no longer matches that build: local accounts have been added, host firewalls switched off, screen locks extended. The build itself still specifies the correct settings. Which action addresses the stage of the secure baseline lifecycle that has failed?",
       "options": {
-        "A": "Re-image every deviating workstation from the current standard build",
+        "A": "Re-image every deviating workstation from the current standard build and close the audit finding",
         "B": "Monitor deployed workstations continuously against the established baseline",
         "C": "Rewrite the baseline with tighter settings ahead of the next imaging cycle",
         "D": "Add the firm's plotters and site tablets to the hardening target list"
@@ -2405,7 +2405,7 @@
       "question": "A chartered accountancy practice has discovered 30 laptops bought directly on departmental credit cards over two years. None appears in the asset register, several hold client tax files, and two cannot be located at all. The partners want the next batch of untracked hardware prevented, not merely this one cleaned up. Which change achieves that?",
       "options": {
         "A": "Run monthly network enumeration to find devices missing from the register",
-        "B": "Ask department heads to email the register team after each hardware purchase",
+        "B": "Ask department heads to email the register team the details after each hardware purchase",
         "C": "Classify the recovered laptops and issue full-disk encryption to each of them",
         "D": "Route hardware purchases through procurement, which assigns an owner on receipt"
       },
@@ -2891,7 +2891,7 @@
       "type": "single_choice",
       "question": "A gas pipeline operator publishes Sender Policy Framework records and signs outbound mail with DomainKeys Identified Mail. Suppliers are still receiving invoices that claim the operator's domain from sending hosts the operator does not own, and their mail systems are delivering them anyway. Which addition changes that outcome?",
       "options": {
-        "A": "A tighter Sender Policy Framework record listing only the operator's own hosts",
+        "A": "A tighter Sender Policy Framework record listing only the operator's own sending hosts",
         "B": "A second DomainKeys Identified Mail selector using a longer signing key",
         "C": "A Domain-based Message Authentication Reporting and Conformance policy of reject",
         "D": "A banner added by the operator's gateway warning staff about external mail"
@@ -2964,7 +2964,7 @@
       "type": "single_choice",
       "question": "A hospice care provider staffs night shifts with agency nurses. An account was created for a nurse named in an emailed placement request from the agency and granted access to the clinical record system the same evening. The named nurse has never worked for that agency, and the account was used to read patient records overnight. Which change closes the gap?",
       "options": {
-        "A": "Require the agency to confirm the nurse's start date before access is granted",
+        "A": "Require the agency to confirm the nurse's start date in writing before access is granted",
         "B": "Verify the person's identity documents in person before the account is created",
         "C": "Expire every agency account automatically at the placement's stated end date",
         "D": "Grant new agency accounts read-only access to the clinical record system"
@@ -3578,7 +3578,7 @@
       "question": "A property title registry contracts a scanning bureau to digitize paper deeds. The registry decides which deeds are scanned and why, and its written instruction forbids the bureau from using the images for any other purpose. The registry's own systems team keeps the resulting archive encrypted and backed up. Which role does the bureau hold?",
       "options": {
         "A": "Controller, deciding the purpose and the means of the scanning work",
-        "B": "Custodian, holding the deed images safe day to day on registry storage",
+        "B": "Custodian, holding the deed images safe day to day on the registry's own storage",
         "C": "Owner, accountable for the deed records the registry has outsourced",
         "D": "Processor, acting on the deed images only on the registry's instruction"
       },
@@ -4123,7 +4123,7 @@
       "type": "single_choice",
       "question": "A defense subcontractor receives an erasure request from an engineer who left two years ago. Human resources deletes the personnel file and confirms the request is complete. The same engineer's details also sit in the badge system, in a backup archive, and in a vetting spreadsheet kept by a team nobody has a list of. Which capability does the subcontractor most need?",
       "options": {
-        "A": "A retention schedule setting how long each personnel file is kept",
+        "A": "A retention schedule setting how long each personnel file is kept after departure",
         "B": "A policy stating that erasure requests are answered within one month",
         "C": "A data inventory recording where personal data is held across systems",
         "D": "An exemption claiming defense contracts override the erasure right"
@@ -4229,7 +4229,7 @@
       "options": {
         "A": "Active scanning of the portal's exposed ports, throttled to a low rate",
         "B": "A full active vulnerability scan run overnight outside consultation hours",
-        "C": "Asking the supplier to send its most recent internal scan report instead",
+        "C": "Asking the supplier to send its most recent internal vulnerability scan report instead",
         "D": "Passive gathering from public registries, certificates, and archived pages"
       },
       "answer": "D",
@@ -4263,7 +4263,7 @@
       "question": "After a simulated phishing campaign, a high school district reviews three behaviors. A teacher clicked the link and reported it within a minute. An administrator forwarded the message to four colleagues asking whether it looked genuine. A facilities manager entered credentials on the page, as in the two previous campaigns, and had removed the reporting add-in from the mail client. Which behavior is risky?",
       "options": {
         "A": "The teacher's click, which put credentials one step from disclosure",
-        "B": "The administrator's forward, which spread the message to more staff",
+        "B": "The administrator's forward, which spread the message to four more staff inboxes",
         "C": "The facilities manager's repeat submission after removing the add-in",
         "D": "All three, as each one interacted with the simulated message"
       },

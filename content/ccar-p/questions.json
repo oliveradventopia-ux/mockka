@@ -17,7 +17,7 @@
       "question": "A water utility is designing an assistant to triage inbound leak reports. The team has moved straight to debating whether to build it as a fixed workflow or an autonomous agent. Before that debate can be settled, what has to happen?",
       "options": {
         "A": "Adopt the agent pattern, since it can accommodate whichever steps turn out to be required",
-        "B": "Split the work into three buckets — what Claude handles, what existing systems handle, and what people handle — so the pattern is chosen against a defined scope",
+        "B": "Split the work into three buckets — what Claude handles, what existing systems handle, and what people handle",
         "C": "Write the system prompt first, since it determines what the assistant is able to do",
         "D": "Prototype both patterns against a sample of historical leak reports and adopt whichever scores better"
       },
@@ -55,7 +55,7 @@
       "options": {
         "A": "The rate tables sit in the middle of the prompt and should be moved to a boundary where attention is stronger",
         "B": "Sampling is introducing variation and the temperature should be reduced to zero so the arithmetic becomes repeatable",
-        "C": "Deterministic calculation was allocated to the wrong bucket: a rating engine should compute the adjustment and the model should call it, rather than the model being made to perform the arithmetic",
+        "C": "Deterministic calculation was allocated to the wrong bucket: a rating engine should compute the adjustment and the model should call it",
         "D": "The workload has outgrown the model tier and a more capable model should be adopted, since arithmetic reliability improves with capability"
       },
       "answer": "C",
@@ -184,7 +184,7 @@
         "A": "The pattern is sound and the gap is evidential: session logging should be extended so paths can be reconstructed after future events",
         "B": "The standard diagnostic sequence should be written into the system prompt so the agent follows it",
         "C": "The model tier is the constraint, and a more capable model would select more conventional diagnostic paths",
-        "D": "Autonomy was granted beyond what the error cost tolerates — over-granting agentic autonomy — and a pattern with defined steps would have kept each path reconstructable"
+        "D": "Autonomy was granted beyond what the error cost tolerates; a pattern with defined steps would have kept each path reconstructable"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -260,7 +260,7 @@
       "question": "A regional electricity distributor is building a customer assistant to answer questions such as how much a customer currently owes, whether their address is affected by an outage, and when restoration is estimated. The team proposes indexing a nightly export of account balances and outage records into a vector store and answering from retrieval. At design review an architect objects. What is the strongest basis for the objection?",
       "options": {
         "A": "A nightly export is too infrequent for this use case and should be rebuilt hourly so answers stay acceptably fresh",
-        "B": "The data is live state rather than reference material, so it must be read through a tool call against the system of record at request time and not served from a periodic export",
+        "B": "The data is live state, so it must be read through a tool call against the system of record at request time",
         "C": "Retrieval is workable provided the assistant discloses that figures may be up to a day old",
         "D": "Vector stores cannot represent numeric fields such as balances with sufficient precision"
       },
@@ -330,7 +330,7 @@
       "type": "single_choice",
       "question": "A law firm's matter-intake system has two distinct weaknesses. Matters are sometimes directed to the wrong practice group in ways only a specialist notices, and extraction of key dates from client documents fails on unfamiliar layouts. The team is debating whether to adopt the Routing architecture or the evaluator-optimiser document pipeline. What is the strongest recommendation?",
       "options": {
-        "A": "Adopt both, because the two parts of the system break differently — route the matter to its practice group, and run extraction through an evaluator-optimiser loop that checks its own output",
+        "A": "Adopt both: route the matter to its practice group, then run extraction through an evaluator-optimiser loop",
         "B": "Adopt Routing alone, since misdirection happens first and correcting it will reduce the downstream extraction failures",
         "C": "Adopt whichever of the two the team has more experience operating, and revisit the decision once the system has run for two quarters",
         "D": "Adopt neither and design a bespoke architecture matched exactly to this firm's intake process"
@@ -444,7 +444,7 @@
       "type": "single_choice",
       "question": "A construction consultancy asks Claude, in a single prompt, to read a long tender document, assess it against every one of the firm's internal bid criteria, score the opportunity and draft a bid or no-bid note. Output quality is uneven: some criteria are skipped without comment and the scoring reasoning is thin. The prompt wording has already been reworked twice. What is the most effective next step?",
       "options": {
-        "A": "Decompose the task into sequenced subtasks — extract, assess each criteria group, score, then synthesise — passing structured output between steps",
+        "A": "Decompose the task into sequenced subtasks: extract, assess each criteria group, score, then synthesise",
         "B": "Move to the largest available model and raise the maximum output tokens so there is room to cover everything",
         "C": "Lower the temperature so the instructions are followed more literally",
         "D": "Add worked examples of well-written bid and no-bid notes so the model has a clearer target"
@@ -482,7 +482,7 @@
         "A": "Add the library tools now and schedule a prompt rewrite for the following term",
         "B": "Require a tool call on every request so the agent stops answering from general knowledge",
         "C": "Expand the system prompt so each area is described in more detail and the boundaries between them are clearer",
-        "D": "Split the agent into domain-specific agents behind a router, each with a focused toolset and prompt, so library services becomes an addition rather than a further burden"
+        "D": "Split the agent into domain-specific agents behind a router, each with a focused toolset and prompt"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -557,7 +557,7 @@
       "options": {
         "A": "An alert that fires when daily token spend departs from its established norm",
         "B": "A larger model, on the basis that classification accuracy rises with model capability",
-        "C": "A feedback loop that captures the clinician corrections already being made and routes a sample of production classifications into a labelled evaluation set",
+        "C": "A feedback loop that captures clinician corrections into a labelled evaluation set",
         "D": "A monthly review of the system prompt to confirm the triage instructions are still current"
       },
       "answer": "C",
@@ -632,7 +632,7 @@
       "question": "A retail analytics team runs product classification on Sonnet. Volume has grown and finance has asked whether a smaller tier would serve. An engineer ran a hundred hand-picked examples through both and reports that the outputs look equivalent. The team proposes switching next sprint and watching the support queue for a fortnight, reverting if ticket volume climbs. What must be established before the swap proceeds?",
       "options": {
         "A": "A commitment to stay on the current tier, since the more capable option is the safer default for anything in production",
-        "B": "An eval set defining what better means for this workload, and a rollback criterion agreed before the swap rather than inferred from what happens afterwards",
+        "B": "An eval set defining what better means for this workload, and a rollback criterion agreed before the swap",
         "C": "A published third-party benchmark comparing the two tiers on general reasoning",
         "D": "Nothing further, because watching the support queue after a staged release is itself the rollback mechanism"
       },
@@ -671,7 +671,7 @@
         "A": "Alternate between tiers by time of day so that peak-hour latency improves",
         "B": "Use the mid-tier model as a compromise, which avoids having to repeat this comparison",
         "C": "Use the most capable model, since a moderation error costs more than the compute ever will",
-        "D": "Use the smallest model that meets the accuracy target, and keep validating that it still meets it with ongoing evaluation"
+        "D": "Use the smallest model that meets the accuracy target, with ongoing evaluation"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -703,7 +703,7 @@
       "type": "single_choice",
       "question": "A bank's operations assistant loads its full policy manual, its full product reference and the customer's entire interaction history into context on every request. It performs well today. The roadmap adds two product lines and a regulatory annex over the next year. What should the architect flag now?",
       "options": {
-        "A": "This is monolithic context, which grows until it breaks; moving to progressive context, where each step receives only what it needs, is what holds up across a long-lived deployment",
+        "A": "This is monolithic context; progressive context, where each step receives only what it needs, is what holds up",
         "B": "The policy manual should be condensed so that the new product lines fit alongside it",
         "C": "Nothing yet — the design performs well, and it should be revisited when a request actually fails",
         "D": "The context budget will need to be raised in step with each addition to the roadmap"
@@ -774,7 +774,7 @@
       "question": "A recruitment platform applied chain-of-thought prompting uniformly across its features. It improved a complex candidate-shortlisting feature. A simple endpoint that extracts dates and job titles from a CV is now slower and more expensive with no measurable change in accuracy. What should the architect conclude?",
       "options": {
         "A": "Chain-of-thought should be withdrawn across the platform, since it roughly doubles token use wherever it is applied",
-        "B": "Chain-of-thought earns its tokens on multi-step reasoning and adds cost and latency without benefit on simple extraction, so it should be applied selectively per task on measured benefit",
+        "B": "Chain-of-thought earns its tokens on multi-step reasoning; apply it selectively per task on measured benefit",
         "C": "Chain-of-thought only produces gains on the most capable tier, and the extraction endpoint runs on a smaller one",
         "D": "The extraction endpoint needs a longer and more explicit chain-of-thought prompt before the benefit becomes visible"
       },
@@ -846,7 +846,7 @@
         "A": "Few-shot prompting is unsuited to structured extraction and should be replaced by lowering the temperature",
         "B": "Twelve examples exceed what the model can attend to, and reducing the set to three would restore general performance",
         "C": "The examples belong in the user message rather than the system prompt, where they would be weighted less strongly",
-        "D": "The examples are unrepresentative of the task's real input distribution, so they have narrowed behaviour toward the category they demonstrate rather than teaching the general format rule"
+        "D": "The examples are unrepresentative of the task's real input distribution and have narrowed behaviour toward the category they demonstrate"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -927,7 +927,7 @@
         "B": "Move the static content out of the system prompt and into the user message",
         "C": "Add more worked examples so that the model succeeds on the first attempt more often",
         "D": "Raise the maximum output tokens so that fewer follow-up requests are needed",
-        "E": "Load specialised instructions on demand — modular prompts or Skills — rather than including every instruction in every request"
+        "E": "Load specialised instructions on demand, via modular prompts or Skills"
       },
       "select_count": 2,
       "answer": [
@@ -1010,9 +1010,9 @@
       "options": {
         "A": "Retention of full request and response payloads so access can be reviewed each quarter",
         "B": "A larger context window on consuming applications so a full transaction history can be returned in one call",
-        "C": "A tool surface scoped to least privilege, with state-changing operations such as refunds and reversals excluded or placed behind an explicit approval gate",
+        "C": "Identity propagated from the calling end user, authorising each request against that identity",
         "D": "A system prompt instruction, shared with every consuming team, directing the model to return only records belonging to the requesting customer",
-        "E": "Identity propagated from the calling end user to the server, which authorises every request against that identity rather than against a shared service credential"
+        "E": "A tool surface scoped to least privilege, with refunds and reversals behind an approval gate"
       },
       "select_count": 2,
       "answer": [
@@ -1049,7 +1049,7 @@
       "type": "single_choice",
       "question": "A hospital's discharge-summary assistant retrieves the patient's entire record — including unrelated historical episodes, next-of-kin contact details and billing notes — on the reasoning that additional context can only help the summary. What is the strongest objection at review?",
       "options": {
-        "A": "Only the minimum necessary data belongs in the context window; everything beyond what the summary requires enlarges the exposure without improving the output",
+        "A": "Only the minimum necessary data belongs in the context window",
         "B": "The assistant should be instructed to disregard the portions of the record that are not relevant to discharge",
         "C": "Retrieval is the wrong mechanism here and the model should be fine-tuned on the record corpus instead",
         "D": "The record should be condensed before it enters context so that it fits more comfortably"
@@ -1086,7 +1086,7 @@
       "options": {
         "A": "The assistant should be withdrawn from the desk until instrumentation has been added",
         "B": "The dispute can be settled by re-running the same query today and comparing what comes back",
-        "C": "Observability instrumentation belongs at design time rather than after the first incident, because the evidence needed to answer a dispute has to already exist when the dispute arrives",
+        "C": "Observability instrumentation belongs at design time, not after the first incident",
         "D": "A longer retention period on the existing application logs would have covered this situation"
       },
       "answer": "C",
@@ -1123,7 +1123,7 @@
       "options": {
         "A": "Disable capture in production and reproduce any reported failure in a staging environment",
         "B": "Treat customer-reported failures as the signal for which sessions are worth investigating",
-        "C": "Structured traces with correlation identifiers and key metrics on every session, with full payload capture sampled and additionally triggered on error conditions",
+        "C": "Structured traces with correlation identifiers on every session, full payloads sampled and error-triggered",
         "D": "Capture only the final response of each session and discard the intermediate steps"
       },
       "answer": "C",
@@ -1159,7 +1159,7 @@
       "question": "A sports streaming service monitors its assistant through a single dashboard showing latency percentiles, error rate and token spend aggregated across all traffic. When a subscriber reports a poor answer, support cannot investigate it. When a regional spike appears, engineers cannot tell which sessions are behind it. What is missing from the design?",
       "options": {
         "A": "Additional panels on the aggregate dashboard, broken down by region and by feature",
-        "B": "Per-request observability alongside the aggregate dashboards — the two answer different questions, and only the per-request layer can reconstruct an individual session",
+        "B": "Per-request observability alongside the aggregate dashboards, which answer different questions",
         "C": "A longer retention window on the metrics so historical spikes remain queryable",
         "D": "A request that subscribers report the exact time of a poor answer so the aggregate charts can be read at that point"
       },
@@ -1233,7 +1233,7 @@
       "question": "A biotechnology firm needs three things: a conversational surface for scientists exploring published literature, an embedded classification call inside an existing laboratory pipeline, and a shared connector so any future internal tool can query the compound registry. A platform lead proposes standardising all three on one entry point for consistency. What should the architect advise?",
       "options": {
         "A": "Defer the decision until the firm has run a pilot on each of the available entry points",
-        "B": "Choose each entry point by the work it has to do — the three carry different core trade-offs — and name the trade-off out loud in each case so the firm knows later when to switch",
+        "B": "Choose each entry point by the work it has to do, naming the trade-off each one carries",
         "C": "Standardise on one entry point as proposed, since consistency reduces the long-run maintenance burden",
         "D": "Standardise all three on the direct API, since it offers the deepest control and everything else can be built on top of it"
       },
@@ -1267,7 +1267,7 @@
       "type": "single_choice",
       "question": "A chemicals manufacturer's logistics agent must agree delivery windows with a haulier's independently operated scheduling agent. Neither company will expose its internal systems or tools to the other. Which connection approach fits this requirement best?",
       "options": {
-        "A": "Agent-to-agent communication across an agreed protocol boundary, with each agent mediating access to its own organisation's systems",
+        "A": "Agent-to-agent communication across an agreed protocol boundary, each mediating its own systems",
         "B": "Exchange scheduling files each night and have each agent read whatever its counterpart last published",
         "C": "Replace both agents with a single shared agent operated by a neutral third party",
         "D": "Register the haulier's scheduling tools directly in the manufacturer's tool catalogue"
@@ -1361,8 +1361,8 @@
       "options": {
         "A": "Per-request latency must be minimised above every other consideration",
         "B": "Requests must complete in a single model invocation with no intermediate steps",
-        "C": "The context budget is constrained and loading everything up front is already degrading response quality",
-        "D": "The catalogue of tools and reference material is large, and only a small subset of it is relevant to any single request",
+        "C": "The context budget is constrained and up-front loading degrades quality",
+        "D": "Only a small subset of a large tool and reference catalogue is relevant per request",
         "E": "The service uses three tools, all of which are needed on every request"
       },
       "select_count": 2,
@@ -1401,7 +1401,7 @@
       "type": "single_choice",
       "question": "A semiconductor fab's assistant has three tools whose purposes substantially overlap: one returns lot status, one queries lots by attribute, and one looks a lot up by identifier. The agent frequently invokes the wrong one of the three. Which change most directly reduces the error?",
       "options": {
-        "A": "Consolidate the overlapping tools and rewrite what remains so each tool's purpose, inputs and boundaries are explicit and non-overlapping",
+        "A": "Consolidate the overlapping tools; give each remaining one explicit, non-overlapping boundaries",
         "B": "Instruct the agent to prefer whichever of the three appears first in the list when it is uncertain",
         "C": "Add a further tool whose job is to select which of the three the agent should call",
         "D": "Replace all three with one generic execution tool that accepts a free-text command"
@@ -1475,7 +1475,7 @@
       "options": {
         "A": "Ask buyers to describe the garment in words rather than searching by style code",
         "B": "Replace semantic retrieval with keyword search across the whole catalogue",
-        "C": "Hybrid retrieval combining exact and keyword matching with semantic search, weighted according to the shape of the query",
+        "C": "Hybrid retrieval combining exact matching with semantic search, weighted by query shape",
         "D": "Adopt a larger embedding model so that style codes embed more distinctly from one another"
       },
       "answer": "C",
@@ -1509,7 +1509,7 @@
       "question": "After a nightly catalogue refresh, a museum archive assistant intermittently answers from records that have since been superseded. Which TWO measures most directly address this? (Select TWO)",
       "options": {
         "A": "A weekly manual spot-check of a handful of the assistant's answers",
-        "B": "An automated re-indexing pipeline that validates completeness and embedding consistency after every refresh",
+        "B": "An automated re-indexing pipeline validating completeness after every refresh",
         "C": "Lowering the temperature so that the assistant relies less on the retrieved records",
         "D": "Running the refresh a second time each night in case the first pass was incomplete",
         "E": "Version metadata carried in the index, with retrieval filtering out superseded records"
@@ -1552,8 +1552,8 @@
         "A": "A post-incident review process to be followed after each outage",
         "B": "A longer request timeout so that slow dependencies have more time to respond",
         "C": "A status page telling crews when the assistant is unavailable",
-        "D": "Retries with backoff on transient upstream failures, and a fallback chain so a degraded answer is still produced when the primary path is unavailable",
-        "E": "Circuit breakers that stop calling a dependency that is already failing rather than queueing behind it"
+        "D": "Retries with backoff on transient failures, plus a fallback chain for degraded answers",
+        "E": "Circuit breakers that stop calling an already-failing dependency"
       },
       "select_count": 2,
       "answer": [
@@ -1593,7 +1593,7 @@
         "A": "Adopt re-ranking only for the subset of quotes to which the SLA does not apply",
         "B": "Defer the decision until the SLA can be renegotiated to allow more time",
         "C": "Reject re-ranking, because added latency should never be accepted in a customer-facing system",
-        "D": "Adopt re-ranking: quantified against the SLA, the accuracy gain is material and 500 ms still leaves clear headroom below 3 seconds, so adopt it and monitor p95"
+        "D": "Adopt re-ranking: the accuracy gain is material and 500 ms leaves headroom below 3 seconds"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -1765,7 +1765,7 @@
         "A": "A published benchmark score for the underlying model, so the group has an objective figure to consider",
         "B": "A launch date, on the basis that the criteria will become obvious once real sellers are using it",
         "C": "A comparison of the assistant's inference cost against the cost of the current manual onboarding process",
-        "D": "Task-specific evaluation metrics tied to business outcomes — onboarding completion rate, document rejection rate, time to first listing — each with an agreed launch threshold"
+        "D": "Task-specific metrics tied to business outcomes, each with an agreed launch threshold"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -1801,7 +1801,7 @@
       "options": {
         "A": "Full human review of every description, absorbing the throughput cost as the price of quality",
         "B": "Exact matching of each description against a library of approved phrasings",
-        "C": "An LLM-as-judge rubric scored against the editorial guidelines, calibrated periodically against a sample of ratings from human editors",
+        "C": "An LLM-as-judge rubric on the editorial guidelines, calibrated against human editor ratings",
         "D": "Omit tone evaluation, since tone is subjective and therefore cannot be measured"
       },
       "answer": "C",
@@ -1836,7 +1836,7 @@
       "type": "single_choice",
       "question": "A travel booking platform's revised prompt outperforms the current one on the offline suite. The team wants production evidence before replacing it everywhere, and proposes shipping it to half of traffic, watching the dashboards for a week and then deciding. What is missing from that proposal?",
       "options": {
-        "A": "The primary metric and the sample size have to be identified before the experiment runs, or the decision is made by whichever dashboard happens to look most convincing afterwards",
+        "A": "The primary metric and sample size have to be identified before the experiment runs",
         "B": "Nothing of substance — a week at half of traffic is ample exposure to see the effect",
         "C": "The offline suite should be re-run several more times first, to raise confidence in the original result",
         "D": "The experiment should run across all traffic instead, so that significance is reached sooner"
@@ -1913,7 +1913,7 @@
         "A": "Reject the reduction target, on the grounds that any material cost cut will degrade quality",
         "B": "Cut the maximum output tokens across every workload by a third",
         "C": "Accept it, since the model tier is the only cost lever that moves the total meaningfully",
-        "D": "Analyse token usage and cost per workload from production traces to identify the dominant cost driver, then apply the lever that targets it, evaluating quality impact at each step"
+        "D": "Identify the dominant cost driver from production traces, then apply the lever targeting it"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -1948,7 +1948,7 @@
       "question": "An aged-care provider's care-note summarisation pilot has run smoothly in a single home. The board now wants to commit publicly to a rollout date across every home in the group. What must be established before that commitment is made?",
       "options": {
         "A": "Confirmation that staff at the pilot home are satisfied with the summaries they have been receiving",
-        "B": "Cost and latency modelled at full production volume, so the commitment is made against the operating envelope the system will actually run in",
+        "B": "Cost and latency modelled at full production volume",
         "C": "Approval to increase engineering headcount so that the rollout can be supported",
         "D": "A phased onboarding schedule so that homes come online gradually and problems surface early"
       },
@@ -1986,7 +1986,7 @@
       "options": {
         "A": "A rise in formal complaints submitted through the practice feedback form",
         "B": "A monthly review by a clinical lead of a sample of the assistant's answers",
-        "C": "A decline in retrieval relevance scores and a rise in the rate of no-grounded-answer outcomes in the pipeline's own telemetry",
+        "C": "Declining retrieval relevance and rising no-grounded-answer rates in telemetry",
         "D": "An alert when inference spend departs from its established norm"
       },
       "answer": "C",
@@ -2022,7 +2022,7 @@
       "type": "multiple_response",
       "question": "A managed security provider is designing the pre-production evaluation framework for an assistant that will operate in a regulated domain. Which TWO components matter most? (Select TWO)",
       "options": {
-        "A": "An adversarial test suite probing safety boundaries, injected instructions and policy-violating requests",
+        "A": "An adversarial test suite probing safety boundaries and injections",
         "B": "A golden dataset labelled by domain experts, covering both typical and high-risk scenarios",
         "C": "A benchmark comparing the model's general knowledge against competitor models",
         "D": "A live demonstration to the executive committee using selected strong examples",
@@ -2067,7 +2067,7 @@
       "options": {
         "A": "A retrieval failure — the certificate does exist and the lookup did not locate it",
         "B": "A prompt failure — the instructions were not specific enough about the required output format",
-        "C": "A hallucination — content was fabricated rather than grounded in the tool result, so the remedy is grounding discipline together with an explicit path for the empty-result case",
+        "C": "A hallucination: content fabricated, not grounded in the tool result",
         "D": "A model mismatch — certificate verification exceeds what this model tier handles reliably"
       },
       "answer": "C",
@@ -2103,8 +2103,8 @@
       "question": "A brewery group's demand-forecasting assistant has degraded intermittently over two weeks. The model version, the prompts and the application code are all unchanged over that period. Which TWO data sources are most useful for diagnosing the cause? (Select TWO)",
       "options": {
         "A": "The number of requests served per day across the period",
-        "B": "Analysis of the input distribution for drift — question types, formats or languages the assistant was not designed for",
-        "C": "End-to-end traces of the affected sessions, including retrieved context and tool inputs and outputs",
+        "B": "Input-distribution drift: new question types or languages",
+        "C": "End-to-end traces of the affected sessions",
         "D": "Uptime statistics for the model endpoint",
         "E": "A survey of the demand planners who noticed the degradation"
       },
@@ -2147,7 +2147,7 @@
         "A": "The incident should be recorded and brought to the next governance meeting for a decision on remediation",
         "B": "The model tier is the constraint, and a more capable model would have recognised the caller was not the account holder",
         "C": "The system prompt should state the identity-verification rule more emphatically than it currently does",
-        "D": "Safety is a stack of layers rather than a setting: training covers broad harm and never saw this utility's identity-verification rules, so that rule was enforced in no layer at all — which is the silent failure the layered model exists to prevent"
+        "D": "Safety is a stack of layers, not a setting: this rule was enforced in no layer at all"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2185,7 +2185,7 @@
       "options": {
         "A": "The retrieval corpus should be restricted to documents authored inside the operator's own organisation",
         "B": "Screening was applied at the wrong stage and should be relocated to the retrieval step instead",
-        "C": "The guarded path has only one of its three control points: input screening and tool-call authorization answer different questions from output screening, and the harm travelled the tool-call path, which was ungoverned",
+        "C": "The guarded path has only one of its three control points, and the harm travelled an ungoverned one",
         "D": "The output screening policy was too permissive and should be extended to cover shipment cancellations"
       },
       "answer": "C",
@@ -2221,7 +2221,7 @@
       "question": "A facilities management firm's maintenance assistant answers from a corpus that includes method statements supplied by contractors. A security review finds that one method statement contains text directing the assistant to disclose its configuration, and the assistant partially complied. Which design principle does this violate?",
       "options": {
         "A": "System prompts must be held encrypted so their contents cannot be disclosed",
-        "B": "Retrieved content is untrusted input: it must be structurally delimited as data and never granted instruction-level authority",
+        "B": "Retrieved content is untrusted input: data only, never instruction-level authority",
         "C": "A retrieval corpus must contain only documents authored inside the organisation",
         "D": "Retrieval must be suspended for any document that contains imperative sentences"
       },
@@ -2259,9 +2259,9 @@
       "options": {
         "A": "Log every retrieved document so that injections can be identified in review afterwards",
         "B": "Set the temperature to zero so the assistant does not act on adversarial content",
-        "C": "Place every irreversible operation behind an explicit approval gate that fails closed when the approval is absent",
+        "C": "Scope the tool surface to least privilege",
         "D": "Move to a more capable model, since more capable models are not susceptible to injection",
-        "E": "Scope the tool surface to least privilege, so that amendment and unblinding are not available to the assistant's own credentials at all"
+        "E": "Place every irreversible operation behind an explicit approval gate that fails closed when the approval is absent"
       },
       "select_count": 2,
       "answer": [
@@ -2300,7 +2300,7 @@
       "question": "An online lender deploys an assistant that drafts responses to borrower complaints. The regulator's requirement is that no incorrect financial commitment reaches a borrower. Which TWO controls most directly address that requirement? (Select TWO)",
       "options": {
         "A": "Training complaint handlers to write better prompts for the assistant",
-        "B": "An output guardrail that blocks any commitment expressed outside approved policy language from being produced at all",
+        "B": "An output guardrail blocking commitments outside approved policy language",
         "C": "A standing disclaimer on each response noting that any figures given are indicative",
         "D": "Mandatory human review and approval before any drafted response is sent to a borrower",
         "E": "Logging every draft to a warehouse for review each quarter"
@@ -2396,7 +2396,7 @@
       "type": "single_choice",
       "question": "A municipal authority's procurement assistant can draft supplier correspondence, update internal records, and raise purchase orders below a delegated value threshold. The authority wants human oversight without slowing every interaction. Where should the approval gate sit?",
       "options": {
-        "A": "Before irreversible or high-impact external actions such as raising a purchase order, while low-risk drafting and internal record updates proceed automatically",
+        "A": "Before irreversible or high-impact external actions, letting low-risk steps proceed",
         "B": "Before any action the assistant itself flags as uncertain, with the assistant deciding which those are",
         "C": "After the purchase order has been raised, so that a reviewer can check it retrospectively",
         "D": "Before every action the assistant takes, so that nothing at all happens without approval"
@@ -2435,7 +2435,7 @@
       "type": "single_choice",
       "question": "A social services department is asked how it will demonstrate that its benefits-eligibility assistant treats applicants fairly. The team's position is that fairness is a property of the underlying model and therefore the provider's responsibility. What is wrong with that position?",
       "options": {
-        "A": "Unequal outcomes arise at points the department itself controls — the corpus, prompt framing, examples and routing — so fairness has to be instrumented locally, with every decision logged so that an explanation can be reconstructed",
+        "A": "Prompt framing and routing are department-controlled, so fairness is instrumented locally",
         "B": "The department should require a fairness certification from the provider before the assistant is deployed",
         "C": "Nothing — fairness originates in training data, which the department has no ability to influence",
         "D": "The department should publish the model's technical specification so that applicants can assess it for themselves"
@@ -2472,7 +2472,7 @@
       "type": "single_choice",
       "question": "A staffing agency's CV-screening assistant is found to score candidates from certain postcodes systematically lower than others. Names, ages and demographic fields had already been excluded from its input. What does this outcome most likely indicate, and what should follow?",
       "options": {
-        "A": "Proxy variables such as postcode can encode protected characteristics, so the response is structured bias evaluation across demographic slices, remediation of what it finds, and ongoing fairness monitoring",
+        "A": "Proxy variables such as postcode encode protected characteristics; evaluate bias across slices",
         "B": "The assistant is functioning as designed, since no protected attribute was supplied to it",
         "C": "The base model's training data is responsible and nothing can be addressed at the application layer",
         "D": "Scores should be withheld from recruiters so that the disparity cannot influence their decisions"
@@ -2512,7 +2512,7 @@
       "options": {
         "A": "Add a clause to the privacy notice stating that consultations may be analysed for quality purposes",
         "B": "Reduce the retention period the analytics platform applies to the transcripts it holds",
-        "C": "Apply data minimisation: redact or pseudonymise personal data before it leaves the system boundary, retaining only what the monitoring purpose actually requires",
+        "C": "Apply data minimisation: pseudonymise personal data before it leaves the boundary",
         "D": "Encrypt the transcripts in transit to the analytics platform"
       },
       "answer": "C",
@@ -2549,7 +2549,7 @@
       "options": {
         "A": "Which adoption metrics will be reported to the board once advisers are using it",
         "B": "Whether advisers can export the assistant's answers into client-facing reports",
-        "C": "Whether every component in the data path — the model, retrieval, logging and any subprocessor — meets the applicable obligations, with the agreements in place before client data flows through any of them",
+        "C": "Whether every subprocessor in the data path meets the obligations, agreed in advance",
         "D": "Whether the assistant cites the source record behind each figure it quotes"
       },
       "answer": "C",
@@ -2587,7 +2587,7 @@
         "A": "A named owner for each control, so that responsibility for it sits with a person rather than with a document",
         "B": "A copy of the architecture document lodged with the regulator in advance of the audit",
         "C": "A legal opinion confirming that the regulation applies to the charity in the first place",
-        "D": "A living evidence artifact for each control, revalidated over time, because an auditor accepts proof that a control is operating rather than a description of it",
+        "D": "A living evidence artifact per control, revalidated",
         "E": "A summary of the regulation circulated to everyone working in fundraising"
       },
       "select_count": 2,
@@ -2684,7 +2684,7 @@
       "question": "During discovery for a regional railway's incident-reporting assistant, an operations manager says the team would really like it to feel fast. The architect notes this down in the manager's own words and moves on. What should have happened instead?",
       "options": {
         "A": "The remark should be set aside, because a feeling is not something a requirement can be written against",
-        "B": "The preference should be translated into a constraint — a stated response-time target with the assumption behind it labelled — and written as a requirement row the design can be traced to",
+        "B": "The preference should be translated into a constraint, written as a traceable requirement row",
         "C": "Recording it verbatim is correct, since discovery exists to capture what stakeholders actually say",
         "D": "The remark should be passed to the sponsor to decide how it ranks against the other requests"
       },
@@ -2766,7 +2766,7 @@
         "A": "Defer the verdict until the heritage cases can be made to work, so a single clean answer can be given",
         "B": "Feasible as scoped, with heritage applications handled by the assistant and simply reviewed more carefully than the rest",
         "C": "Not feasible, since a substantial share of the caseload falls outside what the assistant can assess",
-        "D": "Feasible with constraints, documenting the load-bearing boundary condition — heritage-listed applications route to human assessment — so the limit is explicit and can be revisited"
+        "D": "Feasible with constraints, documenting the load-bearing boundary condition explicitly"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2801,7 +2801,7 @@
       "type": "single_choice",
       "question": "During discovery, a retail bank's executive sponsor states that the assistant must be 100% accurate before it can launch. What is the most effective response from the architect?",
       "options": {
-        "A": "Explain that these systems are probabilistic, then work with the sponsor to define measurable acceptance criteria and an error-handling strategy proportionate to the business risk",
+        "A": "Explain that these systems are probabilistic, then define measurable acceptance criteria",
         "B": "Agree to the requirement and add further testing phases until measured accuracy reaches 100%",
         "C": "Propose a smaller and more tightly constrained model so that there is less scope for error",
         "D": "Decline the engagement, since the requirement as stated cannot be satisfied"
@@ -2837,7 +2837,7 @@
       "question": "A waste management company's finance director instructs the team to use the cheapest available model for a routing assistant whose output feeds regulatory emissions reporting. Internal testing shows the cheapest tier has a materially higher error rate on this task. What is the architect's most professional course of action?",
       "options": {
         "A": "Use the more capable model and absorb the difference elsewhere in the budget so the reporting stays sound",
-        "B": "Present the trade-off in three elements including the reversal cost — error rate, downstream rework and regulatory exposure set against the saving — recommend a position, and let the accountable stakeholder decide with full information",
+        "B": "Present the trade-off in three elements including the reversal cost, then let the owner decide",
         "C": "Comply with the instruction and record the concern in the project risk register so that it is documented",
         "D": "Escalate above the finance director to the audit committee, given the regulatory exposure involved"
       },
@@ -2877,7 +2877,7 @@
         "A": "Commit to sub-second responses for demonstrations, and explain the production difference once the system is live",
         "B": "Remove the retrieval and reasoning steps so that the stated target becomes achievable",
         "C": "Accept the sub-second requirement and expect optimisation work to close the gap before launch",
-        "D": "Present the latency breakdown, negotiate an SLA the pipeline can actually honour, and propose streaming and progress indicators so the experience feels responsive within it"
+        "D": "Present the latency breakdown, negotiate an honourable SLA, and propose streaming indicators"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2913,7 +2913,7 @@
       "type": "multiple_response",
       "question": "A hospital trust's clinical documentation assistant has been live for a quarter. The team has dashboards and alerting, but when a metric moves nobody is certain what is supposed to happen next. Which TWO measures close that gap? (Select TWO)",
       "options": {
-        "A": "SLA thresholds set from their real sources — the clinical service standard and the supplier contract — rather than chosen to sit just above current performance",
+        "A": "SLA thresholds set from their real sources, not from current performance",
         "B": "A decision layer that maps each signal to a trigger action and to a named owner who acts on it",
         "C": "More granular dashboards, broken down by ward and by document type",
         "D": "A weekly meeting at which the team reviews whatever the dashboards happened to show",
@@ -2955,7 +2955,7 @@
       "type": "single_choice",
       "question": "Two months after launch, a football club's sponsor is visibly losing interest in its supporter-services assistant. The fortnightly report shows token spend, latency and uptime and nothing else. Which change would most improve stakeholder alignment?",
       "options": {
-        "A": "Report against the business success criteria agreed at discovery — staff hours saved, enquiry resolution rate — with the technical metrics as supporting detail, using a translation layer that maps one to the other",
+        "A": "Report against the business success criteria agreed at discovery, via a translation layer",
         "B": "Replace the report with an open dashboard the sponsor can consult whenever they wish",
         "C": "Increase the reporting frequency from fortnightly to weekly so momentum is maintained",
         "D": "Add further technical metrics so that the report is more thorough and complete"
@@ -2995,7 +2995,7 @@
       "options": {
         "A": "The full history of prompt drafts explored during development, so the team can see what was tried",
         "B": "A prioritised backlog of the features that were considered but not built",
-        "C": "Architecture decision records explaining the key trade-offs and the alternatives that were rejected, operational runbooks, and evaluation baselines the team can re-run",
+        "C": "Architecture decision records with rejected alternatives, runbooks, and re-runnable eval baselines",
         "D": "Direct access to the consultancy's engineers for six months of follow-up questions"
       },
       "answer": "C",
@@ -3032,8 +3032,8 @@
       "question": "An insurance broker's first assistant has been live for two quarters and the sponsor is considering funding a second project. Which TWO belong in the outcome document that justifies that expansion? (Select TWO)",
       "options": {
         "A": "A list of every prompt revision made during the build",
-        "B": "The reuse note recording which components, patterns and controls the next project can inherit",
-        "C": "The before metric captured prior to launch, so the improvement can be stated as a comparison rather than as an assertion",
+        "B": "The reuse note listing what the next project can inherit",
+        "C": "The before metric captured prior to launch",
         "D": "The number of requests the assistant has served since it went live",
         "E": "A statement that the project completed on schedule and within its budget"
       },
@@ -3073,7 +3073,7 @@
       "type": "single_choice",
       "question": "Midway through building a film production company's scheduling assistant, stakeholders keep adding requests: new data sources, further user groups, additional output formats. Which practice best manages this while preserving the working relationship?",
       "options": {
-        "A": "Assess each request against the agreed success criteria and scope baseline, make the impact visible before accepting it, and re-baseline timeline, cost and risk with sponsor sign-off when accepted changes materially alter the plan",
+        "A": "Assess each request against the scope baseline, then re-baseline cost and risk with sponsor sign-off",
         "B": "Add every request to a second-phase backlog without assessing whether any of them belong in this one",
         "C": "Decline all changes until the originally agreed scope has shipped",
         "D": "Absorb the requests without comment, since accommodating stakeholders is what keeps them engaged"
@@ -3111,7 +3111,7 @@
       "question": "A games studio has rolled AI-assisted coding tools out across its engineering team. Early adopters each configured their tooling differently, and the result is inconsistent code style and several engineers solving the same problems separately. What is the most effective enablement step?",
       "options": {
         "A": "Restrict the tooling to the most senior engineers until sensible conventions have emerged",
-        "B": "Establish a shared, version-controlled baseline of project configuration and standards that every engineer's tooling inherits, reserving personal configuration for genuine individual preference",
+        "B": "Establish a shared, version-controlled baseline of project configuration and standards",
         "C": "Adopt whichever configuration the most productive engineer uses and roll it out across the studio",
         "D": "Let each engineer keep their own configuration, since productivity tooling is a personal matter"
       },
@@ -3152,8 +3152,8 @@
         "A": "A backlog of the Skills to be written during the first quarter",
         "B": "Which development environment each team will standardise on",
         "C": "Which delivery team will pilot the tooling first",
-        "D": "Model and budget guardrails bounding what each team is able to consume",
-        "E": "How Skills will be distributed by scope — org-provisioned for everyone, plugins for group and organisation targeting with versioned updates and rollback, project Skills for a single team, API Skills for programmatic reuse"
+        "D": "Skills distribution: org-provisioned, plugins, project Skills, API Skills",
+        "E": "Model and budget guardrails bounding what each team is able to consume"
       },
       "select_count": 2,
       "answer": [
@@ -3195,7 +3195,7 @@
         "A": "The tooling suits some working styles and not others, so usage is best left to individual preference",
         "B": "The high adopters should be moved into a central team that does this work on behalf of everyone else",
         "C": "Licences should be withdrawn from the engineers who are not using the tooling fully, to concentrate the spend",
-        "D": "Access without enablement stalls at basic chat: adoption has to be engineered through a champion per team who proves the workflow, rolled out in batches so the gain standardises rather than staying with a few individuals"
+        "D": "Access without enablement stalls; use a champion per team, in batches"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -3230,7 +3230,7 @@
       "options": {
         "A": "The tooling produces lower-quality code than human authors and its use should be restricted to non-production repositories",
         "B": "Requiring a second reviewer on every AI-authored change would resolve the discrepancy",
-        "C": "Reviewers are extending unwarranted trust to changes that arrive fluent, well-formatted and confidently explained, so review is least rigorous exactly where its scrutiny is most needed",
+        "C": "Reviewers extend unwarranted trust to changes that arrive fluent and confidently explained",
         "D": "The incident figures are confounded by AI-authored changes being more numerous, and no action is warranted until the volumes are normalised"
       },
       "answer": "C",
@@ -3266,10 +3266,10 @@
       "type": "multiple_response",
       "question": "A financial technology platform team wants to scale AI-assisted development across the organisation without introducing operational risk. Which TWO practices best support that goal? (Select TWO)",
       "options": {
-        "A": "Maintain shared configuration, prompt standards and reusable workflows in version control so that teams inherit proven practice",
+        "A": "Constrain what automated tooling may execute",
         "B": "Adopt each new AI development tool as it is released, so the organisation stays current",
         "C": "Prohibit engineers from editing generated code, so that its provenance stays unambiguous",
-        "D": "Constrain what automated tooling is permitted to execute — allowed commands, protected branches, approval gates for destructive actions",
+        "D": "Keep shared configuration and prompt standards in version control",
         "E": "Give the tooling unrestricted credentials so that friction does not slow adoption down"
       },
       "select_count": 2,
@@ -3309,7 +3309,7 @@
       "type": "single_choice",
       "question": "A retailer's production agent has begun taking unexpected actions on a subset of requests. The on-call engineer's instinct is to rewrite the system prompt immediately. What should happen first?",
       "options": {
-        "A": "Inspect traces of the affected sessions — inputs, retrieved context, tool calls and outputs — to connect the symptoms to their architecture cause before changing anything",
+        "A": "Inspect traces of the affected sessions to connect symptoms to their architecture cause",
         "B": "Disable the agent and return the workload to manual handling until the cause is known",
         "C": "Rewrite the system prompt, since prompt defects are the most common cause of unexpected agent behaviour",
         "D": "Roll back to the model version the agent ran on two quarters ago as a precaution"

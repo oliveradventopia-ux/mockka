@@ -367,3 +367,66 @@ Also for Gate 2, not item-level:
   errors are entirely selection-derived; they clear when S6 builds form A.
 - `manifest.status` stays `draft`. The examiner flips status only after Oliver's recorded Gate 2
   sign-off (`methodology/06-provenance-publishing.md`).
+
+---
+
+## S5b · cue-only solve — re-measured after the cue-rework wave (2026-08-19) {#s5b}
+
+Recorded per [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve),
+which requires the blind score, `k_req` and the ceiling verdict for the **bank and each served
+form**. The wave (`dd5f1f6` on `fix/cue-rework-wave`) changed option text only, so these
+numbers **supersede** any cue figures earlier in this report; the S5 §1 blind solve and the judge
+scores were produced against the pre-wave text and were not regenerated (see
+`derivation/gate2-checklist.md` §Post-S5 cue-rework wave).
+
+Instrument: `node tools/exploit-scan.mjs ccao-f` for form scope, and the same tool run against a
+selection-free copy of the package for bank scope — it scopes to the served form when a
+`selection.json` form exists, so bank scope must be produced deliberately. `random` is the
+format-mix expected guess score (single_choice 1/options, multiple_response 1/C(options, |key|),
+scenario_matching 1/options^scenarios, all graded all-or-nothing), which is **stricter** than the
+rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre-wave → post-wave) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 81 | 40.74% → **24.69%** (20/81) | ≤ 31.5% (random 23.33%) | **0.6282** | ≥ 0.5396 (k_req@random 0.6348) | **PASS** |
+| form-a | 60 | 43.33% → **25%** (15/60) | ≤ 30.71% (random 22.75%) | **0.6267** | ≥ 0.5419 (k_req@random 0.6375) | **PASS** |
+
+Per-cue rates on the shipping revision (chance 25% each):
+
+- **bank** — key-longest-rank 19/68 (27.9%) · key-shortest-rank 17/70 (24.3%) · named-entity 6/24 (25.0%) · rider-marks-key 3/11 (27.3%)
+- **form-a** — key-longest-rank 12/48 (25.0%) · key-shortest-rank 12/49 (24.5%) · named-entity 3/18 (16.7%) · rider-marks-key 3/9 (33.3%)
+
+### Residual: the instrument does not test interior length ranks
+
+`key-length-rank-share` and `exploit-scan`'s `key-longest-rank`/`key-shortest-rank` bound only
+rank 1 and rank last, and the standard parity fix — lift one thin distractor above a rank-1 key —
+lands the key deterministically on **rank 2**. Measuring all four ranks by hand on the shipping
+revision:
+
+| scope | key length-rank distribution | best single-rank strategy | rank-aware blind |
+|---|---|---|---|
+| bank | {1:19, 2:21, 3:15, 4:17} | rank 2: 21/72 (29.2%) | 22/81 = **27.16%** |
+| form-a | {1:12, 2:15, 3:12, 4:12} | rank 2: 15/51 (29.4%) | 16/60 = **26.67%** |
+
+"Rank-aware blind" substitutes the best interior rank for the tool's longest-option strategy. It is
+**not** the S5b number — the committed strategy set is the instrument of record — but it is the
+honest upper bound on what a rank-aware test-wise candidate scores, and Gate 2 should see it.
+
+### Residual: the uninstrumented stem-echo cue
+
+No validator check and no exploit-scan strategy measures option↔stem content-word overlap, and the
+wave's own fix mechanism (appending a purpose clause written from the stem's words to lift a key
+off the shortest rank) inflates it. Share of single-choice items where the key is the strict
+maximum-overlap option, chance 25%: bank 33.3 → 29.1%, form-a 38.5 → 32.4% — it
+**fell**.
+
+### Verdict carried to Gate 2
+
+**PASS on both ceilings, both scopes, with the cleanest rank distribution of the six** — form-a
+`{1:12, 2:15, 3:12, 4:12}` is close to uniform, so no interior-rank strategy was manufactured (the
+failure mode `az-900` hit). Stem echo fell on both scopes. Two one-sided residuals stand, neither
+gating: `rider-marks-key` on form is 3/9 rider-carrying options = 33.3% against a 45% ceiling
+(n = 9, noise — but the direction has inverted from "rider never marks the key"), and
+`named-entity-parity` is a one-sided check that warns only above 40%, so ccao-f's 16.7% form /
+25.0% bank is an *inverted* cue the check cannot see. Record both as instrument blind spots rather
+than clean passes.

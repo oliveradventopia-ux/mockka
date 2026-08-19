@@ -10,13 +10,24 @@ checklist pre-fills the evidence.
 Independence: the examiner authored nothing in this bank (`methodology/05` §independence);
 this session ran S6 only and made no edit to `questions.json`.
 
+> **Re-pinned 2026-08-19 after the post-S6 cue-rework wave.** The bank under review is now
+> `content/ccao-f/questions.json` @ **`dd5f1f6`** (blob `6d8581ecca`, sha256
+> `ee0230b0454c22a3…`) on `fix/cue-rework-wave` — **not** `d7cb9e4` / sha256 `17bb2e36bee9…`,
+> which this checklist originally pinned. `selection.json` is unchanged (item ids are stable).
+> The eval artifacts in `eval/` still date from `301c065` and were produced against the
+> **pre-wave option text**; `derivation/signoff.md` §Post-S5 cue-rework wave states what moved,
+> what the prior judge scores still cover, the re-measured S5b numbers, and how the deep-read
+> sample was extended (22 → **37 items**). Validator count also moved 33 → **37 checks** (four
+> cue checks landed after S6; all silent). `manifest.status` is still `in_review` — nothing was
+> flipped.
+
 ## The 7 preflight checks (methodology/06 §preflight), with evidence
 
 | # | Check | Examiner finding | Evidence |
 |---|---|---|---|
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` §Registered sources: 4 sources (`ccas-blueprint` public_blueprint, `ccas-guide-samples` public_practice_set, `ccas-course-recap` own_course_notes, `beecham-ccao-f` public_practice_set), each row carrying type, author, url (or offline proof-of-access basis), `date_accessed` 2026-08-16, licence/permission basis, and usage constraint. Excluded-source table records the five dump vendors screened out on legality. Machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` all green. One registry entry — `anthropic-prep-course` — is registered *pending extraction* with nothing distilled from it (Gate 1 decision 3, see open decisions below) |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree. All 81 concepts carry ≥1 registered source; 0 items are `licensed_import` (no item-level provenance override anywhere in the bank). Gate 1 spot-traced 5 chains (C-004, C-027, C-030, C-051, C-065); S6 re-confirms the machine half on the published tree |
-| 3 | Validator green | **PASS** | `pnpm validate ccao-f` → **33 checks, 0 errors, 34 warnings — PASS** (run on this tree, selection built, status `in_review`). All 24 pre-S6 errors were selection-derived and cleared when form-a was built. Warnings enumerated and dispositioned below |
+| 3 | Validator green | **PASS** | `pnpm validate ccao-f` → **37 checks, 0 errors, 34 warnings — PASS** on the re-pinned tree `dd5f1f6` (selection built, status `in_review`). *Count corrected 2026-08-19 from "33 checks"; the four cue checks that landed after S6 are all silent.* All 24 pre-S6 errors were selection-derived and cleared when form-a was built. Warnings enumerated and dispositioned below |
 | 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **81/81**, zero misses, zero adjudications open), `eval/judge-scores.json` (r2: **zero dimensions ≤2**, `bounces: []`, bounce cap respected — no item is at bounce 2), `eval/overlap-report.md` (r2: 81/81 pass; both round-1 bounces `d3-q34`, `d6-q65` discharged), `eval/codex-solve.json` (`advisory_skipped` — see cross-model note). Round-1 artifacts preserved as `*-r1.json` / `*-r1.md`. S5 narrative: `derivation/eval-report.md` |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/ccao-f/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template — provenance, prior art, NDA, non-affiliation, licence). The machine-checked `manifest.provenance.nda_statement` **is** present and complete, and `manifest.intro.disclaimer` carries the candidate-facing version; what is missing is the human-facing package README. **Owner: exam-author** (the examiner does not author package content beyond its `eval/`, `selection.json` and `derivation/` surface). Does not block `in_review`. Same open item as `aif-c01` |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0) exist at root; must also be restated in the package README (folds into item 5). Inbound: **zero `licensed_import` items** — `licensed-import-license` green with nothing to discharge. The MIT-licensed Beecham repo is registered *classification-only*, not as an import: no text was reused, so no attribution obligation is triggered by the licence (the credit still belongs in the README's prior-art section, item 5) |
@@ -84,7 +95,28 @@ did not change (a prior round's 3 on unchanged text is live evidence, and dimens
 least reproducible dimension across the two rounds — 7 threes vs 15 threes, overlapping on
 only 3 items).
 
-**On form-a — 22 items to read** (15 flagged + 7 further random; three random draws,
+**Extended 2026-08-19 to 37 items** — the S6 core of 22 plus every item touched by the
+cue-rework wave. All 22 reworked items seated on form-a are now in the sample, plus the one
+reserve-only reworked item, because publication covers the bank:
+
+| Added by the wave | Seated? | What to judge |
+|---|---|---|
+| `d2-q12` | yes | **Closest co-correctness call in the wave** — B now borrows the key's depth-varying framing ("save the full reference check for the funding reports"); it still fails because B passes routine drafts on how they *read*. Confirm |
+| `d1-q10`, `d4-q48`, `d7-q77` | yes | **Overclaim-by-intensifier** class — parity bought length by strengthening an already-wrong claim ("everywhere" / "clearly" / "by far"). Does the intensifier make the option eliminable without the scenario? |
+| `d7-q80` | yes | key retexted; check it still reaches every noun in `rationale.correct` |
+| `d1-q07`, `d3-q31`, `d4-q45`, `d4-q49`, `d4-q51`, `d5-q53`, `d5-q57`, `d5-q58`, `d6-q62` | yes | distractor length parity — check the argued-up option did not become co-correct |
+| `d6-q66` | **no** (reserve) | bank coverage; rejecting a reserve item is free |
+
+Already both reworked and sampled: `d1-q01`, `d2-q18`, `d2-q25`, `d2-q26`, `d2-q27`, `d3-q35`,
+`d3-q36`, `d4-q42`. **This wave introduced zero new capitalised tokens**, so there is no
+named-entity risk tier here.
+
+**The pairing that tells you which items need human reading.** All 36 distractor rewrites in this
+wave left their `rationale.distractors` entry **byte-identical** — the refutation was written
+against the pre-wave string. Every pair was re-read at this gate and all 36 still land, but no
+validator check covers this surface.
+
+**On form-a — the original 22 items to read** (15 flagged + 7 further random; three random draws,
 `d1-q01`, `d3-q34`, `d4-q50`, are already flagged and are not double-counted):
 
 | Item | Flag | What to judge | Substitute if rejected |

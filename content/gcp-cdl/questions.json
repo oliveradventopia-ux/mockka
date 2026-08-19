@@ -694,7 +694,7 @@
         "A": "A BigQuery warehouse consolidating every centre's occupancy records into one queryable store",
         "B": "Looker, which democratizes access to data by putting governed analysis in managers' hands",
         "C": "An access review that grants each manager rights to query the underlying tables",
-        "D": "A second analyst, so the queue is served at twice the current rate"
+        "D": "A second analyst hired for the department, so the queue is served at twice the rate"
       },
       "answer": "B",
       "distractor_patterns": { "A": "E01", "C": "D06", "D": "D03" },
@@ -1032,8 +1032,8 @@
       "question": "A minor-league sports franchise now runs four AI agents built separately by its ticketing, merchandising and community teams. Nobody can say what data each agent may reach, two teams have built the same lookup twice, and no one approved any of them. The chief operating officer wants one place to build, deploy and govern all agents. Which Google Cloud offering is that?",
       "options": {
         "A": "Gemini, the general-purpose model the three teams are already calling",
-        "B": "Looker, so every team reports from one governed set of figures",
-        "C": "Agent Registry, the Google Cloud Console catalog where deployed agents are listed and approved",
+        "B": "Looker, so every team reports from one governed and consistent set of figures",
+        "C": "Agent Registry, the Google Cloud Console catalog where agents are listed and approved",
         "D": "The Gemini Enterprise Agent Platform, for building, deploying and governing agents"
       },
       "answer": "D",
@@ -2051,7 +2051,7 @@
       "type": "single_choice",
       "question": "A textile mill's finance team has two distinct cost problems. A research team occasionally launches far more machines than anyone expected, and separately the monthly pattern-simulation run is simply expensive at list price, although it can wait days for capacity. Which pairing of controls addresses both problems?",
       "options": {
-        "A": "Budget threshold rules for both, as alerts cover overspend of any kind",
+        "A": "Budget threshold rules for both problems, as alerts cover overspend of any kind",
         "B": "Resource quota policies for the simulation run, and Compute Engine Spot VMs for the research team",
         "C": "Cloud Billing reports for both, so the finance team can see where the money goes",
         "D": "Resource quota policies for the research team, and Dynamic Workload Scheduler for the run"

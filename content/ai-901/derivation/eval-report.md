@@ -437,3 +437,66 @@ remaining dimension is 5 (five 3s) and every one of those items is in the Gate 2
 domain 14+2+2 / 20+3+1; 14 reserve-only concepts), publication preflight per `methodology/06`, and
 the Gate 2 checklist. The sign-off record must note that this exam carries **no cross-model signal
 in either round**, and that `d2-q50`'s blind-solve evidence is contaminated by disclosure.
+
+---
+
+## S5b · cue-only solve — re-measured after the cue-rework wave (2026-08-19) {#s5b}
+
+Recorded per [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve),
+which requires the blind score, `k_req` and the ceiling verdict for the **bank and each served
+form**. The wave (`b3851b9` on `fix/cue-rework-wave`) changed option text only, so these
+numbers **supersede** any cue figures earlier in this report; the S5 §1 blind solve and the judge
+scores were produced against the pre-wave text and were not regenerated (see
+`derivation/gate2-checklist.md` §Post-S5 cue-rework wave).
+
+Instrument: `node tools/exploit-scan.mjs ai-901` for form scope, and the same tool run against a
+selection-free copy of the package for bank scope — it scopes to the served form when a
+`selection.json` form exists, so bank scope must be produced deliberately. `random` is the
+format-mix expected guess score (single_choice 1/options, multiple_response 1/C(options, |key|),
+scenario_matching 1/options^scenarios, all graded all-or-nothing), which is **stricter** than the
+rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre-wave → post-wave) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 56 | 46.43% → **25%** (14/56) | ≤ 30.17% (random 22.35%) | **0.6000** | ≥ 0.5216 (k_req@random 0.6137) | **PASS** |
+| form-a | 42 | 42.86% → **30.95%** (13/42) | ≤ 28.97% (random 21.46%) | **0.5655** | ≥ 0.5253 (k_req@random 0.6180) | **blind FAIL** · k_req PASS |
+
+Per-cue rates on the shipping revision (chance 25% each):
+
+- **bank** — key-longest-rank 11/43 (25.6%) · key-shortest-rank 7/45 (15.6%) · named-entity 3/9 (33.3%) · rider-marks-key 4/16 (25.0%)
+- **form-a** — key-longest-rank 7/30 (23.3%) · key-shortest-rank 6/31 (19.4%) · named-entity 2/7 (28.6%) · rider-marks-key 3/12 (25.0%)
+
+### Residual: the instrument does not test interior length ranks
+
+`key-length-rank-share` and `exploit-scan`'s `key-longest-rank`/`key-shortest-rank` bound only
+rank 1 and rank last, and the standard parity fix — lift one thin distractor above a rank-1 key —
+lands the key deterministically on **rank 2**. Measuring all four ranks by hand on the shipping
+revision:
+
+| scope | key length-rank distribution | best single-rank strategy | rank-aware blind |
+|---|---|---|---|
+| bank | {1:11, 2:18, 3:11, 4:8} | rank 2: 18/48 (37.5%) | 19/56 = **33.93%** |
+| form-a | {1:7, 2:13, 3:7, 4:7} | rank 2: 13/34 (38.2%) | 14/42 = **33.33%** |
+
+"Rank-aware blind" substitutes the best interior rank for the tool's longest-option strategy. It is
+**not** the S5b number — the committed strategy set is the instrument of record — but it is the
+honest upper bound on what a rank-aware test-wise candidate scores, and Gate 2 should see it.
+
+### Residual: the uninstrumented stem-echo cue
+
+No validator check and no exploit-scan strategy measures option↔stem content-word overlap, and the
+wave's own fix mechanism (appending a purpose clause written from the stem's words to lift a key
+off the shortest rank) inflates it. Share of single-choice items where the key is the strict
+maximum-overlap option, chance 25%: bank 33.3 → 34.3%, form-a 37.5 → 40.0% — it
+**rose**.
+
+### Verdict carried to Gate 2
+
+**Bank PASS · form-a blind FAIL on the strict ceiling.** form-a's 30.95% exceeds 28.97% by roughly
+0.8 items; it passes against the rubric's 25% simplification (≤ 33.75%) and `k_req` clears its
+floor on both scopes, and `tools/exploit-scan.mjs` exits 0 because the machine-enforced hard floor
+is the 70% pass mark. **The residual is not the wave's doing.** Longest-option fell 17/34 → 7/34 on
+form; what remains is the *letter* cue — `always B` scores 12/34 = 35.3%, identical pre- and
+post-wave, because ai-901's keys were never permuted while `aif-c01` and `az-900` took a
+`permute-keys` pass in the same wave. Options for Oliver: accept · permute form-a's SC key letters
+and re-verify · waive with the reason recorded in `signoff.md`.

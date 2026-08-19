@@ -6,14 +6,25 @@ bank revision (author rework `e2434ad`; S5 round 2 closed at `2df3bb4`, artifact
 alone, recorded first in `derivation/signoff.md`. Verdict columns in the sign-off are
 left for Oliver; this checklist pre-fills the evidence.
 
+> **Re-pinned 2026-08-19 after the post-S6 cue-rework wave.** The bank under review is now
+> `content/ai-901/questions.json` @ **`b3851b9`** (blob `717f441939`, sha256
+> `d8f6d2ce0a891e27…`) on `fix/cue-rework-wave` — **not** `e2434ad`, which this checklist
+> originally pinned. `selection.json` @ `12378b6` is unchanged (item ids are stable).
+> The eval artifacts in `eval/` still date from `2df3bb4` and were produced against the
+> **pre-wave option text**; §Post-S5 cue-rework wave below states what moved, what the prior
+> judge scores still cover, and how the deep-read sample was extended (22 → **33 items**) so
+> that every reworked item is read at this gate. Validator count also moved 30 → **34 checks**
+> (four cue checks landed after S6). `manifest.status` is still `in_review` — nothing was
+> flipped.
+
 ## The 7 preflight checks (methodology/06 §preflight), with evidence
 
 | # | Check | Examiner finding | Evidence |
 |---|---|---|---|
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` §Registered sources: 3 entries (`ms-ai901-blueprint` public_blueprint, `ms-ai901-curriculum` public_syllabus, `akashp-ai901-simulator` public_practice_set), each carrying type, author, URL, `date_accessed` 2026-08-17, licence/permission basis and usage constraint. Excluded sources screened with evidence recorded (§Excluded sources). Machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` all green |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree. Examiner spot-check, four chains re-walked by hand: `d1-q11`→`C-011`→{blueprint b-1.2-3, curriculum c-2.1-3/4}, `d2-q41`→`C-041`→{blueprint b-2.2-4}, `d2-q34`→`C-034`→{blueprint b-2.1-4/6, curriculum c-1.2-3, simulator Q33/104/109/195}, `d1-q13`→`C-013`→{blueprint b-1.3-1, curriculum c-1.1-1..6, simulator Q49/56/58/59} — every artefact id resolves to a registry entry and to a distillation doc in `derivation/` |
-| 3 | Validator green | **PASS** | `pnpm validate ai-901` → **30 checks, 0 errors, 0 warnings** on this tree (selection built, status `in_review`). Includes the two ratchet checks `key-position-distribution` + `answer-length-cue`, both green, and the three selection checks (`selection-shape`, `selection-format-mix`, `selection-concept-uniqueness`) that were the 10 errors while `selection.json` was empty. No warn-level reports to disposition |
-| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **56/56**, zero misses, zero adjudications open), `eval/judge-scores.json` (r2: **zero dimensions ≤2**, zero open bounces, every item at bounce ≤1 — cap is 2), `eval/overlap-report.md` (r1+r2 sections, pass), `eval/codex-solve.json` (`advisory_skipped` recorded for both rounds — see the cross-model note below). Round-1 artifacts preserved verbatim at `eval/blind-solve-r1.json` + `eval/judge-scores-r1.json`. **One S6 correction to `judge-scores.json`:** its top-level `round` field and `gate2_sample.count` were left at round-1 values (`1`, `9`) when the round-2 re-eval rewrote the rest of the file; corrected to `2` and `10` to match the authoritative handoff in `derivation/eval-report.md` §6 and the file's own round-2 `$comment`. Scores, bounces and defect records untouched; the correction is logged in-file at `gate2_sample.corrected_at_s6` |
+| 3 | Validator green | **PASS** | `pnpm validate ai-901` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree `b3851b9` (selection built, status `in_review`). *Count corrected 2026-08-19: this row read "30 checks" against `e2434ad`; four cue checks — `key-length-rank-share`, `rider-balance`, `named-entity-parity`, `option-pair-similarity` — landed after S6 and all four are silent here.* Includes the two original ratchet checks `key-position-distribution` + `answer-length-cue`, both green, and the three selection checks (`selection-shape`, `selection-format-mix`, `selection-concept-uniqueness`) that were the 10 errors while `selection.json` was empty. No warn-level reports to disposition |
+| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **56/56**, zero misses, zero adjudications open), `eval/judge-scores.json` (r2: **zero dimensions ≤2**, zero open bounces, every item at bounce ≤1 — cap is 2), `eval/overlap-report.md` (r1+r2 sections, pass), `eval/codex-solve.json` (`advisory_skipped` recorded for both rounds — see the cross-model note below). Round-1 artifacts preserved verbatim at `eval/blind-solve-r1.json` + `eval/judge-scores-r1.json`. **Post-wave standing (2026-08-19):** all four artifacts were produced against the pre-wave option text (`e2434ad`) and were not regenerated; §Post-S5 cue-rework wave records what moved and which dimensions are re-opened. **S5b re-measured on the shipping revision: bank PASSES both ceilings; form-a blind 30.95% exceeds the strict format-mix ceiling 28.97% and needs Oliver's ruling** (table in that section). **One S6 correction to `judge-scores.json`:** its top-level `round` field and `gate2_sample.count` were left at round-1 values (`1`, `9`) when the round-2 re-eval rewrote the rest of the file; corrected to `2` and `10` to match the authoritative handoff in `derivation/eval-report.md` §6 and the file's own round-2 `$comment`. Scores, bounces and defect records untouched; the correction is logged in-file at `gate2_sample.corrected_at_s6` |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/ai-901/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template; the manifest's machine-checked `nda_statement` exists and the intro `disclaimer` carries the candidate-facing version, but the README's provenance / prior-art / NDA / non-affiliation / licence sections are the human-facing artifact and are missing). **Owner: exam-author** — the examiner does not author package content beyond its eval/selection surface. Precedent now exists: `content/aif-c01/README.md` landed at commit `f5a877f` and is the shape to copy. Does not block `in_review` |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0, content) exist at root; must also be stated in the package README, which folds into item 5. Inbound: **zero `licensed_import` items** in this bank (grep on `questions.json` / `concepts.json` / `manifest.json` returns 0) — `licensed-import-license` green with nothing to discharge. The one third-party source (`akashp-ai901-simulator`, MIT) was used for analytical classification only under the clean-room rule; **no text was reused**, so MIT attribution is discharged by citation in `derivation/sources.md` and in the manifest provenance block rather than by an attribution notice on shipped content |
 | 7 | `format_coverage` disclosure present where required | **PASS** | Required: the Artefact A format analysis (`derivation/sources.md` §Format profile) shows the real exam draws from 8 item types against Mockka's 3. The manifest `format_coverage` field discloses: multiple-choice → `single_choice` exact; multi-select → `multiple_response` but scored **all-or-nothing here, stricter than Microsoft's per-component partial credit**; drag-and-drop → approximated by `scenario_matching`; **build list, hot area, active screen, case studies and problem-solution sets not rehearsed at all** — called out as mattering more here because 55–60% of the exam's weight is on implementing in Foundry. Also discloses the three chosen-not-published numbers (42-item form, 70% proxy threshold, 45-minute vendor time kept). `intro-presence` green; the player renders the disclosure on the intro page |
@@ -26,6 +37,54 @@ scaled 1–1,000 / 700 pass mark that Microsoft states "may not equal 70% of the
 and `time_limit_minutes` 45 as the vendor's actual published Fundamentals exam time
 kept unchanged (so a 42-item sitting here is slightly more generous per item than a
 60-item one). All four are visible to Oliver at sign-off.
+
+## Post-S5 cue-rework wave (2026-08-19) — provenance and the proportional re-open
+
+Three commits on `fix/cue-rework-wave` (`6341f38` → `31d0ad7` → `b3851b9`), all explicit-path to
+`content/ai-901/questions.json`. Preflight item 4 requires the eval artifacts to exist **for this
+bank revision**; they exist for `e2434ad`, so this section records the delta rather than pretending
+freshness.
+
+**Blast radius, from a field-level path diff against merge-base `1b33eb6`** (both revisions parsed,
+indexed by `id`, walked recursively — not read as a text diff). The complete set of path shapes is
+`{"options.<letter>": 22}`. Byte-identical bank-wide: every stem, every `answer` (no key letter
+moved on this exam), every `rationale.correct`, the `rationale.distractors` multiset, the
+`distractor_patterns` multiset, the id set (56 in, 56 out).
+
+**22 option strings on 16 items** — 5 key-side, 17 distractor-side. Seated on form-a (12):
+`d1-q16`, `d2-q26`, `d2-q30`, `d2-q31`, `d2-q33`, `d2-q36`, `d2-q40`, `d2-q48`, `d2-q51`,
+`d2-q53`, `d2-q54`, `d2-q55`. Reserve-only (4): `d1-q09`, `d2-q37`, `d2-q38`, `d2-q42`.
+
+**Therefore:** the prior judge scores stand untouched on dimensions **3, 4 (as text), 5 and 6** —
+nothing those dimensions read has changed. Dimensions **1 and 2 are re-opened for the 16 touched
+items**, which is exactly why all 16 are now in the deep-read sample. `eval/blind-solve.json`'s
+letters remain valid (no permutation on this exam) but 22 of the strings under them are new.
+
+### S5b cue-only solve, re-measured post-wave (replaces the pre-wave numbers)
+
+`node tools/exploit-scan.mjs ai-901` for form scope; the same tool against a selection-free copy of
+the package for bank scope (it scopes to the served form when one exists). `random` is the
+format-mix expected guess score — stricter than the rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre → post) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 56 | 46.43% → **25.00%** (14/56) | ≤ 30.17% (random 22.35%) | **0.6000** | ≥ 0.5216 (k_req@random 0.6137) | **PASS** |
+| form-a | 42 | 42.86% → **30.95%** (13/42) | ≤ 28.97% (random 21.46%) | **0.5655** | ≥ 0.5253 (k_req@random 0.6180) | **blind FAIL** · k_req PASS |
+
+Per-cue rates post-wave (chance 25%): bank key-longest 11/43 (25.6%), key-shortest 7/45 (15.6%),
+named-entity 3/9 (33.3%), rider-marks-key 4/16 (25.0%); form key-longest 7/30 (23.3%), key-shortest
+6/31 (19.4%), named-entity 2/7 (28.6%), rider-marks-key 3/12 (25.0%). Best single strategies on
+form-a: `always B` 12/34 · longest-option 7/34 (was 17/34) · fixed MR set 1/5 · listed-order
+matching 0/3.
+
+**Open for Oliver — preflight item 4 does not close on form scope.** The wave removed the length
+cue and left the letter cue untouched: `always B` scores 12/34 = 35.3% on form-a, identical
+pre- and post-wave, because ai-901's keys were never permuted (`aif-c01` and `az-900` took a
+`permute-keys` pass in this same wave; ai-901 did not). `tools/exploit-scan.mjs` exits 0 — the
+machine-enforced hard floor is the 70% pass mark, not this ceiling — and the ceiling arithmetic is
+examiner-computed per methodology/05 §cue-only-solve, so this is a judgment call, not a red build.
+Three ways to close it: accept on the bank-scope pass plus k_req headroom; permute form-a's SC key
+letters and re-verify; or waive with the reason recorded in `signoff.md`.
 
 ## Selection — what form-a is, and what is forced
 
@@ -56,8 +115,33 @@ items ship by arithmetic. Consequences Oliver should see:
 ## Gate 2 deep-read sample
 
 Per methodology/05 §handoff + `/exam-publish` step 3: **all scenario-matching + 10 random
-+ every auto-flagged item.** Total **22 items** — lists below are disjoint (no
++ every auto-flagged item** — **extended 2026-08-19 to + every item touched by the
+cue-rework wave.** Total **33 items** (was 22) — lists below are disjoint (no
 double-counting; `d1-q23` is both SM and auto-flagged and is listed once, under flags).
+
+**Wave extension (11 new items).** All 12 reworked items seated on form-a are now in the
+sample, plus the 2 reserve-only reworked items not already flagged, because publication
+covers the bank:
+
+| Added | Seated? | Wave edit | What to judge |
+|---|---|---|---|
+| `d2-q53` | yes | **named entity** — distractor A became "Azure Speech in Foundry Tools … then Content Understanding" | A is now a buildable pipeline producing what the stem asks for; the key survives on the stem's word *"directly"*. Is that enough for a single defensible best answer? |
+| `d2-q54` | yes | **named entity** — distractor B enumerates Azure AI Vision / Azure Speech instead of asserting a false premise | B lost its overt falsity and is now wrong only on *"needed"*. Does the key still win on the concept, not on integration economy? |
+| `d2-q51` | yes | **named entity** — Document Intelligence named into D; the key **lost** its entity ("Azure Content Understanding in Foundry Tools" → "Content Understanding") | D must fail on OCR-plus-per-layout-rules, not on knowing a product was renamed (`master-inventory.md:230`). Confirm the shortened key is still self-sufficient |
+| `d2-q26` | yes | key-side rider | The appended rider must not become the item's own giveaway |
+| `d2-q55` | yes | key-side rider | as above |
+| `d2-q40` | yes | distractor, "Microsoft" introduced | specificity parity only — check it does not hand the key over by contrast |
+| `d2-q30` | yes | distractor, "SDK" introduced | already in the random 10; re-read against the new string |
+| `d1-q16`, `d2-q31`, `d2-q33`, `d2-q48` | yes | length parity | distractor argued up; check it did not become co-correct |
+| `d1-q09`, `d2-q42` | **no** (reserve) | `d2-q42` is key-side + entities {Azure, Foundry, Tools} | bank coverage; rejecting a reserve item is free — no re-seat, no form rebuild |
+
+Already both reworked and sampled: `d2-q30`, `d2-q36`, `d2-q37`, `d2-q38`, `d2-q48`.
+
+**The pairing that tells you which items need human reading.** All 17 distractor rewrites in
+this wave left their `rationale.distractors` entry **byte-identical** — the refutation was
+written against the pre-wave string. Every pair was re-read at this gate and all 17 still land,
+but no validator check covers this surface (`rationale-anti-drift` does not test it), so the
+deep-read is the only control.
 
 **Auto-flagged (10) — a 3 ships only if this deep-read accepts it:**
 

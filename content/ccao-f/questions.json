@@ -1,0 +1,2816 @@
+{
+  "$comment": "CCAO-F question bank, authored at S4 (exam-author) per methodology/03-authoring-guide.md from content/ccao-f/{concepts.json,authoring.json,manifest.json,syllabus-rules.json,derivation/} ONLY (clean-room). Every concept is the primary concept of exactly one item; themes are the CCAO-F T1-T8 set in authoring.json; distractor tags reference methodology/distractor-patterns.json + extensions E01/E02. Style: vendor card in derivation/source-ccas-guide-samples.md (en-US, scenario stems, generic roles, stated deciding constraint, superlative framing, option-length parity).",
+  "version": "0.1.0",
+  "questions": [
+    {
+      "id": "ccao-f-d1-q01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "syllabus_rule": "2.01",
+      "theme": "T2",
+      "vertical": "hotel banquet and catering sales",
+      "keywords": [
+        "effective prompts",
+        "business purpose"
+      ],
+      "type": "single_choice",
+      "question": "A banquet sales coordinator at a hotel banquet and catering sales office is setting up a prompt that will draft proposals for wedding clients. A colleague shares a long template prompt admired across the team for its confident, polished wording, and the coordinator must decide what standard to judge a prompt against before adopting one. Which standard is the most appropriate?",
+      "options": {
+        "A": "Judge a prompt by whether the proposals it produces are fit for the business purpose the team needs",
+        "B": "Adopt the shared template on the strength of the results colleagues across the team vouch for",
+        "C": "Judge the prompt by how confident and polished the drafts it returns sound on a first read",
+        "D": "Prefer the longest, most detailed prompt available, since detailed prompts are accepted best practice"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "E02",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "A prompt is a specification: it states the work, the inputs that govern it, and what a good result looks like, and its quality is judged by the output's fitness for the business purpose — effective prompts are measured against the proposal the team actually needs, not against length or register.",
+        "distractors": {
+          "B": "A colleague's endorsement is an anecdote, not a measure; the template still has to be judged against the output it produces for this team's proposals.",
+          "C": "Confident, polished wording is a register, not a fitness signal; a fluent draft can still miss what the client asked for.",
+          "D": "Length is not a quality standard; a long prompt that never states what a good result looks like is a weaker specification than a short one that does."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "syllabus_rule": "2.01",
+      "theme": "T2",
+      "vertical": "airline loyalty program office",
+      "keywords": [
+        "constraints",
+        "format",
+        "role"
+      ],
+      "type": "multiple_response",
+      "question": "A program associate at an airline loyalty program office asks Claude to draft a member communication about changes to tier benefits. The prompt assigns a role, pastes the briefing document as context, and states the task. The draft comes back well written, but it runs far past the required two-page limit and arrives as flowing prose instead of the required benefits table. Which TWO changes to the prompt would most directly address the problem? (Select TWO.)",
+      "options": {
+        "A": "State the constraints the draft must respect, including the two-page limit",
+        "B": "Assign a more senior-sounding role so the draft takes on an executive register",
+        "C": "Specify the format the output must arrive in, naming the required benefits table",
+        "D": "Convert the prose into the benefits table by hand after each draft arrives",
+        "E": "Ask Claude to review its own draft and correct any problems it can find"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "D04",
+        "D": "D05",
+        "E": "D20"
+      },
+      "rationale": {
+        "correct": "The five components — role, context, task, constraints, format — run as a checklist. This prompt already carries a role, context, and the task, and the two failures map exactly onto the two missing components: constraints, which own the two-page limit, and format, which owns the benefits table. Naming both fixes the specification, where the correction holds for every future draft.",
+        "distractors": {
+          "B": "A role changes register, not correctness; it is one component of five and cannot substitute for the missing constraints and format.",
+          "D": "Reformatting by hand treats the symptom each time while the prompt keeps producing prose; the missing components stay missing.",
+          "E": "Self-review runs inside the context that produced the draft; it cannot supply constraints and format the request never stated."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "syllabus_rule": "2.02",
+      "theme": "T2",
+      "vertical": "regional tourism board",
+      "keywords": [
+        "context gap",
+        "model limitation"
+      ],
+      "type": "single_choice",
+      "question": "A content officer at a regional tourism board asks Claude to draft social posts promoting the spring campaign. The drafts come back grammatical and on topic, yet generic enough to fit any destination. The officer knows the campaign's audience, hook, and headline events well, none of which appear in the request, and is close to concluding the model cannot handle marketing work. What is the most appropriate next step?",
+      "options": {
+        "A": "Move the task to the most capable model tier and run the same request again",
+        "B": "Add the audience, hook, and headline events the request never stated, then rerun it",
+        "C": "Keep the drafts and hand edit distinctive local detail into each post after every run",
+        "D": "Take campaign writing back from the tool and produce the posts manually from now on"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "D05",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Claude cannot see what exists only in the requester's head, so generic, on-topic output is diagnosed as a context gap before it is blamed on a model limitation. Supplying the audience, hook, and headline events closes the gap the drafts are exposing.",
+        "distractors": {
+          "A": "Upgrading capability does not supply the missing campaign specifics; a stronger tier fills the same gap with better-worded generic material.",
+          "C": "Hand editing rewrites the symptom on every run while the request keeps omitting what makes the campaign distinct.",
+          "D": "Walking away treats a fixable context gap as a permanent limitation; nothing here shows the task is beyond the tool."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "syllabus_rule": "2.03",
+      "theme": "T2",
+      "vertical": "charity grant administration",
+      "keywords": [
+        "ordered steps",
+        "checkable result"
+      ],
+      "type": "single_choice",
+      "question": "A grants officer at a charity grant administration team delegates a monthly job to Claude: screen applications against eligibility criteria, check each budget against policy limits, and draft a funding memo. Run as one large prompt, the memos read smoothly — but when one is wrong, the officer cannot tell which part of the job failed. What is the most appropriate way to restructure the work?",
+      "options": {
+        "A": "Split the job into ordered steps and check each stage's result before the next stage consumes it",
+        "B": "Keep the single prompt and expand it with more detailed instructions covering every stage",
+        "C": "Commission an automated multi-agent pipeline in which each stage is handled by its own agent",
+        "D": "Keep the current prompt and pass the memos that read fluent and complete without further checks"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "D01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Task decomposition techniques split complex work into ordered steps, each producing a checkable result before the next step consumes it. Checkable intermediates are what make delegated multi-stage work diagnosable: when a memo is wrong, the failing stage is visible instead of buried in one opaque pass.",
+        "distractors": {
+          "B": "More instructions make the single prompt longer, not more diagnosable; a failure still cannot be traced to a stage.",
+          "C": "An agent pipeline adds machinery a monthly three-stage job does not warrant, and building one sits beyond an Associate's scope besides.",
+          "D": "Fluent, complete-sounding memos are not evidence of correctness; the officer already knows some of them are wrong."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "syllabus_rule": "2.03",
+      "theme": "T2",
+      "vertical": "market research fieldwork agency",
+      "keywords": [
+        "structure complex requests",
+        "dependency"
+      ],
+      "type": "single_choice",
+      "question": "A project lead at a market research fieldwork agency has decomposed a client study into steps: design the questionnaire, build the fieldwork schedule, brief the interviewers, and draft the client summary. Every later step depends on the questionnaire, and the client is eager to see something polished early. Which step should the lead build with Claude and verify first?",
+      "options": {
+        "A": "The client summary, because a polished early deliverable is what the client is waiting to see",
+        "B": "The interviewer briefing, leaving the questionnaire for the end when requirements are clearest",
+        "C": "The questionnaire, verified before any later step is allowed to build on top of it",
+        "D": "All four steps in a single pass, keeping the study whole instead of fragmenting it into stages"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D11",
+        "B": "D15",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "How to structure complex requests is decided by dependency and stakes: the step everything else rests on is built and verified first, because every later step inherits its errors. The questionnaire governs the fieldwork schedule, the interviewer briefing, and the client summary alike.",
+        "distractors": {
+          "A": "A polished early deliverable is client optics, not a build order; a summary drafted before the questionnaire exists rests on nothing.",
+          "B": "Deferring the load-bearing step compounds its cost; a briefing built without the questionnaire will need redoing once it exists.",
+          "D": "Running the study as one undivided pass removes the checkpoints the decomposition just created and makes failures untraceable again."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "syllabus_rule": "2.03",
+      "theme": "T8",
+      "vertical": "dental clinic network operations",
+      "keywords": [
+        "decomposition",
+        "attributable"
+      ],
+      "type": "single_choice",
+      "question": "An operations coordinator at a dental clinic network runs one long-standing prompt that produces patient recall letters, drafts follow-up scheduling blocks, and assigns insurance codes in a single pass. Output is intermittently wrong, and the coordinator cannot tell which of the three functions produces the errors. What is the most appropriate change?",
+      "options": {
+        "A": "Keep the prompt and correct whichever letters, blocks, or codes turn out wrong after each run",
+        "B": "Tighten the prompt's wording and reduce the latitude it grants, leaving its structure as it is",
+        "C": "Retire and rewrite the prompt periodically, as prompts accumulate errors the longer they are reused",
+        "D": "Restructure the single prompt into separate stages so each function returns its own result"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "A single opaque prompt covering many stages cannot be diagnosed when it fails. The remedy for complex requests is decomposition: each function returns a result that can be checked on its own, so errors become attributable to a stage instead of hiding somewhere in one pass.",
+        "distractors": {
+          "A": "Correcting outputs downstream treats the symptoms one at a time while the source of the errors stays unlocated.",
+          "B": "Wording and latitude are knobs; neither makes a three-function prompt traceable, and the failing function stays hidden.",
+          "C": "Prompts do not accumulate errors with reuse; that claim invents a mechanism, and a rewritten monolith is exactly as undiagnosable."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "syllabus_rule": "2.04",
+      "theme": "T8",
+      "vertical": "corporate travel desk",
+      "keywords": [
+        "diagnostic",
+        "iterate prompts"
+      ],
+      "type": "single_choice",
+      "question": "An agent at a corporate travel desk uses Claude to summarize the company travel policy for new hires. The first draft is accurate but comes back at twice the length requested. On earlier tasks the agent responded to a flawed draft by rewriting the entire prompt from scratch, and the results swung unpredictably between rounds. What is the most appropriate way to run the next round?",
+      "options": {
+        "A": "Read the draft as a diagnostic, identify the one component it points at, and change only that",
+        "B": "Rewrite the role, context, and format lines together so the next round improves on every front at once",
+        "C": "Swap in a prompt another team praises for its policy summaries and run that one instead",
+        "D": "Stop iterating and write the summary by hand, treating the over-long draft as the tool's ceiling"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D12",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "The output is read as a diagnostic naming which component of the request failed — an accurate draft at twice the length requested points at the length constraint — and exactly one component changes per round, so the effect is attributable. That is how to iterate prompts toward better quality without the swings whole-prompt rewrites produce.",
+        "distractors": {
+          "B": "Changing several components at once means no improvement or regression can be attributed to any of them — the same confounding the from-scratch rewrites produced.",
+          "C": "Another team's admired prompt is an anecdote about a different task; adopting it discards the diagnostic the current draft just supplied.",
+          "D": "One over-long draft is not a capability ceiling; the output points at a fixable component, not at the tool."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "syllabus_rule": "2.04",
+      "theme": "T8",
+      "vertical": "independent bookstore chain",
+      "keywords": [
+        "rounds",
+        "monthly sales figures"
+      ],
+      "type": "single_choice",
+      "question": "A marketing coordinator at an independent bookstore chain has spent five rounds rewording a prompt for a staff-picks newsletter that must cite each store's monthly sales figures. Improvement stopped at round three: the drafts remain fluent, the figures are still invented, and no sales data has ever been attached to the request. What is the most appropriate next step?",
+      "options": {
+        "A": "Run a further round of still more elaborate wording spelling out exactly what the drafts should contain",
+        "B": "Stop rewording and attach the monthly sales figures the newsletter must cite",
+        "C": "Move the task to the most capable model tier and rerun the current prompt unchanged",
+        "D": "Conclude the newsletter cannot be delegated and return to writing it manually each month"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D03",
+        "C": "D01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Iteration terminates: when successive rounds stop improving the result, the remaining gap is a task or evidence problem, not a wording problem. The drafts invent figures because no sales data was ever supplied, and attaching the monthly sales figures closes a gap no phrasing change can reach.",
+        "distractors": {
+          "A": "Improvement already stopped at round three; more elaborate wording keeps working on a component that is not the problem.",
+          "C": "A more capable tier cannot cite data it was never given; the invented figures are an evidence gap, not a capability gap.",
+          "D": "Delegation is not the failure; a request without the sales data could never have succeeded, and supplying it has not been tried."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "syllabus_rule": "2.04",
+      "theme": "T2",
+      "vertical": "veterinary clinic group",
+      "keywords": [
+        "worked examples",
+        "improve output quality"
+      ],
+      "type": "single_choice",
+      "question": "A triage administrator at a veterinary clinic group uses Claude to sort incoming owner messages into urgent and routine queues. The category definitions in the prompt are already thorough, and clear-cut messages sort correctly — but borderline messages, like an older dog refusing one meal or a cat hiding since yesterday, keep landing in the wrong queue. What is the most appropriate revision?",
+      "options": {
+        "A": "Extend the definitions with additional paragraphs describing each category in finer detail",
+        "B": "Ask owners to mark their own messages as urgent or routine when they write in",
+        "C": "Add worked examples of borderline messages, each labeled with the correct queue",
+        "D": "Have staff re-sort the borderline messages by hand at the end of each day"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D18",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "When definitions are already adequate and boundary cases still fail, the missing component is worked examples that mark the boundary. Labeled borderline cases show where the line sits, which more definition cannot — the reliable way to improve output quality on edge cases.",
+        "distractors": {
+          "A": "The definitions are not the failing component — clear-cut messages already sort correctly; more definition is the wrong fix for boundary cases.",
+          "B": "Pushing the classification onto owners makes the failure the user's problem and hands the triage call to the least qualified party.",
+          "D": "A daily hand re-sort treats the symptom after the queue damage is done and leaves the prompt misrouting tomorrow's messages."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "syllabus_rule": "2.05",
+      "theme": "T2",
+      "vertical": "orchestra development office",
+      "keywords": [
+        "latitude",
+        "brainstorming"
+      ],
+      "type": "single_choice",
+      "question": "A development associate at an orchestra development office uses one heavily constrained prompt template — fixed structure, fixed tone, fixed length — for every task. It performs well on donor-report analysis, but when the associate uses it to brainstorm next season's fundraising campaign themes, every run returns the same three predictable ideas. What is the most appropriate adjustment?",
+      "options": {
+        "A": "Keep maximum constraints on every task, as tightly specified prompts are accepted best practice",
+        "B": "Reuse whichever prompt produced last year's most admired campaign and adapt its wording",
+        "C": "Drop the constraints from every task's prompt so that no request is over-specified again",
+        "D": "Keep the constraints for the analysis work and grant the brainstorming prompt deliberate latitude"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D14",
+        "B": "D12",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "Task type sets how much latitude the prompt grants: convergent analysis is constrained, divergent brainstorming is deliberately left open. Control and range trade off, and one prompt cannot maximize both — the fixed template is right for donor-report analysis and wrong for campaign brainstorming.",
+        "distractors": {
+          "A": "Tight specification is not a universal best practice; applied to divergent work, it is exactly what keeps returning the same three predictable ideas.",
+          "B": "Last year's admired campaign is an anecdote; copying its prompt neither diagnoses the template nor sets latitude by task type.",
+          "C": "Removing constraints everywhere trades one mismatch for another: the donor-report analysis needs the control the template currently provides."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d1-q11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "syllabus_rule": "2.05",
+      "theme": "T2",
+      "vertical": "furniture manufacturer export desk",
+      "keywords": [
+        "research",
+        "task type"
+      ],
+      "type": "single_choice",
+      "question": "An export desk coordinator at a furniture manufacturer asks Claude for a polished briefing on current import duties in two target markets, prompting it exactly as they would for drafting work: a role, the audience, and a request for finished prose. The briefing comes back reading authoritative. What is the most appropriate way to handle this task?",
+      "options": {
+        "A": "Accept the briefing as finished; its authoritative, polished register shows the duties are reliable",
+        "B": "Treat the job as a research task first, grounding the duties in current sources before any drafting",
+        "C": "Rely on the model's training staying current, as duty rates are refreshed into it when they change",
+        "D": "Publish now and schedule a quarterly hand check to catch any duty figures that have gone stale"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "D19",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "The four task types — analysis, research, drafting, brainstorming — each fail in a characteristic way when the wrong strategy is applied. Import duties in two target markets are a research task type: current information must be brought to the task first, and drafting begins only once the facts are grounded.",
+        "distractors": {
+          "A": "An authoritative register is fluency, not currency; polished prose is exactly how a drafting strategy dresses stale or invented duty figures.",
+          "C": "Pretrained knowledge carries no currency guarantee, and no mechanism refreshes duty rates into it as they change; that claim invents one.",
+          "D": "A quarterly check detects damage after the briefing has circulated; a research task needs facts grounded before drafting, not audited after."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q12",
+      "domain": "d2",
+      "primary_concept": "C-012",
+      "syllabus_rule": "3.02",
+      "theme": "T3",
+      "vertical": "apprenticeship training provider",
+      "keywords": [
+        "requirements",
+        "source material",
+        "professional standards"
+      ],
+      "type": "single_choice",
+      "question": "A program coordinator at an apprenticeship training provider uses Claude to draft employer progress reports, some routine and some feeding funding decisions. The coordinator is writing the team's standing evaluation step for these drafts and wants it to hold for both kinds of report. Which evaluation discipline is the most appropriate?",
+      "options": {
+        "A": "Check each draft against the requirements, the source material, and professional standards, varying only depth of review",
+        "B": "Pass the routine drafts on how complete and well organized they read, saving real checks for the funding reports",
+        "C": "Pick which of the three references to check on each draft according to the time available that week",
+        "D": "Send all drafts out and review a weekly sample of them against the source material after the fact"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D02",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Evaluation runs against three explicit references every time — the requirements, the source material, and professional standards. What flexes with the stakes is the depth of review, never the reference set, which is exactly what lets one standing step cover routine and funding reports alike.",
+        "distractors": {
+          "B": "How complete a draft reads is register, not evaluation; skipping the references on routine work is where unchecked errors settle.",
+          "C": "Time pressure calibrates depth, not the reference set; dropping a reference removes a check the discipline says always runs.",
+          "D": "A weekly sample reviews damage after reports have gone out; evaluation belongs before release, at a depth matched to the stakes."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q13",
+      "domain": "d2",
+      "primary_concept": "C-013",
+      "syllabus_rule": "3.03",
+      "theme": "T3",
+      "vertical": "employee benefits consultancy",
+      "keywords": [
+        "completeness",
+        "accuracy"
+      ],
+      "type": "single_choice",
+      "question": "An analyst at an employee benefits consultancy has Claude draft a renewal comparison memo for a client choosing between two health plans. The analyst fact-checks every figure and every plan feature named in the memo and finds them all accurate. The client will decide directly from this memo. What should the analyst do before sending it?",
+      "options": {
+        "A": "Send it: every claim in the memo has been verified, so the evaluation is finished",
+        "B": "Check the memo against the full set of items the renewal decision needs, looking for what is absent",
+        "C": "Ask Claude to list anything it may have left out of its own memo and send once it reports nothing",
+        "D": "Send it now and rely on the client's follow-up questions to surface anything that is missing"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D12",
+        "C": "D20",
+        "D": "D18"
+      },
+      "rationale": {
+        "correct": "Completeness is a separate check from accuracy: a memo can be entirely true and still omit what the decision needs, and the omission is silent — nothing present flags what is absent. The memo is checked against what the renewal decision requires, not only against whether its claims hold.",
+        "distractors": {
+          "A": "Verifying the claims that are present assumes completeness without checking it; accuracy checks cannot flag an absent item.",
+          "C": "The same context that produced the omission cannot be relied on to see it; a clean self-report is not a completeness check.",
+          "D": "Waiting for client questions pushes the gap onto the person the memo was supposed to equip, after the decision is already in motion."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q14",
+      "domain": "d2",
+      "primary_concept": "C-014",
+      "syllabus_rule": "3.01",
+      "theme": "T4",
+      "vertical": "insurance claims intake team",
+      "keywords": [
+        "accountability",
+        "review"
+      ],
+      "type": "single_choice",
+      "question": "A supervisor at an insurance claims intake team is rolling out Claude to draft claim acknowledgment and status letters that go out under the supervisor's name. A teammate asks who is answerable if a drafted letter misstates a policyholder's coverage position. Which working assumption is the most appropriate?",
+      "options": {
+        "A": "Add a notice to each letter that it was drafted with AI assistance so responsibility is shared with the tool",
+        "B": "Withdraw Claude from policyholder correspondence so the question of ownership never arises",
+        "C": "Treat every claim in each letter as the supervisor's own and review it accordingly before it ships",
+        "D": "Route every drafted letter to the legal department for sign-off so accountability moves upstream"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D09",
+        "B": "D16",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Accountability is non-delegable: the sender owns every claim in what they ship regardless of who or what drafted it. That ownership is why review is sized to the letter, and it is the reason output evaluation carries the largest weight in this credential.",
+        "distractors": {
+          "A": "A disclosure notice informs the reader; it does not move ownership of a misstated coverage position off the sender.",
+          "B": "Removing the tool answers a governance question by giving up the capability; ownership of shipped claims was never in doubt.",
+          "D": "Routing routine letters to legal hands the supervisor's own call away; the deciding evidence sits with the sender, not upstream."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q15",
+      "domain": "d2",
+      "primary_concept": "C-015",
+      "syllabus_rule": "3.03",
+      "theme": "T3",
+      "vertical": "private wealth client reporting",
+      "keywords": [
+        "fabricated specifics",
+        "hallucinations"
+      ],
+      "type": "single_choice",
+      "question": "An associate at a private wealth client reporting desk has Claude draft a quarterly letter that cites a specific benchmark return and the effective date of a new reporting regulation. The letter goes to clients who act on it. The draft reads clean and the model, asked directly, rates its own confidence as high. What must happen before the letter is sent?",
+      "options": {
+        "A": "Send it: the model's high confidence rating covers the two specifics it cited",
+        "B": "Have Claude re-examine its own draft and confirm the return and the date before sending",
+        "C": "Soften the two specifics into approximate language so no precise claim is on record",
+        "D": "Validate the benchmark return and the effective date against the authoritative sources"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D20",
+        "C": "D05"
+      },
+      "rationale": {
+        "correct": "Fabricated specifics — numbers, names, dates presented in the register of fact — are the hallucinations that matter most here, and a checkable specific bound for a consequential audience is validated against the authoritative source before it leaves your hands.",
+        "distractors": {
+          "A": "A self-reported confidence rating is not an accuracy signal; fabricated specifics arrive in exactly this confident register.",
+          "B": "Re-examination by the context that produced the draft anchors to the same assumptions; it is not validation against a source.",
+          "C": "Hedging the language treats the symptom: clients still act on the letter, and the underlying claims remain unverified."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q16",
+      "domain": "d2",
+      "primary_concept": "C-016",
+      "syllabus_rule": "3.03",
+      "theme": "T3",
+      "vertical": "executive search firm",
+      "keywords": [
+        "confident uncertainty",
+        "fact-checking and validation techniques"
+      ],
+      "type": "single_choice",
+      "question": "A researcher at an executive search firm has Claude compile a background brief on a shortlisted candidate. Asked directly how confident it is, the model answers that it is highly confident, and the brief reads polished and specific. The brief goes to the client panel tomorrow. Which verification approach is the most appropriate?",
+      "options": {
+        "A": "Accept the brief on the strength of the model's stated confidence and its specific, polished detail",
+        "B": "Check the brief's load-bearing claims against authoritative records before it goes to the panel",
+        "C": "Ask the model to re-read the brief and flag anything it is unsure about, then send it as cleared",
+        "D": "Rely on the model flagging uncertain claims automatically, so an unflagged brief stands verified"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "D20",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Fluency, confidence, and the model's self-assessment are not accuracy signals — confident uncertainty is a named risk, and fact-checking and validation techniques mean checking claims against an authoritative source, never against the output's register or a confidence report.",
+        "distractors": {
+          "A": "Stated confidence and polish are register; a brief can carry both while misstating the claims the panel will act on.",
+          "C": "A self-read by the producing context is not verification; unsure claims are exactly what it fails to see as unsure.",
+          "D": "No mechanism guarantees uncertain claims arrive flagged; treating unflagged as verified invents a safeguard that does not exist."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q17",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "syllabus_rule": "6.05",
+      "theme": "T3",
+      "vertical": "public health outreach unit",
+      "keywords": [
+        "bias",
+        "routine review"
+      ],
+      "type": "single_choice",
+      "question": "A communications officer at a public health outreach unit uses Claude to draft campaign materials for different neighborhoods. The team's review step checks accuracy and formatting. Over several weeks, the drafts keep framing the same neighborhoods around risk and the same others around wellness, and each draft has passed review. What is the most appropriate change to the process?",
+      "options": {
+        "A": "Add bias and fairness checks to the routine review that every draft already goes through",
+        "B": "Rely on the platform's built-in safeguards, which prevent biased material from being generated",
+        "C": "Commission a quarterly audit of published materials to look for patterns across neighborhoods",
+        "D": "Wait for community feedback to identify any framing problems before changing the review"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D07",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "Bias detection belongs in the routine review of ordinary outputs, not in a separate exercise reserved for sensitive work. An output can be accurate and well formatted and still unfair — these drafts passed both checks — and routine review is what catches the framing pattern before it publishes.",
+        "distractors": {
+          "B": "No built-in safeguard guarantees fair framing of neighborhoods; the claim invents a protection the drafts are already defeating.",
+          "C": "A quarterly audit finds the pattern after months of publication; the review step touches every draft before it ships.",
+          "D": "Community feedback is the lagging signal — it arrives from the people the framing harmed, weeks after review could have caught it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q18",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "syllabus_rule": "3.04",
+      "theme": "T3",
+      "vertical": "import customs brokerage",
+      "keywords": [
+        "validation",
+        "authoritative current source"
+      ],
+      "type": "single_choice",
+      "question": "A broker at an import customs brokerage asks Claude which duty classifications apply to a client's new product line. Several relevant classifications were revised two months ago, and the broker knows rulings in this area change frequently. What is the most appropriate way to get a usable answer?",
+      "options": {
+        "A": "Add an instruction telling the model to make certain every classification it lists is current and accurate",
+        "B": "Use the model's answer as given, as it is written in the same assured register as the official schedule",
+        "C": "Postpone the classification work until a model version with more recent training becomes available",
+        "D": "Supply the current rulings or retrieve them from an authoritative current source, then validate the answer against them"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D04",
+        "B": "E02",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Pretrained knowledge carries no currency guarantee: facts that change quickly, like classifications revised two months ago, are supplied or retrieved from an authoritative current source and then validated. Validation against that source is what makes the answer usable — asking the model to try harder does not create currency.",
+        "distractors": {
+          "A": "An exhortation to be current changes nothing the model can draw on; no instruction creates knowledge it does not hold.",
+          "B": "An assured register is not currency; stale classifications arrive written exactly like fresh ones.",
+          "C": "Waiting defers the client's work and still ends at a training cutoff; the ruling source is available now."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q19",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "syllabus_rule": "3.04",
+      "theme": "T3",
+      "vertical": "pharmacy chain compliance team",
+      "keywords": [
+        "restrict to sources",
+        "auditable citations",
+        "prevention"
+      ],
+      "type": "multiple_response",
+      "question": "A compliance specialist at a pharmacy chain compliance team uses Claude with an uploaded pack of current state regulations to draft store-level compliance summaries. Fabricated regulatory detail in a summary would be costly, and the specialist wants the protection built in at request time. Which TWO prompt provisions most directly reduce that risk? (Select TWO.)",
+      "options": {
+        "A": "Instruct the model to be thorough, professional, and as accurate as possible in every summary",
+        "B": "Permit an explicit \"I don't know\" whenever the uploaded pack does not answer the question",
+        "C": "Schedule a careful post-draft fact-check of each summary against the pack before filing",
+        "D": "Restrict all claims to the uploaded pack and require auditable citations to it for each claim",
+        "E": "Ask the model to attach a confidence score to every claim so weak ones stand out"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "D04",
+        "C": "D07",
+        "E": "E02"
+      },
+      "rationale": {
+        "correct": "Verification is cheapest when built into the request: permit an explicit \"I don't know\" so gaps surface as gaps, restrict to sources so claims cannot wander beyond the pack, and require auditable citations so every claim can be traced. Prevention at request time beats reconstruction at review time.",
+        "distractors": {
+          "A": "Thoroughness and accuracy exhortations adjust register, not mechanism; they build no verification into the request.",
+          "C": "A post-draft fact-check is reconstruction at review time — legitimate, but it is the expensive backstop, not the request-time protection asked for.",
+          "E": "Self-assigned confidence scores are the model grading its own claims; a fabricated specific can carry a high score."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q20",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "syllabus_rule": "3.06",
+      "theme": "T1",
+      "vertical": "b2b software customer success",
+      "keywords": [
+        "code execution",
+        "computed"
+      ],
+      "type": "single_choice",
+      "question": "A customer success manager at a b2b software company prepares quarterly business reviews from a raw usage export. Claude drafts the narrative well, and the manager has also been letting it state the renewal metrics — totals and percentage changes — directly in the prose. The client's renewal hinges on those figures. What is the most appropriate way to produce the metrics?",
+      "options": {
+        "A": "Generate the metrics twice in separate runs and keep the figures both runs agree on",
+        "B": "Paste the usage export into the prompt twice so the model has more chances to read it correctly",
+        "C": "Have the metrics computed from the export with code execution and generate only the narrative around them",
+        "D": "Keep generating the metrics in prose and hand-verify each figure in the finished deck every quarter"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D03",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Where numbers must be right they are computed rather than generated as prose: generation supplies language, computation supplies figures, and which of the two produced a number decides how far it can be trusted. Code execution turns the renewal metrics into computed results instead of plausible prose.",
+        "distractors": {
+          "A": "Agreement between two generated runs measures consistency, not correctness; both runs can misstate the same total.",
+          "B": "Duplicating the export adds volume, not arithmetic; the figures are still generated as prose either way.",
+          "D": "Quarterly hand-verification is a detective backstop for a number that could simply have been computed correctly at the start."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q21",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "syllabus_rule": "3.05",
+      "theme": "T4",
+      "vertical": "medical device sales support",
+      "keywords": [
+        "stakes",
+        "reversibility",
+        "regulatory exposure"
+      ],
+      "type": "multiple_response",
+      "question": "A sales support lead at a medical device sales support team is writing the standing rule for when Claude-drafted materials must receive human review before going out, so the decision is settled in advance rather than argued at each deadline. Which TWO factors belong in that rule? (Select TWO.)",
+      "options": {
+        "A": "How fluent and confident the finished draft reads when the team skims it",
+        "B": "Which model tier produced the draft, since more capable tiers need less review",
+        "C": "The stakes of the material and how reversible the communication is once sent",
+        "D": "The time remaining before the material's send deadline on the day",
+        "E": "The audience receiving the material and the regulatory exposure it carries"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D19",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The human-review threshold is decided in advance from four factors — stakes, reversibility, audience, and regulatory exposure. Writing those factors into the standing rule is what keeps the review decision from being renegotiated at the moment of sending under time pressure.",
+        "distractors": {
+          "A": "A draft's fluent register says nothing about what its errors would cost; confident drafts are the ones that slip through.",
+          "B": "No tier confers immunity from review; the claim turns a capability difference into a safeguard it does not provide.",
+          "D": "Deadline pressure is precisely what the advance rule exists to overrule; time remaining is not a review criterion."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q22",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "syllabus_rule": "3.05",
+      "theme": "T4",
+      "vertical": "nonprofit donor relations",
+      "keywords": [
+        "human review",
+        "qualified"
+      ],
+      "type": "single_choice",
+      "question": "A donor relations manager at a nonprofit uses Claude to draft gift acknowledgment letters containing tax receipt language, a category the organization classes as requiring mandatory review. Currently an intern skims each letter for tone, without access to the donation records. What is the most appropriate way to discharge the review obligation?",
+      "options": {
+        "A": "Route the letters to a reviewer qualified on receipt requirements, with the donation records at hand",
+        "B": "Keep the intern's sign-off, as having a human in the loop is what mandatory review requires",
+        "C": "Replace the review step with a printed line disclosing that the letter was drafted with AI assistance",
+        "D": "Have Claude verify the receipt language and amounts itself before the intern signs each letter"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "D09",
+        "D": "D20"
+      },
+      "rationale": {
+        "correct": "Mandatory review means a qualified reviewer with access to the evidence. A tone skim without the donation records is a rubber stamp: human review that cannot see the amounts or judge the receipt language does not discharge the obligation, however sincere the reviewer.",
+        "distractors": {
+          "B": "A human in the loop is a slogan, not the standard; an unqualified, evidence-blind sign-off leaves the obligation undischarged.",
+          "C": "Disclosure tells the donor how the letter was made; it fixes nothing about whether the receipt language is right.",
+          "D": "The tool checking its own draft is review inside the producing context; the obligation calls for independent, qualified eyes."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q23",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "syllabus_rule": "3.02",
+      "theme": "T3",
+      "vertical": "city library outreach team",
+      "keywords": [
+        "intended audience",
+        "re-verification"
+      ],
+      "type": "single_choice",
+      "question": "An outreach coordinator at a city library team has a fully verified annual-report summary and asks Claude to adapt it for a council briefing — plainer vocabulary, less detail, sharper framing for the intended audience. In the adapted version, a carefully qualified usage statistic now reads as a stronger, simpler claim. What is the most appropriate handling?",
+      "options": {
+        "A": "Send the adaptation as is: the source summary was verified, and verification carries through adaptation",
+        "B": "Re-run the full evaluation from scratch on every audience variant the team ever produces",
+        "C": "Keep claims intact when adapting, and re-verify the usage statistic whose claim changed in the rewrite",
+        "D": "Ask Claude to confirm that its adaptation preserved every claim from the verified summary"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D01",
+        "D": "D20"
+      },
+      "rationale": {
+        "correct": "Adapting for an intended audience changes vocabulary, level of detail, and framing while leaving the claims intact — reformatting is never a correctness fix, and a claim that changed in adaptation needs re-verification. The strengthened statistic is now a different claim from the one that was verified.",
+        "distractors": {
+          "A": "Verification attaches to claims, not documents; assuming it survives a rewording that changed a claim is exactly the unchecked assumption.",
+          "B": "Full re-evaluation of every variant spends review on claims that did not change; the discipline targets the ones that did.",
+          "D": "The adapter confirming its own adaptation is self-review; the changed statistic needs checking against the source, not a reassurance."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q24",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "syllabus_rule": "3.02",
+      "theme": "T3",
+      "vertical": "consumer goods trade marketing",
+      "keywords": [
+        "compare outputs",
+        "criterion"
+      ],
+      "type": "single_choice",
+      "question": "A trade marketing associate at a consumer goods company has two candidate promotional one-pagers, produced from different prompts, for a retailer meeting. The team gathers to choose between them. What is the most appropriate way to run the comparison?",
+      "options": {
+        "A": "Read both and select whichever reads more fluently end to end",
+        "B": "State the criterion the one-pager must satisfy before reading, then judge both candidates against it",
+        "C": "Circulate both versions and adopt the one most teammates prefer on a quick vote",
+        "D": "Pick the version closer in style to the flashier deck a competing brand showed the retailer"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "D12",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "To compare outputs you need a stated criterion decided before reading them; without one, the most fluent candidate wins by default and the comparison is theatre. The criterion — what the retailer meeting must achieve — is fixed first, and both one-pagers are judged against it.",
+        "distractors": {
+          "A": "Fluency is the default winner precisely because no criterion was set; reading well and serving the meeting are different properties.",
+          "C": "A preference vote samples opinions, not the requirement; the majority can favor the candidate that serves the meeting worse.",
+          "D": "Imitating a competitor's style substitutes spectacle for the decision framework; nothing ties that style to this retailer's decision."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q25",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "syllabus_rule": "3.06",
+      "theme": "T1",
+      "vertical": "packaging design studio",
+      "keywords": [
+        "structured data",
+        "select appropriate output formats"
+      ],
+      "type": "single_choice",
+      "question": "A studio manager at a packaging design studio has Claude turn client briefs into production specifications — dimensions, materials, finishes — delivered as flowing prose. The production team re-keys the values into their system, and transcription errors keep surfacing at the printer. Which change is the most appropriate?",
+      "options": {
+        "A": "Keep the prose format and proofread each specification more carefully before handoff",
+        "B": "Ask for longer prose descriptions in which every dimension is stated twice for safety",
+        "C": "Have the key values printed in bold within the prose so they stand out when re-keyed",
+        "D": "Deliver the specifications as structured data whose fields the production system takes directly"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D03",
+        "C": "D04"
+      },
+      "rationale": {
+        "correct": "To select appropriate output formats, choose by how the result will be used and how reliably it must hold: these values are consumed by a system, so structured data removes the re-keying step where the errors arise, and a field that fails is visible in a way prose never makes it.",
+        "distractors": {
+          "A": "Closer proofreading polices the symptom while the format still forces manual transcription of every value.",
+          "B": "Stating dimensions twice doubles the prose to transcribe; volume is not reliability, and the re-keying step remains.",
+          "C": "Bolding is presentation; the numbers are still carried in prose and still re-keyed by hand at the same risk."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q26",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "syllabus_rule": "1.05",
+      "theme": "T3",
+      "vertical": "specialty coffee importer",
+      "keywords": [
+        "evaluate",
+        "production conditions"
+      ],
+      "type": "single_choice",
+      "question": "An operations lead at a specialty coffee importer built a Claude workflow that summarizes supplier contracts for the buying team. It was tested on five sample contracts the team wrote for the trial, every summary passed, and the lead plans to roll it out. Real supplier contracts arrive scanned, sometimes incomplete, and occasionally with clauses that contradict each other. What should happen before rollout?",
+      "options": {
+        "A": "Proceed: five passes out of five is a strong evaluation result for a workflow of this size",
+        "B": "Extend the trial by writing five more sample contracts in the same style and testing those",
+        "C": "Rebuild the evaluation sample from real supplier contracts, including incomplete and contradictory ones",
+        "D": "Roll out now and monitor the buying team's complaints to find any summary problems"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D03",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "An evaluation sample must represent production conditions — including missing, conflicting, and adversarial inputs. Team-written contracts are clean by construction, so the five passes evaluate a workflow the buying team will never actually run; real scanned, incomplete, contradictory contracts are the test that means something.",
+        "distractors": {
+          "A": "Five clean passes measure performance on inputs production will not send; the result is real but answers the wrong question.",
+          "B": "More samples from the same clean distribution adds volume, not representativeness; the blind spots are inherited, not fixed.",
+          "D": "Complaints are a lagging signal read off the buying team's failures; the evaluation belongs before rollout, not after."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q27",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "syllabus_rule": "1.05",
+      "theme": "T3",
+      "vertical": "credit union member services",
+      "keywords": [
+        "inconsistencies",
+        "variation"
+      ],
+      "type": "single_choice",
+      "question": "A member services lead at a credit union runs the same Claude request for rate-explanation letters twice and gets noticeably different letters; one draft also describes the same fee two ways in different paragraphs. One teammate wants it reported as a product defect; another says nothing can be done. What is the most appropriate response?",
+      "options": {
+        "A": "Treat variation as inherent: add a structural review step and set a measured consistency bound the letters must meet",
+        "B": "File a defect report, since repeated runs of the same request should return identical letters",
+        "C": "Withdraw Claude from member letters, as output that varies between runs cannot be used safely",
+        "D": "Keep both grains of inconsistency in check by hand-aligning each letter to the latest approved template after generation"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D16",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Inconsistencies have two grains — two parts of one output disagreeing, and repeated runs disagreeing — and variation is inherent to the tool. Because output varies by design, the response is structural review built into the workflow plus a measured consistency bound, not a bug report and not resignation.",
+        "distractors": {
+          "B": "Run-to-run variation is designed behavior, not a defect; the report asserts a determinism the tool never promised.",
+          "C": "Resignation discards the capability over a property that review and a consistency bound manage routinely.",
+          "D": "Hand-aligning every letter treats each symptom downstream; the workflow itself still lacks the review step and the bound."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d2-q28",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "syllabus_rule": "3.05",
+      "theme": "T4",
+      "vertical": "film production coordination office",
+      "keywords": [
+        "severity",
+        "stop condition"
+      ],
+      "type": "single_choice",
+      "question": "A production coordinator at a film production coordination office reviews a week's batch of Claude-drafted daily call sheets: 96% of entries are accurate, above the team's 95% target, but one sheet listed the wrong stunt safety contact. A colleague proposes accepting the batch on its average. What is the most appropriate call?",
+      "options": {
+        "A": "Accept the batch: 96% exceeds the 95% target the team set for call-sheet accuracy",
+        "B": "Treat the safety-contact error as a stop condition: hold the batch, find the cause, and re-review",
+        "C": "Ship the sheets with a standing note asking crew members to confirm safety contacts themselves",
+        "D": "Correct the one wrong sheet, ship the rest unchanged, and leave the process as it is"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D12",
+        "C": "D18",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "A severity-class failure is not tradable against an aggregate quality score: one prohibited error in a batch is a stop condition even when the average looks excellent. A wrong stunt safety contact is in the prohibited class, so the batch holds until the cause is found and the sheets are re-reviewed.",
+        "distractors": {
+          "A": "The 95% target governs ordinary errors; averaging a prohibited safety error against routine accuracy is the exact trade the rule forbids.",
+          "C": "Asking crew to verify contacts pushes the failure onto the people the sheet exists to protect.",
+          "D": "Fixing the single instance leaves the mechanism that produced it unexamined; the next wrong contact ships on schedule."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q29",
+      "domain": "d3",
+      "primary_concept": "C-029",
+      "syllabus_rule": "1.01",
+      "theme": "T1",
+      "vertical": "architecture firm bid team",
+      "keywords": [
+        "entry point",
+        "recurring work"
+      ],
+      "type": "single_choice",
+      "question": "A bid coordinator at an architecture firm runs every Claude task in a plain chat out of habit — including a bid-review task that recurs every few weeks and requires re-uploading the same firm boilerplate, past project summaries, and style guide at the start of each session. The re-uploading is eating time and sessions start inconsistently. What is the most appropriate move?",
+      "options": {
+        "A": "Stay in chat and keep a ready-made snippet of the boilerplate to paste in faster each session",
+        "B": "Stay in chat and paste in even more firm context each session so no detail is ever missing",
+        "C": "Switch to whichever surface a partner firm mentioned works well for their bid reviews",
+        "D": "Choose the entry point from the task's shape first, then build the prompt for that surface"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D03",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "The entry point is selected before the prompt is written, because the surface determines what context is available and what the output can be. Recurring work with stable context is a task shape with a surface built for it; choosing by habit is exactly the failure this decision exists to prevent.",
+        "distractors": {
+          "A": "A paste snippet speeds up the workaround without questioning it; every session still rebuilds context a better surface would hold.",
+          "B": "More pasted context enlarges each session's setup; volume does not fix a task sitting on the wrong surface.",
+          "C": "Another firm's mention is an anecdote about their tasks; the surface is chosen from this task's shape, not from hearsay."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q30",
+      "domain": "d3",
+      "primary_concept": "C-030",
+      "syllabus_rule": "1.01",
+      "theme": "T1",
+      "vertical": "art museum membership office",
+      "keywords": [
+        "research mode",
+        "current multi-source information"
+      ],
+      "type": "single_choice",
+      "question": "A membership officer at an art museum needs a comparison of how a dozen peer institutions currently price and structure their membership tiers, drawing on each institution's latest published offering. The officer is deciding where to run the task. Which choice best fits the task?",
+      "options": {
+        "A": "Run it in research mode, matching a task that needs current information from many sources",
+        "B": "Run it anywhere, as every surface reaches the same information and the choice is cosmetic",
+        "C": "Set up a dedicated Project with uploaded knowledge and standing instructions before starting",
+        "D": "Run it in a plain chat and draw the comparison from the model's built-in knowledge"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D01",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "The four surfaces answer four different problems — chat for one-off work, Projects for recurring work with stable context, artifacts for deliverable outputs, and research mode for tasks needing current multi-source information. A dozen institutions' latest published offerings is squarely the research mode problem.",
+        "distractors": {
+          "B": "The surfaces differ in exactly what this task needs — what information they can reach; the claim that they are interchangeable invents an equivalence.",
+          "C": "A Project suits recurring work with stable context; standing up one for a one-off comparison is setup with no recurring payoff.",
+          "D": "A plain chat leans on built-in knowledge for facts that are current and scattered across many sources — the one problem shape it does not answer."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q31",
+      "domain": "d3",
+      "primary_concept": "C-031",
+      "syllabus_rule": "1.01",
+      "theme": "T1",
+      "vertical": "botanical garden events office",
+      "keywords": [
+        "escalate",
+        "human-reviewed"
+      ],
+      "type": "single_choice",
+      "question": "An events coordinator at a botanical garden drafts sponsor thank-you letters with Claude about twice a quarter, and the events manager reviews each letter before it goes out. A teammate proposes commissioning an automated agent pipeline connected to the sponsor database so the letters generate and send themselves. What is the most appropriate response?",
+      "options": {
+        "A": "Adopt the proposal and build the automated pipeline with the database connection",
+        "B": "Hand the entire letters task to the IT team so they can decide how to build and own it",
+        "C": "Keep the letters in the interactive surface with the manager's review, and skip the automation",
+        "D": "Adopt the automation for the visibility it gives the office when the sponsor board hears of it"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "D15",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "For occasional, human-reviewed work with no integration requirement, the interactive surface is the right answer. Automation here is a cost with no payer — twice a quarter, already reviewed — and building an agent pipeline sits beyond Associate scope besides; the moment to escalate is when a real integration need appears.",
+        "distractors": {
+          "A": "An agent pipeline adds machinery a twice-a-quarter reviewed task cannot repay, and removes the review that makes the letters safe.",
+          "B": "Handing the whole task away defers a decision the coordinator can already make; nothing here needs IT to own letter writing.",
+          "D": "Board visibility is spectacle, not a decision criterion; the task's shape, volume, and review need have not changed."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q32",
+      "domain": "d3",
+      "primary_concept": "C-032",
+      "syllabus_rule": "1.02",
+      "theme": "T1",
+      "vertical": "building materials distributor",
+      "keywords": [
+        "Skills",
+        "Code Execution",
+        "capability layers"
+      ],
+      "type": "multiple_response",
+      "question": "A finance associate at a building materials distributor is setting up Claude for monthly rebate statements. Two needs are on the table: the statements must follow the team's exact multi-step checking procedure the same way every month, and the rebate totals must be verifiably correct rather than plausible. Which TWO capability layers address these two needs? (Select TWO.)",
+      "options": {
+        "A": "A Skill that defines the team's checking procedure so it runs the same way each month",
+        "B": "Memory, so the way earlier statements were handled carries over month to month",
+        "C": "Running each statement twice in separate chats and keeping the totals that match",
+        "D": "Code Execution, so the rebate totals are computed rather than generated",
+        "E": "An added instruction telling the model to be especially meticulous with arithmetic"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "D06",
+        "C": "D12",
+        "E": "D04"
+      },
+      "rationale": {
+        "correct": "The four capability layers own four distinct jobs — Projects carry context, Skills define repeatable procedures, Code Execution verifies computation, Memory persists continuity. The two stated needs are a repeatable procedure and verified computation, which map to a Skill and to Code Execution; combining layers is fine, substituting one for another is not.",
+        "distractors": {
+          "B": "Memory persists continuity across sessions; it does not define or enforce a procedure, so the checking steps would still drift.",
+          "C": "Two generated runs agreeing measures consistency, not correctness — both can carry the same wrong total.",
+          "E": "An exhortation to be meticulous changes register, not mechanism; generated arithmetic stays generated."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q33",
+      "domain": "d3",
+      "primary_concept": "C-033",
+      "syllabus_rule": "1.03",
+      "theme": "T1",
+      "vertical": "commercial real estate leasing",
+      "keywords": [
+        "Haiku",
+        "Sonnet",
+        "Opus"
+      ],
+      "type": "single_choice",
+      "question": "A leasing operations manager at a commercial real estate firm is assigning model tiers to three workloads: extracting standard terms from hundreds of routine lease documents, everyday drafting and analysis for the leasing team, and a complex portfolio consolidation strategy where quality matters far more than speed. Which assignment best fits the three workloads?",
+      "options": {
+        "A": "The most capable tier for all three workloads, so no task is ever under-served",
+        "B": "Haiku for the high-volume extraction, Sonnet for the everyday work, Opus for the consolidation strategy",
+        "C": "The fastest, lowest-cost tier for all three workloads to keep the program's spend minimal",
+        "D": "Whichever tier answers quickest in a short trial on each workload, measured with a stopwatch"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "D16",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The three tiers trade speed and cost against capability, each with a characteristic task shape: Haiku for structured high-volume work like the extraction, Sonnet for most professional work, and Opus for complex high-stakes work where quality outranks speed, like the consolidation strategy.",
+        "distractors": {
+          "A": "Maximum capability on structured bulk work spends cost and latency for nothing; capability is not a free upgrade.",
+          "C": "Forcing the strategy work onto the lightest tier hits the cost goal by giving up the quality that workload exists to buy.",
+          "D": "Response speed is one axis of a trade-off, not the decision; a stopwatch trial ignores what each workload demands."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q34",
+      "domain": "d3",
+      "primary_concept": "C-034",
+      "syllabus_rule": "1.03",
+      "theme": "T1",
+      "vertical": "community college registrar",
+      "keywords": [
+        "task requirements",
+        "quality bar"
+      ],
+      "type": "single_choice",
+      "question": "A registrar's office at a community college sends thousands of transcript-request acknowledgment emails each term. The messages are short and follow a fixed structure, so what the office optimizes on this work is turnaround and per-message cost, not analytical depth. In testing, both the lightest tier and the mid tier cleared the office's quality bar for these emails. Which selection is the most appropriate?",
+      "options": {
+        "A": "The most capable tier, so the office holds a quality margin beyond the bar it set",
+        "B": "The tier whose test emails read the most polished when the team compared them side by side",
+        "C": "The mid tier, as the recommended default for professional work of any kind",
+        "D": "The fastest, lowest-cost tier that cleared the quality bar in the office's testing"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "E02",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "Once several tiers clear the quality bar the task actually requires, selection is a constrained optimization on cost and speed: the cheapest, fastest option that still meets the task requirements wins. Both tiers passed, so the lighter one is the correct choice for thousands of emails a term.",
+        "distractors": {
+          "A": "A margin beyond a bar the task already meets buys nothing; it converts cleared requirements into standing cost and latency.",
+          "B": "Side-by-side polish is register; both tiers already cleared the bar that actually governs these emails.",
+          "C": "A default is a starting point, not a verdict; applied after a lighter tier cleared the bar, it is dogma overriding the measured result."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q35",
+      "domain": "d3",
+      "primary_concept": "C-035",
+      "syllabus_rule": "1.03",
+      "theme": "T1",
+      "vertical": "conference and exhibitions organizer",
+      "keywords": [
+        "speed-capability trade-off",
+        "capability"
+      ],
+      "type": "single_choice",
+      "question": "The operations team at a conference and exhibitions organizer routes every Claude task — including bulk attendee-list cleanups and simple confirmation drafts — to the most capable model tier, describing the habit as a safety margin. Turnaround on bulk jobs is slow and the program's costs are climbing. What is the most appropriate assessment?",
+      "options": {
+        "A": "Route straightforward bulk work to a lighter tier and reserve the top tier for tasks that need it",
+        "B": "Keep the routing: the top tier also completes bulk work faster, so there is no trade-off to manage",
+        "C": "Keep the routing and pack more attendee rows into each request so fewer requests are needed",
+        "D": "Keep the routing, as maximum capability for everything is the prudent default for a serious program"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D03",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Defaulting to the most capable tier for everything is a cost and latency failure, not a safety margin. The speed-capability trade-off is real: capability is not a free upgrade, and over-provisioning straightforward work spends both cost and speed for nothing — exactly what the slow queue and climbing spend are showing.",
+        "distractors": {
+          "B": "The claim inverts the trade-off; the heaviest tier is not also the fastest, and the slow bulk queue is the evidence in hand.",
+          "C": "Packing requests fuller optimizes around the mis-assignment; the work is still over-provisioned on every row.",
+          "D": "Prudence that ignores measured cost and latency is a slogan; the default is producing the failure it claims to prevent."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q36",
+      "domain": "d3",
+      "primary_concept": "C-036",
+      "syllabus_rule": "1.04",
+      "theme": "T8",
+      "vertical": "craft brewery sales cooperative",
+      "keywords": [
+        "context is a budget",
+        "model failure"
+      ],
+      "type": "single_choice",
+      "question": "A sales planner at a craft brewery cooperative has kept one continuous Claude conversation running all week for seasonal planning — uploads, drafts, and revisions all in the same thread. By Friday the responses are noticeably weaker and earlier instructions are being dropped, and a teammate concludes the model itself has degraded. What is the most likely explanation?",
+      "options": {
+        "A": "The model was silently swapped for a weaker version partway through the week",
+        "B": "The requests need to be phrased more forcefully for the model to keep taking them seriously",
+        "C": "The week-long conversation has been filling its finite context, degrading output gradually as it fills",
+        "D": "The tool is unsuited to planning work, and the seasonal plan should be finished by hand"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D04",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Context is a budget: a long conversation degrades output quality as the budget fills, and the degradation is gradual enough to look like a model failure. That resemblance is why this is a diagnosis to reach — the week of accumulated uploads and drafts, not the model, explains Friday's weaker responses.",
+        "distractors": {
+          "A": "A silent midweek swap is an invented mechanism; the gradual decline tracks the conversation's growth, not a version change.",
+          "B": "Forceful phrasing is a register knob; it does not recover a budget the conversation has already spent.",
+          "D": "The tool handled Monday's planning well; abandoning it misreads a managed, finite budget as a fixed limitation."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q37",
+      "domain": "d3",
+      "primary_concept": "C-037",
+      "syllabus_rule": "1.04",
+      "theme": "T1",
+      "vertical": "e-bike rental operator",
+      "keywords": [
+        "summarize",
+        "persist"
+      ],
+      "type": "single_choice",
+      "question": "A pricing analyst at an e-bike rental operator is deep in a long Claude conversation exploring seasonal pricing. The conclusions reached so far will drive the next phase of work; the exploratory back-and-forth behind them will not be needed again. Quality has not dropped yet, but the conversation is growing fast. What is the most appropriate move?",
+      "options": {
+        "A": "Keep working in the thread until quality visibly drops, and decide what to do at that point",
+        "B": "Summarize the conclusions now and carry them into a fresh session before quality slips",
+        "C": "Start a clean session without carrying anything over, re-deriving conclusions if they come up",
+        "D": "Stay in the same thread and rely on the long context to keep holding everything relevant"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D15",
+        "C": "D02",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "The three context remedies are chosen by what must survive the transition: restart when nothing must, summarize when the conclusions must, persist when continuity must outlive the session. Here the conclusions must survive and the exploration need not — and the choice is made before quality visibly drops, not after.",
+        "distractors": {
+          "A": "Waiting for visible degradation makes the decision after damage begins; the discipline is to decide early, while the choice is still cheap.",
+          "C": "A bare restart discards the conclusions the next phase depends on; re-deriving them repays work already done.",
+          "D": "Leaning on a growing thread spends a finite budget toward exactly the degradation the analyst can see coming."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d3-q38",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "syllabus_rule": "1.02",
+      "theme": "T6",
+      "vertical": "engineering standards secretariat",
+      "keywords": [
+        "Memory",
+        "context window"
+      ],
+      "type": "single_choice",
+      "question": "A committee secretary at an engineering standards secretariat is confused: details discussed in yesterday's Claude session are missing from today's, yet some working preferences do seem to carry over between sessions. The secretary wants a reliable mental model before configuring anything further. Which understanding is the most appropriate?",
+      "options": {
+        "A": "Everything from every past session is retained and automatically recalled whenever it is relevant",
+        "B": "Cross-session continuity should not be relied on at all, and each session must rebuild from documents",
+        "C": "Writing the committee's standing rules into each day's first message is how continuity is maintained",
+        "D": "The context window carries the current conversation; Memory persists continuity across sessions"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D16",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Memory is a distinct mechanism from the conversation's context window: the context window carries the current session, while Memory persists continuity across sessions. Confusing the two misroutes both configuration and diagnosis — which is exactly the confusion the missing-details puzzle is exposing.",
+        "distractors": {
+          "A": "Total recall of every past session is an invented mechanism; what persists is what the continuity layer holds, not everything said.",
+          "B": "Refusing continuity altogether discards a mechanism that exists for the job; the fix is understanding it, not abandoning it.",
+          "C": "Restating standing rules per session parks a durable requirement in the most transient mechanism available — the wrong layer for it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q39",
+      "domain": "d4",
+      "primary_concept": "C-039",
+      "syllabus_rule": "4.02",
+      "theme": "T2",
+      "vertical": "facilities management contractor",
+      "keywords": [
+        "traceable",
+        "testable"
+      ],
+      "type": "single_choice",
+      "question": "An operations associate at a facilities management contractor has a folder of stakeholder emails, complaint threads, and meeting notes about a new maintenance-request process, and wants Claude's help turning the mess into something the implementation team can act on. Which request makes the best use of the tool here?",
+      "options": {
+        "A": "Ask for a short readable summary of what the stakeholders seem to want overall",
+        "B": "Ask for structured requirements, each traceable to its source input and testable by the team",
+        "C": "Ask Claude to design the entire new maintenance-request process end to end from the folder",
+        "D": "Ask for a first-pass requirements narrative and circulate it as final if it reads complete"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "D01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Requirements analysis is the canonical delegation of analysis work: messy stakeholder input becomes structured, traceable, testable requirements that others can act on. The output is a working artefact — each requirement traceable to a source and testable — not a summary of sentiment.",
+        "distractors": {
+          "A": "A summary flattens the mess into prose; it drops the structure and traceability the implementation team needs to act.",
+          "C": "Designing the whole process leaps past the analysis step and hands over decisions the stakeholders have not yet made.",
+          "D": "Reading complete is register; a requirements set is judged by whether each item is traceable and testable, not by its flow."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q40",
+      "domain": "d4",
+      "primary_concept": "C-040",
+      "syllabus_rule": "4.02",
+      "theme": "T5",
+      "vertical": "ferry and harbor operations",
+      "keywords": [
+        "delegate",
+        "checked"
+      ],
+      "type": "single_choice",
+      "question": "A planning officer at a ferry and harbor operations authority is deciding which steps of the seasonal timetable process to hand to Claude. A colleague asks what property should qualify a step for delegation in the first place. Which criterion is the most appropriate?",
+      "options": {
+        "A": "Steps where the tool's output consistently reads reliable and assured",
+        "B": "Steps that other harbor operators mention they already delegate successfully",
+        "C": "Steps whose output the team can check before anything downstream consumes it",
+        "D": "Steps that are repetitive, as repetitive work is always appropriate to delegate"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D12",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "A step is safe to delegate when its output can be checked: checkability, not confidence in the tool, is the qualifying property. A checkable output lets the team verify each result before it is used, which is what keeps the delegated step trustworthy.",
+        "distractors": {
+          "A": "An assured register is not a property of the step; it is how wrong output looks as well as right output.",
+          "B": "Other operators' habits are anecdotes about their workflows and their risk tolerances, not a criterion for this one.",
+          "D": "Repetitive is a slogan, not a safety property; a repetitive step whose output cannot be checked is still unsafe to hand over."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q41",
+      "domain": "d4",
+      "primary_concept": "C-041",
+      "syllabus_rule": "4.03",
+      "theme": "T3",
+      "vertical": "food safety auditing firm",
+      "keywords": [
+        "verified numbers",
+        "code execution"
+      ],
+      "type": "single_choice",
+      "question": "A scheduling manager at a food safety auditing firm is building the annual audit-capacity plan with Claude: a narrative for the leadership team, resting on auditor-day totals and utilization percentages derived from the firm's booking export. The manager is deciding how the plan should be produced. Which design is the most appropriate?",
+      "options": {
+        "A": "Generate the whole plan, then schedule a fact-check of the figures just before publication",
+        "B": "Base the figures on last year's utilization as the team remembers it, and generate the narrative",
+        "C": "Give the model more of the firm's spreadsheets so its generated estimates land closer",
+        "D": "Pair the synthesis with code execution so the figures are computed from the export as the plan is built"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "D12",
+        "C": "D03"
+      },
+      "rationale": {
+        "correct": "Plans are built on verified numbers: the synthesis may be generated, but the figures underneath are computed — and pairing generation with code execution is a design choice made when the plan is built, not a check bolted on afterwards.",
+        "distractors": {
+          "A": "An end-stage fact-check inspects generated figures after the plan is shaped around them; the design decision was to compute them.",
+          "B": "Remembered utilization is an assumption standing in for the booking export the firm actually holds.",
+          "C": "More spreadsheets feed better guesses; the figures are still generated, and closeness is not verification."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q42",
+      "domain": "d4",
+      "primary_concept": "C-042",
+      "syllabus_rule": "7.04",
+      "theme": "T8",
+      "vertical": "hospice volunteer coordination",
+      "keywords": [
+        "instrument",
+        "friction"
+      ],
+      "type": "single_choice",
+      "question": "A coordinator at a hospice volunteer program wants to point Claude at the program's biggest time sink, which the coordinator is sure is the scheduling email back-and-forth. Nothing about the workflow has been measured. What should happen before any step is delegated?",
+      "options": {
+        "A": "Instrument the workflow to find where the time actually goes, then aim Claude at the friction that shows up",
+        "B": "Proceed on the coordinator's recollection, which comes from living inside the workflow daily",
+        "C": "Automate the whole volunteer workflow at once so every possible time sink is covered",
+        "D": "Delegate the scheduling emails now and watch the quarterly volunteer survey for improvement"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "D01",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "You cannot optimize what is not instrumented at the level where the cause lives. Process optimization starts from an instrumented workflow, so the friction being removed is the real one and not the remembered one — the certainty about scheduling emails is exactly the assumption the measurement exists to test.",
+        "distractors": {
+          "B": "Living inside a workflow produces vivid impressions, not measurements; the loudest annoyance is often not the largest cost.",
+          "C": "Automating everything to avoid choosing spends effort across steps that were never the friction, and removes checkpoints besides.",
+          "D": "A quarterly survey is a lagging, indirect readout; it cannot attribute any change to the step that was delegated."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q43",
+      "domain": "d4",
+      "primary_concept": "C-043",
+      "syllabus_rule": "4.01",
+      "theme": "T4",
+      "vertical": "industrial safety training company",
+      "keywords": [
+        "checkpoint",
+        "human judgment"
+      ],
+      "type": "single_choice",
+      "question": "A course designer at an industrial safety training company develops new curricula with Claude in stages — outline, module drafts, assessments — reviewing each stage before the next begins. A manager proposes handing the whole design over in one pass to save review time, since the drafts have been strong. What is the most appropriate response?",
+      "options": {
+        "A": "Adopt the single-pass handover and recover the review hours the stages were consuming",
+        "B": "Adopt the single-pass handover but review the finished curriculum thoroughly at the end",
+        "C": "Keep the delegation stepwise, with a checkpoint where human judgment re-enters at each stage",
+        "D": "Keep the stages but skip the checkpoints on drafts that come back reading polished"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D07",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Design work is delegated step by step with checkpoints rather than handed over whole — each checkpoint is where human judgment re-enters, and removing them is what turns support into abdication. For safety curricula, the checkpoints are the mechanism that keeps errors from compounding across stages.",
+        "distractors": {
+          "A": "Recovered hours are bought by removing every point where judgment could intervene; strong past drafts do not retire that need.",
+          "B": "One review at the end inspects a finished structure whose early-stage errors every later stage has already built on.",
+          "D": "Polish is register, not correctness; skipping checkpoints for confident-looking drafts filters review by exactly the wrong signal."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q44",
+      "domain": "d4",
+      "primary_concept": "C-044",
+      "syllabus_rule": "2.04",
+      "theme": "T8",
+      "vertical": "internal communications department",
+      "keywords": [
+        "iteration",
+        "component"
+      ],
+      "type": "single_choice",
+      "question": "An internal communications manager reviews a Claude-assisted intranet redesign proposal built to the department's brief. The information architecture is strong, but the tone-of-voice section misses the company's plain-language standard. A teammate suggests starting the whole proposal again. What is the most appropriate next round?",
+      "options": {
+        "A": "Revise the architecture, tone, and scope together so the next version improves everywhere at once",
+        "B": "Keep the architecture and rework only the tone-of-voice section the review identified",
+        "C": "Take the design back from the tool and rewrite the proposal by hand from the brief",
+        "D": "Shelve the proposal and revisit the redesign in next quarter's planning cycle"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D16",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Iteration on a delegated design follows the same diagnostic loop as prompt iteration: the result names the component that failed — here the tone-of-voice section — and that component, not the whole design, is what changes in the next round. The strong architecture is kept, and the fix is attributable.",
+        "distractors": {
+          "A": "Changing everything at once discards working material and makes the next version's gains and losses unattributable.",
+          "C": "Abandoning the delegation over one failed section throws away a strong architecture and the diagnostic the review produced.",
+          "D": "Deferral leaves a nearly-right proposal idle; the review already named the one section standing between it and done."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q45",
+      "domain": "d4",
+      "primary_concept": "C-045",
+      "syllabus_rule": "4.01",
+      "theme": "T5",
+      "vertical": "landscaping services franchise",
+      "keywords": [
+        "delegate deliberately",
+        "checkpoints"
+      ],
+      "type": "single_choice",
+      "question": "An operations manager at a landscaping services franchise is bringing Claude into the quoting workflow: site notes are summarized, materials are itemized, prices are calculated against the rate card, and a franchise owner approves each quote before it is sent. A consultant proposes automating the workflow end to end, approval included. What is the most appropriate design?",
+      "options": {
+        "A": "Choose the steps Claude performs and keep the owner's approval checkpoint in place",
+        "B": "Automate every step including the approval so quotes leave the system untouched",
+        "C": "Automate whichever steps will make the demonstration most impressive at the franchise convention",
+        "D": "Keep Claude out of the quoting workflow entirely so the question of automation never arises"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D11",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "The value in a workflow comes from choosing which steps Claude performs — the discipline is to delegate deliberately, not automate indiscriminately. A workflow handed over whole loses the checkpoints that made it trustworthy, and the owner's approval is exactly such a checkpoint.",
+        "distractors": {
+          "B": "End-to-end automation grants autonomy the quoting process does not need and removes the approval that catches a bad quote before a customer sees it.",
+          "C": "Convention spectacle is not a selection criterion; steps are chosen by value and checkability, not by demo impact.",
+          "D": "Refusing every step forfeits the real gains in summarizing and itemizing; the checkpoint question had a better answer than abstinence."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q46",
+      "domain": "d4",
+      "primary_concept": "C-046",
+      "syllabus_rule": "4.04",
+      "theme": "T5",
+      "vertical": "language school admissions",
+      "keywords": [
+        "reversibility",
+        "stakes",
+        "accountability"
+      ],
+      "type": "single_choice",
+      "question": "An admissions manager at a language school is mapping the enrollment workflow — inquiry replies, placement-test scoring, offer letters, visa-document checks — to decide Claude's role in each step. Which classification approach is the most appropriate?",
+      "options": {
+        "A": "Sort the steps into two bins, automate or keep, so the mapping stays simple to run",
+        "B": "Classify by which steps the admissions staff most dislike doing by hand",
+        "C": "Adopt the step classification a conference speaker presented for language schools",
+        "D": "Rate each step on reversibility, stakes, and accountability, and give it a three-way verdict"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D11",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "Each workflow step is classified against reversibility, stakes, and accountability into a three-way verdict — AI-appropriate, human-retained, or collaborative — and the middle verdict is the common one. A visa-document check and an inquiry reply land differently on all three criteria, which is the point of rating each step.",
+        "distractors": {
+          "A": "A two-bin sort deletes the collaborative middle where most real steps belong, forcing them into over- or under-delegation.",
+          "B": "Staff preference measures comfort, not risk; the steps people most want to hand off can be the ones the criteria retain.",
+          "C": "A conference template is someone else's mapping; the criteria have to be applied to this school's steps and stakes."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q47",
+      "domain": "d4",
+      "primary_concept": "C-047",
+      "syllabus_rule": "4.04",
+      "theme": "T5",
+      "vertical": "mining site procurement office",
+      "keywords": [
+        "gate",
+        "irreversible"
+      ],
+      "type": "multiple_response",
+      "question": "A procurement officer at a mining site is adding Claude to the purchase-order workflow: requests are drafted and validated, and a released purchase order is an irreversible payment commitment. The team is designing the human approval gate. Which TWO properties must the gate have? (Select TWO.)",
+      "options": {
+        "A": "It sits immediately after each purchase order releases, so errors are caught quickly",
+        "B": "It sits after validation and before the irreversible release",
+        "C": "It clears by default after four hours so the workflow never stalls on an absent approver",
+        "D": "It records every release in a log the office reviews at the end of each month",
+        "E": "It has a named gatekeeper who is accountable for staffing the decision"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D07",
+        "C": "D02",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "The approval gate sits after validation and before the irreversible action, and it must have a real gatekeeper. A gate placed after the release reviews a payment already committed, and a gate nobody staffs is not a control — position and a named, accountable gatekeeper are the two properties that make it one.",
+        "distractors": {
+          "A": "After release, the commitment is already made; a fast catch of an irreversible action is a report, not a gate.",
+          "C": "A default-clear timeout is the gate approving by absence; the workflow never stalls because the control never operates.",
+          "D": "A monthly log review is a lagging record of what already left; it informs trends and stops nothing."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q48",
+      "domain": "d4",
+      "primary_concept": "C-048",
+      "syllabus_rule": "4.04",
+      "theme": "T5",
+      "vertical": "paralegal support bureau",
+      "keywords": [
+        "structured workflow",
+        "autonomy"
+      ],
+      "type": "single_choice",
+      "question": "A team lead at a paralegal support bureau is designing Claude's role in court-filing preparation, a process with fixed steps in a fixed order and a fixed validation checklist at each step. A colleague proposes granting the tool open-ended autonomy to find the best approach for each filing, pointing to an impressive pilot demonstration. Which design is the most appropriate?",
+      "options": {
+        "A": "Grant broad autonomy and add more tools so the approach can adapt filing by filing",
+        "B": "Grant autonomy as the modern default, since agent-style designs are where the field is heading",
+        "C": "Mirror the fixed steps and validation in an explicit, structured workflow, granting autonomy nowhere it is not needed",
+        "D": "Adopt the autonomous design on the strength of the pilot demonstration the colleague showed"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "D14",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "A process with fixed steps and fixed validation argues for an explicit, structured workflow; autonomy is granted only where the process actually needs it, never as a default posture. Court filings are the strong case: the order and the checklist are the requirement, and the design should enforce them.",
+        "distractors": {
+          "A": "Adaptability is the property this process is required not to have; more tools and latitude loosen exactly what the checklist fixes.",
+          "B": "Where the field is heading is a slogan; this process's binding constraint is fixed order and fixed validation, which points the other way.",
+          "D": "A demonstration is a curated best run; it measures nothing about how open-ended autonomy behaves across a docket of real filings."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q49",
+      "domain": "d4",
+      "primary_concept": "C-049",
+      "syllabus_rule": "4.01",
+      "theme": "T1",
+      "vertical": "port authority communications",
+      "keywords": [
+        "simplest design",
+        "requirement"
+      ],
+      "type": "single_choice",
+      "question": "A communications officer at a port authority needs Claude to draft notices to mariners from incident reports. The stated requirement: drafts that follow the notice template, reviewed by the duty officer before publication. An enthusiastic teammate sketches a pipeline that generates several candidate drafts in parallel, scores them against a rubric, and auto-selects a winner. Which design should the officer choose?",
+      "options": {
+        "A": "A single drafting step against the template, followed by the duty officer's review",
+        "B": "The parallel-drafts pipeline with rubric scoring and automatic selection",
+        "C": "The pipeline, as its sophistication will demonstrate the program's rigor to leadership",
+        "D": "A middle path that generates five drafts per notice for the duty officer to choose among"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D01",
+        "C": "D11",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Complexity in a solution design is justified by requirements, never by ambition or the appearance of rigor. The stated requirement is template-true drafts plus duty-officer review; the simplest design that meets the stated requirement is the professional answer, and the single step with review is that design.",
+        "distractors": {
+          "B": "Parallel generation, scoring, and auto-selection answer requirements nobody stated; the machinery adds failure modes, not fitness.",
+          "C": "Impressing leadership is ambition wearing an engineering costume; rigor is meeting the requirement, not displaying apparatus.",
+          "D": "Five drafts per notice quintuples review load for a template task; volume is not a requirement anyone set."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q50",
+      "domain": "d4",
+      "primary_concept": "C-050",
+      "syllabus_rule": "4.05",
+      "theme": "T5",
+      "vertical": "professional certification body",
+      "keywords": [
+        "capability claims",
+        "human review gates"
+      ],
+      "type": "multiple_response",
+      "question": "A program manager at a professional certification body is briefing the executive team on a Claude rollout for candidate communications, and wants the briefing to earn durable trust rather than a quick yes. Which TWO elements belong in the briefing? (Select TWO.)",
+      "options": {
+        "A": "The capability claims stated together with their limits",
+        "B": "The human review gates that make the claimed capabilities safe to rely on",
+        "C": "A version of the briefing that leaves the limits out so adoption is not discouraged",
+        "D": "Sample outputs selected for how impressive they read in front of executives",
+        "E": "A year-end commitment to fully automated candidate communications with no review step"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "B"
+      ],
+      "distractor_patterns": {
+        "C": "D17",
+        "D": "D12",
+        "E": "D01"
+      },
+      "rationale": {
+        "correct": "Capability claims are stated together with their limits and the human review gates that make them safe. Overstating value is the stakeholder-trust failure, and accurate limits are what earn the trust back — a briefing built on claims-with-limits plus the gates is the one that survives contact with the first imperfect output.",
+        "distractors": {
+          "C": "Omitting the limits to smooth adoption is silent overstatement; the trust it buys is spent the first time an output falls short.",
+          "D": "Hand-picked impressive samples are demo theatre; they measure the curator's taste, not the system the executives are approving.",
+          "E": "A no-review automation pledge grants the program autonomy nobody requires and stakes its credibility on removing the gates that protect it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d4-q51",
+      "domain": "d4",
+      "primary_concept": "C-051",
+      "syllabus_rule": "4.05",
+      "theme": "T5",
+      "vertical": "recruitment process outsourcing",
+      "keywords": [
+        "escalate",
+        "Claude Developer"
+      ],
+      "type": "single_choice",
+      "question": "A delivery lead at a recruitment process outsourcing firm has configured Claude Projects and prompts that produce excellent candidate summaries. The operations director now asks the lead to also build an API integration that pushes each summary automatically into the client's applicant tracking system. What is the most appropriate course of action?",
+      "options": {
+        "A": "Build the integration personally, using shared administrator credentials the client once provided",
+        "B": "Deliver the Projects and prompt work, and escalate the API integration to a Claude Developer",
+        "C": "Escalate the entire request, including the Projects and prompt work already in hand",
+        "D": "Deliver the Projects and prompt work, and let the integration half of the request quietly lapse"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D13",
+        "C": "D15",
+        "D": "D17"
+      },
+      "rationale": {
+        "correct": "Recognizing the edge of Associate scope is itself a competency: API integration belongs to a Claude Developer, and the professional move is to do the in-scope part and escalate the rest. Both polarities are errors — attempting the build personally and handing away work that is squarely in scope.",
+        "distractors": {
+          "A": "A self-built integration on borrowed administrator credentials crosses the scope boundary and widens the client's exposure while it does.",
+          "C": "Escalating work the lead is qualified to finish is over-escalation; the summaries and configuration are exactly Associate-scope deliverables.",
+          "D": "Letting the request lapse without saying so absorbs the scope problem silently; the director decides next steps only if told the boundary exists."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q52",
+      "domain": "d5",
+      "primary_concept": "C-052",
+      "syllabus_rule": "5.01",
+      "theme": "T6",
+      "vertical": "renewable energy permitting consultancy",
+      "keywords": [
+        "configuration is leverage",
+        "recurring"
+      ],
+      "type": "single_choice",
+      "question": "A consultant at a renewable energy permitting consultancy runs the same permit-application review with Claude every week, starting a fresh chat each time and re-uploading the same standards documents and checking conventions. Setting up a configured Project would take about an afternoon. What is the most appropriate way to weigh that afternoon?",
+      "options": {
+        "A": "Postpone any setup until the busy season ends and the calendar has more slack",
+        "B": "Skip the setup: a peer consultant tried a Project for one-off analyses and found it added nothing",
+        "C": "Invest the afternoon: the recurring weekly review means the setup pays back on every later conversation",
+        "D": "Skip the setup, as the firm bills by the hour and configuration work is not billable to a client"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D15",
+        "B": "D12",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The afternoon is justified because configuration is leverage: set up once, benefit on every subsequent conversation. The weekly recurring review is exactly the recurrence profile that repays setup, and a configured environment is what separates operating the tool from merely using it.",
+        "distractors": {
+          "A": "Deferral compounds the cost: every week of the busy season repeats the manual re-uploading the setup would retire.",
+          "B": "The peer's experience is an anecdote about one-off work; leverage comes from recurrence, which their tasks lacked and this review has.",
+          "D": "Billability is budget optics, not an engineering criterion; the unbillable afternoon buys back billable hours every week after."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q53",
+      "domain": "d5",
+      "primary_concept": "C-053",
+      "syllabus_rule": "5.02",
+      "theme": "T6",
+      "vertical": "school district facilities office",
+      "keywords": [
+        "instructions",
+        "knowledge",
+        "Skill"
+      ],
+      "type": "single_choice",
+      "question": "A facilities office at a school district configured a Project for work-order triage: the maintenance vendor directory was written into the Project's instructions, and the office's step-by-step triage procedure was uploaded as a memo in knowledge. The configuration looks complete, yet triage output wanders from the procedure and vendor details come back garbled. What is the most appropriate fix?",
+      "options": {
+        "A": "Move the vendor directory into knowledge, define the triage procedure as a Skill, keep instructions for behavior",
+        "B": "Expand the instructions to hold the full directory plus the procedure spelled out in more detail",
+        "C": "Report the Project as defective, as a configured Project should follow whatever it has been given",
+        "D": "Leave the configuration alone and correct each mis-triaged work order by hand as it appears"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "D19",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Instructions govern behavior, knowledge supplies facts, Skills define procedures, scoped Memory holds continuity. A vendor directory is facts and belongs in knowledge; a step-by-step procedure is a Skill's job. A need placed in the wrong mechanism produces exactly this: a configuration that looks complete and does not hold.",
+        "distractors": {
+          "B": "Loading everything into instructions swells one mechanism to do three jobs; the mismatch that causes the wandering remains.",
+          "C": "Nothing is defective: each mechanism is doing its own job on material that belongs to a different one.",
+          "D": "Hand-correcting work orders treats the output symptom while the misplaced configuration keeps generating it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q54",
+      "domain": "d5",
+      "primary_concept": "C-054",
+      "syllabus_rule": "5.03",
+      "theme": "T6",
+      "vertical": "sports league match operations",
+      "keywords": [
+        "connector",
+        "capability edge"
+      ],
+      "type": "single_choice",
+      "question": "A match operations coordinator at a sports league uses a file-storage connector so Claude can read fixture documents. A request to have Claude reorganize the storage folders themselves and change their sharing permissions keeps failing, and the coordinator has rewritten the prompt four times. What is the most appropriate reading of the failures?",
+      "options": {
+        "A": "The prompt still is not worded clearly enough, and a fifth, more precise rewrite is the next step",
+        "B": "The request sits beyond the connector's capability edge — a scope problem no prompt wording will fix",
+        "C": "More connectors should be installed until one of them manages the reorganization",
+        "D": "Connectors let Claude do whatever the connected app can do, so the storage service must be down"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D04",
+        "C": "D01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Every connector extends reach up to a capability edge, and a request that fails at the boundary is a scope problem, not a prompt problem. Knowing the connector's edge is what prevents misrouted fixes — four rewrites have already shown that wording is not the variable.",
+        "distractors": {
+          "A": "A fifth rewrite iterates on the component that four failures have already cleared; the boundary does not move for phrasing.",
+          "C": "Stacking connectors adds machinery in the hope one exceeds its design; the task belongs in the storage service's own admin tools.",
+          "D": "A connector exposes a defined slice of an app's capability, not all of it; inferring an outage from a scope limit invents a mechanism."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q55",
+      "domain": "d5",
+      "primary_concept": "C-055",
+      "syllabus_rule": "5.05",
+      "theme": "T6",
+      "vertical": "wine distribution cooperative",
+      "keywords": [
+        "authority",
+        "currency",
+        "review cadence"
+      ],
+      "type": "multiple_response",
+      "question": "A member services manager at a wine distribution cooperative is about to load a shared folder — supplier price lists, tasting notes going back years, assorted policy PDFs, none with a clear owner — into a Project's knowledge for answering member questions. Which TWO controls should be applied before the folder becomes Project knowledge? (Select TWO.)",
+      "options": {
+        "A": "Upload the entire folder unfiltered so retrieval has the most possible material to draw on",
+        "B": "Trust the files as they stand, since everything in the folder came from inside the cooperative",
+        "C": "Add a standing notice to outputs warning members that the underlying knowledge may be outdated",
+        "D": "Screen each file for authority and currency, and record an owner for what stays",
+        "E": "Scope the upload to what member questions actually need, with a review cadence for keeping it current"
+      },
+      "select_count": 2,
+      "answer": [
+        "D",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D13",
+        "C": "D09"
+      },
+      "rationale": {
+        "correct": "Uploaded knowledge needs provenance — authority, currency, scope, and a review cadence — or stale and unowned content is treated as authoritative. Retrieval scope is a quality control, not a recall maximizer: screening for authority and currency with a named owner, and scoping the upload with a review cadence, are the two controls that give the knowledge a warrant.",
+        "distractors": {
+          "A": "Maximum material is maximum unvetted authority; years-old tasting notes answer member questions with the same standing as current price lists.",
+          "B": "Internal origin is not authority or currency; the folder's problem is age and ownerlessness, which residing inside the cooperative does not cure.",
+          "C": "A staleness notice discloses the defect to members instead of fixing it; the knowledge underneath stays unowned and unscreened."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q56",
+      "domain": "d5",
+      "primary_concept": "C-056",
+      "syllabus_rule": "5.02",
+      "theme": "T6",
+      "vertical": "airline loyalty program office",
+      "keywords": [
+        "precedence",
+        "scope"
+      ],
+      "type": "single_choice",
+      "question": "A program specialist at an airline loyalty program office maintains a Project whose knowledge holds last year's policy manual and a newer benefits bulletin, and the two disagree on upgrade-voucher rules. Depending on which document retrieval surfaces, member replies cite different rules. What is the most appropriate resolution?",
+      "options": {
+        "A": "Leave both documents in place, as the model reliably prefers the newer document when sources disagree",
+        "B": "Remove the older manual from knowledge entirely so no conflict can ever arise",
+        "C": "Have Claude merge the two documents into one combined summary and answer from that",
+        "D": "Record which document governs which scope, apply that precedence, and state the resolution in replies"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D16",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "When two knowledge authorities conflict, the resolution is by documented scope and precedence, stated in the output — never silently averaged or decided by which source is newer. The manual and the bulletin each govern something; writing down which governs the voucher rules is the fix that holds.",
+        "distractors": {
+          "A": "No mechanism guarantees the newer source wins retrieval; the claim invents a preference and leaves replies to chance.",
+          "B": "Deleting the manual removes everything else it still governs; the conflict needed a precedence decision, not an amputation.",
+          "C": "A blended summary launders the disagreement into unattributed prose; members get a rule neither document actually states."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q57",
+      "domain": "d5",
+      "primary_concept": "C-057",
+      "syllabus_rule": "5.05",
+      "theme": "T3",
+      "vertical": "apprenticeship training provider",
+      "keywords": [
+        "provenance",
+        "upload timestamp"
+      ],
+      "type": "single_choice",
+      "question": "A funding coordinator at an apprenticeship training provider re-uploaded the Project's entire folder of funding-rule PDFs last week, so every file shows a fresh date. A teammate points to those dates as proof the Project's knowledge is current. The coordinator knows one agency revised its rules two months ago. What is the most appropriate response?",
+      "options": {
+        "A": "Agree with the teammate: files uploaded last week are current by any reasonable standard",
+        "B": "Re-upload the folder monthly from now on so the file dates never age more than a few weeks",
+        "C": "Check the content against the agency's current rules — a fresh upload timestamp is not provenance",
+        "D": "Keep the files as they are and add a caveat to outputs that funding rules may have changed"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D10",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "File-level metadata is not content provenance: a fresh upload timestamp says nothing about whether the content is current, and treating one as the other is how stale knowledge acquires authority. The agency revised its rules two months ago; only checking the content against the current rules answers the currency question.",
+        "distractors": {
+          "A": "The date records when the file moved, not when the rules did; the two-month-old revision is invisible to the timestamp.",
+          "B": "A monthly re-upload refreshes the metadata on the same stale content; shrinking the interval never touches the actual rules.",
+          "D": "A caveat discloses the risk to readers instead of resolving it; the outdated rule keeps flowing into funded decisions."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q58",
+      "domain": "d5",
+      "primary_concept": "C-058",
+      "syllabus_rule": "5.04",
+      "theme": "T6",
+      "vertical": "architecture firm bid team",
+      "keywords": [
+        "standing instructions",
+        "testable"
+      ],
+      "type": "single_choice",
+      "question": "A bid manager at an architecture firm added a standing instruction to the team's Project months ago: \"keep our bid responses compelling and on-brand.\" Bid drafts look the same as before the instruction existed; nothing has errored and nothing has visibly changed. What is the most appropriate fix?",
+      "options": {
+        "A": "Rewrite the instruction into precise, testable rules whose effect on a draft can be observed",
+        "B": "Strengthen the wording — \"always make every response truly compelling\" — so the model takes it seriously",
+        "C": "Ask Claude whether it has been following the instruction, and close the matter if it says yes",
+        "D": "Leave it for now and put a full instructions overhaul on next quarter's improvement list"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D04",
+        "C": "D20",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Standing instructions must be precise and testable: a vague instruction fails silently — nothing errors and nothing changes, exactly what the bid drafts show. Each rule is written so its effect on an output can be observed, which is what makes the instruction verifiable rather than decorative.",
+        "distractors": {
+          "B": "Adding intensity to vagueness is still vagueness; no observable behavior is specified, so silence continues.",
+          "C": "A self-report is not an observation; the instruction's problem is that compliance and non-compliance look identical.",
+          "D": "Deferral leaves a silent failure in place for a quarter; the fix is one rewritten instruction, not a program."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q59",
+      "domain": "d5",
+      "primary_concept": "C-059",
+      "syllabus_rule": "5.02",
+      "theme": "T6",
+      "vertical": "art museum membership office",
+      "keywords": [
+        "instructions",
+        "knowledge sources"
+      ],
+      "type": "single_choice",
+      "question": "A membership officer at an art museum notices two habits in the team's renewal-letter Project. The office's durable drafting rules are restated by hand in every request, and drafts have recently begun calling one donor \"the museum's premier partner\" — phrasing that turns out to come from a line inside a sponsor-supplied PDF in the Project's knowledge. What is the most appropriate correction?",
+      "options": {
+        "A": "Print the drafting rules on a cover page added to each uploaded document so the rules travel with the files",
+        "B": "Keep both habits and strip the premier-partner phrasing out of each draft after generation",
+        "C": "Restate the drafting rules more emphatically in each request so they outweigh anything in the files",
+        "D": "Put the durable rules into the Project's instructions, and treat uploaded content as data with no instruction authority"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D06",
+        "B": "D05",
+        "C": "D04"
+      },
+      "rationale": {
+        "correct": "A rule that must always hold lives in trusted, durable configuration — never restated per request and never inside the material it governs. Content in knowledge sources is data: the sponsor PDF's self-serving line acquired the authority of an instruction, which is precisely what the separation exists to prevent.",
+        "distractors": {
+          "A": "A cover page puts the rules inside the governed material itself — the layer whose contents must never carry instruction authority.",
+          "B": "Post-editing removes the phrase draft by draft while the PDF keeps issuing it; the authority confusion is untouched.",
+          "C": "Emphatic per-request restatement is the fragile habit the fix should retire; volume does not make the placement right."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q60",
+      "domain": "d5",
+      "primary_concept": "C-060",
+      "syllabus_rule": "5.05",
+      "theme": "T6",
+      "vertical": "b2b software customer success",
+      "keywords": [
+        "quality decay",
+        "scheduled reviews"
+      ],
+      "type": "single_choice",
+      "question": "A customer success lead at a b2b software company configured a Project a year ago: product names in the instructions, packaging documents in knowledge, and a report-formatting Skill. The product line has since been renamed and repackaged. Account summaries have grown subtly off-target, and at no point did anything error or warn. What is the most appropriate lesson to draw?",
+      "options": {
+        "A": "Configurations surface their own problems eventually, and customer complaints will say when to act",
+        "B": "Configurations age against a changing world, so reviews must be scheduled — the decay sends no signal",
+        "C": "The Project should be rebuilt from scratch every month so no element can ever age",
+        "D": "Configured Projects are unreliable, and the team should paste fresh context into every session instead"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D08",
+        "C": "D01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Instructions, knowledge, Skills versions, and Memory all age against a changing world, and because the quality decay produces no warning signal, maintenance runs on scheduled reviews rather than on triggers. A year of renames and repackaging drifting silently into summaries is the signature of unscheduled configuration.",
+        "distractors": {
+          "A": "Complaints are the decay finally reaching customers; a lagging alarm made of other people's frustration is not a maintenance plan.",
+          "C": "A monthly rebuild scraps working configuration wholesale; the discipline is a scheduled review of what changed, not perpetual reconstruction.",
+          "D": "Abandoning configuration trades silent aging for loud, daily re-keying; the leverage was real, it just needed maintenance."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d5-q61",
+      "domain": "d5",
+      "primary_concept": "C-061",
+      "syllabus_rule": "5.05",
+      "theme": "T6",
+      "vertical": "botanical garden events office",
+      "keywords": [
+        "inform",
+        "maintenance"
+      ],
+      "type": "single_choice",
+      "question": "An events coordinator at a botanical garden tightens the shared Project's instructions, changing how event budget summaries are structured. Three other teams pull those summaries into their own reporting. The new configuration is live and producing better output. What else does the change require?",
+      "options": {
+        "A": "Nothing — the summaries improved, and drawing attention to the change would invite needless debate",
+        "B": "A line in the Project description noting that configurations may change at any time",
+        "C": "Telling the three teams what changed in the summaries their reporting depends on",
+        "D": "Holding the news for the annual configuration review, where all changes are presented together"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D17",
+        "B": "D09",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "A configuration change that alters shared outputs is announced to the people who depend on them — to inform dependents is part of the maintenance obligation, not a courtesy. Three teams' reporting consumes these summaries; their pipelines meet the new structure either by notice or by surprise.",
+        "distractors": {
+          "A": "Better output does not excuse a silent interface change; the downstream teams absorb the breakage without knowing why.",
+          "B": "A may-change disclaimer discloses the possibility of change while communicating nothing about this change.",
+          "D": "An annual digest informs the dependents months after their reporting already hit the new structure."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q62",
+      "domain": "d6",
+      "primary_concept": "C-062",
+      "syllabus_rule": "6.02",
+      "theme": "T5",
+      "vertical": "recruitment process outsourcing",
+      "keywords": [
+        "reversibility",
+        "accountability",
+        "appropriate-with-review"
+      ],
+      "type": "single_choice",
+      "question": "A resourcing coordinator at a recruitment process outsourcing provider wants Claude to summarize interview notes into a shortlist brief for the client's hiring manager. The provider's AI policy permits candidate-related work but requires every use case to be screened first, and the team has been treating that screen as a yes-or-no gate. How should the coordinator screen this use case?",
+      "options": {
+        "A": "Rule it inappropriate, as any work touching candidate material is off limits to AI",
+        "B": "Ask Claude to weigh the use case against the provider's policy and adopt the verdict it returns",
+        "C": "Approve it outright, as the briefs stay inside the account team and no candidate reads one",
+        "D": "Score it on reversibility, consequence, human element and accountability, and land it as appropriate-with-review"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D16",
+        "B": "E02",
+        "C": "D11"
+      },
+      "rationale": {
+        "correct": "The four screening criteria — reversibility, consequence, human element and accountability — classify a use case as appropriate, appropriate-with-review, or inappropriate, and the middle verdict is the common one. A shortlist brief is reversible before it reaches the hiring manager, carries real consequence for candidates, and has a human element throughout, which places it in the middle band with a named reviewer instead of at either pole.",
+        "distractors": {
+          "A": "A blanket exclusion answers the screen before it is run; the criteria exist to separate candidate work that needs a reviewer from work that cannot be delegated at all.",
+          "B": "The model's reading of a policy is not a screening verdict, and accountability for the classification stays with the coordinator who runs it.",
+          "C": "Internal circulation is not one of the four criteria; the consequence the shortlist brief carries for a candidate is unchanged by who reads the document."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q63",
+      "domain": "d6",
+      "primary_concept": "C-063",
+      "syllabus_rule": "6.01",
+      "theme": "T7",
+      "vertical": "craft brewery sales cooperative",
+      "keywords": [
+        "governance standards",
+        "responsible use"
+      ],
+      "type": "single_choice",
+      "question": "A sales coordinator at a craft brewery sales cooperative is drafting the members' bulletin with Claude. The cooperative's AI policy is a single page: it permits AI drafting for member communications and asks the practitioner to stay within it. The draft repeats a supplier's unverified claim about a competitor's hop contracts, a situation the policy does not address. What should the coordinator do?",
+      "options": {
+        "A": "Send it as drafted, as the policy permits AI drafting for member communications",
+        "B": "Decide this one against the boundaries the policy sets, and record the reasoning for the call",
+        "C": "Pass every bulletin the policy does not explicitly cover to the compliance lead",
+        "D": "Add a footer saying the bulletin was drafted with AI assistance, and send it"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D14",
+        "C": "D15",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Governance standards bound the call; they do not make it. Responsible use is exercised by the practitioner one decision at a time, so the unverified claim about a competitor is the coordinator's to resolve, and the policy's silence on it is not permission.",
+        "distractors": {
+          "A": "Permission to draft with AI is not permission to publish an unverified claim; the policy bounds the work and leaves this judgment in the practitioner’s hands.",
+          "C": "Routing every uncovered case upward turns a practitioner skill into a queue, and the bulletin waits while a one-page policy is asked to do work it was never written to do.",
+          "D": "Naming the drafting tool tells members how the text was produced and nothing about whether the claim it repeats is true."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q64",
+      "domain": "d6",
+      "primary_concept": "C-064",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "dental clinic network operations",
+      "keywords": [
+        "classify first",
+        "data sensitivity",
+        "privacy considerations"
+      ],
+      "type": "multiple_response",
+      "question": "An operations analyst at a dental clinic network wants to load a year of appointment records — patient names, treatment codes, contact details — into a Project so Claude can analyze no-show patterns. The upload window is short and the analysis is due to the network board this week. Which TWO steps belong before the records enter the Project? (Select TWO.)",
+      "options": {
+        "A": "Upload the export now and pull anything sensitive back out if a concern is raised later",
+        "B": "Ask Claude to confirm that the export is safe to upload, then proceed on that confirmation",
+        "C": "Classify the export against the network's data policy before any of it moves",
+        "D": "Match the handling to that classification: strip patient identifiers and scope the Project",
+        "E": "Write into the Project instructions that the records are confidential and must not be shared"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "E02",
+        "E": "D06"
+      },
+      "rationale": {
+        "correct": "Data sensitivity is established before data enters a feature: classify first, then match the handling. Appointment records carry patient identifiers, so the privacy considerations are settled by classifying the export and by stripping identifiers and scoping the Project — the check happens before the records move, not after an incident.",
+        "distractors": {
+          "A": "Pulling data back out after it has landed is incident response, not a control; the identifiers are already inside the Project when the concern arrives.",
+          "B": "The model has no view of the network's data policy or of what the export contains, so its reassurance is fluent, not a classification.",
+          "E": "A confidentiality instruction governs how Claude behaves once the records are in the Project, and says nothing about whether they should have entered it."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q65",
+      "domain": "d6",
+      "primary_concept": "C-065",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "insurance claims intake team",
+      "keywords": [
+        "redaction",
+        "privacy",
+        "regulatory"
+      ],
+      "type": "single_choice",
+      "question": "A claims analyst on an insurance claims intake team needs a summary of a disputed claim file that contains policyholder national identification numbers and medical notes. Under the team's handling rules, regulated identifiers must not leave the team's own systems for any outside service, though the claim narrative itself carries no such restriction. The adjuster has asked for the summary within the hour. What is the most appropriate action?",
+      "options": {
+        "A": "Remove or anonymize the regulated identifiers, then run the summary on the redacted file",
+        "B": "Do this summary by hand, as regulated claim files cannot involve an external tool at all",
+        "C": "Instruct the model not to retain or reuse the identifiers, then upload the file unchanged",
+        "D": "Upload the file unchanged and mark the summary confidential before it reaches the adjuster"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D16",
+        "C": "D06",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Redaction before entry is the control that lets restricted work proceed: with the regulated identifiers removed or anonymized, the claim narrative can be summarized without breaching the regulatory restriction, and privacy is protected by what never entered the tool. Abandoning the task was not required.",
+        "distractors": {
+          "B": "The policy restricts the regulated data, not the work; a redacted file still carries the claim narrative the adjuster needs.",
+          "C": "An instruction to the model is a request about behavior, not a control over data that has already left the team’s hands.",
+          "D": "A confidentiality marking describes how the summary should be treated, after the identifiers were already sent."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q66",
+      "domain": "d6",
+      "primary_concept": "C-066",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "executive search firm",
+      "keywords": [
+        "Memory controls",
+        "data sensitivity"
+      ],
+      "type": "single_choice",
+      "question": "A research associate at an executive search firm discusses candidate dossiers with Claude across several surfaces during one search: a shared team workspace with Memory switched on, a connector into the firm’s document store, and a personal chat. The dossiers include compensation histories and references given in confidence. Which consideration should decide where this work happens?",
+      "options": {
+        "A": "Whether the surfaces sit under the firm's single enterprise agreement, which makes them equivalent",
+        "B": "Whether Memory can be cleared at the end of the search, once the dossiers have been discussed",
+        "C": "Whether pasting short excerpts instead of whole dossiers keeps the volume of data low",
+        "D": "Where the dossier content comes to rest on each surface — retention, Memory, connector scope"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D07",
+        "C": "D05"
+      },
+      "rationale": {
+        "correct": "Different entry points carry different retention and handling properties, so the destination is part of the data sensitivity decision: a private session, Memory controls, and the scope of a connector each change where confidential references end up. The surface is chosen before the dossier is discussed, not audited afterward.",
+        "distractors": {
+          "A": "One commercial agreement does not make retention, Memory and connector scope identical across surfaces; the handling properties differ per entry point.",
+          "B": "Clearing Memory at the end treats a retention decision as cleanup, and the confidential references were retained for the weeks in between.",
+          "C": "Excerpting lowers the volume while leaving the sensitive content on the same surface with the same retention properties."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q67",
+      "domain": "d6",
+      "primary_concept": "C-067",
+      "syllabus_rule": "6.04",
+      "theme": "T7",
+      "vertical": "credit union member services",
+      "keywords": [
+        "retention",
+        "privacy considerations"
+      ],
+      "type": "single_choice",
+      "question": "A member services team at a credit union routes support drafting through Claude and keeps every prompt and response in a debugging log held indefinitely. The logs contain member account numbers and dispute details, and the team values them because a full history makes tracing a bad draft quick. What should change?",
+      "options": {
+        "A": "Nothing, as a full history is what makes tracing a bad draft quick and the log stays internal",
+        "B": "Switch the logging off, so no member data can be retained anywhere in the workflow",
+        "C": "Keep identifiers out of what is logged, and hold the rest only as long as policy allows",
+        "D": "Leave the logs as they are and restrict access to the two support supervisors"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D13",
+        "B": "D16",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Retention and logging scope are governed decisions: sensitive content is kept only as policy allows, and debugging convenience is not a basis for holding account numbers forever. Stripping identifiers at the point of logging leaves the team the trace it relies on and settles the privacy considerations in the same change.",
+        "distractors": {
+          "A": "Internal storage still stores; an indefinite log of member account numbers widens the exposure every day it is kept.",
+          "B": "Removing the log removes the traceability the team depends on, when the question was what the log holds and for how long.",
+          "D": "Narrowing who can read the log leaves the account numbers retained indefinitely, which is the decision under question."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q68",
+      "domain": "d6",
+      "primary_concept": "C-068",
+      "syllabus_rule": "6.01",
+      "theme": "T4",
+      "vertical": "mining site procurement office",
+      "keywords": [
+        "organizational AI policies",
+        "compensating controls"
+      ],
+      "type": "single_choice",
+      "question": "A procurement officer at a mining site office is asked by the site manager to run supplier tender documents through Claude for comparison. Organizational policy blocks tender material from external tools until a review is signed off. The site manager argues that the risk the policy targets does not arise at this remote site, and that the tender closes on Monday. What is the most appropriate response?",
+      "options": {
+        "A": "Run the comparison for this tender, as the policy's risk does not arise at this site",
+        "B": "Take an exception request to the named policy owner, with the process and compensating controls",
+        "C": "Ask Claude whether the intended use falls inside the policy, and act on its reading",
+        "D": "Park the comparison until the policy comes up at its next scheduled review"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "E02",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Organizational AI policies bind even where a use looks locally harmless, and the exception path runs through a named human authority with a documented process and compensating controls. A closing date is a reason to raise the exception quickly, not a reason for the practitioner to grant one.",
+        "distractors": {
+          "A": "A local reading of the risk substitutes the practitioner’s judgment for the control; the policy binds until a named authority says otherwise.",
+          "C": "A model’s reading of a policy carries no authority to permit an exception to it.",
+          "D": "Waiting for the next review lets the tender close with no answer, when the exception process exists to be used at speed."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q69",
+      "domain": "d6",
+      "primary_concept": "C-069",
+      "syllabus_rule": "6.03",
+      "theme": "T6",
+      "vertical": "engineering standards secretariat",
+      "keywords": [
+        "a Skill is software",
+        "source and permissions"
+      ],
+      "type": "single_choice",
+      "question": "A documentation officer at an engineering standards secretariat finds a community-published Skill that formats draft standards into the house layout. It carries thousands of installs and strong ratings, and it would save the team hours every week. What should happen before it is enabled?",
+      "options": {
+        "A": "Enable it, as thousands of installs and strong ratings are the evidence that matters here",
+        "B": "Enable it and watch the first few formatted drafts for anything unexpected",
+        "C": "Ban community Skills at the secretariat and build the formatter in-house",
+        "D": "Evaluate the Skill's source and the permissions it requests, as with any installed software"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D12",
+        "B": "D07",
+        "C": "D16"
+      },
+      "rationale": {
+        "correct": "A Skill is software: its source and permissions are evaluated before enabling it, because extending capability is a supply-chain decision and not a convenience toggle. Popularity describes how many other teams took the same risk, not what the Skill can reach once it runs inside the secretariat’s Project.",
+        "distractors": {
+          "A": "Install counts and ratings measure popularity, not what permissions the Skill requests or where its code comes from.",
+          "B": "Watching the output catches formatting mistakes; it does not reveal what the Skill reached while producing them.",
+          "C": "A blanket ban gives up a real capability to avoid a review that takes an afternoon."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q70",
+      "domain": "d6",
+      "primary_concept": "C-070",
+      "syllabus_rule": "6.03",
+      "theme": "T8",
+      "vertical": "industrial safety training company",
+      "keywords": [
+        "baseline",
+        "staged rollout"
+      ],
+      "type": "single_choice",
+      "question": "A curriculum lead at an industrial safety training company learns that a newer model tier has been released. The team’s Projects generate course assessments from regulator-approved material. Half the group wants everything moved across today; the other half wants the current tier frozen for the year. What is the most appropriate course of action?",
+      "options": {
+        "A": "Compare the new tier against the current baseline on the same assessments, then stage the rollout",
+        "B": "Move every Project to the new tier now, as a newer release supersedes the one it replaces",
+        "C": "Freeze the current tier for the year, so nothing that works today can change",
+        "D": "Adopt the new tier and refresh the Project instructions and prompts in the same pass"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D16",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "A vendor model change enters the organization's change-control path like any release: a like-for-like comparison against a baseline, a staged rollout, and a rollback path. Regulator-approved material raises the cost of an unmeasured switch, and it does not turn an indefinite freeze into a governance position.",
+        "distractors": {
+          "B": "Being newer is a release fact, not a fitness result for these assessments; the comparison is what makes the tier’s behavior known.",
+          "C": "A permanent freeze avoids the comparison instead of running it, and the current tier ages against the material it is asked to assess.",
+          "D": "Changing the tier and the instructions together leaves no way to attribute any difference in the assessments to either one."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q71",
+      "domain": "d6",
+      "primary_concept": "C-071",
+      "syllabus_rule": "6.01",
+      "theme": "T5",
+      "vertical": "language school admissions",
+      "keywords": [
+        "responsible use",
+        "escalation"
+      ],
+      "type": "single_choice",
+      "question": "An admissions officer at a language school is asked by a partner agent to have Claude draft visa-supporting statements for applicants from their immigration paperwork. Policy blocks immigration documents from the tool, the agent is a major referral source, and enrollment closes this week. What is the most appropriate way to handle the request?",
+      "options": {
+        "A": "Split the paperwork into extracts small enough that no single request meets the blocked description",
+        "B": "Do it quietly this once for the referral relationship, and raise the policy question later",
+        "C": "Name the boundary to the agent, offer the permitted alternative, and log the escalation",
+        "D": "Reply that the request is not permitted and close the conversation there"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D13",
+        "B": "D17",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Refusing well is part of responsible use: name the boundary, offer the permitted alternative — a statement drafted from the applicant's own school records — and follow the escalation and logging policy. A referral relationship and a closing date shape how quickly the alternative is offered, not whether the control holds.",
+        "distractors": {
+          "A": "Decomposing the request keeps the immigration content flowing while defeating the control that was written to stop it.",
+          "B": "Quiet compliance leaves the school exposed and the policy untested, and the pressure is the condition the control exists for.",
+          "D": "A flat refusal holds the line and abandons the agent, when a permitted route to a supporting statement exists."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q72",
+      "domain": "d6",
+      "primary_concept": "C-072",
+      "syllabus_rule": "6.05",
+      "theme": "T7",
+      "vertical": "hospice volunteer coordination",
+      "keywords": [
+        "ambiguous cases",
+        "screening criteria"
+      ],
+      "type": "single_choice",
+      "question": "A volunteer coordinator at a hospice service wants Claude to summarize volunteers' visit notes into a weekly care-team digest. The notes describe families' circumstances in ordinary, unremarkable language, and nobody on the team can say whether this crosses a line. The coordinator's instinct is that it feels wrong. How should the case be settled?",
+      "options": {
+        "A": "Follow the instinct, as a use that feels uncomfortable to the coordinator is one to leave alone",
+        "B": "Reason it through against the four screening criteria and record the verdict and its grounds",
+        "C": "Treat it as settled by another region's approval of the same volunteer-note summaries",
+        "D": "Send it to the ethics committee, which is what ambiguous cases are escalated for"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "D12",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Ethical risk hides in ordinary outputs, and ambiguous cases are reasoned through against the stated screening criteria instead of resolved by instinct: the same reversibility, consequence, human element and accountability questions decide the hard case, and the recorded reasoning is what makes the verdict defensible to the care team.",
+        "distractors": {
+          "A": "Discomfort is a prompt to run the screen, not a verdict, and an unrecorded instinct cannot be reviewed or applied to the next case.",
+          "C": "Another region's approval was a verdict on its own facts; what transfers between cases is the criteria, not the conclusion.",
+          "D": "Escalating skips a screen the coordinator can run today, and the digest waits on a committee for a call the criteria already answer."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d6-q73",
+      "domain": "d6",
+      "primary_concept": "C-073",
+      "syllabus_rule": "6.05",
+      "theme": "T4",
+      "vertical": "community college registrar",
+      "keywords": [
+        "disclosure",
+        "fairness"
+      ],
+      "type": "single_choice",
+      "question": "A registrar's office at a community college uses Claude to draft the outcome paragraph in financial-aid appeal letters. A staff member reads and signs every letter before it goes out, and students receive the letter as the decision on their appeal. What does this workflow still owe the student?",
+      "options": {
+        "A": "Nothing further, as naming the drafting tool would invite challenges to sound decisions",
+        "B": "Nothing further, as the staff member's signature is the accountability the student needs",
+        "C": "A disclosure line added once a student asks whether the letter was AI-drafted",
+        "D": "Disclosure of the AI involvement and a named route to contest the outcome"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D17",
+        "B": "D12",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Where an output affects a person's decision, disclosure of AI involvement and a route to contest the outcome belong in the design of the workflow. They are due-process obligations owed to the student, and fairness is what they protect — they are not courtesies added once someone complains.",
+        "distractors": {
+          "A": "Withholding how the letter was produced protects the office from questions, at the cost of the student’s ability to ask them.",
+          "B": "A signature records who is accountable; it does not tell the student how the decision was produced or how to challenge it.",
+          "C": "A disclosure that appears only when a student thinks to ask is not part of the design, and most students will never know to ask."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q74",
+      "domain": "d7",
+      "primary_concept": "C-074",
+      "syllabus_rule": "7.01",
+      "theme": "T8",
+      "vertical": "ferry and harbor operations",
+      "keywords": [
+        "diagnostic sequence",
+        "specification"
+      ],
+      "type": "single_choice",
+      "question": "A scheduling clerk at a ferry and harbor operations office asks Claude each morning for a plain-language summary of the day's sailing changes. For two weeks the summaries have been leaving out berth reassignments, and the team's view is that the tool has simply stopped being good at this. What should the clerk do first?",
+      "options": {
+        "A": "Move the summaries to the top model tier, as the current tier is evidently not capable enough",
+        "B": "Open a vendor ticket reporting that the model has become unreliable for sailing summaries",
+        "C": "Work the diagnostic sequence in order — specification, context, feature, configuration",
+        "D": "Rewrite the prompt, reload the berth reference table, and switch the Project Skill in one pass"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D15",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Underperformance has discoverable causes, checked in a fixed order: the diagnostic sequence runs specification, context, feature, configuration, cheapest and most likely first. Summaries that drop berth reassignments most often trace to a specification that never named them or a context that no longer carries them, and both are found before the tool is blamed.",
+        "distractors": {
+          "A": "A larger tier answers a capability question nobody has established, when the omission may be a field the prompt never asked for.",
+          "B": "Reporting a fault hands the diagnosis away before the four cheap checks inside the team’s own reach have been run.",
+          "D": "Three changes at once removes any way of knowing which layer was at fault, and leaves the same uncertainty next time."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q75",
+      "domain": "d7",
+      "primary_concept": "C-075",
+      "syllabus_rule": "7.02",
+      "theme": "T8",
+      "vertical": "packaging design studio",
+      "keywords": [
+        "isolate",
+        "diagnose"
+      ],
+      "type": "single_choice",
+      "question": "A studio coordinator at a packaging design studio has the evidence in hand: the artwork-spec summaries Claude produces omit the print finish and the die-line reference on every job, including jobs whose brief stated both. Several fixes are on the table and each has a supporter. What determines which fix is the right one?",
+      "options": {
+        "A": "Naming the layer that failed — the prompt, the context, the feature choice or the configuration",
+        "B": "Connecting the studio's job-tracking system so that Claude can pull each job's details for itself",
+        "C": "Adding the print finish and die-line reference to each summary by hand as jobs come through",
+        "D": "Applying the fix that worked on the client-brief prompts last month, which felt much the same"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D06",
+        "C": "D05",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Isolate before you fix: to diagnose here is to name whether the failure is the prompt, the context, the feature choice or the configuration, since each layer implies a different remedy. Briefs that stated both fields and summaries that drop both point at the specification, and a fix applied without a named cause is a guess, however well it worked elsewhere.",
+        "distractors": {
+          "B": "The briefs already carry both fields, so access to the job details is not what is missing; extending reach through a connector places the remedy at a layer no evidence points to.",
+          "C": "Filling the gaps by hand keeps the summaries usable and leaves whatever drops the fields exactly as it is.",
+          "D": "A fix that worked on a different failure is a borrowed conclusion; the layer at fault here has still not been named."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q76",
+      "domain": "d7",
+      "primary_concept": "C-076",
+      "syllabus_rule": "7.02",
+      "theme": "T8",
+      "vertical": "orchestra development office",
+      "keywords": [
+        "expectation mismatch"
+      ],
+      "type": "single_choice",
+      "question": "A development officer at an orchestra development office has spent three weeks refining a prompt that drafts major-donor renewal letters. The drafts come back strong, accurate and warm, and every one still needs a fundraiser's edit before it can be sent. The office had promised the board a workflow that produces mail-ready letters. What is the most likely diagnosis?",
+      "options": {
+        "A": "The prompt needs further refinement, until the drafts come back ready to mail unchanged",
+        "B": "The workflow needs a higher model tier, as a stronger model would close the remaining gap",
+        "C": "Claude should rate its own drafts, and the ones it scores as mail-ready can go out unedited",
+        "D": "The expectation is the mismatch: what was promised was a finished letter, not a strong draft"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D03",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Expectation mismatch is a legitimate diagnosis: sometimes nothing is broken except what was promised. Drafts that are strong, accurate and warm and still need a fundraiser's edit describe a working assistive workflow, and the honest remedy is to reset the promise made to the board instead of tuning what already delivers.",
+        "distractors": {
+          "A": "Three weeks of refinement have produced strong drafts; more of the same tuning chases a target that was set wrong.",
+          "B": "A stronger model produces a better draft, and a better draft is still a draft that a fundraiser signs off.",
+          "C": "A self-assessment reports how confident the model is, not whether the letter is ready for a major donor."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q77",
+      "domain": "d7",
+      "primary_concept": "C-077",
+      "syllabus_rule": "7.02",
+      "theme": "T8",
+      "vertical": "food safety auditing firm",
+      "keywords": [
+        "baseline",
+        "one changed variable"
+      ],
+      "type": "single_choice",
+      "question": "An audit coordinator at a food safety auditing firm improved the firm's report drafts in one afternoon: the prompt was rewritten, a knowledge file of past audit reports was added, and the Project was moved to a higher model tier. The drafts are visibly better, and the partners want to know what worked so it can be applied to the other report types. What should the coordinator do?",
+      "options": {
+        "A": "Report that the combination works, as the three changes together produced the better drafts",
+        "B": "Rebuild the baseline and reintroduce the three changes one at a time to see which carries the gain",
+        "C": "Credit the tier move, as a model change is the largest of the three levers pulled that afternoon",
+        "D": "Ask Claude which of the three changes improved its drafts, and pass that answer to the partners"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D19",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Attribution requires a reconstructed baseline and one changed variable at a time. Three changes in one afternoon read as decisiveness and leave the firm unable to say what to carry across to the other report types: the gain is real and unattributed, which is the same as untransferable.",
+        "distractors": {
+          "A": "A combination that works is not a finding that transfers; the other report types would inherit changes that may contribute nothing.",
+          "C": "The size of a lever is a prior, not a measurement, and the prompt rewrite is at least as plausible a cause.",
+          "D": "The model holds no record of the prompt it ran under yesterday and no view of the tier move, so the answer would be a plausible guess."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q78",
+      "domain": "d7",
+      "primary_concept": "C-078",
+      "syllabus_rule": "7.01",
+      "theme": "T7",
+      "vertical": "paralegal support bureau",
+      "keywords": [
+        "diagnose",
+        "permissions"
+      ],
+      "type": "single_choice",
+      "question": "A paralegal at a support bureau asks Claude to summarize a document bundle for a client matter, and the request is declined. The same kind of summary ran without trouble last quarter, the bundle now includes another firm's privileged correspondence, and the filing deadline is Thursday. What is the most appropriate next step?",
+      "options": {
+        "A": "Rephrase the request in smaller pieces until the refusal stops appearing",
+        "B": "Report it as a product fault and wait for the vendor to restore the earlier behavior",
+        "C": "Check the request against the task, current policy and permissions, then redo the permitted part",
+        "D": "Switch off the bureau’s policy configuration for the session so the summary can be produced"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D13",
+        "B": "D15",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "A refusal is diagnosed against the task, current policy and permissions, and any recent change: a bundle that now carries another firm's privileged correspondence is a different task from last quarter's. The permitted portion is then redesigned and done, or the work is escalated — evading or stripping the control is never the fix.",
+        "distractors": {
+          "A": "Reshaping the request until it passes treats the control as an obstacle, and the privileged correspondence is still in the bundle.",
+          "B": "Waiting on the vendor assumes a defect, when what changed is the bundle, and the deadline does not move.",
+          "D": "Turning the configuration off removes the control that caught the problem and leaves the privileged material untouched."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q79",
+      "domain": "d7",
+      "primary_concept": "C-079",
+      "syllabus_rule": "7.03",
+      "theme": "T2",
+      "vertical": "specialty coffee importer",
+      "keywords": [
+        "specific adjustment",
+        "feedback"
+      ],
+      "type": "single_choice",
+      "question": "A trading assistant at a specialty coffee importer sends the weekly market update to the desk head, who replies that it is too generic to be useful and nothing more. The assistant plans to be more careful with the next one. What should happen instead?",
+      "options": {
+        "A": "Turn the critique into one named change: state the buyer segment and the origins to cover",
+        "B": "Add a line to the prompt asking for higher quality and more specific market writing",
+        "C": "Rewrite the prompt, attach a file of past updates, and lengthen the output in one revision",
+        "D": "Circulate the next update to the whole desk and act on whatever comments come back"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D04",
+        "C": "E01",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "A disappointing output is data: the critique is translated into one specific adjustment aimed at the component it names, not into a general resolve to do better. Too generic points at an unspecified audience and scope, so the feedback becomes a stated buyer segment and a stated set of origins — a change whose effect on the next update can be seen.",
+        "distractors": {
+          "B": "Asking for higher quality restates the complaint inside the prompt and names nothing the next draft can act on.",
+          "C": "Three simultaneous changes make the next update better or worse with no way to say which of them did it.",
+          "D": "Another round of desk opinions gathers more critique, when the one already given has not been converted into a change."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q80",
+      "domain": "d7",
+      "primary_concept": "C-080",
+      "syllabus_rule": "7.03",
+      "theme": "T6",
+      "vertical": "landscaping services franchise",
+      "keywords": [
+        "capture the fix",
+        "Skill"
+      ],
+      "type": "single_choice",
+      "question": "A scheduler at a landscaping services franchise finds a phrasing that makes Claude include crew size and equipment in every route-plan summary, which the earlier phrasing kept dropping. It works reliably. Six other schedulers across the franchise hit the same problem every week. What should be done with the fix?",
+      "options": {
+        "A": "Post the working phrasing in the team chat, where any scheduler can search for it later",
+        "B": "Leave it as know-how, since the schedulers who need it will work the phrasing out as they go",
+        "C": "Rebuild the route-planning Project from scratch around the new phrasing",
+        "D": "Write it into the Project instructions or a Skill, so every scheduler gets it by default"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D18",
+        "C": "D01"
+      },
+      "rationale": {
+        "correct": "A fix that worked is captured so it persists beyond the session: to capture the fix as a standing instruction or a Skill is what stops six schedulers re-deriving it every week. An unrecorded fix is re-derived on every future occurrence, which is decay by another name.",
+        "distractors": {
+          "A": "A chat post preserves the text and not the default; every scheduler still has to remember it exists and go and find it.",
+          "B": "Tacit know-how is what the franchise has now, and it is why the same problem returns every week.",
+          "C": "A rebuild spends a day of reconstruction on a change that belongs in one line of the configuration."
+        }
+      }
+    },
+    {
+      "id": "ccao-f-d7-q81",
+      "domain": "d7",
+      "primary_concept": "C-081",
+      "syllabus_rule": "7.04",
+      "theme": "T8",
+      "vertical": "port authority communications",
+      "keywords": [
+        "instrument",
+        "measure the gain"
+      ],
+      "type": "multiple_response",
+      "question": "A communications officer at a port authority has moved the drafting of berth-closure notices into a configured Project, and the director wants to report the efficiency gain to the board. Nobody recorded how the old process performed. Which TWO steps make the claimed gain checkable? (Select TWO.)",
+      "options": {
+        "A": "Reconstruct a before measure of the old process — time per notice and rework rounds",
+        "B": "Ask the communications team whether the new workflow feels faster, and report that",
+        "C": "Move to a faster model tier at the same time, so the reported gain is as large as possible",
+        "D": "Have Claude estimate the time saved across the notices it has drafted so far",
+        "E": "Measure the same two figures after the change, with the workflow instrumented at that level"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "E"
+      ],
+      "distractor_patterns": {
+        "B": "D12",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Optimization is deliberate and measured: instrument the workflow, find the friction, promote the fix into configuration, and measure the gain. A before measure of time per notice and rework rounds, and the same two figures after, give the board a number it can check; optimizing without a baseline produces an unfalsifiable claim of improvement.",
+        "distractors": {
+          "B": "A sense that the workflow feels faster is the impression the measurement was there to test.",
+          "C": "A second change made at the same time inflates the number and destroys the attribution behind it.",
+          "D": "The model holds no record of how long the old process took, so its estimate is fluent arithmetic over nothing."
+        }
+      }
+    }
+  ]
+}

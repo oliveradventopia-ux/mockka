@@ -1,0 +1,2175 @@
+{
+  "version": "0.1.0",
+  "questions": [
+    {
+      "id": "gcp-cdl-d1-01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "theme": "G3",
+      "vertical": "regional tourism board",
+      "keywords": ["digital transformation", "cloud", "infrastructure"],
+      "type": "single_choice",
+      "question": "A regional tourism board has approved a program that will change how the organization operates and delivers value to visitors, with cloud services as the enabler. In the kickoff briefing, the program director wants to name this organizational change precisely for the board. Which term names it?",
+      "options": {
+        "A": "A hybrid cloud deployment",
+        "B": "Digital transformation",
+        "C": "The cloud",
+        "D": "A modernized infrastructure estate"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E02", "C": "E05", "D": "E07" },
+      "rationale": {
+        "correct": "Digital transformation is the organizational change itself: new ways of operating and delivering value that cloud and infrastructure make possible. The term covers the change program, not the technology underneath it.",
+        "distractors": {
+          "A": "A hybrid cloud deployment is one way to consume cloud services; naming a deployment model does not name the organizational change the board approved.",
+          "C": "The cloud is the consumption model that enables the change, delivering technology on demand as services. It is the enabler, not the change in how the board operates.",
+          "D": "Infrastructure is the underlying capability being modernized; it is one ingredient of the program, not the organizational change the director needs to name."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "theme": "G3",
+      "vertical": "ceramics manufacturer",
+      "keywords": ["agentic AI"],
+      "type": "single_choice",
+      "question": "A ceramics manufacturer pilots two AI tools. The first answers a question about a glaze defect and stops. The second is given the goal of clearing a production backlog: it checks kiln schedules, drafts a revised firing plan, reserves maintenance windows, and confirms the outcome. What makes the second tool agentic AI?",
+      "options": {
+        "A": "It was trained on a much larger dataset than the first tool",
+        "B": "It generates novel content rather than analyzing existing records",
+        "C": "It runs on infrastructure purpose-built for AI workloads",
+        "D": "It pursues a goal through multiple steps and actions"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D19", "B": "E05", "C": "E06" },
+      "rationale": {
+        "correct": "Agentic AI is defined by behavior: the system pursues a goal through multiple steps and actions, deciding what to do next until the goal is met. A single model call that answers and stops, however capable, is not agentic.",
+        "distractors": {
+          "A": "Training data volume says nothing about agency; a model trained on more data can still only answer once and stop.",
+          "B": "Producing novel content describes generative AI. A generative model that drafts one plan and stops is still a single call, not goal pursuit.",
+          "C": "Where a tool runs is an infrastructure fact. It may be true of either tool and does not distinguish goal-directed, multi-step behavior."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "theme": "G3",
+      "vertical": "credit union",
+      "keywords": ["open source", "open standard"],
+      "type": "single_choice",
+      "question": "A credit union is negotiating with a core-banking software vendor. Its technology committee has one firm requirement: the credit union must be able to inspect the code it will depend on, and modify it if the vendor's roadmap stalls. Which commitment should it ask the vendor to make?",
+      "options": {
+        "A": "Ship the product as open source software",
+        "B": "Build the product on an open standard",
+        "C": "Support deployment across multiple cloud providers",
+        "D": "Publish integration APIs for the product"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E06", "D": "D06" },
+      "rationale": {
+        "correct": "Open source is the commitment that matches the requirement: the code is inspectable and modifiable, so the committee can read what it depends on and change it if the vendor stalls. An open standard is a different commitment, a shared specification anyone may implement.",
+        "distractors": {
+          "B": "An open standard is a shared specification anyone may implement. It protects interoperability between implementations, but it does not let the credit union inspect or modify the vendor's own code.",
+          "C": "Multicloud portability is a real safeguard against provider lock-in, but it answers where the product runs, not whether its code can be inspected and modified.",
+          "D": "Published APIs open the integration layer only; they expose none of the product's internals, so the committee still could not read or change the code."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "theme": "G1",
+      "vertical": "cinema chain",
+      "keywords": ["scalability", "cost-effectiveness", "agility"],
+      "type": "single_choice",
+      "question": "A cinema chain's online ticketing site fails every time tickets for a major release go on sale, because its servers are sized for a quiet weekday. The digital director is drafting the cloud business case and wants to lead with the property that most directly relieves this pain. Which framing should lead?",
+      "options": {
+        "A": "Cost-effectiveness: the chain pays only for resources it actually uses",
+        "B": "Agility: new customer-facing features ship more frequently",
+        "C": "Scalability: capacity grows with each on-sale peak and shrinks after it",
+        "D": "Permanent capacity provisioned for the largest anticipated on-sale peak"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E05", "D": "D03" },
+      "rationale": {
+        "correct": "The stated pain is capacity pressure: demand spikes overwhelm servers sized for a quiet weekday. Scalability is the cloud property that answers capacity pressure, expanding with each peak and contracting afterward so the failure mode disappears.",
+        "distractors": {
+          "A": "Cost-effectiveness is a true cloud benefit, but it answers a question about spend structure. The site is failing on capacity, not on cost.",
+          "B": "Agility and speed answer slow change: shipping features faster would not keep the ticketing site up during an on-sale peak.",
+          "D": "Provisioning permanently for the largest peak throws fixed capacity at an elastic problem: it sits idle on quiet days and still fails when a bigger release breaks the estimate."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "theme": "G1",
+      "vertical": "national postal service",
+      "keywords": ["global reach and high availability"],
+      "type": "single_choice",
+      "question": "A national postal service runs its parcel-tracking portal from a single data center in the capital. Customers tracking parcels from abroad see slow page loads, and one outage took the portal down for a full day. The board asks what a cloud provider's global footprint would buy beyond more machines. What is the accurate answer?",
+      "options": {
+        "A": "Serving users everywhere while staying up through failures",
+        "B": "More total compute capacity than the current data center offers",
+        "C": "Offsite backups that restore the portal after an outage",
+        "D": "Lower infrastructure cost through pay-as-you-go pricing"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D03", "C": "E07", "D": "E06" },
+      "rationale": {
+        "correct": "Global reach and high availability are what the footprint buys: services positioned near users everywhere, and continuity through failures because no single facility is a single point of failure. Neither outcome is about raw capacity.",
+        "distractors": {
+          "B": "Raw capacity is exactly what the board was told to look past: more machines in one capital data center would neither speed up access from abroad nor survive that facility failing.",
+          "C": "Backups shorten recovery after an outage; they do not keep the portal serving during one, and they move nothing closer to customers abroad.",
+          "D": "Pay-as-you-go pricing is a real benefit with a different address: it answers cost structure, not reach or availability."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "theme": "G1",
+      "vertical": "garden centre chain",
+      "keywords": ["enhanced security", "data-driven insights"],
+      "type": "multiple_response",
+      "question": "A garden centre chain's CFO has framed the cloud business case entirely as cheaper servers and more seasonal capacity. The CIO wants the case to also name benefits that are not about cost or capacity at all. Select the TWO benefits that belong in that addition.",
+      "options": {
+        "A": "A security baseline stronger than the chain can operate on its own",
+        "B": "Near-unlimited capacity for the spring rush without buying hardware",
+        "C": "Insights drawn from the sales and stock data the chain already holds",
+        "D": "Paying only for the resources each store actually consumes",
+        "E": "A provider that takes over the chain's regulatory compliance obligations"
+      },
+      "select_count": 2,
+      "answer": ["A", "C"],
+      "distractor_patterns": { "B": "E06", "D": "E05", "E": "D19" },
+      "rationale": {
+        "correct": "Enhanced security and data-driven insights are the benefits that are not about cost or capacity: a provider-operated security baseline exceeding what the chain could run alone, and analysis that turns existing data into decisions. Together with strategic value and focus, they widen a case the CFO had reduced to servers and spend.",
+        "distractors": {
+          "B": "Elastic seasonal capacity is a genuine cloud benefit, but it is precisely the capacity story the CIO was asked to look beyond.",
+          "D": "Consumption-based pricing is cost-effectiveness, the other axis the addition must avoid: it strengthens the spend argument, not the beyond-cost one.",
+          "E": "No provider takes over a customer's compliance obligations; responsibility is shared, so this overstates what any cloud purchase delivers."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "theme": "G3",
+      "vertical": "wine importer and distributor",
+      "keywords": ["factors that motivate organizations to transform"],
+      "type": "single_choice",
+      "question": "A wine importer and distributor is debating whether to launch a transformation program. Four reasons are raised in the leadership meeting. Which one is the kind of factor that genuinely motivates organizations to transform?",
+      "options": {
+        "A": "A high-profile generative AI launch suggests the newest platforms are the best ones",
+        "B": "Managed cloud services have recently become available in the importer's region",
+        "C": "The IT budget is showing an unspent balance as the fiscal year closes",
+        "D": "A competitor now confirms restaurant orders in half the importer's turnaround time"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D19", "B": "E06", "C": "D11" },
+      "rationale": {
+        "correct": "The factors that motivate organizations to transform are competitive, customer and market pressures, and a rival serving customers measurably better is exactly such a driver. Technology availability and internal budget positions describe means and timing, not the pressure that justifies the change.",
+        "distractors": {
+          "A": "A vendor launch is news about technology, and newest is not a business reason; without a competitive or customer pressure attached it motivates nothing.",
+          "B": "Regional availability of managed services is true and useful, but it is an enabler: it explains how a program could run, not why the business needs one.",
+          "C": "An unspent budget is an internal accounting fact. Spending it is not a transformation driver, and programs justified that way stall when the balance is gone."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "theme": "G3",
+      "vertical": "municipal fire service",
+      "keywords": ["common hurdles that can affect transformation"],
+      "type": "single_choice",
+      "question": "A municipal fire service moved its incident-reporting system to the cloud a year ago. The platform performs well in every test, yet crews still file paper reports and station officers have quietly stopped chasing them. The program has stalled. Which hurdle does this describe?",
+      "options": {
+        "A": "The platform cannot handle peak incident volume",
+        "B": "A skills and culture hurdle: crews were never brought along",
+        "C": "The service selected the wrong cloud deployment model",
+        "D": "Too little of the annual budget was reserved for software licensing"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "D19", "C": "E02", "D": "D11" },
+      "rationale": {
+        "correct": "This is one of the common hurdles that can affect transformation: the technology works, but adoption failed because skills, habits and ownership on the ground were never addressed. Transformation programs stall on people and culture at least as often as on platforms.",
+        "distractors": {
+          "A": "The evidence rules this out: the platform performs well in every test. Blaming capacity contradicts the stall as described.",
+          "C": "Nothing in the stall points at where the system is deployed; crews avoiding a working tool is the same problem under any deployment model.",
+          "D": "No licensing shortfall is described, and buying more licenses would not make crews use the system they already have."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "theme": "G1",
+      "vertical": "campus bookstore chain",
+      "keywords": ["implications and risks of not adopting cloud"],
+      "type": "single_choice",
+      "question": "A campus bookstore chain has declined a proposed cloud program for the third year running, and its board minutes record the decision as prudent cost avoidance. Meanwhile its online competitors keep widening their lead in delivery speed and personalization each term. What is the chain actually accepting by standing still?",
+      "options": {
+        "A": "A compounding competitive disadvantage that grows harder to close each year",
+        "B": "Only a delay: the same benefits will be available at the same cost later",
+        "C": "A genuine reduction in overall technology spending",
+        "D": "The retraining effort that cloud adoption would have required"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D15", "C": "D19", "D": "E06" },
+      "rationale": {
+        "correct": "The implications and risks of not adopting cloud are stated as risk, not savings: while the chain stands still, competitors improve faster every cycle, so the gap compounds and the eventual catch-up costs more than the avoided program. Declining to move is a decision with a price.",
+        "distractors": {
+          "B": "Deferral is not neutral: each year of standing still adds competitor gains and legacy drift, so the same move later closes a wider gap at a higher price.",
+          "C": "The savings are not real reductions: the aging estate still consumes maintenance and refresh spending while buying no competitive ground.",
+          "D": "Retraining is a cost of adopting, not of declining; naming it here answers the wrong side of the decision."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "theme": "G1",
+      "vertical": "physiotherapy clinic chain",
+      "keywords": ["AI-ready data platform", "AI Hypercomputer"],
+      "type": "single_choice",
+      "question": "A physiotherapy clinic chain is choosing a strategic cloud partner for a data and AI roadmap. The board's stated concern is specific: years of appointment and outcome records must become usable for AI without rebuilding the data estate. Which of Google's claimed differentiators answers that concern?",
+      "options": {
+        "A": "World-leading AI models",
+        "B": "AI Hypercomputer",
+        "C": "An AI-ready data platform",
+        "D": "The prestige of partnering with a recognized AI leader"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E05", "D": "D11" },
+      "rationale": {
+        "correct": "The concern is about the data estate, and the AI-ready data platform is the differentiator that answers it: the claim that existing data becomes usable for AI where it already lives, without a rebuild. Matching the differentiator to the question the stakeholder actually raised is the judgment this decision needs.",
+        "distractors": {
+          "A": "World-leading AI is a real claim answering a different question: model capability does nothing for records that are not yet usable as AI input.",
+          "B": "AI Hypercomputer is the infrastructure-scale sibling on the same list; it answers training and serving horsepower, not whether the chain's records are AI-ready.",
+          "D": "Prestige is not a differentiator or a decision criterion; a partner's brand answers no question about the chain's data estate."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "theme": "G3",
+      "vertical": "radio broadcasting network",
+      "keywords": ["hybrid cloud", "multicloud", "private cloud"],
+      "type": "single_choice",
+      "question": "A radio broadcasting network must keep its broadcast playout systems in its own facilities under the terms of its transmission license, while its listener analytics should run on a public cloud's elastic capacity. The network wants both managed as one estate. Which deployment model is this?",
+      "options": {
+        "A": "Multicloud",
+        "B": "Hybrid cloud",
+        "C": "Private cloud for the whole estate",
+        "D": "Public cloud with data residency settings for the playout systems"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E02", "C": "E07", "D": "D06" },
+      "rationale": {
+        "correct": "A hybrid cloud combines an organization's own facilities with public cloud capacity under central management, which is exactly the described split: license-pinned playout on premises, elastic analytics in the public cloud, one estate.",
+        "distractors": {
+          "A": "Multicloud means deliberately using more than one public cloud provider; the scenario combines one provider with the network's own facilities, which is a different model.",
+          "C": "Keeping everything private satisfies the license and surrenders the elastic analytics capacity the network wanted; it answers half the requirement.",
+          "D": "Residency settings choose where data sits inside the provider's estate; the license requires the network's own facilities, which no provider-side setting delivers."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "theme": "G3",
+      "vertical": "motorway toll operator",
+      "keywords": ["domain name service (DNS)", "IP address"],
+      "type": "single_choice",
+      "question": "A motorway toll operator is moving its customer portal to the cloud, and its program lead must explain to executives what happens when a driver types the portal's web address. Which explanation is correct at the level a leader needs?",
+      "options": {
+        "A": "The domain name is the numeric identifier, and the IP address is the readable name drivers type",
+        "B": "Available bandwidth determines which server receives the request",
+        "C": "A firewall translates the typed name into a network route",
+        "D": "DNS resolves the typed name to the IP address that identifies the right server"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "D19", "C": "D06" },
+      "rationale": {
+        "correct": "The purpose-level reading is that the domain name service (DNS) resolves the human-readable name into an IP address, and the IP address identifies the server that should receive the traffic. Name resolution and addressing are the two primitives a non-engineer still needs to keep straight.",
+        "distractors": {
+          "A": "This swaps the two terms: the IP address is the numeric identifier and the domain name is the readable form, not the reverse.",
+          "B": "Bandwidth is how much data can move at once; it moves traffic, it does not decide where a typed name points.",
+          "C": "A firewall permits or blocks traffic; turning names into addresses is name resolution, a different job at a different layer."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "theme": "G3",
+      "vertical": "artisan food cooperative",
+      "keywords": ["latency", "bandwidth"],
+      "type": "single_choice",
+      "question": "An artisan food cooperative's member portal feels sluggish: every individual page click takes a noticeable moment to respond, yet the co-op's large nightly catalog uploads always finish quickly. Which network property does the complaint implicate?",
+      "options": {
+        "A": "Latency: how long one round trip takes",
+        "B": "Bandwidth: how much data can move at once",
+        "C": "Storage capacity on the portal's database server",
+        "D": "The choice between public and private deployment"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "D19", "D": "E02" },
+      "rationale": {
+        "correct": "Slow individual interactions alongside fast bulk transfers is the signature of a latency problem: each round trip takes too long, while bandwidth is clearly ample because large uploads finish quickly. The two properties answer different questions, and this complaint names the round-trip one.",
+        "distractors": {
+          "B": "Bandwidth is the property the evidence clears: nightly uploads moving large volumes quickly show the pipe is wide enough.",
+          "C": "Storage capacity governs how much can be kept, not how long a page click waits; the described symptom is a network property.",
+          "D": "Deployment model is not implicated by the evidence; a private estate with the same round-trip time would feel exactly as sluggish."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "theme": "G3",
+      "vertical": "heavy-equipment leasing firm",
+      "keywords": ["regions", "zones", "edge locations"],
+      "type": "single_choice",
+      "question": "A heavy-equipment leasing firm is drafting an internal briefing on where its fleet-telemetry workloads will physically run on Google Cloud. Which statement should the briefing use, because it describes Google's geography correctly?",
+      "options": {
+        "A": "Zones are collections of regions, so choosing a zone spreads workloads across several regions",
+        "B": "Availability districts sit between regions and zones as an intermediate tier",
+        "C": "Regions are collections of zones, and edge locations bring content closer to users",
+        "D": "A region is one data center building, so which zone is selected makes no practical difference"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E03", "B": "E08", "D": "D19" },
+      "rationale": {
+        "correct": "The tiers nest one way: regions are collections of zones, zones are the deployment areas within a region, and edge locations extend the network to bring content closer to users. Getting the nesting right is what makes placement and resilience discussions meaningful.",
+        "distractors": {
+          "A": "This inverts the hierarchy: a zone sits inside a region, so choosing one zone concentrates a workload rather than spreading it across regions.",
+          "B": "No such tier exists in Google's geography; the plausible-sounding name does not correspond to anything the briefing could rely on.",
+          "D": "A region is not a single building, and zone selection is exactly what separates workloads from shared failure; the claim erases the tier that matters."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "theme": "G3",
+      "vertical": "public library system",
+      "keywords": ["Platform as a Service (PaaS)", "Infrastructure as a Service (IaaS)", "Software as a Service (SaaS)"],
+      "type": "single_choice",
+      "question": "A public library system is classifying three shortlisted platforms for its new catalog service. For one of them, the provider provisions the servers and patches the operating system and runtime, while the library controls only its catalog application and its data. Which service model is that platform?",
+      "options": {
+        "A": "Infrastructure as a Service (IaaS)",
+        "B": "Platform as a Service (PaaS)",
+        "C": "Software as a Service (SaaS)",
+        "D": "Serverless computing"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E02", "C": "E05", "D": "D06" },
+      "rationale": {
+        "correct": "Service models are read from the responsibility boundary. When the provider operates the servers, operating system and runtime while the customer keeps the application and data, that boundary is Platform as a Service (PaaS): control of the application retained, operational burden below it traded away.",
+        "distractors": {
+          "A": "Under Infrastructure as a Service (IaaS) the library would be patching the operating system itself; the described boundary places that burden with the provider.",
+          "C": "Under Software as a Service (SaaS) the library would consume a finished application; here it still builds and controls its own catalog application.",
+          "D": "Serverless is a compute abstraction, not one of the service models being classified; it answers how code runs, not who is responsible for which layer."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-01",
+      "domain": "d2",
+      "primary_concept": "C-016",
+      "theme": "G1",
+      "vertical": "bus and coach operator",
+      "keywords": ["generating real-time business insights", "identifying trends", "fueling AI"],
+      "type": "single_choice",
+      "question": "A bus and coach operator has fitted every vehicle with a position beacon and every conductor with a ticket scanner. Today, when a motorway closure splits a route, the control room only learns how badly the diverted services were overcrowded from the following morning's report. The operations director wants the same data to reach controllers while the disruption is still running. Which business value of data is that initiative pursuing?",
+      "options": {
+        "A": "Identifying trends, so each season's timetable reflects where demand has moved",
+        "B": "Timelier reporting, from running the same overnight report on an hourly cycle",
+        "C": "Generating real-time business insights, so controllers can act during the disruption",
+        "D": "Fueling AI, once enough incident history exists to train a disruption model"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E05", "B": "D10", "D": "D15" },
+      "rationale": {
+        "correct": "Generating real-time business insights is the value at stake: the data has to inform a decision while the disruption is still running, and an answer that arrives the following morning has already lost its worth. Identifying trends, informing strategic decision making and fueling AI are the other values this data can deliver, each answering a different question.",
+        "distractors": {
+          "A": "Identifying trends is a genuine value of the same data, and it shapes future timetables over a season; it does nothing for a control room deciding what to do while services are still diverted.",
+          "B": "An hourly rerun of an overnight report is fresher and still a snapshot: between runs the control room is reading history, which is the shape of answer the director is trying to replace.",
+          "D": "Fueling AI is a real value of accumulated incident data, and it postpones what the controllers need during this disruption until a model exists that nobody has trained yet."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-02",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "theme": "G3",
+      "vertical": "environmental testing laboratory",
+      "keywords": ["data lake", "data warehouse", "semi-structured"],
+      "type": "single_choice",
+      "question": "An environmental testing laboratory holds three kinds of evidence for every job: instrument readings in fixed columns, sensor logs that gain new fields whenever firmware changes, and scanned chain-of-custody forms. Most of the volume is the readings, and the lab's analysts already query them with SQL. Accreditation requires that the scans and the raw instrument traces be retained exactly as produced. Which storage archetype should hold all three?",
+      "options": {
+        "A": "A data lake, which holds structured, semi-structured and unstructured data in native form",
+        "B": "A data warehouse, which organizes the evidence into a defined schema for analysis",
+        "C": "A data warehouse for the readings, with the scans left on the existing file share",
+        "D": "A data governance process that assigns an owner to each of the three kinds of evidence"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E07", "D": "E06" },
+      "rationale": {
+        "correct": "The discriminator is the shape of the data, not its volume. A data lake takes structured, semi-structured and unstructured data in native form, which is exactly what fixed-column readings, evolving sensor logs and scanned forms are together, and native form is what the accreditation rule demands.",
+        "distractors": {
+          "B": "A data warehouse is built for structured data under a defined schema, so the scanned forms and the evolving sensor logs would have to be reshaped or excluded, and reshaping is what accreditation forbids.",
+          "C": "Warehousing the readings and leaving the scans on a file share serves the analysts' half of the problem and leaves the evidence accreditation cares about outside the storage decision entirely.",
+          "D": "Assigning an owner to each kind of evidence is real data governance work, and it answers who may do what with the data rather than which archetype can hold all three."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-03",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "theme": "G3",
+      "vertical": "commercial real estate developer",
+      "keywords": ["first-party", "second-party", "third-party"],
+      "type": "single_choice",
+      "question": "A commercial real estate developer buys a footfall dataset from a company that compiles anonymized movement counts from many retailers and mobile apps, none of which the developer has any relationship with. The developer pays a license fee and may use the counts freely in its site appraisals. How should this dataset be classified in the developer's data register?",
+      "options": {
+        "A": "Second-party data, shared directly by the organization that collected it",
+        "B": "Third-party data, acquired from an aggregator that collected none of it itself",
+        "C": "Brokered data, a separate class for information resold by an intermediary",
+        "D": "First-party data, because the license fee transfers ownership to the developer"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "E08", "D": "D19" },
+      "rationale": {
+        "correct": "Origin is what classifies data, not price or license terms. Third-party data is acquired from an external aggregator that collected it from neither the developer's own customers nor a named partner, which is why its coverage and accuracy have to be taken on the supplier's word.",
+        "distractors": {
+          "A": "Second-party data comes directly from a partner the organization deals with, and the developer deals with none of the retailers or apps behind these counts.",
+          "C": "No such class exists in the first-party, second-party and third-party scheme, and resale through an intermediary is precisely what makes data third-party.",
+          "D": "Paying for data does not change where it came from. A license grants use, while first-party data is data the developer collected itself."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-04",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "theme": "G3",
+      "vertical": "customs brokerage",
+      "keywords": ["data supply chain", "data processing", "data collection"],
+      "type": "single_choice",
+      "question": "A customs brokerage receives declaration files from thirty carriers, each using its own country codes, date formats and commodity labels. A team now runs every file through a step that normalizes the codes, drops duplicate line items and rejects malformed rows before anything is written to the brokerage's store. Which stage of the data supply chain is that team working in?",
+      "options": {
+        "A": "Data collection, the stage that brings the declarations in from the carriers",
+        "B": "Data governance, the stage that decides who may alter a commodity label",
+        "C": "Data activation, with each report mapping the carrier codes as it needs them",
+        "D": "Data processing, the stage that turns raw declarations into a usable form"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "E06", "C": "D15" },
+      "rationale": {
+        "correct": "Normalizing codes, removing duplicates and rejecting malformed rows is data processing: the stage of the data supply chain that turns what was collected into something later stages can rely on. Data collection has already finished, and data storage, data analysis and data activation all come after.",
+        "distractors": {
+          "A": "Data collection is the stage that already completed here, because the declaration files arrived from the carriers before this team touched them.",
+          "B": "Deciding who may alter a commodity label is data governance, an ongoing process that runs alongside the whole supply chain instead of occupying a stage in it.",
+          "C": "Mapping each carrier's codes inside every report moves the same work to data activation and repeats it for every consumer, leaving the store full of the inconsistencies processing exists to remove."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-05",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "theme": "G6",
+      "vertical": "dental practice group",
+      "keywords": ["data governance process"],
+      "type": "single_choice",
+      "question": "A dental practice group's clinical audit has stalled. Two systems disagree about which patients are due for recall, nobody can say who is permitted to correct a record, and a spreadsheet of decayed contact details has been circulating between practices for a year. The IT manager proposes buying a data quality tool. What does the group need first?",
+      "options": {
+        "A": "A data quality tool that finds duplicate and stale patient records in both systems",
+        "B": "A data lake holding both systems' records in native form, so no version is discarded",
+        "C": "A data governance process that sets ownership, access and quality rules for patient data",
+        "D": "Encryption of the patient records at rest, so the circulating spreadsheet cannot be read"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D05", "B": "E06", "D": "D06" },
+      "rationale": {
+        "correct": "Every failure described is an ownership failure: unowned quality, uncontrolled access, and data nobody is accountable for. A data governance process is what decides who may do what with which data, and without one the group has no basis for saying which recall list is right or who may correct it.",
+        "distractors": {
+          "A": "A tool would find the duplicate and stale records and none of the reasons they keep reappearing; with no owner for the recall list, the same defects return after every clean-up.",
+          "B": "Landing both systems in native form preserves every version and settles nothing, because the group still cannot say which recall list is authoritative or who may change it.",
+          "D": "Encryption protects records from people outside the group's access controls, and this spreadsheet is circulating among staff who are inside them, which is a question of who may hold and share the data."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-06",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "theme": "G1",
+      "vertical": "civil engineering consultancy",
+      "keywords": ["openness and interoperability", "data silos", "vendor lock-in"],
+      "type": "multiple_response",
+      "question": "A civil engineering consultancy is choosing a platform for its project data. Each discipline currently keeps its model files in a tool that exports only to its own format, and the partners are determined not to repeat that. Their technology adviser asks which failure modes a commitment to openness and interoperability is meant to prevent. Select the TWO failure modes it addresses.",
+      "options": {
+        "A": "Losing access to project data while a regional outage is in progress",
+        "B": "Data silos, where each discipline's information stays trapped inside its own team",
+        "C": "Copies of one model drifting apart as each discipline exports its own version",
+        "D": "Format decay, the recognized term for fidelity lost at every export conversion",
+        "E": "Vendor lock-in, where changing platform means rebuilding or abandoning the data"
+      },
+      "select_count": 2,
+      "answer": ["B", "E"],
+      "distractor_patterns": { "A": "E06", "C": "E07", "D": "E08" },
+      "rationale": {
+        "correct": "Openness and interoperability answer two named failure modes: data silos, which trap value inside a team, and vendor lock-in, which traps it inside a platform. Both are questions about whether information can move, between disciplines and off a supplier's product, which is what open formats and open standards protect.",
+        "distractors": {
+          "A": "An outage is an availability problem answered by redundancy and replication, and open formats do not keep a platform serving while a region is down.",
+          "C": "Drifting copies are a symptom that silos produce, not the failure mode itself, so naming the symptom leaves the reason each discipline keeps its own copy untouched.",
+          "D": "No such named failure mode belongs to this vocabulary. Lossy exports are one way lock-in bites, and the failure mode is the lock-in."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-07",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "theme": "G2",
+      "vertical": "car rental agency",
+      "keywords": ["Spanner", "BigQuery", "Bigtable"],
+      "type": "single_choice",
+      "question": "A car rental agency is rebuilding its booking ledger. A vehicle must never be double-booked, and one booking service will serve branches in North America, Europe and Asia, all reading and writing the same reservations. The agency wants a relational database it does not have to shard by region. Which Google Cloud product fits?",
+      "options": {
+        "A": "BigQuery, so reservation history can be analyzed alongside branch performance",
+        "B": "Bigtable, which scales to very high write volumes across large key ranges",
+        "C": "Spanner, a relational database with globally consistent transactions",
+        "D": "Cloud SQL in one region, with read replicas serving the other two continents"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E01", "D": "E07" },
+      "rationale": {
+        "correct": "Two constraints decide this: relational transactions that stay consistent everywhere, and no regional sharding. Spanner is the managed relational product built for globally consistent transactional writes at scale, and a double-booking is exactly the anomaly that global consistency prevents.",
+        "distractors": {
+          "A": "BigQuery is the analytics warehouse, so it is where the agency would examine reservation history, not where a booking is written and read back moments later by another branch.",
+          "B": "Bigtable serves enormous wide-column write volumes and offers no relational transactions, so nothing in it would stop two branches booking the same vehicle.",
+          "D": "Read replicas spread reads across continents while every write still lands in one region, which leaves the agency sharding or accepting distant writes, the outcome the requirement rules out."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-08",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "theme": "G3",
+      "vertical": "auction house",
+      "keywords": ["relational", "non-relational", "object storage", "NoSQL"],
+      "type": "single_choice",
+      "question": "An auction house is planning storage for three new workloads: bidder account records with fixed fields and enforced links between them, high-resolution lot photographs and condition videos, and a catalog where each lot carries whatever attributes its category needs. Before any product is shortlisted, the architect asks the team to classify all three. Which classification is correct?",
+      "options": {
+        "A": "All three are non-relational: only fixed rows and columns count as relational",
+        "B": "Relational for accounts, object storage for the media, non-relational for the catalog",
+        "C": "Relational for accounts and the catalog, with object storage for the media",
+        "D": "Non-relational for accounts and the catalog, with object storage for the media"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "D19", "C": "E07", "D": "E05" },
+      "rationale": {
+        "correct": "Classification comes before product choice. Fixed fields with enforced links are relational and belong to structured query language; photographs and videos are files, which is object storage; a catalog whose attributes vary by category is non-relational, the NoSQL shape. Getting these right is what makes the product shortlist short.",
+        "distractors": {
+          "A": "Relational describes an enforced structure of related tables, not a spreadsheet layout, and bidder accounts with fixed fields and enforced links are the textbook relational case.",
+          "C": "Treating the catalog as relational forces every category's attributes into one schema, which is the constraint a non-relational model exists to lift; the other two assignments here are right.",
+          "D": "Bidder accounts with fixed fields and enforced links are the relational case, so classifying them as non-relational discards the referential integrity the auction house depends on."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-09",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "theme": "G7",
+      "vertical": "architectural design practice",
+      "keywords": ["Standard", "Nearline", "Archive"],
+      "type": "single_choice",
+      "question": "An architectural design practice keeps every completed project's drawing set in Cloud Storage. Once a building is handed over, its set is opened only if a defect claim arrives, which for any given project happens perhaps once or twice in a decade, yet professional indemnity rules require the practice to keep every set for fifteen years. The sets are large. Which storage class should the handed-over sets use?",
+      "options": {
+        "A": "Standard, so the drawings are available the moment a defect claim arrives",
+        "B": "Nearline, the class priced for data that is read about once a month",
+        "C": "Whatever class the practice's other buckets use, to keep billing lines consistent",
+        "D": "Archive, the class priced for data retained for years and rarely read"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E06", "B": "E05", "C": "D11" },
+      "rationale": {
+        "correct": "Storage class follows access frequency, not data size. Drawing sets opened perhaps once or twice in a decade but kept for fifteen years are retention data, and Archive is priced for exactly that: the lowest storage cost, with a retrieval cost accepted on the rare occasion a claim arrives.",
+        "distractors": {
+          "A": "Immediate availability is what Standard is priced for, and it answers the wrong question here, leaving the practice paying hot-data rates every month for sets almost nobody opens.",
+          "B": "Nearline is priced for data read about once a month, and these sets are read far less often than that, so the practice would pay a premium the access pattern does not justify.",
+          "C": "Matching the other buckets keeps the invoice tidy and ignores the only fact that decides a storage class, which is how often this data is actually read."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-10",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "theme": "G2",
+      "vertical": "bicycle-share operator",
+      "keywords": ["Autoclass", "Standard", "Archive"],
+      "type": "single_choice",
+      "question": "A bicycle-share operator has just launched in a new city and is putting ride telemetry and docking-station images into Cloud Storage. Nobody can yet say which of it will be read daily and which will go untouched, and the operator expects the pattern to keep shifting as routes settle. A junior analyst offers to review the buckets each quarter and move objects between classes by hand. What should the operator do instead?",
+      "options": {
+        "A": "Enable Autoclass so each object moves between classes on its own access pattern",
+        "B": "Run the analyst's review monthly instead of quarterly, so misplaced objects cost less",
+        "C": "Put every bucket in Standard until the access pattern is understood, then revisit",
+        "D": "Put every bucket in Archive, the cheapest storage rate, and accept retrieval costs"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D10", "C": "D15", "D": "D11" },
+      "rationale": {
+        "correct": "When access patterns are unknown and expected to shift, choosing classes by hand is a guess that has to be repeated forever. Autoclass removes the guess: the platform observes how each object is actually accessed and moves it between classes, so the operator sets a policy once instead of running a review cycle.",
+        "distractors": {
+          "B": "A monthly cycle shortens the window in which an object sits in the wrong class and does nothing about nobody being able to predict which objects those are, so the review still runs forever.",
+          "C": "Holding everything in Standard until the pattern is understood pays hot-data rates for data that is already going cold, and the operator has said the pattern will keep changing.",
+          "D": "The cheapest storage rate is not the cheapest outcome: telemetry that turns out to be read daily would be retrieved from Archive every time, and retrieval is what that class charges for."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-11",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "theme": "G4",
+      "vertical": "commercial laundry service",
+      "keywords": ["migrate", "modernize", "managed service"],
+      "type": "single_choice",
+      "question": "A commercial laundry service runs its route-scheduling system on a self-managed database server that is three years past its support window. The application vendor will not certify any change to the database engine, and the service employs no developers of its own. The board wants the server out of the basement before winter. Which route should the service take?",
+      "options": {
+        "A": "Refactor the scheduling application onto a cloud-native database to lift the vendor constraint",
+        "B": "Retain the server in the basement and revisit once the vendor certifies a change",
+        "C": "Migrate the database as it is onto a managed service running the same engine",
+        "D": "Modernize onto an analytics product so route history can be queried at scale"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E04", "B": "D15", "D": "E06" },
+      "rationale": {
+        "correct": "The route is decided by what the organization can actually change. A certification that forbids an engine change and the absence of developers rule out modernizing the application, while an unsupported server rules out standing still, which leaves migrating the database as it is onto a managed service running the same engine, where the operational burden transfers and the application sees no difference.",
+        "distractors": {
+          "A": "Refactoring is the route for organizations that intend to change the application, and this one may not: the vendor will not certify an engine change, and there are no developers to make it.",
+          "B": "Retaining the server keeps an unsupported database in the basement through another winter, and nothing suggests the vendor's position is about to change.",
+          "D": "An analytics product answers questions about route history and would not run the scheduling system's transactional workload, which is the workload that has to move."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-12",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "theme": "G1",
+      "vertical": "childcare centre network",
+      "keywords": ["Looker", "democratizes access to data"],
+      "type": "single_choice",
+      "question": "A childcare centre network employs one analyst, and every manager's question about occupancy, staffing ratios or waiting lists becomes a ticket in that analyst's queue. Managers wait days for numbers they needed the same morning, and some have started keeping private spreadsheets. The operations director wants managers answering their own questions from the same governed figures. Which capability delivers that?",
+      "options": {
+        "A": "A data warehouse consolidating every centre's records into one queryable store",
+        "B": "Looker, which democratizes access to data by putting governed analysis in managers' hands",
+        "C": "An access review that grants each manager rights to query the underlying tables",
+        "D": "A second analyst, so the queue is served at twice the current rate"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "D06", "D": "D03" },
+      "rationale": {
+        "correct": "The bottleneck is reach, not storage and not permissions: the numbers already exist, and one person is the only route to them. Looker democratizes access to data, so managers explore governed, consistent figures for themselves and analysis reaches people who are not analysts.",
+        "distractors": {
+          "A": "Consolidating every centre's records into one store is worth doing and changes nothing about who can ask a question, so the analyst's queue survives intact.",
+          "C": "Granting rights to the underlying tables answers who may read the data, not who can use it, and a manager with table access and no way to interpret it still files a ticket.",
+          "D": "Doubling the analyst team halves the wait at best and keeps every question routed through a specialist, which is the arrangement the director wants to end."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-13",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "theme": "G1",
+      "vertical": "driving school franchise",
+      "keywords": ["real-time reports", "dashboards", "BigQuery"],
+      "type": "single_choice",
+      "question": "A driving school franchise runs its business intelligence tool against a nightly extract copied out of BigQuery into a separate reporting database. Branch managers complain that pass-rate dashboards are always a day behind, and that they have to leave the booking system to look at them at all. What does connecting the tool directly to BigQuery buy the franchise?",
+      "options": {
+        "A": "Lower storage cost, with the separate reporting database no longer maintained",
+        "B": "Fresher figures, from copying the extract into the reporting database hourly",
+        "C": "Dashboards that refresh on demand, with the booking system left as it is",
+        "D": "Real-time reports and dashboards fed by BigQuery, with analysis inside the booking workflow"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E06", "B": "D10", "C": "E07" },
+      "rationale": {
+        "correct": "Putting business intelligence on top of the warehouse rather than beside one removes the copy. Real-time reports and dashboards are fed directly by BigQuery, so what a manager sees is the current state, and integrating data into workflows puts the answer where the work already happens instead of in a separate tool.",
+        "distractors": {
+          "A": "Retiring the reporting database does save its cost, and cost is not what the managers are describing: they are describing stale numbers and a context switch.",
+          "B": "Copying more often narrows the gap and keeps the design that creates it, so between copies the dashboard still shows a snapshot and the manager still leaves the booking system to read it.",
+          "C": "On-demand refresh answers the day-behind complaint alone, and the second complaint is that analysis lives outside the workflow, which an unchanged booking system leaves exactly as it was."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-14",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "theme": "G5",
+      "vertical": "elder-care residence operator",
+      "keywords": ["real-time streaming analytics"],
+      "type": "single_choice",
+      "question": "An elder-care residence operator runs one nightly batch over all of its data and is deciding which of four needs would justify real-time streaming analytics as well. Which need has the shape that a batch window cannot serve?",
+      "options": {
+        "A": "A resident's wearable reports a fall, and night staff must be sent to the right room",
+        "B": "Occupancy by wing is set against the same month last year for the trustees' pack",
+        "C": "The nightly batch is rerun hourly so the duty manager sees a fresher picture",
+        "D": "Shift incident reports are summarized for the weekly quality review meeting"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E06", "C": "D10", "D": "D08" },
+      "rationale": {
+        "correct": "Real-time streaming analytics earns its place where the answer expires. A fall detected at night is worth acting on in the moment and worth nothing in tomorrow's report, and recognizing that shape, a decision whose value decays faster than the batch window, is what separates a streaming need from a reporting need.",
+        "distractors": {
+          "B": "Setting occupancy against the same month last year is what a batch is for, and the trustees' pack is prepared on a schedule with nothing in it decaying overnight.",
+          "C": "Rerunning the same batch more often shortens the gap and keeps the design, so every hour the duty manager is still reading a snapshot and a fall still waits for the next run.",
+          "D": "Shift reports summarized for a weekly meeting describe what already happened, which is how the operator learns about incidents afterwards rather than how staff are directed during one."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-15",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "theme": "G2",
+      "vertical": "facilities management firm",
+      "keywords": ["Pub/Sub", "Dataflow", "Managed Service for Apache Spark"],
+      "type": "single_choice",
+      "question": "A facilities management firm has fitted client buildings with meters that emit a reading every few seconds, and three teams, covering alarms, billing and an energy dashboard, each want every reading. The firm needs a layer that accepts readings as they arrive and delivers them to all consumers, without the meters having to know who is listening. Which product performs that job?",
+      "options": {
+        "A": "Dataflow, which processes each reading as it passes through the pipeline",
+        "B": "A frequent file export from the meter gateway that each team collects for itself",
+        "C": "Pub/Sub, which ingests the readings and distributes them to every subscriber",
+        "D": "Direct connections from the meter gateway into each of the three teams' systems"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "D10", "D": "D02" },
+      "rationale": {
+        "correct": "Ingestion and distribution is Pub/Sub's stage of the pipeline: it accepts events as they arrive and delivers them to every subscriber, so publishers and consumers never need to know about each other. Dataflow's stage comes next, processing what has been ingested, and Managed Service for Apache Spark runs Spark workloads, which is a third stage again.",
+        "distractors": {
+          "A": "Dataflow processes readings that something else has already ingested, so it is the neighboring stage, and pointing the meters at it leaves nothing decoupling publishers from consumers.",
+          "B": "A file export on a schedule holds every reading until the next file and makes each team responsible for fetching it, which is neither ingestion as events arrive nor distribution to subscribers.",
+          "D": "Wiring the gateway into each team's system makes the meters aware of every consumer, so adding a fourth team means changing the gateway, the coupling the firm asked to avoid."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-01",
+      "domain": "d3",
+      "primary_concept": "C-031",
+      "theme": "G3",
+      "vertical": "ferry and port operator",
+      "keywords": ["artificial intelligence", "machine learning", "generative AI"],
+      "type": "single_choice",
+      "question": "A ferry and port operator's board is reviewing two projects. One trains a model on ten years of sailing records so it can predict which crossings will be cancelled; the other drafts passenger notices in three languages from a short prompt. A director asks how the two relate to each other in the field's vocabulary. Which statement is correct?",
+      "options": {
+        "A": "Both are generative AI, as each produces an output the operator did not have before",
+        "B": "Both are artificial intelligence: the first is machine learning, the second is generative AI",
+        "C": "Neither is machine learning, which by definition needs labeled data the operator lacks",
+        "D": "The first is machine learning, and so is the second, as a trained model produced it"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "D19", "D": "E07" },
+      "rationale": {
+        "correct": "The terms nest. Artificial intelligence is the field; machine learning is the subset that learns patterns from data, which is what a cancellation predictor does; and generative AI is the newer branch that produces novel content, which is what a notice drafter does. Naming the level correctly is what stops a board discussion confusing a prediction with a piece of writing.",
+        "distractors": {
+          "A": "A cancellation prediction is a value drawn from historical patterns, not novel content, so calling both projects generative AI stretches the newer branch over work it does not describe.",
+          "C": "Machine learning covers far more than labeled training data, and a predictor built on ten years of sailing records is the plainest example of it.",
+          "D": "Generative AI is indeed built with machine learning, and stopping there leaves the board without the term for the branch that produces content it has never seen before."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-02",
+      "domain": "d3",
+      "primary_concept": "C-032",
+      "theme": "G3",
+      "vertical": "flower delivery network",
+      "keywords": ["data analytics", "business intelligence", "generative AI"],
+      "type": "single_choice",
+      "question": "A flower delivery network's marketing lead says the team uses AI for everything. In practice the team does two things: it runs a dashboard that explains why margins fell over the peak gifting week, and it runs a tool that writes a fresh product description for every new bouquet. The finance director asks which of the two is generative AI. What is the accurate answer?",
+      "options": {
+        "A": "Both: a dashboard also produces an explanation the team did not previously have",
+        "B": "The dashboard, where explaining why margins fell means generating an account of them",
+        "C": "Neither: both run on models the network licenses rather than trains for itself",
+        "D": "The description writer, which produces content that did not exist before"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "D19", "C": "E06" },
+      "rationale": {
+        "correct": "Data analytics and business intelligence describe and explain what already happened, and a margin dashboard is an account of past sales however sophisticated it looks. Generative AI produces content that did not exist, which is what writing a fresh product description is. The line is not how clever the tool looks; it is whether the output is new content or an explanation of existing records.",
+        "distractors": {
+          "A": "A dashboard assembles and explains figures the network already holds, and presenting them in a new arrangement is business intelligence rather than the creation of new content.",
+          "B": "Explaining why margins fell is exactly the job of data analytics, and describing a cause found in the data is not the same as producing content that was not there.",
+          "C": "Whether a model is licensed or trained in-house says nothing about what it does, and both tools keep their categories under either arrangement."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-03",
+      "domain": "d3",
+      "primary_concept": "C-033",
+      "theme": "G1",
+      "vertical": "furniture manufacturer",
+      "keywords": ["customer support", "workforce productivity", "sales experiences"],
+      "type": "single_choice",
+      "question": "A furniture manufacturer has deployed one agentic AI capability. Given a complaint about a delayed order, it checks stock, reschedules the delivery, issues a goodwill credit and confirms all three back to the customer, with no person touching the case. The transformation report records each capability against the function whose work it changes. Which function does this one belong to?",
+      "options": {
+        "A": "Customer support, where cases are resolved end to end instead of routed to a person",
+        "B": "Workforce productivity, where staff finish routine work faster with assistance",
+        "C": "Operations, where the scheduling and stock systems are the ones being changed",
+        "D": "Sales experiences, where the goodwill credit is an offer made to retain a customer"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E06", "D": "E07" },
+      "rationale": {
+        "correct": "Agentic AI is recorded against the function whose work changes. Here a customer support case is resolved end to end, checked, rescheduled, credited and confirmed, with no handoff to a person at any point. Workforce productivity, sales experiences, product innovation, operations and research are the other functions the same technology transforms, each in a different way.",
+        "distractors": {
+          "B": "Workforce productivity is where a person still does the work and finishes it sooner, and here nobody touches the case at all, which is a different kind of change.",
+          "C": "The scheduling and stock systems are consulted rather than changed, and operations would be the answer if the agent were reshaping how production or logistics run.",
+          "D": "The goodwill credit is one step inside the resolution, so picking it out records a fragment of the case instead of the function whose work the agent now performs."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-04",
+      "domain": "d3",
+      "primary_concept": "C-034",
+      "theme": "G1",
+      "vertical": "home renovation marketplace",
+      "keywords": ["pre-built AI agents and applications", "all-in-one AI developer platform", "best infrastructure for AI"],
+      "type": "single_choice",
+      "question": "A home renovation marketplace employs no data scientists and needs an AI-powered helpdesk assistant answering customers before its spring campaign opens. Its chief executive has read Google's list of AI advantages and asks which one speaks to the marketplace's situation. Which advantage does?",
+      "options": {
+        "A": "Sophisticated first-party models, developed by Google rather than licensed in",
+        "B": "The best infrastructure for AI, so the assistant serves its answers quickly",
+        "C": "Pre-built AI agents and applications, adopted without building a model",
+        "D": "An all-in-one AI developer platform, on which the marketplace builds the assistant"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E05", "B": "E06", "D": "D01" },
+      "rationale": {
+        "correct": "Each claimed advantage answers a different question, and the question here is how an organization with no data scientists gets a capability live before a campaign. Pre-built AI agents and applications is the claim that answers it, because the capability is adopted rather than built. Sophisticated models, the best infrastructure for AI and the all-in-one AI developer platform all matter to organizations that are building.",
+        "distractors": {
+          "A": "Model quality is a real advantage, and it answers what an assistant could do rather than how a marketplace with no data scientists gets one running before the campaign.",
+          "B": "Infrastructure strength shows up in how fast and how cheaply a model serves, which is a question the marketplace has not asked and could not act on either way.",
+          "D": "The developer platform is the route for teams that intend to build, and this marketplace has nobody to build with, so choosing it adds work the deadline cannot absorb."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-05",
+      "domain": "d3",
+      "primary_concept": "C-035",
+      "theme": "G5",
+      "vertical": "hospitality staffing agency",
+      "keywords": ["replacing or simplifying rule-based systems", "scaling business decisions", "deriving business insights from large datasets"],
+      "type": "multiple_response",
+      "question": "A hospitality staffing agency is shortlisting candidate problems for its first machine learning project, and its head of operations wants only the ones machine learning is genuinely the right tool for. Select the TWO problems that qualify.",
+      "options": {
+        "A": "A shift-matching rulebook grown to hundreds of conditions that nobody can maintain",
+        "B": "Choosing which of two payroll providers offers the agency better contract terms",
+        "C": "Retaining five years of timesheet history instead of deleting it after one year",
+        "D": "Forecasting which of thousands of weekly postings will go unfilled, one by one",
+        "E": "Sending each worker the confirmation email for a shift they have just accepted"
+      },
+      "select_count": 2,
+      "answer": ["A", "D"],
+      "distractor_patterns": { "B": "E06", "C": "E07", "E": "E05" },
+      "rationale": {
+        "correct": "Machine learning earns its place in two of these: replacing or simplifying rule-based systems, where a rulebook has grown past what anyone can maintain, and scaling business decisions, where a judgment must be made thousands of times over and no team can make each one by hand. The third problem it suits, deriving business insights from large datasets, is not on this shortlist.",
+        "distractors": {
+          "B": "Choosing between two suppliers is a commercial negotiation with a handful of variables and no pattern to learn, so it is settled by reading the terms.",
+          "C": "Keeping more history is a genuine prerequisite for training anything, and it is data management rather than the business problem a model would solve.",
+          "E": "Sending a confirmation when a shift is accepted is deterministic automation: the rule is one line, there is nothing to learn, and calling it machine learning stretches the term."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-06",
+      "domain": "d3",
+      "primary_concept": "C-036",
+      "theme": "G3",
+      "vertical": "independent record label",
+      "keywords": ["uniqueness", "consistency", "timeliness"],
+      "type": "single_choice",
+      "question": "An independent record label's royalty run keeps failing reconciliation. Investigation shows that one recording is listed four times under slightly different spellings of its title, so each quarter's payment is split across the four entries and none of them matches the contract. Which dimension of data quality does that defect violate?",
+      "options": {
+        "A": "Consistency, where two records of the same thing disagree with one another",
+        "B": "Uniqueness would be broken only if the duplicates were identical rather than spelled differently",
+        "C": "Timeliness, where the duplicates accumulated over several years of catalog entry",
+        "D": "Uniqueness, where one real-world thing is recorded more than once"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "D19", "C": "E06" },
+      "rationale": {
+        "correct": "Uniqueness is the dimension that says one real-world entity should appear once. Four entries for one recording break it, which is why the royalty run splits a payment that should have been whole. Completeness, timeliness, validity, accuracy and consistency each name a different defect, and none of them describes a thing recorded more than once.",
+        "distractors": {
+          "A": "Consistency covers records that contradict each other, such as two royalty rates for one contract, and these entries do not disagree about anything; there are simply too many of them.",
+          "B": "Duplicates rarely arrive identical, and near-identical spellings of one title are exactly the case uniqueness exists to catch.",
+          "C": "How long the duplicates took to accumulate is true and beside the point, as timeliness is about data being current and these entries are wrong the day they are created."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-07",
+      "domain": "d3",
+      "primary_concept": "C-037",
+      "theme": "G6",
+      "vertical": "industrial bakery",
+      "keywords": ["explainable and responsible AI"],
+      "type": "single_choice",
+      "question": "An industrial bakery has built a model that scores supplier batches on arrival and rejects the poorest. In trial it graded more reliably than the quality team. When a supplier disputed a rejection, nobody at the bakery could say which properties of that batch drove its score. The commercial director wants to go live next month on the strength of the trial. What should the bakery recognize?",
+      "options": {
+        "A": "The trial settles it: a model that grades more reliably than the quality team has earned deployment",
+        "B": "A decision the bakery cannot explain is a decision it cannot defend, which blocks going live",
+        "C": "A notice should be published telling suppliers that rejections are scored by a model",
+        "D": "The quality team should review each rejection afterwards and reverse the ones that look wrong"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "D14", "C": "D09", "D": "D07" },
+      "rationale": {
+        "correct": "Explainability is a condition of deployment, not a refinement after it. A rejection the bakery cannot explain is a rejection it cannot defend to the supplier who disputes it, and explainable and responsible AI is what makes the decision reviewable at all. Strong trial results describe how often the model is right and say nothing about whether its reasoning can be shown.",
+        "distractors": {
+          "A": "Grading more reliably is the usual reason to adopt a model and is not sufficient here, as the constraint the dispute exposed is whether a rejection can be explained.",
+          "C": "Telling suppliers that a model made the decision is honest and leaves the dispute where it was, given that the bakery still cannot say why this batch was rejected.",
+          "D": "Reviewing rejections afterwards catches errors after a supplier has already been refused, and the reviewers face the same unexplainable score the disputing supplier did."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-08",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "theme": "G6",
+      "vertical": "language school network",
+      "keywords": ["explainable and responsible AI"],
+      "type": "single_choice",
+      "question": "A language school network's innovation group brings four generative AI proposals to its ethics review, and every one is technically feasible with the tools the network already licenses. The review is asked to identify the proposal that responsible use rules out. Which proposal should it refuse?",
+      "options": {
+        "A": "Publishing thousands of machine-written course reviews under invented student names",
+        "B": "Drafting lesson plans that a teacher reviews and signs before any class uses them",
+        "C": "Generating practice dialogues at a volume no human author could write by hand",
+        "D": "Scoring student essays, with marks released only after a tutor confirms each one"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E06", "C": "D11", "D": "E07" },
+      "rationale": {
+        "correct": "Responsible use is a legitimacy judgment, not a feasibility one. Reviews attributed to students who do not exist produce volume with no accountable business purpose and deceive the readers they are aimed at, which is what explainable and responsible AI rules out. Every other proposal has a named purpose and a person who answers for the output.",
+        "distractors": {
+          "B": "A teacher who reviews and signs a lesson plan is the accountable owner of it, which is the arrangement responsible use asks for rather than the one it forbids.",
+          "C": "Producing more material than a human author could write describes scale, and scale is not what makes a use illegitimate; practice dialogues have an obvious teaching purpose.",
+          "D": "A tutor confirming each mark before release keeps a person accountable for every decision that reaches a student, so the safeguard the review looks for is present."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-09",
+      "domain": "d3",
+      "primary_concept": "C-039",
+      "theme": "G5",
+      "vertical": "microfinance lender",
+      "keywords": ["potential for business differentiation", "implementation speed", "technical expertise requirements"],
+      "type": "single_choice",
+      "question": "A microfinance lender wants an AI capability that competitors cannot simply buy: its own loan-performance history is the asset, and the board says the capability must be built on it. The lender employs two experienced data scientists and has set no launch date. Which factor should dominate its choice of AI approach?",
+      "options": {
+        "A": "Implementation speed, so a capability reaches the field as early as possible",
+        "B": "Technical expertise requirements, keeping the approach inside a small team's reach",
+        "C": "Potential for business differentiation, which the lender's own history can buy",
+        "D": "Development effort, taking whichever approach is cheapest to build and run"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "E05", "D": "D11" },
+      "rationale": {
+        "correct": "Approach selection turns on the constraint that actually binds. Here it is potential for business differentiation: the lender's own loan-performance history is the asset a competitor cannot copy, and only an approach that builds on it converts that into an advantage. Implementation speed, development effort, technical expertise requirements and choice and flexibility are the other factors, and none of them is under pressure in this situation.",
+        "distractors": {
+          "A": "Implementation speed matters where a date binds, and the board has set none, so optimizing for it would trade away the differentiation the lender said it wants.",
+          "B": "Expertise is a real constraint for organizations without specialists, and this lender has two experienced data scientists, so the approaches that need them are open to it.",
+          "D": "Taking the cheapest thing to build is a budget instinct rather than a selection factor, and it points at exactly the generic capability a competitor could buy tomorrow."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-10",
+      "domain": "d3",
+      "primary_concept": "C-040",
+      "theme": "G2",
+      "vertical": "minor-league sports franchise",
+      "keywords": ["Gemini Enterprise Agent Platform", "Gemini"],
+      "type": "single_choice",
+      "question": "A minor-league sports franchise now runs four AI agents built separately by its ticketing, merchandising and community teams. Nobody can say what data each agent may reach, two teams have built the same lookup twice, and no one approved any of them. The chief operating officer wants one place to build, deploy and govern all agents. Which Google Cloud offering is that?",
+      "options": {
+        "A": "Gemini, the general-purpose model the three teams are already calling",
+        "B": "Looker, so every team reports from one governed set of figures",
+        "C": "Agent Registry, the catalog where deployed agents are listed and approved",
+        "D": "The Gemini Enterprise Agent Platform, for building, deploying and governing agents"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E01", "B": "E06", "C": "E08" },
+      "rationale": {
+        "correct": "What the franchise needs is not another model or another report; it is one place where agents are built, deployed and governed across the organization. That is what the Gemini Enterprise Agent Platform is for in business terms, and it is what turns duplicated agents and unclear data access from a per-team accident into something visible and manageable.",
+        "distractors": {
+          "A": "Gemini is the model an agent calls, which is exactly what the three teams already do; a model supplies capability, not a place to govern what is built with it.",
+          "B": "Governed reporting puts every team on the same figures and says nothing about which agents exist, what each may reach, or who approved them.",
+          "C": "No Google Cloud offering carries that name, and a catalog alone would list the problem rather than provide the build-and-deploy surface the officer asked for."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-11",
+      "domain": "d3",
+      "primary_concept": "C-041",
+      "theme": "G2",
+      "vertical": "museum and heritage trust",
+      "keywords": ["Speech-to-Text API", "Vision API", "Cloud Translation API"],
+      "type": "single_choice",
+      "question": "A museum and heritage trust holds three thousand hours of recorded oral-history interviews on tape. Researchers can currently find a passage only by listening through a recording, so the trust wants the spoken words available as searchable text. It employs no machine learning staff. Which Google Cloud offering should the trust use?",
+      "options": {
+        "A": "The Speech-to-Text API, which converts recorded audio into text",
+        "B": "The Cloud Translation API, which converts text between language pairs",
+        "C": "AutoML on Agent Platform, training a transcription model on the tapes",
+        "D": "Cloud Storage for the tapes, so researchers can stream any recording in full"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "D01", "D": "E07" },
+      "rationale": {
+        "correct": "Matching the modality to a solved task is the judgment here: audio to the Speech-to-Text API, images to the Vision API, language pairs to the Cloud Translation API. The trust needs spoken words as text and has no machine learning staff, so a pre-trained API that already performs the task is the route, and building anything would repeat finished work.",
+        "distractors": {
+          "B": "The Cloud Translation API moves text between languages and needs text to start from, which is precisely what the trust does not yet have.",
+          "C": "Training a transcription model reproduces a solved task, and the trust has nobody to train, evaluate or maintain it.",
+          "D": "Storing the tapes makes them playable and not searchable, so a researcher still listens through recordings to find the passage they want."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-12",
+      "domain": "d3",
+      "primary_concept": "C-042",
+      "theme": "G2",
+      "vertical": "natural-gas distributor",
+      "keywords": ["Gemini", "Agent Platform API"],
+      "type": "single_choice",
+      "question": "A natural-gas distributor wants its engineers' typed field notes turned into incident summaries: each note must be read, a probable cause inferred, a severity suggested and a plain-language summary drafted for the regulator. The distributor wants all of that called from its own back-office system. Which route fits the job?",
+      "options": {
+        "A": "The Vision API, which extracts information from documents and images",
+        "B": "Gemini through the Agent Platform API, which handles broad generative work",
+        "C": "The Cloud Translation API, so summaries reach the regulator in its language",
+        "D": "A classification model trained on past notes to predict a severity band"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "E06", "D": "E07" },
+      "rationale": {
+        "correct": "The job needs broad generative capability over free text: reading, inferring, judging and drafting in one pass. Gemini is the general-purpose model for that, and the Agent Platform API is the programmatic route to it from the distributor's own back-office system. A single-task perception API answers one modality-specific question and none of these four.",
+        "distractors": {
+          "A": "The Vision API is for images and scanned pages, and these notes are already typed text, so extraction is not the problem left to solve.",
+          "C": "Translation is a real need if the regulator reads another language, and it operates on a summary that something else must first infer and draft.",
+          "D": "A severity classifier delivers one of the four outputs and leaves the reading, the inferred cause and the drafted summary undone."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-13",
+      "domain": "d3",
+      "primary_concept": "C-043",
+      "theme": "G2",
+      "vertical": "office furniture rental",
+      "keywords": ["AutoML on Agent Platform", "Agent Studio on Agent Platform"],
+      "type": "single_choice",
+      "question": "An office furniture rental firm holds ten years of its own inspection photographs, each labeled with the damage grade an assessor gave it, and wants new photographs graded the same way. The work would be done by two business analysts who are comfortable with data and have never trained a model. Which route fits both the data and the expertise?",
+      "options": {
+        "A": "Agent Studio on Agent Platform, assembling an agent over the photograph library",
+        "B": "The Vision API, which recognizes objects and text in images out of the box",
+        "C": "Hiring a machine learning engineer to build a custom model from scratch",
+        "D": "AutoML on Agent Platform, training a custom model on the labeled photographs"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E01", "B": "E07", "C": "D01" },
+      "rationale": {
+        "correct": "Two facts decide the route: the firm has its own labeled data, and nobody on the team has trained a model. AutoML on Agent Platform is built for that pair, training a custom model on your own data without deep machine learning skills, while Agent Studio on Agent Platform is the low-code route when the job is assembling an agent rather than training a model.",
+        "distractors": {
+          "A": "Assembling an agent is the low-code route to orchestrating tasks, and this firm's problem is a grading model trained on its own labeled photographs.",
+          "B": "A pre-trained vision service recognizes general objects and text, and it has never seen this firm's grading scale, so it cannot reproduce an assessor's grade.",
+          "C": "Hiring a specialist to build from scratch is real capability and more machinery than the situation needs, given that a managed training service covers the same ground with the team the firm already has."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-14",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "theme": "G1",
+      "vertical": "orchard and packhouse cooperative",
+      "keywords": ["AI Hypercomputer", "GPUs and TPUs", "flexible consumption models"],
+      "type": "single_choice",
+      "question": "An orchard and packhouse cooperative is presenting the infrastructure section of its AI business case to its members, who are growers. They want to know what the cooperative is buying when the paper says AI infrastructure, and why it is not simply a bigger machine. Which description states what that layer is?",
+      "options": {
+        "A": "A private cloud region reserved for the cooperative's own AI workloads",
+        "B": "A managed warehouse keeping the cooperative's harvest data ready for training",
+        "C": "AI Hypercomputer, integrating GPUs and TPUs with leading software and open standards",
+        "D": "A fixed annual allocation of accelerator hours bought before the season starts"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E02", "B": "E01", "D": "E06" },
+      "rationale": {
+        "correct": "The AI infrastructure layer is the compute that models are trained and served on. AI Hypercomputer integrates GPUs and TPUs with industry-leading software and open standards, so what the cooperative buys is an integrated stack rather than loose hardware, and its cost is controlled through flexible consumption models, which is what lets a seasonal business pay for accelerators in the weeks it uses them.",
+        "distractors": {
+          "A": "A reserved private region describes where capacity sits and who else may use it, which is a deployment model rather than the accelerator layer the paper is naming.",
+          "B": "Keeping harvest data ready for training is the data platform's job, and the growers are asking about the layer that the training itself runs on.",
+          "D": "Buying a fixed allocation in advance is one way to pay for accelerators, and paying for them is not what the layer is; flexible consumption is what keeps a seasonal business from buying capacity it will not use."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-15",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "theme": "G5",
+      "vertical": "outdoor advertising operator",
+      "keywords": ["BigQuery ML", "standard SQL queries"],
+      "type": "single_choice",
+      "question": "An outdoor advertising operator holds every campaign's impression and pricing history in BigQuery, and its three analysts are fluent in SQL and in nothing else. They want to predict which advertising sites will go unsold next quarter. The data team will not allow the warehouse to be copied into a separate environment. What should the operator use?",
+      "options": {
+        "A": "BigQuery ML, which trains and serves models from standard SQL queries",
+        "B": "AutoML on Agent Platform, after exporting the campaign history to it",
+        "C": "Looker, which would chart unsold inventory by site and by quarter",
+        "D": "A weekly report of last quarter's unsold sites, compiled by the analysts"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "E06", "D": "D08" },
+      "rationale": {
+        "correct": "Two constraints point the same way: the analysts speak standard SQL, and the data may not leave the warehouse. BigQuery ML trains and serves models with standard SQL queries where the data already lives, so the prediction is built by the people who already query it and nothing is copied anywhere.",
+        "distractors": {
+          "B": "Exporting the campaign history into a separate training environment is exactly the copy the data team refuses, and it moves the work somewhere the analysts do not work.",
+          "C": "Charting unsold inventory shows what has already happened by site and by quarter, and the operator asked which sites will go unsold next.",
+          "D": "A report of last quarter's unsold sites records the outcome after the fact, which arrives far too late to change what a seller does about next quarter."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-01",
+      "domain": "d4",
+      "primary_concept": "C-046",
+      "theme": "G4",
+      "vertical": "parcel locker network",
+      "keywords": ["workload", "discovery and assessment"],
+      "type": "single_choice",
+      "question": "A parcel locker network's board has approved a cloud program and asked the IT director for a completion date. The estate grew through three acquisitions, and nobody holds a list of what runs where or what depends on what. A supplier has offered to start moving servers next week. What should happen first?",
+      "options": {
+        "A": "Move the least critical servers first, so the program shows visible progress",
+        "B": "Pick one migration path and apply it consistently to every server in the estate",
+        "C": "Run discovery and assessment to inventory the workloads and their dependencies",
+        "D": "Give the supplier a date and refine the plan as the servers are being moved"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D11", "B": "E07", "D": "D17" },
+      "rationale": {
+        "correct": "What gets migrated is workloads, not buildings full of servers, and an organization cannot choose a path for an estate it has not inventoried. Discovery and assessment is the step that produces that inventory, covering what runs, what depends on what, and what each workload actually needs, and every later decision including the date the board wants rests on it.",
+        "distractors": {
+          "A": "Starting with the least critical servers gives the board something to see and tells nobody which of those servers a critical system quietly depends on.",
+          "B": "One path across a mixed estate assumes every workload has the same constraints, which is what discovery and assessment exists to test instead of assume.",
+          "D": "Naming a date before anyone knows what has to move builds a promise on nothing, and the acquired systems are where the surprises will be."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-02",
+      "domain": "d4",
+      "primary_concept": "C-047",
+      "theme": "G4",
+      "vertical": "photography equipment retailer",
+      "keywords": ["rehost", "replatform", "refactor", "retain"],
+      "type": "single_choice",
+      "question": "A photography equipment retailer's warehouse system runs on a server in a leased building whose lease ends in five months. The system's source code was written by a contractor who has since retired, and the retailer can make no change to it. The system is still needed and must keep behaving exactly as it does. Which migration path does that force?",
+      "options": {
+        "A": "Rehost, moving the system as it is so that no code changes",
+        "B": "Replatform, taking modest improvements while the system moves",
+        "C": "Refactor, rewriting the system so it fits the platform properly",
+        "D": "Retain, keeping the system in place until the code can be understood"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E04", "C": "D01", "D": "D15" },
+      "rationale": {
+        "correct": "The path follows what the organization will and will not change. Nobody can change this code and the behavior must not change, which rules out replatform, refactor and reimagine; the ending lease rules out retain; and the system is still needed, which rules out retire. Rehost, or lift and shift, is what remains, and it is the path for a workload that has to move without changing.",
+        "distractors": {
+          "B": "Replatform means accepting some change in exchange for a modest improvement, and the retailer has stated it can make no change to a system nobody can modify.",
+          "C": "Refactoring rewrites the application, which needs exactly the capability the retailer lost when the contractor retired, and the lease will not wait for it.",
+          "D": "Retaining the system in place is a real option right up to the day the lease ends, after which the building is not available at any price."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-03",
+      "domain": "d4",
+      "primary_concept": "C-048",
+      "theme": "G4",
+      "vertical": "private university",
+      "keywords": ["virtual machines", "serverless computing", "managed services"],
+      "type": "single_choice",
+      "question": "A private university's research office employs one part-time systems administrator and runs an application portal that is idle for most of the year and heavily used during two enrolment weeks. The office wants to hand over as much day-to-day operation as it possibly can, while keeping the portal's own code. Which rung of the compute ladder does that point to?",
+      "options": {
+        "A": "Virtual machines, keeping full control of the operating system in the office",
+        "B": "Serverless computing, where the platform runs the code and scales it to demand",
+        "C": "Containers on a cluster the office would operate through the quiet months",
+        "D": "A managed service, replacing the portal with a product the university buys"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "D01", "D": "E06" },
+      "rationale": {
+        "correct": "The ladder runs from virtual machines through containers and serverless computing to managed services, and each rung hands more operation to the platform. This office can absorb almost no operational involvement, wants to keep the portal's own code, and sees demand near zero for most of the year, which is the serverless rung: the platform runs and scales the code, and nothing has to be kept running in the quiet months.",
+        "distractors": {
+          "A": "Virtual machines leave the operating system, its patching and its capacity with the office, which is the heaviest burden on the ladder and more than a part-time administrator can carry.",
+          "C": "A container cluster is a middle rung that still has to be operated, and it would sit there being maintained through every month the portal is idle.",
+          "D": "Handing the whole capability to a bought product is the lightest rung of all, and it means giving up the portal's own code, which the office wants to keep."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-04",
+      "domain": "d4",
+      "primary_concept": "C-049",
+      "theme": "G3",
+      "vertical": "recycling cooperative",
+      "keywords": ["microservices"],
+      "type": "single_choice",
+      "question": "A recycling cooperative's collection platform is one application. A change to the weighbridge screen means the whole platform is rebuilt, retested and redeployed, so route planning and member billing are frozen every time the weighbridge team ships anything. A consultant proposes decomposing the platform into microservices. What does that decomposition buy the cooperative?",
+      "options": {
+        "A": "The platform runs faster, as each part is smaller than the whole was",
+        "B": "Fewer defects reach production, as each part is tested on its own",
+        "C": "Each part gets its own data store, so no team waits on another's schema",
+        "D": "One capability can be changed and deployed without redeploying the others"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D19", "B": "E06", "C": "E07" },
+      "rationale": {
+        "correct": "Microservices decompose an application into independently deployable parts. The point is not speed and not size; it is that the weighbridge team can change and deploy its capability while route planning and member billing keep running, so one team's release stops freezing everyone else's work.",
+        "distractors": {
+          "A": "Splitting an application does not make it faster, and calls that used to happen inside one process now cross a network, which usually costs a little rather than saves it.",
+          "B": "Smaller parts are easier to test in isolation, and that is a consequence of the split rather than its purpose; the freeze the cooperative described is a deployment problem.",
+          "C": "Separate data per service is a common design choice inside this approach, so it describes one arrangement rather than what the decomposition is for."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-05",
+      "domain": "d4",
+      "primary_concept": "C-050",
+      "theme": "G3",
+      "vertical": "regional airline catering",
+      "keywords": ["Kubernetes", "autoscaling", "load balancing"],
+      "type": "single_choice",
+      "question": "A regional airline catering company's ordering service is containerized and runs across a fleet of machines. During the morning peak, requests pile onto a handful of instances while others sit idle. Total capacity is ample and the platform team confirms the instance count is correct for the load. Which mechanism is failing to do its job?",
+      "options": {
+        "A": "Kubernetes, which places and coordinates containers across the machines",
+        "B": "Load balancing, which spreads incoming traffic across what is running",
+        "C": "Autoscaling, which adds and removes capacity as demand changes",
+        "D": "The per-instance connection limit, which should be raised in the configuration"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "E06", "D": "D04" },
+      "rationale": {
+        "correct": "Each term names one job. Kubernetes coordinates containers across machines, autoscaling adjusts how much capacity exists, and load balancing decides which running instance receives each request. With total capacity ample and the instance count correct, what has failed is distribution, and distribution is load balancing's job.",
+        "distractors": {
+          "A": "Kubernetes is placing and coordinating the containers, and the evidence says it succeeded: instances are running across the fleet and some of them are idle.",
+          "C": "Autoscaling answers how much capacity exists, and the team has confirmed the instance count is right, so adding more would leave the same instances idle.",
+          "D": "Raising a connection limit is a plausible setting to reach for and treats the crowded instances as the fault, when the question is why requests reach those instances instead of the idle ones."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-06",
+      "domain": "d4",
+      "primary_concept": "C-051",
+      "theme": "G4",
+      "vertical": "regional hospital network",
+      "keywords": ["spot VMs"],
+      "type": "single_choice",
+      "question": "A regional hospital network runs two batch jobs overnight. The first re-renders imaging thumbnails from stored scans and can be restarted from any point with nothing lost. The second posts the day's pharmacy dispensing records into the patient record system, where a partial run leaves entries that a pharmacist must reconcile by hand. Which job may run on spot VMs?",
+      "options": {
+        "A": "Both, as each runs overnight when an interruption costs the least",
+        "B": "The dispensing job, since its records can be reposted after any interruption",
+        "C": "The thumbnail job, which can restart from any point with nothing lost",
+        "D": "Neither, because clinical systems should never run on interruptible capacity"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E06", "B": "D19", "D": "D14" },
+      "rationale": {
+        "correct": "Spot VMs trade a sharply lower compute price for the possibility of preemption, so the judgment is workload fit: can this work stop mid-task and resume at no cost? Re-rendering thumbnails can, because a restarted run simply redoes work. Posting dispensing records cannot, because a partial run leaves a reconciliation task for a person.",
+        "distractors": {
+          "A": "Running overnight is true of both jobs and says nothing about whether either tolerates being stopped, which is the only property that decides this.",
+          "B": "The scenario states the opposite: a partial dispensing run leaves entries that a pharmacist reconciles by hand, which is exactly the cost preemption would impose.",
+          "D": "A blanket rule against interruptible capacity would also exclude the thumbnail job, which loses nothing when it restarts and saves real money when it is not interrupted."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-07",
+      "domain": "d4",
+      "primary_concept": "C-052",
+      "theme": "G2",
+      "vertical": "specialty coffee roaster",
+      "keywords": ["Compute Engine"],
+      "type": "single_choice",
+      "question": "A specialty coffee roaster's roast-profile software is licensed per host, requires one specific operating system build, and is supported by its vendor only while the roaster controls the host itself. The roaster wants this workload running in Google Cloud without renegotiating any of that. Which product should it land on?",
+      "options": {
+        "A": "Compute Engine, where the roaster runs and controls its own virtual machines",
+        "B": "Cloud Run, which runs the roaster's container with no servers to manage",
+        "C": "GKE, which would orchestrate the software's containers across a cluster",
+        "D": "A managed service replacing the roast-profile software altogether"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "D01", "D": "E06" },
+      "rationale": {
+        "correct": "Some constraints keep a workload on virtual machines: licensing tied to a host, one required operating system build, and vendor support conditioned on controlling the machine. Compute Engine is the product for exactly that, since the roaster runs its own virtual machines with full control of the operating system, and it is the natural landing place for a lift and shift.",
+        "distractors": {
+          "B": "A serverless container platform removes the servers the roaster is required to control, and the vendor's support terms are written around that control.",
+          "C": "Orchestrating containers assumes the software has been containerized, which is a change both the license and the support terms push back on.",
+          "D": "Replacing the software answers a different question, since the roaster asked how to move this workload without renegotiating anything and a replacement renegotiates everything."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-08",
+      "domain": "d4",
+      "primary_concept": "C-053",
+      "theme": "G1",
+      "vertical": "stock photography marketplace",
+      "keywords": ["enhanced scalability and resilience", "accelerated deployment processes through managed services", "cost optimization"],
+      "type": "multiple_response",
+      "question": "A stock photography marketplace is writing the business case for modernizing its application estate. The board has already accepted the cost argument and has asked for two further outcomes, stated in business terms, that are not about spending less. Select the TWO outcomes that belong in that section.",
+      "options": {
+        "A": "Cost optimization, with capacity paid for only while it is actually in use",
+        "B": "A smaller operations team once the modernized estate is running",
+        "C": "Enhanced scalability and resilience, so peaks and failures stop being incidents",
+        "D": "A faster page load for every visitor browsing the marketplace",
+        "E": "Faster deployment through managed services, so features reach customers sooner"
+      },
+      "select_count": 2,
+      "answer": ["C", "E"],
+      "distractor_patterns": { "A": "E06", "B": "D19", "D": "E07" },
+      "rationale": {
+        "correct": "Modern application development is argued in outcomes. Enhanced scalability and resilience means demand peaks and failures stop being incidents, and accelerated deployment processes through managed services means features reach customers sooner because nobody is operating the platform underneath them. Cost optimization, flexible architectures like microservices and improved operational efficiency are the other outcomes on that list.",
+        "distractors": {
+          "A": "Paying only for capacity in use is cost optimization, and the board has said the cost argument is already accepted.",
+          "B": "Modernizing changes what an operations team spends its time on, and a smaller team is a promise the approach does not make and a business case should not carry.",
+          "D": "A faster page is a technical improvement that may well follow, and it is not one of the business outcomes this section was asked to state."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-09",
+      "domain": "d4",
+      "primary_concept": "C-054",
+      "theme": "G2",
+      "vertical": "textile mill",
+      "keywords": ["GKE"],
+      "type": "single_choice",
+      "question": "A textile mill runs forty containerized services with hand-written Kubernetes manifests, node pools sized per service, and a scheduling policy its platform team maintains deliberately. The team is content to keep owning all of that. What it will not keep doing is patching and upgrading the Kubernetes control plane itself. Which product fits?",
+      "options": {
+        "A": "Cloud Run, which removes cluster concepts from the team's work entirely",
+        "B": "Compute Engine, with the team still running Kubernetes on its own machines",
+        "C": "Cloud Run functions for each service, triggered by the events they handle",
+        "D": "GKE, which runs the control plane while the team keeps its manifests and policy"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E06", "B": "E01", "C": "D01" },
+      "rationale": {
+        "correct": "The team has been explicit about what it keeps and what it hands over: manifests, node pools and scheduling policy stay, and the control plane goes. GKE is managed Kubernetes at exactly that line, with Google operating the control plane while the team retains orchestration control, which is the abstraction a containerized estate with deliberate policy needs.",
+        "distractors": {
+          "A": "A serverless container platform takes the cluster away along with the control plane, and the mill's node pools and scheduling policy are the parts it deliberately keeps.",
+          "B": "Running Kubernetes on the mill's own machines leaves the control plane precisely where it is, which is the one part of the job the team has said it will not keep doing.",
+          "C": "Rebuilding forty long-running services as event-triggered functions is a re-architecture nobody asked for, and it discards the orchestration control the team maintains on purpose."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-10",
+      "domain": "d4",
+      "primary_concept": "C-055",
+      "theme": "G2",
+      "vertical": "veterinary clinic network",
+      "keywords": ["Cloud Run"],
+      "type": "single_choice",
+      "question": "A veterinary clinic network's two developers have built a booking service in a language of their own choosing and packaged it as a container so it behaves identically on their laptops. Traffic is spiky during clinic hours and near zero overnight. They want to keep their language and tooling and to manage no infrastructure at all. Which product fits?",
+      "options": {
+        "A": "GKE, which would run the container on a cluster the developers configure",
+        "B": "Cloud Run, which runs their container with no infrastructure to manage",
+        "C": "Compute Engine, with the container started by a script on a virtual machine",
+        "D": "A shared server in the network's head office, hosting the service internally"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "D02", "D": "E02" },
+      "rationale": {
+        "correct": "Cloud Run leaves the language and tooling choice with the developers and takes over everything below the container: the container is the unit of deployment, the platform runs and scales it, and nothing is left running when traffic falls away. Two developers who have already packaged their own container and want to manage no infrastructure describe that product precisely.",
+        "distractors": {
+          "A": "A managed cluster still has to be configured and maintained, which is infrastructure management under another name and more than two developers should be carrying.",
+          "C": "Starting the container with a script on a virtual machine leaves the network operating that machine, patching it, and paying for it through every quiet night.",
+          "D": "Hosting the service on a head-office server puts clinic booking traffic on hardware nobody is scaling, and a spiky pattern is what that arrangement handles worst."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-11",
+      "domain": "d4",
+      "primary_concept": "C-056",
+      "theme": "G2",
+      "vertical": "vocational training institute",
+      "keywords": ["Cloud Run functions"],
+      "type": "single_choice",
+      "question": "Whenever a student uploads a certificate scan into a vocational training institute's document store, a short piece of code must stamp it with an audit reference and notify the registrar. The code runs for a second or two, fires a few dozen times a day, and does so at unpredictable moments. Where should that code run?",
+      "options": {
+        "A": "On a Compute Engine instance kept running so it is ready for each upload",
+        "B": "On the GKE cluster the institute already operates for its learning portal",
+        "C": "On Cloud Run functions, triggered by the upload event itself",
+        "D": "In a nightly batch that stamps and notifies for all of the day's uploads"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "D01", "D": "D10" },
+      "rationale": {
+        "correct": "Small pieces of code that run in response to events belong on Cloud Run functions: the upload is the trigger, the code runs for as long as it takes, and nothing is kept running in between. A cluster or a virtual machine held ready for work that fires a few dozen times a day is capacity paid for and idle almost all of it.",
+        "distractors": {
+          "A": "An instance kept running is billed through every hour when nothing is uploaded, and the institute would own its patching and its capacity as well.",
+          "B": "The learning portal's cluster can certainly run the code, and it brings orchestration this task never needs while still leaving someone to operate it.",
+          "D": "A nightly batch means a certificate uploaded in the morning carries no audit reference all day, and the registrar hears about it a day late."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-12",
+      "domain": "d4",
+      "primary_concept": "C-057",
+      "theme": "G2",
+      "vertical": "waste management utility",
+      "keywords": ["BigQuery Omni", "AlloyDB Omni", "GKE Enterprise"],
+      "type": "single_choice",
+      "question": "A waste management utility has bid for a municipal contract whose terms require the collection data to stay on the rival cloud the council already uses, while the utility's own analytics stay on Google Cloud. The utility will not run two analytics stacks. Which capability lets its analysts query the data held on the other provider?",
+      "options": {
+        "A": "BigQuery Omni, which runs BigQuery analytics against data in other clouds",
+        "B": "Cloud Interconnect, giving a private link between the two environments",
+        "C": "A scheduled copy of the other cloud's data into BigQuery every night",
+        "D": "GKE Enterprise, which manages the utility's clusters across both providers"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D06", "C": "D10", "D": "E01" },
+      "rationale": {
+        "correct": "Some products follow an organization off Google Cloud: BigQuery Omni runs analytics against data held in other clouds, AlloyDB Omni runs the database engine in other environments, GKE Enterprise spans fleets, and Cloud SQL and Looker connect across clouds. The requirement here is analytics reach over data that has to stay elsewhere, which is what BigQuery Omni answers without a second stack.",
+        "distractors": {
+          "B": "A private link moves packets between environments and answers nothing about where a query runs or which engine the analysts work in.",
+          "C": "Copying the data every night takes it out of the environment the contract requires it to stay in, and it makes every answer a day old.",
+          "D": "Managing clusters across providers is the same idea applied to container workloads, and this utility's problem is analytics rather than where its clusters run."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-13",
+      "domain": "d4",
+      "primary_concept": "C-058",
+      "theme": "G1",
+      "vertical": "wind-farm operator",
+      "keywords": ["application programming interface", "API"],
+      "type": "single_choice",
+      "question": "A wind-farm operator is commissioning a new maintenance-scheduling application that must read turbine availability from a twenty-year-old control system nobody intends to replace. The project brief says the two will be joined by an API. In plain terms, what is the operator's board being told?",
+      "options": {
+        "A": "That the turbine data will be copied into the new application's own store",
+        "B": "That the new application will ask the existing system for data in an agreed way",
+        "C": "That the control system's hardware will be managed from the new application",
+        "D": "That both systems will move onto one platform so they share a single store"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E06", "C": "D19", "D": "D01" },
+      "rationale": {
+        "correct": "An application programming interface is the agreed way one system asks another for something. It is the connector between a new application and an existing system: the maintenance scheduler asks, the control system answers, and neither has to be rebuilt or replaced for that to work.",
+        "distractors": {
+          "A": "Copying the data into a second store is a different integration approach and leaves two copies to keep in step, where an interface asks the source each time.",
+          "C": "Managing hardware is not what an interface does. The connection carries requests and answers, and the turbine control equipment stays exactly where it is.",
+          "D": "Moving both systems onto one platform is a migration program, and the operator has said the control system is not being replaced."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-14",
+      "domain": "d4",
+      "primary_concept": "C-059",
+      "theme": "G1",
+      "vertical": "regional tourism board",
+      "keywords": ["exposing and monetizing public-facing APIs", "new business opportunities"],
+      "type": "single_choice",
+      "question": "A regional tourism board has spent years assembling an accommodation and events dataset that hotel booking sites, map applications and airlines all keep asking for by email. Its finance committee wants a proposal for turning those requests into income. What should the proposal recommend?",
+      "options": {
+        "A": "Publishing the dataset as a free download so the requests stop arriving",
+        "B": "Licensing a nightly export to each requester under an individual contract",
+        "C": "Building a public website where visitors can search the dataset themselves",
+        "D": "Exposing and monetizing a public-facing API that partners call directly"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "D16", "B": "E07", "C": "E06" },
+      "rationale": {
+        "correct": "An interface can be a product rather than plumbing. Exposing and monetizing public-facing APIs turns a capability the board already has into something partners pay to call, which is how internal data opens new business opportunities instead of generating email traffic.",
+        "distractors": {
+          "A": "A free download ends the requests and the income together, which is the opposite of what the finance committee asked for.",
+          "B": "Individually negotiated exports do earn money, and each new partner needs its own contract and its own file, so the arrangement stops paying as demand grows.",
+          "C": "A public search site serves visitors, and the demand described comes from businesses that want the data inside their own products."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-15",
+      "domain": "d4",
+      "primary_concept": "C-060",
+      "theme": "G2",
+      "vertical": "ceramics manufacturer",
+      "keywords": ["Apigee API Management"],
+      "type": "single_choice",
+      "question": "A ceramics manufacturer already exposes an ordering interface that a dozen distributors call. It now wants to open the same interface to hundreds of independent retailers, with per-partner credentials, rate limits, published documentation and a record of who called what. Its two backend engineers cannot build all of that. What should the manufacturer adopt?",
+      "options": {
+        "A": "Cloud Armor, to protect the interface from abusive traffic at the edge",
+        "B": "A second copy of the ordering service, sized for the retailers' traffic",
+        "C": "Apigee API Management, which publishes, secures and meters the interface",
+        "D": "One shared credential issued to all retailers, with usage reviewed monthly"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "D03", "D": "D13" },
+      "rationale": {
+        "correct": "An interface and the management layer around it are different things. Apigee API Management is that layer: it publishes the interface with documentation, secures it with per-partner credentials, meters and rate-limits its use, and analyzes usage at scale, which is the work two backend engineers would otherwise have to build and then operate forever.",
+        "distractors": {
+          "A": "Edge protection blocks abusive traffic, and it issues no partner credentials, publishes no documentation and meters nothing.",
+          "B": "A second copy of the service adds capacity to a problem that is about governing hundreds of callers, and it doubles what the two engineers maintain.",
+          "D": "One credential shared by hundreds of retailers cannot be rate-limited per partner or revoked for one of them, and a monthly review finds the misuse after it has happened."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-01",
+      "domain": "d5",
+      "primary_concept": "C-061",
+      "theme": "G3",
+      "vertical": "credit union",
+      "keywords": ["cryptomining", "ransomware", "misconfiguration"],
+      "type": "single_choice",
+      "question": "A credit union's servers slowed steadily over three months. No ransom was demanded, no records were altered and nothing appeared in public, but electricity use climbed sharply and a scan eventually found unauthorized software consuming spare processing capacity around the clock. Which threat class does this describe?",
+      "options": {
+        "A": "Ransomware, whose payload had not yet announced its demand",
+        "B": "Cryptomining, which quietly steals computing capacity and demands nothing",
+        "C": "Misconfiguration, as spare capacity was left available for anything to use",
+        "D": "A distributed denial-of-service attack, which is what slowed the servers"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E05", "C": "E06", "D": "D19" },
+      "rationale": {
+        "correct": "Threat classes are named from how they behave. Cryptomining steals computing capacity and stays silent, because the longer it goes unnoticed the more it earns, which fits servers that slow steadily while electricity use climbs and nothing is demanded, altered or published. Ransomware announces itself, malware and viruses are the wider family of silent theft and damage, and DDoS overwhelms from outside.",
+        "distractors": {
+          "A": "Ransomware exists to be noticed, given that a demand nobody sees earns nothing, and three months of quiet degradation is the opposite of that behavior.",
+          "C": "Misconfiguration belongs to the exposures an organization inflicts on itself, and unauthorized software installed and running is somebody else's deliberate act.",
+          "D": "A denial-of-service flood arrives from outside and stops when it stops. It installs nothing, and it does not explain software running on the servers around the clock."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-02",
+      "domain": "d5",
+      "primary_concept": "C-062",
+      "theme": "G6",
+      "vertical": "cinema chain",
+      "keywords": ["LLM attacks", "models", "agents"],
+      "type": "single_choice",
+      "question": "A cinema chain runs an AI assistant that answers customer questions by reading the chain's own help articles. A contributor added a sentence to one article instructing the assistant to reveal other customers' booking references, and on the next question the assistant did exactly that. Which layer of the AI stack must the chain secure against this class of attack?",
+      "options": {
+        "A": "The data layer, where content the model reads is validated before it is trusted",
+        "B": "The infrastructure layer, by hardening the machines the model runs on",
+        "C": "The model layer, by retraining the assistant on examples of harmful instructions",
+        "D": "The platform layer, by adding a notice that answers are generated by AI"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "D06", "C": "D05", "D": "D09" },
+      "rationale": {
+        "correct": "LLM attacks reach a system through untrusted input to a model, and this instruction arrived inside a help article the assistant reads as source material. Defending it means securing the layer where untrusted content enters, which is the data layer; the infrastructure, models, platform and agents layers each defend something else.",
+        "distractors": {
+          "B": "Hardened machines protect the compute a model runs on, and this hostile text arrived through content the assistant was designed to read.",
+          "C": "Retraining shifts the odds a little and leaves the mechanism intact, as the article still carries an instruction the assistant reads as legitimate source material.",
+          "D": "Telling customers that answers are generated does not stop booking references being disclosed; it explains where the disclosure came from."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-03",
+      "domain": "d5",
+      "primary_concept": "C-063",
+      "theme": "G3",
+      "vertical": "national postal service",
+      "keywords": ["cloud security", "on-premises security"],
+      "type": "single_choice",
+      "question": "A national postal service's audit committee asks its security lead what genuinely changes when the parcel-tracking estate moves out of the service's own data center and onto Google Cloud. Which answer should the security lead give?",
+      "options": {
+        "A": "Responsibility passes to the provider, so the service's own duties end",
+        "B": "Nothing of substance changes, since the same controls apply in the same way",
+        "C": "Responsibility is shared, and the service's main exposure becomes configuration",
+        "D": "Physical security stops mattering once no hardware belongs to the service"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D19", "B": "D14", "D": "E06" },
+      "rationale": {
+        "correct": "Cloud security differs from on-premises security in three genuine ways: responsibility is shared rather than wholly the customer's, the provider operates a security baseline the postal service could not run at that scale, and the service's largest remaining exposure becomes how it configures what it deploys. What does not change is that the service still owns its data, its access decisions and its obligations.",
+        "distractors": {
+          "A": "Shared responsibility is not transferred responsibility, and the service keeps its data, its access decisions and every obligation a regulator holds it to.",
+          "B": "Treating the move as a change of address misses the shift: the provider now operates layers the service used to run, and misconfiguration replaces hardware as the main way things go wrong.",
+          "D": "Physical security still matters and is now performed by the provider, which makes it part of the baseline the service inherits rather than a concern that disappears."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-04",
+      "domain": "d5",
+      "primary_concept": "C-064",
+      "theme": "G3",
+      "vertical": "garden centre chain",
+      "keywords": ["integrity", "confidentiality", "availability", "compliance", "control"],
+      "type": "single_choice",
+      "question": "A garden centre chain discovers that a nightly job has silently corrupted three months of loyalty-point balances. No data left the company, the systems stayed usable throughout, and no regulator or contractual requirement is engaged. Which property of the chain's security model failed?",
+      "options": {
+        "A": "Confidentiality, which keeps information from reaching the wrong people",
+        "B": "Availability, which keeps the service usable when customers need it",
+        "C": "Compliance, which is engaged whenever customer records are affected",
+        "D": "Integrity, which keeps data accurate and unaltered except by intent"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "E06", "C": "D19" },
+      "rationale": {
+        "correct": "Each property answers a different question. Integrity asks whether data is accurate and unaltered except by intended change, and a job that silently corrupted three months of balances broke exactly that. Confidentiality would have failed if data had reached the wrong people, availability if the service had stopped, compliance if an obligation had been breached, and control concerns who makes the decisions.",
+        "distractors": {
+          "A": "Confidentiality is about disclosure, and the scenario states that no data left the company.",
+          "B": "Availability is about the service being usable, and the systems stayed usable throughout the corruption.",
+          "C": "An obligation has to exist and be breached before compliance is the failed property, and none is engaged here."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-05",
+      "domain": "d5",
+      "primary_concept": "C-065",
+      "theme": "G6",
+      "vertical": "wine importer and distributor",
+      "keywords": ["zero-trust architecture", "least privilege", "privileged access"],
+      "type": "single_choice",
+      "question": "A wine importer and distributor's warehouse application is reachable only from inside the corporate network, and anything that reaches it is treated as trusted. After a contractor's laptop was compromised on that network and used to pull stock records, the security lead proposes that every request be verified whatever its origin. Which principle is being proposed?",
+      "options": {
+        "A": "Zero-trust architecture, which verifies every request regardless of origin",
+        "B": "Least privilege, granting each account only what its task requires",
+        "C": "Privileged access management, controlling the administrator accounts",
+        "D": "A firewall rule blocking contractor devices from the warehouse application"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E07", "D": "D05" },
+      "rationale": {
+        "correct": "The three terms restrict different things. Zero-trust architecture removes the assumption that being inside the network confers trust, verifying every request whatever its origin, which is precisely the assumption the compromised laptop exploited. Least privilege limits what an account may do once it is trusted, and privileged access is the narrower discipline of managing exceptional accounts.",
+        "distractors": {
+          "B": "Least privilege narrows what each account can reach and still allows an account on the corporate network to be trusted merely for being there.",
+          "C": "Managing administrator accounts is real work and a smaller part of this problem, as the contractor's laptop needed no administrator rights to be trusted by the application.",
+          "D": "Blocking one class of device answers this incident and leaves the assumption intact, so the next compromised machine on that network is trusted exactly as the last one was."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-06",
+      "domain": "d5",
+      "primary_concept": "C-066",
+      "theme": "G6",
+      "vertical": "municipal fire service",
+      "keywords": ["security posture", "threat intelligence", "threat response", "cyber resilience"],
+      "type": "single_choice",
+      "question": "A municipal fire service passed an external penetration test in January and has treated that certificate as its security position ever since. The new head of technology argues that a test result is a photograph rather than a position, and asks the leadership team to fund something different. What should the service recognize?",
+      "options": {
+        "A": "That the penetration test should be repeated monthly rather than annually",
+        "B": "That the certificate should be published so partners can see the result",
+        "C": "That security posture is a continuing state, maintained by security operations",
+        "D": "That a stronger firewall would raise the score at the next penetration test"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D10", "B": "D09", "D": "D05" },
+      "rationale": {
+        "correct": "Security posture is the state of a system rather than a certificate about it, and security by default and cyber resilience describe properties a system holds continuously. Security operations is the discipline that keeps posture honest, using threat intelligence to see what is coming and threat response to deal with what arrives, which is exactly what a point-in-time test cannot do.",
+        "distractors": {
+          "A": "A more frequent test produces more photographs, and between them the service is still relying on a past result instead of a state it maintains.",
+          "B": "Publishing the certificate tells partners what was true in January and changes nothing about what is true today.",
+          "D": "A control change aimed at the next test optimizes for the test, and posture is what holds between tests rather than on the day of one."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-07",
+      "domain": "d5",
+      "primary_concept": "C-067",
+      "theme": "G6",
+      "vertical": "campus bookstore chain",
+      "keywords": ["encryption", "secure-by-design", "core infrastructure", "data loss prevention"],
+      "type": "single_choice",
+      "question": "A campus bookstore chain's board asks which product it has to buy in order to encrypt the student purchase records it is about to store in Google Cloud, and how long enabling that product will take. What should the chief information officer tell the board?",
+      "options": {
+        "A": "Sensitive Data Protection must be enabled first, so records are found and encrypted",
+        "B": "Nothing needs buying: data stored on Google Cloud is encrypted at rest by default",
+        "C": "A firewall rule must be applied so only the chain's systems can read the records",
+        "D": "Encryption applies once each bucket is tagged as holding sensitive records"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "D06", "D": "D19" },
+      "rationale": {
+        "correct": "Encryption at rest is the default state of data on Google Cloud, inherited from secure-by-design core infrastructure, which includes proprietary data centers, purpose-built servers and networking, and custom security hardware and software. It is not switched on by a purchase. Data loss prevention, firewalls, and encryption and decryption are distinct jobs, and only the first two are things the chain chooses to apply.",
+        "distractors": {
+          "A": "Sensitive Data Protection discovers and classifies sensitive data, which is a different job from encrypting it, and the records are already encrypted at rest without it.",
+          "C": "A firewall rule governs what can reach the records over the network and performs no encryption, so it answers a different question than the board asked.",
+          "D": "Encryption at rest is not conditioned on a tag or on any other customer action; it is the state the data is already in."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-08",
+      "domain": "d5",
+      "primary_concept": "C-068",
+      "theme": "G6",
+      "vertical": "physiotherapy clinic chain",
+      "keywords": ["at rest", "in transit", "in use"],
+      "type": "single_choice",
+      "question": "A physiotherapy clinic chain's assessment confirms that patient notes are encrypted on disk and encrypted while moving between the clinics and the central system. The remaining concern is the moment the central system loads a note into memory to run its analysis, on infrastructure shared with other tenants. Which state of data is that concern about?",
+      "options": {
+        "A": "Data at rest, which is where the stored notes are protected",
+        "B": "Data in transit, which is where notes moving between systems are protected",
+        "C": "No further state applies once data is encrypted on disk and on the wire",
+        "D": "Data in use, the state a note is in while it is being processed"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "E06", "C": "E07" },
+      "rationale": {
+        "correct": "Encryption controls are matched to the state the data is in. At rest covers what sits on disk, in transit covers what moves between systems, and in use covers data while it is being processed. The clinic chain has covered the first two states, and the exposure it now describes is the third.",
+        "distractors": {
+          "A": "At rest is one of the states already covered, since the notes are encrypted on disk before anything reads them.",
+          "B": "In transit is the other state already covered, protecting notes as they move between the clinics and the central system.",
+          "C": "Data being processed is a recognized state with protection of its own, which is why it is named alongside at rest and in transit rather than folded into them."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-09",
+      "domain": "d5",
+      "primary_concept": "C-069",
+      "theme": "G6",
+      "vertical": "radio broadcasting network",
+      "keywords": ["authentication", "authorization", "auditing", "IAM"],
+      "type": "single_choice",
+      "question": "A radio broadcasting network's incident review finds that a producer signed in with a valid credential, satisfied the network's multi-factor challenge, and then deleted a broadcast archive that nobody in that role should ever have been able to delete. The network's logs recorded every step. Which of the three A's failed here?",
+      "options": {
+        "A": "Authorization, which decides what an identity is permitted to do",
+        "B": "Authentication, which proves an identity is who it claims to be",
+        "C": "Auditing, which records what each identity actually did",
+        "D": "Two-step verification, which should have been required for the deletion"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E05", "C": "E06", "D": "E07" },
+      "rationale": {
+        "correct": "The three A's answer different questions. Authentication proves who you are, and multi-factor authentication and two-step verification are how it is strengthened; authorization decides what you may do, and IAM grants it through roles; auditing records what you did. A valid sign-in that reached a capability the role should never have held is an authorization failure.",
+        "distractors": {
+          "B": "Authentication did its job as designed, since the sign-in used a valid credential and the multi-factor challenge was satisfied.",
+          "C": "Auditing also worked, which is how the review knows what happened, and recording an action is not the same as preventing it.",
+          "D": "Another verification step at sign-in would have proved the producer's identity once more and left that role's permissions exactly as they were."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-10",
+      "domain": "d5",
+      "primary_concept": "C-070",
+      "theme": "G2",
+      "vertical": "motorway toll operator",
+      "keywords": ["Google Threat Intelligence", "Mandiant's frontline incident response expertise", "VirusTotal's crowd sourced threat detection"],
+      "type": "single_choice",
+      "question": "A motorway toll operator's security team learns about new attack techniques only when its own monitoring catches one in progress. The team wants insight into what is coming before it arrives, and asks what Google Threat Intelligence would add. What is the accurate answer?",
+      "options": {
+        "A": "It detects threats inside the operator's estate faster than current monitoring does",
+        "B": "It certifies the operator's controls against an external security standard",
+        "C": "It gives proactive insight into threats from three different kinds of source",
+        "D": "It scores each threat with a severity index published by an industry consortium"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "E06", "D": "E08" },
+      "rationale": {
+        "correct": "Threat intelligence is proactive: it tells an organization what is coming rather than what is already inside. Google Threat Intelligence draws on three sources that differ in kind, namely Google's vast global visibility, Mandiant's frontline incident response expertise, and VirusTotal's crowd sourced threat detection, which is why together they see more than any one of them could alone.",
+        "distractors": {
+          "A": "Detecting what is already in the estate is the job of a security operations platform, and the team's complaint is that detection is the only warning it ever gets.",
+          "B": "Certification against a standard is assurance about controls, and it says nothing about which techniques attackers are using this month.",
+          "D": "No such consortium index is part of this offering, and one score would flatten exactly the differences in kind that make three sources worth combining."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-11",
+      "domain": "d5",
+      "primary_concept": "C-071",
+      "theme": "G2",
+      "vertical": "artisan food cooperative",
+      "keywords": ["Security Command Center", "Google Security Operations", "misconfigurations"],
+      "type": "single_choice",
+      "question": "An artisan food cooperative's security review finds two gaps. First, nobody can say which of its projects have publicly exposed storage or over-broad roles. Second, when an alert does fire, the telemetry sits in five separate consoles and nobody correlates it. Which product addresses the first gap?",
+      "options": {
+        "A": "Google Security Operations, which unifies telemetry with detection",
+        "B": "Security Command Center, which finds and prioritizes misconfigurations",
+        "C": "Cloud Logging, which would collect the projects' logs in one place",
+        "D": "A quarterly manual review of each project's roles and storage buckets"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E01", "C": "E07", "D": "D07" },
+      "rationale": {
+        "correct": "The two gaps belong to two products. Security Command Center is the posture product: it discovers, prioritizes and remediates misconfigurations before an attacker finds them, which is what unknown exposure across projects needs. Google Security Operations is the unified security operations platform that ingests telemetry and drives threat detection and response, which is what the second gap needs.",
+        "distractors": {
+          "A": "Unifying telemetry and correlating alerts answers the cooperative's second gap, and it starts from signals that something is already happening.",
+          "C": "Collecting logs in one place is a useful step toward the second gap and finds no exposed bucket by itself, as a log records what happened rather than what is misconfigured.",
+          "D": "A manual sweep discovers exposures at most four times a year and only where somebody thought to look, which is detection after the fact rather than continuous posture."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-12",
+      "domain": "d5",
+      "primary_concept": "C-072",
+      "theme": "G6",
+      "vertical": "heavy-equipment leasing firm",
+      "keywords": ["Model Armor", "AI Protection", "Gemini in Google Security Operations"],
+      "type": "single_choice",
+      "question": "A heavy-equipment leasing firm's security team has two requests on its desk. The rental business wants its new customer-facing AI assistant protected from hostile prompts. The security team itself wants its analysts to triage alerts faster with AI assistance. Which pairing meets both requests?",
+      "options": {
+        "A": "Gemini in Google Security Operations for the assistant, and AI Protection for triage",
+        "B": "Model Armor for both requests, as the offering that covers anything involving AI",
+        "C": "Cloud Armor for the assistant, and Security Command Center for alert triage",
+        "D": "Model Armor for the assistant, and Gemini in Google Security Operations for triage"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E01", "B": "E07", "C": "E05" },
+      "rationale": {
+        "correct": "Securing AI and securing with AI are two different offerings. AI Protection and Model Armor defend AI systems themselves, which is what a customer-facing assistant exposed to hostile prompts needs. Gemini in Google Security Operations puts AI to work defending everything else, which is what analysts triaging alerts need.",
+        "distractors": {
+          "A": "These are the right two offerings pointed the wrong way round, with the analyst assistance aimed at the model and the model defense aimed at the analysts.",
+          "B": "Defending a model covers one of the two requests and leaves the analysts where they started, as protecting an assistant does nothing to speed up alert triage.",
+          "C": "Edge traffic protection and posture management are real products for other jobs, and neither of them inspects what a customer types into an assistant."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-13",
+      "domain": "d5",
+      "primary_concept": "C-073",
+      "theme": "G6",
+      "vertical": "public library system",
+      "keywords": ["Identity-Aware Proxy", "Sensitive Data Protection", "Confidential Computing"],
+      "type": "multiple_response",
+      "question": "A public library system has two obligations from its latest audit. Branch staff must reach an internal lending application from home without any network-level connection to the corporate estate, and the system must establish whether borrower records containing national identity numbers have been copied into shared spreadsheets. Select the TWO products that meet these obligations.",
+      "options": {
+        "A": "Cloud Armor, defending the lending application from hostile traffic at the edge",
+        "B": "Identity-Aware Proxy, gating access to the application on verified identity",
+        "C": "Confidential Computing, protecting the records while they are being processed",
+        "D": "Sensitive Data Protection, discovering where sensitive records have spread",
+        "E": "Record Scanner, the built-in service that lists identity numbers per project"
+      },
+      "select_count": 2,
+      "answer": ["B", "D"],
+      "distractor_patterns": { "A": "E01", "C": "D06", "E": "E08" },
+      "rationale": {
+        "correct": "Each obligation names its product. Reaching an internal application without a network connection is identity-gated access, which is Identity-Aware Proxy, and establishing where sensitive records have spread is sensitive-data discovery, which is Sensitive Data Protection. Cloud VPC, Cloud VPN, Cloud Interconnect, firewalls, Cloud Armor, Cloud Logging, IAM, Confidential Computing and Certificate Manager each answer a different obligation in the same family.",
+        "distractors": {
+          "A": "Edge defense keeps hostile traffic away from an application and grants no member of branch staff access to it from home.",
+          "C": "Protecting data while it is processed is a real control at a different point: it guards records in use and finds none of the copies already sitting in spreadsheets.",
+          "E": "No product of that name exists in this family, and the discovery work it describes belongs to Sensitive Data Protection."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-14",
+      "domain": "d5",
+      "primary_concept": "C-074",
+      "theme": "G6",
+      "vertical": "auction house",
+      "keywords": ["transparency reports", "third-party audits", "compliance resource manager"],
+      "type": "single_choice",
+      "question": "An auction house's insurer will underwrite a move to a cloud provider only if the provider's security claims can be evidenced rather than asserted. The provider's sales team offers a summary of its security architecture and a reference call with another customer. What should the auction house ask for instead?",
+      "options": {
+        "A": "Transparency reports, third-party audit results and the compliance resource manager",
+        "B": "A contractual warranty that the provider's controls operate as described",
+        "C": "A demonstration of the provider's security console by its solutions engineer",
+        "D": "An architecture document explaining how the provider's controls are designed"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E06", "C": "D12", "D": "E07" },
+      "rationale": {
+        "correct": "Trust is evidenced rather than asserted. Transparency reports show what the provider has actually done, third-party audits record an independent party's finding rather than the provider's own account, and the compliance resource manager collects the certifications a customer can hand to its insurer. A vendor claim, however detailed, is still the vendor speaking about itself.",
+        "distractors": {
+          "B": "A warranty allocates the consequences if the claims turn out to be false, and the insurer has asked for proof that they are true.",
+          "C": "A guided demonstration shows what a console looks like on the day it is shown, which is the vendor speaking about itself with better visuals.",
+          "D": "An architecture document describes how controls are designed, and evidence concerns whether they operate, which only an independent finding establishes."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-15",
+      "domain": "d5",
+      "primary_concept": "C-075",
+      "theme": "G6",
+      "vertical": "customs brokerage",
+      "keywords": ["digital sovereignty", "data residency"],
+      "type": "single_choice",
+      "question": "A customs brokerage wins a government contract whose terms require declaration records to remain within the country's borders and not to be disclosable to any foreign authority. The brokerage's security team reports that the records are encrypted and access-controlled. Which concern does the contract raise that the team's report leaves unanswered?",
+      "options": {
+        "A": "Whether the encryption keys are strong enough for government records",
+        "B": "Whether an attacker could reach the records through a misconfigured bucket",
+        "C": "Digital sovereignty and data residency: where records sit and whose law reaches them",
+        "D": "Whether the brokerage's staff have been cleared to handle government records"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "D04", "B": "E06", "D": "E07" },
+      "rationale": {
+        "correct": "Encryption and access control answer who can read the records. Digital sovereignty and data residency answer a different question entirely: where the data physically lives, which country's law reaches it, and who could be compelled to hand it over. Neither is a question about a threat actor, and no security control settles either one.",
+        "distractors": {
+          "A": "Key strength is a control setting and a matter for the security report, and a perfectly encrypted record held in the wrong jurisdiction still breaches the contract.",
+          "B": "A misconfigured bucket is a genuine exposure to an attacker, and the contract's concern is a lawful demand rather than an unlawful one.",
+          "D": "Staff clearance governs who inside the brokerage may handle the records, which leaves untouched the question of which government could compel their disclosure."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-01",
+      "domain": "d6",
+      "primary_concept": "C-076",
+      "theme": "G7",
+      "vertical": "industrial bakery",
+      "keywords": ["capital expenditures (CapEx)", "operational expenditures (OpEx)", "total cost of ownership (TCO)"],
+      "type": "single_choice",
+      "question": "An industrial bakery's finance director compares five years of cloud subscription against the purchase price of the replacement servers the estate would otherwise need, and concludes that the cloud is the more expensive option. The IT manager replies that the comparison is not a like-for-like one. Which comparison would be honest?",
+      "options": {
+        "A": "Add the electricity, cooling and server-room space to the purchase price",
+        "B": "Compare only the cash leaving the business each year under either option",
+        "C": "Treat the two as equivalent, as the same workload runs under either one",
+        "D": "Count hardware investment, operational overhead and opportunity cost together"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E07", "B": "E06", "C": "D19" },
+      "rationale": {
+        "correct": "Adopting cloud moves spend from capital expenditures (CapEx) toward operational expenditures (OpEx), and a total cost of ownership (TCO) comparison is honest only when it counts hardware investment, operational overhead and opportunity cost together. Any one of them alone flatters a side: purchase price ignores what running the estate costs, and both ignore what the bakery's people could have been doing instead.",
+        "distractors": {
+          "A": "Power, cooling and floor space are real operational overhead and one part of the picture, and a comparison that stops there still omits what the estate costs in people and in forgone work.",
+          "B": "Cash leaving the business each year is a treasury view rather than a cost of ownership, and it hides the capital already sunk into hardware the bakery owns.",
+          "C": "The same workload does not cost the same to run in both places, which is the whole reason the comparison is being made."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-02",
+      "domain": "d6",
+      "primary_concept": "C-077",
+      "theme": "G7",
+      "vertical": "private university",
+      "keywords": ["cloud financial governance", "people, process, and technology"],
+      "type": "multiple_response",
+      "question": "A private university's cloud spend has doubled in a year. Each faculty runs its own projects, a central dashboard already shows every cost down to the service, and no faculty head has ever been asked to explain a rise. The finance committee wants cloud financial governance that actually works. Select the TWO changes that would establish it.",
+      "options": {
+        "A": "Each project's owner is also made accountable for what that project spends",
+        "B": "A monthly report of the largest-spending projects is circulated to the deans",
+        "C": "Every faculty is given the same fixed budget regardless of what it runs",
+        "D": "A better cost dashboard is bought so that the figures are easier to read",
+        "E": "A standing review is established, with named people and agreed thresholds"
+      },
+      "select_count": 2,
+      "answer": ["A", "E"],
+      "distractor_patterns": { "B": "D07", "C": "D14", "D": "D03" },
+      "rationale": {
+        "correct": "Cloud financial governance answers who manages cloud costs, and it works through people, process, and technology together. Pairing each project's ownership with financial accountability gives the spend a named owner, and a standing review with named people and agreed thresholds is the process that makes the ownership operate. Visibility on its own changes nothing while nobody is answerable for what it shows.",
+        "distractors": {
+          "B": "A circulated report tells the deans what has already been spent, and the university's problem is that nobody is ever asked to account for it.",
+          "C": "One fixed budget across faculties ignores what each of them actually runs, starving the heavy workloads and leaving the light ones with headroom nobody watches.",
+          "D": "The university already has a dashboard showing every cost, so a clearer one is technology answering a question about people and process."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-03",
+      "domain": "d6",
+      "primary_concept": "C-078",
+      "theme": "G3",
+      "vertical": "museum and heritage trust",
+      "keywords": ["projects", "folders", "organization node", "inheritance and propagation"],
+      "type": "single_choice",
+      "question": "A museum and heritage trust must apply one data-retention policy to everything its digital preservation department runs, without anyone having to set it on each new project as it is created. The department's work sits in a dozen projects today and will spread into more. Other departments must not be bound by this policy. Where should it be applied?",
+      "options": {
+        "A": "On each project, so that every project's policy is explicit",
+        "B": "On a folder holding the department's projects, so new projects inherit it",
+        "C": "On the organization node, so the whole trust is covered in one action",
+        "D": "In a documented standard that every project owner is asked to follow"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E03", "C": "D13", "D": "D09" },
+      "rationale": {
+        "correct": "The hierarchy runs resources inside projects, projects inside folders, and folders under the organization node, each element having exactly one parent. What the tree buys is inheritance and propagation: a policy set on a folder reaches every project beneath it, including projects that do not exist yet, which is precisely what the trust asked for.",
+        "distractors": {
+          "A": "Setting the policy on each project is the work the trust asked to avoid, and every project created next year starts without it until somebody remembers.",
+          "C": "The organization node does cover the department, and it also binds every other part of the trust to a retention rule written for digital preservation.",
+          "D": "A written standard depends on each owner reading and following it, and nothing in the hierarchy enforces it, so the first project that skips it is invisible."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-04",
+      "domain": "d6",
+      "primary_concept": "C-079",
+      "theme": "G7",
+      "vertical": "textile mill",
+      "keywords": ["resource quota policies", "budget threshold rules", "Dynamic Workload Scheduler", "Spot VMs"],
+      "type": "single_choice",
+      "question": "A textile mill's finance team has two distinct cost problems. A research team occasionally launches far more machines than anyone expected, and separately the monthly pattern-simulation run is simply expensive at list price, although it can wait days for capacity. Which pairing of controls addresses both problems?",
+      "options": {
+        "A": "Budget threshold rules for both, as alerts cover overspend of any kind",
+        "B": "Resource quota policies for the simulation run, and Spot VMs for the research team",
+        "C": "Cloud Billing reports for both, so the finance team can see where the money goes",
+        "D": "Resource quota policies for the research team, and Dynamic Workload Scheduler for the run"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E07", "B": "E01", "C": "E06" },
+      "rationale": {
+        "correct": "The two problems need different kinds of control. Unexpected launches are capped before the money is spent, which is what resource quota policies and budget threshold rules do. A job that is expensive by nature and can wait is instead bought on the platform's terms, which is what Dynamic Workload Scheduler and Spot VMs are for.",
+        "distractors": {
+          "A": "Budget threshold rules would tell the mill that the research team has overspent, and they do nothing about the price of a run that is expensive by design.",
+          "B": "The two controls are pointed at the wrong problems, as a quota on a scheduled run does not make it cheaper and interruptible capacity does not stop a team launching too much.",
+          "C": "Billing reports answer where the money went, which is analysis rather than control, and neither problem is that the finance team cannot see the spend."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-05",
+      "domain": "d6",
+      "primary_concept": "C-080",
+      "theme": "G7",
+      "vertical": "language school network",
+      "keywords": ["Cloud Billing reports"],
+      "type": "single_choice",
+      "question": "A language school network's board wants to know which of its cost centres drove last quarter's increase and which services the money went on, before it decides anything at all. No decision has yet been taken about caps, commitments or discounts. Which capability answers the board's question?",
+      "options": {
+        "A": "Cloud Billing reports, which show what was spent and where it went",
+        "B": "Budget threshold rules, which alert when spend passes a set level",
+        "C": "Resource quota policies, which cap what each project may consume",
+        "D": "Spot VMs, which lower the price of the network's batch workloads"
+      },
+      "answer": "A",
+      "distractor_patterns": { "B": "E01", "C": "E05", "D": "E06" },
+      "rationale": {
+        "correct": "The board has asked an analysis question: what was spent, by whom, and on which services. Cloud Billing reports answer exactly that. Controls that cap consumption and mechanisms that discount it both act on future spend, and neither explains a quarter that has already closed.",
+        "distractors": {
+          "B": "A threshold alert fires when spend crosses a level and reports nothing about which cost centre or which service drove a quarter that has already closed.",
+          "C": "A quota limits what a project may consume from now on, so it shapes the next quarter and explains nothing about the last one.",
+          "D": "Cheaper capacity for batch work reduces future bills, and the board has asked what happened rather than what to change."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-06",
+      "domain": "d6",
+      "primary_concept": "C-081",
+      "theme": "G2",
+      "vertical": "parcel locker network",
+      "keywords": ["Cloud Trace", "Cloud Monitoring", "Cloud Logging", "Cloud Profiler", "Google Cloud's Observability"],
+      "type": "single_choice",
+      "question": "A parcel locker network's checkout has become slow, and its dashboards show every individual service comfortably inside its own latency limits. The team needs to see where the time actually goes across the chain of services that one checkout request passes through. Which product answers that?",
+      "options": {
+        "A": "Cloud Monitoring, which would chart each service's latency metrics",
+        "B": "Cloud Logging, which would let the team search each service's logs",
+        "C": "Cloud Trace, which follows one request through the services it visits",
+        "D": "Cloud Profiler, which shows where a service's code consumes resources"
+      },
+      "answer": "C",
+      "distractor_patterns": { "A": "E01", "B": "E07", "D": "E06" },
+      "rationale": {
+        "correct": "Each product in Google Cloud's Observability answers a different operational question. Cloud Monitoring charts metrics, Cloud Logging searches and alerts on logs, Cloud Profiler shows where code consumes resources, Error Reporting surfaces failures, and Cloud Trace follows a single request along its path, which is the only one of them that shows where time is spent between services that each look healthy alone.",
+        "distractors": {
+          "A": "Per-service metrics are what the dashboards already show, and they report every service inside its limits, which is how a chain can be slow while no link in it is.",
+          "B": "Searching logs service by service can reconstruct part of a journey by hand, and nothing joins those entries into one request's path.",
+          "D": "Profiling shows where one service's code spends resources, which is the next question to ask once the slow step in the chain has been identified."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-07",
+      "domain": "d6",
+      "primary_concept": "C-082",
+      "theme": "G7",
+      "vertical": "ferry and port operator",
+      "keywords": ["redundancy", "replication", "backups", "high availability", "reliability"],
+      "type": "single_choice",
+      "question": "A ferry and port operator's booking platform runs redundant instances spread across three zones and takes nightly backups, all inside one region. The board has set a new requirement: a ticket must still be sellable if that entire region is lost. Which change meets the requirement?",
+      "options": {
+        "A": "Add more zones within the region so the redundancy is deeper",
+        "B": "Replicate into a second region, with traffic routed to whichever is healthy",
+        "C": "Increase the backup frequency so less is lost when the region fails",
+        "D": "Publish a service level agreement committing to a stated recovery time"
+      },
+      "answer": "B",
+      "distractor_patterns": { "A": "E03", "C": "D10", "D": "D09" },
+      "rationale": {
+        "correct": "Redundancy, replication, scalable infrastructure and backups are the design moves, while reliability, high availability and operational excellence are the commitments those moves deliver. A design that never leaves one region survives nothing regional however many zones it spans, so meeting this requirement means replication into a second region with traffic able to reach it.",
+        "distractors": {
+          "A": "Zones are subdivisions of a region, so adding more of them deepens redundancy inside the very failure domain the requirement says can be lost.",
+          "C": "More frequent backups shrink how much data is lost and keep no tickets selling, as a backup still has to be restored somewhere that is running.",
+          "D": "A published commitment states what the operator promises, and the platform's ability to keep selling through a regional loss is unchanged by the promise."
+        }
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-08",
+      "domain": "d6",
+      "primary_concept": "C-083",
+      "theme": "G3",
+      "vertical": "recycling cooperative",
+      "keywords": ["service level indicator", "service level objective", "service level agreement", "latency", "traffic", "saturation", "errors"],
+      "type": "single_choice",
+      "question": "A recycling cooperative's collection app measures the share of booking requests completed in under one second. Its platform team has committed internally to holding that share above a stated level, and the cooperative's contract with the councils it serves promises a credit if the share falls below a lower level. Which terms name those three things, in that order?",
+      "options": {
+        "A": "Service level agreement, service level objective, service level indicator",
+        "B": "Saturation, latency and traffic, the signals that each of these measures",
+        "C": "All three are service level objectives, differing only in who is told",
+        "D": "Service level indicator, service level objective, service level agreement"
+      },
+      "answer": "D",
+      "distractor_patterns": { "A": "E05", "B": "E06", "C": "D19" },
+      "rationale": {
+        "correct": "The three terms are told apart by who they bind. A service level indicator measures something, and the share of bookings completed in under one second is a measurement. A service level objective commits the team to a target for that measurement. A service level agreement commits the business to its customer, with a consequence attached. Latency, traffic, saturation and errors are the signals an indicator can be built from.",
+        "distractors": {
+          "A": "This reverses the order: the measurement comes first, the internal target sits on top of it, and the external promise carrying a consequence comes last.",
+          "B": "Latency, traffic, saturation and errors name what can be measured, and the question asks what the measurement, the internal target and the external promise are called.",
+          "C": "An objective binds the team while an agreement binds the business to its customer with a consequence, so collapsing the three loses the distinction that matters when a credit is owed."
+        }
+      }
+    }
+  ]
+}

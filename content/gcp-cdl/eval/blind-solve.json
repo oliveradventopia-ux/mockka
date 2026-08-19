@@ -1,0 +1,1012 @@
+{
+  "$comment": "S5 blind solve ROUND 2 (methodology/05-eval-rubric.md #blind-solve) — post-bounce re-eval of the reworked bank (rework commit 42fbd3f: gcp-cdl-d4-10 rationale.correct re-expressed; stem, options and key untouched). exam-examiner, fresh session, 2026-08-18: this session authored nothing in this bank and opened NO key, rationale, concept metadata or round-1 eval artifact until all 83 answers below were written to disk (scratch record gcp-cdl-r2-blind-answers-examiner.json, slug- and round-scoped per the hygiene rule). questions.json was inspected only through an id/domain/type/question/options projection, so no answer field was materialised pre-solve. Full bank re-solved, not only the reworked item, because a fresh examiner's independence covers the whole bank. Result: 83/83 match, 0 misses, so the human-adjudication queue is empty. codex.status is advisory_skipped for every item — see codex-solve.json. Round 1 preserved at blind-solve-r1.json.",
+  "round": 2,
+  "solve_accuracy": {
+    "items": 83,
+    "matched": 83,
+    "missed": 0,
+    "confidence": "high on all 83 — no medium or low grades were recorded"
+  },
+  "codex_matrix": {
+    "status": "advisory_skipped",
+    "effect": "no cross-model rows exist, so no item enters the Gate 2 sample by cross-model disagreement and Gate 2 samples WITHOUT the cross-model signal (record this in signoff.md)."
+  },
+  "items": [
+    {
+      "id": "gcp-cdl-d1-01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Organizational change in how an org operates and delivers value, enabled by cloud, is the definition of digital transformation.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-02",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Agentic AI is defined by autonomous multi-step pursuit of a goal, not by model size or novelty of output.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-03",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Only open source grants the right to inspect and modify the source; open standards and APIs govern interfaces, not code.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-04",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Demand spikes at on-sale answered by capacity that grows and shrinks is scalability/elasticity.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-05",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Global footprint buys global reach plus resilience through failures, which is more than raw capacity or backups.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-06",
+      "chosen": "A,C",
+      "keyed": "A,C",
+      "confidence": "high",
+      "reasoning": "Security baseline and data-driven insights are the non-cost, non-capacity benefits; B/D are capacity/cost and E misstates shared responsibility.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-07",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Competitive pressure from a faster rival is the genuine transformation driver; hype, availability and leftover budget are not.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-08",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Technology works but people did not adopt it - a skills and culture hurdle.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-09",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Standing still is not neutral: the cost of inaction compounds as competitors widen the gap.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-10",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Making existing records usable for AI without rebuilding the estate is exactly the AI-ready data platform claim.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "On-prem plus public cloud managed as one estate is hybrid cloud; multicloud is two public providers.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-12",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "DNS resolves a domain name to an IP address.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-13",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Per-click delay with fine bulk transfer is a latency complaint, not a bandwidth one.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-14",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Regions contain zones; edge/points of presence bring content closer to users.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d1-15",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Provider owns OS and runtime, customer owns app and data - PaaS.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-01",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Acting during the disruption rather than reading it next morning is real-time insight.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-02",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Structured, semi-structured and unstructured together in native form is the data lake archetype.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-03",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Bought from an aggregator with no relationship to the subjects is third-party data.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-04",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Normalizing, deduplicating and rejecting bad rows before storage is the processing stage.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-05",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Ownership, access rights and quality rules are governance; a tool cannot supply them.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-06",
+      "chosen": "B,E",
+      "keyed": "B,E",
+      "confidence": "high",
+      "reasoning": "Openness and interoperability target data silos and vendor lock-in; D is an invented term and A is a reliability concern.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-07",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Globally consistent relational transactions without sharding is Spanner.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-08",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Fixed fields with enforced links = relational; media = object storage; per-category flexible attributes = non-relational.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-09",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Kept fifteen years, read once or twice a decade - Archive class.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-10",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Unknown and shifting access patterns are exactly the Autoclass case.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-11",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "No developers and a vendor that will not certify change forces lift-and-shift to a managed service on the same engine.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-12",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Self-service on governed figures is Looker's data-democratization claim.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-13",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Direct connection removes the day-old extract and lets analysis sit inside the booking workflow - both complaints.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-14",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A fall alert must act within seconds; no batch window serves it.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d2-15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Ingest once and fan out to many decoupled subscribers is Pub/Sub.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Both are AI; prediction from historical data is ML, drafting notices is generative AI.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-02",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Generative AI creates new content - the description writer.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-03",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "End-to-end resolution of a customer case is the customer support function.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-04",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "No data scientists and a deadline points to pre-built agents and applications.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-05",
+      "chosen": "A,D",
+      "keyed": "A,D",
+      "confidence": "high",
+      "reasoning": "Unmaintainable rules replaced by learned patterns and per-item forecasting at scale are the ML-shaped problems; B, C and E need no ML.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-06",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "One real-world recording stored four times is a uniqueness defect.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-07",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Unexplainable decisions cannot be defended - transparency and explainability gate deployment.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-08",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Fabricated reviews under invented human names is deception - responsible AI rules it out.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-09",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Proprietary data as a moat means business differentiation dominates the choice.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-10",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "One place to build, deploy and govern agents is the Gemini Enterprise agent platform; Agent Registry is invented.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-11",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Audio to searchable text with no ML staff is the pre-trained Speech-to-Text API.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-12",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Read, infer, suggest and draft from free text, called from another system, is general generative work via Gemini API.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-13",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Own labeled images plus non-ML analysts is the AutoML custom-model case; Vision API cannot grade the firm's damage scale.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-14",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "The AI infrastructure layer is AI Hypercomputer - integrated TPUs/GPUs plus software.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d3-15",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "SQL-only analysts predicting from data that must stay in the warehouse is BigQuery ML.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-01",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Unknown estate: discovery and assessment must precede any migration commitment.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-02",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Unchangeable code with a deadline is rehost / lift and shift.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-03",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Hand over all operations but keep your own code, with idle-to-peak swings, is serverless.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-04",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Microservices allow independent deployment of one capability.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-05",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Ample capacity, correct instance count, uneven distribution - load balancing is failing, not autoscaling.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-06",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Only the restartable, idempotent thumbnail job tolerates preemption.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Per-host licence, specific OS build, vendor requires host control - Compute Engine VMs.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-08",
+      "chosen": "C,E",
+      "keyed": "C,E",
+      "confidence": "high",
+      "reasoning": "Scalability/resilience and faster delivery are the non-cost business outcomes; A is cost, B is headcount, D is a technical detail.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-09",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Keep manifests, node pools and scheduling policy but stop patching the control plane - managed GKE.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-10",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Container, spiky-to-zero traffic, no infrastructure management - Cloud Run.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-11",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Short event-triggered code firing unpredictably is Cloud Run functions.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-12",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Query data in place on another cloud from BigQuery is BigQuery Omni.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-13",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "An API is a defined way for one system to request data from another.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-14",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Turning repeated data requests into income is API monetization.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d4-15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Credentials, rate limits, developer docs and call records for a published API is Apigee.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Stolen compute with no ransom, no exfiltration and rising power draw is cryptomining.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-02",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Poisoned content the model reads is a data-layer attack (indirect prompt injection).",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-03",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Responsibility is shared and the customer's dominant risk becomes misconfiguration.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-04",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Data silently altered while remaining available and private is an integrity failure.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-05",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Verify every request regardless of network origin is zero trust.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-06",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A test is a point-in-time snapshot; posture is continuously maintained by security operations.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-07",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Google Cloud encrypts data at rest by default - nothing to buy or enable.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-08",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Data being processed in memory is data in use.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-09",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Identity proven and logged but allowed to do what it should not - authorization failed.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-10",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Google Threat Intelligence is proactive, fed by three source types (frontline incident response, crowdsourced malware analysis, Google's own visibility).",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Finding and prioritizing public buckets and over-broad roles is Security Command Center; SecOps answers the second gap.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-12",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Model Armor guards prompts/responses; Gemini in Google Security Operations accelerates analyst triage.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-13",
+      "chosen": "B,D",
+      "keyed": "B,D",
+      "confidence": "high",
+      "reasoning": "IAP gives identity-gated app access with no network connection; Sensitive Data Protection discovers where identity numbers spread. E is invented.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-14",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Evidence rather than assertion means transparency reports, independent audit results and the compliance resource manager.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d5-15",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Where records sit and whose law can compel them is digital sovereignty and data residency.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-01",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Honest comparison is total cost of ownership: hardware, operational overhead and opportunity cost, not price versus subscription.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-02",
+      "chosen": "A,E",
+      "keyed": "A,E",
+      "confidence": "high",
+      "reasoning": "Accountable owners plus a standing review with named people and thresholds is cloud financial governance; dashboards and flat budgets are not.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-03",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "A folder applies the policy to the department's projects and is inherited by new ones without binding the rest of the org.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-04",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Quotas cap the unpredictable launches; Dynamic Workload Scheduler gets the deferrable expensive run cheaper capacity.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-05",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Understanding what was spent and where, before any control decision, is Cloud Billing reports.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-06",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Following one request across services to find the latency is distributed tracing - Cloud Trace.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-07",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Surviving loss of a whole region requires multi-region replication with health-based routing.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    },
+    {
+      "id": "gcp-cdl-d6-08",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Measured share = SLI, internal commitment = SLO, contractual promise with credits = SLA, in that order.",
+      "match": true,
+      "codex": {
+        "status": "advisory_skipped",
+        "chosen": null
+      }
+    }
+  ]
+}

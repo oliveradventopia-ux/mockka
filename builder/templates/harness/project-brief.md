@@ -32,7 +32,7 @@ decisions, 2026-08-16).
   - `pnpm validate [slug]` — manifest-driven content validator (all packages when no slug)
   - `pnpm typecheck` · `pnpm test` — `tsc --noEmit` per package · `node --test` (LIGHT harness)
   - `pnpm build` — `next build`, prerenders every exam
-  - `pnpm gate` — validate + typecheck + test + build; run before any push
+  - `pnpm gate` — validate + typecheck + test + blind-exploit scan (`tools/exploit-scan.mjs`) + build; run before any push
   - `pnpm dev` — player on :4400 (3000 collides with jobber)
 - **Growth accounts:** none declared. ads-manager stays dormant. gso-manager may run keyword/demand
   intel with free tools for catalog prioritization.

@@ -1,0 +1,2284 @@
+{
+  "version": "0.1.0",
+  "questions": [
+    {
+      "id": "1.01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "regional newspaper group",
+      "keywords": [
+        "cloud computing",
+        "on demand"
+      ],
+      "type": "single_choice",
+      "question": "A regional newspaper group is retiring its aging server room and has collected four replacement proposals. The IT director wants the one that actually moves the group to cloud computing. Which proposal is it?",
+      "options": {
+        "A": "Move the group's servers into a rented cage at a nearby colocation facility, where its own staff continue to operate them",
+        "B": "Subscribe to compute, storage, and networking delivered on demand over the internet from capacity the provider operates",
+        "C": "Replace the server room with a hosted web plan that serves the group's public news site from a shared server",
+        "D": "Virtualize the existing machines in place so newsroom teams can request virtual servers from the internal IT queue"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D02",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Cloud computing is the delivery of computing services as a whole — compute, storage, networking, and more — over the internet, on demand, from capacity someone else operates and the customer rents as needed. The proposal that subscribes to provider-operated capacity on demand is the only one that changes who operates the infrastructure and how it is consumed, which is what the term names.",
+        "distractors": {
+          "A": "Colocation changes the building, not the operating model: the newspaper group still owns, operates, and staffs the servers, so nothing is delivered as an on-demand service.",
+          "C": "A hosted website is a single service class. Cloud computing describes computing services as a whole, not one narrow offering such as websites or storage.",
+          "D": "Virtualizing in place eases hardware management but treats a symptom: the group still owns and operates all the capacity, and nothing arrives on demand from a provider."
+        }
+      }
+    },
+    {
+      "id": "1.02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "dental practice group",
+      "keywords": [
+        "shared responsibility model",
+        "PaaS"
+      ],
+      "type": "multiple_response",
+      "question": "A dental practice group runs its patient-booking application on an Azure platform as a service (PaaS) offering. Under the shared responsibility model, which TWO responsibilities remain with the practice group? (Select TWO.)",
+      "options": {
+        "A": "Applying monthly security patches to the operating system beneath the booking application",
+        "B": "Protecting and classifying the patient data the application stores",
+        "C": "Upgrading the runtime and middleware the application runs on",
+        "D": "Managing the staff accounts and identities that sign in to the application",
+        "E": "Controlling physical access to the datacenters where the application is hosted"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D06",
+        "E": "D19"
+      },
+      "rationale": {
+        "correct": "Under the shared responsibility model, information and data, devices, and accounts and identities always remain with the customer, whatever the service type. In a PaaS arrangement the provider absorbs the physical stack, the operating system, the runtime, and the middleware, while the practice group keeps its data and its user identities — the two duties that never move.",
+        "distractors": {
+          "A": "Operating-system patching is the customer's job under IaaS; in a PaaS arrangement the provider maintains the operating system it supplies.",
+          "C": "The runtime and middleware are exactly the layers PaaS lifts off the customer's plate; they sit with the provider here.",
+          "E": "Physical datacenter security belongs to the provider under every cloud service type, including the most customer-managed rungs of the ladder."
+        }
+      }
+    },
+    {
+      "id": "1.03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "ferry operator",
+      "keywords": [
+        "private cloud",
+        "tenancy"
+      ],
+      "type": "single_choice",
+      "question": "A ferry operator pays a hosting company to run a cloud environment that is dedicated solely to the operator, hosted in the hosting company's own facility in another city. No other customer shares the hardware. Which cloud deployment model is this?",
+      "options": {
+        "A": "A public cloud",
+        "B": "A multicloud deployment",
+        "C": "A private cloud",
+        "D": "A hybrid cloud"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E05",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Ownership and tenancy decide the deployment model, not geography. An environment dedicated to a single organization is a private cloud wherever it physically sits — including in a third party's facility that the organization pays to run it. What matters is that no other tenant shares the environment, not whose building it stands in.",
+        "distractors": {
+          "A": "Off-premises hosting does not make a cloud public. A public cloud is shared multi-tenant capacity operated for many customers at once; this environment serves exactly one.",
+          "B": "Multicloud describes using more than one cloud provider at the same time, and it is not one of the deployment models this classification chooses among; a single environment from a single company is involved here.",
+          "D": "Hybrid describes connected private and public environments working together; a single dedicated environment in one facility combines nothing."
+        }
+      }
+    },
+    {
+      "id": "1.04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "municipal tax office",
+      "keywords": [
+        "hybrid cloud",
+        "taxpayer records"
+      ],
+      "type": "single_choice",
+      "question": "A statute requires a municipal tax office to keep taxpayer records on infrastructure it operates itself, inside its own facility. During the annual filing season, the office's public web portal needs far more capacity than it owns. Which cloud deployment model do these constraints force?",
+      "options": {
+        "A": "A hybrid cloud that keeps records on the office's own infrastructure and bursts portal capacity to a public cloud",
+        "B": "A full public cloud migration, moving the records off-premises to modernize the whole estate at once",
+        "C": "A private cloud only, sized so that filing-season demand is met from owned capacity all year round",
+        "D": "A sovereign region, which satisfies government obligations without changing where the records are kept"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "D16",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "The statute fixes taxpayer records to infrastructure the office itself operates, which is the private side; the filing-season burst needs rented public capacity the office does not own. Constraints pointing in both directions force a hybrid cloud — connected private and public environments, each carrying the workload it suits.",
+        "distractors": {
+          "B": "Cloud-first is a preference, not an override: moving the records off-premises breaks the statutory requirement that the office operate the infrastructure itself.",
+          "C": "A private-only estate meets the statute but answers the seasonal burst by buying capacity that sits idle most of the year, refusing the elasticity the portal needs.",
+          "D": "A sovereign region is a nationally isolated instance of a public cloud operated by the provider — the records would still leave infrastructure the office operates itself, so the statute is not met."
+        }
+      }
+    },
+    {
+      "id": "1.05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "ice cream manufacturer",
+      "keywords": [
+        "consumption-based model",
+        "bill"
+      ],
+      "type": "single_choice",
+      "question": "An ice cream manufacturer runs a wholesale order-processing job that is busy through summer and nearly idle in winter. The finance director asks what adopting a consumption-based model would mean for this job's cost. Which answer is correct?",
+      "options": {
+        "A": "A flat monthly charge agreed in advance, so summer and winter invoices are identical",
+        "B": "Permanent servers provisioned to the summer peak, so capacity never runs short in season",
+        "C": "A discounted rate held all year in exchange for paying for the provisioned capacity even while the job is idle",
+        "D": "No upfront purchase, charges that track actual use, and a bill that falls when orders stop"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D03",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "The consumption-based model means paying for what is actually used rather than what is provisioned: no upfront purchase, cost that stops when use stops, and a bill that tracks demand. For a job that is busy in summer and nearly idle in winter, that produces high summer invoices, low winter invoices, and nothing paid for capacity that is not being consumed.",
+        "distractors": {
+          "A": "A flat fee is the opposite of consumption billing: it buys predictability by charging the same whether or not the job runs, which is a fixed subscription, not pay-for-use.",
+          "B": "Provisioning to the peak is the pattern consumption pricing exists to replace — capacity bought for the busiest weeks is paid for through every idle month.",
+          "C": "Paying for provisioned capacity at a discount describes committed or reserved pricing, and it suits steady workloads; a seasonal job would pay through the idle months for a discount it cannot use."
+        }
+      }
+    },
+    {
+      "id": "1.06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "furniture retailer",
+      "keywords": [
+        "capital expenditure",
+        "operational expenditure"
+      ],
+      "type": "single_choice",
+      "question": "A furniture retailer shuts the datacenter it owns, sells the hardware, and moves its inventory systems to Azure services billed monthly. How should the finance team expect the spending profile to change?",
+      "options": {
+        "A": "Both the old datacenter and the new cloud services count as capital expenditure, as each supports revenue-generating operations",
+        "B": "Spending shifts from capital expenditure on owned assets to operational expenditure on rented services",
+        "C": "Spending shifts from operational expenditure to capital expenditure, as cloud subscriptions are long-lived commitments",
+        "D": "The profile is unchanged for now, and reclassification can wait until a multiyear commitment is signed"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Owned datacenter assets are capital expenditure (CapEx): money invested up front in things the retailer owns and depreciates. Rented cloud services are operational expenditure (OpEx): an ongoing cost of operating, paid as it is incurred. Closing the owned facility and renting services converts one spending profile into the other — that conversion is the financial signature of a migration.",
+        "distractors": {
+          "A": "Supporting revenue does not make spending capital expenditure; the classification follows ownership. Monthly fees for services the retailer does not own are operational expenditure however important the workload.",
+          "C": "This reverses the definitions: long-lived or not, subscription fees for rented services remain operational expenditure, while capital expenditure is the upfront purchase of owned assets — exactly what was sold off.",
+          "D": "The change is immediate, not deferred: from the first monthly invoice the retailer is renting rather than owning, and the books should reflect operational expenditure without waiting for any commitment."
+        }
+      }
+    },
+    {
+      "id": "1.07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "credit union",
+      "keywords": [
+        "pay-as-you-go",
+        "commitment"
+      ],
+      "type": "single_choice",
+      "question": "A credit union's core ledger runs on virtual machines whose load has been flat and continuous for years, around the clock, with no change expected. Purchasing is reviewing how the VMs are paid for. Which decision fits this workload?",
+      "options": {
+        "A": "Commit to a one-year or three-year term for the ledger VMs, trading flexibility for a lower rate",
+        "B": "Keep the pay-as-you-go arrangement already in place, which avoids reopening the procurement file",
+        "C": "Move the ledger VMs to interruptible spare capacity, which carries the deepest compute discount",
+        "D": "Hold at current rates until the provider's next price reduction, then revisit the question"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D11",
+        "C": "E03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "A steady, long-lived workload is the case for committed capacity: the discount rewards giving up flexibility the credit union demonstrably does not need, and flexibility is what the discount costs. Load that has been flat and continuous for years, around the clock, is the textbook profile for a term commitment among cloud pricing models.",
+        "distractors": {
+          "B": "Convenience of the existing arrangement is not a purchasing rationale: pay-as-you-go charges a premium for the freedom to stop at any time, and this workload will never exercise that freedom.",
+          "C": "The deepest discount is paid for with eviction risk. Interruptible capacity suits work that tolerates being stopped and resumed, which a continuously running core ledger does not.",
+          "D": "Waiting compounds cost rather than reducing it: every month at the flexible rate pays for an option the workload never uses, and a future price cut would apply to committed terms as well."
+        }
+      }
+    },
+    {
+      "id": "1.08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "genealogy research service",
+      "keywords": [
+        "eviction",
+        "checkpoints"
+      ],
+      "type": "single_choice",
+      "question": "A genealogy research service rebuilds its historical-records search index in a batch job that checkpoints its progress and can resume cleanly after being stopped. The rebuild has no deadline. Which way of buying compute fits this job?",
+      "options": {
+        "A": "A one-year reserved term, so the rebuild is never at risk of interruption",
+        "B": "Standard on-demand rates, as interruptible capacity is unsuitable for production workloads",
+        "C": "Interruptible spare capacity at the lowest compute price, accepting possible eviction",
+        "D": "Additional parallel machines at standard rates, so the rebuild finishes before any interruption"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D14",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Interruptible spare capacity carries the lowest compute price, and eviction risk is what that price buys. The right buyers are workloads that tolerate being stopped and resumed — exactly what a checkpointed, deadline-free batch rebuild is. The job loses nothing when evicted and simply resumes, so the service collects the discount without paying a real cost.",
+        "distractors": {
+          "A": "Reserving capacity pays a premium for continuity this job does not need; a rebuild that resumes cleanly from checkpoints is not harmed by interruption.",
+          "B": "The blanket rule misses its own precondition: interruptible capacity is unsuitable where stopping loses work or misses deadlines, and this job has checkpoints and no deadline.",
+          "D": "Buying more machines answers a question nobody asked — the job has no deadline. Extra parallel capacity at standard rates raises the bill without addressing how the compute is priced."
+        }
+      }
+    },
+    {
+      "id": "1.09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "flower delivery service",
+      "keywords": [
+        "serverless",
+        "configuration"
+      ],
+      "type": "single_choice",
+      "question": "A flower delivery service runs its order-notification code on a serverless platform. A newly hired engineer asks what the team still owns now that the platform is serverless. Which answer is accurate?",
+      "options": {
+        "A": "Nothing at all, as serverless moves every responsibility, including the code, to the platform",
+        "B": "Choosing instance sizes and a scaling schedule so the notification code has capacity at peak",
+        "C": "Patching the operating system images that the notification code runs on",
+        "D": "The notification code itself, its configuration, and the data it works with"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Serverless removes the infrastructure concerns from the customer's plate: there are no instances to provision, scale, or pay for while idle. What it does not remove is the workload itself — the code, its configuration, and its data remain the team's responsibility. The platform runs the code on demand; the team still decides what the code does and owns what it touches.",
+        "distractors": {
+          "A": "Serverless is not responsibility-free: the platform absorbs servers and scaling, but the code, its configuration, and its data never transfer to the provider.",
+          "B": "Instance sizes and scaling schedules are precisely what serverless eliminates — the platform allocates capacity on demand, so there are no instances for the team to size.",
+          "C": "There is no operating system surface for the team to patch on a serverless platform; the layers beneath the code are the provider's to maintain."
+        }
+      }
+    },
+    {
+      "id": "1.10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "cinema chain",
+      "keywords": [
+        "high availability",
+        "redundancy"
+      ],
+      "type": "single_choice",
+      "question": "A cinema chain's online ticketing must keep selling seats even when a single component fails mid-evening on a premiere weekend. The operations lead asks how high availability is actually achieved. Which answer is right?",
+      "options": {
+        "A": "Run redundant components so the service continues through a failure, with the goal stated as an uptime expectation",
+        "B": "Buy the most failure-resistant single server available, so that components fail as rarely as possible",
+        "C": "Take a full backup every night so the ticketing data can be restored after any outage",
+        "D": "Watch an uptime dashboard closely so any outage is spotted within moments of starting"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D03",
+        "C": "E03",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "High availability is a designed property: the service stays available through component failure when redundancy removes single points of failure, and the target is expressed as an uptime expectation. Better parts fail less often but still fail; only duplication lets the system keep functioning while one component is down.",
+        "distractors": {
+          "B": "A stronger single server lowers the failure rate without changing the design: when that one component does fail on a premiere weekend, ticketing still stops. Availability comes from redundancy, not from better individual parts.",
+          "C": "Backups protect data, not availability: restoring after an outage means the outage happened and sales stopped. High availability is about continuing to operate, not recovering afterward.",
+          "D": "A dashboard detects the outage; it does not prevent it. Fast detection shortens the response, but staying available through failure requires redundant components, not sharper watching."
+        }
+      }
+    },
+    {
+      "id": "1.11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "e-sports league",
+      "keywords": [
+        "horizontal scaling",
+        "vertical"
+      ],
+      "type": "single_choice",
+      "question": "An e-sports league's streaming stats platform serves 2,000 concurrent viewers on ordinary days but must reach 90,000 within minutes when a championship final begins, then shrink back afterward. Which scaling approach matches this demand pattern?",
+      "options": {
+        "A": "Vertical scaling, resizing the platform's server to a much larger size ahead of each final",
+        "B": "Horizontal scaling, adding instances as the final begins and removing them afterward",
+        "C": "A fleet kept permanently sized for 90,000 viewers, so no scaling is ever required",
+        "D": "A resize scheduled into the nightly maintenance window before each match day"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D03",
+        "D": "D10"
+      },
+      "rationale": {
+        "correct": "Adding or removing instances is horizontal scaling, and it is the axis a fast, temporary surge points at: capacity grows from 2,000 toward 90,000 viewers by joining instances to the pool within minutes, then shrinks back by removing them. Scalability on the vertical axis resizes one resource, which is slower, bounded by the largest available size, and wasteful once the surge ends.",
+        "distractors": {
+          "A": "Resizing the existing server is the vertical axis: it typically requires downtime, tops out at the largest size sold, and leaves an oversized machine running after the final ends.",
+          "C": "A permanent fleet meets the peak by paying for it every ordinary day; the demand pattern is a brief surge, which elasticity should absorb, not standing capacity.",
+          "D": "A nightly schedule cannot meet a surge that arrives within minutes of a final starting — the mechanism is wrong, not the frequency; demand-driven scaling has to react when demand moves."
+        }
+      }
+    },
+    {
+      "id": "1.12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "wine importer",
+      "keywords": [
+        "reliability",
+        "predictability"
+      ],
+      "type": "single_choice",
+      "question": "A wine importer's board is reading a cloud proposal that promises both reliability and predictability. A director asks whether the two words are just synonyms. Which reply separates them correctly?",
+      "options": {
+        "A": "Reliability means knowing what costs and performance will be in advance; predictability means surviving hardware failure and continuing on",
+        "B": "The two are interchangeable labels for one benefit, so the proposal is repeating itself",
+        "C": "Reliability comes from dashboards that report incidents the moment they happen",
+        "D": "Reliability is recovering from failure and continuing to function; predictability is knowing performance and cost in advance"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D02",
+        "C": "D07"
+      },
+      "rationale": {
+        "correct": "Reliability is the ability of a system to recover from failures and continue to function; predictability is confidence about what performance and cost will look like in advance. They are separate benefits: one is about how the platform behaves when things go wrong, the other about how well the future — load, latency, spend — can be forecast.",
+        "distractors": {
+          "A": "This assigns each definition to the other term: surviving failure and continuing on is reliability, and advance knowledge of performance and cost is predictability.",
+          "B": "Flattening the two words into one label discards a real distinction — a platform can recover superbly from failure while its costs remain hard to forecast, and the reverse.",
+          "C": "Incident dashboards are detection, and detection is neither definition: reliability is the recovering and continuing itself, not the reporting of what went wrong."
+        }
+      }
+    },
+    {
+      "id": "1.13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "county courthouse system",
+      "keywords": [
+        "governance",
+        "patch"
+      ],
+      "type": "single_choice",
+      "question": "A county courthouse system with a two-person IT team is assessing what cloud adoption would change about its security and governance workload. Which statement captures the benefit correctly?",
+      "options": {
+        "A": "Adoption transfers the security and governance duties entirely to the cloud provider",
+        "B": "The benefit arrives only after third-party security appliances are placed in front of every cloud service",
+        "C": "The platform supplies policy controls, patch currency, and network protections the team would otherwise build and staff",
+        "D": "The prudent course is keeping every security control in-house and using the cloud for raw capacity alone"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D01",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Security and governance arrive as platform capabilities: policy control over what may be deployed, infrastructure the provider keeps patched and current, and network protections built into the platform. A two-person team inherits controls it could never build and staff alone — that inheritance, not a transfer of duty, is the benefit.",
+        "distractors": {
+          "A": "Responsibility is shared, never transferred outright: the courthouse keeps duties for its data, identities, and configuration choices while the platform covers the layers it operates.",
+          "B": "Extra appliances are not a precondition — the point of the benefit is that policy, patching, and network protections come supplied by the platform itself.",
+          "D": "Refusing the platform's controls forfeits the benefit under discussion and leaves a two-person team building everything itself, which is the situation adoption was meant to relieve."
+        }
+      }
+    },
+    {
+      "id": "1.14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "home appliance repair network",
+      "keywords": [
+        "manageability",
+        "automation"
+      ],
+      "type": "single_choice",
+      "question": "A home appliance repair network's IT manager currently drives between field offices to administer servers one at a time. A cloud proposal lists manageability as a benefit. What does that benefit actually mean?",
+      "options": {
+        "A": "The estate is administered through the platform's own tooling and automation, from wherever the manager is",
+        "B": "Azure Advisor takes over day-to-day administration, applying its recommendations without the manager",
+        "C": "Standardizing every field office on one hardware vendor, so manual administration becomes simpler",
+        "D": "A weekly summary report from the platform describing what changed across the estate"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D05",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "Manageability in the cloud means administering the estate through the platform's own management tooling and automation: scaling, monitoring, and deployment are handled by the platform and reachable from anywhere, replacing hands-on, one-server-at-a-time work. The drives between offices end because administration happens through the platform, not at the machine.",
+        "distractors": {
+          "B": "Azure Advisor recommends best-practice improvements for existing resources; it does not administer an estate or apply changes on anyone's behalf — administration remains the manager's, done through platform tooling.",
+          "C": "Uniform hardware makes the manual routine a little smoother while leaving it manual; the benefit being described replaces hands-on administration with platform tooling and automation, not with tidier logistics.",
+          "D": "A report tells the manager what already happened; manageability is the ability to act — to scale, monitor, and deploy through the platform — not a retrospective summary."
+        }
+      }
+    },
+    {
+      "id": "1.15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "construction contractor",
+      "keywords": [
+        "IaaS",
+        "operating system"
+      ],
+      "type": "single_choice",
+      "question": "A construction contractor moves its estimating application onto Azure virtual machines, an infrastructure as a service arrangement. The provider now runs the physical hosts, storage, and network. What stays on the contractor's plate?",
+      "options": {
+        "A": "Only the application code, with the guest operating system patched by the provider",
+        "B": "Replacing failed physical disks beneath its virtual machines through a hardware support contract",
+        "C": "Hardening the hypervisor, as maximum control extends to the virtualization layer",
+        "D": "The operating system and everything above it: patching, runtime, middleware, and the application's data"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D06",
+        "C": "D01"
+      },
+      "rationale": {
+        "correct": "Infrastructure as a service (IaaS) draws the line at virtualized infrastructure: the provider supplies and operates the physical hosts, storage, and network, and the customer owns the operating system and everything above it — patching, runtime, middleware, applications, and data. Maximum control is the draw, and maximum responsibility is its price.",
+        "distractors": {
+          "A": "Code-only responsibility describes platform as a service; under IaaS the guest operating system is the contractor's to patch and maintain, not the provider's.",
+          "B": "Physical hardware sits below the line IaaS draws — failed disks in the provider's datacenter are the provider's to replace, invisible to the tenant.",
+          "C": "The virtualization layer is part of the infrastructure the provider supplies; a tenant has no hypervisor surface to harden, however much control the arrangement grants above it."
+        }
+      }
+    },
+    {
+      "id": "1.16",
+      "domain": "d1",
+      "primary_concept": "C-016",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "language school network",
+      "keywords": [
+        "PaaS",
+        "middleware"
+      ],
+      "type": "single_choice",
+      "question": "A language school network wants its four developers spending their time on the lesson-booking application they are writing, with nobody assigned to operating systems, runtime upgrades, or middleware. Which cloud service type matches this intent?",
+      "options": {
+        "A": "Infrastructure as a service, keeping the fullest possible control of the platform beneath the application",
+        "B": "Platform as a service, where the provider absorbs the operating system, runtime, and middleware",
+        "C": "Software as a service, so the booking capability arrives finished with nothing left to build",
+        "D": "A rewrite into event-driven functions, removing idle cost along with the servers"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D02",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Platform as a service (PaaS) is the middle position on the responsibility ladder: the provider takes the operating system, runtime, and middleware off the customer's plate, while the application and its data remain the customer's. That split is exactly the school's intent — four developers writing the application, nobody staffing the layers beneath it.",
+        "distractors": {
+          "A": "Fullest control is the opposite of the stated intent: infrastructure as a service hands back the operating system and everything above it, which is precisely the work the school wants nobody doing.",
+          "C": "A finished product leaves nothing for the developers to write, and the school's whole premise is a custom application of its own; software as a service removes the build the intent requires.",
+          "D": "Re-architecting into functions solves a problem nobody stated: the school asked where its existing style of application should run, not for an event-driven redesign of it."
+        }
+      }
+    },
+    {
+      "id": "1.17",
+      "domain": "d1",
+      "primary_concept": "C-017",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "chartered accountancy practice",
+      "keywords": [
+        "SaaS",
+        "licensed"
+      ],
+      "type": "single_choice",
+      "question": "A chartered accountancy practice licenses a cloud bookkeeping product. Its administrators configure client ledgers, features, and user seats, and touch nothing else. Which statement describes this arrangement accurately?",
+      "options": {
+        "A": "It is platform as a service, as real configuration work remains with the practice",
+        "B": "The practice should also manage the product's runtime version before each filing deadline",
+        "C": "It is software as a service: the practice controls features and users, with the least responsibility and the least control",
+        "D": "With everything below the feature level invisible, the practice needs no user-access governance process of its own"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D06",
+        "D": "D02"
+      },
+      "rationale": {
+        "correct": "Licensing a finished application and configuring only features and users is software as a service (SaaS): the customer sits at the top of the responsibility ladder with the least responsibility and, symmetrically, the least control. Everything beneath the product — application code, runtime, operating system, infrastructure — is the provider's, and the product is licensed rather than built.",
+        "distractors": {
+          "A": "Configuring features and users is exactly the residue SaaS leaves; platform as a service would put a runtime and a deployable application of the practice's own in the picture, and neither exists here.",
+          "B": "The runtime is beneath the line SaaS draws — the provider maintains and upgrades it. There is no product runtime for the practice to manage, before deadlines or otherwise.",
+          "D": "Least responsibility is not zero: accounts, identities, and access decisions stay with the customer in every service type, so who can reach which client ledger remains the practice's own governance duty."
+        }
+      }
+    },
+    {
+      "id": "1.18",
+      "domain": "d1",
+      "primary_concept": "C-018",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "museum consortium",
+      "keywords": [
+        "IaaS",
+        "PaaS"
+      ],
+      "type": "scenario_matching",
+      "question": "A museum consortium is modernizing four systems, and its architect must place each on the cloud service type its constraints force. For each system below, select the service type. Options may be used more than once.",
+      "matching_options": [
+        "Infrastructure as a service (IaaS)",
+        "Platform as a service (PaaS)",
+        "Software as a service (SaaS)"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Membership email campaigns should come from a finished product the team starts using immediately, configuring only sender lists and user seats."
+        },
+        {
+          "id": "s2",
+          "text": "The legacy collections catalog is certified by its vendor only at a specific operating-system patch level, which the consortium must control itself."
+        },
+        {
+          "id": "s3",
+          "text": "The web team wants to deploy its custom exhibition-booking code continuously without managing any runtime or middleware."
+        },
+        {
+          "id": "s4",
+          "text": "Donor accounting should be a licensed, ready-to-use product with nothing operated by the consortium beneath its features."
+        }
+      ],
+      "answer": {
+        "s1": "Software as a service (SaaS)",
+        "s2": "Infrastructure as a service (IaaS)",
+        "s3": "Platform as a service (PaaS)",
+        "s4": "Software as a service (SaaS)"
+      },
+      "rationale": {
+        "correct": "The deciding constraint in each case is how much of the stack the consortium must control. Needing to pin the operating-system patch level forces IaaS, the only service type that hands the customer the operating system. Deploying custom code with no runtime or middleware duties is the PaaS split. A finished product configured at the feature-and-user level — the email campaigns and the donor accounting — is SaaS, licensed rather than built, with the least responsibility and the least control."
+      }
+    },
+    {
+      "id": "2.01",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "container shipping line",
+      "keywords": [
+        "region",
+        "paired"
+      ],
+      "type": "single_choice",
+      "question": "A container shipping line is planning where its Azure workloads will run, and its architect is asked to explain what an Azure region actually is and why many regions have a partner region. Which explanation is right?",
+      "options": {
+        "A": "A region is a single large datacenter building, and its partner is the identical building next door for fast failover",
+        "B": "A region is a set of nearby datacenters, and platform updates roll out to both members of a pair simultaneously so they stay identical",
+        "C": "A region is a set of datacenters connected by a low-latency network, often paired with a distant region for replication and sequenced updates",
+        "D": "A region is defined by the subscription that deploys into it, so each customer draws its own regional boundaries"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D19",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "An Azure region is a latency-bounded set of datacenters — never a single facility and never a zone — connected by a dedicated low-latency network. Many regions are paired with a partner hundreds of miles away; the platform replicates some services across the pair and sequences platform updates so both members are not updated at once, which is what makes the pair a recovery relationship.",
+        "distractors": {
+          "A": "A region is larger than any one building: it is a set of datacenters. And a partner region is deliberately distant — an identical building next door would share the disasters a pair exists to survive.",
+          "B": "Sequencing is the point of pairing: updates roll to one member of the pair before the other, so a faulty update cannot land on both at once. Simultaneous rollout would remove exactly that protection.",
+          "D": "Regions are platform geography, fixed by the provider; subscriptions choose which regions to deploy into but draw no boundaries of their own."
+        }
+      }
+    },
+    {
+      "id": "2.02",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "ambulance service trust",
+      "keywords": [
+        "sovereign region",
+        "isolated"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance service trust that handles nationally classified dispatch data is told its cloud deployment must use a sovereign region. What is a sovereign region?",
+      "options": {
+        "A": "A private cloud that a government department builds and operates for itself in its own datacenter facilities",
+        "B": "A nationally isolated instance of Azure with its own boundary, built for government and residency obligations",
+        "C": "Any standard Azure region that happens to be physically located inside the nation's own borders",
+        "D": "A management group configured so that resources may only be created in a list of approved regions"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D19",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "A sovereign region is a nationally isolated instance of Azure built for government and residency obligations — a separate cloud with its own boundary and its own operational rules. It is not a deployment model and not just another region on the standard map; isolation at the cloud boundary is what distinguishes it.",
+        "distractors": {
+          "A": "A sovereign region is operated by the cloud provider as an isolated instance of its platform; a government-built private cloud is a different deployment model entirely, not a region type.",
+          "C": "Geography alone does not make a region sovereign: a standard region inside the country still belongs to the provider's global cloud. Sovereignty requires a separately bounded, nationally isolated instance.",
+          "D": "Restricting where resources may be created governs placement within the standard cloud; it builds no isolation boundary and leaves the platform itself shared."
+        }
+      }
+    },
+    {
+      "id": "2.03",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "bus charter company",
+      "keywords": [
+        "availability zones",
+        "power"
+      ],
+      "type": "single_choice",
+      "question": "A bus charter company's booking system runs across an availability set inside one Azure datacenter. A resilience review now requires the design to survive the loss of that entire datacenter, including its power and cooling. Which construct meets the requirement?",
+      "options": {
+        "A": "A larger availability set spanning more fault domains and update domains within the datacenter",
+        "B": "Virtual Machine Scale Sets, which add and remove identical booking instances with demand",
+        "C": "A second copy of the booking data replicated to a storage account in the same datacenter",
+        "D": "Availability zones — physically separate locations in the region with independent power, cooling, and networking"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "The failure class stated is the loss of a whole datacenter. Availability zones are physically separated facilities within one region, each with independent power, cooling, and networking, so a deployment spread across zones keeps running when an entire datacenter — power and cooling included — goes down. Every in-datacenter construct fails with the building it is in.",
+        "distractors": {
+          "A": "Fault domains and update domains separate racks and maintenance windows inside one facility; when the building's power and cooling fail, every domain in it fails together.",
+          "B": "Scale sets solve elasticity — matching instance count to demand — not facility failure; a scale set deployed into a single datacenter is lost with it.",
+          "C": "A replica in the same datacenter shares the same power, cooling, and walls as the original; the copy protects against disk loss, not against the stated failure of the whole facility."
+        }
+      }
+    },
+    {
+      "id": "2.04",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "kitchen equipment wholesaler",
+      "keywords": [
+        "resource group",
+        "membership"
+      ],
+      "type": "single_choice",
+      "question": "At a kitchen equipment wholesaler, the app team and the analytics team both want one production database to appear in their own resource group, and an engineer also insists that group members must share the group's region. Which response resolves the debate correctly?",
+      "options": {
+        "A": "The database can join only one resource group at a time, and its group need not constrain where members are located",
+        "B": "The database can be placed into both resource groups at the same time so that each team sees it inside its own group",
+        "C": "The two groups must first be moved to the database's region, as members and their group must share a location",
+        "D": "Grant the analytics team owner rights over the whole subscription so that group membership stops mattering"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E02",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "A resource belongs to exactly one resource group at a time — membership is exclusive, though a resource can be moved between groups. Membership also does not constrain location: a group can hold members from different regions, and the group's own location metadata does not bind its members. The right resolution is choosing one home group; management access is a separate question from membership.",
+        "distractors": {
+          "B": "Exclusive membership is the rule: one resource, one resource group at any moment. A second team's visibility is solved with access control, not with double membership the platform does not offer.",
+          "C": "No such co-location rule exists — a resource group routinely holds members located in different regions, and moving groups around to chase a region would achieve nothing.",
+          "D": "Subscription-wide owner rights hand the analytics team every resource in the estate to reach one database — far more access than the goal warrants, and no answer to how groups actually behave."
+        }
+      }
+    },
+    {
+      "id": "2.05",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "insurance brokerage",
+      "keywords": [
+        "subscription",
+        "billing"
+      ],
+      "type": "single_choice",
+      "question": "An insurance brokerage runs two divisions whose Azure spend must be invoiced separately, while all staff keep signing in with the same directory identities. Which construct separates the billing?",
+      "options": {
+        "A": "Two separate Microsoft Entra tenants, since every subscription requires a directory tenant of its own",
+        "B": "Two subscriptions that trust the one directory tenant, as a subscription is a billing and access boundary",
+        "C": "Two resource groups inside a single subscription, each tagged with its own division's cost center",
+        "D": "A month-end billing report filtered by division tags, shared with each division's finance lead"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E02",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "The subscription is the billing and access boundary that owns resource groups: separate subscriptions produce separately invoiced spend. Identity does not need to split, as many subscriptions can trust the same directory tenant — so both divisions keep their existing sign-ins while their costs part cleanly.",
+        "distractors": {
+          "A": "The relationship runs the other way: a single tenant can be trusted by many subscriptions. Splitting the directory would fracture sign-in for no billing gain a second subscription does not already deliver.",
+          "C": "Resource groups organize resources inside one subscription and one bill; tags can slice a cost report, but the invoice itself remains a subscription-level document.",
+          "D": "A filtered report describes the shared bill after the fact; it does not create the separate invoicing the divisions require, and the underlying billing boundary is untouched."
+        }
+      }
+    },
+    {
+      "id": "2.06",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "mining equipment supplier",
+      "keywords": [
+        "management group",
+        "inherits"
+      ],
+      "type": "single_choice",
+      "question": "A mining equipment supplier has grown to forty Azure subscriptions across its business units. A governance lead must apply one compliance requirement to every subscription, current and future, with the least ongoing effort. Where should the assignment be applied?",
+      "options": {
+        "A": "To each of the subscriptions in turn today, and again to each new subscription as it is created",
+        "B": "To every resource group across all the subscriptions, keeping the assignment as close to resources as possible",
+        "C": "Into the platform onboarding runbook that every project team is required to read and follow",
+        "D": "At a management group above the subscriptions, so the assignment inherits down to every current and future one"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "E02",
+        "C": "D09"
+      },
+      "rationale": {
+        "correct": "The containment chain reads resource, resource group, subscription, management group — and settings applied at a level inherit down the chain. Governance at scale is applied at the level above subscriptions precisely so one assignment reaches every subscription beneath it, including ones created later, with no per-subscription repetition.",
+        "distractors": {
+          "A": "Per-subscription assignment works today and breaks tomorrow: it multiplies effort by the subscription count and depends on someone remembering every new subscription — the hierarchy exists so nobody has to.",
+          "B": "Resource groups sit below subscriptions; assigning there multiplies the work further and leaves gaps whenever a new group appears. Inheritance flows down from above, which is where a broad obligation belongs.",
+          "C": "A runbook informs people; it enforces nothing. Compliance that lives in documentation depends on every team reading and remembering it, which is not a control."
+        }
+      }
+    },
+    {
+      "id": "2.07",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "commercial bakery group",
+      "keywords": [
+        "containers",
+        "Azure Functions"
+      ],
+      "type": "single_choice",
+      "question": "A commercial bakery group runs three workloads: a legacy ordering app that needs its own specially configured operating system, a packaged web API the team ships as a portable image, and a snippet of code that should run only when a delivery webhook fires. Which mapping fits the three?",
+      "options": {
+        "A": "Virtual machines for the ordering app, containers for the packaged API, Azure Functions for the webhook code",
+        "B": "Containers for all three workloads, as container images standardize operations across every environment",
+        "C": "Virtual machines for all three workloads, sized generously so that each has headroom to grow into",
+        "D": "Azure Functions for the ordering app, virtual machines for the webhook code, and containers for the API"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D14",
+        "C": "D03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The choice follows what the workload needs you to manage. Needing a specially configured operating system means owning the OS, which is the virtual machine case. A packaged runtime shipped as a portable image is the container case. Code that should exist only while an event is being handled — the delivery webhook — is the functions case: event-driven, with nothing to manage between firings.",
+        "distractors": {
+          "B": "Standardizing on images ignores the first workload's stated need to own and configure its operating system, which containers deliberately abstract away; the slogan fits two workloads and breaks on the third.",
+          "C": "Uniform virtual machines hand the team three operating systems to patch when only one workload needs that control, and generous sizing pays around the clock for a webhook that runs in bursts.",
+          "D": "This mapping crosses every need: the OS-bound ordering app loses its operating system on Functions, and the event-driven snippet inherits a full virtual machine that idles between webhooks."
+        }
+      }
+    },
+    {
+      "id": "2.08",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "car rental fleet operator",
+      "keywords": [
+        "Virtual Machine Scale Sets",
+        "availability set"
+      ],
+      "type": "single_choice",
+      "question": "A car rental fleet operator's reservation web tier runs on identical virtual machines, and the instance count should rise and fall automatically as booking demand moves. Which construct provides this?",
+      "options": {
+        "A": "An availability set that spreads the reservation tier across update domains and fault domains",
+        "B": "Azure Virtual Desktop, which delivers managed instances to reservation staff on demand",
+        "C": "Virtual Machine Scale Sets running identical managed instances that grow and shrink with demand",
+        "D": "A single larger VM size with capacity for the peak, avoiding instance-count changes entirely"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E01",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Virtual Machine Scale Sets run a set of identical, centrally managed instances and change the instance count automatically with demand — elasticity for a uniform tier is exactly their job. Availability sets and Azure Virtual Desktop answer different questions, and a bigger machine answers none: demand here moves both up and down.",
+        "distractors": {
+          "A": "An availability set staggers update domains and fault domains so maintenance and hardware failure do not take the whole tier down at once; it never changes how many instances exist.",
+          "B": "Azure Virtual Desktop delivers the desktop itself as a service to end users; a public reservation web tier is not a desktop workload.",
+          "D": "One large machine sized for the peak pays for the peak at every hour of the year and still offers no automatic response when demand exceeds the guess."
+        }
+      }
+    },
+    {
+      "id": "2.09",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "heavy machinery importer",
+      "keywords": [
+        "network interface",
+        "public IP"
+      ],
+      "type": "multiple_response",
+      "question": "A heavy machinery importer is scripting the creation of a new Azure virtual machine for an internal parts catalog that must not be reachable from the internet. Which TWO resources are required for the VM to exist and run at all? (Select TWO.)",
+      "options": {
+        "A": "A managed disk for the operating system",
+        "B": "A public IP address on the network interface",
+        "C": "A network interface joined to a virtual network",
+        "D": "An Azure Bastion host deployed into the virtual network",
+        "E": "An availability set containing the virtual machine"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "D13",
+        "D": "D01",
+        "E": "E03"
+      },
+      "rationale": {
+        "correct": "A virtual machine cannot exist without its dependent resources: an operating-system disk and a network interface that joins it to a virtual network, each created alongside the VM and billed as itself. A public address is required only when the machine must be reachable from the internet — the opposite of this catalog's requirement.",
+        "distractors": {
+          "B": "A public IP address is optional, attached only when internet reachability is wanted; for an internal-only catalog it would add exposure the requirement explicitly rules out.",
+          "D": "Bastion is an access convenience for administrators, not an existence requirement; virtual machines run without one.",
+          "E": "An availability set is a resilience option chosen at deployment, not a dependency: a standalone VM needs no set to exist."
+        }
+      }
+    },
+    {
+      "id": "2.10",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "golf resort group",
+      "keywords": [
+        "web app",
+        "host"
+      ],
+      "type": "single_choice",
+      "question": "A golf resort group is choosing where its booking website runs. The two-person web team wants to push code and have the host's operating system, patching, and web-server plumbing handled for them — and it does not want to adopt container images. Which hosting option fits?",
+      "options": {
+        "A": "A container platform running the site as images the team builds, ships, and maintains itself",
+        "B": "A managed web app, deploying code while the platform operates the host beneath it",
+        "C": "Virtual machines, giving the team full control of the web server and its operating system",
+        "D": "Azure Front Door, caching the booking pages at the edge so that no web host is required"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "D01",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "The deciding question for application hosting is how much of the host the team wants to own. Wanting to push code while the operating system, patching, and web-server plumbing are handled by the platform — and explicitly not managing container images — points at the managed web app option: the platform operates the host, and the team owns only the application.",
+        "distractors": {
+          "A": "Containers shift the packaging to images the team builds and maintains, which is precisely the adoption the team declined; that host abstraction is bought with new packaging work.",
+          "C": "Full control of the web server and operating system is what a two-person team asked to avoid: virtual machines hand back patching and plumbing along with the control.",
+          "D": "Front Door sits outside this decision and outside the outline's hosting options — edge caching accelerates delivery of a site that must still be hosted somewhere, and a booking site's dynamic pages need that host."
+        }
+      }
+    },
+    {
+      "id": "2.11",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "ceramics manufacturer",
+      "keywords": [
+        "virtual network",
+        "Azure DNS"
+      ],
+      "type": "single_choice",
+      "question": "A ceramics manufacturer places its production database subnet and its web subnet in the same virtual network. An auditor asks what traffic flows by default and how the estate's name resolution should be run. Which statement is correct?",
+      "options": {
+        "A": "Subnets inside one virtual network are isolated from one another until virtual network peering is explicitly configured between them",
+        "B": "Two virtual networks route to each other automatically, since every Azure virtual network shares the platform's one backbone",
+        "C": "The estate's DNS zones must run on separate infrastructure with separate credentials, kept apart from the Azure estate",
+        "D": "The virtual network is isolated by default, its subnets route to each other, and Azure DNS is managed like any other Azure resource"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "D19",
+        "C": "D01"
+      },
+      "rationale": {
+        "correct": "Isolation sits at the virtual network boundary, not inside it: a virtual network is isolated by default, while the subnets that segment it route to one another by default. Name resolution does not need an outside system — Azure DNS hosts the zones and is managed with the same credentials, tooling, and billing as the rest of the estate.",
+        "distractors": {
+          "A": "Peering connects separate virtual networks; subnets of the same network need no such step and exchange traffic by default — restricting them is what requires deliberate configuration.",
+          "B": "The default runs the other way between networks: each virtual network is an isolation boundary, and traffic flows between two of them only once peering or a gateway is configured.",
+          "C": "Separateness is exactly what Azure DNS removes: zones are Azure resources, administered with the estate's existing credentials and tooling rather than on a parallel system."
+        }
+      }
+    },
+    {
+      "id": "2.12",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "cruise line operations",
+      "keywords": [
+        "ExpressRoute",
+        "site-to-site"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line operations center must connect its on-premises booking estate to Azure. The link will carry constant reservation traffic, and the line's regulators require predictable latency on a path that does not traverse the public internet. Which connectivity option fits?",
+      "options": {
+        "A": "ExpressRoute, a private circuit into Azure with predictable latency",
+        "B": "A site-to-site VPN, an encrypted tunnel from the operations center over the internet",
+        "C": "Point-to-site VPN connections established from each of the booking terminals individually",
+        "D": "Virtual network peering configured between the operations center and the Azure estate"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E03",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The constraints are who is connecting and which requirement dominates: a whole on-premises site, constant traffic, and a regulatory bar on the public internet with predictable latency. That combination is ExpressRoute's case — a private circuit that does not traverse the public internet and behaves predictably. VPN options are encrypted tunnels over the internet, which the requirement excludes.",
+        "distractors": {
+          "B": "A site-to-site VPN connects the right parties the wrong way: the tunnel is encrypted but still rides the public internet, so its latency can never be promised to a regulator.",
+          "C": "Point-to-site serves a single client device at a time; connecting an operations center's whole estate terminal-by-terminal misreads who is connecting, and each tunnel still crosses the internet.",
+          "D": "Peering joins virtual networks to each other across the Microsoft backbone; it has no on-premises end and cannot be the site link this design needs."
+        }
+      }
+    },
+    {
+      "id": "2.13",
+      "domain": "d2",
+      "primary_concept": "C-031",
+      "secondary_concepts": [],
+      "theme": "Z3",
+      "vertical": "art auction house",
+      "keywords": [
+        "private endpoint",
+        "Microsoft backbone"
+      ],
+      "type": "single_choice",
+      "question": "An art auction house keeps consignor contracts in an Azure storage service that is currently reached at its public endpoint. Security asks what actually changes if access moves to a private endpoint inside the firm's virtual network. Which answer is right?",
+      "options": {
+        "A": "Both endpoint types ultimately resolve to the same internet-facing address, so the attack surface stays unchanged",
+        "B": "Traffic still leaves the virtual network and crosses the public internet, but wrapped inside an encrypted tunnel",
+        "C": "The service becomes reachable from inside the virtual network over the Microsoft backbone, and public exposure can be removed",
+        "D": "The contracts must move onto virtual machines inside the virtual network, since platform services cannot be reached privately"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "A private endpoint gives the service an address inside the firm's own virtual network, and traffic to it travels privately over the Microsoft backbone rather than the public internet. What a public endpoint exposes — a service reachable from the internet — is exactly what the change removes from the attack surface once public access is disabled.",
+        "distractors": {
+          "A": "The two endpoint types differ in precisely the property at stake: a private endpoint is an address inside the virtual network, unreachable from the internet, not a relabeled public one.",
+          "B": "An encrypted path across the internet describes a VPN, not a private endpoint; private endpoint traffic stays on the Microsoft backbone and never transits the public internet.",
+          "D": "No redeployment is needed — private endpoints exist so that platform services can be reached privately as they are, without rebuilding them onto infrastructure the firm must then run."
+        }
+      }
+    },
+    {
+      "id": "2.14",
+      "domain": "d2",
+      "primary_concept": "C-032",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "city library network",
+      "keywords": [
+        "Azure Files",
+        "SMB"
+      ],
+      "type": "scenario_matching",
+      "question": "A city library network is redesigning storage for five workloads and must land each on the Azure Storage service whose data shape and access pattern fit. For each workload below, select the storage service. Options may be used more than once.",
+      "matching_options": [
+        "Azure Files",
+        "Azure Queue Storage",
+        "Azure Blob Storage",
+        "Azure Disk Storage"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "Digitized rare-book scans — millions of unstructured image files served to the public catalog at scale."
+        },
+        {
+          "id": "s2",
+          "text": "A shared drive of branch administrative documents that staff open over SMB at a UNC path from library PCs."
+        },
+        {
+          "id": "s3",
+          "text": "The persistent volume behind the catalog database server, attached to its Azure virtual machine."
+        },
+        {
+          "id": "s4",
+          "text": "Small transient messages passed between the checkout kiosks and the worker that emails borrowers."
+        },
+        {
+          "id": "s5",
+          "text": "Nightly export bundles of circulation statistics — large binary objects written once, then read by analysts."
+        }
+      ],
+      "answer": {
+        "s1": "Azure Blob Storage",
+        "s2": "Azure Files",
+        "s3": "Azure Disk Storage",
+        "s4": "Azure Queue Storage",
+        "s5": "Azure Blob Storage"
+      },
+      "rationale": {
+        "correct": "Each storage service matches a data shape and access pattern. Unstructured objects at scale — image scans and export bundles alike — are the blob case. Documents opened over SMB at a UNC path are the files case: a managed file share behaving like the network drive staff already know. A volume attached to a virtual machine is the disk case. Small transient messages passed between components are the queue case. The pair to hold apart is blobs and files: both hold files in the everyday sense, but only Azure Files presents them as an SMB share."
+      }
+    },
+    {
+      "id": "2.15",
+      "domain": "d2",
+      "primary_concept": "C-033",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "academic publishing house",
+      "keywords": [
+        "archive tier",
+        "access pattern"
+      ],
+      "type": "single_choice",
+      "question": "An academic publishing house must retain every typeset manuscript for seven years. Manuscripts are read constantly during their first months, then almost never — but each must remain retrievable throughout. Finance wants the storage spend reduced. What should drive the tier choice?",
+      "options": {
+        "A": "Importance of the data: contractually retained manuscripts belong in the frequent-access tier for safety",
+        "B": "Access pattern over each manuscript's lifetime: the frequent-access tier while new, then cooler and archive rungs as reads stop",
+        "C": "Moving everything to the archive tier at once, as that rung has the lowest per-gigabyte holding price",
+        "D": "Deferring every tier decision until the seven-year retention period ends, avoiding early moves that might need reversing later"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "D14",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Storage tiers trade storage price against access price: the frequent-access tier costs most to hold and least to read, and the archive tier the reverse. The right rung is read off the access pattern — heavily read while new, almost never after — so manuscripts should start hot and descend to cooler and archive rungs as reads stop, staying retrievable at every rung.",
+        "distractors": {
+          "A": "Importance is not a tier criterion — every tier is durable, and a contract in the archive tier is as safe as one in the frequent-access tier. What differs is the price of holding versus the price and speed of reading.",
+          "C": "The archive tier's holding price is bought with the highest access cost and slowest retrieval; archiving manuscripts that are read constantly in their first months moves the spend into reads instead of removing it.",
+          "D": "Deferral pays the frequent-access holding price for years of manuscripts nobody reads; the saving on offer comes precisely from moving down the rungs when the access pattern changes."
+        }
+      }
+    },
+    {
+      "id": "2.16",
+      "domain": "d2",
+      "primary_concept": "C-034",
+      "secondary_concepts": [],
+      "theme": "Z5",
+      "vertical": "bicycle-share operator",
+      "keywords": [
+        "geo-redundant",
+        "locally redundant"
+      ],
+      "type": "single_choice",
+      "question": "A bicycle-share operator stores two datasets: dock telemetry that the bikes can regenerate at any time, and irreplaceable trip-history records that anchor its city contracts. The current default replicates both geo-redundantly. What should the redundancy review conclude?",
+      "options": {
+        "A": "Keep both datasets geo-redundant, as maximum redundancy is always the safest choice",
+        "B": "Move both datasets down to locally redundant storage so the account's costs fall together",
+        "C": "The redundancy rungs differ only in price, as every option survives the same failure classes at different speeds",
+        "D": "Drop the regenerable telemetry to locally redundant storage and keep the irreplaceable records geo-redundant"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D14",
+        "B": "D11",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "The redundancy ladder is read by copies, distance, and the failure class each rung survives — and it is climbed in both directions. Irreplaceable records that anchor city contracts justify the distance of geo-redundancy; telemetry that the bikes can regenerate at any time is expendable, and the cheapest rung is the correct choice for it, not a compromise.",
+        "distractors": {
+          "A": "Maximum redundancy for regenerable telemetry buys protection the data does not need; the ladder exists so each dataset pays for the failure class that actually threatens it.",
+          "B": "Locally redundant copies stand in one facility; for irreplaceable contract records that choice accepts losing everything with a single site, which no saving on telemetry justifies.",
+          "C": "The rungs differ in what they survive, not merely in speed or price: local redundancy fails with its facility, zone redundancy survives a datacenter, and geo-redundancy survives a regional event."
+        }
+      }
+    },
+    {
+      "id": "2.17",
+      "domain": "d2",
+      "primary_concept": "C-035",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "architectural design firm",
+      "keywords": [
+        "Azure File Sync",
+        "AzCopy"
+      ],
+      "type": "single_choice",
+      "question": "An architectural design firm keeps project files on an on-premises Windows file server that branch staff rely on daily, and wants that same share continuously mirrored into Azure Files so both copies stay in step as designs change. Which tool performs this job?",
+      "options": {
+        "A": "Azure File Sync, keeping the on-premises share and Azure Files continuously synchronized",
+        "B": "AzCopy, scripted from the command line to copy the share's contents into Azure",
+        "C": "Azure Storage Explorer, used to browse and transfer the project folders graphically",
+        "D": "Azure Data Box appliances, shipping the file server's contents to Azure on a schedule"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D05",
+        "D": "D10"
+      },
+      "rationale": {
+        "correct": "Continuous two-way synchronization between an on-premises Windows file server and Azure Files is exactly Azure File Sync's job: staff keep using the local share while the cloud copy stays in step as files change. The other tools move data; only File Sync keeps two live copies aligned over time.",
+        "distractors": {
+          "B": "AzCopy performs scripted bulk copies from the command line; every run is a one-way snapshot, and nothing keeps the two sides aligned between runs.",
+          "C": "Storage Explorer is a graphical browse-and-transfer client — right for occasional manual moves, but a person dragging folders is not a synchronization mechanism.",
+          "D": "Data Box is a shipped appliance for volumes the network cannot carry; scheduling shipments still leaves the share and the cloud copy divergent between deliveries."
+        }
+      }
+    },
+    {
+      "id": "2.18",
+      "domain": "d2",
+      "primary_concept": "C-036",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "glass recycling plant",
+      "keywords": [
+        "Azure Data Box",
+        "uplink"
+      ],
+      "type": "single_choice",
+      "question": "A glass recycling plant must move 900 TB of furnace-sensor archives into Azure within six weeks, and its site uplink can carry at most 40 TB in that window while still serving daily traffic. Which migration path fits?",
+      "options": {
+        "A": "Run the transfer over the wire with Azure Migrate, compressing the archives until they fit the uplink",
+        "B": "Order a faster uplink for the site and stream the archives once the new line is installed",
+        "C": "Ship the archives on Azure Data Box appliances, as the wire cannot carry the volume in the time available",
+        "D": "Send a 40 TB sample of the archives now and defer the remainder to the following quarters"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D04",
+        "B": "D03",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "The decision is data volume against network feasibility: 900 TB must arrive within the deadline, and the uplink can carry at most 40 TB in that window. When the wire cannot carry the data in the time available, shipped appliances are the path — Azure Data Box moves the volume offline while the uplink keeps serving daily traffic.",
+        "distractors": {
+          "A": "Compression is a knob, not a bridge: no realistic ratio closes the gap between 900 TB and a 40 TB window, and the transfer mechanism remains the same saturated wire.",
+          "B": "A faster line might eventually carry the volume, but procurement and installation consume the very six weeks this migration has; the constraint binds now, not after an upgrade.",
+          "D": "Shipping a sample redefines the requirement instead of meeting it: the deadline applies to the archives as a whole, and the remainder compounds into an identical problem next quarter."
+        }
+      }
+    },
+    {
+      "id": "2.19",
+      "domain": "d2",
+      "primary_concept": "C-037",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "industrial laundry service",
+      "keywords": [
+        "Microsoft Entra Domain Services",
+        "domain-join"
+      ],
+      "type": "single_choice",
+      "question": "An industrial laundry service is retiring its last on-premises servers. Most workloads authenticate against Microsoft Entra ID, but one legacy scheduling app still requires classic domain-join and older domain protocols. What serves the legacy app without redeploying domain controllers?",
+      "options": {
+        "A": "Configure the app for single sign-on, which replaces the domain protocols it depends on",
+        "B": "Deploy new domain controller virtual machines in Azure and continue managing the domain by hand",
+        "C": "Microsoft Entra ID alone, as the cloud directory speaks every protocol that legacy apps use",
+        "D": "Microsoft Entra Domain Services, a managed domain that provides the legacy protocols"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D01",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "Microsoft Entra ID is the identity authority for users, applications, and devices, and Microsoft Entra Domain Services exists precisely for workloads that still need classic domain-join and legacy domain protocols — a managed domain, served without deploying or operating domain controllers. One tenant keeps serving cloud identities while the managed domain carries the legacy app.",
+        "distractors": {
+          "A": "Single sign-on reduces how often users authenticate across applications; it does not supply the domain-join and legacy protocols the scheduling app itself requires.",
+          "B": "Self-run domain controllers do provide the protocols, at the price of rebuilding the very server estate and operations burden the retirement was meant to end.",
+          "C": "The cloud directory deliberately does not speak the older domain protocols; that gap is the reason the separate managed-domain service exists."
+        }
+      }
+    },
+    {
+      "id": "2.20",
+      "domain": "d2",
+      "primary_concept": "C-038",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "motorcycle dealership network",
+      "keywords": [
+        "authentication",
+        "authorization"
+      ],
+      "type": "single_choice",
+      "question": "A motorcycle dealership network's helpdesk keeps conflating two identity terms, so a trainer gives an example: a salesperson signs in with a password plus a one-time code, and is then allowed to see only her own branch's inventory. Which pairing of terms is correct?",
+      "options": {
+        "A": "Both steps are part of authentication, which finishes only once the inventory scope has been applied",
+        "B": "The sign-in with a second factor is authentication; the branch-inventory limit is authorization",
+        "C": "The sign-in step is the authorization, and the branch-inventory limit is the authentication",
+        "D": "The one-time code makes this passwordless authentication, which also grants the branch permissions"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "E03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Authentication proves who someone is; authorization decides what they may do. A password plus a one-time code is multifactor authentication (MFA) — two proofs of identity — and it ends when identity is established. Limiting the signed-in salesperson to her own branch's inventory is authorization, applied after identity is proven. Passwordless would remove the password entirely, which this sign-in does not.",
+        "distractors": {
+          "A": "Folding the two together erases the boundary the terms exist to mark: proving identity completes before any scope decision, and the inventory limit is a permission, not a proof.",
+          "C": "This reverses the terms: proving who is signing in — password and one-time code — is authentication, and the inventory boundary applied afterward is authorization.",
+          "D": "Passwordless removes the password in favor of another factor; a password plus a code is multifactor authentication, and no authentication factor grants permissions by itself."
+        }
+      }
+    },
+    {
+      "id": "2.21",
+      "domain": "d2",
+      "primary_concept": "C-039",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "children's education charity",
+      "keywords": [
+        "external identities",
+        "partner"
+      ],
+      "type": "single_choice",
+      "question": "A children's education charity wants volunteer coordinators at partner schools — people who already have school accounts — to work in the charity's grant-tracking app without the charity creating or managing accounts for them. Which capability fits?",
+      "options": {
+        "A": "External identities, letting the partners collaborate using the accounts they already have",
+        "B": "Guest passwords created in the charity's tenant and emailed to each coordinator by the admin",
+        "C": "Multifactor authentication for the coordinators, which lets outside users into the tenant",
+        "D": "One shared partner sign-in account used by all the schools, with its password rotated quarterly"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "E01",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "External identities exist for boundary-crossing access: partners and customers who are not in the tenant collaborate using the identities they already hold, with nothing created or managed for them in the charity's directory. The requirement — outside collaborators, no account administration — is that construct's definition.",
+        "distractors": {
+          "B": "Hand-created guest passwords are precisely the account creation and management the charity wants to avoid, and mailed credentials add a handling risk on top of the burden.",
+          "C": "Multifactor authentication strengthens proof of identity for accounts that already have access; it is not a mechanism for admitting people from another organization.",
+          "D": "A shared account erases individual identity: every school acts as one indistinguishable user, access cannot be revoked for one partner alone, and the password spreads further on every rotation."
+        }
+      }
+    },
+    {
+      "id": "2.22",
+      "domain": "d2",
+      "primary_concept": "C-040",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "coffee roastery chain",
+      "keywords": [
+        "Conditional Access",
+        "sign-in"
+      ],
+      "type": "single_choice",
+      "question": "A coffee roastery chain wants this rule: staff signing in from managed roastery laptops on the office network proceed normally, but any sign-in from an unmanaged device or unfamiliar location must first satisfy an additional check before access is granted. Which capability implements the rule?",
+      "options": {
+        "A": "A stricter tenant-wide password policy applied equally to every account and every device",
+        "B": "Azure role-based access control assignments scoped to the roastery's office network subnet",
+        "C": "Microsoft Entra Conditional Access, evaluating signals like device state and location at sign-in",
+        "D": "A weekly review of the tenant's sign-in logs that flags risky access after it has occurred"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "E01",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Deciding at sign-in time what a user must satisfy, from signals such as location, device state, and detected risk, is Microsoft Entra Conditional Access: policy evaluated at the point of authentication, not a standing permission. Familiar signals pass through; unfamiliar ones trigger the additional requirement before access is granted — exactly the rule described.",
+        "distractors": {
+          "A": "A password policy is uniform and signal-blind: it cannot distinguish a roastery laptop on the office network from an unknown device elsewhere, so it cannot vary the requirement between them.",
+          "B": "Role-based access control decides what a signed-in identity may do; it neither observes devices and locations nor imposes requirements at the moment of authentication.",
+          "D": "A log review discovers the risky sign-in days after it succeeded; the requirement is a gate evaluated before access is granted, not an audit that follows it."
+        }
+      }
+    },
+    {
+      "id": "2.23",
+      "domain": "d2",
+      "primary_concept": "C-041",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "orchestra and concert hall",
+      "keywords": [
+        "role assignment",
+        "union"
+      ],
+      "type": "single_choice",
+      "question": "At an orchestra and concert hall, an engineer holds the Reader role on the whole subscription and the Contributor role on one resource group inside it. A colleague claims the subscription-level Reader overrides the narrower grant, leaving the engineer unable to change anything. What is the real effect?",
+      "options": {
+        "A": "The colleague is right: the broadest scope wins, and every narrower assignment is ignored",
+        "B": "The most restrictive assignment applies everywhere, so the engineer is effectively read-only across the estate",
+        "C": "Contributor on the resource group flows upward through the hierarchy, making the engineer a Contributor on the whole subscription",
+        "D": "The assignments combine as a union: read across the subscription, write within that one resource group and its resources"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "C": "E02"
+      },
+      "rationale": {
+        "correct": "Multiple role assignments combine as the union of what they grant, never the intersection: the subscription-level Reader adds read access everywhere, and the resource-group Contributor adds write access within its scope, inherited downward by the group's resources. Nothing overrides anything — each assignment keeps granting its actions at its scope.",
+        "distractors": {
+          "A": "Scope breadth carries no priority: a broad read grant neither blocks nor absorbs a narrower write grant, and the engineer keeps both sets of permissions at once.",
+          "B": "Reading the combination as most-restrictive turns union into intersection — the model works the other way, adding grants together rather than reducing them to the narrowest.",
+          "C": "Inheritance in the hierarchy flows downward only: a grant at a resource group reaches the resources inside it and never climbs to the subscription above."
+        }
+      }
+    },
+    {
+      "id": "2.24",
+      "domain": "d2",
+      "primary_concept": "C-042",
+      "secondary_concepts": [],
+      "theme": "Z6",
+      "vertical": "bottled-water distributor",
+      "keywords": [
+        "Zero Trust",
+        "defense-in-depth"
+      ],
+      "type": "multiple_response",
+      "question": "A bottled-water distributor is rewriting its security standards after moving to Azure. The draft must reflect the Zero Trust model specifically, not merely generic good practice. Which TWO requirements belong under the Zero Trust heading? (Select TWO.)",
+      "options": {
+        "A": "Traffic originating inside the corporate network is trusted and skips re-verification",
+        "B": "Independent security layers are stacked so one breached layer does not breach the system",
+        "C": "Every access request is verified explicitly, whatever network position it comes from",
+        "D": "The perimeter firewall is doubled up so that the boundary becomes harder to cross",
+        "E": "Identities receive the minimum access needed, granted just-in-time where possible"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Zero Trust assumes the network is already hostile: no request is trusted for its network position, every access is verified explicitly, and least-privilege access — minimal and just-in-time — limits what any verified identity can do. Those two requirements restate the model's own principles. Layering controls is the defense-in-depth model: sound practice, but a different model answering a different question.",
+        "distractors": {
+          "A": "Trusting inside-the-perimeter traffic is the assumption Zero Trust exists to reject; assuming breach means the corporate network is not a trust signal at all.",
+          "B": "Stacked independent layers describe the defense-in-depth model — the draft's other heading, not the Zero Trust one; the two models prescribe different things.",
+          "D": "A stronger perimeter deepens the boundary the Zero Trust model declines to rely on; doubling it is perimeter thinking, whatever the thickness."
+        }
+      }
+    },
+    {
+      "id": "2.25",
+      "domain": "d2",
+      "primary_concept": "C-043",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "engineering consultancy",
+      "keywords": [
+        "Microsoft Defender for Cloud",
+        "posture"
+      ],
+      "type": "single_choice",
+      "question": "An engineering consultancy wants a single service that continuously assesses the security posture of its Azure estate, protects its resources against threats, and shows how the infrastructure measures up against regulatory standards. Which service does this?",
+      "options": {
+        "A": "Microsoft Defender for Cloud",
+        "B": "Microsoft Purview",
+        "C": "Azure Security Center",
+        "D": "Azure Advisor"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "E05",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Continuous security-posture assessment, threat protection across the estate, and a regulatory-compliance view of the infrastructure are Microsoft Defender for Cloud's job description. The near misses govern different things: Purview governs and classifies the data estate, Advisor recommends across best-practice categories, and the old Security Center name has been folded into Defender for Cloud.",
+        "distractors": {
+          "B": "Microsoft Purview discovers, maps, and protects sensitive data wherever it travels — governance of the data estate, not posture assessment and threat protection for the infrastructure that holds it.",
+          "C": "Security Center is the service's former name: its capabilities now live inside Microsoft Defender for Cloud, and the current outline knows only the successor.",
+          "D": "Azure Advisor recommends improvements — security among its categories — by analyzing existing resources; it is an advisory surface, not continuous threat protection with a compliance view."
+        }
+      }
+    },
+    {
+      "id": "3.01",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "airport duty-free retail",
+      "keywords": [
+        "resource group",
+        "deallocated"
+      ],
+      "type": "multiple_response",
+      "question": "An airport duty-free retail chain deallocated its seasonal stocktake virtual machine at the end of the summer season. The finance controller expected the workload to drop off the monthly invoice, but charges tied to it keep arriving. Which TWO statements explain what is still being billed? (Select TWO.)",
+      "options": {
+        "A": "The managed disks the deallocated virtual machine was built on are still provisioned, and provisioned storage bills whatever the machine's power state",
+        "B": "The resource group holding the stocktake resources is a billed container in its own right and keeps charging until the group itself is deleted",
+        "C": "Deallocating a virtual machine releases the disks attached to it, so the charges that remain must belong to resources in another subscription",
+        "D": "Every resource meters on its own terms, so the workload's reserved public IP address bills independently of the virtual machine it served",
+        "E": "Resizing the deallocated virtual machine down to the smallest size available will clear the charges that are still arriving"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D19",
+        "E": "D05"
+      },
+      "rationale": {
+        "correct": "Cost in Azure follows the resources that exist, not the activity running on them. Deallocating a virtual machine stops its compute meter, while the storage it was built on stays provisioned and keeps billing, and every other resource in the workload meters separately on its own terms — a reserved public IP address goes on costing whether or not anything is using it. A resource group is only a container: the group itself is free, and what it holds is what gets metered.",
+        "distractors": {
+          "B": "A resource group costs nothing in its own right. It organizes resources for management and billing views, and only the resources inside it carry meters.",
+          "C": "Deallocation releases the compute, not the storage. The disks stay provisioned in the same subscription, which is precisely where the remaining charge is coming from.",
+          "E": "Size sets the rate on a compute meter that is already stopped. The disks and the reserved address are provisioned regardless of the size the machine would run at."
+        }
+      }
+    },
+    {
+      "id": "3.02",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "microbrewery chain",
+      "keywords": [
+        "region",
+        "data transfer"
+      ],
+      "type": "single_choice",
+      "question": "A microbrewery chain runs the same brewing-telemetry deployment for two of its sites, on identically sized virtual machines handling the same volume of readings. The second site's bill is consistently higher. Its readings are written to a storage account in one region while the analytics that consume them run in another, and the dashboards pull those readings across that boundary all day. Which cost factor does the difference point at?",
+      "options": {
+        "A": "The second site's readings arrive in larger daily batches, and data ingested into a storage account is metered on a rising volume tier",
+        "B": "Outbound data transfer: readings leaving one region to be consumed in another are metered on their own line",
+        "C": "The second deployment lives in a separate resource group, which adds a management charge on top of the resources it holds",
+        "D": "The second site retains its readings for longer, so trimming the retention setting will bring the two bills back together"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E02",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "The levers fixed at design time are resource type and size, the region a resource is placed in, the network traffic the design creates, and licensing. Type, size and workload are identical across these two sites, so what is left is the placement decision: the design separates where the data lands from where it is consumed, and traffic leaving a region is metered. A dashboard reading across that boundary all day pays that meter all day.",
+        "distractors": {
+          "A": "Data arriving into a region is not what separates these two bills. The meter that does is on traffic leaving a region, which only the second site's design creates.",
+          "C": "A resource group is a free container. Placing resources in a group of their own changes how they are organized, not what they cost.",
+          "D": "Retention changes how much storage is held, which is a real lever and not this one: both sites hold the same volume of readings, and only one of them moves those readings between regions."
+        }
+      }
+    },
+    {
+      "id": "3.03",
+      "domain": "d3",
+      "primary_concept": "C-046",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "outdoor advertising firm",
+      "keywords": [
+        "the pricing calculator",
+        "estimating"
+      ],
+      "type": "single_choice",
+      "question": "An outdoor advertising firm has board approval to design a campaign-imagery platform, and nothing has been deployed for it. The firm already runs a substantial Azure estate with two years of invoices behind it, and the finance director wants a defensible monthly figure for the proposed platform before a single resource is created. Which approach produces that figure?",
+      "options": {
+        "A": "Cost analysis over the firm's existing estate, filtered to the services the new platform would be built from",
+        "B": "A budget set at the amount the board is willing to fund, with alerts as consumption approaches that line",
+        "C": "The pricing calculator, configured with the proposed services, sizes and regions and priced as a monthly total",
+        "D": "A total-cost-of-ownership comparison against what the firm currently spends on print production"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E01",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Estimating what a design that does not exist yet would cost is the pricing calculator's job: it prices a configuration — chosen services, sizes, regions and quantities — and returns a monthly figure before anything is deployed. Every other cost surface reports on consumption that has already been metered, and the proposed platform has metered nothing.",
+        "distractors": {
+          "A": "Cost analysis reads charges that were actually incurred. The estate's history describes what the firm already runs, and a platform nobody has built has no history to filter.",
+          "B": "A budget records the line the firm is prepared to spend up to and warns as consumption climbs toward it. It states an intention rather than pricing a design.",
+          "D": "A comparison against print-production spend supports a business case. It prices nothing in the proposed configuration, and the ownership comparison is not the estimating surface for an Azure design."
+        }
+      }
+    },
+    {
+      "id": "3.04",
+      "domain": "d3",
+      "primary_concept": "C-047",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "print and signage shop",
+      "keywords": [
+        "cost analysis",
+        "cost management"
+      ],
+      "type": "single_choice",
+      "question": "A print and signage shop's Azure invoice rose by roughly a fifth last month, and no new project was approved in that period. The owner wants to know which resources and which services carried the rise, and on which days it showed up, before changing anything about the estate. Which capability answers that?",
+      "options": {
+        "A": "Cost analysis, slicing the charges already incurred by resource, by service and over time",
+        "B": "The pricing calculator, priced for the same services at the sizes the shop runs today",
+        "C": "A budget for next month set at the previous month's total, with an alert as consumption approaches it",
+        "D": "A tagging scheme applied across the estate so future charges can be attributed to a department"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E01",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Analyzing spend that has already happened is the retrospective half of cost management: it takes incurred charges and slices them by resource, by service and by time until the thing driving a rise is visible. It is the only surface reading what was actually metered, which is what a question about money already spent requires.",
+        "distractors": {
+          "B": "Pricing a configuration estimates what something would cost. It cannot name which resource moved a bill that has already been issued.",
+          "C": "A budget guards the coming period against overrunning a line. It is a forward-looking guard and explains nothing about charges that have already landed.",
+          "D": "Tags make future charges attributable by department and are worth applying. They do nothing for the month in question, whose charges were metered against untagged resources."
+        }
+      }
+    },
+    {
+      "id": "3.05",
+      "domain": "d3",
+      "primary_concept": "C-048",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "sailing school",
+      "keywords": [
+        "budget",
+        "alerts"
+      ],
+      "type": "single_choice",
+      "question": "A sailing school's trustees agreed a monthly ceiling for cloud spend. During a busy summer intake the school went through that ceiling in the third week, and nobody knew until the invoice arrived. The trustees want to be warned while spend is still climbing toward the line rather than after it has been crossed.",
+      "options": {
+        "A": "Review cost analysis at the close of each month and compare the total against the agreed ceiling",
+        "B": "Move the billing review from monthly to weekly so that an overrun comes to light sooner",
+        "C": "Model the intake period in the pricing calculator so the expected total is known before the season",
+        "D": "Set a budget at the agreed ceiling and configure alerts that fire as consumption approaches it"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "D10",
+        "C": "E04"
+      },
+      "rationale": {
+        "correct": "Budgets and alerts are the proactive half of cost management. The budget records the line, and alerts fire as consumption climbs toward it, while there is still a season left in which to act. Anything that reports once the period has closed can only describe an overrun that has already happened.",
+        "distractors": {
+          "A": "A month-end review is a detection control. It names the overrun accurately, and always after the money has gone.",
+          "B": "A shorter review cycle finds the overrun sooner and still finds it afterwards. Between reviews the spend climbs with nothing watching it.",
+          "C": "An estimate made before the season sets an expectation. It watches no actual consumption and says nothing once the intake is under way."
+        }
+      }
+    },
+    {
+      "id": "3.06",
+      "domain": "d3",
+      "primary_concept": "C-049",
+      "secondary_concepts": [],
+      "theme": "Z4",
+      "vertical": "stadium operations company",
+      "keywords": [
+        "tags",
+        "resource groups"
+      ],
+      "type": "single_choice",
+      "question": "A stadium operations company charges its cloud costs back to four business units. Its resource groups are organized by environment — production, staging, test — and several of them hold resources belonging to more than one unit. Finance needs each unit's monthly share, and the operations team has ruled out rebuilding the estate.",
+      "options": {
+        "A": "Reorganize the estate so that every business unit's resources sit in resource groups belonging to that unit alone",
+        "B": "Apply a business-unit tag to each resource and group the monthly cost report by that tag",
+        "C": "Give each unit a role assignment over the resources it owns, and report each unit's costs per assignment",
+        "D": "Split each shared resource group's monthly charge evenly between the business units that use it"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E02",
+        "C": "E01",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "Tags attach metadata to resources so that cost and ownership can be sliced after the fact. They cut across the containment hierarchy instead of replacing it, which is exactly what chargeback needs here: the resource groups stay organized by environment, and the cost report is grouped by the business-unit dimension the tag carries.",
+        "distractors": {
+          "A": "Rebuilding the hierarchy around one reporting need is the move the operations team ruled out, and it trades a structure the team relies on for a dimension that metadata already supplies.",
+          "C": "A role assignment decides who may act on a resource. It authorizes access and carries no cost dimension, so shared groups stay unattributed.",
+          "D": "An even split is an assumption rather than a measurement. The units draw on the shared groups unequally, so the report would charge costs to units that never incurred them."
+        }
+      }
+    },
+    {
+      "id": "3.07",
+      "domain": "d3",
+      "primary_concept": "C-050",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "textile mill",
+      "keywords": [
+        "Microsoft Purview",
+        "classify"
+      ],
+      "type": "single_choice",
+      "question": "A textile mill's compliance officer must find where customer design files containing personal data have spread across the mill's storage accounts and file shares, label them by sensitivity, and keep track of them as copies move between systems. The security posture of the infrastructure holding them was reviewed separately and is not in question.",
+      "options": {
+        "A": "Microsoft Purview, to discover the data, map where it sits and classify it wherever it travels",
+        "B": "Microsoft Defender for Cloud, to raise the security posture of the storage accounts holding the files",
+        "C": "Azure Policy, to deny the creation of any storage account outside the mill's approved configuration",
+        "D": "A published data-handling notice telling staff which locations may and may not hold personal data"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D06",
+        "D": "D09"
+      },
+      "rationale": {
+        "correct": "Governing the data estate is a different job from governing the resource estate the data happens to sit on. Microsoft Purview discovers, maps, classifies and protects sensitive information wherever it travels, which is the only approach here that follows the design files themselves rather than the accounts and services beneath them.",
+        "distractors": {
+          "B": "Defender for Cloud works on the security posture and regulatory compliance of the infrastructure. It hardens the accounts that hold the files and never looks inside them.",
+          "C": "A policy governs what may be created and how it must be configured. It sets rules for the containers, and classifies nothing that lands in them.",
+          "D": "A notice states where personal data is supposed to live. It documents an intention, and discovers, labels and tracks nothing."
+        }
+      }
+    },
+    {
+      "id": "3.08",
+      "domain": "d3",
+      "primary_concept": "C-051",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "veterinary clinic network",
+      "keywords": [
+        "Azure Policy",
+        "regions"
+      ],
+      "type": "single_choice",
+      "question": "A veterinary clinic network is committed to keeping client records inside two approved regions. Engineers at each practice deploy their own resources, and last quarter two test databases turned up in a third region and had to be removed afterwards. The network wants any future deployment outside the approved regions refused at the moment of creation.",
+      "options": {
+        "A": "Apply a lock at each subscription so that resources cannot be created in the regions that are not approved",
+        "B": "Withdraw deployment rights from the practice engineers and route every deployment through the central team",
+        "C": "Assign a policy that permits only the two approved regions, so a deployment elsewhere is refused",
+        "D": "Report monthly on resources by region and remove anything found outside the two approved ones"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D16",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Azure Policy is the deployment-time gate: what compliant looks like is defined once as a rule over a scope, and a resource that violates it is prevented from being created anywhere in that scope. Restricting the regions in which resources may be deployed is the canonical case, and it holds whoever issues the deployment and whichever surface they issue it from.",
+        "distractors": {
+          "A": "A resource lock protects resources that already exist from deletion or modification. It guards what is there and takes no part in deciding what may be created.",
+          "B": "Centralizing every deployment removes the engineers' ability to work instead of making their deployments compliant, and a central team can put a database in the wrong region just as easily.",
+          "D": "A monthly report finds the stray deployment after client records have already landed outside the approved regions — the same after-the-fact removal the network is trying to stop."
+        }
+      }
+    },
+    {
+      "id": "3.09",
+      "domain": "d3",
+      "primary_concept": "C-052",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "wind farm maintenance company",
+      "keywords": [
+        "Azure Policy",
+        "compliance"
+      ],
+      "type": "single_choice",
+      "question": "A wind farm maintenance company adopted a standard this year: every resource carries an owner tag and sits in one of its approved regions. Most of the estate predates the standard. Leadership wants both a list of which existing resources fall short of it and assurance that the same standard holds for everything deployed from now on.",
+      "options": {
+        "A": "Azure Advisor's operational excellence recommendations, read across the whole of the existing estate",
+        "B": "Assign the policy at the subscription and read its compliance state, which evaluates existing resources as well as new ones",
+        "C": "Because a policy takes effect only on deployments made after it is assigned, redeploy the older resources through a template that meets the standard",
+        "D": "An alert rule that fires whenever a resource is found sitting outside the standard the company adopted"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D19",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Azure Policy does two jobs over one estate. It gates new deployments, and it evaluates the resources that already exist against the same definition, reporting each of them as compliant or not. Assigning the definition at a scope that contains the older estate therefore produces the shortfall list and the ongoing enforcement from a single control.",
+        "distractors": {
+          "A": "Advisor recommends improvements drawn from general best practice. It does not evaluate an estate against a standard this company wrote, and it enforces nothing.",
+          "C": "The premise is wrong: an assigned policy evaluates the resources already inside its scope and reports their compliance state, so nothing has to be redeployed to see the shortfall.",
+          "D": "An alert notifies once a condition has been observed in telemetry. It is the notification layer, not an evaluation of resources against a compliance definition."
+        }
+      }
+    },
+    {
+      "id": "3.10",
+      "domain": "d3",
+      "primary_concept": "C-053",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "county courthouse system",
+      "keywords": [
+        "resource lock",
+        "delete"
+      ],
+      "type": "single_choice",
+      "question": "A county courthouse system keeps its case-record storage account in a resource group that four administrators own. During a cleanup last year one of those owners deleted the wrong storage account. The clerk wants the record store protected so that even an owner cannot delete it without a deliberate, separate step first.",
+      "options": {
+        "A": "Apply a delete lock to the storage account, so deletion is refused for every principal until the lock is removed",
+        "B": "Reduce the four administrators from owner to a role that carries fewer permissions on the resource group",
+        "C": "Assign a policy to the resource group that denies the deletion of any storage account inside it",
+        "D": "Turn on an activity log for the resource group so that a deletion is recorded against whoever performed it"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E01",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "A resource lock blocks deletion or modification independently of who holds permissions. It stops an owner exactly as it stops anyone else, and the guarded action can only proceed once the lock has been deliberately removed — which is the separate step the clerk is asking for.",
+        "distractors": {
+          "B": "Changing role assignments changes who is authorized to act. A contributor can still delete a storage account, and the case records would be protected only by whoever holds the next role up.",
+          "C": "A policy governs what may be created and how resources must be configured. The action to be stopped here is the deletion of something that already exists, which is the lock's job.",
+          "D": "An activity log names who deleted the case records once they are gone. Recording a deletion is not refusing one."
+        }
+      }
+    },
+    {
+      "id": "3.11",
+      "domain": "d3",
+      "primary_concept": "C-054",
+      "secondary_concepts": [],
+      "theme": "Z7",
+      "vertical": "insurance brokerage",
+      "keywords": [
+        "Azure Policy",
+        "resource lock",
+        "Azure role-based access control (RBAC)"
+      ],
+      "type": "scenario_matching",
+      "question": "An insurance brokerage is placing four governance requirements against the control that meets each one. For each requirement below, select the control. Options may be used more than once.",
+      "matching_options": [
+        "A resource lock",
+        "Azure role-based access control (RBAC)",
+        "Azure Policy"
+      ],
+      "scenarios": [
+        {
+          "id": "s1",
+          "text": "No resource may be created outside the brokerage's two approved regions, whoever issues the deployment."
+        },
+        {
+          "id": "s2",
+          "text": "The claims database must survive a cleanup: nobody, not even a subscription owner, may delete it until the guard on it is deliberately removed."
+        },
+        {
+          "id": "s3",
+          "text": "Claims analysts must be able to read everything in the reporting resource group and change none of it."
+        },
+        {
+          "id": "s4",
+          "text": "Every virtual machine created from now on must carry a cost-center tag, or the deployment is refused."
+        }
+      ],
+      "answer": {
+        "s1": "Azure Policy",
+        "s2": "A resource lock",
+        "s3": "Azure role-based access control (RBAC)",
+        "s4": "Azure Policy"
+      },
+      "rationale": {
+        "correct": "Three control classes answer three different questions. Azure Policy gates what may be created: a deployment is evaluated against a rule over its scope and refused when it does not comply, which is what both the region restriction and the mandatory cost-center tag need. A resource lock protects what already exists — it blocks deletion or modification regardless of permission, so it stops an owner too, and it has to be removed deliberately before the guarded action can proceed. Azure role-based access control (RBAC) decides who may attempt an action at all, which is the instrument for granting read without change. Only a lock stops an owner deleting; only a policy refuses a non-compliant creation; only a role assignment decides who may try."
+      }
+    },
+    {
+      "id": "3.12",
+      "domain": "d3",
+      "primary_concept": "C-055",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "coffee roastery chain",
+      "keywords": [
+        "the Azure portal",
+        "repeatable"
+      ],
+      "type": "single_choice",
+      "question": "A coffee roastery chain manages its whole Azure estate by hand in the Azure portal. Its cloud lead wants to keep the portal for the work it genuinely suits and move everything else to surfaces better matched to it. Which piece of work should stay in the portal?",
+      "options": {
+        "A": "Building each new roasting site's resource set by hand from a written checklist, so the steps stay familiar to the team",
+        "B": "Applying one configuration change to every site's resources in turn, with the administrator reopening each resource afterwards to confirm it landed",
+        "C": "Keeping the definition of what a site should look like as a library of screenshots a reviewer approves before an administrator applies it",
+        "D": "Exploring an unfamiliar subscription during a support call: seeing how its resources relate and reading one resource's metrics chart"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D02",
+        "B": "D20",
+        "C": "D12"
+      },
+      "rationale": {
+        "correct": "The portal is the graphical control plane, and it is at its best for exploration, visualization and one-off administration: looking over an estate somebody else built, reading a chart, changing one setting once. What it is wrong for is work that must be repeatable, reviewable or performed at scale, because a sequence of clicks cannot be versioned, compared or replayed identically.",
+        "distractors": {
+          "A": "A checklist is what teams reach for when the build should have been repeatable. Identical environments come from a definition that is deployed, not from a human following steps.",
+          "B": "A change applied across an estate belongs to a surface that can iterate over resources. Reopening each resource in the same sitting that changed it also checks the work from inside the context that produced it.",
+          "C": "Screenshots record what somebody intended to build. A reviewer can approve them and still cannot tell whether the estate matches, because the picture is not the thing that gets deployed."
+        }
+      }
+    },
+    {
+      "id": "3.13",
+      "domain": "d3",
+      "primary_concept": "C-056",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "ferry operator",
+      "keywords": [
+        "Azure Cloud Shell",
+        "Azure CLI",
+        "Azure PowerShell"
+      ],
+      "type": "single_choice",
+      "question": "A ferry operator's duty manager has to run one short administrative command from a shared terminal in the port office. Nothing may be installed on that machine and no credentials may be stored on it, and the manager is already signed in to the company's browser session. Which surface fits the constraint?",
+      "options": {
+        "A": "The Azure CLI, installed on the port office terminal because it is the cross-platform command language",
+        "B": "Azure Cloud Shell, opened in the browser and already authenticated for the manager's session",
+        "C": "The Azure portal, stepping through the equivalent setting by hand on the resource's own page",
+        "D": "A request to the central platform team asking them to run the command on the duty manager's behalf"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E03",
+        "C": "E01",
+        "D": "D15"
+      },
+      "rationale": {
+        "correct": "Azure Cloud Shell is the browser-hosted, pre-authenticated shell: it needs nothing installed on the machine in front of the user and leaves no credentials there, and it runs either of the two command languages — the cross-platform Azure CLI or the object-based Azure PowerShell. The constraint here is about where the shell runs and how it authenticates, not about which language the command is written in.",
+        "distractors": {
+          "A": "The Azure CLI is a command language and it is genuinely cross-platform. Installing it is the one thing the terminal forbids, and the same commands run in the browser-hosted shell with no install at all.",
+          "C": "The portal can make the change and is the graphical surface, not a command one. It gives the duty manager a sequence of clicks where a command was asked for.",
+          "D": "Handing the command to another team postpones a task the duty manager is authorized to perform and that a browser-hosted shell already makes possible."
+        }
+      }
+    },
+    {
+      "id": "3.14",
+      "domain": "d3",
+      "primary_concept": "C-057",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "container shipping line",
+      "keywords": [
+        "Azure Arc",
+        "on-premises"
+      ],
+      "type": "single_choice",
+      "question": "A container shipping line runs half its servers on-premises in two port datacenters and a few more with another cloud provider, and a berth-side contract prevents any of them moving this year. The governance team wants those servers inventoried alongside the Azure ones and covered by the same policy assignments.",
+      "options": {
+        "A": "Migrate the port servers into Azure first, and then govern the whole estate natively from there",
+        "B": "A site-to-site connection between the two port datacenters and the shipping line's Azure virtual network",
+        "C": "Azure Arc, which projects the non-Azure servers into Azure so the same management tooling governs them",
+        "D": "Azure Monitor collecting metrics from the port servers into the same workspace as the Azure resources"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D16",
+        "B": "E01",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Azure Arc extends Azure's management plane to what does not run in Azure: on-premises and other-cloud machines are projected into Azure, appear in its inventory, and are governed with the same tooling — policy assignments included — as native resources. The requirement is management reach across the boundary, not connectivity across it and not migration through it.",
+        "distractors": {
+          "A": "Moving the servers is what the berth-side contract rules out this year. It answers a governance requirement by removing the constraint the team was told to work within.",
+          "B": "A network connection makes the port servers reachable. Reachability is not management: the servers still appear in no Azure inventory and no policy can be assigned to them.",
+          "D": "Collecting metrics gives the governance team observation of the port servers. Observation is not governance, and a metric stream carries no policy assignment."
+        }
+      }
+    },
+    {
+      "id": "3.15",
+      "domain": "d3",
+      "primary_concept": "C-058",
+      "secondary_concepts": [],
+      "theme": "Z1",
+      "vertical": "glass recycling plant",
+      "keywords": [
+        "infrastructure as code",
+        "drift"
+      ],
+      "type": "multiple_response",
+      "question": "A glass recycling plant's platform team builds each processing line's environment by hand, and the environments have drifted apart. The team is adopting infrastructure as code. Which TWO things does that change actually buy it? (Select TWO.)",
+      "options": {
+        "A": "It removes the need for a separate approval step, as the deployment tool validates the definition before it runs",
+        "B": "The environment is declared once and deployed repeatedly, so every processing line comes out identical",
+        "C": "Responsibility for what the environments contain moves to the platform provider, which applies the definition",
+        "D": "The estate becomes self-correcting: a resource that drifts from the definition is returned to it with nobody acting",
+        "E": "The definition is a versioned artifact, so a proposed change can be reviewed and approved before it reaches the estate"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D20",
+        "C": "D19",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Infrastructure as code replaces clicking an environment into existence with declaring it. What that buys is repeatability — the same definition deploys the same environment every time — and reviewability, because a versioned artifact can be read, compared and approved before anything reaches the estate. Drift becomes visible for the same reason: there is now a written statement of what the estate should be to compare it against.",
+        "distractors": {
+          "A": "Validation checks that a definition is well formed. Whether the change it describes is the right one is the question an approval step exists to answer.",
+          "C": "Declaring an estate does not move responsibility for its contents. The plant still owns what it deploys, in a definition exactly as it did in the portal.",
+          "D": "Seeing drift and closing it are different things. The definition makes the difference visible, and correcting it is still a deployment somebody chooses to run."
+        }
+      }
+    },
+    {
+      "id": "3.16",
+      "domain": "d3",
+      "primary_concept": "C-059",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "cruise line operations",
+      "keywords": [
+        "Azure Resource Manager",
+        "ARM templates"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line's operations team changes its Azure estate from three directions: the portal, a deployment pipeline that calls the command line, and scripts run by administrators. An auditor asks how one set of permissions and policy rules can possibly hold when three different surfaces are issuing the changes.",
+      "options": {
+        "A": "Every one of those surfaces sends its request to Azure Resource Manager, the control plane where permissions and policy are applied",
+        "B": "Each surface applies its own copy of the permission and policy rules, so the three configurations have to be kept aligned",
+        "C": "Standardize on one surface and withdraw the other two, leaving a single path by which the estate can be changed",
+        "D": "Enable a separate log on each of the three surfaces and reconcile those logs with one another every month"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D16",
+        "D": "D07"
+      },
+      "rationale": {
+        "correct": "Azure Resource Manager is the control plane that every deployment and management request goes through, whatever surface issued it — portal, command line or script. Authentication, role assignments and policy are evaluated there, once, which is why consistency does not depend on the tool an administrator happened to pick. The same control plane accepts ARM templates, the declarative format that makes a repeated deployment identical.",
+        "distractors": {
+          "B": "There are no per-surface copies of the rules to keep aligned. The surfaces are clients of one control plane and carry no enforcement of their own.",
+          "C": "Removing tools narrows how the team can work without changing where enforcement happens, and the surface left standing is evaluated exactly as the two withdrawn ones were.",
+          "D": "Reconciling logs describes afterwards what was allowed through. Consistency here is a property of where requests are evaluated, not of how their records are compared."
+        }
+      }
+    },
+    {
+      "id": "3.17",
+      "domain": "d3",
+      "primary_concept": "C-060",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "heavy machinery importer",
+      "keywords": [
+        "Azure Advisor",
+        "recommendations"
+      ],
+      "type": "single_choice",
+      "question": "A heavy machinery importer's new cloud lead inherits an estate nobody has reviewed for two years. The board asks for a prioritized list of improvements — cheaper, safer, more reliable — derived from how these particular resources are actually configured rather than from a generic checklist.",
+      "options": {
+        "A": "The pricing calculator, priced against the sizes the estate runs today, to show the board where money could be saved",
+        "B": "Azure Advisor, which analyzes the resources that exist and returns personalized recommendations across those categories",
+        "C": "A policy assignment across the subscription, reporting which resources fall short of the importer's own standards",
+        "D": "Microsoft Defender for Cloud's secure score, taken as the answer to the whole of the board's improvement question"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "E01",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Azure Advisor produces personalized best-practice recommendations across cost, security, reliability, performance and operational excellence, and it produces them by analyzing the resources that already exist. That is what separates a recommender from an estimator, which prices a design nobody has built, and from an enforcer, which decides what is allowed. The board asked for advice about this estate, so the surface that reads this estate is the one that answers.",
+        "distractors": {
+          "A": "Pricing a configuration estimates what something would cost. It reads no resource's actual configuration and recommends nothing about security or reliability.",
+          "C": "A policy reports compliance against rules the importer wrote. It enforces a standard instead of proposing improvements, and it is silent on everything the standard does not mention.",
+          "D": "Defender for Cloud covers security posture in depth and stops there. Cost, reliability and performance sit outside it, and the board asked about all four."
+        }
+      }
+    },
+    {
+      "id": "3.18",
+      "domain": "d3",
+      "primary_concept": "C-061",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "e-sports league",
+      "keywords": [
+        "Azure Service Health",
+        "incident"
+      ],
+      "type": "single_choice",
+      "question": "Midway through a tournament an e-sports league's match service stops responding. Before touching its own code, the league wants to establish whether Azure is having an incident that affects the services and regions its own subscription depends on.",
+      "options": {
+        "A": "The public Azure status view, which reports incidents affecting the platform overall",
+        "B": "Resource health for the match service's virtual machine, which reports that one machine's own health",
+        "C": "Azure Service Health, which reports incidents and planned maintenance for this subscription's services and regions",
+        "D": "An alert on the match service's response time, which fires whenever responses slow beyond the threshold"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Three questions about one outage have three surfaces. Whether the platform is having an incident at all is the public status view; whether an incident touches the services and regions this subscription uses is Azure Service Health; and whether one particular resource is healthy is that resource's own health view. The league is asking the middle question, which is the personalized one.",
+        "distractors": {
+          "A": "The public view answers whether anything anywhere is wrong. It is not filtered to this subscription, so a page listing no broad incident still leaves the league's own regions unanswered.",
+          "B": "Resource health is the right family at the wrong level. It describes one machine, and cannot say whether a regional service the league depends on is degraded.",
+          "D": "An alert reports that the league's own service is slow, which is the symptom already in front of them. It says nothing about whether a platform incident is the cause."
+        }
+      }
+    },
+    {
+      "id": "3.19",
+      "domain": "d3",
+      "primary_concept": "C-062",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "orchestra and concert hall",
+      "keywords": [
+        "Azure Monitor",
+        "metrics and logs"
+      ],
+      "type": "single_choice",
+      "question": "An orchestra and concert hall runs ticketing, door access and building-sensor workloads across many Azure resources. Each team reads its own resource's telemetry in isolation, and when ticketing slowed last week nobody could line that up against what the rest of the estate was doing. The venue wants one place that collects metrics and logs from all of those resources and can act on what they show.",
+      "options": {
+        "A": "Log Analytics on its own, as the workspace in which collected log data is queried",
+        "B": "Application Insights, as the telemetry surface for what happens inside the ticketing application",
+        "C": "A portal dashboard for each team, pinned with the charts for that team's own resources",
+        "D": "Azure Monitor, the platform that collects, correlates and acts on telemetry from the whole estate"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E03",
+        "B": "E02",
+        "C": "D02"
+      },
+      "rationale": {
+        "correct": "Azure Monitor is the telemetry platform for the estate: it collects metrics and logs from many resources, correlates them in one place, and acts on what it finds. The named surfaces beneath it are parts of that platform rather than rivals to it — one is where collected data is queried, another reports what happens inside an application — so an estate-wide collection and correlation requirement is answered by the platform itself.",
+        "distractors": {
+          "A": "Querying is one job inside the platform. A workspace answers questions of data that something else collected, and does not itself gather the venue's estate-wide telemetry or act on it.",
+          "B": "Application Insights sits at the application level and reports what happens inside one application. The requirement spans door access and building sensors as much as ticketing.",
+          "C": "Per-team dashboards are what the venue already has in effect: each team watches its own resources, which is exactly the isolation that stopped anyone correlating the slowdown."
+        }
+      }
+    },
+    {
+      "id": "3.20",
+      "domain": "d3",
+      "primary_concept": "C-063",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "mining equipment supplier",
+      "keywords": [
+        "Log Analytics",
+        "query"
+      ],
+      "type": "single_choice",
+      "question": "A mining equipment supplier already collects log data from its Azure estate into one workspace. After a delivery-tracking failure an engineer wants to interrogate what was collected — which requests failed, on which resources, in the twenty minutes around the failure — and to refine the question as the answers come back.",
+      "options": {
+        "A": "Log Analytics, the surface on which collected log data is queried and analyzed",
+        "B": "An alert rule on the failed-request signal, set to fire when failures cross a threshold",
+        "C": "Application Insights, instrumenting the delivery-tracking application so the data is gathered again",
+        "D": "Azure Advisor's operational excellence recommendations for the resources that were involved"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Log Analytics is the query surface: the place where log data that has already been collected is interrogated and analyzed, question by question, as an investigation narrows. It is neither the pipeline that gathers the telemetry nor the layer that notifies somebody about it — those are separate jobs inside the same platform.",
+        "distractors": {
+          "B": "An alert rule watches a signal for a condition and tells somebody when it is met. It notifies; it does not let an engineer ask a new question of data already collected.",
+          "C": "Instrumenting the application adds another source of telemetry, and the supplier's data is already in the workspace. Collecting again answers nothing about what was collected then.",
+          "D": "Advisor returns recommendations about how resources are configured. The engineer needs the specific events around one failure, which no recommendation contains."
+        }
+      }
+    },
+    {
+      "id": "3.21",
+      "domain": "d3",
+      "primary_concept": "C-064",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "bicycle-share operator",
+      "keywords": [
+        "Azure Monitor alerts",
+        "threshold"
+      ],
+      "type": "single_choice",
+      "question": "A bicycle-share operator's docking-station service degrades quietly: the queue of unprocessed dock events climbs for an hour before riders begin reporting problems. Operations wants to be told the moment queue depth crosses its agreed threshold, and wants the processing job restarted when that happens.",
+      "options": {
+        "A": "A saved Log Analytics query over the queue-depth data, run by an engineer at the start of each day",
+        "B": "A wall-screen dashboard in the operations room showing queue depth as it rises and falls",
+        "C": "Change the daily service summary into an hourly one so that the climb shows up sooner",
+        "D": "An Azure Monitor alert on the queue-depth signal, firing at the threshold and triggering the restart"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D07",
+        "B": "E04",
+        "C": "D10"
+      },
+      "rationale": {
+        "correct": "Azure Monitor alerts are the notification-and-action layer: a rule watches a signal for a stated condition, fires when the condition is met, and can trigger a response as well as telling somebody. Storing telemetry and querying it are separate jobs, and neither of them reaches out when a threshold is crossed.",
+        "distractors": {
+          "A": "A saved query answers the question when somebody runs it. Overnight the queue climbs with nothing watching, which is the gap operations described.",
+          "B": "A dashboard shows the climb to whoever happens to be looking. Observation is not notification, and nothing on a screen restarts the processing job.",
+          "C": "An hourly summary shortens the wait and keeps its shape: the operator still learns after the fact and still has to act by hand."
+        }
+      }
+    },
+    {
+      "id": "3.22",
+      "domain": "d3",
+      "primary_concept": "C-065",
+      "secondary_concepts": [],
+      "theme": "Z2",
+      "vertical": "motorcycle dealership network",
+      "keywords": [
+        "Application Insights",
+        "requests"
+      ],
+      "type": "single_choice",
+      "question": "A motorcycle dealership network's booking site is slow for some customers, while every metric on the virtual machines, disks and network beneath it sits well inside normal. The team needs to see which requests inside the booking application are failing or running long, and which pages customers actually reach.",
+      "options": {
+        "A": "Azure Monitor metrics for the underlying virtual machines and disks, read over a longer window",
+        "B": "Log Analytics queries over the platform logs already collected from those same resources",
+        "C": "Application Insights, the application surface of the telemetry platform, which reports request failures and usage",
+        "D": "Move the booking site onto a larger virtual machine size so that the slow requests complete sooner"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "E03",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Application-level telemetry sits at a different altitude from platform-level collection. Request failures, performance anomalies and how customers actually use the pages happen inside the application, and Application Insights is the surface of the telemetry platform that reports them. The infrastructure beneath looks healthy precisely because the problem is not at that level.",
+        "distractors": {
+          "A": "Platform metrics describe the machines and disks the application runs on, which the team has already found healthy. A longer window shows more of the same level.",
+          "B": "Querying platform logs interrogates telemetry gathered from the infrastructure. The failing requests were never in that data, so no query over it returns them.",
+          "D": "More capacity answers a resource constraint, and the resources are not constrained. The slow requests would stay slow on a larger machine, and stay undiagnosed."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2336 @@
+{
+  "version": "0.1.0",
+  "questions": [
+    {
+      "id": "1.01",
+      "domain": "d1",
+      "primary_concept": "C-001",
+      "theme": "C1",
+      "vertical": "building materials supplier",
+      "keywords": [
+        "value proposition",
+        "on-demand"
+      ],
+      "type": "single_choice",
+      "question": "The finance director of a building materials supplier is reviewing an AWS proposal just after the company negotiated a bulk discount on replacement servers for its own data center. She asks what AWS actually means by the value proposition of the AWS Cloud. Which statement captures it?",
+      "options": {
+        "A": "Computing spend becomes a fixed annual fee that stays flat no matter how much capacity the company consumes",
+        "B": "Up-front purchases of owned capacity are replaced with on-demand resources that are started and stopped as demand requires",
+        "C": "AWS takes over responsibility for operating and securing everything the company runs, including its applications and data",
+        "D": "The strongest argument is that most large suppliers in the building trade have already moved their systems to the cloud"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E02",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "The value proposition of the AWS Cloud is trading capital-heavy, slow-to-change owned infrastructure for on-demand capacity: the company provisions resources when demand appears and releases them when it fades, instead of buying hardware years ahead of need. The recent server discount does not change that structural argument.",
+        "distractors": {
+          "A": "This inverts the pricing model: AWS charges are usage-driven and variable, not a flat annual fee independent of consumption.",
+          "C": "The shared responsibility model leaves the customer responsible for its applications, data, and configuration; AWS does not absorb everything the company runs.",
+          "D": "What other suppliers have done is an observation about the market, not the value proposition; the argument rests on the cost-structure change, not on imitation."
+        }
+      }
+    },
+    {
+      "id": "1.02",
+      "domain": "d1",
+      "primary_concept": "C-002",
+      "theme": "C1",
+      "vertical": "adventure tour operator",
+      "keywords": [
+        "global reach",
+        "speed of deployment",
+        "global infrastructure"
+      ],
+      "type": "single_choice",
+      "question": "An adventure tour operator based in Auckland wants to start selling guided trips to customers in Chile, Norway, and Japan next quarter, with the booking system responding quickly in each market. The operations lead assumes this requires leasing server space in each country first. Which benefit of the AWS global infrastructure answers this concern?",
+      "options": {
+        "A": "Elasticity, which adjusts the capacity of the booking system up and down as seasonal demand changes",
+        "B": "AWS Direct Connect, which provides a dedicated private network link from the Auckland office into AWS",
+        "C": "A phased plan that delays each market launch until a local hosting contract has been signed in that country",
+        "D": "Global reach with speed of deployment: infrastructure launches in AWS Regions near each market as a configuration step"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E01",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Presence in many geographies is itself the benefit: the AWS global infrastructure turns entering a new market into a configuration step. Global reach and speed of deployment mean the operator can run the booking system close to customers in each country without leasing anything locally.",
+        "distractors": {
+          "A": "Elasticity matches provisioned capacity to demand in both directions; it says nothing about where in the world that capacity runs.",
+          "B": "AWS Direct Connect links a fixed site into AWS; it is a connectivity service for the office, not a mechanism for serving customers in new geographies.",
+          "C": "Waiting for local hosting contracts recreates the slow path the global infrastructure exists to remove; the capacity is already deployed in Regions near each market."
+        }
+      }
+    },
+    {
+      "id": "1.03",
+      "domain": "d1",
+      "primary_concept": "C-003",
+      "theme": "C1",
+      "vertical": "campus shuttle service",
+      "keywords": [
+        "elasticity",
+        "high availability",
+        "agility"
+      ],
+      "type": "single_choice",
+      "question": "A campus shuttle service runs a bus-tracking backend that automatically grows to forty instances during term time and shrinks to four each summer, and riders have never noticed an outage. When the university asks which cloud benefit the automatic growing and shrinking demonstrates, what is the correct answer?",
+      "options": {
+        "A": "Elasticity: provisioned capacity follows demand in both directions, expanding for the term and contracting for the summer",
+        "B": "Agility: the path from an idea to a running system is shorter than it would be in a traditional data center",
+        "C": "AWS Auto Scaling: the service that adds instances to the fleet and removes them as load changes",
+        "D": "High availability: a fleet that resizes itself is automatically protected against outages of any kind"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E01",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Matching provisioned capacity to demand in both directions is the definition of elasticity. The question asks for the cloud benefit being demonstrated, and elasticity is exactly the property the growing and shrinking fleet exhibits.",
+        "distractors": {
+          "B": "Agility describes shortening the path from idea to running system; the scenario describes capacity following demand, not delivery speed.",
+          "C": "AWS Auto Scaling is the service that implements the behavior; the question asks for the property being demonstrated, and a service name is not a cloud benefit.",
+          "D": "High availability keeps a service reachable through failure. Resizing a fleet with demand does not by itself protect against outages, and the absence of outages is a separate property from capacity matching demand."
+        }
+      }
+    },
+    {
+      "id": "1.04",
+      "domain": "d1",
+      "primary_concept": "C-004",
+      "theme": "C1",
+      "vertical": "chartered surveying practice",
+      "keywords": [
+        "AWS Well-Architected Framework",
+        "AWS Well-Architected Tool"
+      ],
+      "type": "single_choice",
+      "question": "A chartered surveying practice has been running its mapping workloads on AWS for two years and wants structured design guidance to review them against AWS best practices. Which instrument provides the review lens?",
+      "options": {
+        "A": "The AWS Cloud Adoption Framework (AWS CAF), which organizes an enterprise's journey into the cloud",
+        "B": "An AWS Support case asking a support engineer to review the architecture and report back with findings",
+        "C": "The AWS Well-Architected Framework, the set of pillars and design principles for workloads already on the cloud",
+        "D": "The AWS Well-Architected Tool, the console service that records and tracks workload reviews"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D15",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Design guidance for workloads already running on the cloud is the AWS Well-Architected Framework: its pillars and design principles are the review lens the practice applies to its own architecture.",
+        "distractors": {
+          "A": "The AWS Cloud Adoption Framework (AWS CAF) governs the journey into the cloud - organizing an adoption effort, not reviewing workloads that already run there.",
+          "B": "Handing the review to a support case defers the practice's own judgment; the published framework exists precisely so the team can apply the review lens itself.",
+          "D": "The AWS Well-Architected Tool runs and records a review; the guidance itself - the lens the review applies - comes from the framework, not the tool."
+        }
+      }
+    },
+    {
+      "id": "1.05",
+      "domain": "d1",
+      "primary_concept": "C-005",
+      "theme": "C1",
+      "vertical": "city zoning department",
+      "keywords": [
+        "operational excellence",
+        "sustainability",
+        "pillars"
+      ],
+      "type": "multiple_response",
+      "question": "A city zoning department is preparing its permit-application workload for a first AWS Well-Architected review and wants the team to know the framework's actual pillars before the session. Which TWO of the following are pillars of the AWS Well-Architected Framework? (Select TWO.)",
+      "options": {
+        "A": "Fault tolerance",
+        "B": "Operational excellence",
+        "C": "Increased revenue",
+        "D": "Sustainability",
+        "E": "Elasticity"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "D11",
+        "E": "E04"
+      },
+      "rationale": {
+        "correct": "The six pillars are operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability. Of the options offered, operational excellence and sustainability are the two genuine members of the set.",
+        "distractors": {
+          "A": "Fault tolerance sounds like a plausible member, but it is not a pillar; designing for failure lives inside the reliability pillar.",
+          "C": "Increased revenue is one of the business outcomes AWS associates with the AWS Cloud Adoption Framework, not a Well-Architected pillar.",
+          "E": "Elasticity is a benefit of the AWS Cloud - capacity matching demand - not one of the six pillars of the framework."
+        }
+      }
+    },
+    {
+      "id": "1.06",
+      "domain": "d1",
+      "primary_concept": "C-006",
+      "theme": "C1",
+      "vertical": "beverage bottling plant",
+      "keywords": [
+        "reliability",
+        "cost optimization",
+        "performance efficiency"
+      ],
+      "type": "single_choice",
+      "question": "During a Well-Architected review at a beverage bottling plant, the discussion turns to the line-telemetry workload: it must keep operating through the loss of an Availability Zone and recover quickly from any disruption. The plant manager keeps steering the conversation back to the size of the monthly bill. Under which pillar does the recover-from-disruption concern belong?",
+      "options": {
+        "A": "Cost optimization, the pillar the plant manager's concern about the monthly bill falls under",
+        "B": "Reliability, the pillar that owns a workload's ability to recover from disruption and continue operating",
+        "C": "Performance efficiency, the pillar about matching resources to the demands of the workload",
+        "D": "High availability, the pillar dedicated to keeping services reachable through component failure"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D11",
+        "C": "E04",
+        "D": "D19"
+      },
+      "rationale": {
+        "correct": "Recovering from disruption is the reliability pillar's territory: identifying differences between the pillars means placing a stated design concern under the pillar that owns it, and continuing to operate through the loss of an Availability Zone is a reliability concern.",
+        "distractors": {
+          "A": "The bill is a real concern, but it is a different concern; assigning the recovery question to cost optimization answers the loudest voice in the room instead of the stated design issue.",
+          "C": "Performance efficiency owns matching resources to demand; the concern described is disruption recovery, which belongs to a different pillar.",
+          "D": "High availability is a cloud benefit, not a Well-Architected pillar; the pillar that owns recovery from disruption is reliability."
+        }
+      }
+    },
+    {
+      "id": "1.07",
+      "domain": "d1",
+      "primary_concept": "C-007",
+      "theme": "C1",
+      "vertical": "agricultural seed distributor",
+      "keywords": [
+        "cloud adoption strategies"
+      ],
+      "type": "single_choice",
+      "question": "The board of an agricultural seed distributor has approved a move to AWS and assumes this means shutting the data center and moving every system in a single weekend cutover. What should the IT director explain about how organizations adopt the cloud?",
+      "options": {
+        "A": "Adoption follows a chosen strategy: the organization selects among cloud adoption strategies and sequences workloads deliberately",
+        "B": "A single undifferentiated cutover is correct, since running cloud and data-center systems side by side only adds confusion",
+        "C": "Adoption should be postponed until every system has been rewritten for the cloud, and then completed in one final step",
+        "D": "Every system must be moved unchanged first in all cases, because that is the universally recommended migration practice"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D02",
+        "C": "D15",
+        "D": "D14"
+      },
+      "rationale": {
+        "correct": "Cloud adoption is a planned strategy rather than a single lift event: an organization chooses among cloud adoption strategies and sequences workloads deliberately, which is exactly what the board's weekend-cutover picture misses.",
+        "distractors": {
+          "B": "Collapsing the move into one undifferentiated cutover removes the sequencing an adoption effort needs; mixed environments during a transition are normal, not a defect.",
+          "C": "Waiting for every system to be rewritten postpones value indefinitely and converts a manageable sequence into one large, riskier event.",
+          "D": "Moving everything unchanged is one available strategy, not a universal rule; applying it in all cases ignores the choice the organization is supposed to make."
+        }
+      }
+    },
+    {
+      "id": "1.08",
+      "domain": "d1",
+      "primary_concept": "C-008",
+      "theme": "C6",
+      "vertical": "coffee equipment importer",
+      "keywords": [
+        "Migration Evaluator",
+        "business case"
+      ],
+      "type": "single_choice",
+      "question": "A coffee equipment importer wants a data-driven business case - an inventory of its current servers, their utilization, and a projected AWS run cost - before the board will approve a migration, and it has no budget yet for outside help. Which resource supplies this?",
+      "options": {
+        "A": "AWS Pricing Calculator, which estimates the monthly cost of a planned AWS architecture",
+        "B": "A paid engagement with a consulting firm to produce a bespoke migration assessment",
+        "C": "AWS Migration Hub, which tracks the progress of migrations that are already underway",
+        "D": "Migration Evaluator, which analyzes the current environment and builds a projected business case"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "D01",
+        "C": "E04"
+      },
+      "rationale": {
+        "correct": "Among the resources that support the cloud migration journey, Migration Evaluator is the one that starts from the existing environment - inventory and utilization - and produces a data-driven business case, before any paid engagement is bought.",
+        "distractors": {
+          "A": "AWS Pricing Calculator estimates a design you specify going forward; it does not analyze the importer's current environment or produce a business case from it.",
+          "B": "A paid assessment buys machinery the problem does not yet warrant; a no-cost resource that produces exactly this business case already exists.",
+          "C": "AWS Migration Hub tracks migrations in progress; the importer needs the analysis that comes before a migration starts."
+        }
+      }
+    },
+    {
+      "id": "1.09",
+      "domain": "d1",
+      "primary_concept": "C-009",
+      "theme": "C1",
+      "vertical": "actuarial consulting firm",
+      "keywords": [
+        "AWS Cloud Adoption Framework (AWS CAF)",
+        "Reduced business risk",
+        "Increased revenue"
+      ],
+      "type": "multiple_response",
+      "question": "An actuarial consulting firm at the start of its cloud journey adopts the AWS Cloud Adoption Framework (AWS CAF) to organize the effort, and the partners ask what business outcomes AWS associates with it. Which TWO are among them? (Select TWO.)",
+      "options": {
+        "A": "Reduced business risk",
+        "B": "Performance efficiency",
+        "C": "Increased revenue",
+        "D": "A flat monthly AWS bill that does not vary with usage",
+        "E": "Transfer of the customer's security responsibilities to AWS"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "C"
+      ],
+      "distractor_patterns": {
+        "B": "E04",
+        "D": "E05",
+        "E": "E02"
+      },
+      "rationale": {
+        "correct": "The AWS Cloud Adoption Framework (AWS CAF) is the instrument that organizes an adoption effort, and four business outcomes are attached to it: reduced business risk; improved environmental, social, and governance (ESG) performance; increased revenue; and increased operational efficiency.",
+        "distractors": {
+          "B": "Performance efficiency is a pillar of the AWS Well-Architected Framework, a different instrument; it is not one of the AWS CAF business outcomes.",
+          "D": "AWS pricing remains usage-driven; a flat bill is not how cloud charges work and is not an outcome the framework promises.",
+          "E": "The shared responsibility model still applies after adoption; the customer keeps its side, and the AWS CAF does not transfer it."
+        }
+      }
+    },
+    {
+      "id": "1.10",
+      "domain": "d1",
+      "primary_concept": "C-010",
+      "theme": "C1",
+      "vertical": "apartment listings portal",
+      "keywords": [
+        "database replication",
+        "cutover"
+      ],
+      "type": "single_choice",
+      "question": "An apartment listings portal must move its listings database to AWS. Agents add and edit listings around the clock, the operations team has a cutover window of minutes, not hours, and no write made during the move may be lost. Which migration approach fits these constraints?",
+      "options": {
+        "A": "Deferring the database move until the rest of the estate has migrated and accepting a stale copy meanwhile",
+        "B": "A one-time bulk export restored into the cloud database during a scheduled overnight outage window",
+        "C": "Database replication, with ongoing change capture applied to the cloud target until the switch",
+        "D": "Rebuilding the listings data in a different database engine as part of the move to avoid carrying the old schema"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D15",
+        "B": "E04",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "Writes that never stop and a cutover window measured in minutes imply database replication: the source database stays in service while its changes are captured and applied to the cloud target as they commit, so the switch has only the newest changes left to settle. It is the worked example of moving a data tier with minimal disruption, and identifying appropriate migration strategies from constraints like these is the judgment the question asks for.",
+        "distractors": {
+          "A": "Deferral postpones the hardest move while its cost compounds: the writes keep arriving, the copy left behind drifts further from the source, and none of the stated constraints is met by waiting.",
+          "B": "A bulk export needs an outage window and misses writes that land after the export; the stem rules out exactly that downtime.",
+          "D": "Changing the database engine mid-move adds a redesign the problem does not require; the task is moving the data tier with minimal disruption, not re-architecting it."
+        }
+      }
+    },
+    {
+      "id": "1.11",
+      "domain": "d1",
+      "primary_concept": "C-011",
+      "theme": "C1",
+      "vertical": "cold-chain trucking fleet",
+      "keywords": [
+        "fixed costs",
+        "variable costs",
+        "cost savings of moving to the cloud"
+      ],
+      "type": "single_choice",
+      "question": "The CFO of a cold-chain trucking fleet budgets a large hardware purchase every few years plus fixed data-center contracts, and asks what structurally changes about costs if the telematics platform moves to AWS. Which answer describes the change?",
+      "options": {
+        "A": "Up-front capital spending on owned capacity becomes usage-driven, variable operating spend that tracks actual consumption",
+        "B": "Variable operating costs are converted into fixed capital costs, making the annual budget easier to predict",
+        "C": "Total cost is guaranteed to fall for every workload the fleet moves, whatever its usage pattern",
+        "D": "Logistics firms that moved report large savings, so the same percentage can be booked into next year's budget without analysis"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "D19",
+        "D": "D12"
+      },
+      "rationale": {
+        "correct": "The cost-structure change funds every other cloud economic argument: up-front, capital, fixed spending on owned capacity becomes usage-driven, variable operating spend. Fixed costs give way to variable costs that track consumption, which is where the cost savings of moving to the cloud actually originate.",
+        "distractors": {
+          "B": "This states the change backwards: cloud spending moves away from fixed capital outlays toward variable, usage-driven operating costs, not the other way around.",
+          "C": "Cloud economics changes the cost structure; it does not guarantee a lower total for every workload regardless of usage pattern.",
+          "D": "Other firms' outcomes are anecdotes about different workloads; the structural change is what the analysis should highlight, and savings still have to be assessed, not booked on imitation."
+        }
+      }
+    },
+    {
+      "id": "1.12",
+      "domain": "d1",
+      "primary_concept": "C-012",
+      "theme": "C1",
+      "vertical": "art print marketplace",
+      "keywords": [
+        "costs that are associated with on-premises environments",
+        "hardware refresh"
+      ],
+      "type": "multiple_response",
+      "question": "An art print marketplace is comparing the full cost of its co-located server room with a proposed AWS deployment. Which TWO cost line items would disappear from its budget entirely once the workloads run on AWS? (Select TWO.)",
+      "options": {
+        "A": "Rack space, power, and cooling charges for the server room",
+        "B": "Spending on compute capacity for the storefront during business hours",
+        "C": "License fees for the commercial database engine the storefront uses",
+        "D": "Periodic hardware refresh purchases as servers reach end of life",
+        "E": "Operating system patching effort, which AWS performs for every service after migration"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "E05",
+        "C": "E04",
+        "E": "E02"
+      },
+      "rationale": {
+        "correct": "Facility costs - space, power, cooling - and the hardware refresh cycle are costs that are associated with on-premises environments and have no cloud equivalent: AWS owns the buildings and the servers. Comparisons that omit them understate what the server room really costs.",
+        "distractors": {
+          "B": "Compute spending does not disappear; it changes shape, from owned capacity to usage-driven charges for what the storefront consumes.",
+          "C": "A commercial license can travel with the workload under a Bring Your Own License model or be replaced by an included license; either way the line item does not simply vanish.",
+          "E": "Patching duty depends on the service: on Amazon EC2 the guest operating system remains the customer's to patch, so the effort does not disappear for every service."
+        }
+      }
+    },
+    {
+      "id": "1.13",
+      "domain": "d1",
+      "primary_concept": "C-013",
+      "theme": "C4",
+      "vertical": "athletic footwear brand",
+      "keywords": [
+        "Bring Your Own License [BYOL] model",
+        "included licenses"
+      ],
+      "type": "single_choice",
+      "question": "An athletic footwear brand owns perpetual licenses for a commercial database engine and intends to keep using those entitlements when the database moves onto AWS compute. Which licensing model describes this arrangement?",
+      "options": {
+        "A": "A conversion model in which the one-time license purchase becomes a flat monthly software fee charged by AWS",
+        "B": "An AWS Marketplace subscription that replaces the perpetual licenses with software procured through the catalog",
+        "C": "License-included pricing, in which the cost of the software license is bundled into the hourly rate of the service",
+        "D": "The Bring Your Own License (BYOL) model, in which the entitlements the brand already owns travel with the workload"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E05",
+        "B": "E01",
+        "C": "E04"
+      },
+      "rationale": {
+        "correct": "Using licenses the organization already owns on cloud infrastructure is the Bring Your Own License [BYOL] model: the entitlement travels with the workload instead of arriving with the service. The alternative - included licenses - would mean paying for the license as part of the service rate.",
+        "distractors": {
+          "A": "No such conversion happens; a perpetual license the brand owns stays owned, and AWS does not restate it as a flat monthly software fee.",
+          "B": "AWS Marketplace is a procurement channel for acquiring new software; the brand is reusing entitlements it already holds, not buying replacements.",
+          "C": "License-included pricing describes the opposite arrangement: the license arrives with the service and is paid for in its rate, not carried in by the customer."
+        }
+      }
+    },
+    {
+      "id": "1.14",
+      "domain": "d1",
+      "primary_concept": "C-014",
+      "theme": "C4",
+      "vertical": "car wash franchise",
+      "keywords": [
+        "rightsizing",
+        "observed demand"
+      ],
+      "type": "single_choice",
+      "question": "A car wash franchise runs its booking system on instances sized three years ago; average utilization now sits below ten percent even at peak. Finance wants the monthly bill reduced without changing how the application works. What is the appropriate first action?",
+      "options": {
+        "A": "Rewrite the booking system as event-driven serverless functions so idle capacity disappears altogether",
+        "B": "Rightsize the instances: match the provisioned resource size to the demand that is actually observed",
+        "C": "Purchase Reserved Instances for the existing instances to obtain a discount on the current shape",
+        "D": "Set a billing alarm on the account so finance is alerted whenever monthly spend rises any further"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "E03",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "Rightsizing is the deliberate cost action that matches provisioned resource size to observed demand. Utilization evidence is already in hand, the application does not need to change, and resizing the oversized instances is the direct, reversible first step.",
+        "distractors": {
+          "A": "A serverless rewrite redesigns the workload, which the franchise explicitly did not ask for; rightsizing is distinct from re-architecting.",
+          "C": "A Reserved Instance discount on an oversized shape locks in the oversizing; buying a discount is distinct from correcting the size.",
+          "D": "A billing alarm watches spend after the fact; the cause - oversized instances - is already known and can be acted on directly."
+        }
+      }
+    },
+    {
+      "id": "1.15",
+      "domain": "d1",
+      "primary_concept": "C-015",
+      "theme": "C4",
+      "vertical": "animal shelter network",
+      "keywords": [
+        "benefits of automation",
+        "provisioning"
+      ],
+      "type": "single_choice",
+      "question": "Across an animal shelter network, staff create a test copy of the adoption system by hand each week and often forget to delete it, leaving idle environments running for weeks. The operations lead asks what automating the provisioning and teardown would actually change. What is the answer?",
+      "options": {
+        "A": "Little would change; the better fix is one larger shared test environment with enough capacity for every team",
+        "B": "It would mainly improve reporting, with a quarterly audit catching any environments left running too long",
+        "C": "It removes both the staff time spent on manual setup and the spend on forgotten idle environments",
+        "D": "The same result comes from a checklist that makes each staff member responsible for remembering the deletion step"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "D07",
+        "D": "D18"
+      },
+      "rationale": {
+        "correct": "The benefits of automation are a cost lever as well as a speed lever: automated provisioning and teardown remove the weekly manual toil and stop the meter on environments nobody remembered to delete. The saving shows up in staff time and in the monthly bill at the same time.",
+        "distractors": {
+          "A": "A larger shared environment adds capacity where the problem is process; the waste comes from environments outliving their use, not from having too little room.",
+          "B": "A quarterly audit discovers idle environments long after they started costing money; automation prevents the idle time instead of reporting on it.",
+          "D": "A checklist pushes the failure onto the people who already forget; automating the teardown removes the reliance on memory altogether."
+        }
+      }
+    },
+    {
+      "id": "1.16",
+      "domain": "d1",
+      "primary_concept": "C-016",
+      "theme": "C1",
+      "vertical": "board-game publisher",
+      "keywords": [
+        "economies of scale"
+      ],
+      "type": "single_choice",
+      "question": "The CFO of a board-game publisher notices that an hour of compute on AWS costs less than the equivalent hour on the publisher's own rack servers, even before staffing is counted, and asks what makes that price possible. Which explanation is correct?",
+      "options": {
+        "A": "The publisher's own usage volume has reached the level at which AWS grants automatic volume discounts",
+        "B": "Shifting spending from capital purchases to operating expense is what lowers the price of each compute hour",
+        "C": "The lower price comes from Reserved Instance discounts that AWS applies to all customers by default",
+        "D": "Economies of scale: AWS aggregates demand from a large customer base, and its lower unit costs show up in pricing"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E05",
+        "C": "E03"
+      },
+      "rationale": {
+        "correct": "Economies of scale are the mechanism: a provider aggregating enormous demand achieves lower unit costs - hardware, power, operations - than any single customer can, and those unit costs surface in the published price. The publisher's own volume or commitments are separate, additional levers.",
+        "distractors": {
+          "A": "This attributes the price to the customer's own volume; the mechanism in question is the provider's aggregate scale, which benefits every customer at any size.",
+          "B": "The capital-to-operating shift changes the structure of the publisher's spending; it does not by itself make a compute hour cheaper to deliver.",
+          "C": "Reserved Instance discounts are a commitment the customer chooses, not a default applied to everyone; the baseline price is already lower for a different reason."
+        }
+      }
+    },
+    {
+      "id": "2.01",
+      "domain": "d2",
+      "primary_concept": "C-017",
+      "theme": "C1",
+      "vertical": "ambulance dispatch service",
+      "keywords": [
+        "AWS shared responsibility model",
+        "recognizing the components"
+      ],
+      "type": "single_choice",
+      "question": "An ambulance dispatch service is briefing new engineers who have never worked with a cloud provider, and its head of platform wants them to be able to state plainly what the AWS shared responsibility model divides. Which description states what the model divides?",
+      "options": {
+        "A": "It splits duties between the AWS Regions a workload runs in and the Availability Zones inside those Regions",
+        "B": "It assigns every security duty to AWS, which operates the infrastructure and everything a customer places on it",
+        "C": "It splits security duties into security of the cloud, which AWS operates, and security in the cloud, which the customer owns",
+        "D": "It ranks security duties by severity, giving the customer the highest-risk items and AWS the remainder"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E02",
+        "D": "D11"
+      },
+      "rationale": {
+        "correct": "The AWS shared responsibility model answers one question: who secures what. Recognizing the components means naming both halves - security of the cloud, the infrastructure AWS operates, and security in the cloud, the data, configuration and access decisions the customer owns. Every AWS service inherits that division.",
+        "distractors": {
+          "A": "Regions and Availability Zones describe where a workload runs, not who secures it; the model's division is unrelated to that geography.",
+          "B": "Handing every duty to AWS collapses the model into one side; the customer keeps its data, its access decisions, and the configuration of what it runs.",
+          "D": "Severity ranking is a risk-management activity the customer performs afterwards; it is not the line the model draws."
+        }
+      }
+    },
+    {
+      "id": "2.02",
+      "domain": "d2",
+      "primary_concept": "C-018",
+      "theme": "C3",
+      "vertical": "aquaculture farming group",
+      "keywords": [
+        "describing the customer's responsibilities on AWS",
+        "describing AWS responsibilities"
+      ],
+      "type": "multiple_response",
+      "question": "An aquaculture farming group runs its harvest-tracking application on Amazon EC2 instances that were launched from a standard Linux image. During an insurance audit the group's IT lead is asked which security duties belong to the group itself. Which TWO of the following are the customer's responsibilities? (Select TWO.)",
+      "options": {
+        "A": "Classifying the harvest records the application stores and deciding who may open them",
+        "B": "Maintaining the physical security of the facilities that house the instance hardware",
+        "C": "Configuring the virtualization layer that isolates one customer's instances from another's",
+        "D": "Applying operating system patches to the guest instances the group has launched",
+        "E": "Signing the audit report that certifies the underlying infrastructure as compliant"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "D"
+      ],
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D06",
+        "E": "E01"
+      },
+      "rationale": {
+        "correct": "Describing the customer's responsibilities on AWS means naming the duties the customer can actually reach: data classification and access decisions, and guest configuration such as patching the operating system on instances it launched. Describing AWS responsibilities covers the rest - facilities, hardware, and the virtualization layer beneath the instance.",
+        "distractors": {
+          "B": "Physical security of the facilities is squarely security of the cloud; the group has no access to those buildings and no duty over them.",
+          "C": "The virtualization layer sits below the customer boundary, so this is a real control the group cannot configure at all.",
+          "E": "AWS Artifact supplies audit reports and attestations to the customer; the customer does not certify AWS's infrastructure."
+        }
+      }
+    },
+    {
+      "id": "2.03",
+      "domain": "d2",
+      "primary_concept": "C-019",
+      "theme": "C3",
+      "vertical": "community college district",
+      "keywords": [
+        "responsibilities that the customer and AWS share"
+      ],
+      "type": "single_choice",
+      "question": "A community college district's auditor insists that every control in the security plan name exactly one owner. The district's cloud lead objects, pointing to patch management, where AWS patches the platform beneath the workload and the district patches its own guest instances. What does the shared responsibility model say about controls of this kind?",
+      "options": {
+        "A": "They are shared controls: AWS and the customer each carry the control at a different layer",
+        "B": "They belong to AWS, whose patching of the underlying platform also covers the guest instances",
+        "C": "They should be recorded as exceptions and disclosed to the auditor as controls without an owner",
+        "D": "They are inherited controls, which the customer takes over in full on the day it adopts the platform"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E02",
+        "C": "D09",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Patch management is the model's third category - responsibilities that the customer and AWS share. AWS patches the infrastructure and its managed-service internals; the district patches the guest instances it runs. One control name, two owners, each at a different layer, is a valid entry in a security plan.",
+        "distractors": {
+          "B": "AWS patching stops at the boundary of what it operates; a guest instance the district launched stays the district's to patch.",
+          "C": "Recording the control as an unowned exception documents the confusion instead of resolving it, and both owners are in fact identifiable.",
+          "D": "Inherited controls are those the customer gains without action, such as data center access control; patch management is not handed over in full."
+        }
+      }
+    },
+    {
+      "id": "2.04",
+      "domain": "d2",
+      "primary_concept": "C-020",
+      "theme": "C3",
+      "vertical": "concrete supply company",
+      "keywords": [
+        "Amazon EC2",
+        "Amazon RDS",
+        "AWS Lambda"
+      ],
+      "type": "single_choice",
+      "question": "A concrete supply company runs its scheduling database on Amazon EC2 and is about to move it to Amazon RDS. Its security committee wants the standing task apply database engine patches to stay with the company's own operations team after the move. What changes about that task?",
+      "options": {
+        "A": "Nothing changes: engine patching stays with the company on every AWS service it runs",
+        "B": "The company keeps the task and now performs it from the AWS Management Console instead",
+        "C": "The task disappears altogether, and no party patches the engine once the data has moved",
+        "D": "AWS takes over engine patching, and the company is left with data, access, and configuration"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The responsibility boundary moves with the service model. On Amazon EC2 the company owns the guest operating system and the database engine installed on it. On Amazon RDS, as on AWS Lambda, AWS operates those internals, and what remains for the company is its data, its access decisions, and the service configuration.",
+        "distractors": {
+          "A": "Treating the boundary as fixed is the error the move exposes: the same duty sits on different sides depending on the service.",
+          "B": "Changing where a task is performed is a surface change; the question is which party performs it, and after the move it is not the company.",
+          "C": "The engine is still patched - by AWS, on its own schedule; a managed service does not leave the software unmaintained."
+        }
+      }
+    },
+    {
+      "id": "2.05",
+      "domain": "d2",
+      "primary_concept": "C-021",
+      "theme": "C1",
+      "vertical": "conference organizing bureau",
+      "keywords": [
+        "benefits of cloud security",
+        "encryption"
+      ],
+      "type": "single_choice",
+      "question": "A conference organizing bureau has just closed the server cupboard where a locked door and a visitor sign-in sheet were its only physical controls. Its operations manager, who expects little to change, asks what the bureau actually gains on the security side by running on AWS. Which answer is correct?",
+      "options": {
+        "A": "Its applications become immune to stolen credentials once they run on AWS infrastructure",
+        "B": "It inherits the physical and infrastructure controls AWS operates, and gets encryption as configuration",
+        "C": "It transfers the whole security program to AWS, including its applications and its stored data",
+        "D": "It replaces its own security controls with the products it buys through AWS Marketplace"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The benefits of cloud security begin with inheritance: the bureau gets the physical and infrastructure controls AWS already operates, audited at a scale a server cupboard cannot reach. On top of that, capabilities that were projects in a small office - encryption of stored data and of traffic, centralized logging - become configuration choices.",
+        "distractors": {
+          "A": "No platform makes an application immune to stolen credentials; identity and access management stays a customer duty on AWS.",
+          "C": "Security in the cloud does not transfer: the bureau still owns its applications, its data, and who may reach them.",
+          "D": "AWS Marketplace is a procurement channel for additional products; the inherited platform controls arrive with the service itself."
+        }
+      }
+    },
+    {
+      "id": "2.06",
+      "domain": "d2",
+      "primary_concept": "C-022",
+      "theme": "C5",
+      "vertical": "cooking school network",
+      "keywords": [
+        "encryption in transit",
+        "encryption at rest"
+      ],
+      "type": "single_choice",
+      "question": "A cooking school network's payment processor requires that the keys protecting stored card data sit in dedicated cryptographic hardware the network itself controls, in a module holding a recognized validation. The network already terminates every connection with TLS. Which control does that requirement call for?",
+      "options": {
+        "A": "TLS on every connection already meets it, as the card data is protected all the way to storage",
+        "B": "A managed key service, in which AWS creates and holds the keys on shared infrastructure",
+        "C": "AWS CloudHSM, dedicated cryptographic hardware the network controls for protecting stored data",
+        "D": "Nothing further, as AWS encrypts everything written to its storage as a platform property"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D06",
+        "B": "E03",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The two states are distinct. TLS delivers encryption in transit, which protects data while it moves; the processor's requirement is about encryption at rest, and specifically about who controls the module holding the keys. Dedicated, validated cryptographic hardware under the network's own control is what a mandate of that kind names.",
+        "distractors": {
+          "A": "Protecting the journey is a real control at the wrong point: once the card data lands, transit protection no longer applies to it.",
+          "B": "A managed key service is the usual answer for key management, but it does not give the network its own validated hardware module.",
+          "D": "Storage encryption is a customer configuration on AWS, not an automatic property, and it would still not satisfy a dedicated-hardware mandate."
+        }
+      }
+    },
+    {
+      "id": "2.07",
+      "domain": "d2",
+      "primary_concept": "C-023",
+      "theme": "C2",
+      "vertical": "corporate travel desk",
+      "keywords": [
+        "auditing with AWS CloudTrail and AWS Config",
+        "monitoring with Amazon CloudWatch"
+      ],
+      "type": "single_choice",
+      "question": "A corporate travel desk discovers that a security group was widened overnight and must establish which identity made the change, from which address, and at what time. Its dashboards already carry CPU and network graphs for every instance. Which service holds that record?",
+      "options": {
+        "A": "Amazon CloudWatch, whose metric graphs already cover activity across the account",
+        "B": "AWS Config, which reports the security group's configuration against the desk's rules",
+        "C": "The operating system logs on the instances, which record administrative actions on the host",
+        "D": "AWS CloudTrail, whose event history names the API call and the identity that made it"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "D06"
+      },
+      "rationale": {
+        "correct": "Auditing with AWS CloudTrail and AWS Config answers two different governance questions. CloudTrail keeps the account-wide event history of API activity - which identity called what, when, and from where - which is exactly the record a change investigation needs. Monitoring with Amazon CloudWatch covers metrics and logs about how resources are performing, which is where the CPU and network graphs come from.",
+        "distractors": {
+          "A": "Metrics describe how resources behave, not who acted on them; no CPU or network graph names the caller behind a change.",
+          "B": "AWS Config audits resource configuration and its history, so it shows that the rule was broken, not which identity broke it.",
+          "C": "Host logs are a real record at the wrong layer: the security group was changed through the AWS API, never on the instance."
+        }
+      }
+    },
+    {
+      "id": "2.08",
+      "domain": "d2",
+      "primary_concept": "C-024",
+      "theme": "C6",
+      "vertical": "courthouse records office",
+      "keywords": [
+        "AWS Artifact"
+      ],
+      "type": "single_choice",
+      "question": "A courthouse records office must give its external auditor a current copy of an AWS compliance report before the audit window closes at the end of the week. The office has no support plan beyond basic account access. Where does it obtain that report?",
+      "options": {
+        "A": "AWS Config, after enabling the rule set that matches the auditor's control framework",
+        "B": "AWS Artifact, which provides AWS audit reports and attestations for download on demand",
+        "C": "AWS Support, by opening a case that asks for the current report to be sent to the office",
+        "D": "AWS Security Hub, whose posture scores stand in for the compliance report the auditor wants"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D15",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "AWS Artifact is the self-service source of AWS audit reports and attestations: the office signs in, accepts the terms, and downloads the current document itself. That is a different job from monitoring, configuration auditing, or threat detection, none of which produce a third-party attestation.",
+        "distractors": {
+          "A": "AWS Config evaluates the office's own resources against rules; it does not publish AWS's audit reports.",
+          "C": "Routing the request to a support case adds a wait that the self-service source removes, and the deadline is days away.",
+          "D": "A posture score describes the office's own configuration; an auditor asking for an AWS attestation will not accept it."
+        }
+      }
+    },
+    {
+      "id": "2.09",
+      "domain": "d2",
+      "primary_concept": "C-025",
+      "theme": "C1",
+      "vertical": "crane hire company",
+      "keywords": [
+        "compliance requirements that vary among AWS services",
+        "compliance needs among geographic locations or industries"
+      ],
+      "type": "single_choice",
+      "question": "A crane hire company working across three countries has confirmed that AWS holds the compliance certification its safety regulator names. Its project manager concludes that every AWS service the company adopts is therefore covered by that certification. What is wrong with the conclusion?",
+      "options": {
+        "A": "A service's presence in a compliance program varies by service, so coverage is checked per service",
+        "B": "Nothing is wrong; a certification held by AWS extends to every service offered in the account",
+        "C": "The obligation belongs to AWS, so confirming coverage for each service is AWS's task and not the company's",
+        "D": "The gap is closed by buying a compliance product for each service through AWS Marketplace"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E02",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "Compliance obligations are not uniform. They differ by geography and by industry, which is why compliance needs among geographic locations or industries have to be established first, and there are compliance requirements that vary among AWS services, so a program that covers one service does not automatically cover the next. Checking the specific service against the program's scope is part of selecting it.",
+        "distractors": {
+          "B": "Certification is granted for named services in named scopes; treating it as an account-wide property is the misreading the audit will find.",
+          "C": "AWS publishes which services are in scope for which program, but choosing services that satisfy the regulator remains the company's decision.",
+          "D": "AWS Marketplace sells software; it does not add a service to the scope of a compliance program."
+        }
+      }
+    },
+    {
+      "id": "2.10",
+      "domain": "d2",
+      "primary_concept": "C-026",
+      "theme": "C2",
+      "vertical": "crop insurance agency",
+      "keywords": [
+        "Amazon Macie",
+        "Amazon Inspector",
+        "Amazon GuardDuty"
+      ],
+      "type": "single_choice",
+      "question": "A crop insurance agency has been warned by its legal team that claim documents carrying policyholder identifiers may have been uploaded over the past year into a general-purpose Amazon S3 bucket. The agency needs to find out which stored objects actually contain those identifiers. Which service does that job?",
+      "options": {
+        "A": "Amazon Inspector, whose assessments cover software vulnerabilities and network exposure",
+        "B": "Amazon GuardDuty, whose threat detection flags the uploads as suspicious data movement",
+        "C": "Amazon Macie, which discovers and classifies sensitive data held in Amazon S3",
+        "D": "Server-side encryption on the bucket, which removes the need to identify the objects"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Each detection service answers a different question. Discovery and classification of sensitive data already sitting in Amazon S3 is Amazon Macie's job: it inspects the objects and reports which of them carry identifiers of the kind the legal team named.",
+        "distractors": {
+          "A": "Amazon Inspector assesses software vulnerabilities and unintended network exposure; it does not read the contents of stored objects.",
+          "B": "Amazon GuardDuty detects threat activity such as unusual API calls, so an ordinary upload by an authorized user raises nothing.",
+          "D": "Encryption protects the objects but answers no part of the question the agency asked, which is which documents hold identifiers."
+        }
+      }
+    },
+    {
+      "id": "2.11",
+      "domain": "d2",
+      "primary_concept": "C-027",
+      "theme": "C5",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "AWS Identity and Access Management [IAM]",
+        "groups",
+        "managed policies"
+      ],
+      "type": "multiple_response",
+      "question": "A cruise line reservations team is setting up AWS Identity and Access Management [IAM] for a dozen new analysts who all need the same permissions and who will work across two AWS Regions. Which TWO statements about IAM are correct? (Select TWO.)",
+      "options": {
+        "A": "Permissions attach to an individual IAM user only, so each analyst needs a policy written for them",
+        "B": "Groups collect users, so one permission set can serve every analyst on the team at once",
+        "C": "IAM users are Regional, so each analyst needs a separate user in each Region they work in",
+        "D": "One shared sign-in for the analysts is acceptable while their permissions are identical",
+        "E": "AWS managed policies can be attached as they are, with custom policies covering the rest"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D02",
+        "C": "D19",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "AWS Identity and Access Management [IAM] gives each building block its own role: users carry long-lived identity, groups aggregate users so a single permission set serves many, and managed policies or custom policies carry the permissions themselves. IAM identities are global constructs, so the same user works in every Region.",
+        "distractors": {
+          "A": "Writing one policy per analyst removes the structure groups exist to provide and multiplies the maintenance for no gain.",
+          "C": "IAM is global, not Regional; duplicating users per Region would be maintenance work that the service does not require.",
+          "D": "A shared sign-in destroys attribution and widens exposure: any action taken traces back to the team rather than to a person."
+        }
+      }
+    },
+    {
+      "id": "2.12",
+      "domain": "d2",
+      "primary_concept": "C-028",
+      "theme": "C5",
+      "vertical": "dance studio chain",
+      "keywords": [
+        "principle of least privilege"
+      ],
+      "type": "single_choice",
+      "question": "A dance studio chain hands a contractor full administrator permissions for a two-week booking-system migration, on the reasoning that a short engagement is low risk and that scoping the access down would slow the work. Which principle does the arrangement violate?",
+      "options": {
+        "A": "Multi-factor authentication, which the contractor should have been enrolled in first",
+        "B": "The principle of least privilege, which grants only the permissions a task requires",
+        "C": "Delegated administration, under which an administrator approves each action taken",
+        "D": "Root user protection, which forbids sharing account credentials outside the chain"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "D01",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "The principle of least privilege sizes every permission set to the task in hand: the contractor needs the permissions the migration requires and nothing beyond them. Duration does not change the principle - a short engagement with administrator permissions is still an oversized grant, and the studio can scope it without slowing the work.",
+        "distractors": {
+          "A": "A second authentication factor proves who is signing in; it says nothing about how much the signed-in identity may do.",
+          "C": "Approving each individual action is heavier than the situation warrants and still leaves the oversized permission set in place.",
+          "D": "Root user protection is a real obligation at a different layer: what was granted here is an administrator permission set, not the root account."
+        }
+      }
+    },
+    {
+      "id": "2.13",
+      "domain": "d2",
+      "primary_concept": "C-029",
+      "theme": "C5",
+      "vertical": "debt collection agency",
+      "keywords": [
+        "multi-factor authentication [MFA]",
+        "importance of protecting the AWS root user account"
+      ],
+      "type": "multiple_response",
+      "question": "At a debt collection agency the finance director signs in as the account root user every morning to look at the bill, and a long-lived root access key sits in the nightly billing script. Which TWO measures protect the root user? (Select TWO.)",
+      "options": {
+        "A": "Attach a read-only IAM policy to the root user so the morning check can change nothing",
+        "B": "Rotate the root access key each quarter and write the new value into the billing script",
+        "C": "Enable multi-factor authentication [MFA] on the root user and keep the device secured",
+        "D": "Share the root credentials with a second director so that no one person holds them",
+        "E": "Delete the root access key and give the finance director an IAM identity for daily work"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "D05",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "The importance of protecting the AWS root user account comes from what it can do: it is the one identity whose permissions cannot be reduced. The measures that hold are a strong unique password with multi-factor authentication [MFA] enabled, no standing access keys at all, and everyday work moved to an IAM identity so the root user is reached only for the tasks that genuinely require it.",
+        "distractors": {
+          "A": "The root user's authority does not come from an attached policy, so attaching a restrictive one does not limit what it can do.",
+          "B": "Rotation shortens the life of each key while leaving a standing root credential in a script, which is the exposure worth removing.",
+          "D": "Splitting knowledge of the credentials across two people widens who can act as root and blurs which of them did."
+        }
+      }
+    },
+    {
+      "id": "2.14",
+      "domain": "d2",
+      "primary_concept": "C-030",
+      "theme": "C6",
+      "vertical": "diamond certification lab",
+      "keywords": [
+        "tasks that only the account root user can perform"
+      ],
+      "type": "single_choice",
+      "question": "A diamond certification lab has moved all of its daily work onto IAM identities and now asks whether the root user can be retired entirely, since nobody has needed it for months. Which task still requires the account root user?",
+      "options": {
+        "A": "Closing the AWS account and changing the registered account name and email address",
+        "B": "Creating IAM users and attaching the managed policies each laboratory team needs",
+        "C": "Viewing the account's bills and downloading the monthly invoices for the finance team",
+        "D": "Deleting an Amazon S3 bucket that holds the lab's archived certification records"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "D19",
+        "D": "D06"
+      },
+      "rationale": {
+        "correct": "The tasks that only the account root user can perform are a short list of account-level operations - closing the account, changing the registered account name, email address, or payment details, and a handful of similar changes to the account itself. That list is why the root user stays reachable, protected, and otherwise unused.",
+        "distractors": {
+          "B": "Identity administration is exactly what an IAM administrator does, which is why the lab has managed without the root user for months.",
+          "C": "Access to billing information can be delegated to IAM identities once the account activates it, so it is not a root-only task.",
+          "D": "Deleting a bucket is a resource action governed by permissions; any identity with those permissions can perform it."
+        }
+      }
+    },
+    {
+      "id": "2.15",
+      "domain": "d2",
+      "primary_concept": "C-031",
+      "theme": "C5",
+      "vertical": "document shredding service",
+      "keywords": [
+        "access keys",
+        "AWS Secrets Manager",
+        "credential storage"
+      ],
+      "type": "single_choice",
+      "question": "A document shredding service runs a nightly reconciliation job on Amazon EC2 that reads a database password and a third-party courier token. Both values sit in the job's source file, which is committed to the team's repository. Where do those two secrets belong?",
+      "options": {
+        "A": "In environment variables set on the instance at launch, so the source file no longer holds them",
+        "B": "In an encrypted copy of the source file, with the decryption password held by the team lead",
+        "C": "In the access keys of an IAM user, rotated on the schedule the security policy names",
+        "D": "In AWS Secrets Manager, which stores them and returns them to the job at run time"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D06",
+        "C": "E01"
+      },
+      "rationale": {
+        "correct": "Credential storage follows the access path. Access keys serve programmatic calls, passwords governed by a password policy serve console sign-in, and key pairs serve operating system access to an instance. Application secrets such as a database password or a courier token belong in AWS Secrets Manager or AWS Systems Manager, which hand them to the job at run time and keep them out of source code.",
+        "distractors": {
+          "A": "The same plaintext secret is simply moved to another place on the same host, where it is still readable and still unmanaged.",
+          "B": "Encrypting the file is a real control placed where it cannot help: the decryption password now has to live somewhere too.",
+          "C": "Access keys authenticate a caller to AWS; they are not a store for a database password or a third-party token."
+        }
+      }
+    },
+    {
+      "id": "2.16",
+      "domain": "d2",
+      "primary_concept": "C-032",
+      "theme": "C5",
+      "vertical": "e-sports league operator",
+      "keywords": [
+        "IAM Identity Center",
+        "cross-account IAM roles"
+      ],
+      "type": "single_choice",
+      "question": "An e-sports league operator keeps its tournament platform in one AWS account and its analytics workload in another. The analytics application, running on Amazon EC2, authenticates to the tournament account with an access key pasted into its configuration file. Which capability replaces that arrangement?",
+      "options": {
+        "A": "AWS IAM Identity Center, giving the analytics team single sign-on across both accounts",
+        "B": "Multi-factor authentication on the analytics account, adding a second factor to the key",
+        "C": "An IAM role in the tournament account that the analytics application assumes when it runs",
+        "D": "A second copy of the access key, held in the tournament account for the application to use"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D06",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "A workload that needs access in another account should assume a role there instead of holding a static key: cross-account IAM roles issue temporary credentials that expire on their own and can be scoped to exactly what the analytics workload reads. Nothing is pasted into a configuration file, so there is no long-lived secret to leak or rotate.",
+        "distractors": {
+          "A": "AWS IAM Identity Center is the answer for workforce sign-in, and this caller is an application rather than a person at a console.",
+          "B": "A second factor applies to interactive sign-in; an unattended application cannot present one, so the pasted key would remain.",
+          "D": "Copying the key into the other account multiplies the places a long-lived credential exists without shortening its life."
+        }
+      }
+    },
+    {
+      "id": "2.17",
+      "domain": "d2",
+      "primary_concept": "C-033",
+      "theme": "C1",
+      "vertical": "electrical contracting firm",
+      "keywords": [
+        "types of identity management",
+        "federated"
+      ],
+      "type": "single_choice",
+      "question": "An electrical contracting firm already keeps every employee record in its corporate directory and refuses to maintain a second set of AWS sign-in credentials for the same people. Its identity lead asks what federating the existing directory with AWS actually changes. Which statement is correct?",
+      "options": {
+        "A": "Each employee record is copied into IAM, which becomes the firm's system of record",
+        "B": "Employees sign in against the corporate directory, which stays where the identity lives",
+        "C": "The firm has to replace its corporate directory with an AWS-hosted one before sign-in works",
+        "D": "Federating removes the need to define AWS permissions for the employees who sign in"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D19",
+        "C": "D01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "Among the types of identity management available, the federated option leaves the identity where it already lives: employees authenticate against the firm's own corporate directory, and AWS trusts the result. What changes is where sign-in happens, not who owns the employee record - which is exactly the second credential set the firm wanted to avoid.",
+        "distractors": {
+          "A": "Copying records into IAM is the opposite of federating and recreates the duplicate identity store the firm objected to.",
+          "C": "Replacing a working directory is a large project the firm does not need; federation is built to reuse the directory in place.",
+          "D": "Authentication and authorization stay separate: the firm still decides what a federated employee may do inside AWS."
+        }
+      }
+    },
+    {
+      "id": "2.18",
+      "domain": "d2",
+      "primary_concept": "C-034",
+      "theme": "C2",
+      "vertical": "escrow services company",
+      "keywords": [
+        "AWS WAF",
+        "AWS Shield"
+      ],
+      "type": "multiple_response",
+      "question": "An escrow services company's public settlement portal has been hit twice this month: once by a traffic flood that saturated the front end, and once by injection strings submitted through its claim form. Which TWO services address these two threats? (Select TWO.)",
+      "options": {
+        "A": "Amazon Inspector, which assesses the portal's software for known vulnerabilities",
+        "B": "AWS Firewall Manager, which administers protection policies across the company's accounts",
+        "C": "AWS Shield, which defends the portal against distributed denial of service floods",
+        "D": "AWS WAF, which inspects web requests and blocks malicious ones such as injection strings",
+        "E": "AWS CloudTrail, whose event history shows the requests once the attack has ended"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "E": "D07"
+      },
+      "rationale": {
+        "correct": "The security capabilities that AWS provides map onto threats one by one. A volumetric flood against a public endpoint is what AWS Shield is built to absorb, and malicious web requests carried in form fields are what AWS WAF inspects and blocks at the request layer. Two different threats, two different protective services.",
+        "distractors": {
+          "A": "Amazon Inspector assesses software for known vulnerabilities; it does not stand in the traffic path and blocks nothing.",
+          "B": "AWS Firewall Manager administers protection policies across accounts, so it needs those protections to exist before it can help.",
+          "E": "An event history is a detective record produced after the fact, which is of no use while the portal is being saturated."
+        }
+      }
+    },
+    {
+      "id": "2.19",
+      "domain": "d2",
+      "primary_concept": "C-035",
+      "theme": "C6",
+      "vertical": "exhibition stand builder",
+      "keywords": [
+        "AWS Security Blog",
+        "AWS Knowledge Center",
+        "AWS Security Center"
+      ],
+      "type": "single_choice",
+      "question": "An exhibition stand builder has one part-time security engineer who wants a standing source of AWS's own written analysis of new security features and practices, as reading material rather than an answer to a specific question. Which destination fits that need?",
+      "options": {
+        "A": "The AWS Knowledge Center, which answers the questions AWS customers ask most often",
+        "B": "The AWS Security Center, the landing page gathering bulletins and compliance material",
+        "C": "A case raised in AWS Support Center, answered in writing by an AWS support engineer",
+        "D": "The AWS Security Blog, where AWS publishes its analysis of security features and practices"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "D15"
+      },
+      "rationale": {
+        "correct": "Among the security-related documentation that AWS provides, each destination answers a different need. Ongoing analysis of new features and practices, written by AWS and published as reading material, is what the blog carries - which is what a single engineer keeping current actually wants.",
+        "distractors": {
+          "A": "The AWS Knowledge Center is organized around frequently asked questions, so it answers a question already formed rather than supplying reading.",
+          "B": "The AWS Security Center gathers bulletins and compliance material, which is reference rather than the running commentary described.",
+          "C": "Opening a case routes a specific problem to a support engineer, and no case is open here; it also puts a wait in front of public material."
+        }
+      }
+    },
+    {
+      "id": "2.20",
+      "domain": "d2",
+      "primary_concept": "C-036",
+      "theme": "C6",
+      "vertical": "eyewear retail chain",
+      "keywords": [
+        "AWS Marketplace",
+        "third-party security products"
+      ],
+      "type": "single_choice",
+      "question": "An eyewear retail chain has standardized on an intrusion-prevention appliance from an independent vendor and wants it running in front of its AWS workloads. Its procurement team is at capacity and will not open a new vendor onboarding process this quarter. How does the chain obtain the product?",
+      "options": {
+        "A": "Through AWS Marketplace, which lists third-party security products for purchase in the account",
+        "B": "Through AWS Artifact, where vendor software is downloaded with its compliance documents",
+        "C": "Through AWS Support, by asking the account team to arrange a license with the vendor",
+        "D": "By dropping the appliance and using the nearest native AWS service in its place"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D15",
+        "D": "D16"
+      },
+      "rationale": {
+        "correct": "Third-party security products are procured through AWS Marketplace: the vendor's software is subscribed to inside the account and billed with AWS usage, which extends protection beyond the native services without opening a separate procurement channel. That is precisely the constraint the chain's procurement team imposed.",
+        "distractors": {
+          "B": "AWS Artifact supplies AWS's own audit reports and attestations; no vendor software is distributed through it.",
+          "C": "Asking support to broker a license hands the task to someone else and still ends in a procurement process.",
+          "D": "Abandoning a standardized appliance answers the procurement constraint by giving up the requirement it was meant to serve."
+        }
+      }
+    },
+    {
+      "id": "2.21",
+      "domain": "d2",
+      "primary_concept": "C-037",
+      "theme": "C2",
+      "vertical": "farm equipment dealership",
+      "keywords": [
+        "AWS Trusted Advisor"
+      ],
+      "type": "single_choice",
+      "question": "A farm equipment dealership wants a recurring list of its own account hygiene problems - buckets left open to the public, IAM users without multi-factor authentication - rather than alerts about attacks under way. Which service produces that list?",
+      "options": {
+        "A": "Amazon GuardDuty, whose findings identify threat activity as it occurs in the account",
+        "B": "AWS Config, which stores the configuration history of each recorded resource",
+        "C": "AWS Trusted Advisor, whose security checks recommend fixes for the account's exposures",
+        "D": "Amazon CloudWatch alarms on account metrics, raised whenever a threshold is crossed"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "D08"
+      },
+      "rationale": {
+        "correct": "AWS Trusted Advisor inspects an account and returns recommendations, and its security checks are aimed at exactly the hygiene issues named: public access where it was not intended, identities without multi-factor authentication, and similar standing exposures. It reports on the account's configuration, not on attacks in progress.",
+        "distractors": {
+          "A": "Amazon GuardDuty detects active threats, which is the opposite of what the dealership asked for.",
+          "B": "AWS Config records how resources are configured and how that changed; turning that history into recommendations is a separate job.",
+          "D": "A metric alarm fires once a threshold is crossed, so it reports symptoms after the fact instead of listing standing exposures."
+        }
+      }
+    },
+    {
+      "id": "3.01",
+      "domain": "d3",
+      "primary_concept": "C-038",
+      "theme": "C2",
+      "vertical": "fire alarm monitoring company",
+      "keywords": [
+        "infrastructure as code (IaC)",
+        "AWS Management Console",
+        "repeatable processes"
+      ],
+      "type": "single_choice",
+      "question": "A fire alarm monitoring company must stand up an identical monitoring stack for every new municipal contract it wins. The last three stacks were clicked together by hand and each came out slightly different, which the contract auditor has now flagged. Which approach fits the requirement?",
+      "options": {
+        "A": "Write a runbook listing each console step in order so every build is done the same way",
+        "B": "Define the stack as infrastructure as code (IaC) and deploy the same template per contract",
+        "C": "Keep building in the AWS Management Console and have a second engineer review each result",
+        "D": "Use the AWS CLI interactively for each build, which is quicker than clicking through screens"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D05",
+        "C": "D07",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "One-time operations and repeatable processes justify different surfaces. Interactive work in the AWS Management Console suits a change made once; APIs, SDKs, and the AWS CLI suit programmatic access; anything that has to come out identical every time belongs in infrastructure as code (IaC), where the template is the definition and each contract gets the same stack from it.",
+        "distractors": {
+          "A": "A runbook documents the manual process that produced the differences; the steps are still performed by hand and still drift.",
+          "C": "Review after the build catches a difference once it exists, which is later and more expensive than not creating it.",
+          "D": "Typing commands is a faster way to do the same one-off work; the definition still lives in an engineer's session rather than in a template."
+        }
+      }
+    },
+    {
+      "id": "3.02",
+      "domain": "d3",
+      "primary_concept": "C-039",
+      "theme": "C1",
+      "vertical": "food safety auditing firm",
+      "keywords": [
+        "hybrid",
+        "identifying deployment models"
+      ],
+      "type": "single_choice",
+      "question": "A food safety auditing firm keeps its laboratory instrument controllers in its own building, cabled directly to the analyzers, while its scheduling and reporting applications run in AWS and exchange results with those controllers over a private connection. Which deployment model does this estate use?",
+      "options": {
+        "A": "Cloud, as every application the firm's staff sign in to is delivered from AWS",
+        "B": "On-premises, as instrument hardware in the firm's own building is what sets the model",
+        "C": "Neither, until the controllers are moved to AWS so the estate has one clean model",
+        "D": "Hybrid, as workloads run both in AWS and in the firm's own building and connect to each other"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "D19",
+        "C": "D14"
+      },
+      "rationale": {
+        "correct": "Identifying deployment models means reading the whole estate, not its most visible half. Applications running in AWS alongside equipment that stays in the firm's own building, connected to each other, is the hybrid model. Cloud and on-premises are the other two, and each describes an estate that sits wholly on one side.",
+        "distractors": {
+          "A": "Where staff sign in is not what the model describes; the controllers are part of the estate and they are not in AWS.",
+          "B": "Owning some hardware does not make an estate on-premises; the model follows where the workloads run, and here they run in both places.",
+          "C": "Instrument controllers cabled to analyzers cannot move, and a mixed estate is a recognized model rather than an unfinished migration."
+        }
+      }
+    },
+    {
+      "id": "3.03",
+      "domain": "d3",
+      "primary_concept": "C-040",
+      "theme": "C1",
+      "vertical": "genealogy research platform",
+      "keywords": [
+        "edge locations",
+        "Amazon CloudFront",
+        "AWS Regions"
+      ],
+      "type": "single_choice",
+      "question": "A genealogy research platform serves large scanned record images from a single AWS Region, and readers on other continents wait a long time for each page to appear. The platform's engineer proposes spreading the images across more Availability Zones in that same Region. What does the platform actually need?",
+      "options": {
+        "A": "Edge locations delivering the images through Amazon CloudFront close to those readers",
+        "B": "More Availability Zones in the Region, which put copies of the images nearer to readers",
+        "C": "Larger instances serving the images, so every request is answered with more capacity",
+        "D": "A separate AWS Region opened for each country whose readers report a slow page"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "D03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "AWS Regions contain isolated Availability Zones, and edge locations stand apart from both as the delivery tier. Content delivery through Amazon CloudFront caches the images at edge locations near the reader, which is what removes the wait. Availability Zones buy availability within a Region; they do not shorten the distance to a distant audience.",
+        "distractors": {
+          "B": "Availability Zones are all inside the same Region, so adding them changes resilience and leaves the distance to the reader untouched.",
+          "C": "The images are not slow to produce, they are slow to arrive; more capacity at the origin does not shorten the journey.",
+          "D": "Standing up a Region per country is a large, permanent commitment for a delivery problem the edge network already solves."
+        }
+      }
+    },
+    {
+      "id": "3.04",
+      "domain": "d3",
+      "primary_concept": "C-041",
+      "theme": "C1",
+      "vertical": "golf course management group",
+      "keywords": [
+        "Availability Zones do not share single points of failure",
+        "data sovereignty"
+      ],
+      "type": "multiple_response",
+      "question": "A golf course management group runs its tee-time booking system in one Availability Zone and has two requirements to satisfy: the booking system must survive the loss of a single data center, and member records for its European clubs must stay stored in Europe. Which TWO steps meet these requirements? (Select TWO.)",
+      "options": {
+        "A": "Run the booking system across multiple Availability Zones in its current Region",
+        "B": "Take nightly booking backups and keep them in the Availability Zone being protected",
+        "C": "Consolidate all member records into one Region so a single copy serves every club",
+        "D": "Move to larger instances in the current Availability Zone so a failure is absorbed",
+        "E": "Store the member records of the European clubs in a Region located in Europe"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "E"
+      ],
+      "distractor_patterns": {
+        "B": "D06",
+        "C": "D02",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Two needs, two different kinds of spread. High availability comes from multiple Availability Zones: Availability Zones do not share single points of failure, so losing one leaves the booking system serving from another. A second Region is reached for the other reasons - disaster recovery, business continuity, low latency for end users, and data sovereignty, which is what keeps European member records in Europe.",
+        "distractors": {
+          "B": "A backup is a real control kept in the very place whose loss it is meant to cover, so the failure takes the copy with it.",
+          "C": "One consolidated copy is simpler to operate and directly breaks the requirement that European records stay in Europe.",
+          "D": "A larger instance is still one instance in one Availability Zone; capacity does not survive the loss of the site holding it."
+        }
+      }
+    },
+    {
+      "id": "3.05",
+      "domain": "d3",
+      "primary_concept": "C-042",
+      "theme": "C2",
+      "vertical": "grain elevator cooperative",
+      "keywords": [
+        "Amazon EC2 instance types",
+        "compute optimized",
+        "storage optimized"
+      ],
+      "type": "single_choice",
+      "question": "A grain elevator cooperative runs a moisture-analysis job that saturates the processor for hours while reading one small input file and writing one small result. Its administrator has always sized servers by memory, as that was the number the cooperative's old hardware was bought on. Which choice fits the job?",
+      "options": {
+        "A": "A memory optimized instance type, keeping the sizing rule the cooperative already trusts",
+        "B": "A storage optimized instance type, matched to the file the job reads and the result it writes",
+        "C": "A compute optimized instance type, matched to a job that saturates the processor",
+        "D": "The largest general purpose instance available, so that no resource can become the limit"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D11",
+        "B": "E04",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "Amazon EC2 instance types are grouped into families so a workload profile can be matched to the resource it actually consumes. A job that pins the processor for hours while touching almost no data is the textbook compute optimized profile; storage optimized serves high-throughput or high-IOPS data access, which this job does not perform.",
+        "distractors": {
+          "A": "Carrying over a purchasing habit from owned hardware is a familiar rule applied to a job whose demand is not memory.",
+          "B": "Two small files are not a storage-intensive profile, so this family's advantage would be paid for and never used.",
+          "D": "Buying the largest instance avoids the matching decision entirely and pays for capacity the job cannot consume."
+        }
+      }
+    },
+    {
+      "id": "3.06",
+      "domain": "d3",
+      "primary_concept": "C-043",
+      "theme": "C2",
+      "vertical": "hair salon booking platform",
+      "keywords": [
+        "AWS Lambda",
+        "AWS Fargate",
+        "Amazon Elastic Container Service [Amazon ECS]"
+      ],
+      "type": "single_choice",
+      "question": "A hair salon booking platform sends a reminder whenever a booking record changes. The work finishes in well under a second, happens at unpredictable moments through the day, and the two-person team does not want anything running between events. Which compute choice fits?",
+      "options": {
+        "A": "AWS Lambda, which runs the reminder function when each booking change arrives",
+        "B": "Amazon Elastic Container Service [Amazon ECS] on instances the team keeps running",
+        "C": "AWS Fargate tasks kept running so that no reminder waits for a container to start",
+        "D": "Amazon Elastic Kubernetes Service [Amazon EKS], which the team can grow into later"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E03",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "The choice follows the shape of the work. Event-driven functions that run briefly and unpredictably are what AWS Lambda exists for, with no host to keep alive between events. Containers on Amazon ECS or Amazon EKS suit long-running services, and AWS Fargate removes the servers beneath containers without removing the running task itself.",
+        "distractors": {
+          "B": "Instances the team keeps running are exactly what it asked to avoid, and they idle between reminders.",
+          "C": "This keeps the serverless launch model but leaves a task running continuously for work that arrives in bursts.",
+          "D": "A Kubernetes cluster is a large operating commitment for a two-person team sending short reminder messages."
+        }
+      }
+    },
+    {
+      "id": "3.07",
+      "domain": "d3",
+      "primary_concept": "C-044",
+      "theme": "C1",
+      "vertical": "helicopter charter service",
+      "keywords": [
+        "auto scaling provides elasticity",
+        "purposes of load balancers"
+      ],
+      "type": "single_choice",
+      "question": "A helicopter charter service watches its booking site crawl whenever a storm grounds flights and every passenger checks their reservation at once. The site runs on a fixed pair of instances behind a load balancer, and both instances are pinned at their limit during the surge. What resolves it?",
+      "options": {
+        "A": "A second load balancer, so that arriving requests are spread across two of them",
+        "B": "Auto scaling, which adds instances while the surge lasts and removes them afterwards",
+        "C": "A health check that pulls an overloaded instance out of the load balancer's targets",
+        "D": "Replacing both instances with one larger instance sized for the busiest storm"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "D01",
+        "C": "D05",
+        "D": "D03"
+      },
+      "rationale": {
+        "correct": "The two mechanisms do different jobs, and offering one as the other is the classic confusion. Auto scaling provides elasticity: it changes how many instances exist, which is what a surge needs. Among the purposes of load balancers is spreading traffic across healthy targets in multiple Availability Zones - valuable, and unable to create capacity that two saturated instances do not have.",
+        "distractors": {
+          "A": "Adding distribution machinery in front of the same two instances leaves the number of instances, and therefore the ceiling, unchanged.",
+          "C": "Removing a saturated instance treats the symptom and sends its share of the surge to the one instance still standing.",
+          "D": "One large instance carries the peak and is paid for all year, while the storm-day ceiling is still fixed."
+        }
+      }
+    },
+    {
+      "id": "3.08",
+      "domain": "d3",
+      "primary_concept": "C-045",
+      "theme": "C3",
+      "vertical": "home appliance insurer",
+      "keywords": [
+        "AWS managed databases",
+        "EC2 hosted databases"
+      ],
+      "type": "single_choice",
+      "question": "A home appliance insurer runs its claims database as a self-administered engine on Amazon EC2. Two of its three database administrators are leaving, and the remaining one spends most of each week on patching, backup verification, and failover drills. The engine and the application stay as they are. What changes if the insurer moves to a managed database service?",
+      "options": {
+        "A": "Nothing operationally: patching, backups, and failover stay with the insurer on any service",
+        "B": "The insurer keeps those duties and gains a console that makes each of them quicker to do",
+        "C": "The claims application has to be rewritten for the managed engine before it can move",
+        "D": "AWS takes over patching, backup, and availability work, and the insurer keeps data and access"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E02",
+        "B": "D04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The two legitimate ways to run an engine differ in the operational work they keep. EC2 hosted databases leave patching, backup, and availability engineering with the customer, which is where the remaining administrator's week goes. AWS managed databases absorb that work and scale an instance without application changes, leaving the insurer its data, its access decisions, and the service configuration.",
+        "distractors": {
+          "A": "The boundary moves with the service model, so treating operational duties as fixed misses the whole reason for the move.",
+          "B": "A better console makes the same work faster to perform; the point of a managed service is that the customer stops performing it.",
+          "C": "Keeping the same engine is what makes the move straightforward; a rewrite belongs to a change of engine, not a change of who operates it."
+        }
+      }
+    },
+    {
+      "id": "3.09",
+      "domain": "d3",
+      "primary_concept": "C-046",
+      "theme": "C2",
+      "vertical": "ice cream distribution company",
+      "keywords": [
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon ElastiCache"
+      ],
+      "type": "single_choice",
+      "question": "An ice cream distribution company stores freezer telemetry from its delivery trucks as key-value records: hundreds of millions of tiny items, written constantly, always read back by a single key, with no joins and no reporting across them. Which database service fits the workload?",
+      "options": {
+        "A": "Amazon RDS, whose relational engines can hold the records in one wide table",
+        "B": "Amazon Aurora, which scales the same relational engine further than a standard instance",
+        "C": "Amazon DynamoDB, a NoSQL service built for key-value records at this volume",
+        "D": "Amazon ElastiCache, holding the telemetry in memory so each key is read quickly"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E04",
+        "B": "E03",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The data model picks the service. Key-value records written constantly and read by key, with no relational work over them, are a NoSQL workload, and Amazon DynamoDB is the NoSQL service in the catalog. Amazon RDS and Amazon Aurora serve relational workloads; memory-based Amazon ElastiCache serves speed in front of a store rather than the store itself.",
+        "distractors": {
+          "A": "A relational engine can be made to hold key-value rows, and the company would pay for relational features it never uses.",
+          "B": "This scales the relational option further and still answers a workload that has no relational requirement.",
+          "D": "An in-memory service accelerates reads for data that lives elsewhere; on its own it is not where the telemetry should be kept."
+        }
+      }
+    },
+    {
+      "id": "3.10",
+      "domain": "d3",
+      "primary_concept": "C-047",
+      "theme": "C2",
+      "vertical": "immigration law practice",
+      "keywords": [
+        "AWS Database Migration Service [AWS DMS]",
+        "AWS Schema Conversion Tool [AWS SCT]"
+      ],
+      "type": "single_choice",
+      "question": "An immigration law practice is moving its case-management database from a commercial engine in its office to a different, open-source engine on AWS. The two engines do not share data types or stored-procedure syntax, and the case records must arrive intact. Which tooling does this move require?",
+      "options": {
+        "A": "AWS SCT to convert the schema, then AWS DMS to move the case records across",
+        "B": "AWS DMS alone, which converts the schema as part of moving the records across",
+        "C": "AWS Backup, restoring a backup of the office database into the new engine",
+        "D": "AWS Storage Gateway, presenting the office database files to the new engine"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D19",
+        "C": "E01",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "A change of engine is two problems, and each has its own tool. The AWS Schema Conversion Tool [AWS SCT] converts a schema and its procedural code to the target engine's dialect, and AWS Database Migration Service [AWS DMS] moves the data itself. A migration between different engines needs both; a migration between like engines needs only the second.",
+        "distractors": {
+          "B": "Moving data and translating a schema are separate jobs, and the data-movement service does not perform the translation.",
+          "C": "A backup file written by one engine is not restorable into a different engine, whichever service holds the file.",
+          "D": "Presenting files to the environment does not convert their format; the new engine still cannot read the old engine's structures."
+        }
+      }
+    },
+    {
+      "id": "3.11",
+      "domain": "d3",
+      "primary_concept": "C-048",
+      "theme": "C2",
+      "vertical": "industrial paint manufacturer",
+      "keywords": [
+        "components of a VPC",
+        "purpose of Amazon Route 53",
+        "gateways"
+      ],
+      "type": "multiple_response",
+      "question": "An industrial paint manufacturer is designing its first Amazon VPC. Its batch-tracking servers must never be reachable from the internet, its customer portal must be, and its plant office network needs a private path into the same VPC. Which TWO components does that design require? (Select TWO.)",
+      "options": {
+        "A": "Amazon Route 53, which decides whether each subnet can be reached from the internet",
+        "B": "Public and private subnets, separating the portal servers from the batch-tracking servers",
+        "C": "A gateway pair terminating a tunnel from the plant office network into the VPC",
+        "D": "No separation at all, as AWS keeps each customer's traffic isolated from the internet",
+        "E": "A single subnet for everything, with each server's own firewall deciding what it accepts"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "C"
+      ],
+      "distractor_patterns": {
+        "A": "E01",
+        "D": "E02",
+        "E": "D02"
+      },
+      "rationale": {
+        "correct": "The components of a VPC do the work here: subnets divide the address space so the portal can be reachable while batch tracking is not, and gateways connect the VPC outward, including the pair that terminates an encrypted tunnel from an office network. The purpose of Amazon Route 53 is different again - it is the DNS service that resolves names to addresses.",
+        "distractors": {
+          "A": "Name resolution and network reachability are separate concerns; DNS answers where a name points, not who may connect.",
+          "D": "AWS isolates one customer's network from another's, and deciding which of the manufacturer's own servers face the internet stays with the manufacturer.",
+          "E": "Flattening the design pushes the entire separation onto per-server rules, so one mistaken rule exposes batch tracking."
+        }
+      }
+    },
+    {
+      "id": "3.12",
+      "domain": "d3",
+      "primary_concept": "C-049",
+      "theme": "C5",
+      "vertical": "locksmith dispatch network",
+      "keywords": [
+        "security groups",
+        "network ACLs",
+        "Amazon Inspector"
+      ],
+      "type": "single_choice",
+      "question": "A locksmith dispatch network wants a single rule that blocks a range of abusive source addresses for every instance in one subnet, including instances launched later, without the rule being attached to any instance. Which control does that?",
+      "options": {
+        "A": "Security groups on the instances, which are stateful and evaluated per instance",
+        "B": "A network ACL on the subnet, which is stateless and applies to all its traffic",
+        "C": "Amazon Inspector, which assesses the instances and reports unintended exposure",
+        "D": "AWS protections at the Region boundary, which stop abusive sources before the subnet"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The two VPC traffic filters are told apart by state and scope. Security groups are stateful and attach to instances; network ACLs are stateless and attach to a subnet, so one rule covers everything in that subnet and everything launched into it afterwards. That subnet scope is exactly what the requirement describes.",
+        "distractors": {
+          "A": "An instance-scoped filter has to be attached to every instance, including each one launched later, which is the attachment the network wants to avoid.",
+          "C": "Amazon Inspector assesses and reports on exposure; it is not in the traffic path and blocks nothing.",
+          "D": "Filtering a customer's own unwanted sources is a customer control inside the VPC, not something the platform performs on the account's behalf."
+        }
+      }
+    },
+    {
+      "id": "3.13",
+      "domain": "d3",
+      "primary_concept": "C-050",
+      "theme": "C2",
+      "vertical": "luxury watch reseller",
+      "keywords": [
+        "AWS Direct Connect",
+        "AWS VPN"
+      ],
+      "type": "single_choice",
+      "question": "A luxury watch reseller moves large authentication photographs between its grading room and AWS throughout the day. Its insurers require transfer performance that holds steady at peak times, and the encrypted tunnel it already runs over the shop's internet circuit does not hold steady. What should the reseller adopt?",
+      "options": {
+        "A": "A second AWS VPN tunnel over the same circuit, doubling the bandwidth available",
+        "B": "AWS Global Accelerator, which improves the routing of traffic crossing the internet",
+        "C": "AWS Direct Connect, a dedicated physical link with predictable, contracted throughput",
+        "D": "Compression of the photographs before transfer, so the existing tunnel carries them faster"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D03",
+        "B": "E01",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "The two private paths differ in what they ride on. AWS VPN builds encrypted tunnels across the public internet, so it inherits whatever the internet is doing at the time. AWS Direct Connect is a dedicated physical link into AWS, which is what makes throughput predictable. Tolerance for internet transit is the whole decision.",
+        "distractors": {
+          "A": "Two tunnels over one internet circuit share the same congestion, so the variability the insurers object to remains.",
+          "B": "Better routing across the internet is still routing across the internet, and the requirement is to stop depending on it.",
+          "D": "Smaller files move faster on a good day and just as unpredictably on a bad one; the variability is in the path."
+        }
+      }
+    },
+    {
+      "id": "3.14",
+      "domain": "d3",
+      "primary_concept": "C-051",
+      "theme": "C2",
+      "vertical": "marina management company",
+      "keywords": [
+        "block storage",
+        "instance store",
+        "Amazon Elastic File System [Amazon EFS]"
+      ],
+      "type": "multiple_response",
+      "question": "A marina management company runs its berth-allocation application across a fleet of Amazon EC2 instances. Every instance must read and write the same set of mooring documents, and each instance also needs a scratch area for temporary chart rendering that nobody needs to keep. Which TWO storage choices fit? (Select TWO.)",
+      "options": {
+        "A": "Amazon S3 attached as the boot volume of each instance for the mooring documents",
+        "B": "One Amazon EBS volume attached to an instance and shared with the rest over the network",
+        "C": "Amazon S3 Glacier for the scratch area, as it is the cheapest place to write to",
+        "D": "Amazon Elastic File System [Amazon EFS] for the mooring documents every instance uses",
+        "E": "The instance store for the scratch area, which is ephemeral by design"
+      },
+      "select_count": 2,
+      "answer": [
+        "D",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E04",
+        "C": "E03"
+      },
+      "rationale": {
+        "correct": "Three storage models, three jobs. Object storage holds discrete objects retrieved as a whole; block storage on Amazon EBS gives one instance a persistent volume, while the instance store gives it fast local space that disappears with the instance - which is what temporary rendering wants. Shared access from many instances at once is what the file services provide.",
+        "distractors": {
+          "A": "Object storage is not presented to an instance as a boot volume; the model does not work that way.",
+          "B": "A block volume belongs to its instance, so making the rest read it means building a file-sharing layer the file services already provide.",
+          "C": "An archive class is priced for data kept and rarely read, and its retrieval times make it wrong for scratch space."
+        }
+      }
+    },
+    {
+      "id": "3.15",
+      "domain": "d3",
+      "primary_concept": "C-052",
+      "theme": "C4",
+      "vertical": "scaffolding rental company",
+      "keywords": [
+        "Amazon S3 Glacier",
+        "use cases for lifecycle policies",
+        "differences in Amazon S3 storage classes"
+      ],
+      "type": "single_choice",
+      "question": "A scaffolding rental company keeps site inspection photographs in Amazon S3. Each photograph is opened constantly for about a month after the inspection and almost never afterwards, insurance rules require keeping them for seven years, and a retrieval of an old photograph may take hours. What should the company configure?",
+      "options": {
+        "A": "A monthly job that copies the photographs to a second bucket and deletes the originals",
+        "B": "One storage class for everything, with the standing cost accepted as the price of retention",
+        "C": "An archive storage class from the day each photograph is taken and for its whole life",
+        "D": "A lifecycle policy that moves the photographs into Amazon S3 Glacier as they age"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "D05",
+        "B": "D15",
+        "C": "E03"
+      },
+      "rationale": {
+        "correct": "The differences in Amazon S3 storage classes are differences in access pattern, retention, and cost, and the photographs change pattern at a known moment. Among the use cases for lifecycle policies is precisely this: the policy moves objects into a colder class such as Amazon S3 Glacier as they age, so the busy month is served from a frequent-access class and the remaining years are billed as archive.",
+        "distractors": {
+          "A": "A hand-built copy job reproduces part of what the policy does, adds a moving part to maintain, and can silently stop running.",
+          "B": "Doing nothing keeps years of untouched photographs in a class priced for constant access, which is the cost the retention rule creates.",
+          "C": "Archiving on day one saves the most and makes the busy first month, when the photographs are opened constantly, slow to serve."
+        }
+      }
+    },
+    {
+      "id": "3.16",
+      "domain": "d3",
+      "primary_concept": "C-053",
+      "theme": "C2",
+      "vertical": "senior meal delivery service",
+      "keywords": [
+        "use cases for AWS Backup",
+        "AWS Storage Gateway"
+      ],
+      "type": "single_choice",
+      "question": "A senior meal delivery service protects its Amazon EBS volumes, its file systems, and its databases with three separate routines, each run by a different team on its own schedule. Its board wants one place where retention is set and where compliance with it can be shown. Which service meets that?",
+      "options": {
+        "A": "AWS Backup, which centralizes backup policy and reporting across those services",
+        "B": "AWS Storage Gateway, which gives the kitchen servers a cached path to cloud storage",
+        "C": "Amazon S3 lifecycle policies on a bucket that each of the three teams copies into",
+        "D": "Managed services, whose backups AWS already takes and retains on the account's behalf"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E01",
+        "C": "D06",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The use cases for AWS Backup are exactly this shape: one policy engine that schedules, retains, and reports on backups across several AWS services, so retention is defined once and evidence comes from one console. AWS Storage Gateway solves the other job in this area, giving on-premises applications a cached path to cloud storage.",
+        "distractors": {
+          "B": "A hybrid storage path extends on-premises applications into the cloud; it does not set or prove backup retention.",
+          "C": "Object lifecycle rules govern objects in a bucket, so they are a real mechanism at the wrong layer for volume and database backups.",
+          "D": "Retention settings and the evidence that they were met stay with the customer even where a service performs backups for it."
+        }
+      }
+    },
+    {
+      "id": "3.17",
+      "domain": "d3",
+      "primary_concept": "C-054",
+      "theme": "C2",
+      "vertical": "uniform embroidery supplier",
+      "keywords": [
+        "Amazon Textract",
+        "Amazon SageMaker AI",
+        "Amazon Rekognition"
+      ],
+      "type": "single_choice",
+      "question": "A uniform embroidery supplier receives scanned order forms as email attachments and wants the customer name, garment size, and quantity lifted out of each scan automatically. Its two developers have no machine learning experience and no labeled training data of their own. Which service fits?",
+      "options": {
+        "A": "Amazon SageMaker AI, used to build and train a model on the supplier's own scans",
+        "B": "Amazon Rekognition, whose image analysis identifies the objects present in a scan",
+        "C": "Amazon Textract, which extracts text and form fields from scanned documents",
+        "D": "Amazon Transcribe, which turns the content of each order form into written text"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D01",
+        "B": "E04",
+        "D": "E01"
+      },
+      "rationale": {
+        "correct": "The AWS AI/ML services split between ready-made capabilities and a platform for building your own. Pulling text and form fields out of a scanned document is a ready-made capability, so no model has to be trained and no labeled data is needed - which matters for a team with neither.",
+        "distractors": {
+          "A": "Amazon SageMaker AI is the build-your-own platform, so it asks the supplier for exactly the skills and training data it does not have.",
+          "B": "Amazon Rekognition analyzes images for objects, scenes, and faces, which is a different question from reading the fields on a form.",
+          "D": "Amazon Transcribe converts speech to text, and an order form arriving as a scan carries no audio."
+        }
+      }
+    },
+    {
+      "id": "3.18",
+      "domain": "d3",
+      "primary_concept": "C-055",
+      "theme": "C2",
+      "vertical": "adventure tour operator",
+      "keywords": [
+        "Amazon Athena",
+        "AWS Glue",
+        "Amazon Quick Sight"
+      ],
+      "type": "single_choice",
+      "question": "An adventure tour operator already keeps several years of booking exports as files in Amazon S3. Its finance analyst wants to answer occasional one-off questions about them in SQL, without loading the files into a database and without operating a cluster. Which service does that?",
+      "options": {
+        "A": "AWS Glue, which prepares and catalogs the data before any question is asked",
+        "B": "Amazon Athena, which runs SQL queries directly against the files in Amazon S3",
+        "C": "Amazon Quick Sight, whose dashboards visualize the figures for the finance team",
+        "D": "A relational database the exports are loaded into first and then queried there"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E04",
+        "C": "E01",
+        "D": "D01"
+      },
+      "rationale": {
+        "correct": "The analytics services are near neighbors doing different jobs. Running SQL straight over files already sitting in object storage, with nothing to provision, is what Amazon Athena is for. AWS Glue prepares and catalogs data, and Amazon Quick Sight presents it once the questions have settled into dashboards.",
+        "distractors": {
+          "A": "Data preparation and cataloging support querying; on their own they answer none of the analyst's questions.",
+          "C": "Dashboards suit figures watched repeatedly, and the analyst described occasional one-off questions instead.",
+          "D": "Loading years of exports into a database is a project in itself, which is the work the analyst asked to avoid."
+        }
+      }
+    },
+    {
+      "id": "3.19",
+      "domain": "d3",
+      "primary_concept": "C-056",
+      "theme": "C2",
+      "vertical": "campus shuttle service",
+      "keywords": [
+        "Amazon Simple Queue Service (Amazon SQS)",
+        "Amazon Simple Notification Service (Amazon SNS)"
+      ],
+      "type": "multiple_response",
+      "question": "A campus shuttle service wants two things when a shuttle is delayed: the ticketing system should hand the delay to a slower refund component without waiting for it, and the same delay should reach the rider app, the platform signs, and the operations inbox together. Which TWO services deliver these? (Select TWO.)",
+      "options": {
+        "A": "Amazon Simple Queue Service (Amazon SQS), holding the delay for the refund component",
+        "B": "Amazon Simple Notification Service (Amazon SNS), fanning the delay out to every channel",
+        "C": "AWS Step Functions, orchestrating the delay handling as a multi-step workflow",
+        "D": "Amazon Connect, which reaches riders through the service's cloud contact center",
+        "E": "A shared database table that each component polls every minute for new delays"
+      },
+      "select_count": 2,
+      "answer": [
+        "A",
+        "B"
+      ],
+      "distractor_patterns": {
+        "C": "E04",
+        "D": "E01",
+        "E": "D10"
+      },
+      "rationale": {
+        "correct": "The application-integration services are chosen by delivery shape. A queue decouples a fast producer from a slow consumer, holding each delay until the refund component is ready for it. A notification topic fans one message out to many subscribers at once, which is what puts the same delay in front of the app, the signs, and the inbox together.",
+        "distractors": {
+          "C": "Step Functions sequences a multi-step process with visible state, and neither of these needs are a workflow with steps.",
+          "D": "A cloud contact center serves voice and chat conversations with people, not message delivery between systems.",
+          "E": "Polling a table on a schedule builds a delay into every notification and still leaves the components coupled to one store."
+        }
+      }
+    },
+    {
+      "id": "3.20",
+      "domain": "d3",
+      "primary_concept": "C-057",
+      "theme": "C2",
+      "vertical": "city zoning department",
+      "keywords": [
+        "Amazon Simple Email Service (Amazon SES)",
+        "Amazon Connect"
+      ],
+      "type": "single_choice",
+      "question": "A city zoning department's permit application sends tens of thousands of status emails to applicants each month, and receiving providers have begun blocking its self-run mail relay. The department wants the application itself to send those messages dependably at that volume. Which service fits?",
+      "options": {
+        "A": "Amazon Connect, the cloud contact center the department can route the messages through",
+        "B": "Amazon Simple Notification Service (Amazon SNS) topics that applicants subscribe to one by one",
+        "C": "Amazon EventBridge, which routes each status change straight to the applicant's mail provider",
+        "D": "Amazon Simple Email Service (Amazon SES), built for application-sent email at scale"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "D19"
+      },
+      "rationale": {
+        "correct": "The business-application services meet needs the messaging services do not. Sending large volumes of email from an application, with the deliverability work that goes with it, is exactly what the email service exists for, which is what a blocked self-run relay needs replaced.",
+        "distractors": {
+          "A": "Amazon Connect runs a contact center for voice and chat conversations with people; it is not a bulk email sender.",
+          "B": "Topic subscriptions expect subscribers to opt in, which does not match applicants who are emailed about their own permit.",
+          "C": "An event bus routes events between AWS targets; it does not deliver mail to an external provider on its own."
+        }
+      }
+    },
+    {
+      "id": "3.21",
+      "domain": "d3",
+      "primary_concept": "C-058",
+      "theme": "C2",
+      "vertical": "coffee equipment importer",
+      "keywords": [
+        "AWS X-Ray",
+        "AWS CodePipeline",
+        "AWS CodeBuild"
+      ],
+      "type": "single_choice",
+      "question": "A coffee equipment importer's order service has started answering slowly, and nobody can say which of the several internal calls behind each order is responsible. Builds and releases are running normally, and the last deployment was weeks ago. Which service helps find the slow call?",
+      "options": {
+        "A": "AWS CodeBuild, which compiles and tests the service so the fault is caught in the build",
+        "B": "AWS CodePipeline, which sequences the release stages the service moves through",
+        "C": "AWS X-Ray, which traces a request through the service and times each call it makes",
+        "D": "A rollback of the last release, returning the service to its earlier behavior"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "D05"
+      },
+      "rationale": {
+        "correct": "Developer tools sit at different lifecycle stages: build and test, then release sequencing, then troubleshooting what is already running. Tracing a request end to end and timing each call it makes belongs to the troubleshooting stage, which is where a service that has started answering slowly needs help.",
+        "distractors": {
+          "A": "Building and testing happen before the code ships, and a service already slow in production is past that stage.",
+          "B": "Release sequencing moves code through its stages; the importer's releases are working and are not what is being diagnosed.",
+          "D": "Undoing a release weeks old is an intervention chosen before the cause is known, and it may leave the slow call untouched."
+        }
+      }
+    },
+    {
+      "id": "3.22",
+      "domain": "d3",
+      "primary_concept": "C-059",
+      "theme": "C2",
+      "vertical": "cold-chain trucking fleet",
+      "keywords": [
+        "Amazon WorkSpaces",
+        "Amazon AppStream 2.0",
+        "Amazon WorkSpaces Secure Browser"
+      ],
+      "type": "single_choice",
+      "question": "A cold-chain trucking fleet hires seasonal dispatchers who work from their own laptops. Each dispatcher needs a full desktop carrying the fleet's applications, and their settings and working files must still be there at the start of the next shift. Which service provides that?",
+      "options": {
+        "A": "Amazon WorkSpaces, which gives each dispatcher a persistent virtual desktop",
+        "B": "Amazon AppStream 2.0, which streams individual applications to a dispatcher's laptop",
+        "C": "Amazon WorkSpaces Secure Browser, which delivers controlled access to web applications",
+        "D": "Amazon EC2 instances the dispatchers reach with one set of credentials shared per shift"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E04",
+        "C": "E03",
+        "D": "D13"
+      },
+      "rationale": {
+        "correct": "The end-user-computing services differ in what they present. A persistent virtual desktop gives each dispatcher a whole environment that survives sign-out, which is what carrying settings and files between shifts requires. Streaming one application and delivering a controlled browser session present less than a desktop by design.",
+        "distractors": {
+          "B": "Streaming individual applications covers the fleet's software and not the desktop around it that holds a dispatcher's working state.",
+          "C": "A controlled browser session reaches web applications only, and it is built to leave nothing behind at the end of a session.",
+          "D": "Raw instances with credentials shared across a shift give every seasonal dispatcher the same identity and no attribution."
+        }
+      }
+    },
+    {
+      "id": "3.23",
+      "domain": "d3",
+      "primary_concept": "C-060",
+      "theme": "C2",
+      "vertical": "art print marketplace",
+      "keywords": [
+        "AWS IoT Core",
+        "AWS Amplify"
+      ],
+      "type": "single_choice",
+      "question": "An art print marketplace has fitted humidity sensors in each partner gallery to protect the works on display. The sensors must connect securely, report readings continuously, and be managed as one growing fleet as galleries join. Which service is purpose-built for this?",
+      "options": {
+        "A": "AWS Amplify, used to create and deploy the frontend the galleries will look at",
+        "B": "AWS IoT Core, which connects and manages the sensor fleet as it grows",
+        "C": "Amazon EC2 instances running a message broker the marketplace builds itself",
+        "D": "Amazon Kinesis, which ingests the stream of readings the sensors produce"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "D01",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Purpose-built services exist for exactly these workloads. Connecting devices securely, taking their readings, and managing them as a fleet is the job of the IoT service, which is why the marketplace does not have to assemble it. AWS Amplify covers the other half of this category, creating and deploying frontend and mobile services.",
+        "distractors": {
+          "A": "A frontend service builds what people look at; the galleries' problem is getting sensors connected and managed in the first place.",
+          "C": "A self-built broker on instances is assembly work that reproduces device connectivity and fleet management by hand.",
+          "D": "Stream ingestion handles readings once they arrive, and it does not connect or manage the devices sending them."
+        }
+      }
+    },
+    {
+      "id": "4.01",
+      "domain": "d4",
+      "primary_concept": "C-061",
+      "theme": "C4",
+      "vertical": "building materials supplier",
+      "keywords": [
+        "Spot Instances",
+        "On-Demand Instances",
+        "Reserved Instances"
+      ],
+      "type": "single_choice",
+      "question": "A building materials supplier renders its product catalog images in nightly batches. A render that is interrupted is simply put back on the queue, the batch has no deadline of any kind, and the supplier's only stated goal is the lowest price it can get. Which purchasing option fits?",
+      "options": {
+        "A": "Spot Instances, which use spare capacity at a deep discount and can be reclaimed",
+        "B": "Reserved Instances, committing to the nightly capacity for a one-year or three-year term",
+        "C": "On-Demand Instances, the familiar standard rate that commits the supplier to nothing",
+        "D": "Dedicated Hosts, which give the supplier visibility of the physical server the renders use"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "E03",
+        "C": "D11",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Interruption tolerance and commitment horizon pick the purchasing option. Work that can be stopped and requeued, with no deadline attached, is what Spot Instances exist for: spare capacity at the deepest discount, on the understanding that AWS may reclaim it. On-Demand Instances buy flexibility at the standard rate, and Reserved Instances or AWS Savings Plans buy a discount in exchange for a committed term.",
+        "distractors": {
+          "B": "A term commitment does lower the rate, and it is the wrong lever for a batch whose defining property is that interruption costs nothing.",
+          "C": "The standard rate is the safe default and the most expensive way to run work that would tolerate the cheapest capacity available.",
+          "D": "Visibility of the physical server answers server-bound licensing requirements, which is not a constraint the supplier stated."
+        }
+      }
+    },
+    {
+      "id": "4.02",
+      "domain": "d4",
+      "primary_concept": "C-062",
+      "theme": "C4",
+      "vertical": "actuarial consulting firm",
+      "keywords": [
+        "AWS Organizations consolidated billing",
+        "Reserved Instance flexibility"
+      ],
+      "type": "single_choice",
+      "question": "An actuarial consulting firm uses AWS Organizations with consolidated billing across its management account and several member accounts. One member account holds a Reserved Instance covering four instances of a type in a single Availability Zone but runs only one of them. A second member account runs three matching instances in that same Availability Zone, and a third runs two matching instances in a different Availability Zone of the same Region. How does the reserved discount apply?",
+      "options": {
+        "A": "Only the account holding the reservation benefits, so most of the reserved capacity is wasted",
+        "B": "Every matching instance in the organization benefits, including those in the other Availability Zone",
+        "C": "The holder's instance and the three matching instances in the same Availability Zone benefit",
+        "D": "The discount is divided evenly across every matching instance the organization runs"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E03",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "AWS Organizations consolidated billing aggregates the family's usage, so a reservation bought in one member account discounts matching usage anywhere in the organization. Reserved Instance flexibility then follows the dimensions the reservation was bought on: this one is scoped to a single Availability Zone, so it covers the holder's own instance and the matching instances running in that same Availability Zone until its capacity is used up. Matching instances in a different Availability Zone are billed at the standard rate.",
+        "distractors": {
+          "A": "Treating the reservation as trapped in its own account is the misreading consolidated billing exists to remove.",
+          "B": "Sharing is real but bounded: a reservation scoped to one Availability Zone does not reach instances running in another one.",
+          "D": "A reservation covers matching usage up to the capacity it was bought for; it is not spread thinly across everything that matches."
+        }
+      }
+    },
+    {
+      "id": "4.03",
+      "domain": "d4",
+      "primary_concept": "C-063",
+      "theme": "C4",
+      "vertical": "board-game publisher",
+      "keywords": [
+        "incoming data transfer costs",
+        "outgoing data transfer costs",
+        "from one AWS Region to another Region"
+      ],
+      "type": "multiple_response",
+      "question": "A board-game publisher is estimating the bill for a new rules-video library before building it. The publisher will upload video masters into AWS from its studio, serve the finished videos to customers over the internet, and keep an archive copy in a second AWS Region. Which TWO of these carry a data transfer charge? (Select TWO.)",
+      "options": {
+        "A": "Uploading the video masters from the studio into AWS",
+        "B": "Serving the finished videos out to customers over the internet",
+        "C": "Keeping the finished videos in Amazon S3 between releases",
+        "D": "Copying the archive set from one AWS Region to another Region",
+        "E": "Tagging the videos so the cost can be attributed to each product line"
+      },
+      "select_count": 2,
+      "answer": [
+        "B",
+        "D"
+      ],
+      "distractor_patterns": {
+        "A": "E05",
+        "C": "E04",
+        "E": "D04"
+      },
+      "rationale": {
+        "correct": "Knowing which line items exist at all is the skill here. Incoming data transfer costs are not billed, so bringing masters into AWS is free, while outgoing data transfer costs apply once content leaves for the internet, and transfer from one AWS Region to another Region is billed as well. Transfer within the same Region is priced differently again, and storage is billed separately by option and tier.",
+        "distractors": {
+          "A": "Inbound movement into AWS is the one direction that is not billed, which is what makes the upload free.",
+          "C": "Storage is a genuine charge on the bill, priced by storage option and tier rather than counted as data transfer.",
+          "E": "Tagging is a cost-attribution mechanism, so it changes how charges are reported and adds none of its own."
+        }
+      }
+    },
+    {
+      "id": "4.04",
+      "domain": "d4",
+      "primary_concept": "C-064",
+      "theme": "C6",
+      "vertical": "car wash franchise",
+      "keywords": [
+        "AWS Pricing Calculator",
+        "AWS Cost Explorer",
+        "AWS Budgets"
+      ],
+      "type": "single_choice",
+      "question": "A car wash franchise is deciding whether to move its booking platform to AWS. Nothing has been deployed and no AWS charges have ever been incurred, yet the finance director wants a monthly figure for the proposed design before the board meets next week. Which tool produces it?",
+      "options": {
+        "A": "AWS Cost Explorer, whose charts analyze what the account has already spent",
+        "B": "AWS Budgets, which raises an alert once spending crosses a threshold set for it",
+        "C": "A quote from AWS for a fixed monthly fee covering the design as it is proposed",
+        "D": "AWS Pricing Calculator, which estimates the cost of a design before it exists"
+      },
+      "answer": "D",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "C": "E05"
+      },
+      "rationale": {
+        "correct": "Each cost tool answers a different question, and the franchise is asking about a design that has never run. Estimating the monthly cost of a configuration that does not exist yet is what the pricing calculator does, drawing on published rates for the services in the proposal.",
+        "distractors": {
+          "A": "Analyzing and visualizing historical spend needs a history, and this account has never incurred a charge.",
+          "B": "A threshold alert watches spending as it happens, so it also depends on the workload already running.",
+          "C": "AWS pricing is published and usage-based, so there is no negotiated flat monthly fee to quote for a design."
+        }
+      }
+    },
+    {
+      "id": "4.05",
+      "domain": "d4",
+      "primary_concept": "C-065",
+      "theme": "C4",
+      "vertical": "cruise line reservations",
+      "keywords": [
+        "AWS cost allocation tags",
+        "AWS Cost and Usage Report"
+      ],
+      "type": "single_choice",
+      "question": "A cruise line reservations business runs three brands inside one AWS account and cannot tell its board what each brand costs. Every resource already carries its brand as a name prefix, and the monthly bill still arrives as one undivided figure. What should the business put in place?",
+      "options": {
+        "A": "AWS cost allocation tags on the resources, activated so charges are attributed per brand",
+        "B": "A naming convention the finance team matches against the bill by hand each month",
+        "C": "One AWS account per brand, opened so that each brand receives a separate bill",
+        "D": "A fixed monthly charge per brand, agreed with AWS so the split is known in advance"
+      },
+      "answer": "A",
+      "distractor_patterns": {
+        "B": "D05",
+        "C": "D01",
+        "D": "E05"
+      },
+      "rationale": {
+        "correct": "Attributing spend to teams, projects, or brands is what AWS cost allocation tags are for: tags are applied to resources, activated for billing, and the charges then arrive already attributed. The AWS Cost and Usage Report is where those tagged costs surface at the finest grain, line by line, which is the detail a board question needs.",
+        "distractors": {
+          "B": "Names are not read by billing, so the finance team keeps doing the attribution by hand every month and keeps making the errors.",
+          "C": "Splitting into separate accounts does divide the bill, and it is a structural change to the estate to answer a reporting question.",
+          "D": "AWS charges follow usage, so a flat agreed figure per brand would report a number that no longer reflects what each brand consumed."
+        }
+      }
+    },
+    {
+      "id": "4.06",
+      "domain": "d4",
+      "primary_concept": "C-066",
+      "theme": "C6",
+      "vertical": "dance studio chain",
+      "keywords": [
+        "AWS Business Support",
+        "customer service and communities"
+      ],
+      "type": "multiple_response",
+      "question": "A dance studio chain runs its class-booking site on AWS and has never bought a support plan. After the site stayed down through a holiday weekend, the owner wants an AWS engineer reachable at any hour for production problems and somewhere to have architecture questions answered. Which TWO statements are correct? (Select TWO.)",
+      "options": {
+        "A": "The chain's current arrangement already includes technical support cases at any hour",
+        "B": "Support for the site is supplied at no cost by the AWS Partner Network to any account",
+        "C": "The chain's current arrangement gives it customer service and communities, not technical support",
+        "D": "An outage of a customer's own site is restored by AWS as part of operating the platform",
+        "E": "AWS Business Support adds around-the-clock technical support for production problems"
+      },
+      "select_count": 2,
+      "answer": [
+        "C",
+        "E"
+      ],
+      "distractor_patterns": {
+        "A": "D19",
+        "B": "E01",
+        "D": "E02"
+      },
+      "rationale": {
+        "correct": "The tiers are told apart by what each one adds. Every account gets customer service and communities - account and billing help, documentation, and the community forums - and no technical support cases. Technical support begins with the developer tier and becomes around-the-clock coverage for production systems, along with architecture guidance, from the business tier upward.",
+        "distractors": {
+          "A": "Technical support cases are the thing the no-cost tier does not include, which is why the weekend outage had nowhere to go.",
+          "B": "Partners deliver paid consulting and technology services; they are not a free support channel attached to every account.",
+          "D": "AWS operates the platform, and restoring an application the customer runs on it stays a customer responsibility at every tier."
+        }
+      }
+    },
+    {
+      "id": "4.07",
+      "domain": "d4",
+      "primary_concept": "C-067",
+      "theme": "C6",
+      "vertical": "eyewear retail chain",
+      "keywords": [
+        "AWS Professional Services",
+        "AWS Partner Network",
+        "system integrators"
+      ],
+      "type": "single_choice",
+      "question": "An eyewear retail chain has funding approved to have its point-of-sale migration delivered by an outside team that carries accountability for the result, not merely advice it then has to implement. Its head of IT asks which channel supplies a paid engagement of that kind. Which answer fits?",
+      "options": {
+        "A": "AWS Marketplace, where the chain subscribes to the migration software it needs",
+        "B": "AWS Professional Services, or a partner from the AWS Partner Network",
+        "C": "AWS Business Support, whose engineers deliver the migration under the plan",
+        "D": "AWS Trusted Advisor, whose recommendations stand in for a delivery plan"
+      },
+      "answer": "B",
+      "distractor_patterns": {
+        "A": "E01",
+        "C": "E03",
+        "D": "E04"
+      },
+      "rationale": {
+        "correct": "Outside help arrives through defined channels. Paid, outcome-oriented engagements come from AWS Professional Services or from the AWS Partner Network, whose consulting partners include the system integrators that deliver migrations of this kind; independent software vendors in the same network supply the products. AWS Marketplace is the procurement channel for that software, with its own cost-management and governance features.",
+        "distractors": {
+          "A": "Subscribing to software procures a product, and the chain has funded a team accountable for delivering an outcome.",
+          "C": "A support plan answers questions and helps with problems on what the chain runs; it does not staff and deliver a migration.",
+          "D": "Recommendations from an inspection tool are advice, which is explicitly what the chain said is not enough here."
+        }
+      }
+    },
+    {
+      "id": "4.08",
+      "domain": "d4",
+      "primary_concept": "C-068",
+      "theme": "C6",
+      "vertical": "animal shelter network",
+      "keywords": [
+        "AWS re:Post",
+        "AWS Prescriptive Guidance",
+        "AWS Trust and Safety team"
+      ],
+      "type": "single_choice",
+      "question": "An animal shelter network is run by volunteers, holds no paid support plan, and has an unusual configuration question that the documentation does not settle. Nothing is broken and there is no urgency, but the volunteer administrator would value an answer from someone who has met the same situation. Where should the question go?",
+      "options": {
+        "A": "AWS Prescriptive Guidance, which publishes proven strategies and patterns",
+        "B": "The AWS Trust and Safety team, which handles reports about AWS resources",
+        "C": "AWS re:Post, the community question-and-answer service that AWS hosts",
+        "D": "A support case, on a paid plan bought to cover this single question"
+      },
+      "answer": "C",
+      "distractor_patterns": {
+        "A": "E01",
+        "B": "E04",
+        "D": "E03"
+      },
+      "rationale": {
+        "correct": "Each published destination supplies a different kind of help. A specific question asked of people who have solved it before is what the community question-and-answer service is for, and it costs the shelter network nothing. Whitepapers, blogs, and documentation cover material AWS has already written down, which this question has already outrun.",
+        "distractors": {
+          "A": "Prescriptive guidance offers proven strategies written in advance, so it answers questions someone anticipated rather than an unusual one.",
+          "B": "That team receives reports of abuse of AWS resources, which is an entirely different kind of contact.",
+          "D": "Buying a support plan for one non-urgent question spends money the volunteers do not need to spend to get an answer."
+        }
+      }
+    }
+  ]
+}

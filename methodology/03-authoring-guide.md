@@ -572,6 +572,37 @@ Rationales keyed to options — never to hardcoded letters — make it structura
 ship an explanation that argues against its own answer key. Reorder options, re-letter them,
 swap the key: the rationale follows. The validator enforces both halves (the anti-drift check).
 
+### Surface parity: what to DO {#surface-parity}
+
+The cue checks ([`04-validation.md`](04-validation.md#invariants)) say what not to trip; this is
+the constructive rule. Within an item, the four options must be **indistinguishable as
+surfaces** — a candidate who looks only at their shape learns nothing. Compose to parity on four
+axes, then place the key mechanically:
+
+- **Length parity** — write every option inside one length band, and do not let the key settle
+  into a rank habit: never-longest is as much a cue as always-longest, in either direction
+  (`key-length-rank-share` measures the bank and each form; a ratio of ~1.0 with a constant rank
+  still leaks the key).
+- **Specificity parity** — if one option names a concrete product, service, standard, or figure,
+  they all do (or none do); a lone named entity marks the key on vendor exams
+  (`named-entity-parity`).
+- **Register parity** — same grammatical mood, tense, and hedging level across options. A lone
+  imperative among descriptions, or a lone hedge among absolutes, is a shape cue no check yet
+  measures — hold it by construction.
+- **Marker distribution** — justification/contrast riders (since, because, rather than, instead
+  of, so that, to ensure, in order to, whereas) either appear across options or not at all; a
+  one-sided habit in EITHER direction is a cue, and the argument itself belongs in
+  `rationale.correct` (`rider-balance` bounds both sides; the one-sided era taught us the
+  evacuated form is worse than the original).
+- **Pairwise distinctness** — no two options may be paraphrases of each other
+  (`option-pair-similarity`); a near-duplicate pair collapses a 4-way item into a 2-way guess.
+
+**Key placement is the LAST step, and it is mechanical:** author the options in argument order —
+key first is fine, that is how the reasoning flows — then place the key into its slot as the
+final act of the batch with `tools/permute-keys.mjs` (deterministic seed recorded in the batch
+commit). Distribution by construction, never by per-item vigilance; `key-position-distribution`
+(error-level) is the backstop, not the method.
+
 ### Difficulty pitch: good-vs-best, never right-vs-wrong
 
 Every option should be *defensible but inferior* — a candidate should have to choose between a
@@ -579,7 +610,10 @@ good answer and the best answer, which is how professional certifications are pi
 distractor can be eliminated without engaging the scenario (factually absurd, obviously hostile,
 comically lazy), rebuild it from a better pattern. The blind-solve confidence data at S5 is the
 empirical check: items every solver dispatches with high confidence in seconds are pitched too
-low.
+low. The *machine* half of this rule is S5b's cue-only solve
+([`05-eval-rubric.md`](05-eval-rubric.md#cue-only-solve)): if `tools/exploit-scan.mjs`'s
+zero-knowledge attacker scores near the pass mark, the pitch has failed no matter how demanding
+the items read — the surface handed the answers over.
 
 ### Style rules
 

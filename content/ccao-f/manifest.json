@@ -1,0 +1,192 @@
+{
+  "$comment": "S1/S2 facts (research-manager, 2026-08-16) + S3 authoring contract (exam-author, 2026-08-17, derivation/master-inventory.md). Blueprint facts are from the OFFICIAL exam guide v1.0 (July 2026), evidenced in derivation/sources.md; exam code is CCAO-F while the package slug stays `ccas` from intake — the naming decision is a Gate 1 item (derivation/sources.md, naming note). ONE GATE-1 RATIFICATION PENDING: exam.pass_threshold_pct 72 is a raw-score TRANSLATION, not a vendor fact — the real exam reports a scaled 100-1,000 score with a 720 cut set by a standard-setting study, and the scale is not publicly convertible to a raw percent (follows the aif-c01 700->70 precedent; also disclosed in format_coverage). S3 decisions: bank 81 = 1.35x exam exactly, the size in the 1.3-1.4x band whose largest-remainder allocation is decisive-tie-free per LEARNING.md L-0008 (11/17/10/13/10/12/8; 80 excluded for its d3/d5 cut-line tie); format_mix is MC+MR only because that is the WHOLE of the real exam's format profile (guide section 5) — scenario_matching is deliberately 0 in every domain; the multiple_response shape (5 options, choose 2, share 9/60 = 15%) is a HOUSE DECISION recorded as such because no source provides MR calibration (the guide states only that each item declares its select-count; Beecham has zero MR items); pattern caps from the Artefact A frequency analysis (D19 0.10 over-used-and-weak, D04 0.08 tightened below the 0.10 registry default, D06 0.15 and E02 0.15 signature-shape caps, D03 0.10 registry standard); near_duplicate_jaccard 0.4 (ccar-p/aif-c01 precedent); answer-length knobs stay at validator defaults — vendor samples sit at a 1.11 median keyed/longest ratio and the knobs must not be raised (Beecham's 2.24x is the cautionary measurement); layers.syllabus_rules true — the 35 recap rules in syllabus-rules.json are the syllabus layer (ccar-p arrangement) and every concept links a rule id. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "ccao-f",
+  "title": "Claude Certified Associate – Foundations (CCAO-F)",
+  "vendor": "Anthropic",
+  "status": "in_review",
+  "version": "0.1.0",
+  "blueprint_version": "1.0 (July 2026)",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": 60,
+    "time_limit_minutes": 120,
+    "pass_threshold_pct": 72
+  },
+  "bank": {
+    "item_count": 81
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Prompting and Task Execution",
+      "weight_pct": 14,
+      "exam_items": 8,
+      "bank_items": 11,
+      "format_mix": {
+        "single_choice": 7,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Output Evaluation and Validation",
+      "weight_pct": 21,
+      "exam_items": 13,
+      "bank_items": 17,
+      "format_mix": {
+        "single_choice": 11,
+        "multiple_response": 2,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Product and Model Selection",
+      "weight_pct": 12,
+      "exam_items": 7,
+      "bank_items": 10,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Workflow Integration and Solution Design",
+      "weight_pct": 16,
+      "exam_items": 10,
+      "bank_items": 13,
+      "format_mix": {
+        "single_choice": 8,
+        "multiple_response": 2,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Configuration and Knowledge Management",
+      "weight_pct": 12,
+      "exam_items": 7,
+      "bank_items": 10,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d6",
+      "title": "Governance, Risk, and Responsible Use",
+      "weight_pct": 15,
+      "exam_items": 9,
+      "bank_items": 12,
+      "format_mix": {
+        "single_choice": 8,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d7",
+      "title": "Troubleshooting and Optimization",
+      "weight_pct": 10,
+      "exam_items": 6,
+      "bank_items": 8,
+      "format_mix": {
+        "single_choice": 5,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": 5,
+      "select_count": [
+        2
+      ]
+    },
+    "scenario_matching": {
+      "min_options": 3,
+      "min_scenarios": 3,
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.08,
+      "D06": 0.15,
+      "D19": 0.1,
+      "E02": 0.15
+    },
+    "near_duplicate_jaccard": 0.4
+  },
+  "layers": {
+    "syllabus_rules": true
+  },
+  "intro": {
+    "about": "The Claude Certified Associate – Foundations certification (exam code CCAO-F) validates that a professional can put Claude to work on real business tasks with sound judgment: writing and iterating effective prompts, evaluating and validating what comes back, choosing the right product surface and model tier, integrating Claude into workflows, configuring Projects and knowledge, using it responsibly under organizational policy, and troubleshooting when results disappoint. Exam guide version 1.0 (July 2026) defines seven content domains: Prompting and Task Execution (14%), Output Evaluation and Validation (21%), Product and Model Selection (12%), Workflow Integration and Solution Design (16%), Configuration and Knowledge Management (12%), Governance, Risk, and Responsible Use (15%), and Troubleshooting and Optimization (10%).",
+    "audience": "Aimed at professionals who use Claude in everyday knowledge work — the exam guide names operations, marketing, project management, education, communications and general knowledge-work roles, with limited to moderate technical expertise expected. It is explicitly not aimed at software developers building against APIs or designing agentic systems; recognizing when a task crosses into Claude Developer or Claude Architect territory and escalating it is itself part of the competency being tested. Items reward applied judgment in scenarios, not recall of definitions.",
+    "materials": [
+      {
+        "title": "60-question practice exam",
+        "description": "Weighted to exam guide v1.0 across all seven domains and drawn from an 81-item originally-authored bank — the same item count and 120-minute length as the real sitting."
+      },
+      {
+        "title": "The real exam's two formats, exactly",
+        "description": "Multiple choice (four options) and multiple response (five options, the stem states how many to select) — the complete CCAO-F format profile, with no formats the real exam does not use. The format coverage note below carries the full disclosure, including which values are this mock's own calibration decisions."
+      },
+      {
+        "title": "Review dashboard, rationales, and a weak-rule report",
+        "description": "Per-domain scoring against a 72% threshold (a raw-score translation of the real exam's scaled 720-of-1,000 cut), an explanation for the key and every distractor on submission, and a weak-rule report that names which of the 35 practitioner rules behind the syllabus your misses cluster on."
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "Claude Certification Program — certifications and exam guides",
+        "url": "https://anthropic-partners.skilljar.com/page/partner-certifications"
+      },
+      {
+        "label": "Anthropic certifications FAQ — eligibility, registration, and policies",
+        "url": "https://anthropic-partners.skilljar.com/page/faq-certifications"
+      }
+    ],
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Anthropic, PBC or Pearson VUE. \"Anthropic\", \"Claude\" and \"Claude Certified Associate – Foundations\" are trademarks of Anthropic, PBC. Every question was written clean-room from documented derivation artefacts against the public exam guide and the author's own notes from the official prep course, with community practice material analyzed for classification only, exactly as this package's derivation records show. Nothing here is drawn from the live CCAO-F item bank: real exam content is confidential and proprietary to Anthropic and protected by the non-disclosure agreement every candidate accepts before the exam begins — which will bind you too once you sit it, so please never share live questions here."
+  },
+  "format_coverage": "The real CCAO-F exam uses two item types: multiple choice (one correct response) and multiple response, where each item states how many responses to select (exam guide v1.0 §5). There are no ordering items and no matching items. This mock's format profile is therefore a subset, not an approximation: multiple choice maps exactly to single_choice, and multiple response maps exactly to multiple_response with all-or-nothing scoring. Mockka's third format, scenario_matching, is deliberately UNUSED here (every domain sets it to 0) because authoring it would rehearse an interaction the real exam does not contain. Two disclosures follow from the guide rather than from the format set. First, the guide does not publish the option count, the select-count, or the share of multiple-response items, so this mock's values — five options, choose two, nine of sixty items — are a Mockka house decision, not a measured property of the exam; every multiple-response stem states its select-count, exactly as the guide says real items do. Second, the real exam reports a scaled score from 100 to 1,000 with a cut score of 720, set by a formal standard-setting study; that is not a percent-correct figure, and this mock's 72% pass line is a translation of it, not the vendor's threshold.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "ccas-blueprint",
+        "type": "public_blueprint",
+        "citation": "Official Claude Certified Associate – Foundations Exam Guide, version 1.0, effective July 2026, exam code CCAO-F, published by Anthropic, PBC on the Anthropic Partner Academy certifications page. Public document, read in full 2026-08-16. Supplies the domain list and weights, the 30 objectives, item formats, item count, time limit, scoring model, audience and scope-boundary statements, and canonical vocabulary. Distilled to derivation/source-ccas-blueprint.md."
+      },
+      {
+        "id": "ccas-guide-samples",
+        "type": "public_practice_set",
+        "citation": "The three sample questions published in section 8 of the official CCAO-F exam guide, authored by Anthropic and stated by the guide to be illustrative and not drawn from the live item bank. Used under the clean-room rule for analytical classification only — per-item concept mapping, distractor-pattern labels and style calibration in derivation/source-ccas-guide-samples.md. No text reused."
+      },
+      {
+        "id": "ccas-course-recap",
+        "type": "own_course_notes",
+        "citation": "Oliver Lau's recap notes from the official Claude Certified Associate – Foundations Prep Course (Anthropic Partner Academy), covering the key-takeaway layer of all seven content modules plus the course closing — 35 rules. Own notes from a legitimately accessed official course; proof-of-access basis on file. Supplies the decision frameworks and canonical study vocabulary, and backs the syllabus_rules layer. Distilled to derivation/source-ccas-recap.md."
+      },
+      {
+        "id": "beecham-ccao-f",
+        "type": "public_practice_set",
+        "citation": "Ray Beecham, CCAO-F practice bank (56 items) in the MIT-licensed GitHub repository raybeecham/claude-certified-associate-foundations. Screened for dump lineage at S1 (four screens, all clear — see derivation/sources.md). Used under the clean-room rule for analytical classification only — per-item concept mapping, distractor-pattern frequencies and style measurements in derivation/source-beecham-ccao-f.md. No text reused."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the CCAO-F item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and proprietary to Anthropic and is protected by the confidentiality and non-disclosure agreement every candidate accepts before the exam begins. Sources whose items trace back to candidate recall of a live sitting were screened out at S1. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Anthropic, PBC or Pearson VUE. \"Anthropic\", \"Claude\" and \"Claude Certified Associate – Foundations\" are trademarks of Anthropic, PBC."
+  }
+}

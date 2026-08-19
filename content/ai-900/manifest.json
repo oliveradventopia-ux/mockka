@@ -1,0 +1,163 @@
+{
+  "$comment": "S1/S2 facts (research-manager) + S3 authoring contract (exam-author, 2026-08-16, derivation/master-inventory.md). READ derivation/sources.md FIRST: ⚑ AI-900 was RETIRED 2026-06-30 and replaced by AI-901 — whether this package proceeds at all is Gate-1 decision D0. Blueprint facts: weights are published as RANGES (15-20 x4, 20-25) summing 80-105, never 100 — weight_pct here is S1's documented normalisation (midpoints 92.5 -> 100, the only tie-free integer allocation preserving order and the GenAI premium; Gate-1 ratification D2). exam.item_count 42 is a DOCUMENTED CHOICE, not a vendor fact — Microsoft publishes only the vendor-wide 40-60 band; 42 is the size in that band whose largest-remainder allocation is tie-free under these weights (L-0008; 50, S1's recommended midpoint, forces a four-way rounding tie among the equal-weighted domains) AND whose 1.35x bank (57) the distilled concept pool supports without padding — Gate-1 ratification D1. pass_threshold_pct 70 is a disclosed PROXY: the real exam is scaled 1-1,000, pass 700, which Microsoft states 'may not equal 70% of the points', with per-component partial credit on multi-part items and unidentified unscored pilot items — no honest raw percentage exists; Gate-1 ratification D3. time_limit_minutes 45 IS a hard vendor fact (Fundamentals exam time; 65 min seat time), and 42 items sits inside the vendor's own 40-60-questions-in-45-minutes envelope. S3 decisions: bank 57 = 1.357x exam, per-domain 11/11/11/11/13 (tie-free largest remainder); format mix 34 SC + 5 MR + 3 SM is a DOCUMENTED DEFAULT, not observed calibration — both accessible practice sources are 100% four-option single choice, so MR (one per domain, 2-of-5, all-or-nothing where Microsoft awards partial credit) and SM (d1/d4/d5, approximating drag-and-drop) rehearse the vendor's documented multi-part and pairing mechanics at a conservative share; pattern caps E01 0.30 (warner's 43%-of-wrong-options crutch) and E08 0.05 (wrieden's spec-trivia at 31% — off-blueprint for a describe-level exam), D03/D04 0.10 registry-standard; key_letter_max_share 0.4 set explicitly because warner's 84% B-or-C key skew converts to a machine check (L-0014); near_duplicate_jaccard 0.4 (ccar-p precedent); layers.syllabus_rules false because the study guide IS the syllabus (1:1 domain mapping, Artefact B). Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "ai-900",
+  "title": "Microsoft Azure AI Fundamentals (AI-900)",
+  "vendor": "Microsoft",
+  "status": "draft",
+  "version": "0.1.0",
+  "blueprint_version": "skills measured as of 2025-05-02 (study-guide page last updated 2026-06-30; exam retired 2026-06-30)",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": 42,
+    "time_limit_minutes": 45,
+    "pass_threshold_pct": 70
+  },
+  "bank": {
+    "item_count": 57
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Describe Artificial Intelligence workloads and considerations",
+      "weight_pct": 19,
+      "exam_items": 8,
+      "bank_items": 11,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 1,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Describe fundamental principles of machine learning on Azure",
+      "weight_pct": 19,
+      "exam_items": 8,
+      "bank_items": 11,
+      "format_mix": {
+        "single_choice": 7,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Describe features of computer vision workloads on Azure",
+      "weight_pct": 19,
+      "exam_items": 8,
+      "bank_items": 11,
+      "format_mix": {
+        "single_choice": 7,
+        "multiple_response": 1,
+        "scenario_matching": 0
+      }
+    },
+    {
+      "id": "d4",
+      "title": "Describe features of Natural Language Processing (NLP) workloads on Azure",
+      "weight_pct": 19,
+      "exam_items": 8,
+      "bank_items": 11,
+      "format_mix": {
+        "single_choice": 6,
+        "multiple_response": 1,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d5",
+      "title": "Describe features of generative AI workloads on Azure",
+      "weight_pct": 24,
+      "exam_items": 10,
+      "bank_items": 13,
+      "format_mix": {
+        "single_choice": 8,
+        "multiple_response": 1,
+        "scenario_matching": 1
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": 5,
+      "select_count": [
+        2
+      ]
+    },
+    "scenario_matching": {
+      "min_options": 3,
+      "min_scenarios": 3,
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1,
+      "E01": 0.3,
+      "E08": 0.05
+    },
+    "near_duplicate_jaccard": 0.4,
+    "key_letter_max_share": 0.4
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "intro": {
+    "about": "Microsoft Azure AI Fundamentals (AI-900) validated a describe-level understanding of AI on Azure: recognizing AI workload types and responsible-AI principles, core machine learning concepts and Azure Machine Learning capabilities, computer vision, natural language processing, and generative AI workloads with the Azure services behind them. Its final blueprint (skills measured as of 2025-05-02) spans five skill areas, with generative AI carrying the heaviest weight. Important: Microsoft retired AI-900 on June 30, 2026 and replaced it with AI-901 — the Azure AI Fundamentals certification can no longer be earned by sitting AI-900, so this mock is an archival study tool for the retired exam's syllabus, which remains a solid foundation for the concepts half of its successor.",
+    "audience": "AI-900 was aimed at people with technical or non-technical backgrounds who needed to describe and choose AI capabilities rather than build them — business and product roles evaluating AI features, sales and support staff around Azure AI workloads, students starting a cloud AI path, and engineers wanting their conceptual ground checked before deeper Azure AI certifications. Data science and software engineering experience were explicitly not required, and no item here demands code, SDK, or configuration knowledge.",
+    "materials": [
+      {
+        "title": "42-question practice form",
+        "description": "Sized inside Microsoft's documented 40-60 question band and weighted to the final blueprint's five skill areas (the published ranges normalized to 19/19/19/19/24 percent), drawn from a 57-item originally-authored bank in which every item tests a distinct concept from the retired exam's study guide."
+      },
+      {
+        "title": "Three question formats, with disclosed approximations",
+        "description": "Single choice matches the real exam's dominant format; multiple response (pick two of five) rehearses Microsoft's multi-part mechanics but scores all-or-nothing where the real exam awarded partial credit; scenario matching approximates drag-and-drop pairing. The format coverage note lists the real item types this mock does not rehearse."
+      },
+      {
+        "title": "Review dashboard and rationales",
+        "description": "Per-domain scoring against a disclosed 70% proxy threshold (the real exam reported a scaled 1-1,000 score with a 700 pass mark that Microsoft said may not equal 70% of the points), plus an explanation for the key and every distractor on submission, written in the study guide's own vocabulary."
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "Study guide for Exam AI-900: Microsoft Azure AI Fundamentals (official, retired exam)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900"
+      },
+      {
+        "label": "Microsoft Certified: Azure AI Fundamentals — current certification (now requires AI-901)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
+      }
+    ],
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Microsoft Corporation or Pearson VUE. \"Microsoft\", \"Azure\" and \"Microsoft Certified: Azure AI Fundamentals\" are trademarks of the Microsoft group of companies. AI-900 was retired by Microsoft on June 30, 2026 and replaced by AI-901; this package covers the retired exam's final blueprint and cannot lead to the current certification. Every question was written clean-room from documented derivation artefacts against the public study guide, with prior practice sets analyzed for classification only, exactly as this package's README records. Nothing here is drawn from the AI-900 item bank: real exam content is confidential and protected by the Microsoft Certification Exam Candidate Agreement — please never share live exam questions here."
+  },
+  "format_coverage": "The real AI-900 exam drew from Microsoft's full item-type repertoire: multiple choice, multi-part/multi-select questions, build list (ordering), drag and drop, hot area, active screen, and case studies (labs were excluded from Fundamentals exams). This mock supports three formats and approximates as follows. Multiple choice maps exactly to single_choice. Multi-part and multi-select items map to multiple_response — but this mock scores them all-or-nothing, while Microsoft awarded one point per correctly answered component, so this mock's multi-response scoring is STRICTER than the real exam's. Drag and drop is approximated by scenario_matching: mapping scenarios onto a reused option set exercises the same discrimination without the same interaction. Build list, hot area, active screen, case studies and problem-solution sets are NOT rehearsed at all — a candidate would have met those interactions for the first time in the real exam. Because neither accessible practice source contains any non-multiple-choice item, this mock's format shares are a documented default rather than observed calibration. Note also that the real exam mixed unidentified unscored pilot items into the paper and reported a scaled 1-1,000 score with a 700 pass mark that Microsoft stated may not equal 70% of the points, so no raw percentage from this mock converts to a Microsoft score. Finally: AI-900 was retired on June 30, 2026 — no sitting of the real exam exists any more; this disclosure describes the exam as it was.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "ms-ai900-blueprint",
+        "type": "public_blueprint",
+        "citation": "Study guide for Exam AI-900: Microsoft Azure AI Fundamentals, skills measured as of 2025-05-02, published by Microsoft (learn.microsoft.com). Public document, read in full 2026-08-16. Supplies the skill areas and weight ranges, objective bullets, audience profile, change log, and canonical vocabulary. Scoring, duration and item-type facts come from the vendor-wide exam-scoring and exam-duration pages cited in derivation/sources.md. Distilled to derivation/source-ms-ai900-blueprint.md."
+      },
+      {
+        "id": "warner-ai900",
+        "type": "public_practice_set",
+        "citation": "Tim Warner (Microsoft MVP), AI-900 practice items in the MIT-licensed GitHub repository timothywarner/ai900 (25 items across five domain files). Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-warner-ai900.md. No text reused."
+      },
+      {
+        "id": "wrieden-ai900",
+        "type": "public_practice_set",
+        "citation": "Olaf Wrieden, 29 freely published AI-900 practice questions in the GitHub repository olafwrieden/Azure-AI-900-Practice-Questions. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-wrieden-ai900.md. No text reused. 2021 vintage: 76% of its items are off the final blueprint, recorded item by item."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the AI-900 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the Microsoft Certification Exam Candidate Agreement; sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Microsoft Corporation or Pearson VUE. \"Microsoft\", \"Azure\" and \"Microsoft Certified: Azure AI Fundamentals\" are trademarks of the Microsoft group of companies."
+  }
+}

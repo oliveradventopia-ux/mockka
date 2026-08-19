@@ -1,0 +1,152 @@
+{
+  "$comment": "S1-S2 facts (research-manager) + S3 authoring contract (exam-author, 2026-08-17, derivation/master-inventory.md). Blueprint facts are from the official study guide (skills measured as of 2026-07-20) + the two program-level Microsoft pages cited in derivation/sources.md. THREE VALUES ARE MODELLED, NOT PUBLISHED, and are Gate-1 ratification items: exam.item_count 50 (midpoint of Microsoft's program-level 40-60 band; per-domain exam_items are weight_pct x 50, landing 14/19/17 exactly), pass_threshold_pct 70 (the real exam is scaled 1-1000 with 700 to pass and Microsoft states that may not equal 70% of the points), and weight_pct 28/38/34 (band midpoints normalised x100/97.5, each inside its published band — derivation table in derivation/sources.md). S3 decisions: bank 65 = 1.30x exam, the size in the 1.3-1.4x band whose largest-remainder allocation is tie-free (L-0008) AND whose per-domain counts (18/25/22) the honest merge meets without padding or thin splits — the full candidate table and the 67-item alternative are in derivation/master-inventory.md; format_mix is MC-dominant (42 SC + 5 MR + 3 SM) because 135 of 145 accessible practice items are single choice, and ALL format-mix numbers are LOW-CONFIDENCE until the account-walled Tier-1 practice assessment is accessible; single_choice.options 4 per the derivation artefacts (Microsoft's own curriculum uses 3 — deliberately not inherited); pattern caps E01 0.30 / E03 0.35 from the Artefact A frequency analyses, D03/D04 0.10 registry-standard; near_duplicate_jaccard 0.4 (ccar-p precedent); layers.syllabus_rules false because the study guide IS the syllabus (1:1 skill-area mapping, Artefact B) and a rules layer would duplicate concepts.json. Priority convergence in concepts.json treats the two Microsoft sources as ONE author (five documented WARN-level divergences — see concepts.json $comment). Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "az-900",
+  "title": "Microsoft Azure Fundamentals (AZ-900)",
+  "vendor": "Microsoft",
+  "status": "in_review",
+  "version": "0.1.0",
+  "blueprint_version": "skills measured as of 2026-07-20",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": 50,
+    "time_limit_minutes": 45,
+    "pass_threshold_pct": 70
+  },
+  "bank": {
+    "item_count": 65
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "Describe cloud concepts",
+      "weight_pct": 28,
+      "exam_items": 14,
+      "bank_items": 18,
+      "format_mix": {
+        "single_choice": 12,
+        "multiple_response": 1,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d2",
+      "title": "Describe Azure architecture and services",
+      "weight_pct": 38,
+      "exam_items": 19,
+      "bank_items": 25,
+      "format_mix": {
+        "single_choice": 16,
+        "multiple_response": 2,
+        "scenario_matching": 1
+      }
+    },
+    {
+      "id": "d3",
+      "title": "Describe Azure management and governance",
+      "weight_pct": 34,
+      "exam_items": 17,
+      "bank_items": 22,
+      "format_mix": {
+        "single_choice": 14,
+        "multiple_response": 2,
+        "scenario_matching": 1
+      }
+    }
+  ],
+  "formats": {
+    "single_choice": {
+      "options": 4
+    },
+    "multiple_response": {
+      "options": 5,
+      "select_count": [
+        2
+      ]
+    },
+    "scenario_matching": {
+      "min_options": 3,
+      "min_scenarios": 3,
+      "require_option_reuse": true
+    }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1,
+      "E01": 0.3,
+      "E03": 0.35
+    },
+    "near_duplicate_jaccard": 0.4
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "intro": {
+    "about": "Microsoft Certified: Azure Fundamentals (AZ-900) validates foundational knowledge of cloud concepts and of Azure itself: what moving to the cloud changes about cost, resilience and responsibility, which Azure services do which jobs, and how an Azure estate is managed and governed. The study guide current as of July 20, 2026 defines three skill areas: Describe cloud concepts (25-30%), Describe Azure architecture and services (35-40%), and Describe Azure management and governance (30-35%).",
+    "audience": "Built for people demonstrating foundational Azure knowledge: newcomers to cloud entering technical roles, sales, procurement, finance and project professionals who need to discuss Azure credibly, students, and administrators or developers formalising fundamentals before role-based certifications. The exam's verb is describe, never configure — every question here tests recognition, discrimination between neighbouring services and terms, and appropriate-use judgment, not portal steps, syntax or SKU tables.",
+    "materials": [
+      {
+        "title": "50-question practice form",
+        "description": "Weighted to the published skill-area bands (28/38/34 after band-midpoint normalisation) and drawn from a 65-item originally-authored bank in which every one of the current outline's 57 objective bullets is represented. Microsoft publishes a 40-60 question band rather than an exact count; this mock models 50."
+      },
+      {
+        "title": "Three question formats, with disclosed approximations",
+        "description": "Mostly four-option single choice, plus choose-two multiple-response items and scenario-matching items that approximate the real exam's hot area and drag-and-drop types. Microsoft deliberately does not publish its exam's format list; the format coverage note below carries the full mapping and what is not rehearsed here."
+      },
+      {
+        "title": "Review dashboard and rationales",
+        "description": "Per-domain scoring against a 70% bar — an honest proxy for the real exam's scaled 700-of-1,000 pass mark, which Microsoft warns may not equal 70% of the points — plus an explanation for the key and every distractor on submission, phrased in the study guide's own vocabulary."
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "Study guide for Exam AZ-900 (skills measured) — Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900"
+      },
+      {
+        "label": "Exam AZ-900: Microsoft Azure Fundamentals — exam details page",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/"
+      },
+      {
+        "label": "Official free AZ-900 Practice Assessment (Microsoft Learn sign-in required)",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/practice/assessment?assessment-type=practice&assessmentId=23"
+      }
+    ],
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to Microsoft Corporation or Pearson VUE. \"Microsoft\", \"Azure\", \"Microsoft Entra\", \"Microsoft Purview\" and \"Microsoft Certified: Azure Fundamentals\" are trademarks of the Microsoft group of companies. Every question was written clean-room from documented derivation artefacts against the public study guide, with prior practice material analysed for classification only, exactly as this package's derivation records. Nothing here is drawn from the live AZ-900 item bank: real exam content is confidential and protected by the Microsoft Certification exam agreement, which binds you too once you sit the exam — please never share live questions here."
+  },
+  "format_coverage": "Microsoft does not publish the item types used on a given exam (\"To protect exam security and the value of our certifications, we don't identify specific exam formats or question types before the exam\"). What it does publish is the sample list demoed in its exam sandbox — multiple choice, drag and drop, hot area, build list, active screen and case studies (labs do not apply to Fundamentals exams) — plus confirmation that \"problem-solution question sets\" exist, where one scenario is restated with a different proposed solution and answered Yes or No. This mock supports three formats and approximates as follows. Multiple choice maps exactly to single_choice (four options). The problem-solution shape's judgment — does this proposal actually satisfy the stated requirement? — is exercised inside standard four-option single-choice items, but neither its two-option Yes/No mechanic nor the series relationship (one scenario restated with different proposed solutions) is reproduced. Multi-select multiple choice maps to multiple_response (choose two of five). Drag and drop is approximated by scenario_matching. Hot area (a grid of statements each answered independently) is approximated by all-or-nothing multiple_response, which loses the per-statement No branch. Build list (place steps in order) is approximated by single_choice over candidate orderings. Active screen (configure a control in a rendered interface) and case studies (several dependent items under one shared scenario) are not represented at all; their underlying concepts are authored as standalone items. Two scoring divergences are disclosed alongside: the real exam awards partial credit on multi-part items (one point per correctly answered component) where this mock's multiple_response is all-or-nothing, and the real exam reports a scaled 1-1000 score with 700 to pass — which Microsoft states \"may not equal 70% of the points\" — where this mock reports percent correct against a 70% bar.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "az900-studyguide",
+        "type": "public_blueprint",
+        "citation": "Official \"Study guide for Exam AZ-900: Microsoft Azure Fundamentals\", skills measured as of 2026-07-20, published by Microsoft Corporation on Microsoft Learn (learn.microsoft.com/credentials/certifications/resources/study-guides/az-900). Public document, read in full 2026-08-16. Supplies the three skill areas and their weight bands, all 12 skill groups and 57 objective bullets, the canonical vocabulary, the pass mark and the change log. Exam duration, scoring model and item-type sample list are taken from the two companion Microsoft pages cited in derivation/sources.md. Distilled to derivation/source-az900-studyguide.md."
+      },
+      {
+        "id": "ms-practice-assessment",
+        "type": "public_practice_set",
+        "citation": "Official free AZ-900 Practice Assessment on Microsoft Learn (assessmentId 23). REGISTERED BUT NOT ACCESSED: Microsoft requires a signed-in Microsoft Learn profile to open it, and no account was created (free-first / no-signup rule). No content from this source has been read and no artefact exists for it; it carries zero weight in the concept inventory. Public documentation of what it is — free, unlimited retakes, per-question rationale, authored by the certification team with AI assistance — is recorded in derivation/sources.md."
+      },
+      {
+        "id": "ms-learn-az900-modules",
+        "type": "public_syllabus",
+        "citation": "Microsoft Learn \"Introduction to Cloud Infrastructure\" learning paths 1-3 (12 modules, 35 knowledge-check questions), published free by Microsoft Corporation and readable without sign-in. Used under the clean-room rule for analytical classification only — module-to-domain mapping, per-item concept mapping and distractor-pattern frequencies in derivation/source-ms-learn-az900-modules.md. No text reused. Answer keys are not published by the vendor and were determined analytically during distillation."
+      },
+      {
+        "id": "tutorialsdojo-az900",
+        "type": "public_practice_set",
+        "citation": "Jon Bonso / Tutorials Dojo, 10 AZ-900 sample exam questions published free at tutorialsdojo.com, last updated 2026-02-26. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-tutorialsdojo-az900.md. No text reused. This is the only accessible source demonstrating Microsoft's non-multiple-choice item shapes, and is the evidential basis for the format_coverage disclosure above."
+      },
+      {
+        "id": "insidecloud-az900",
+        "type": "public_practice_set",
+        "citation": "Inside Cloud and Security, 100-question free AZ-900 practice quiz at insidethemicrosoftcloud.com/az900quiz (no paywall, no login, no signup); no individual author is named on the page. Used under the clean-room rule for analytical classification only — per-item concept mapping, off-blueprint audit and distractor-pattern frequencies in derivation/source-insidecloud-az900.md. No text reused. Screened against the dump corpus at S1 with no correspondence found; 21 of its 100 items are keyed outside the 2026-07-20 skills outline and are excluded from concept evidence."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the AZ-900 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the Microsoft Certification exam agreement. Sources whose items trace back to candidate recall of a live sitting were screened out at S1 and are listed with their evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to Microsoft Corporation or Pearson VUE. \"Microsoft\", \"Azure\", \"Microsoft Entra\", \"Microsoft Purview\" and \"Microsoft Certified: Azure Fundamentals\" are trademarks of the Microsoft group of companies."
+  }
+}

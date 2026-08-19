@@ -136,6 +136,7 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: after trimming keyed-option riders bank-wide, the key is now shortest-or-tied in 25/57 SC items (~44% vs ~25% uniform) — trim toward the middle of the option-length band, not the floor.
 - why: `answer-length-cue` bounds the longest-key cue only; a never-longest/mostly-shortest key is a weaker but real elimination heuristic (rule out the longest option for free).
 - how to apply: next authoring wave drifts key lengths back toward parity; consider a warn-tier inverse bound in `answer-length-cue` (e.g. key strictly-shortest share ≤ 40%).
+- enforce: check → **IMPLEMENTED 2026-08-19** as `key-length-rank-share` (two-sided strict-longest/strict-shortest rank share over bank + each form, no length floor; warn-tier 0.35 / error-tier 0.45, both reported warn this wave). **The entry's proposed 0.40 bound was WRONG:** the adversarial sweep measured aif-c01's strict-shortest share at 38.6% — a 0.40 bound misses the very bank that motivated this lesson — while 0.35 catches 7/8 live banks against a 25% chance rate (clf-c02 is the only clean one). Threshold numbers proposed in a learning entry are hypotheses; calibrate against the full measured population before coding them (see L-0030).
 
 ## L-0022 · The per-exam README has no owning stage — preflight item 5 arrives unowned
 - date: 2026-08-16 · agent: exam-examiner · scope: local · tier: methodology/publishing
@@ -172,3 +173,41 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: `pnpm gate` includes `next build`, and build + `next dev` share `.next/` — running the gate in the main tree mid-UAT kills the human's dev runtime (webpack chunk mismatch, L-0025-era proof). The safe split: run validate/typecheck/test in the main tree (no `.next` writes), and run the FULL gate in `git worktree add <scratch> HEAD` + `pnpm install --prefer-offline` (warm store, seconds) — same commit, real build proof, zero contact with the served `.next`. Remove the worktree after.
 - why: this run had "gate green" and "do NOT restart the :4400 server, Oliver is mid-UAT" as simultaneous requirements; the worktree build satisfied both (gate green at 8f89bba while the served dev process stayed up).
 - how to apply: before any build-bearing gate, `lsof -iTCP:4400` — if a dev server is listening and it is not yours to kill, worktree the build. Hot-reload of committed source edits is fine; the build artifact clash is the only hazard.
+
+## L-0028 · The ccar-p import seam survived the incident-fix inversion — but only because both sides moved in lock-step
+- date: 2026-08-19 · agent: tech-manager · scope: local · tier: content-migration
+- lesson: the answer-cue incident fix ran INVERTED to L-0023's flow (Mockka's copy permuted first as SoT, then surgically ported upstream) — legal only because the port made both repos field-identical and the re-run proof was taken immediately: `node tools/import-ccar-p.mjs` against the upstream fix branch reproduced the committed Mockka content byte-for-byte (empty `git status`).
+- why: the import reads the sibling working tree, so with upstream on `fix/answer-position-cues` the seam could be proven converged before either PR merged; had the port been text-sloppy (formatting, key order), the next innocent re-import would have silently reverted the exploit fix.
+- how to apply: if content must be fixed Mockka-side first, the same session must port upstream AND re-run the import to an empty diff; upstream PR #7 must merge before any future re-import against `main` — until then a `main`-based re-import clobbers the permutation.
+
+## L-0029 · Hand-formatted JSON needs a round-trip-proven printer before surgical edits
+- date: 2026-08-19 · agent: tech-manager · scope: local · tier: tooling
+- lesson: the public repo's `data/questions.json` carries idiosyncratic per-node layout (inline scenario objects >80 chars, multiline options, one 10-space-indent anomaly at 1.06's distractors) — no width-rule or normalizing printer can reproduce it; `JSON.stringify` churned 1683 lines for a 616-line semantic change. The fix: parse recording raw scalar text + per-entry whitespace, require `print(parse(x)) === x` byte-identical BEFORE trusting the printer with modified data, then re-stringify only values that changed.
+- why: a symmetric 616/616 diff (vs 1683/797) is the difference between a reviewable surgical PR on a public artifact and formatting noise burying a correctness change; the round-trip refusal caught the anomaly that eyeballing the format rules missed.
+- how to apply: before rewriting any JSON/config file not produced by a known serializer, prove the byte round-trip first and make the writer refuse on divergence; if round-trip fails, upgrade the layout model — never "close enough" it.
+
+## L-0030 · Surface-cue checks must constrain rank, not just magnitude
+- date: 2026-08-19 · agent: tech-manager · scope: local · tier: validator/authoring
+- lesson: a magnitude bound (key/longest-distractor length ratio) can read perfectly compliant while the RANK statistic still gives every item away — bound the argmax/argmin form (WHO is the extreme), not just how extreme.
+- why: the adversarial sweep measured median length ratios of 0.97–1.01 across all six post-aif-c01 banks (perfect `answer-length-cue` compliance) while the key was the strict LONGEST option in 35–52% of items (chance 25%, p<0.05 in five of six) — authors optimise to the measured quantity and the defect migrates to the nearest unmeasured neighbour; magnitude checks also need noise floors (MIN_KEY_LENGTH_FOR_RATIO=40 exempted 26% of sy0-701's items) that rank statistics don't.
+- how to apply: when bounding a continuous surface feature, ship the rank/argmax bound alongside the magnitude bound, floor-free, computed over the bank AND each served form.
+- enforce: check (`key-length-rank-share`, warn this wave → error next content wave).
+
+## L-0031 · A one-sided cue rule manufactures its own inverse cue
+- date: 2026-08-19 · agent: tech-manager · scope: local · tier: validator/authoring
+- lesson: a surface rule stated one-sidedly ("only the key must not carry X") creates an optimisation gradient toward the unmeasured side — authoring evacuated riders into distractors, and a rider now marks a DISTRACTOR 57/59 times (p=2e-06), a STRONGER elimination cue than the one the rule killed.
+- why: authors (human or LLM) optimise against the stated check, not the underlying symmetry; the check defines "compliant", so the habit displaces rather than dissolves — the same mechanism as L-0030, seen from the rule-design side.
+- how to apply: state every surface-feature rule as a two-sided balance around chance with a sampling floor, and pair any per-item rule with an aggregate distribution bound; when writing a new cue check, ask "what does gaming this check produce?" and bound that too.
+- enforce: check (`rider-balance`, widened marker list, two-sided [0.10, 0.45] band, warn this wave → error next content wave).
+
+## L-0032 · Score a systemic surface cue once as a finding, not once per exposed item
+- date: 2026-08-19 · agent: exam-examiner · scope: local · tier: eval/S5
+- lesson: when a bank-wide cue (rider evacuation, named-entity parity) touches dozens of items, judge dimension 5 on each item's *conceptual* pitch and report the cue once as an S5b/validator finding with the worst-exposed items named — do not push every touched item to a 3, or the Gate 2 sample swallows the bank and stops being a sample.
+- why: ccar-p S5 r1 — the trim wave left 63 items rider-asymmetric, but item-by-item measurement showed the elimination heuristic fully determines the answer in exactly **one** item (1.14, not even seated on form-a) and named-entity exposure is genuinely 2 items, not the 5 the aggregate check reports (3 are sentence-initial-capital noise). Scoring the aggregate would have flagged ~40 items and hidden the 7 that matter. The methodology already says S5b "scores their combined consequence" — double-counting in the rubric is the duplication.
+- how to apply: at S5, after the aggregate cue warnings, compute the per-item exploitability (does the cue *fully determine* this item's answer?) before assigning any dimension-5 3; flag the determined and near-determined items, and disposition the rest as one named finding in the eval report and the Gate 2 checklist.
+
+## L-0033 · A trim that strips a key's rider can silently narrow its scope — diff meaning, not just length
+- date: 2026-08-19 · agent: exam-examiner · scope: local · tier: eval/S5
+- lesson: length-cue remediation is judged by re-reading each trimmed key against its own rationale, not by confirming the length statistic moved; the failure mode is a key whose *scope* narrowed while the rationale still argues the wider claim.
+- why: ccar-p 5.11 was trimmed from "every component in the data path — the model, retrieval, logging and any subprocessor" to "every subprocessor in the data path" while `rationale.correct` still argued the wider claim and never used the word *subprocessor*. Length checks, rationale-anti-drift and the exploit scan were all green; only a key-vs-rationale read caught it. Independent corroboration: it was also the single medium-confidence answer in an otherwise 85/85 blind solve.
+- how to apply: after any option-text remediation wave, diff the keyed option content-matched across the whole chain (letter permutations make per-letter diffs lie), then for each changed key ask "is every noun in the rationale's argument still reachable from the key's wording?" — a term that appears in the key and nowhere in the rationale is a dimension-4 flag.

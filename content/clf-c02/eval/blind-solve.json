@@ -1,0 +1,566 @@
+{
+ "$comment": "S5 blind solve ROUND 2 (methodology/05-eval-rubric.md #blind-solve), post-bounce re-eval of the reworked bank (rework commit 168ae1f, item 1.10). exam-examiner, fresh session, 2026-08-18 \u2014 this session authored nothing in this bank and opened NO key, rationale, or round-1 eval artifact until the pre-key record was written (pre-key record preserved in the session scratchpad as blind-answers.json). Round 1 is preserved at eval/blind-solve-r1.json; this canonical file carries the CURRENT bank revision per the preflight contract (versioning-by-suffix, aif-c01 precedent). Encoding: single_choice chosen/keyed are option letters; multiple_response are sorted letters comma-joined. Result: 68/68 match, zero misses, zero adjudications required. The round-1 independence caveat is CLEARED this round: the schema was established from a keyed-free projection (field names only, then one item printed with answer/rationale/metadata stripped), so item 1.01's round-2 blind result is independent \u2014 the round-1 procedure lesson (eval-report \u00a79) was applied. Codex advisory cross-solve re-attempted and skipped again (401, CLI unauthenticated \u2014 eval/codex-solve.json); per-item codex fields are absent and the Gate 2 sample carries no cross-model signal.",
+ "round": 2,
+ "examiner": "exam-examiner",
+ "date": "2026-08-18",
+ "summary": {
+  "items": 68,
+  "matched": 68,
+  "missed": 0,
+  "confident_misses": 0,
+  "adjudications_open": 0,
+  "confidence": {
+   "high": 67,
+   "medium": 1
+  },
+  "reworked_items_resolved": [
+   "1.10"
+  ]
+ },
+ "items": [
+  {
+   "id": "1.01",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Value proposition = replace up-front owned capacity with on-demand resources you start and stop",
+   "match": true
+  },
+  {
+   "id": "1.02",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Global reach + speed of deployment: launch in Regions near each market as a config step, no local lease",
+   "match": true
+  },
+  {
+   "id": "1.03",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Capacity following demand up AND down is elasticity; C names the service not the benefit",
+   "match": true
+  },
+  {
+   "id": "1.04",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "medium",
+   "reasoning": "Well-Architected Framework is the pillars/design-principles review lens; the Tool only records reviews",
+   "match": true
+  },
+  {
+   "id": "1.05",
+   "chosen": "B,D",
+   "keyed": "B,D",
+   "confidence": "high",
+   "reasoning": "Operational excellence and Sustainability are pillars; fault tolerance/elasticity/revenue are not",
+   "match": true
+  },
+  {
+   "id": "1.06",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Recovering from disruption and continuing to operate is the Reliability pillar's definition",
+   "match": true
+  },
+  {
+   "id": "1.07",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Adoption is sequenced deliberately under a chosen migration strategy, not one big-bang cutover",
+   "match": true
+  },
+  {
+   "id": "1.08",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Migration Evaluator inventories the current estate and builds the projected business case",
+   "match": true
+  },
+  {
+   "id": "1.09",
+   "chosen": "A,C",
+   "keyed": "A,C",
+   "confidence": "high",
+   "reasoning": "CAF business outcomes include reduced business risk and increased revenue",
+   "match": true
+  },
+  {
+   "id": "1.10",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Minutes of cutover with zero lost writes requires ongoing replication/change capture, not a bulk export",
+   "match": true
+  },
+  {
+   "id": "1.11",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Capital purchase of owned capacity becomes variable operating spend tracking consumption",
+   "match": true
+  },
+  {
+   "id": "1.12",
+   "chosen": "A,D",
+   "keyed": "A,D",
+   "confidence": "high",
+   "reasoning": "Rack/power/cooling and hardware refresh disappear; compute spend and DB licenses persist",
+   "match": true
+  },
+  {
+   "id": "1.13",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Keeping owned entitlements on AWS compute is Bring Your Own License",
+   "match": true
+  },
+  {
+   "id": "1.14",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Sub-10% utilization with no app change = rightsize the instances to observed demand",
+   "match": true
+  },
+  {
+   "id": "1.15",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Automated provisioning/teardown removes both manual staff effort and forgotten idle spend",
+   "match": true
+  },
+  {
+   "id": "1.16",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Economies of scale: aggregated demand lowers AWS unit cost, passed into pricing",
+   "match": true
+  },
+  {
+   "id": "2.01",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "The model divides security OF the cloud (AWS) from security IN the cloud (customer)",
+   "match": true
+  },
+  {
+   "id": "2.02",
+   "chosen": "A,D",
+   "keyed": "A,D",
+   "confidence": "high",
+   "reasoning": "Customer owns data classification/access and guest OS patching on EC2",
+   "match": true
+  },
+  {
+   "id": "2.03",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Patch management is the canonical shared control - each party carries it at a different layer",
+   "match": true
+  },
+  {
+   "id": "2.04",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Moving EC2-hosted DB to RDS transfers engine patching to AWS; customer keeps data/access/config",
+   "match": true
+  },
+  {
+   "id": "2.05",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Customer inherits AWS physical/infrastructure controls and gets encryption as a configuration option",
+   "match": true
+  },
+  {
+   "id": "2.06",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Dedicated, customer-controlled validated crypto hardware is CloudHSM",
+   "match": true
+  },
+  {
+   "id": "2.07",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Who/when/from-where for an API change is CloudTrail event history",
+   "match": true
+  },
+  {
+   "id": "2.08",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "AWS Artifact is the on-demand self-service source of AWS audit reports/attestations",
+   "match": true
+  },
+  {
+   "id": "2.09",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Compliance program coverage is per service; it must be checked service by service",
+   "match": true
+  },
+  {
+   "id": "2.10",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Discovering and classifying sensitive data in S3 is Macie",
+   "match": true
+  },
+  {
+   "id": "2.11",
+   "chosen": "B,E",
+   "keyed": "B,E",
+   "confidence": "high",
+   "reasoning": "Groups apply one permission set to many users; AWS managed policies attach as-is, custom fills gaps",
+   "match": true
+  },
+  {
+   "id": "2.12",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Full admin for a narrow task violates least privilege",
+   "match": true
+  },
+  {
+   "id": "2.13",
+   "chosen": "C,E",
+   "keyed": "C,E",
+   "confidence": "high",
+   "reasoning": "MFA on root plus deleting the root access key and using an IAM identity for daily work",
+   "match": true
+  },
+  {
+   "id": "2.14",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Closing the account and changing account name/email are root-only tasks",
+   "match": true
+  },
+  {
+   "id": "2.15",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Secrets Manager stores and returns secrets at run time, off the source file",
+   "match": true
+  },
+  {
+   "id": "2.16",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Cross-account access should be an assumed IAM role, not a pasted long-lived access key",
+   "match": true
+  },
+  {
+   "id": "2.17",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Federation means users authenticate against the existing corporate directory, which stays authoritative",
+   "match": true
+  },
+  {
+   "id": "2.18",
+   "chosen": "C,D",
+   "keyed": "C,D",
+   "confidence": "high",
+   "reasoning": "Shield for the DDoS flood, WAF for injection strings in web requests",
+   "match": true
+  },
+  {
+   "id": "2.19",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Standing written analysis of security features/practices is the AWS Security Blog",
+   "match": true
+  },
+  {
+   "id": "2.20",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Third-party security software is procured through AWS Marketplace, no new vendor onboarding",
+   "match": true
+  },
+  {
+   "id": "2.21",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Recurring account hygiene checks (open buckets, no-MFA users) are Trusted Advisor security checks",
+   "match": true
+  },
+  {
+   "id": "3.01",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Identical repeatable stacks = infrastructure as code from one template",
+   "match": true
+  },
+  {
+   "id": "3.02",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Workloads in AWS and on-premises connected privately is the hybrid model",
+   "match": true
+  },
+  {
+   "id": "3.03",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Distant readers need content cached at CloudFront edge locations, not more AZs in one Region",
+   "match": true
+  },
+  {
+   "id": "3.04",
+   "chosen": "A,E",
+   "keyed": "A,E",
+   "confidence": "high",
+   "reasoning": "Multi-AZ for single-data-center loss; EU records stored in an EU Region for residency",
+   "match": true
+  },
+  {
+   "id": "3.05",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "CPU-saturating job with tiny I/O is compute optimized",
+   "match": true
+  },
+  {
+   "id": "3.06",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Sub-second, event-driven, nothing running between events is Lambda",
+   "match": true
+  },
+  {
+   "id": "3.07",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Fixed pair pinned during surges needs auto scaling to add/remove instances",
+   "match": true
+  },
+  {
+   "id": "3.08",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Managed database transfers patching/backup/availability to AWS; customer keeps data and access",
+   "match": true
+  },
+  {
+   "id": "3.09",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Hundreds of millions of key-value items, single-key reads, no joins = DynamoDB",
+   "match": true
+  },
+  {
+   "id": "3.10",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Heterogeneous engine change: SCT converts the schema, DMS moves the data",
+   "match": true
+  },
+  {
+   "id": "3.11",
+   "chosen": "B,C",
+   "keyed": "B,C",
+   "confidence": "high",
+   "reasoning": "Public/private subnet split plus a VPN gateway pair for the office's private path",
+   "match": true
+  },
+  {
+   "id": "3.12",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Subnet-wide, instance-independent source blocking is a network ACL",
+   "match": true
+  },
+  {
+   "id": "3.13",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Predictable contracted throughput over internet-VPN variability is Direct Connect",
+   "match": true
+  },
+  {
+   "id": "3.14",
+   "chosen": "D,E",
+   "keyed": "D,E",
+   "confidence": "high",
+   "reasoning": "EFS for shared multi-instance documents; instance store for disposable scratch",
+   "match": true
+  },
+  {
+   "id": "3.15",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Hot for a month then 7-year retention with hours-long retrieval = lifecycle transition to Glacier",
+   "match": true
+  },
+  {
+   "id": "3.16",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "One place for retention policy and compliance reporting across EBS/EFS/RDS is AWS Backup",
+   "match": true
+  },
+  {
+   "id": "3.17",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Extracting text and form fields from scanned documents without ML skills is Textract",
+   "match": true
+  },
+  {
+   "id": "3.18",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Ad-hoc SQL directly over S3 files with no cluster is Athena",
+   "match": true
+  },
+  {
+   "id": "3.19",
+   "chosen": "A,B",
+   "keyed": "A,B",
+   "confidence": "high",
+   "reasoning": "SQS decouples the slow refund consumer; SNS fans the same event out to all channels",
+   "match": true
+  },
+  {
+   "id": "3.20",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "High-volume application-sent email is SES",
+   "match": true
+  },
+  {
+   "id": "3.21",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Finding which internal call is slow within a request is X-Ray tracing",
+   "match": true
+  },
+  {
+   "id": "3.22",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Persistent full desktop with retained settings/files is WorkSpaces; AppStream streams apps only",
+   "match": true
+  },
+  {
+   "id": "3.23",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Secure connection and fleet management for sensors is IoT Core; Kinesis only ingests",
+   "match": true
+  },
+  {
+   "id": "4.01",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Interruption-tolerant, deadline-free, cheapest-possible batch is Spot",
+   "match": true
+  },
+  {
+   "id": "4.02",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "Zonal RI discount shares across consolidated billing but only within its AZ: holder's 1 + 3 matching = 4",
+   "match": true
+  },
+  {
+   "id": "4.03",
+   "chosen": "B,D",
+   "keyed": "B,D",
+   "confidence": "high",
+   "reasoning": "Data out to the internet and inter-Region transfer are charged; inbound and at-rest storage are not",
+   "match": true
+  },
+  {
+   "id": "4.04",
+   "chosen": "D",
+   "keyed": "D",
+   "confidence": "high",
+   "reasoning": "Estimating a design that does not exist yet is the Pricing Calculator; Cost Explorer is retrospective",
+   "match": true
+  },
+  {
+   "id": "4.05",
+   "chosen": "A",
+   "keyed": "A",
+   "confidence": "high",
+   "reasoning": "Activated cost allocation tags attribute charges per brand; name prefixes do not reach the bill",
+   "match": true
+  },
+  {
+   "id": "4.06",
+   "chosen": "C,E",
+   "keyed": "C,E",
+   "confidence": "high",
+   "reasoning": "Basic gives customer service and community resources only; Business adds 24/7 technical support",
+   "match": true
+  },
+  {
+   "id": "4.07",
+   "chosen": "B",
+   "keyed": "B",
+   "confidence": "high",
+   "reasoning": "Accountable paid delivery comes from AWS Professional Services or an APN partner",
+   "match": true
+  },
+  {
+   "id": "4.08",
+   "chosen": "C",
+   "keyed": "C",
+   "confidence": "high",
+   "reasoning": "No plan, no urgency, peer answer wanted = AWS re:Post",
+   "match": true
+  }
+ ]
+}

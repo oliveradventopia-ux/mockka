@@ -1,0 +1,1012 @@
+{
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-17) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning and merge log in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. PRIORITY CONVENTION (documented divergence from the raw sources.length computation): per derivation/sources.md#convergence-outlook, ccas-blueprint, ccas-guide-samples and ccas-course-recap are ONE independent source family (all Anthropic); beecham-ccao-f is the only independent second family. priority is therefore computed over FAMILIES: high <=> the concept's sources[] include beecham-ccao-f (community corroboration of a vendor attestation); vendor-only concepts stay normal even with 2-3 vendor source refs. Every concept-convergence WARN of the form 'priority normal despite N sources' on this package is this convention, enumerated in derivation/master-inventory.md — vendor+vendor agreement is coherence, not convergence. sources[].items conventions: ccas-blueprint refs are '<objective>-<row>' rows of the concept tables in derivation/source-ccas-blueprint.md (e.g. 1.2-a = first row under Objective 1.2); ccas-course-recap refs are rule ids (matching syllabus-rules.json); beecham-ccao-f refs are item ids (M1-Q01…) in derivation/source-beecham-ccao-f.md; ccas-guide-samples refs are G.1-G.3 in derivation/source-ccas-guide-samples.md. syllabus_rule links each concept to the rule the weak-rule report should name; cross-module links (e.g. a d2 concept carrying rule 6.05) are deliberate and recorded in the inventory doc.",
+  "version": "0.1.0",
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "A prompt is a specification: the request states the work, the inputs that govern it, and what a good result looks like — and its quality is judged by the output's fitness for the business purpose, not by the prompt's length or its confident phrasing",
+      "vocabulary": ["effective prompts", "business and technical tasks", "structure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.1-a", "1.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["2.01"] },
+        { "artefact": "beecham-ccao-f", "items": ["M2-Q01"] }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "Five components — role, context, task, constraints, format — carry almost every professional prompt and are run as a checklist; a role on its own changes register, not correctness, because it is one component of five",
+      "vocabulary": ["role", "context", "task", "constraints", "format"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-course-recap", "items": ["2.01"] },
+        { "artefact": "ccas-blueprint", "items": ["1.1-a"] },
+        { "artefact": "beecham-ccao-f", "items": ["M2-Q06"] }
+      ],
+      "syllabus_rule": "2.01"
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "The model cannot see what exists only in the requester's head, so unstated context is the default failure: generic, on-topic output is diagnosed as a context gap before it is blamed on a model limitation",
+      "vocabulary": ["context gap", "model limitation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-course-recap", "items": ["2.02"] },
+        { "artefact": "beecham-ccao-f", "items": ["M2-Q02"] }
+      ],
+      "syllabus_rule": "2.02"
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Complex work is split into ordered steps, each producing a result that can be checked before the next step consumes it — checkable intermediates are what make delegated multi-stage work diagnosable",
+      "vocabulary": ["task decomposition techniques", "ordered steps", "checkable result"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.2-a"] },
+        { "artefact": "ccas-course-recap", "items": ["2.03"] },
+        { "artefact": "beecham-ccao-f", "items": ["M2-Q04"] }
+      ],
+      "syllabus_rule": "2.03"
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Decomposition order is chosen by dependency and stakes: the step everything else rests on is built and verified first, because every later step inherits its errors",
+      "vocabulary": ["structure complex requests", "ordered steps"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["2.03"] }
+      ],
+      "syllabus_rule": "2.03"
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "A single opaque prompt covering many stages cannot be diagnosed when it fails; the remedy is structural decomposition, not more instructions piled onto the same request",
+      "vocabulary": ["decomposition", "complex requests"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.2-c"] }
+      ],
+      "syllabus_rule": "2.03"
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "The output is read as a diagnostic that names which component of the request failed, and exactly one component is changed per round so the effect of the change is attributable",
+      "vocabulary": ["iterate prompts", "diagnostic", "improve output quality"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.3-a"] },
+        { "artefact": "ccas-course-recap", "items": ["2.04"] }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Iteration terminates: when successive rounds stop improving the result, the remaining gap is a task or evidence problem, and persisting with wording changes past that point is wasted effort",
+      "vocabulary": ["iterate", "rounds"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["2.04"] }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "When definitions are already adequate and boundary cases still fail, the missing component is worked examples that mark the boundary — adding more definition is the wrong fix",
+      "vocabulary": ["iterate prompts", "improve output quality"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M2-Q02"] },
+        { "artefact": "ccas-blueprint", "items": ["1.3-a"] }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Task type sets how much latitude the prompt grants: convergent work is constrained, divergent work is deliberately left open — control and range trade off, and one prompt cannot maximise both",
+      "vocabulary": ["analysis", "brainstorming", "constraints", "latitude"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.4-a"] },
+        { "artefact": "ccas-course-recap", "items": ["2.05"] }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "The four named task types — analysis, research, drafting, brainstorming — are the exam's working taxonomy, and each fails in a characteristic way when the wrong prompting strategy is applied to it",
+      "vocabulary": ["analysis", "research", "drafting", "brainstorming", "task type"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["1.4-b"] },
+        { "artefact": "ccas-course-recap", "items": ["2.05"] }
+      ],
+      "syllabus_rule": "2.05"
+    },
+    {
+      "id": "C-012",
+      "domain": "d2",
+      "statement": "Evaluation runs against three explicit references every time — the requirements, the supplied source material, and professional standards — and only the depth of review is calibrated to what is at stake, never the reference set",
+      "vocabulary": ["requirements", "source material", "professional standards", "depth of review"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.1-a", "2.1-c"] },
+        { "artefact": "ccas-course-recap", "items": ["3.02"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q01", "M3-Q03"] }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-013",
+      "domain": "d2",
+      "statement": "Completeness is a separate check from accuracy: an output can be entirely true and still omit what the decision needs, and the omission is silent — nothing present flags what is absent",
+      "vocabulary": ["completeness", "completeness gaps"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["3.03"] }
+      ],
+      "syllabus_rule": "3.03"
+    },
+    {
+      "id": "C-014",
+      "domain": "d2",
+      "statement": "Accountability is non-delegable: the sender owns every claim in what they ship regardless of who or what drafted it, and that ownership is why output evaluation carries the exam's largest weight",
+      "vocabulary": ["accountability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-course-recap", "items": ["3.01"] }
+      ],
+      "syllabus_rule": "3.01"
+    },
+    {
+      "id": "C-015",
+      "domain": "d2",
+      "statement": "A hallucination is fabricated specific content — numbers, names, citations, dates — presented in the register of fact; a checkable specific bound for a consequential audience is validated against the authoritative source before it leaves your hands",
+      "vocabulary": ["hallucinations", "fabricated specifics"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.2-a", "2.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["3.03"] },
+        { "artefact": "ccas-guide-samples", "items": ["G.1"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q04"] }
+      ],
+      "syllabus_rule": "3.03"
+    },
+    {
+      "id": "C-016",
+      "domain": "d2",
+      "statement": "Fluency, confidence and the model's own self-assessment are not accuracy signals: verification means checking a claim against an authoritative source, never against the output's register, a confidence rating, or the model's restatement of itself",
+      "vocabulary": ["confident uncertainty", "plausible", "fact-checking and validation techniques"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-course-recap", "items": ["3.03"] },
+        { "artefact": "ccas-blueprint", "items": ["2.3-a"] },
+        { "artefact": "ccas-guide-samples", "items": ["G.1"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q02"] }
+      ],
+      "syllabus_rule": "3.03"
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "Bias detection is part of routine review of ordinary outputs, not a separate exercise reserved for sensitive topics — an output can be accurate, well-formatted and still unfair, and routine review is what catches it",
+      "vocabulary": ["biases", "bias"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.2-c"] },
+        { "artefact": "ccas-course-recap", "items": ["6.05"] }
+      ],
+      "syllabus_rule": "6.05"
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "Pretrained knowledge carries no currency guarantee: facts that postdate the model's knowledge or change quickly are supplied or retrieved from an authoritative current source and then validated — asking the model to try harder does not create currency",
+      "vocabulary": ["fact-checking and validation techniques", "validation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M1-Q08"] },
+        { "artefact": "ccas-blueprint", "items": ["2.3-a"] }
+      ],
+      "syllabus_rule": "3.04"
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "Verification is cheapest when built into the request: permit an explicit \"I don't know\", restrict claims to the supplied sources, and require citations that can be audited — prevention at request time beats reconstruction at review time",
+      "vocabulary": ["permit \"I don't know\"", "restrict to sources", "auditable citations", "prevention"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["3.04"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q04"] }
+      ],
+      "syllabus_rule": "3.04"
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "Where numbers must be right they are computed rather than generated as prose — generation supplies language, computation supplies figures, and which of the two produced a number decides how far it can be trusted",
+      "vocabulary": ["code execution", "validation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.3-c"] },
+        { "artefact": "ccas-course-recap", "items": ["3.06"] },
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q01"] }
+      ],
+      "syllabus_rule": "3.06"
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "The human-review threshold is decided in advance from four factors — stakes, reversibility, audience and regulatory exposure — not negotiated at the moment of sending under time pressure",
+      "vocabulary": ["stakes", "reversibility", "audience", "regulatory exposure", "thresholds"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.4-a"] },
+        { "artefact": "ccas-course-recap", "items": ["3.05"] },
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q02"] }
+      ],
+      "syllabus_rule": "3.05"
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "Mandatory review means a qualified reviewer with access to the evidence; an unqualified sign-off, an evidence-blind approval or a rubber stamp does not discharge the review obligation",
+      "vocabulary": ["human review", "required"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.4-b"] },
+        { "artefact": "ccas-course-recap", "items": ["3.05"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q07"] }
+      ],
+      "syllabus_rule": "3.05"
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "Adapting an output for its audience changes vocabulary, level of detail and framing while leaving the claims intact — reformatting or re-toning is never a correctness fix, and a claim that changed in adaptation needs re-verification",
+      "vocabulary": ["edit, adapt, refine, and compare", "intended audience"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.5-a"] }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "Comparing candidate outputs requires a stated criterion decided before reading them; without one, the most fluent candidate wins by default and the comparison is theatre",
+      "vocabulary": ["compare outputs", "intended audience"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.5-b"] }
+      ],
+      "syllabus_rule": "3.02"
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "The output format — an artifact, an inline answer, or structured data — is chosen for how the result will be used and how reliably it must hold; the format that makes an error visible beats the format that reads well",
+      "vocabulary": ["artifacts", "inline", "structured data", "select appropriate output formats"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.6-a", "2.6-b"] },
+        { "artefact": "ccas-course-recap", "items": ["3.06"] },
+        { "artefact": "beecham-ccao-f", "items": ["M2-Q05"] }
+      ],
+      "syllabus_rule": "3.06"
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "An evaluation sample must represent production conditions — including missing, conflicting, stale and adversarial inputs; a clean, author-written sample proves nothing about how the work behaves in use",
+      "vocabulary": ["evaluate", "accuracy and completeness"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q05"] },
+        { "artefact": "ccas-blueprint", "items": ["2.1-a"] }
+      ],
+      "syllabus_rule": "1.05"
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "Inconsistency has two grains — two parts of one output disagreeing, and repeated runs disagreeing; variation is inherent to the tool, so the response is structural review and a measured consistency bound, not a bug report and not resignation",
+      "vocabulary": ["inconsistencies", "variation", "review"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["2.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["1.05"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q08"] }
+      ],
+      "syllabus_rule": "1.05"
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "A severity-class failure is not tradable against an aggregate quality score: one prohibited error in a batch is a stop condition even when the average looks excellent",
+      "vocabulary": ["evaluate Claude-generated outputs", "required"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q06"] },
+        { "artefact": "ccas-blueprint", "items": ["2.4-a"] }
+      ],
+      "syllabus_rule": "3.05"
+    },
+    {
+      "id": "C-029",
+      "domain": "d3",
+      "statement": "The entry point is selected before the prompt is written, because the surface determines what context is available and what the output can be — choosing it by habit rather than by task shape is the failure this decision prevents",
+      "vocabulary": ["entry point", "Claude product features"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.1-a"] },
+        { "artefact": "ccas-course-recap", "items": ["1.01"] }
+      ],
+      "syllabus_rule": "1.01"
+    },
+    {
+      "id": "C-030",
+      "domain": "d3",
+      "statement": "The four named surfaces answer four different problems: chat for one-off work, Projects for recurring work with stable context, artifacts for deliverable outputs, and research mode for tasks needing current multi-source information",
+      "vocabulary": ["Projects", "research mode", "chat", "artifacts"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["1.01"] }
+      ],
+      "syllabus_rule": "1.01"
+    },
+    {
+      "id": "C-031",
+      "domain": "d3",
+      "statement": "For occasional, human-reviewed work with no integration requirement, the interactive surface is the right answer — building automation or an agent for it is a cost with no payer, and beyond Associate scope besides",
+      "vocabulary": ["Claude product features", "escalate"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M1-Q01"] },
+        { "artefact": "ccas-blueprint", "items": ["3.1-b"] }
+      ],
+      "syllabus_rule": "1.01"
+    },
+    {
+      "id": "C-032",
+      "domain": "d3",
+      "statement": "The four capability layers own four distinct jobs — Projects carry context, Skills define repeatable procedures, Code Execution verifies computation, Memory persists continuity — and the layer is chosen by which problem the task actually has",
+      "vocabulary": ["Projects", "Skills", "Code Execution", "Memory", "capability layers"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-course-recap", "items": ["1.02"] },
+        { "artefact": "ccas-blueprint", "items": ["3.1-b"] }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-033",
+      "domain": "d3",
+      "statement": "The three model tiers trade speed and cost against capability, each with a characteristic task shape: Haiku for structured high-volume work, Sonnet for most professional work, Opus for complex high-stakes work where quality outranks speed",
+      "vocabulary": ["Haiku", "Sonnet", "Opus", "Claude model types"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.2-a", "3.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["1.03"] }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-034",
+      "domain": "d3",
+      "statement": "Once several tiers clear the quality bar the task actually requires, selection is a constrained optimisation on cost and speed — the cheapest, fastest option that still meets the stated requirement wins",
+      "vocabulary": ["cost, speed, quality", "task requirements", "speed-capability trade-off"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.3-a"] },
+        { "artefact": "ccas-course-recap", "items": ["1.03"] },
+        { "artefact": "ccas-guide-samples", "items": ["G.2"] },
+        { "artefact": "beecham-ccao-f", "items": ["M1-Q03"] }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-035",
+      "domain": "d3",
+      "statement": "Defaulting to the most capable tier for everything is a cost and latency failure, not a safety margin — capability is not a free upgrade, and over-provisioning straightforward work spends both for nothing",
+      "vocabulary": ["align model selection", "speed-capability trade-off"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["1.03"] },
+        { "artefact": "ccas-guide-samples", "items": ["G.2"] }
+      ],
+      "syllabus_rule": "1.03"
+    },
+    {
+      "id": "C-036",
+      "domain": "d3",
+      "statement": "Context is a finite budget that degrades output quality as it fills; the degradation is gradual and is easily mistaken for a model failure, which is what makes it a diagnosis to reach rather than an error to observe",
+      "vocabulary": ["context limitations", "context is a budget"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.4-a"] },
+        { "artefact": "ccas-course-recap", "items": ["1.04"] }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-037",
+      "domain": "d3",
+      "statement": "The three context remedies are chosen by what must survive the transition — restart when nothing must, summarize when the conclusions must, persist when continuity must outlive the session — and the choice is made before quality visibly drops",
+      "vocabulary": ["restart", "summarize", "persist"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.4-b"] },
+        { "artefact": "ccas-course-recap", "items": ["1.04"] }
+      ],
+      "syllabus_rule": "1.04"
+    },
+    {
+      "id": "C-038",
+      "domain": "d3",
+      "statement": "Memory is a distinct mechanism from the conversation's context window: Memory persists continuity across sessions while the context window carries the current one, and confusing the two misroutes both configuration and diagnosis",
+      "vocabulary": ["memory considerations", "Memory", "context limitations"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["3.4-c"] },
+        { "artefact": "ccas-course-recap", "items": ["1.04"] }
+      ],
+      "syllabus_rule": "1.02"
+    },
+    {
+      "id": "C-039",
+      "domain": "d4",
+      "statement": "Messy stakeholder input is turned into structured, traceable, testable requirements that others can act on — requirements analysis is the canonical delegation of analysis work, and its output is a working artefact, not a summary",
+      "vocabulary": ["analyze requirements and use cases", "traceable", "testable"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.1-a"] },
+        { "artefact": "ccas-course-recap", "items": ["4.02"] }
+      ],
+      "syllabus_rule": "4.02"
+    },
+    {
+      "id": "C-040",
+      "domain": "d4",
+      "statement": "A step is safe to delegate when its output can be checked: checkability, not confidence in the tool, is what makes requirements analysis and work like it a delegation candidate",
+      "vocabulary": ["requirements", "structured"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["4.02"] }
+      ],
+      "syllabus_rule": "4.02"
+    },
+    {
+      "id": "C-041",
+      "domain": "d4",
+      "statement": "Plans are built on verified numbers: the synthesis may be generated, but the figures underneath are computed — and pairing generation with computation is a design choice made when the plan is built, not a check bolted on afterwards",
+      "vocabulary": ["verified numbers", "code execution", "research, planning, and process optimization"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.2-a"] },
+        { "artefact": "ccas-course-recap", "items": ["4.03"] },
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q01"] }
+      ],
+      "syllabus_rule": "4.03"
+    },
+    {
+      "id": "C-042",
+      "domain": "d4",
+      "statement": "You cannot optimise what is not instrumented at the level where the cause lives: process optimisation starts from an instrumented workflow, so the friction being removed is the real one and not the remembered one",
+      "vocabulary": ["process optimization", "instrument", "friction"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["7.04"] },
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q05"] }
+      ],
+      "syllabus_rule": "7.04"
+    },
+    {
+      "id": "C-043",
+      "domain": "d4",
+      "statement": "Design work is delegated step by step with checkpoints rather than handed over whole — each checkpoint is where human judgment re-enters, and removing them is what turns support into abdication",
+      "vocabulary": ["solution design, development, and iteration"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.3-a"] },
+        { "artefact": "ccas-course-recap", "items": ["4.01"] }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-044",
+      "domain": "d4",
+      "statement": "Iteration on a delegated design follows the same diagnostic loop as prompt iteration: the result names the component that failed, and that component — not the whole design — is what changes in the next round",
+      "vocabulary": ["iteration", "solution design, development, and iteration"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["2.04"] }
+      ],
+      "syllabus_rule": "2.04"
+    },
+    {
+      "id": "C-045",
+      "domain": "d4",
+      "statement": "Value comes from choosing which steps Claude performs: indiscriminate automation is the failure mode, because a workflow handed over whole loses the checkpoints that made it trustworthy",
+      "vocabulary": ["delegate deliberately", "augment or redesign", "workflow value"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.4-a"] },
+        { "artefact": "ccas-course-recap", "items": ["4.01"] },
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q07"] }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-046",
+      "domain": "d4",
+      "statement": "Each workflow step is classified against reversibility, stakes and accountability into a three-way verdict — AI-appropriate, human-retained, or collaborative — and the middle verdict is the common one",
+      "vocabulary": ["reversibility", "stakes", "accountability", "AI-appropriate", "human-retained", "collaborative"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.4-b"] },
+        { "artefact": "ccas-course-recap", "items": ["4.04"] }
+      ],
+      "syllabus_rule": "4.04"
+    },
+    {
+      "id": "C-047",
+      "domain": "d4",
+      "statement": "The approval gate sits after validation and before the irreversible action, and it must have a real gatekeeper: a gate placed after the action, or one nobody staffs, is not a control",
+      "vocabulary": ["integrate", "reversibility"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.4-c"] },
+        { "artefact": "ccas-course-recap", "items": ["4.04"] },
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q02"] }
+      ],
+      "syllabus_rule": "4.04"
+    },
+    {
+      "id": "C-048",
+      "domain": "d4",
+      "statement": "A process with fixed steps and fixed validation argues for an explicit, structured workflow; autonomy is granted only where the process actually needs it, never as a default posture",
+      "vocabulary": ["integrate Claude into existing workflows", "augment or redesign"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q07"] },
+        { "artefact": "ccas-blueprint", "items": ["4.4-a"] }
+      ],
+      "syllabus_rule": "4.04"
+    },
+    {
+      "id": "C-049",
+      "domain": "d4",
+      "statement": "Complexity in a solution design is justified by requirements, never by ambition or the appearance of rigour — the simplest design that meets the stated requirement is the professional answer",
+      "vocabulary": ["solution design, development, and iteration", "workflow value"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M4-Q08"] },
+        { "artefact": "ccas-blueprint", "items": ["4.3-a"] },
+        { "artefact": "ccas-course-recap", "items": ["4.01"] }
+      ],
+      "syllabus_rule": "4.01"
+    },
+    {
+      "id": "C-050",
+      "domain": "d4",
+      "statement": "Capability claims are stated together with their limits and the human review gates that make them safe; overstating value is the stakeholder-trust failure, and accurate limits are what earn the trust back",
+      "vocabulary": ["Claude's value and limitations", "stakeholders", "human review gates", "capability claims"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.5-a"] },
+        { "artefact": "ccas-course-recap", "items": ["4.05"] }
+      ],
+      "syllabus_rule": "4.05"
+    },
+    {
+      "id": "C-051",
+      "domain": "d4",
+      "statement": "Recognising the edge of Associate scope is itself a competency: API integration and agent building belong to a Claude Developer, enterprise architecture to a Claude Architect — the professional move is to do the in-scope part and escalate the rest, and both over-escalating and under-escalating are errors",
+      "vocabulary": ["escalate", "Claude Architect and Claude Developer credentials"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["4.5-b"] },
+        { "artefact": "ccas-course-recap", "items": ["4.05"] },
+        { "artefact": "beecham-ccao-f", "items": ["M7-Q06"] }
+      ],
+      "syllabus_rule": "4.05"
+    },
+    {
+      "id": "C-052",
+      "domain": "d5",
+      "statement": "Configuration is set-up-once leverage: it changes every subsequent conversation rather than a single output, and the investment is justified by how often the work recurs — which is what separates operating the tool from merely using it",
+      "vocabulary": ["configure Claude Projects", "configuration is leverage", "configured environment"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.1-a"] },
+        { "artefact": "ccas-course-recap", "items": ["5.01"] }
+      ],
+      "syllabus_rule": "5.01"
+    },
+    {
+      "id": "C-053",
+      "domain": "d5",
+      "statement": "Instructions govern behaviour, knowledge supplies facts, Skills define procedures, scoped Memory holds continuity — a need placed in the wrong mechanism produces a configuration that looks complete and does not hold",
+      "vocabulary": ["instructions", "knowledge sources", "Skills", "scoped Memory", "mechanism"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["5.02"] },
+        { "artefact": "beecham-ccao-f", "items": ["M5-Q02"] }
+      ],
+      "syllabus_rule": "5.02"
+    },
+    {
+      "id": "C-054",
+      "domain": "d5",
+      "statement": "Every connector extends reach up to a capability edge — a request that fails at the boundary is a scope problem, not a prompt problem, and knowing each connector's edge is what prevents misrouted fixes",
+      "vocabulary": ["connectors", "Google Drive", "Gmail", "capability edge"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.2-a"] },
+        { "artefact": "ccas-course-recap", "items": ["5.03"] }
+      ],
+      "syllabus_rule": "5.03"
+    },
+    {
+      "id": "C-055",
+      "domain": "d5",
+      "statement": "Uploaded knowledge needs provenance — authority, currency, scope and a review cadence — or stale and unowned content is treated as authoritative; retrieval scope is likewise a quality control, not a recall maximiser",
+      "vocabulary": ["manage uploaded knowledge", "knowledge sources"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["5.05"] },
+        { "artefact": "beecham-ccao-f", "items": ["M5-Q01", "M5-Q04"] }
+      ],
+      "syllabus_rule": "5.05"
+    },
+    {
+      "id": "C-056",
+      "domain": "d5",
+      "statement": "When two knowledge authorities conflict, the resolution is by documented scope and precedence and it is stated in the output — never silently averaged, blended, or decided by which source is newer or more public",
+      "vocabulary": ["manage uploaded knowledge", "knowledge sources"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M5-Q08"] },
+        { "artefact": "ccas-blueprint", "items": ["5.2-b"] }
+      ],
+      "syllabus_rule": "5.02"
+    },
+    {
+      "id": "C-057",
+      "domain": "d5",
+      "statement": "File-level metadata is not content provenance: a fresh upload timestamp says nothing about whether the content is current, and treating one as the other is how stale knowledge acquires authority",
+      "vocabulary": ["manage uploaded knowledge", "quality decay"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M5-Q07"] },
+        { "artefact": "ccas-blueprint", "items": ["5.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["5.05"] }
+      ],
+      "syllabus_rule": "5.05"
+    },
+    {
+      "id": "C-058",
+      "domain": "d5",
+      "statement": "Standing instructions must be precise and testable: a vague instruction fails silently — nothing errors and nothing changes — so every instruction is written so its effect on an output can be observed",
+      "vocabulary": ["system-level instructions", "standing instructions", "precise", "testable"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.3-a", "5.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["5.04"] }
+      ],
+      "syllabus_rule": "5.04"
+    },
+    {
+      "id": "C-059",
+      "domain": "d5",
+      "statement": "A rule that must always hold lives in trusted, durable configuration — never restated per request and never inside the material it governs, because content in uploaded or retrieved sources is data and must not acquire the authority of an instruction",
+      "vocabulary": ["instructions", "knowledge sources", "standing instructions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M1-Q06", "M2-Q03", "M2-Q07"] },
+        { "artefact": "ccas-blueprint", "items": ["5.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["5.02"] }
+      ],
+      "syllabus_rule": "5.02"
+    },
+    {
+      "id": "C-060",
+      "domain": "d5",
+      "statement": "Configurations decay: instructions, knowledge, Skills versions and Memory all age against a changing world, and because the decay produces no warning signal, maintenance is scheduled rather than triggered by a complaint",
+      "vocabulary": ["maintain, and update", "quality decay", "scheduled reviews", "Skills versions"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.4-a", "5.4-b"] },
+        { "artefact": "ccas-course-recap", "items": ["5.05"] }
+      ],
+      "syllabus_rule": "5.05"
+    },
+    {
+      "id": "C-061",
+      "domain": "d5",
+      "statement": "A configuration change that alters shared outputs is announced to the people who depend on them — informing others is part of the maintenance obligation, not a courtesy",
+      "vocabulary": ["inform", "Claude configurations, knowledge sources, and instructions"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["5.4-c"] },
+        { "artefact": "ccas-course-recap", "items": ["5.05"] }
+      ],
+      "syllabus_rule": "5.05"
+    },
+    {
+      "id": "C-062",
+      "domain": "d6",
+      "statement": "Use cases are screened against four named criteria — reversibility, consequence, human element, accountability — and the verdict is three-way: appropriate, appropriate-with-review, or inappropriate, with the middle verdict the common one",
+      "vocabulary": ["reversibility", "consequence", "human element", "accountability", "appropriate", "appropriate-with-review", "inappropriate"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.1-a"] },
+        { "artefact": "ccas-course-recap", "items": ["6.02"] },
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q06"] }
+      ],
+      "syllabus_rule": "6.02"
+    },
+    {
+      "id": "C-063",
+      "domain": "d6",
+      "statement": "Governance is exercised by the practitioner one decision at a time: the policy document bounds the call but does not make it, and responsible use cannot be outsourced to the existence of a policy",
+      "vocabulary": ["governance standards", "practitioner skill", "responsible use"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["6.01"] }
+      ],
+      "syllabus_rule": "6.01"
+    },
+    {
+      "id": "C-064",
+      "domain": "d6",
+      "statement": "Data is classified before it enters a feature, and the handling is then matched to the classification — the check happens before the data moves, not after an incident",
+      "vocabulary": ["data sensitivity", "classify first", "privacy considerations"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.2-a"] },
+        { "artefact": "ccas-course-recap", "items": ["6.04"] },
+        { "artefact": "ccas-guide-samples", "items": ["G.3"] },
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q01"] }
+      ],
+      "syllabus_rule": "6.04"
+    },
+    {
+      "id": "C-065",
+      "domain": "d6",
+      "statement": "Removing or anonymising regulated identifiers before the data enters the tool is the control that lets restricted work proceed — instructing the model not to retain or misuse the data is not a control, and abandoning the task was not required",
+      "vocabulary": ["privacy", "redaction", "regulatory"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["6.04"] },
+        { "artefact": "ccas-guide-samples", "items": ["G.3"] },
+        { "artefact": "beecham-ccao-f", "items": ["M5-Q05"] }
+      ],
+      "syllabus_rule": "6.04"
+    },
+    {
+      "id": "C-066",
+      "domain": "d6",
+      "statement": "Different entry points carry different retention and handling properties — private sessions, Memory controls and connector scopes are part of where the data goes, so the destination is part of the sensitivity decision",
+      "vocabulary": ["Incognito", "Memory controls", "data sensitivity"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.2-c"] },
+        { "artefact": "ccas-course-recap", "items": ["6.04"] }
+      ],
+      "syllabus_rule": "6.04"
+    },
+    {
+      "id": "C-067",
+      "domain": "d6",
+      "statement": "Retention and logging scope are governed decisions: sensitive content is kept only as policy allows, and debugging convenience is not a basis for keeping secrets or identifiers in logs",
+      "vocabulary": ["data sensitivity", "privacy considerations"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q04"] },
+        { "artefact": "ccas-blueprint", "items": ["6.2-a"] }
+      ],
+      "syllabus_rule": "6.04"
+    },
+    {
+      "id": "C-068",
+      "domain": "d6",
+      "statement": "Organisational policy binds even when a use looks locally harmless; the exception path runs through a named human authority with a documented process and compensating controls — not through the practitioner's own judgment of harmlessness, and never through a model's say-so",
+      "vocabulary": ["organizational AI policies", "governance standards"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.3-a"] },
+        { "artefact": "ccas-course-recap", "items": ["6.01"] },
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q07"] }
+      ],
+      "syllabus_rule": "6.01"
+    },
+    {
+      "id": "C-069",
+      "domain": "d6",
+      "statement": "A Skill or any installed extension is software: its source and permissions are evaluated before enabling, because extending capability is a supply-chain decision, not a convenience toggle",
+      "vocabulary": ["Skills", "source and permissions", "a Skill is software"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["6.03"] }
+      ],
+      "syllabus_rule": "6.03"
+    },
+    {
+      "id": "C-070",
+      "domain": "d6",
+      "statement": "A vendor model change or feature update enters the organisation's change-control path like any release: like-for-like comparison against a baseline, staged rollout, and a rollback path — neither auto-adopted because it is newer nor frozen forever because it is a change",
+      "vocabulary": ["organizational AI policies", "governance standards"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q05", "M1-Q05"] },
+        { "artefact": "ccas-blueprint", "items": ["6.3-a"] },
+        { "artefact": "ccas-course-recap", "items": ["5.05"] }
+      ],
+      "syllabus_rule": "6.03"
+    },
+    {
+      "id": "C-071",
+      "domain": "d6",
+      "statement": "When policy blocks a request, refusing well means naming the boundary, offering the permitted alternative, and following the escalation and logging policy — neither quietly complying under urgency nor decomposing the task to evade the control",
+      "vocabulary": ["appropriate and inappropriate use cases", "responsible use"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M6-Q06"] },
+        { "artefact": "ccas-blueprint", "items": ["6.1-a"] },
+        { "artefact": "ccas-course-recap", "items": ["6.01"] }
+      ],
+      "syllabus_rule": "6.01"
+    },
+    {
+      "id": "C-072",
+      "domain": "d6",
+      "statement": "Ambiguous cases are reasoned through against the stated screening criteria rather than resolved by instinct — the same four criteria decide the hard case, and the recorded reasoning is what makes the verdict defensible",
+      "vocabulary": ["ethical implications of AI usage", "ambiguous cases"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.4-b"] },
+        { "artefact": "ccas-course-recap", "items": ["6.05"] }
+      ],
+      "syllabus_rule": "6.05"
+    },
+    {
+      "id": "C-073",
+      "domain": "d6",
+      "statement": "Where an output affects a person's decision, disclosure of AI involvement and a route to contest the outcome belong in the design — they are due-process obligations of the workflow, not courtesies added when someone complains",
+      "vocabulary": ["ethical", "disclosure", "fairness"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["6.4-c"] },
+        { "artefact": "ccas-course-recap", "items": ["6.05"] },
+        { "artefact": "beecham-ccao-f", "items": ["M3-Q07", "M6-Q02"] }
+      ],
+      "syllabus_rule": "6.05"
+    },
+    {
+      "id": "C-074",
+      "domain": "d7",
+      "statement": "Underperformance has discoverable causes, checked in a fixed order — specification, context, feature choice, configuration — cheapest and most likely first, before the tool is blamed",
+      "vocabulary": ["specification", "context", "feature", "configuration", "diagnostic sequence"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["7.1-a", "7.1-b"] },
+        { "artefact": "ccas-course-recap", "items": ["7.01"] }
+      ],
+      "syllabus_rule": "7.01"
+    },
+    {
+      "id": "C-075",
+      "domain": "d7",
+      "statement": "Naming the layer that failed is what selects the fix: prompt, context, feature choice and configuration each imply a different remedy, and a fix applied without the name is a guess",
+      "vocabulary": ["isolate", "diagnose"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["7.1-c"] },
+        { "artefact": "ccas-course-recap", "items": ["7.02"] }
+      ],
+      "syllabus_rule": "7.02"
+    },
+    {
+      "id": "C-076",
+      "domain": "d7",
+      "statement": "Expectation mismatch is a legitimate diagnosis: sometimes nothing is broken except the expectation, and the honest remedy is to reset what was promised rather than to keep tuning what was delivered",
+      "vocabulary": ["expectation mismatch"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-course-recap", "items": ["7.02"] }
+      ],
+      "syllabus_rule": "7.02"
+    },
+    {
+      "id": "C-077",
+      "domain": "d7",
+      "statement": "Attribution requires a reconstructed baseline and one changed variable at a time — changing several things at once, or one thing with no baseline, destroys the diagnosis while reading as decisiveness",
+      "vocabulary": ["isolate", "diagnostic sequence"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M7-Q01", "M7-Q08"] },
+        { "artefact": "ccas-blueprint", "items": ["7.1-c"] },
+        { "artefact": "ccas-course-recap", "items": ["2.04"] }
+      ],
+      "syllabus_rule": "7.02"
+    },
+    {
+      "id": "C-078",
+      "domain": "d7",
+      "statement": "A refusal is diagnosed against the task, current policy and permissions, and recent changes; the permitted portion is then redesigned and done, or the work is escalated — evading or stripping the control is never the fix",
+      "vocabulary": ["underperforming prompts", "identify, diagnose, and resolve"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "beecham-ccao-f", "items": ["M7-Q06"] },
+        { "artefact": "ccas-blueprint", "items": ["7.1-a"] },
+        { "artefact": "ccas-course-recap", "items": ["7.01"] }
+      ],
+      "syllabus_rule": "7.01"
+    },
+    {
+      "id": "C-079",
+      "domain": "d7",
+      "statement": "A disappointing output is evidence: the critique is translated into one specific adjustment, not a general resolve to do better — and the adjustment targets the component the critique names",
+      "vocabulary": ["adjust approach", "feedback and results", "specific adjustment"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["7.2-a"] },
+        { "artefact": "ccas-course-recap", "items": ["7.03"] }
+      ],
+      "syllabus_rule": "7.03"
+    },
+    {
+      "id": "C-080",
+      "domain": "d7",
+      "statement": "A fix that worked is captured as an instruction or a Skill so it persists beyond the session — an unrecorded fix is re-derived on every future occurrence, which is decay by another name",
+      "vocabulary": ["capture the fix", "adjust approach based on feedback"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["7.2-b"] },
+        { "artefact": "ccas-course-recap", "items": ["7.03"] }
+      ],
+      "syllabus_rule": "7.03"
+    },
+    {
+      "id": "C-081",
+      "domain": "d7",
+      "statement": "Optimisation is deliberate and measured — instrument the workflow, find the friction, promote the fix into configuration, measure the gain; optimising without a baseline produces an unfalsifiable claim of improvement",
+      "vocabulary": ["optimize workflows", "efficiency and effectiveness", "instrument", "measure the gain"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ccas-blueprint", "items": ["7.3-a", "7.3-b"] },
+        { "artefact": "ccas-course-recap", "items": ["7.04"] },
+        { "artefact": "beecham-ccao-f", "items": ["M7-Q05", "M7-Q08"] }
+      ],
+      "syllabus_rule": "7.04"
+    }
+  ]
+}

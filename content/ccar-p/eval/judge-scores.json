@@ -1,0 +1,1080 @@
+{
+  "$schema_note": "shape: methodology/05-eval-rubric.md#artifact-shapes",
+  "slug": "ccar-p",
+  "round": 1,
+  "date": "2026-08-19",
+  "method": "Every bank item scored 1-5 on the six dimensions of methodology/05-eval-rubric.md#judge, after writing the strongest honest case FOR each distractor. Judging ran after the blind solve and read the key, rationale, distractor_patterns and concept metadata.",
+  "trim_wave_review": "The remediation changed option text on 63 items, all edits on the keyed option(s) only (0 distractor-side text edits, verified by content-matched diff across e6c06d8..f0f52b7). Every trim removed a justification or elaboration rider; no trim removed the canonical concept term. Every key was re-read against its stem and its option set: all 85 keys still read as complete, defensible answers, and no option set lost parallelism to the point of eliminability. One item (5.11) had its key narrowed in scope relative to its own rationale and is flagged dim4=3. Six items carry dim5=3 for surface asymmetry the trim created or left (rider evacuation, named-entity parity) rather than for conceptual weakness.",
+  "score_distribution": {
+    "1": {
+      "4": 3,
+      "5": 82
+    },
+    "2": {
+      "4": 4,
+      "5": 81
+    },
+    "3": {
+      "5": 85
+    },
+    "4": {
+      "3": 1,
+      "5": 84
+    },
+    "5": {
+      "3": 6,
+      "4": 67,
+      "5": 12
+    },
+    "6": {
+      "5": 85
+    }
+  },
+  "thresholds": {
+    "items_with_any_score_le_2": 0,
+    "items_with_any_3": 7,
+    "bounces": 0
+  },
+  "items": [
+    {
+      "id": "1.01",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "note": "dim5=3: the key is the only option naming a concrete product (''Claude''), so a candidate applying a name-the-product heuristic reaches it without engaging the decomposition concept (named-entity-parity, warn tier). Conceptually the item is sound and D is a genuinely attractive evidence-first rival.",
+      "gate2_flag": "dimension(s) 5 scored 3"
+    },
+    {
+      "id": "1.02",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.03",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.04",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.05",
+      "domain": "d1",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "note": "dim1=4: option A (extend session logging) is a strong practitioner reading of the same finding and loses only on the error-cost/autonomy framework the domain establishes; dim5=5, the surface points at an observability gap."
+    },
+    {
+      "id": "1.06",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.07",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.08",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "note": "dim2=4: option B (rely on base-model general knowledge) is the weakest option in the set — eliminable without engaging the documentary-vs-transactional distinction the item tests."
+    },
+    {
+      "id": "1.09",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.10",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.11",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.12",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.13",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "1.14",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "note": "dim5=3: every distractor carries a justification rider (''rather than'', ''since'') and neither key does, so ''rule out every rider option'' selects exactly C+D for free. The only item in the bank where the one-sided rider rule fully determines the answer; not seated on form-a.",
+      "gate2_flag": "dimension(s) 5 scored 3"
+    },
+    {
+      "id": "1.15",
+      "domain": "d1",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.01",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "note": "dim5=3: the key is the only option naming a model tier by name (''Sonnet'') and is also the longest, a two-channel surface tell on an otherwise well-pitched item.",
+      "gate2_flag": "dimension(s) 5 scored 3"
+    },
+    {
+      "id": "2.02",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.03",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "note": "dim2=4: option A (alternate tiers by time of day) is not a real practitioner position and is eliminable on general reasoning."
+    },
+    {
+      "id": "2.04",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.05",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.06",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.07",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.08",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.09",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.10",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "2.11",
+      "domain": "d2",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.01",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.02",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.03",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.04",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.05",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.06",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.07",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.08",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.09",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.10",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.11",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "note": "dim2=4: option D (one generic free-text execution tool) is weaker than the other two and eliminable without engaging tool-boundary design."
+    },
+    {
+      "id": "3.12",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.13",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.14",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.15",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "3.16",
+      "domain": "d3",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.01",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.02",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.03",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.04",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.05",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.06",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.07",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.08",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.09",
+      "domain": "d4",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "note": "dim1=4: option D (phased onboarding) is a defensible reading of ''before that commitment is made'' and loses only on the distinction between establishing a commitment is sound and managing its consequences. Also the most rider-asymmetric single-choice item: key 51 chars and rider-free against three longer rider-bearing distractors."
+    },
+    {
+      "id": "4.10",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.11",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.12",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "4.13",
+      "domain": "d4",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.01",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.02",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.03",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.04",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.05",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.06",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.07",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.08",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.09",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.10",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "5.11",
+      "domain": "d5",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 3,
+        "5": 4,
+        "6": 5
+      },
+      "note": "dim1=4 and dim4=3: the trim narrowed the key from ''every component in the data path — the model, retrieval, logging and any subprocessor'' to ''every subprocessor in the data path'', while rationale.correct still argues the wider claim (''which services may touch the data'') and never uses the word subprocessor. Option D (source citation) is the strongest rival. This was the single medium-confidence answer in the blind solve; the closest call in the trim wave.",
+      "gate2_flag": "dimension(s) 4 scored 3"
+    },
+    {
+      "id": "5.12",
+      "domain": "d5",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.01",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.02",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.03",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.04",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.05",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "note": "dim2=4 and dim5=3: option D (decline the engagement) is not a real position and B/C are eliminable without the probabilistic-acceptance concept, so the item reads right-vs-wrong rather than good-vs-best.",
+      "gate2_flag": "dimension(s) 5 scored 3"
+    },
+    {
+      "id": "6.06",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.07",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.08",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.09",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.10",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.11",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "6.12",
+      "domain": "d6",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "7.01",
+      "domain": "d7",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "7.02",
+      "domain": "d7",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    },
+    {
+      "id": "7.03",
+      "domain": "d7",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "note": "dim5=3: the key is 69 chars and clipped (''Access without enablement stalls; use a champion per team, in batches'') against three 100-109 char distractors that each carry an explanatory rider. The register gap is the sharpest single instance of trim-induced surface asymmetry in the bank; the key is still complete and traceable to rationale.correct.",
+      "gate2_flag": "dimension(s) 5 scored 3"
+    },
+    {
+      "id": "7.04",
+      "domain": "d7",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      }
+    },
+    {
+      "id": "7.05",
+      "domain": "d7",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "note": "dim5=3: both keys are the two shortest options and rider-free while the distractors carry riders, so the elimination heuristic recovers the pair without engaging the scale-safely concept.",
+      "gate2_flag": "dimension(s) 5 scored 3"
+    },
+    {
+      "id": "7.06",
+      "domain": "d7",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      }
+    }
+  ],
+  "bounces": []
+}

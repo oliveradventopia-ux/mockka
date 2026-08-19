@@ -1,0 +1,619 @@
+{
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-16) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning, merge/split log and quota deltas in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) with zero hand-tuned divergences in this build; the validator concept-convergence check surfaces any future divergence as WARN. sources[].items for ms-ai900-blueprint are the b-x.y-z concept rows in derivation/source-ms-ai900-blueprint.md; for warner-ai900 and wrieden-ai900 they are item ids in the respective Artefact A. Three attestation caveats carried in the inventory doc, none of which is a priority divergence: C-005's warner attestation is that artefact's collective d1 coverage note; C-033's blueprint attestation is a related-topic adjacency of b-1.1-3 (cross-domain placement recorded); C-056/C-057's blueprint rows are the two rows Artefact B itself marks as inferred from the group title (related-topic concepts, carried flagged per the guide's illustrative-bullets note).",
+  "version": "0.1.0",
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "Recognising a described product or task as a computer-vision workload: the input is images or video and the required answer must be read out of pixels — what is present, where it is, or what text appears in a scene",
+      "vocabulary": ["computer vision workloads"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.1-1"] },
+        { "artefact": "warner-ai900", "items": ["1.3"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "Recognising a described product or task as a natural language processing workload: the material being interpreted or produced is human language — text or utterances — and the value comes from understanding what it says",
+      "vocabulary": ["natural language processing workloads"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.1-2"] }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Recognising a document-processing workload and telling it apart from generic text reading: the goal is structured fields captured out of forms, receipts or contracts — not merely the characters on the page",
+      "vocabulary": ["document processing workloads"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.1-3"] },
+        { "artefact": "warner-ai900", "items": ["1.1"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Recognising a generative-AI workload by what happens to content: new text, images or code are created on request, rather than existing content being classified, scored or extracted",
+      "vocabulary": ["features of generative AI workloads"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.1-4"] },
+        { "artefact": "warner-ai900", "items": ["1.5"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Discriminating between the four AI workload categories when a scenario carries surface features of more than one — the deciding question is what the output must be, not what the input looks like",
+      "vocabulary": ["AI workloads"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.1-5"] },
+        { "artefact": "warner-ai900", "items": ["1.1", "1.3", "1.5"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "Fairness as equitable treatment of similarly situated people — reading a measured outcome disparity as a fairness failure, and naming fairness when another responsible-AI principle plausibly applies",
+      "vocabulary": ["fairness", "guiding principles for responsible AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.2-1", "b-1.2-7"] },
+        { "artefact": "warner-ai900", "items": ["1.2"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Reliability and safety as a design consideration: the system must behave consistently and safely under both expected and unexpected conditions, and the design work is anticipating the unexpected ones",
+      "vocabulary": ["reliability and safety"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.2-2"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Privacy and security as a responsible-AI principle: protecting the personal data an AI system learns from and handles, and securing the system itself — two obligations under one principle",
+      "vocabulary": ["privacy and security"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.2-3"] }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "Inclusiveness as engaging and empowering everyone the system serves, including people with disabilities — a design consideration about who can benefit, not only a definition to recall",
+      "vocabulary": ["inclusiveness"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.2-4"] },
+        { "artefact": "wrieden-ai900", "items": ["29"] }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "The transparency-versus-accountability boundary: transparency makes how and why a decision was made intelligible to the people it affects, accountability keeps humans answerable for the system — explaining is not the same duty as owning",
+      "vocabulary": ["transparency", "accountability"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.2-5", "b-1.2-6"] },
+        { "artefact": "warner-ai900", "items": ["1.4"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "Choosing the action that discharges a named responsible-AI principle — every option is something a competent team might do, and only one of them answers the principle actually named",
+      "vocabulary": ["guiding principles for responsible AI", "considerations"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.2-8"] },
+        { "artefact": "warner-ai900", "items": ["1.4"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d2",
+      "statement": "Recognising a regression scenario by its output shape: the model must predict a continuous numeric quantity, and that requirement — not the subject matter — is what selects the technique",
+      "vocabulary": ["regression machine learning scenarios"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.1-1"] },
+        { "artefact": "warner-ai900", "items": ["2.1"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d2",
+      "statement": "Recognising a classification scenario by its output shape: the model assigns each case to a category, with binary and multiclass as the two forms of the same technique",
+      "vocabulary": ["classification machine learning scenarios"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.1-2"] },
+        { "artefact": "wrieden-ai900", "items": ["5"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d2",
+      "statement": "Recognising a clustering scenario by the absence of predefined labels and the goal of discovering groupings — with supervision as the dividing line across all three techniques: regression and classification learn from labelled data, clustering does not",
+      "vocabulary": ["clustering machine learning scenarios", "machine learning techniques"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.1-3", "b-2.1-4"] },
+        { "artefact": "warner-ai900", "items": ["2.2"] },
+        { "artefact": "wrieden-ai900", "items": ["6", "14"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d2",
+      "statement": "What makes a technique deep learning: layered neural networks that learn their own representations of the data, chosen when features are too complex to hand-describe — a technique decision, not a buzzword",
+      "vocabulary": ["features of deep learning techniques"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.1-5"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d2",
+      "statement": "What the Transformer architecture contributes — attention over whole sequences rather than word-by-word processing — and why modern language models are built on it",
+      "vocabulary": ["features of the Transformer architecture"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.1-6"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "Telling a feature from a label in a described dataset: the features are the columns the model is given, the label is the column it must learn to predict — and only supervised techniques need the label at all",
+      "vocabulary": ["features and labels in a dataset"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.2-1"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "Why data is split into training and validation sets, and how to read a large train-versus-validation performance gap as a generalisation failure — the model memorised its training data instead of learning from it",
+      "vocabulary": ["training and validation datasets"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.2-2", "b-2.2-3"] },
+        { "artefact": "warner-ai900", "items": ["2.4"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "Matching an Azure Machine Learning capability to the people who will use it: automated machine learning runs the multi-algorithm search for teams without data-science depth, the designer gives a visual pipeline surface, notebooks and the SDK serve code-first practitioners",
+      "vocabulary": ["automated machine learning", "Azure Machine Learning"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.3-1", "b-2.3-2"] },
+        { "artefact": "warner-ai900", "items": ["2.3"] }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "Separating compute resources from training capabilities in Azure Machine Learning: compute is where work runs, training capabilities are what the work does — a scenario that needs more of one is not asking for the other",
+      "vocabulary": ["data and compute services for data science and machine learning"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.3-3"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "Registering, versioning and managing trained models as first-class assets: knowing which model version is deployed, and being able to roll back to a previous one, is a capability a team must plan for — not a by-product of training",
+      "vocabulary": ["model management capabilities in Azure Machine Learning"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.3-4"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "Choosing how a trained model is served from the consuming application's needs: per-request answers with low latency select a real-time endpoint, periodic scoring of accumulated data selects batch",
+      "vocabulary": ["deployment capabilities in Azure Machine Learning"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-2.3-5"] },
+        { "artefact": "warner-ai900", "items": ["2.5"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d3",
+      "statement": "Image classification assigns one label to the whole image — the right choice exactly when the scenario needs a per-image verdict and nothing about where things are inside it",
+      "vocabulary": ["features of image classification solutions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.1-1"] },
+        { "artefact": "warner-ai900", "items": ["3.1"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d3",
+      "statement": "Object detection returns a class and a location for each instance found — selected when the scenario needs to know what is in the image and where or how many, per object",
+      "vocabulary": ["features of object detection solutions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.1-2"] },
+        { "artefact": "warner-ai900", "items": ["3.2"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d3",
+      "statement": "Optical character recognition extracts text that already exists in an image — reading what is written, as opposed to describing what is pictured or generating anything new",
+      "vocabulary": ["features of optical character recognition solutions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.1-3"] },
+        { "artefact": "wrieden-ai900", "items": ["2"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d3",
+      "statement": "Facial detection locates faces in an image and facial analysis describes their attributes — age estimation, head pose, occlusion — two capabilities that operate on faces without saying whose face it is",
+      "vocabulary": ["features of facial detection and facial analysis solutions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.1-4"] },
+        { "artefact": "warner-ai900", "items": ["3.4"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d3",
+      "statement": "The boundary between facial analysis and identifying a person: detection and attribute estimation answer 'is there a face and what is it like', identification claims 'this is who' — a different capability with materially heavier responsible-AI weight",
+      "vocabulary": ["facial detection and facial analysis solutions"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.1-4"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d3",
+      "statement": "Choosing between the computer-vision solution types by the granularity of the required output — a whole-image label, per-instance classes and locations, or extracted text — never by the subject matter pictured",
+      "vocabulary": ["types of computer vision solution"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.1-5"] },
+        { "artefact": "warner-ai900", "items": ["1.3", "3.1", "3.2"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d3",
+      "statement": "Azure AI Vision's descriptive analysis features — captioning an image in natural language, tagging its contents, smart-cropping around what matters — and telling those features of one service apart when a requirement names only what the output should be",
+      "vocabulary": ["capabilities of the Azure AI Vision service"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.2-1"] },
+        { "artefact": "warner-ai900", "items": ["3.5"] },
+        { "artefact": "wrieden-ai900", "items": ["28"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d3",
+      "statement": "Azure AI Vision's Read capability delivers OCR as a service feature — extracting printed and handwritten text from images — and is a different feature of the same service than describing or tagging the scene",
+      "vocabulary": ["capabilities of the Azure AI Vision service"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.2-1"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d3",
+      "statement": "What Azure AI Face does — face detection, attribute analysis and face-specific processing — and where the boundary sits between it and Azure AI Vision's people detection: knowing people are present is Vision's job, working with faces as faces is Face's",
+      "vocabulary": ["capabilities of the Azure AI Face detection service"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.2-2"] },
+        { "artefact": "warner-ai900", "items": ["3.4"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d3",
+      "statement": "Matching a described vision requirement to the right one of the two blueprint-named vision services — Azure AI Vision or Azure AI Face — by what the requirement needs done, with off-list services as recognisable wrong turns",
+      "vocabulary": ["Azure tools and services for computer vision tasks"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-3.2-3"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d3",
+      "statement": "The limit of OCR in a vision pipeline: reading text yields characters and their positions, while structured fields out of a form — names, totals, dates bound to their meaning — is document processing, a requirement pure text extraction cannot meet",
+      "vocabulary": ["optical character recognition", "document processing workloads"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-1.1-3"] },
+        { "artefact": "warner-ai900", "items": ["3.3"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d4",
+      "statement": "Key phrase extraction surfaces the main talking points of a text without assigning them types — the right feature when the requirement is 'what is this text about', not 'which entities does it mention'",
+      "vocabulary": ["key phrase extraction"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-1"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d4",
+      "statement": "Entity recognition finds and categorises typed items in text — person, place, organisation, quantity, date — selected when the requirement needs values bound to types, not just the words that matter",
+      "vocabulary": ["entity recognition"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-2"] },
+        { "artefact": "warner-ai900", "items": ["4.3"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d4",
+      "statement": "Sentiment analysis scores opinion polarity over a document or sentence — the feature a scenario needs when the question is how people feel about something, not what they said about it",
+      "vocabulary": ["sentiment analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-3"] },
+        { "artefact": "warner-ai900", "items": ["4.1"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d4",
+      "statement": "Language modelling maps an utterance to an intent and pulls out its entities — the capability behind systems that must decide what a user wants done from how they phrased it",
+      "vocabulary": ["language modeling"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-4"] },
+        { "artefact": "warner-ai900", "items": ["4.5"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d4",
+      "statement": "Speech recognition and speech synthesis as the two directions of one capability — audio into text, text into audio — and recognising when a scenario needs one direction, the other, or both",
+      "vocabulary": ["speech recognition and synthesis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-5"] },
+        { "artefact": "warner-ai900", "items": ["4.2"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d4",
+      "statement": "Translation between languages as a capability that exists for both text and speech — with the delivery differing by medium, so the scenario's medium decides where the capability comes from",
+      "vocabulary": ["translation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-6"] },
+        { "artefact": "warner-ai900", "items": ["4.4"] },
+        { "artefact": "wrieden-ai900", "items": ["12"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d4",
+      "statement": "Choosing between key phrase extraction, entity recognition and sentiment analysis when a scenario says only 'extract information from text' — the discrimination that separates knowing feature names from reading a requirement",
+      "vocabulary": ["NLP workload scenarios"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.1-7"] },
+        { "artefact": "warner-ai900", "items": ["4.1", "4.3"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d4",
+      "statement": "Azure AI Language's text-analytics coverage: sentiment, key phrases, entity recognition and language detection live in one service — a scenario needing several of them needs one service, not several",
+      "vocabulary": ["capabilities of the Azure AI Language service"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.2-1"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d4",
+      "statement": "Azure AI Language's conversational features — conversational language understanding classifies intent, custom question answering retrieves answers — as the current successors to the retired LUIS and QnA Maker brands, and the classify-versus-retrieve line between them",
+      "vocabulary": ["capabilities of the Azure AI Language service"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.2-1"] },
+        { "artefact": "warner-ai900", "items": ["4.5"] },
+        { "artefact": "wrieden-ai900", "items": ["3"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d4",
+      "statement": "What Azure AI Speech covers — speech-to-text, text-to-speech, and speech translation — so a requirement that lives in audio, in either direction or across languages, resolves to this one service",
+      "vocabulary": ["capabilities of the Azure AI Speech service"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.2-2"] },
+        { "artefact": "warner-ai900", "items": ["4.2"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d4",
+      "statement": "Matching a described language requirement to Azure AI Language or Azure AI Speech by where the content lives: written text belongs to Language, spoken audio to Speech — the medium decides, not the task's vocabulary",
+      "vocabulary": ["Azure tools and services for NLP workloads"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-4.2-3"] },
+        { "artefact": "warner-ai900", "items": ["4.2"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d5",
+      "statement": "What makes a model generative: it produces new content — text, images, code — in response to input, where a predictive model returns a label or a score about content that already exists",
+      "vocabulary": ["features of generative AI models"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-1"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d5",
+      "statement": "Recognising which generative model family a requirement needs — a language model, an image-generation model, an embedding model or a speech model — from what the output must be, not from which family is most famous",
+      "vocabulary": ["generative AI models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-2"] },
+        { "artefact": "warner-ai900", "items": ["5.1"] }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d5",
+      "statement": "The common generative-AI scenario shapes — natural-language generation, summarisation, code generation, image generation, conversational assistance — and recognising which shape a described product is",
+      "vocabulary": ["common scenarios for generative AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-3"] },
+        { "artefact": "warner-ai900", "items": ["5.1"] }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d5",
+      "statement": "Hallucination as generative AI's headline limitation — fluent, plausible output that is not grounded in anything true — and grounding the model in real content as the response that addresses the mechanism rather than the symptom",
+      "vocabulary": ["responsible AI considerations for generative AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-4"] },
+        { "artefact": "warner-ai900", "items": ["5.3", "5.4"] }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d5",
+      "statement": "Platform-level content filtering as the built-in safety layer of a generative service: harmful input and output categories are caught by the platform before an application ever sees them — protection an application inherits rather than writes",
+      "vocabulary": ["responsible AI considerations for generative AI"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-5"] }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d5",
+      "statement": "Mitigating generative-AI failures in layers: platform filtering plus application-level instruction plus grounding stack together, so the right response to a bad output adds or strengthens a layer — removing one is never the fix",
+      "vocabulary": ["responsible AI considerations for generative AI"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-5"] },
+        { "artefact": "warner-ai900", "items": ["5.4"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d5",
+      "statement": "Transparency obligations specific to generated content: people interacting with an AI assistant or consuming AI-made material should be able to know that is what it is — disclosure is part of deploying generative AI responsibly",
+      "vocabulary": ["responsible AI considerations for generative AI"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.1-6"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d5",
+      "statement": "What Azure AI Foundry is: the portal and platform where generative AI solutions are built, tested and deployed — the place a team works, as distinct from any single model it works with (rebranded Microsoft Foundry in current documentation)",
+      "vocabulary": ["features and capabilities of Azure AI Foundry"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.2-1"] },
+        { "artefact": "warner-ai900", "items": ["5.5"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d5",
+      "statement": "What Azure OpenAI Service provides — access to OpenAI's model families with Azure's enterprise controls — and where it sits relative to Azure AI Foundry: one model provider reachable through the broader platform",
+      "vocabulary": ["features and capabilities of Azure OpenAI service"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.2-2"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d5",
+      "statement": "What the Azure AI Foundry model catalog is for: browsing, comparing and deploying models from multiple providers — the capability a scenario needs when the requirement is choosing among models rather than calling a known one",
+      "vocabulary": ["features and capabilities of Azure AI Foundry model catalog"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.2-3"] },
+        { "artefact": "warner-ai900", "items": ["5.5"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d5",
+      "statement": "Choosing between building a solution in Azure AI Foundry and calling a model directly, from what the scenario needs: orchestration, testing and deployment surface versus a single model answering requests",
+      "vocabulary": ["generative AI services and capabilities in Microsoft Azure"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.2-4"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d5",
+      "statement": "Where persistent behavioural constraints belong: a system message shapes every response for the assistant's lifetime, while per-request examples shape only the request that carries them — a persistent rule placed per-prompt is placed wrong",
+      "vocabulary": ["generative AI services and capabilities in Microsoft Azure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.2-5"] },
+        { "artefact": "warner-ai900", "items": ["5.2"] }
+      ]
+    },
+    {
+      "id": "C-057",
+      "domain": "d5",
+      "statement": "Grounding generated answers in an organisation's own content: retrieval feeds the model the relevant documents at question time — the technique for answering from a private corpus, where fine-tuning or a bigger context window answer different problems",
+      "vocabulary": ["generative AI services and capabilities in Microsoft Azure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "ms-ai900-blueprint", "items": ["b-5.2-6"] },
+        { "artefact": "warner-ai900", "items": ["5.3"] }
+      ]
+    }
+  ]
+}

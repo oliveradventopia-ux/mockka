@@ -1,0 +1,748 @@
+{
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-17) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning, merge log and split log in derivation/master-inventory.md. Schema: methodology/schema/concepts.schema.json. CONVERGENCE SEMANTICS FOR THIS PACKAGE: priority high = attested by >=2 independently AUTHORED sources. az900-studyguide and ms-learn-az900-modules are both Microsoft and are one author for convergence purposes (derivation/sources.md \"Why ms-learn-az900-modules is one source, not two\"), so the five concepts attested ONLY by that pair carry priority normal by hand — a documented divergence from the validator's sources.length>=2 computation. The resulting five concept-convergence WARN findings (C-001, C-012, C-057, C-058, C-061) are intended and are tabled in derivation/master-inventory.md; any OTHER divergence on this package is an error. sources[].items for az900-studyguide are the b-x.y-z concept rows in derivation/source-az900-studyguide.md; for the three practice sources they are item rows in the respective Artefact A, omitted where the attestation lives in a coverage note rather than an item row.",
+  "version": "0.1.0",
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "What makes a delivery model cloud computing: computing services as a whole — not one service class such as storage or websites — delivered over the internet, on demand, from capacity someone else operates",
+      "vocabulary": ["cloud computing"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-1"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.1"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "Which party owns which layer of the stack under the shared responsibility model, and how the split moves as the service type shifts from on-premises through IaaS and PaaS to SaaS",
+      "vocabulary": ["shared responsibility model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-2"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.3"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["1.1"] },
+        { "artefact": "insidecloud-az900", "items": ["1.2"] }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Telling public, private and hybrid cloud apart by where the infrastructure sits, who operates it and who else shares it — ownership and tenancy, not geography, decide the model",
+      "vocabulary": ["public", "private", "hybrid"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.2"] },
+        { "artefact": "insidecloud-az900", "items": ["1.1", "1.3"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "Reading a described situation — its capital constraints, control demands, compliance posture and existing estate — and picking the cloud deployment model those constraints force",
+      "vocabulary": ["appropriate use cases for each cloud model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-4"] },
+        { "artefact": "insidecloud-az900", "items": ["1.8"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Paying for what is actually used rather than what is provisioned: the consumption-based model means no upfront purchase, cost that stops when use stops, and a bill that tracks demand",
+      "vocabulary": ["consumption-based model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-5"] },
+        { "artefact": "insidecloud-az900", "items": ["1.5"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "Classifying spend when infrastructure moves to the cloud: owned datacenter assets are capital expenditure, rented cloud services are operational expenditure, and a migration converts one profile into the other",
+      "vocabulary": ["consumption-based model", "capital expenditure (CapEx)", "operational expenditure (OpEx)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-5"] },
+        { "artefact": "insidecloud-az900", "items": ["1.4", "1.12"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Choosing between pay-as-you-go flexibility and a term commitment: a steady, long-lived workload is the case for committed capacity at a discount, and flexibility is what the discount costs",
+      "vocabulary": ["cloud pricing models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-6"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["3.4"] },
+        { "artefact": "insidecloud-az900", "items": ["1.14", "3.1", "3.23"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Recognising when interruptible spare capacity is the right buy: the lowest compute price, paid for with eviction risk, fits workloads that tolerate being stopped and resumed",
+      "vocabulary": ["cloud pricing models"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-6"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.3"] },
+        { "artefact": "insidecloud-az900" }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "What serverless removes from the customer's responsibility — no instances to provision, scale or pay for while idle — and what it does not remove: the code, its configuration and its data",
+      "vocabulary": ["serverless"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.1-7"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.5"] },
+        { "artefact": "insidecloud-az900", "items": ["2.1"] }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "Staying available through component failure: high availability as a designed property, expressed as an uptime expectation and achieved through redundancy rather than through better single components",
+      "vocabulary": ["high availability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.2-1"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "Growing capacity on the right axis: vertical scaling resizes the existing resource, horizontal scaling adds or removes instances — and a described change in demand points at exactly one of the two",
+      "vocabulary": ["scalability"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.2-1"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.4"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["1.4"] },
+        { "artefact": "insidecloud-az900", "items": ["1.11"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "Separating two benefits that sound alike: reliability is recovering from failure and continuing to function; predictability is knowing in advance what performance and cost will be",
+      "vocabulary": ["reliability", "predictability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.2-2"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.5"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "What the platform contributes to security and governance as a benefit of adopting cloud: policy control, patch currency and network protections supplied by the platform that a customer would otherwise build and staff",
+      "vocabulary": ["security", "governance"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.2-3"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "Manageability as a benefit: administering the estate through the platform's own tooling and automation — scaling, monitoring and deployment handled by the platform, reachable from anywhere — rather than by hand",
+      "vocabulary": ["manageability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.2-4"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d1",
+      "statement": "What the customer still owns when the provider supplies virtualised infrastructure: the operating system and everything above it — patching, runtime, middleware, data — with maximum control as the price of maximum responsibility",
+      "vocabulary": ["infrastructure as a service (IaaS)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.3-1"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.7"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["1.3"] },
+        { "artefact": "insidecloud-az900", "items": ["1.6"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d1",
+      "statement": "What the provider absorbs when it supplies the platform: the operating system, runtime and middleware leave the customer's plate while the application and its data remain — the middle position on the responsibility ladder",
+      "vocabulary": ["platform as a service (PaaS)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.3-2"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["1.2", "1.3"] },
+        { "artefact": "insidecloud-az900", "items": ["1.7", "1.10"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d1",
+      "statement": "What is left to configure when the provider supplies the finished application: features and users, nothing beneath them — least responsibility and least control, licensed rather than built",
+      "vocabulary": ["software as a service (SaaS)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.3-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.8"] },
+        { "artefact": "insidecloud-az900", "items": ["1.2"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d1",
+      "statement": "Reading a workload's control requirements, team and time-to-value against the three service types and picking the one the constraints force — needing OS patching control forces IaaS, wanting no operations at all points at SaaS",
+      "vocabulary": ["appropriate use cases for each cloud service type (IaaS, PaaS, and SaaS)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-1.3-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["1.7", "1.8"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["1.1"] },
+        { "artefact": "insidecloud-az900", "items": ["1.9"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "What an Azure region is — a latency-bounded set of datacenters, not a single facility and not a zone — and why many regions are paired with a distant partner region for platform-level replication and sequenced updates",
+      "vocabulary": ["Azure regions", "region pairs", "Azure datacenters"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.1-1", "b-2.1-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.3"] },
+        { "artefact": "insidecloud-az900", "items": ["2.16"] }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "Sovereign regions as nationally isolated Azure instances built for government and residency obligations — a separate cloud with its own boundary, not a deployment model and not just another region",
+      "vocabulary": ["sovereign regions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.1-1"] },
+        { "artefact": "insidecloud-az900", "items": ["2.42"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "Availability zones as physically separated facilities inside one region with independent power, cooling and networking — the construct that survives the loss of an entire datacenter, which no in-datacenter construct does",
+      "vocabulary": ["availability zones"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.1-2"] },
+        { "artefact": "insidecloud-az900", "items": ["2.5", "2.51"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "What a resource group bounds and what it does not: a resource belongs to exactly one group at a time, group-level settings reach current and future members, and membership does not constrain where members may be located",
+      "vocabulary": ["Azure resources", "resource groups"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.1-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.1", "2.2"] },
+        { "artefact": "insidecloud-az900", "items": ["2.3"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "The subscription as the billing and access boundary that owns resource groups — and its relationship to identity: many subscriptions can trust the same directory tenant",
+      "vocabulary": ["subscriptions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.1-5"] },
+        { "artefact": "insidecloud-az900", "items": ["2.15"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "The containment chain read in order — resource, resource group, subscription, management group — what each level exists to bound, why governance at scale is applied at the level above subscriptions, and what inherits down the chain",
+      "vocabulary": ["management groups", "hierarchy of resource groups, subscriptions, and management groups"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.1-6", "b-2.1-7"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.2"] },
+        { "artefact": "insidecloud-az900", "items": ["2.9", "2.30"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "Choosing among virtual machines, containers and functions by what the workload needs you to manage: a whole operating system, a packaged runtime, or nothing but event-driven code that runs on demand",
+      "vocabulary": ["virtual machines", "containers", "functions"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-1"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.5"] },
+        { "artefact": "insidecloud-az900", "items": ["2.1", "2.4", "2.20", "2.54"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "The virtual-machine family constructs and what each buys: scale sets run identical managed instances that grow and shrink with demand, availability sets stagger update and fault domains inside a datacenter, and Azure Virtual Desktop delivers the desktop itself as a service",
+      "vocabulary": ["Azure virtual machines", "Azure Virtual Machine Scale Sets", "availability sets", "Azure Virtual Desktop"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-2"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.4"] },
+        { "artefact": "insidecloud-az900", "items": ["2.18", "2.46", "2.53"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "What a virtual machine cannot exist without: the dependent resources — disk, network interface, virtual network membership, and a public address only if it must be reachable — created alongside it and billed as themselves",
+      "vocabulary": ["the resources required for virtual machines"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-3"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "Choosing where an application runs when several hosts could technically serve it: the managed web-app host against containers against raw virtual machines, decided by how much of the host the team wants to own",
+      "vocabulary": ["application hosting options", "web apps", "containers", "virtual machines"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.6"] },
+        { "artefact": "insidecloud-az900", "items": ["2.52"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d2",
+      "statement": "Virtual-network semantics: a virtual network is isolated by default, subnets segment it internally and route to one another by default, and Azure DNS manages name resolution with the same credentials and tooling as the rest of the estate",
+      "vocabulary": ["Azure virtual networks", "subnets", "Azure DNS"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-5"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.8", "2.11"] },
+        { "artefact": "insidecloud-az900", "items": ["2.23", "2.56"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d2",
+      "statement": "Choosing the connectivity construct by who is connecting and what constraint dominates: an encrypted tunnel over the internet — site-to-site for a network, point-to-site for a single client — a private circuit when latency and predictability rule, and peering for VNet-to-VNet over the backbone",
+      "vocabulary": ["Azure VPN Gateway", "ExpressRoute", "peering"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-5"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.9"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["2.1"] },
+        { "artefact": "insidecloud-az900", "items": ["2.10", "2.11", "2.50"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d2",
+      "statement": "Reaching a service across the public internet versus privately from inside a virtual network over the Microsoft backbone — what a public endpoint exposes and what a private endpoint removes from the attack surface",
+      "vocabulary": ["public and private endpoints"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.2-6"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d2",
+      "statement": "Matching the storage service and type to the data's shape and access pattern: blobs for unstructured objects at scale, files for SMB shares on a UNC path, disks for VM volumes, queues for small transient messages, tables for schemaless key-attribute data",
+      "vocabulary": ["Azure Storage services", "storage account options", "storage types"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.3-1", "b-2.3-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.14"] },
+        { "artefact": "insidecloud-az900", "items": ["2.2", "2.8", "2.13", "2.14", "2.21", "2.47"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d2",
+      "statement": "Trading storage price against access price over a data lifetime: the frequent-access tier costs most to hold and least to read, the archive tier the reverse — the right rung is read off the access pattern, not the data's importance",
+      "vocabulary": ["storage tiers"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.3-2"] },
+        { "artefact": "insidecloud-az900", "items": ["2.6", "2.7"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d2",
+      "statement": "Reading the redundancy ladder by copies, distance and the failure class each rung survives — and choosing down as well as up: the cheapest option is the correct one when the data is expendable",
+      "vocabulary": ["redundancy options"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.3-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.13"] },
+        { "artefact": "insidecloud-az900", "items": ["2.17", "2.45"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d2",
+      "statement": "Choosing the file-movement tool by direction, volume and repeat-frequency: scripted bulk copy from the command line, a graphical browse-and-transfer client, or continuous two-way sync that keeps an on-premises share and Azure Files in step",
+      "vocabulary": ["AzCopy", "Azure Storage Explorer", "Azure File Sync"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.3-5"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.12"] },
+        { "artefact": "insidecloud-az900", "items": ["2.39", "2.44"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d2",
+      "statement": "Choosing a migration path by data volume against network feasibility: the assessment-and-migration service when the wire can carry the data in the time available, shipped appliances when it cannot",
+      "vocabulary": ["Azure Migrate", "Azure Data Box"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.3-6"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d2",
+      "statement": "The cloud directory as the identity authority for users, applications and devices — one tenant serving cloud and synchronised on-premises identities alike — and the separate managed-domain service for workloads that still need legacy domain protocols",
+      "vocabulary": ["Microsoft Entra ID", "Microsoft Entra Domain Services"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-1"] },
+        { "artefact": "insidecloud-az900", "items": ["2.15", "2.36"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d2",
+      "statement": "Proving who someone is versus deciding what they may do — and the named capabilities on the proving side: one sign-in across many applications, a second factor such as a one-time code or token, and removing the password entirely",
+      "vocabulary": ["single sign-on (SSO)", "multifactor authentication (MFA)", "passwordless"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-2"] },
+        { "artefact": "insidecloud-az900", "items": ["2.24", "2.34", "2.38", "2.41", "2.43"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d2",
+      "statement": "Letting partners and customers who are not in your tenant collaborate without creating accounts in it — external identities as the construct for boundary-crossing access",
+      "vocabulary": ["external identities"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-3"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d2",
+      "statement": "Deciding at sign-in time, from signals such as location, device state and detected risk, what a user must satisfy before access is granted — policy evaluated at the point of authentication, not a standing permission",
+      "vocabulary": ["Microsoft Entra Conditional Access"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.15"] },
+        { "artefact": "insidecloud-az900", "items": ["2.32", "2.33", "2.40"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d2",
+      "statement": "Role-based access control read both ways: what a single role assignment bounds — its actions, at its scope, inherited downward — and how multiple assignments combine: as the union of what they grant, never the intersection",
+      "vocabulary": ["Azure role-based access control (RBAC)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-5"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.17"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["2.2"] },
+        { "artefact": "insidecloud-az900", "items": ["2.30"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d2",
+      "statement": "Telling the two security models apart by what each prescribes: Zero Trust assumes the network is already hostile and verifies every request explicitly; the defense-in-depth model layers controls so one breached layer is not a breached system",
+      "vocabulary": ["Zero Trust", "defense-in-depth model"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-6", "b-2.4-7"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["2.16"] },
+        { "artefact": "insidecloud-az900", "items": ["2.35"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d2",
+      "statement": "Continuous security-posture assessment and threat protection across the estate — including the regulatory-compliance view of the infrastructure — as distinct from governing and classifying the data that lives in it",
+      "vocabulary": ["Microsoft Defender for Cloud"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-2.4-8"] },
+        { "artefact": "insidecloud-az900", "items": ["2.22", "2.48", "2.49"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d3",
+      "statement": "What bills and when for resources that already exist: a stopped virtual machine still pays for its storage, a resource group itself is free, and every resource meters separately on its own terms",
+      "vocabulary": ["factors that can affect costs in Azure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.1-1"] },
+        { "artefact": "insidecloud-az900", "items": ["3.3", "3.26"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d3",
+      "statement": "The cost levers fixed at design time — resource type and size, region choice, network egress, and licensing options — and which of them a described bill difference points at",
+      "vocabulary": ["factors that can affect costs in Azure"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.1-1"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d3",
+      "statement": "Estimating what a design that does not exist yet would cost — the pricing calculator's job, and precisely the thing a spend-analysis tool cannot do",
+      "vocabulary": ["the pricing calculator"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.1-2"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.2"] },
+        { "artefact": "insidecloud-az900", "items": ["3.6", "3.22", "3.25"] }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d3",
+      "statement": "Analysing spend that has already happened — slicing incurred cost by resource, service and time to find what is driving it — as the retrospective half of cost management",
+      "vocabulary": ["cost management capabilities in Azure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.1-3"] },
+        { "artefact": "insidecloud-az900", "items": ["3.25"] }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d3",
+      "statement": "Guarding spend before it overruns: budgets set the line and alerts fire as consumption approaches it — the proactive half of cost management, as distinct from analysing what was already spent",
+      "vocabulary": ["cost management capabilities in Azure"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.1-3"] }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d3",
+      "statement": "Attaching metadata to resources so cost and ownership can be sliced after the fact: tags cut across the containment hierarchy rather than replacing it, and carry the department or application dimension chargeback needs",
+      "vocabulary": ["tags"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.1-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.1"] },
+        { "artefact": "insidecloud-az900", "items": ["3.18", "3.21"] }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d3",
+      "statement": "Governing and classifying the data estate — discovering, mapping and protecting sensitive information wherever it travels — rather than governing the resource estate the data happens to sit on",
+      "vocabulary": ["Microsoft Purview in Azure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.2-1"] },
+        { "artefact": "insidecloud-az900", "items": ["3.7", "3.16"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d3",
+      "statement": "Azure Policy as the deployment-time gate: define what compliant looks like once and non-compliant resources are prevented from being created anywhere in scope — restricting allowed regions is the canonical case",
+      "vocabulary": ["Azure Policy"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.2-2"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.4"] },
+        { "artefact": "insidecloud-az900", "items": ["2.27", "3.15"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d3",
+      "statement": "Azure Policy over the estate that already exists: evaluating current resources against standards, surfacing the non-compliant ones, and applying enforcement to new and existing deployments alike",
+      "vocabulary": ["Azure Policy"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.2-2"] },
+        { "artefact": "insidecloud-az900", "items": ["3.13", "3.19"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d3",
+      "statement": "A resource lock blocks deletion or modification independently of who holds permissions — it stops an owner too, and must be deliberately removed before the guarded action can proceed",
+      "vocabulary": ["resource locks"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.2-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.5"] },
+        { "artefact": "insidecloud-az900", "items": ["3.14", "3.20"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d3",
+      "statement": "Placing the right control class against the obligation: policy gates what may be created, a lock protects what exists regardless of permission, and role assignments decide who may attempt either — and only one of the three stops an owner deleting",
+      "vocabulary": ["Azure Policy", "resource locks", "Azure role-based access control (RBAC)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.2-2", "b-3.2-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.4", "3.5"] },
+        { "artefact": "insidecloud-az900", "items": ["3.13", "3.14", "3.20"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d3",
+      "statement": "The graphical control plane: right for exploration, visualisation and one-off administration — and wrong for anything that must be repeatable, reviewable or performed at scale",
+      "vocabulary": ["the Azure portal"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.3-1"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d3",
+      "statement": "The three command surfaces told apart: a browser-hosted, pre-authenticated shell that needs no local install, and two command languages it can run — the cross-platform CLI and the object-based PowerShell",
+      "vocabulary": ["Azure Cloud Shell", "Azure CLI", "Azure PowerShell"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.3-2"] }
+      ]
+    },
+    {
+      "id": "C-057",
+      "domain": "d3",
+      "statement": "Extending Azure's management plane to what does not run in Azure: on-premises and other-cloud resources projected into Azure and governed with the same tooling as native ones",
+      "vocabulary": ["Azure Arc"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.3-3"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.6"] }
+      ]
+    },
+    {
+      "id": "C-058",
+      "domain": "d3",
+      "statement": "Declaring the desired estate as a versioned artefact rather than clicking it into existence — what infrastructure as code buys: repeatability, review before deployment, and drift you can see",
+      "vocabulary": ["infrastructure as code (IaC)"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.3-4"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.7"] }
+      ]
+    },
+    {
+      "id": "C-059",
+      "domain": "d3",
+      "statement": "Azure Resource Manager as the control plane every deployment and management request goes through, whatever surface issued it — and its declarative template format that makes repeat deployments identical",
+      "vocabulary": ["Azure Resource Manager (ARM)", "ARM templates"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.3-5"] },
+        { "artefact": "insidecloud-az900", "items": ["3.2"] }
+      ]
+    },
+    {
+      "id": "C-060",
+      "domain": "d3",
+      "statement": "Personalised best-practice recommendations across cost, security, reliability, performance and operational excellence — produced by analysing resources that already exist, which is what separates the recommender from an estimator or an enforcer",
+      "vocabulary": ["Azure Advisor"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.4-1"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.8"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["3.2"] },
+        { "artefact": "insidecloud-az900", "items": ["3.8", "3.24", "3.27"] }
+      ]
+    },
+    {
+      "id": "C-061",
+      "domain": "d3",
+      "statement": "Three different questions about the same outage: is the platform having an incident at all, is it affecting my services and regions, and is this specific resource healthy — each answered by a different health surface",
+      "vocabulary": ["Azure Service Health"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.4-2"] },
+        { "artefact": "ms-learn-az900-modules", "items": ["3.9"] }
+      ]
+    },
+    {
+      "id": "C-062",
+      "domain": "d3",
+      "statement": "Azure Monitor as the telemetry platform for the whole estate — collecting, correlating and acting on metrics and logs from many resources in one place; the named surfaces are parts of the platform, not rivals to it",
+      "vocabulary": ["Azure Monitor"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.4-3"] },
+        { "artefact": "tutorialsdojo-az900", "items": ["3.1"] },
+        { "artefact": "insidecloud-az900", "items": ["3.11"] }
+      ]
+    },
+    {
+      "id": "C-063",
+      "domain": "d3",
+      "statement": "Log Analytics as the query surface: the place collected log data is interrogated and analysed — where you ask questions of telemetry, not the pipeline that gathers it and not the layer that notifies",
+      "vocabulary": ["Log Analytics"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.4-3"] },
+        { "artefact": "insidecloud-az900", "items": ["3.4"] }
+      ]
+    },
+    {
+      "id": "C-064",
+      "domain": "d3",
+      "statement": "Azure Monitor alerts as the notification-and-action layer: watching a signal for a condition and firing when it is met — telling you and triggering a response, as distinct from storing or querying telemetry",
+      "vocabulary": ["Azure Monitor alerts"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.4-3"] },
+        { "artefact": "insidecloud-az900", "items": ["3.12"] }
+      ]
+    },
+    {
+      "id": "C-065",
+      "domain": "d3",
+      "statement": "Application-level telemetry: performance anomalies, request failures and usage inside the application itself — the application surface of the telemetry platform, distinct from the platform-level collection beneath it",
+      "vocabulary": ["Azure Monitor Application Insights"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "az900-studyguide", "items": ["b-3.4-3"] },
+        { "artefact": "insidecloud-az900", "items": ["3.5", "3.9"] }
+      ]
+    }
+  ]
+}

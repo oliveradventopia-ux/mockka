@@ -1,9 +1,9 @@
 {
-  "$comment": "Multi-form-ready; v1 ships the single migrated CCAR-P form.",
-  "version": "1.0.0",
+  "$comment": "Multi-form-ready; v1 ships the single CCAR-P form. Rebuilt at S6 (2026-08-19) by exam-examiner: membership re-derived against manifest.exam / manifest.domains / format_mix and the 24-rule syllabus layer, form id normalised to the repo-wide form-a convention.",
+  "version": "1.1.0",
   "forms": [
     {
-      "id": "form-1",
+      "id": "form-a",
       "items": [
         "1.01",
         "1.03",
@@ -71,6 +71,18 @@
       ],
       "notes": {
         "method": "Convergent concepts (tested by both source readings) were seated first, then adjusted by hand so the paper keeps the classic, high-frequency exam concepts alongside the recap-only concepts the reference practice set never covers.",
+        "s6_rebuild_2026_08_19": {
+          "verified_against_manifest": {
+            "total": "63 of 63 (manifest.exam.item_count)",
+            "per_domain": "d1 11 · d2 8 · d3 12 · d4 10 · d5 9 · d6 9 · d7 4 — every count exact",
+            "format_mix": "every domain matches manifest.domains[].format_mix exactly (44 single_choice · 14 multiple_response · 5 scenario_matching)",
+            "syllabus_rules": "all 24 rules covered by the form (syllabus-rule-form-coverage [pass])",
+            "concept_uniqueness": "0 concepts tested twice (selection-concept-uniqueness [pass])"
+          },
+          "seating_residual": "methodology/02-master-inventory.md#method seats priority:high concepts first. 39 of 47 high-priority concepts are seated; the 8 unseated are C-008 (1.08), C-029 (3.03), C-051 (4.09), C-059 (5.04), C-063 (5.08), C-066 (5.11), C-070 (6.03), C-080 (7.01). Six of those eight have a free same-domain same-format swap available (1.08 <- 1.11|1.13 · 3.03 <- 3.04|3.08|3.13|3.16 · 4.09 <- 4.05|4.07|4.10|4.12 · 5.04 <- 5.05 · 5.08 and 5.11 <- two of 5.07|5.09|5.10); C-070 and C-080 have none, because every same-domain same-format seat already holds a high-priority concept. The seats were NOT taken: the concepts they would displace are the recap-only ones this form deliberately keeps (see recap_only_concepts_kept_on_the_exam), which is the hand-tuned seating divergence that 02-master-inventory.md#method names ccar-p as the sanctioned example of, and which the 27 concept-convergence warnings keep visible. Recorded here so the trade is Oliver's call at Gate 2 rather than silently the examiner's.",
+          "membership_unchanged": "The migrated membership survived verification on every hard constraint, so no item was swapped. Only the form id changed (form-1 -> form-a).",
+          "s5b_form_scope": "blind 23.81% vs ceiling 26.60% (1.35 × random 19.70%); k_req 0.6719 vs floor 0.5854 (0.85 × 0.6887) — both hold for this exact membership (eval/blind-solve.json#cue_only_solve_s5b). Any future membership change re-opens S5b for the form scope."
+        },
         "recap_only_concepts_kept_on_the_exam": [
           "C-001 three-bucket decomposition (1.01)",
           "C-004 five factors, tightest constraint decides (1.04)",

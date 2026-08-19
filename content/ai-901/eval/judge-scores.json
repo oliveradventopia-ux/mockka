@@ -1,0 +1,810 @@
+{
+  "$comment": "S5 judge rubric ROUND 2 (methodology/05-eval-rubric.md #judge), post-bounce re-eval. exam-examiner, fresh session, 2026-08-18. Round 1 preserved unmodified at eval/judge-scores-r1.json; this canonical file carries the CURRENT bank revision per the preflight contract. Scope of the rework under judgment: commit e2434ad reworked exactly five items - d1-q15, d1-q16, d1-q24 (dim5 stem-pretranslates-key-vocabulary), d2-q44 (dim6 scenario-contradicts-key) and d2-q50 (dim5 answer-surface-cue). A per-item hash diff of questions.json against the round-1 eval commit 29bc9ff confirms those five items and ONLY those five changed; the other 51 items are byte-identical, so their round-1 scores and argued-FOR cases carry forward unchanged and are reproduced verbatim here. The five reworked items were re-read in full and re-scored fresh with new argue-FOR cases written before any score, per #bounce ('re-scored fresh - full rubric, no partial credit'). RESULT: zero dimensions <=2 anywhere - no bounces in round 2, no item reaches the cap of 2, nothing escalates to Oliver as below-threshold. Dimension-5 distribution moved from 9x5/38x4/5x3/4x2 (r1) to 9x5/42x4/5x3/0x2; dimension-6 from 54x5/1x4/0x3/1x2 to 55x5/1x4/0x3/0x2; dimension-1 3s fell from 3 to 2 (d2-q44 cleared 3->5); dimension-2 3s from 4 to 2 (d1-q24 and d2-q50 both cleared 3->4); dimension-4 3s from 2 to 1 (d2-q44 cleared 3->4); dimension-3 from 54x5/2x4 to 55x5/1x4 (d2-q44 cleared 4->5, the remaining 4 is d1-q11). No regressions: every dimension of every reworked item scores at or above its round-1 value, and the 51 untouched items are unchanged by construction. Gate 2 auto-flags from 3s are therefore the eight round-1 items whose content was never touched (d2-q41, d2-q38, d1-q11, d1-q21, d1-q23, d2-q36, d2-q37, d2-q47) plus the referred d1-q12 and the blind-solve-contaminated d2-q50.",
+  "round": 2,
+  "generated": "2026-08-18",
+  "items": [
+    {
+      "id": "ai-901-d1-q01",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "D (weekly complaint sampling) is the strongest and is argued fairly: complaint review is where many regulators actually start, and it loses only because the customers who wait longest complain least — which the rationale says in exactly those terms. A (portal notice = transparency) and C (encryption = privacy) are clean principle substitutions from distinct patterns. The stem never names 'measure across groups', so the concept is applied rather than restated."
+    },
+    {
+      "id": "ai-901-d1-q02",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (quarterly retraining on all-route footage) has a genuinely strong case — it is what an ops team would fund — and loses on the gap argument: every foggy sailing between refreshes is unprotected. D (second camera) is the real hardware instinct defeated by 'more of the same degraded images'. B is transparency. Best distractor set in the responsible-AI block."
+    },
+    {
+      "id": "ai-901-d1-q03",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "C (reception staff redact by hand) is the strong one — manual redaction is a real clinic control — and loses because the assistant already holds the notes. A is transparency. B (give it every practice's notes) is the thin option: it is argued as a consistency benefit but no reviewer would choose to widen exposure in a privacy question. r=118 keeps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d1-q04",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (gate the line behind a web questionnaire) is defensible triage on its face and loses hard on the concept's own terms — it removes the affected callers instead of serving them. D (raise microphone sensitivity) is the real engineer's instinct defeated by capture-vs-recognition. B (warn on the booking page) is disclosure standing in for access. Three distinct patterns, all real."
+    },
+    {
+      "id": "ai-901-d1-q05",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (signed record, named trustee) is the strongest — it is accountability wearing transparency's clothes and a board would propose it. C (publish model size and training volume) is the weaker option but earns its place: 'transparency = publish model details' is a live misreading. D is detection-after-the-fact. Key stands on the disclosure-at-first-contact test."
+    },
+    {
+      "id": "ai-901-d1-q06",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (model explains its ranking factors) is the best wrong pick: explainability feels like answerability and is what most boards ask for first; it loses because an explanation names no owner. C (log everything) is evidence without a forum — the subtler miss. D (outsource to a certified supplier) is real procurement behaviour defeated by 'the port still admits the cargo'. Clean accountability-vs-transparency discrimination."
+    },
+    {
+      "id": "ai-901-d1-q07",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "MR. B (transparency outranks everything) is a stated falsehood that is nonetheless a real belief — plenty of teams treat disclosure as trumps. D (name an accountable claims officer) is the strong wrong pick: it is a genuine obligation, discharged against the wrong principle. E (raise the threshold) is the thin one — fewer flags plainly does not retire the duty to the claims still flagged. The two keys sit on opposite sides of the tension, which is the concept."
+    },
+    {
+      "id": "ai-901-d1-q08",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (looked the credit up at request time) is the strongest: it describes a grounded solution accurately and loses only on the stem's planted fact that nothing was connected — a fair, findable discriminator. D (classify then fill typical field values) is a real pipeline paradigm. A (model holds retrievable rows of its training data) is the lay belief the item exists to break, but it reads as a D19 giveaway to anyone who has met the concept once."
+    },
+    {
+      "id": "ai-901-d1-q09",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (outgrown the model, needs broader training) is the strongest — 'more knowledge' is the reflex answer to invented facts — and loses because neither complaint is a knowledge gap. D (temperature) is the standing sampling-settings misconception and is well placed. C is a compound distractor (transcription faults + timeout) and is the weakest: two wrong causes bolted together is easier to reject than either alone. r=115 caps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d1-q10",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (type the fare in first, then a text model) is the strongest and genuinely ships in real expense apps; it loses on the stem's 'in the same step' and because it moves the work onto the traveller — the rationale makes that argument precisely. B (embeddings for similar receipts) is a real capability answering a different question; C is generation-for-analysis. Three distinct capability classes, no throwaway."
+    },
+    {
+      "id": "ai-901-d1-q11",
+      "scores": {
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 3,
+        "6": 4
+      },
+      "case": "The weakest item in d1 and the reason is structural, not factual. A (deployment just places files), C (deployment settles nothing) and D (the choices live in the catalog) are all absolutes; B is the only hedged, moderate statement, so the item is answerable by test-wiseness — pick the option that concedes something. Compounding it, neither the key nor the rationale ever names a single actual deployment option, so what the candidate takes away is 'a deployment has options' rather than which ones; dim3 and dim4 drop to 4 for that. D (catalog) is the best distractor — the catalog/deployment surface split is a real confusion. No dimension falls to 2, so this is a Gate 2 read, not a bounce."
+    },
+    {
+      "id": "ai-901-d1-q12",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      },
+      "case": "REFERRED TO GATE 2 on a dim1 4. D (second deployment plus a cache of the first blurb) actually delivers what marketing literally asked for — identical wording on the foyer cards across twelve venues — and loses only on the stem's 'every time it is regenerated', which the rationale correctly identifies. The deeper issue is the key: a lower temperature reduces variation but does not guarantee that identical input yields identical output, and the stem asks for 'the same blurb every time'. The option text is carefully hedged ('vary far less'), so the item is defensible; the rationale is less careful — 'repeatable wording for identical prompts is what a lower temperature produces' overstates it, which is the dim4 4. C (house style in the system prompt) is a strong wrong pick and cleanly killed."
+    },
+    {
+      "id": "ai-901-d1-q13",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "SM. The live discrimination is s2-vs-s3: 'named values off a scanned ticket' (information extraction) against 'route by service and pull recurring terms' (text analysis) — a candidate who reads 'the service they mention' as extraction has a real, wrong case, and the second clause in s3 is what settles it. Reusing Speech across s1 and s5 defeats one-to-one elimination and is the right use of the format. s4 is near-free. Clean key."
+    },
+    {
+      "id": "ai-901-d1-q14",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Benchmark item for the bank. A (longer, better-structured plans), B (bigger context so a night of telemetry fits) and D (fine-tune on past decisions) are three genuinely different wrong theories of agentic AI, each held by real practitioners, and each loses on the same discriminator — the solution still answers and stops. The surface points at 'bigger model' throughout the stem, which is exactly the good-vs-best pitch dimension 5 is asking for."
+    },
+    {
+      "id": "ai-901-d1-q15",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "bounce": 1,
+      "case": "REWORKED (e2434ad), re-scored fresh. Argue FOR each distractor: A (summarization) — a buying team that wants to know what is rising could read condensed reviews and would get there; it loses because thousands of short reads are still reads and prose does not make an index, and the stem's 'does not want to read the reviews' names the cost. B (entity detection) — the strongest case in the set: trending named things month by month (authors, titles, shops) is a real retail-analytics pattern and would genuinely group reviews; it loses because the option's own output is people, places and organizations, and 'which subjects are rising' asks for what a review is ABOUT, not what it names. C (sentiment) — polarity trended by month is a real dashboard and loses only because it sorts by mood without saying what was discussed. Dim5 4 (r1 2): the indicted cue is measurably gone — key-exclusive stem echo 0 (r1: the stem carried 'salient terms it is about' verbatim), and the key now has the LOWEST stem overlap of the four options (key 1 word vs A 4 / B 1 / C 3), so lexical matching now points away from D. The candidate must supply index+trend -> salient terms themselves. Not 5: 'does not want to read the reviews' still eliminates A on a stem prohibition rather than on the concept. Dim2 4 for the same reason (A is softened by that clause; B and C are strong). Dims 1/3/4/6 unchanged from r1 at 5 — options and rationale untouched apart from the stem edit, concept C-015 exercised exactly."
+    },
+    {
+      "id": "ai-901-d1-q16",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "bounce": 1,
+      "case": "REWORKED (e2434ad), re-scored fresh. Argue FOR each distractor: A (keyword extraction) — a cataloguer would reasonably try key phrases first and match them against catalog headings; it loses because salient terms arrive untyped, so nothing tells the collections system which term is a person and which a place, and 'most about' is not 'every record referred to'. C (summarization) — a curator reading a short account can link records by hand, which is how the museum works today; it loses because it returns prose, not values the catalog can match. D (OCR) — real trap for anyone who reads 'letters' as scans, killed by the stem's opening fact that the correspondence is already transcribed. Dim5 4 (r1 2): key-exclusive stem echo 0 (r1: 5, the whole entity list plus 'typed'), and stem overlap is now flat across all four options at 1 word each ('letter'), so the key cannot be found by matching. The stem enumerates individuals/institutions/locations and 'files correspondence by year' in catalog language and requires the candidate to map that onto typed spans — which is C-016 itself. Not 5: the enumeration is still a close semantic paraphrase of the key's four entity types, so a strong reader gets there without naming the technique. Dim2 4: D is eliminated by a stem fact rather than by the concept (deliberately, and fairly — it is what makes D honest), leaving two fully working distractors. Dims 1/3/4/6 unchanged at 5."
+    },
+    {
+      "id": "ai-901-d1-q17",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (document-level scores averaged weekly) is the strongest and is argued properly — averaging is what a dashboard team would actually do — and loses because it hides the split more thoroughly than the neutral score already does. C (keyword extraction) answers 'what' instead of 'how they feel'. D (two-pile classifier) is the thin one: a mixed message has no correct pile. Passes the pre-translation test — the stem says 'each thing they commented on' and the key supplies 'aspect' and 'polarity', which are the concept words the candidate has to bring."
+    },
+    {
+      "id": "ai-901-d1-q18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (recurring terms) is the strongest wrong pick because it is genuinely useful to a planner and loses only on 'employers' judgment, not their vocabulary'. D (polarity) shows where to look without saying what to change — the sharpest of the three rationales. B (entity detection) returns catalog values the college already has. The stem states a business need ('act on what employers said, no time to read') and the key supplies 'preserves the substance', so the mapping still costs the candidate the concept."
+    },
+    {
+      "id": "ai-901-d1-q19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "C (run keyword extraction over the recordings) is the item's whole point and a strong tempter: it names the output head office actually wants and fails only on having no input until recognition has run — the E12 stage trap used well. A (synthesis) is the direction swap; B (multimodal on the dashcam) is a workload swap onto the wrong input. Three distinct patterns, none eliminable without reading the scenario."
+    },
+    {
+      "id": "ai-901-d1-q20",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (recognition so a ranger's reading can be captured) is the strong one — it produces audio a visitor could keep, and loses on the stem's 'without waiting for a ranger'. C (OCR of the trailhead sign) returns text the service already holds, a nice closed loop. D (translation) is the thin option: no reading of the stem makes a language change serve a low-vision visitor. Key stands on text-in/audio-out."
+    },
+    {
+      "id": "ai-901-d1-q21",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "MR. A (scene caption) is the real distractor and it is well planted — the stem says a single overall description was already trialed, which is the granularity lesson. But C (a generated reference image) and D (a frame timestamp) are both eliminable without engaging the scenario at all, so only one of three distractors carries weight: dim2 3. Dim5 3 because the stem names two jobs and exactly two options name those jobs back, which narrows the pick before any vision taxonomy is applied — the milder cousin of the d2-q50 defect, kept above the bounce line because C and D still reference trucks and the bay, so lexical matching does not select the pair uncontested."
+    },
+    {
+      "id": "ai-901-d1-q22",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "D (fine-tune for closer visual matches) is the strongest: it is a real platform capability, argued as improving search, and loses on the stem's planted fact that no photograph of these styles exists. A (describe existing seller photos) is the direction swap the concept is built on. B (OCR the labels) is thin — useful cataloging work that produces no campaign visual. Clean analysis-vs-generation split."
+    },
+    {
+      "id": "ai-901-d1-q23",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "SM. The one real judgment is s5: photographs of crate labels carry text, and a candidate who answers 'Text' has a genuine case that loses correctly on the concept's own terms — the content type is what arrives, not what is inside it. Reusing Images across s1 and s5 is what makes that discrimination possible. Dim5 3 because the other four mappings are near-free medium-naming (recordings→Audio, typed form entries→Text, dashcam footage→Video), so four fifths of the item is handed over and the pitch rests on one scenario."
+    },
+    {
+      "id": "ai-901-d1-q24",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "bounce": 1,
+      "case": "REWORKED (e2434ad) on both indicted dimensions, re-scored fresh. Argue FOR each distractor: C (position template per shipper layout) — the NEW option and now the item's strongest: a template-based extractor genuinely lifts named fields off a scan with no clerk and no code written, and it is what a broker of this size would have bought five years ago; it loses only on compounding, because dozens of house layouts plus a handful of new shippers every month means an unbounded template backlog — the per-layout work moves from code to configuration instead of going away. That is a good-vs-best discrimination, exactly what the bounce asked for, and the rationale argues it in those terms. A (character reading) — the concept's true opposite pole and a twenty-year production pattern; loses because page text in reading order is precisely what forces per-layout parsing. B (keyword extraction) — the weak one: salient terms are not a consignee and a total, and it is eliminable without engaging the scenario. Dim2 4 (r1 3): two strong distractors plus one throwaway, up from one strong plus two throwaways; not 5 while B remains. Dim5 4 (r1 2): key-exclusive stem echo 0 (r1: 6, the bank's highest), the four field names no longer appear in the stem, the requirement is stated as the declaration system's need, and the key now has the lowest stem overlap of the four (1 vs 2/2/3). Dim1 5: C's best case loses on its own terms; D is the only option that survives new layouts. Dim3 5 — C-024's OCR-versus-field-extraction boundary, now tested against a template as well. Dims 4/6 unchanged at 5."
+    },
+    {
+      "id": "ai-901-d2-q25",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "A (have the client paste the block automatically) is the strongest distractor in d2 and is genuinely shipped in production; it loses on the concept's own terms — the rules still travel inside each request, so any other caller drops them again. B (fine-tune the persona in) is the heavy-hammer answer and cannot express a hard prohibition. D (temperature) is the standing parameter misconception. The surface points at 'stop it volunteering things', away from the placement principle: good-vs-best."
+    },
+    {
+      "id": "ai-901-d2-q26",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Paired with q27 and both are well built. C (fine-tune on thousands of past records) is the strongest wrong answer — it would work — and loses on proportionality plus the retraining commitment when the maintenance system changes a field. B (step-by-step reasoning) is the sibling correction misapplied, which is exactly the discrimination. D pushes the work back onto engineers. The stem's 'reliably picks out the right facts' is the planted evidence that the failure is shape, not reasoning."
+    },
+    {
+      "id": "ai-901-d2-q27",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "The mirror of q26 and equally clean. A (worked examples) is the strongest — the shape of a good settlement is what an author reaches for first — and loses because the shape is already right and an example of a correct total does not fix an ordering fault. C (split into four requests and add up client-side) is a real engineering response defeated on moving parts. B (max output tokens) is the weakest but still a real reflex. The 'discount applied before damage charges' detail is what makes the item good-vs-best."
+    },
+    {
+      "id": "ai-901-d2-q28",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (add the model to the project as a connection) is the strongest: connections are a genuine portal surface and 'not connected yet' is a natural reading of a not-found error. C (exercise it in the playground first) is the platform-superstition answer and a real one. D (quota) is the ops instinct defeated by 'a model that was never deployed has no traffic to limit'. The stem's 'the project itself is reachable' is a fair planted control."
+    },
+    {
+      "id": "ai-901-d2-q29",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (query the catalog entry by model name) is the strongest — it is the same catalog/deployment confusion as q28 seen from the client side and worth testing twice. D (same subscription, so it just works) is a real cloud assumption. C (download the model files onto the handset) is the thin one: nobody specifying a Foundry app expects on-device weights. Key stands on endpoint-plus-credentials."
+    },
+    {
+      "id": "ai-901-d2-q30",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (wait three weeks for a developer) is the strongest and is genuinely what most organizations do; it loses on the stem's 'soonest without prejudging it'. B (commission a fine-tune) is a commitment made before the question is answered — the right kind of trap for this concept. D (ask the supervisors) is thin: informed opinion is visibly not a test. r=112 caps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d2-q31",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "D (give every grower portal access) is the strongest wrong route — it does put the model in front of growers — and loses cleanly on 'without opening a browser'. C (a second deployment) is a real traffic-separation instinct that writes none of the code. A (export the portal conversation as a saved script) is thin but it names a real misconception about what a transcript is. Key is the SDK client and the stem earns it."
+    },
+    {
+      "id": "ai-901-d2-q32",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "MR. B is the plan's own claim restated, which is the right way to build a corrective multi-response item — a candidate who believes the project plan will take it. C is D20 self-review-anchoring turned into an option, and it is the nicest touch in d2: the author of the instructions re-reading them is anchored to the assumptions that produced them. E (tool-call timings as testing) is the thin one. A and D are two faces of the same correction, which is acceptable for 'select TWO statements that correct the plan'."
+    },
+    {
+      "id": "ai-901-d2-q33",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (reuse the client and paste the agent's instructions and tool descriptions into every request) is the strongest and the most instructive: it is what a team would actually try, and it loses because it pushes the agent back down to a model answering from a prompt — the booking tool still never runs. A is the same error without the effort. C (an agent cannot be reached from an application) is a throwaway. r=118 is the bank's highest length ratio and caps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d2-q34",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "SM and the best-constructed item in the bank. Reusing 'an agent that calls tools' across s2 and s3 defeats one-to-one elimination, and s3 is a genuine tempter for 'several agents coordinated' — three actions in sequence reads like orchestration until you notice no separate specialists are described, which is what s4 then supplies by contrast. s1 is the under-reach control. Over- and under-reaching are both punished, which is the concept verbatim."
+    },
+    {
+      "id": "ai-901-d2-q35",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "B (instruct the agent to answer only from the approved procedures) is the strongest distractor in the agent block and a genuinely common first fix; it loses because an instruction states an intent while leaving the agent nothing approved to read. C (fine-tune on the procedure library) shapes writing and leaves no citation trail — the second finding is what kills it. D (senior engineer reviews every answer) is real and defeated on scale. The two-part finding (wrong source AND no traceability) is what makes one option uniquely best."
+    },
+    {
+      "id": "ai-901-d2-q36",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "C (train crews to ask more precisely worded questions) is the strongest — user training is a real organizational response — and loses because a well-worded question can be answered with an invented clearance just as fluently. D (temperature) is the standing misconception, correctly placed. But A ('the answers are acceptable while they read clearly') is not choosable by anyone in a safety context, and with C and D both sitting on familiar ground the set carries only two working distractors: dim2 3."
+    },
+    {
+      "id": "ai-901-d2-q37",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "A (one call per letter with the whole job in the prompt) has a genuinely strong 2026 case — structured output from a single call is a shipped architecture — and loses on the exam's own concept rather than on anything in the scenario: dim1 4. B (a deployment per requirement) and D (extract first, then choose) are both real and distinct. Dim5 3 for a compounding surface cue: A, B and D are all stated as concrete over-commitments while C is the abstract, moderate option, and r=116 puts the key among the longest. A candidate can pick C without reading the requirements."
+    },
+    {
+      "id": "ai-901-d2-q38",
+      "scores": {
+        "1": 3,
+        "2": 5,
+        "3": 5,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      },
+      "case": "GATE 2. A (classify in the mail gateway and pass topic and tone through as fields) is very nearly co-correct. It delivers exactly what the district asked for — messages classified so the agent can prioritize — and nothing in the scenario rules it out; it is a standard pipeline design. The key wins only on C-038's framing that text analysis is better attached to the agent as a capability it calls, and the rationale's discriminator ('runs on every message whether the agent needs the judgment or not') is a selectivity criterion the stem never states. Dim1 3, dim4 4. B (describe tone judgment in the instructions) and C (a second classifying agent) are both strong and distinct. The item needs either a stated constraint that favours agent-side classification or a rewrite of the ask."
+    },
+    {
+      "id": "ai-901-d2-q39",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "D (multimodal means it speaks as well as writes, input stays text) is the strongest: it is a real vocabulary misreading and it is the one a candidate who has only heard the word will pick. A restates the design being replaced, which is a fair trap given the stem describes that design in detail. C (must be fine-tuned before it accepts audio) confuses adaptation with capability. Clean."
+    },
+    {
+      "id": "ai-901-d2-q40",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (prompt a chat model to transcribe and write in a speaking style) is the strongest and is the exact confusion the two-route concept exists to break — it also quietly fails to produce audio at all, which the rationale catches. C (speech behaviour via inference parameters) is a good wrong-layer answer. D (the playground serves running applications) is thin. r=113 caps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d2-q41",
+      "scores": {
+        "1": 3,
+        "2": 5,
+        "3": 5,
+        "4": 3,
+        "5": 4,
+        "6": 5
+      },
+      "case": "GATE 2 — the strongest single finding of this round. B ('the terminal would rather configure the route in a portal than write and maintain prompts for it') is argued FOR at full strength and it wins on the concept's own vocabulary: C-041's sibling concept C-040 defines the dedicated route as capabilities 'an application configures and calls rather than behaviour prompted out of a model'. B is that discriminator restated, so a candidate applying the concept correctly has a real case for it. The item survives only on framing — the stem asks for 'requirements' and B is phrased as a preference ('would rather') — which is a reading test, not a concept test: dim1 3. The rationale makes it worse by dismissing B as 'how the team likes to work' without engaging that the concept itself frames the route as configured-not-prompted: dim4 3. A and D are excellent — both argue honestly for the multimodal route, which is what a two-route item should do."
+    },
+    {
+      "id": "ai-901-d2-q42",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (recognition in front, keepers read the answer off the screen) is the strongest — it is a real half-built solution and loses precisely on the stem's occupied hands. A (replace the agent with a speech capability) trades the tools away for the interface, the sharpest wrong trade in the block. C (phrase answers to sound natural read aloud) produces no audio at all. Three genuine half-solutions; the composition concept is what separates them. r=114 caps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d2-q43",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "A (shorten the prompt) is the strongest — it is the first thing anyone tries and it genuinely trims cost — and loses because it touches neither latency nor the varying reply shape, which the stem plants as two of three constraints. B (overnight batching) drops the requirement rather than meeting it. D (fine-tune for cheapness) is the standing misconception about what fine-tuning buys. Three constraints, three distinct failures to meet them: this is the build-or-buy concept pitched properly."
+    },
+    {
+      "id": "ai-901-d2-q44",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 4,
+        "5": 4,
+        "6": 5
+      },
+      "bounce": 1,
+      "case": "REWORKED (e2434ad), re-scored fresh; this is the round's substantive fix, not a surface one. Argue FOR each distractor: C ('the archive transcript is optional, the text step can work from the recorded call directly') — this was the round-1 co-correct threat, built out of the bank's own C-039 (d2-q39: a deployed multimodal model takes audio with no recognition step in front). The reworked stem now names the chosen route — 'the laboratory has chosen Azure Language text analysis to do both' — so C is false as stated: a text analysis service has no audio input, whatever a multimodal model can do. C survives as a strong distractor for anyone who conflates the two routes, and it now loses on the stem rather than on a premise that first appeared in the rationale. B (both steps at once, results joined) — a real parallel-pipeline instinct, and would be right if the classifier were an audio model; loses for the same reason. D (order immaterial) — the naive sequence-agnostic position; weakest of the three but a genuine exam-day answer. Dim6 5 (r1 2): the contradiction is gone — the flag condition is now 'states a reading outside the expected range', which a transcript carries, instead of 'sounds unsure', which is prosody the keyed pipeline discards. The scenario no longer asks the keyed design to do something it cannot do. Dim1 5 (r1 3): with the route named, the key is uniquely defensible. Dim4 4 (r1 3): the rationale is now true as stated and argues in canonical vocabulary ('a lightweight application that includes text analysis ... has no input at all until speech recognition has produced one'); not 5 because rationale.correct still never states the load-bearing service fact (Azure Language accepts text only) — that argument lives in distractor C's note. Dim3 5 (r1 4): the item now exercises C-044's content, the pipeline order, rather than its shape. Dim5 4: good-vs-best design review; the stem names the route, which is a fair premise rather than a giveaway, since the candidate must still know what that route consumes. Cross-item consistency C-039 <-> C-044, the r1 ratchet finding, is resolved on this tree."
+    },
+    {
+      "id": "ai-901-d2-q45",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "D (have the surveyor describe the defect and send only the description) is the strongest and is genuinely how a lot of field tooling works; it loses on the sharpest line in the block — the photograph is the evidence in question and never reaches the model. A (image generation with the report wording as prompt) is the direction swap. C (character reading on a crack) is defeated by the observation that a crack carries no writing, which is a real distinction rather than a dismissal."
+    },
+    {
+      "id": "ai-901-d2-q46",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (send the brief to the same multimodal deployment) is the strongest wrong answer in the vision block: the studio already owns that deployment, reuse is the cheap instinct, and it loses because a reading capability cannot produce a picture. C (retrieve the nearest existing carton) is a real product shortcut defeated by 'never been produced'. B is the weakest but names a real substitution — prose instead of a picture. Clean class discrimination."
+    },
+    {
+      "id": "ai-901-d2-q47",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "A (a run of stills the module plays in sequence) is the strongest and genuinely tempting — it reuses what the team already has and is how a lot of induction content is made — and loses on 'the module still has no moving demonstration'. D (film it and caption the footage) is ruled out by the stem. B is weak. Dim5 3: the keyed option carries its own justification clause — 'which is the capability class for moving visual output made from a description' — which restates the stem's requirement back at the candidate and marks the key without any capability knowledge being applied."
+    },
+    {
+      "id": "ai-901-d2-q48",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "B (one multimodal deployment covers both) is the developer's proposal from the stem made into an option, which is the right construction — it loses on 'reading and producing are separate classes', the concept itself. C (generate a picture per fault type and compare) is inventive and real. D (crop an archive photograph) is the thin one, though it names a genuine direction-of-travel confusion. r=117 caps dim5 at 4."
+    },
+    {
+      "id": "ai-901-d2-q49",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "The best implementation item in d2. B (a planner reads each paragraph and types the severity in) is the strongest distractor in the bank's second half — it works, it is what actually happens in these proofs of concept, and it loses because it makes the operator's own staff the integration. C (store the paragraph with its photograph) is defeated by one line: the work order still waits, now with a tidy archive behind it. A (a larger deployment) is the reflex. Nothing on the surface points at 'the prompt never stated the judgment'."
+    },
+    {
+      "id": "ai-901-d2-q50",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "bounce": 1,
+      "case": "REWORKED (e2434ad) on both indicted dimensions, re-scored fresh. Argue FOR each distractor: E (character reading over the docket for the permit number AND the pallet count together) — the NEW strongest distractor and a genuine one-call temptation: delivery dockets do list pallet counts, so one OCR pass looks like it satisfies both jobs; it loses because the stem's second job is counting the pallets 'stacked on the flatbed' — what physically arrived, not what the paperwork claims — which is the paper-versus-actual discrimination a gate exists to make. A (a caption of the windscreen area) — captioning is a real vision task, and a candidate can argue the failed trial only captioned the whole scene, so a caption zoomed to the docket would carry the number; it loses because a caption is prose and the gate log needs a value. C (classify the flatbed compliant / non-compliant) — image classification is a real gate function and the weakest of the three, since it answers neither stated job. Dim5 4 (r1 2): the noun cue is gone — every option now references the stem's objects (A windscreen/gate/delivery, C flatbed/delivery, E docket/permit/number/count), and a knowledge-free lexical matcher would now be drawn to E, which is wrong. Key-exclusive stem echo is effectively 0 (only the plural 'pallets' vs E's 'pallet'). Dim2 4 (r1 3): the duplicated 'one holistic call' idea is gone and two of three distractors are real practitioner positions; not 5 while C answers neither job. Dim1 5: the keyed pair is the only one covering both jobs with the right output types; E's overlap with B on job 1 does not make E co-correct, because E fails job 2 on the stem's own wording. Dims 3/4/6 unchanged at 5 — C-050 exactly, rationale untouched and argues in canonical vocabulary. NOTE: this item's round-2 blind-solve match is contaminated (see eval/blind-solve.json) and it is referred to Gate 2 on that ground."
+    },
+    {
+      "id": "ai-901-d2-q51",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "D (read the characters off each note and write parsing rules per supplier layout) is the strongest and is the honest incumbent design — it works, and it loses on the maintenance burden the stem's 'dozens of house layouts' plants. A (prompt a chat model to list the four values) is the 2026 reflex, defeated on shape guarantees, which is the same argument q43 makes about consistency. C keeps a person in the loop. Three real routes, one requirement that separates them."
+    },
+    {
+      "id": "ai-901-d2-q52",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (vision analysis, then parse the code out of the description) is the strongest — it is what a team that believes the project's own assumption would build — and loses on 'parsing a code out of prose reintroduces exactly the fragile step extraction removes'. D (a second service for photographs) is the assumption stated plainly. B (have the operator type it) is thin. The stem plants the wrong assumption explicitly, which is a fair way to test a scope fact."
+    },
+    {
+      "id": "ai-901-d2-q53",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "A (transcribe first, then extract from the transcripts) is not wrong as engineering — it is a working design, and it is the team's own plan — so the item leans on 'which route does the platform support DIRECTLY', which is the fair out but a narrow one: dim1 4. B (automate the audio, watch the video by hand) and C (recorded media cannot yield register values) are both real organizational responses. The stem's helmet-camera detail earns the video half of the concept."
+    },
+    {
+      "id": "ai-901-d2-q54",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "C (convert everything into documents first so one document service can handle it) is the strongest wrong architecture and a genuinely common one; it loses because it inserts a conversion stage in front of a tool that already accepts the originals. D (automate the easy half, route the rest to staff) is real triage that abandons the field content permanently. B is the draft architecture restated — correct construction. The four-content-type mix in one claim is the concept, and the scenario carries all four naturally."
+    },
+    {
+      "id": "ai-901-d2-q55",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "The cleanest pitch in the extraction block. A (improve accuracy further) is the reflex and is pre-killed by the stem's spot check — a candidate who does not read the evidence takes it. B (have engineers verify each value before keying) makes the manual step longer, which is a subtle and real failure. D (a coverage store) is the reporting-instead-of-doing answer, and 'the register remains exactly as empty as it was' is the best single rationale line in the bank. Nothing on the surface points at the integration."
+    },
+    {
+      "id": "ai-901-d2-q56",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "C (one configuration covering every field across all four document kinds) is the strongest — it sounds like consolidation and is what a team under time pressure builds — and loses because it repeats the fault at greater scale. D (run every configuration and keep the fullest result) is a real brute-force habit. A (raise the confidence threshold) hides the bad results instead of producing good ones, which is the sharpest of the three. Distinct patterns, no throwaway."
+    }
+  ],
+  "bounces": [],
+  "bank_defects": [
+    {
+      "id": "BD-A",
+      "class": "stem-pretranslates-key-vocabulary",
+      "severity": "systemic-partial",
+      "items_bounced": [
+        "ai-901-d1-q15",
+        "ai-901-d1-q16",
+        "ai-901-d1-q24"
+      ],
+      "items_flagged": [
+        "ai-901-d2-q47",
+        "ai-901-d1-q21",
+        "ai-901-d2-q50"
+      ],
+      "items_clean_in_same_family": [
+        "ai-901-d1-q17",
+        "ai-901-d1-q18",
+        "ai-901-d1-q19",
+        "ai-901-d1-q20",
+        "ai-901-d1-q22"
+      ],
+      "finding": "This is the third consecutive Mockka bank to surface a surface-solvability class, and it is the AI-901 form of clf-c02's 1.10 defect. In the F2 output-granularity family the stem must state what the business needs; in five items it states it in the KEYED CONCEPT'S OWN CANONICAL OUTPUT VOCABULARY ('salient terms', 'typed values ... people, places, organizations and dates', 'named values ... invoice number, currency, total and consignee'), and the keyed option then repeats that phrase while no distractor carries it. The item becomes a lexical match. The same family's other five items pass cleanly, which proves the fix is cheap: q17 says 'each thing they commented on' and lets the option supply 'aspect' and 'polarity'; q18 says 'act on what employers said' and lets the option supply 'preserves the substance'. The rule the family already demonstrates is: the stem carries the business need, the option carries the technique's property, and the candidate supplies the mapping.",
+      "measurement": "e = content words appearing in the stem AND the keyed option AND no distractor. Distribution across the 53 optioned items: e=0 15, e=1 19, e=2 8, e=3 7, e=4 1, e=5 1, e=6 2. The metric over-counts unavoidable scenario nouns (d1-q01 scores e=3 on 'model ranks town' and is a clean item), so every flagged item was adjudicated by the uncontested-lexical-match test rather than by the number.",
+      "ratchet_proposal": "Promote the `stem-key-word-match` validator check already proposed in clf-c02's eval report from proposal to build. Its AI-901 refinement: flag any item where the keyed option shares >=4 content words with the stem that appear in no distractor. On this bank that fires on exactly d1-q24, d2-q50, d1-q16 and d2-q47 — three of the four are round-1 bounces and the fourth is a Gate 2 flag, i.e. no false positives and one miss (d1-q15, e=2 but the shared phrase is the whole output spec). A phrase-level variant, comparing 2-grams and 3-grams rather than single words, would catch d1-q15 too."
+    },
+    {
+      "id": "BD-B",
+      "class": "aif-c01-length-cue-cleared",
+      "severity": "none — recorded as ratchet evidence",
+      "finding": "The keyed-option length cue that bounced eleven items in aif-c01 round 1 does not exist in this bank. Keyed option length as a percentage of the longest distractor: max 118 (d2-q33), median 100, zero items at or above 125, eight items in the 110-124 band. Key-letter distribution is A13/B14/C15/D14/E2 across 56 items, with no letter above the 0.4 manifest cap. The aif-c01 and clf-c02 ratchets transferred to a third exam and to a different author-session generation; the surviving defect class (BD-A) is the one neither live validator check can currently detect, which is the argument for building the check."
+    },
+    {
+      "id": "BD-C",
+      "class": "cross-model-signal-absent",
+      "severity": "process",
+      "finding": "The blind solve returned 56/56 at high confidence with zero adjudications, and the Codex advisory instrument was unavailable for the fourth exam running (eval/codex-solve.json). Author and examiner share Claude weights, so 56/56 measures internal consistency and cannot exclude a convergent miskey. The Gate 2 deep read is the only compensating control and should be run as adjudication rather than confirmation. Note that the two items where argue-FOR found real trouble (d2-q41, d2-q38) were both items the blind solve answered correctly and confidently — which is the case for the argue-FOR step existing at all."
+    }
+  ],
+  "gate2_sample": {
+    "count": 10,
+    "reason_codes": {
+      "ai-901-d1-q11": "dim5 3 — moderate-option test-wiseness cue; key and rationale never name an actual deployment option (dim3/dim4 4)",
+      "ai-901-d1-q12": "referred on dim1 4 — D (cache) delivers the literal ask; lower temperature does not guarantee determinism and the rationale overstates it (dim4 4)",
+      "ai-901-d1-q21": "dim2 3, dim5 3 — two of three distractors eliminable without the scenario; two-jobs/two-options narrowing",
+      "ai-901-d1-q23": "dim5 3 — four of five scenarios are near-free medium-naming; the pitch rests on s5 alone",
+      "ai-901-d2-q36": "dim2 3 — distractor A is not choosable in a safety context, leaving two working distractors",
+      "ai-901-d2-q37": "dim5 3 — abstract-moderate option among three concrete over-commitments, plus r=116; dim1 4 on the single-structured-call architecture",
+      "ai-901-d2-q38": "dim1 3, dim4 4 — gateway classification is nearly co-correct and the discriminator is not stated in the stem",
+      "ai-901-d2-q41": "dim1 3, dim4 3 — distractor B restates the concept's own configured-not-prompted discriminator; the item survives on requirement-versus-preference framing",
+      "ai-901-d2-q47": "dim5 3 — the keyed option carries a self-justifying clause that restates the stem's requirement",
+      "ai-901-d2-q50": "referred, new in round 2 - scores 4/5 across all six dimensions, but its round-2 blind-solve match is CONTAMINATED: the rework commit message (e2434ad) disclosed its keys during scope discovery before the item was solved. The key needs one independent human read; the reworked option set is the item's second reason to look."
+    },
+    "not_included": "The five round-1 bounces (d1-q15, d1-q16, d1-q24, d2-q44, d2-q50) all cleared their re-eval in round 2 and none survived a second bounce, so none is auto-flagged on bounce grounds. d2-q50 is nonetheless in this sample - referred on blind-solve contamination, not on score. The other four are not in the sample.",
+    "corrected_at_s6": "2026-08-18, exam-examiner, /exam-publish step 2: this block and the top-level 'round' field were left at their round-1 values when the round-2 re-eval rewrote the rest of this file. Corrected to match the authoritative round-2 handoff in derivation/eval-report.md section 6 (10 items) and this file's own round-2 $comment. Scores, bounces and bank_defects are untouched; round-1 state is preserved verbatim at eval/judge-scores-r1.json."
+  },
+  "round1_bounce_resolution": [
+    {
+      "id": "ai-901-d1-q15",
+      "r1_failing": {
+        "5": 2
+      },
+      "r2": {
+        "5": 4
+      },
+      "verdict": "RESOLVED",
+      "evidence": "key-exclusive stem echo 6 words of concept vocabulary -> 0; key now has the lowest stem overlap of the four options (1 vs 4/1/3)."
+    },
+    {
+      "id": "ai-901-d1-q16",
+      "r1_failing": {
+        "5": 2
+      },
+      "r2": {
+        "5": 4
+      },
+      "verdict": "RESOLVED",
+      "evidence": "key-exclusive stem echo 5 -> 0; stem overlap flat at 1 word across all four options; already-transcribed premise preserved so D stays honest."
+    },
+    {
+      "id": "ai-901-d1-q24",
+      "r1_failing": {
+        "5": 2
+      },
+      "also_r1": {
+        "2": 3
+      },
+      "r2": {
+        "5": 4,
+        "2": 4
+      },
+      "verdict": "RESOLVED (both indicted dimensions)",
+      "evidence": "key-exclusive stem echo 6 (bank's highest) -> 0, field names removed from the stem; summarization distractor replaced by a position-template-per-layout option (D05) that a practitioner genuinely weighs, so the item now carries two working distractors."
+    },
+    {
+      "id": "ai-901-d2-q44",
+      "r1_failing": {
+        "6": 2
+      },
+      "also_r1": {
+        "1": 3,
+        "4": 3
+      },
+      "r2": {
+        "6": 5,
+        "1": 5,
+        "4": 4
+      },
+      "verdict": "RESOLVED",
+      "evidence": "prosodic 'sounds unsure' requirement replaced by an out-of-range reading a transcript carries (dim6); the stem now names Azure Language text analysis as the chosen route, so the ordering claim is true as stated and distractor C is false rather than co-correct (dim1, dim4). The C-039 <-> C-044 cross-item contradiction flagged as ratchet proposal 3 in round 1 is resolved on this tree."
+    },
+    {
+      "id": "ai-901-d2-q50",
+      "r1_failing": {
+        "5": 2,
+        "2": 3
+      },
+      "r2": {
+        "5": 4,
+        "2": 4
+      },
+      "verdict": "RESOLVED (both indicted dimensions)",
+      "evidence": "all five options now reference the stem's objects, so the pair is no longer selectable on nouns and the maximal-overlap option (E) is wrong; the duplicated one-holistic-call idea is gone and C is now a real gate function."
+    }
+  ]
+}

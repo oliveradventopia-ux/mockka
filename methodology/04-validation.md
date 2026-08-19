@@ -48,24 +48,51 @@ enforcement claim without a named check is a claim, not a fact.
   `selection-concept-uniqueness`. Each form in `selection.json` matches the manifest's exam
   total, per-domain counts, and per-domain format mix; `select_count` matches the key size on
   multiple-response items (`multiple-response-shape`).
-- **Structural answer-cue bounds** — `key-position-distribution` + `answer-length-cue` (the
-  aif-c01 S5 round-1 ratchet, BD-1/BD-2 in `content/aif-c01/eval/judge-scores.json` →
-  `bank_defects`). `key-position-distribution`: no key letter carries an outsized share of
-  single-choice items, no exact key set dominates multiple-response items, and no
-  scenario-matching item maps its scenarios to `matching_options` in listed order — a constant
-  key position lets test-wiseness beat the bank. `answer-length-cue`: the keyed option's length
-  is bounded relative to the longest distractor (two tiers), and a justification rider
-  (since/because/rather than) appearing **only** in the keyed option is flagged — the argument
-  belongs in `rationale.correct`. The share/ratio numbers are manifest knobs (table below) with
-  code-enforced bounds and defaults, so neither check can be knob-disabled. **Both currently
-  report at warn level, deliberately**: 2026-08-16 calibration showed shipped `ccar-p` carries
-  the same latent defects (key letter B = 90% of SC items; keyed option longest in 55/59), so an
-  error level would redline a shipped bank — per [the adding-a-check
-  procedure](#adding-a-check) step 4 they promote to error once the key-rebalance and
-  shape-parallelism content waves land, and are never weakened to fit content. The player-side
+- **Structural answer-cue bounds** — `key-position-distribution` + `answer-length-cue` (BD-1/BD-2
+  from aif-c01 S5 round 1) + `key-length-rank-share` + `rider-balance` + `named-entity-parity` +
+  `option-pair-similarity` (E1–E7 from the 2026-08-19 adversarial cue sweep; consequences measured
+  by `tools/exploit-scan.mjs`, the committed instrument behind [S5b](05-eval-rubric.md#cue-only-solve)).
+  Scope rule (E7): the aggregate share statistics run over the **bank AND every selection form** —
+  candidates sit a form, and a balanced bank can still serve a skewed paper — and every finding
+  names its scope (`[bank]` / `[form <id>]`); per-item findings stay bank-scoped because the bank
+  pass subsumes the forms.
+  - `key-position-distribution` (**error since 2026-08-19** — ccar-p, its only violator, was
+    key-rebalanced upstream and re-imported; promoted per [the adding-a-check
+    procedure](#adding-a-check) step 4): no key letter carries an outsized share of single-choice
+    items, no exact key set dominates multiple-response items, and no scenario-matching item maps
+    its scenarios to `matching_options` in listed order. The listed-order rule generalises to
+    **rotations** (scenario *i* → option *(i+k) mod L*): k=0 is the error-tier original; k>0 is new
+    detection this wave and reports at **warn** (4 live items map at k=2) — it promotes with the
+    next content wave.
+  - `answer-length-cue` (**warn, promotion pinned to the ccar-p trim lane**: the key permutation
+    fixed position but the served form still keyed the longest option in 41/44 SC items at the
+    sweep; trim batches d1–d3 are committed, d4–d7 in flight — both tiers flip to warn/error the
+    moment that lane lands with zero findings of this class): keyed-option length bounded relative
+    to the longest distractor (two ratio tiers), plus the narrow per-item rider rule.
+  - `key-length-rank-share` (**warn this wave**): the key must not be the strict longest — or,
+    two-sided, the strict shortest — option in an outsized share of items (warn 0.35 / error-tier
+    0.45, chance 0.25, **no length floor**). Rank, not magnitude: the sweep measured median length
+    ratios of 0.97–1.01 (perfect `answer-length-cue` compliance) while the key was strict-longest
+    in 35–52% of items (L-0030).
+  - `rider-balance` (**warn this wave**): two-sided — among rider-carrying options (widened marker
+    list: since/because/rather than/instead of/so that/to ensure/in order to/whereas), the share
+    attached to the key stays inside [0.10, 0.45] around chance, because the one-sided per-item
+    rule manufactured its inverse: a rider marked a distractor 57/59 times after it shipped
+    (L-0031).
+  - `named-entity-parity` (**warn this wave**): when exactly one option names the most proper-noun
+    entities, that option must not be the key in an outsized share of qualifying items (warn 0.40 /
+    error-tier 0.55, floor 6 qualifying items) — the dominant tell on vendor certifications
+    (ai-901 measured 9/9).
+  - `option-pair-similarity` (**warn this wave**): intra-item option pairs above the shingle-jaccard
+    tiers (warn 0.6 / error-tier 0.75, the near-duplicate-stems machinery on option text) collapse
+    a 4-way item into a 2-way guess.
+
+  All share/ratio/jaccard numbers are manifest knobs (table below) with code-enforced bounds and
+  defaults, so no check can be knob-disabled; checks promote per [the adding-a-check
+  procedure](#adding-a-check) step 4 and are never weakened to fit content. The player-side
   complement is the seeded render-shuffle (`apps/web/lib/shuffle.ts`), which makes JSON order
-  immaterial on screen — data-level balance is still required because exports and print forms
-  see JSON order.
+  immaterial on screen — data-level balance is still required because exports and print forms see
+  JSON order.
 - **Text hygiene** — `near-duplicate-stems` (shingle comparison across stems),
   `keyword-presence` (each item's declared `keywords` actually appear in its stem/rationale —
   the tie to canonical vocabulary), `number-drift` (figures cited in a rationale match the
@@ -94,7 +121,7 @@ code fork:
 | pattern caps + extensions | pattern-histogram caps ([calibration](03-authoring-guide.md#calibration)) |
 | option-reuse rule (scenario matching) | reuse legality |
 | locale + emoji policy | spelling/style checks |
-| structural-cue knobs (`key_letter_max_share`, `mr_key_set_max_share`, `answer_length_ratio_warn`/`_error`) | `key-position-distribution` + `answer-length-cue` bounds — optional, defaulted, and range-bounded by `manifest-shape` so an out-of-range value can never disable the check |
+| structural-cue knobs (`key_letter_max_share`, `mr_key_set_max_share`, `answer_length_ratio_warn`/`_error`, `key_length_rank_warn_share`/`_error_share`, `rider_balance_min_share`/`_max_share`, `named_entity_parity_warn_share`/`_error_share`, `option_pair_jaccard_warn`/`_error`) | the six structural answer-cue checks' bounds — all optional, defaulted, and range-bounded by `manifest-shape` so an out-of-range value can never disable a check |
 | time limit, pass mark | player data sanity |
 | `layers.syllabus_rules` | whether rule-coverage checks run at all ([degradation path](02-master-inventory.md#single-source)) |
 | provenance block, licence allowlist | provenance chain + preflight |

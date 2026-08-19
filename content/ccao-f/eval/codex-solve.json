@@ -1,0 +1,26 @@
+{
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, ccao-f ROUND 2, 2026-08-18. The instrument is unavailable in this session, as it was for ccao-f round 1 and for both aif-c01 rounds. Advisory only: methodology/05-eval-rubric.md #codex states a missing advisory instrument is noted, never blocking. The round-1 record is superseded by this file; its content is reproduced in substance below.",
+  "round": 2,
+  "status": "advisory_skipped",
+  "attempts": [
+    {
+      "n": 1,
+      "action": "`which codex` on PATH",
+      "result": "codex not found — no binary on PATH"
+    },
+    {
+      "n": 2,
+      "action": "located the newest bundled binary at /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.5810.52044-darwin-arm64/bin/macos-aarch64/codex and ran `codex login status`",
+      "result": "\"Not logged in\""
+    },
+    {
+      "n": 3,
+      "action": "ran one minimal `codex exec \"reply with OK\"` against the same binary to confirm the auth state end-to-end",
+      "result": "ERROR: unexpected status 401 Unauthorized: Missing bearer or basic authentication in header, url: https://api.openai.com/v1/responses"
+    }
+  ],
+  "root_cause": "The VS Code ChatGPT extension's authentication is not exposed to the bundled CLI. Establishing auth requires an interactive `codex login` by Oliver; the examiner does not sign in or sign up on his behalf (global free-first / no-account rule).",
+  "disagreement_matrix": null,
+  "consequence": "No cross-model signal exists for any of the 81 items in either round. The three-way Claude/Codex/key matrix could not be built, so the convergent-miss check — the protocol's strongest miskey signal — has never run on this bank. The Gate 2 sample below is assembled from judge-rubric 3s alone and SAYS SO. Because Claude authored this bank and Claude solved it, a convergent author/examiner blind spot would be invisible to this eval; that residual risk transfers to the Gate 2 human deep-read, and must be restated in signoff.md.",
+  "unblock": "Oliver runs `codex login` once in an interactive terminal; every later S5 round then gets the cross-solve for free."
+}

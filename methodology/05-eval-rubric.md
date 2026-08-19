@@ -44,6 +44,56 @@ The examiner sits the exam without the key:
    ([shape](#artifact-shapes)): every miss carries *an* adjudication verdict; only confident
    misses need a human behind theirs.
 
+## 1b · Cue-only solve (S5b) {#cue-only-solve}
+
+**Why this stage exists separately from the blind solve:** §1's blind solve is run by a
+*knowledgeable* examiner, and that makes it structurally unable to answer one question — is the
+bank solvable from its **surface** alone? A knowledgeable examiner scoring 100% blind is evidence
+FOR cueing exactly as much as evidence for key correctness: a solver who knows the subject cannot
+tell which channel (knowledge or surface regularity) produced each answer (aif-c01 round 1 proved
+it — the 100% blind solve was cue-confounded, L-0020). The two instruments answer different
+questions and need different solvers:
+
+| | §1 blind solve | §1b cue-only solve |
+|---|---|---|
+| Solver | knowledgeable examiner | zero-knowledge attacker (mechanical strategies only) |
+| Question answered | is the key right? is the pitch right? | does the surface leak the key? |
+| 100% means | keys correct — or cues confounded (L-0020) | the exam is fully blind-passable: FAIL |
+
+**Instrument (machine, no judgment):** `node tools/exploit-scan.mjs <slug>` — the committed
+strategy set (best fixed letter, longest option, best fixed MR set, listed-order SM with wrap)
+plus the per-cue rates (length rank, rider balance, named entity). The same tool runs in CI and
+in the root `gate` script, exiting 1 whenever any exam's blind score reaches its pass mark — the
+hard floor is enforced on every push, not just at S5.
+
+**Report two numbers** in the eval report, for the bank AND each served form (`--json` emits both
+scopes' inputs):
+
+- **blind** — the zero-knowledge attacker's combined score as a fraction (the tool's `pct`).
+- **k_req = (threshold − blind) / (1 − blind)** — the fraction of items a candidate must
+  *genuinely know* to pass, given that surface strategies answer the rest: a candidate who knows
+  fraction k scores k + (1 − k)·blind. k_req is the exam's real knowledge bar; cueing erodes it
+  silently while the nominal pass mark stays constant.
+
+**Publication ceiling** (Gate 2, Oliver-approved 2026-08-19). With `random` = the expected
+zero-cue guessing score for the form's format mix, and `k_req@random = (threshold − random) /
+(1 − random)`:
+
+- **blind ≤ 1.35 × random**, AND
+- **k_req ≥ 0.85 × k_req@random.**
+
+Worked example (63-item form, threshold 75%, random 25%): k_req@random = (0.75 − 0.25)/0.75 =
+0.667, so the ceiling requires blind ≤ 33.75% and k_req ≥ 0.567. Pre-fix ccar-p measured blind
+86% → k_req = −0.79: surface strategies alone overshot the pass mark, so the exam certified
+test-wiseness, not knowledge — and §1's blind solve could never have shown that.
+
+Machine vs examiner split: the exit-1 hard floor (blind ≥ threshold) is machine-enforced by
+`tools/exploit-scan.mjs` on every CI run; the 1.35×/0.85× ceiling arithmetic is computed by the
+examiner at S5b, recorded in the eval report, and checked at the publication preflight
+([06 · preflight](06-provenance-publishing.md#preflight) item 4). The validator's cue checks
+([04 · invariants](04-validation.md#invariants)) bound the individual surface features; S5b
+scores their combined *consequence* against the pass mark.
+
 ## 2 · Codex advisory cross-solve {#codex}
 
 The author and the judge share Claude weights, so a convergent blind spot — author and examiner
@@ -197,7 +247,9 @@ must exist and be non-empty (its content is process evidence, judged at Gate 2, 
 
 ## What S5 hands forward {#handoff}
 
-To S6/Gate 2: `eval/blind-solve.json` (with the Codex matrix), `eval/judge-scores.json` (scores,
+To S6/Gate 2: `eval/blind-solve.json` (with the Codex matrix), the S5b cue-only numbers — blind,
+k_req, and the ceiling verdict per bank and served form, recorded in the eval report
+([§1b](#cue-only-solve)) — `eval/judge-scores.json` (scores,
 bounce records, distractor cases), `eval/overlap-report.md`, and the assembled **Gate 2 sample
 list** — every auto-flagged item (any 3, any cross-model disagreement, any bounce survivor, any
 adjudication still open). The publication preflight

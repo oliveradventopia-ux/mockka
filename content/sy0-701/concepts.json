@@ -1,0 +1,1314 @@
+{
+  "$comment": "Master concept inventory (Artefact C, machine-readable). Built at S3 (exam-author, 2026-08-17) per methodology/02-master-inventory.md from the derivation artefacts ONLY; reasoning and merge log in derivation/master-inventory.md. schema: methodology/schema/concepts.schema.json. priority is COMPUTED (sources.length >= 2 => high) with zero hand-tuned divergences in this build; the validator concept-convergence check surfaces any future divergence as WARN. sources[].items for comptia-sy0701-objectives are the b-x.y-z concept rows in derivation/source-comptia-sy0701-objectives.md; for the practice sources they are item rows in the respective Artefact A, omitted where the attestation lives in a coverage note rather than an item row (jealarue b-4.5-2 and b-5.5-4, per the aif-c01 precedent). Acronym-framed jealarue items count as attestations only where that Artefact A maps them to an objective row; pure acronym expansions with no mapping attest nothing.",
+  "version": "0.1.0",
+  "concepts": [
+    {
+      "id": "C-001",
+      "domain": "d1",
+      "statement": "Control categories answer what kind of thing implements the control — technology, management decision, people executing a process, or a physical object",
+      "vocabulary": ["Technical", "Managerial", "Operational", "Physical", "Categories"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.1-1"] },
+        { "artefact": "jealarue-exam90", "items": ["1.4", "1.12"] }
+      ]
+    },
+    {
+      "id": "C-002",
+      "domain": "d1",
+      "statement": "Control types answer what the control does relative to the event — including the pairs candidates confuse: deterrent influences the attacker's decision while preventive removes the option, compensating stands in when the intended control is not feasible, and directive instructs rather than enforces",
+      "vocabulary": ["Preventive", "Deterrent", "Detective", "Corrective", "Compensating", "Directive", "Control types"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.1-2", "b-1.1-4", "b-1.1-5", "b-1.1-6"] },
+        { "artefact": "comptia-practice-v7", "items": ["1.2"] },
+        { "artefact": "jealarue-exam90", "items": ["1.5"] }
+      ]
+    },
+    {
+      "id": "C-003",
+      "domain": "d1",
+      "statement": "Category and type are independent axes: every control carries exactly one of each, and classifying a control means placing it on both",
+      "vocabulary": ["Categories", "Control types"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.1-3"] }
+      ]
+    },
+    {
+      "id": "C-004",
+      "domain": "d1",
+      "statement": "The three CIA properties are told apart by what an attack destroys: secrecy, trustworthiness of content, or the ability to use the service at all",
+      "vocabulary": ["Confidentiality, Integrity, and Availability (CIA)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.2-1"] },
+        { "artefact": "jealarue-exam90", "items": ["1.6", "1.13"] }
+      ]
+    },
+    {
+      "id": "C-005",
+      "domain": "d1",
+      "statement": "Non-repudiation is the property that an actor cannot later disown an action, and it is delivered by mechanisms that bind the actor to the act",
+      "vocabulary": ["Non-repudiation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.2-2"] },
+        { "artefact": "comptia-practice-v7", "items": ["1.1"] },
+        { "artefact": "jealarue-exam90", "items": ["1.8"] }
+      ]
+    },
+    {
+      "id": "C-006",
+      "domain": "d1",
+      "statement": "AAA bundles three separate functions; authenticating a person and authenticating a machine are different problems; an authorization model expresses the access decision; and gap analysis measures current state against required state",
+      "vocabulary": ["Authentication, Authorization, and Accounting (AAA)", "Authenticating people", "Authenticating systems", "Authorization models", "Gap analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.2-3", "b-1.2-4", "b-1.2-5", "b-1.2-6"] },
+        { "artefact": "jealarue-exam90", "items": ["1.16"] }
+      ]
+    },
+    {
+      "id": "C-007",
+      "domain": "d1",
+      "statement": "Zero Trust splits the plane that decides from the plane that enforces: the control plane's components make policy-driven, adaptive access decisions and the data plane's enforcement point applies them — with implicit trust zones being the thing removed",
+      "vocabulary": ["Zero Trust", "Control Plane", "Data Plane", "Adaptive identity", "Threat scope reduction", "Policy-driven access control", "Policy Engine", "Policy Administrator", "Policy Enforcement Point", "Implicit trust zones", "Subject/System"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.2-7", "b-1.2-8", "b-1.2-9"] },
+        { "artefact": "jealarue-exam90", "items": ["1.2"] }
+      ]
+    },
+    {
+      "id": "C-008",
+      "domain": "d1",
+      "statement": "Physical security pairs barriers that stop or channel movement with detection chosen by what the sensor actually senses",
+      "vocabulary": ["Bollards", "Access control vestibule", "Fencing", "Lighting", "Access badge", "Video surveillance", "Security guard", "Sensors", "Infrared", "Pressure", "Microwave", "Ultrasonic"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.2-10", "b-1.2-11"] }
+      ]
+    },
+    {
+      "id": "C-009",
+      "domain": "d1",
+      "statement": "Deception assets are graded by scope — a file, a host, a whole network, or a planted credential — and chosen by what you want the attacker to touch",
+      "vocabulary": ["Honeypot", "Honeynet", "Honeyfile", "Honeytoken"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.2-12"] }
+      ]
+    },
+    {
+      "id": "C-010",
+      "domain": "d1",
+      "statement": "A change rides a business-process spine — approval, ownership, stakeholders, impact analysis, test results, maintenance window — with the backout plan as a precondition, and an emergency change takes an expedited track through the same process rather than skipping it",
+      "vocabulary": ["Approval process", "Ownership", "Stakeholders", "Impact analysis", "Test results", "Backout plan", "Maintenance window", "Standard operating procedure"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.3-1", "b-1.3-2"] },
+        { "artefact": "jealarue-exam90", "items": ["1.7", "1.18"] }
+      ]
+    },
+    {
+      "id": "C-011",
+      "domain": "d1",
+      "statement": "A change's security consequences are technical — allow/deny lists, downtime, restarts, legacy applications, dependencies — and the environment drifts from its record unless diagrams, policies and version control are updated after the change",
+      "vocabulary": ["Allow lists/deny lists", "Restricted activities", "Downtime", "Service restart", "Application restart", "Legacy applications", "Dependencies", "Updating diagrams", "Updating policies/procedures", "Version control"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.3-3", "b-1.3-4", "b-1.3-5"] }
+      ]
+    },
+    {
+      "id": "C-012",
+      "domain": "d1",
+      "statement": "PKI's trust machinery: the key pair whose halves may never swap jobs, escrow as a recoverable copy with its own risk, certificate issuance through a chain anchored in a root of trust, and two revocation-checking mechanisms with different cost profiles",
+      "vocabulary": ["Public key infrastructure (PKI)", "Public key", "Private key", "Key escrow", "Certificates", "Certificate authorities", "Root of trust", "Self-signed", "Third-party", "Wildcard", "Certificate signing request (CSR) generation", "Certificate revocation lists (CRLs)", "Online Certificate Status Protocol (OCSP)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.4-1", "b-1.4-2", "b-1.4-13", "b-1.4-14"] },
+        { "artefact": "jealarue-exam90", "items": ["1.9", "1.10", "1.15"] }
+      ]
+    },
+    {
+      "id": "C-013",
+      "domain": "d1",
+      "statement": "Choosing what and where to encrypt: the level (disk down to record) follows how the data is accessed, transport protects the wire, symmetric and asymmetric solve different problems joined by key exchange, and algorithm and key length are separate strength decisions",
+      "vocabulary": ["Full-disk", "Partition", "File", "Volume", "Database", "Record", "Transport/communication", "Symmetric", "Asymmetric", "Key exchange", "Algorithms", "Key length"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.4-3", "b-1.4-4", "b-1.4-5", "b-1.4-6"] }
+      ]
+    },
+    {
+      "id": "C-014",
+      "domain": "d1",
+      "statement": "Hardware roots of trust are chosen by job: a platform-bound chip for one machine's secrets and measured boot, a dedicated module for an organisation's keys, a management system for key lifecycle, an enclave for isolating computation",
+      "vocabulary": ["Trusted Platform Module (TPM)", "Hardware security module (HSM)", "Key management system", "Secure enclave"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.4-7"] },
+        { "artefact": "jealarue-exam90", "items": ["1.11", "3.15", "3.26"] }
+      ]
+    },
+    {
+      "id": "C-015",
+      "domain": "d1",
+      "statement": "Integrity and authenticity machinery: one-way digests weak without salting, key stretching that makes a fast hash deliberately slow, signatures that add authenticity and non-repudiation, and distributed tamper-evident ledgers",
+      "vocabulary": ["Hashing", "Salting", "Key stretching", "Digital signatures", "Blockchain", "Open public ledger"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-1.4-9", "b-1.4-10", "b-1.4-11", "b-1.4-12"] },
+        { "artefact": "jealarue-exam90", "items": ["1.17", "3.11"] }
+      ]
+    },
+    {
+      "id": "C-016",
+      "domain": "d2",
+      "statement": "The threat actor is named from what the description implies — internal or external position, resources and funding, and sophistication are the evidence, not the actor's label",
+      "vocabulary": ["Nation-state", "Unskilled attacker", "Hacktivist", "Insider threat", "Organized crime", "Internal/external", "Resources/funding", "Level of sophistication/capability"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.1-1", "b-2.1-2"] },
+        { "artefact": "comptia-practice-v7", "items": ["2.2"] },
+        { "artefact": "jealarue-exam90", "items": ["2.4", "2.29"] }
+      ]
+    },
+    {
+      "id": "C-017",
+      "domain": "d2",
+      "statement": "Motivation is a separate axis from identity: the same observed attack reads differently by whether the driver is money, belief, revenge, espionage or chaos — and the actor is read from motivation and capability together",
+      "vocabulary": ["Data exfiltration", "Espionage", "Service disruption", "Blackmail", "Financial gain", "Philosophical/political beliefs", "Ethical", "Revenge", "Disruption/chaos", "War", "Motivations"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.1-3", "b-2.1-4"] },
+        { "artefact": "jealarue-exam90", "items": ["2.5"] }
+      ]
+    },
+    {
+      "id": "C-018",
+      "domain": "d2",
+      "statement": "Shadow IT counts as a threat actor in its own right: the unsanctioned department, not a misconfiguration, is the source of the exposure",
+      "vocabulary": ["Shadow IT"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.1-5"] }
+      ]
+    },
+    {
+      "id": "C-019",
+      "domain": "d2",
+      "statement": "Message channels are distinct vectors, and social engineering is named by the channel it arrives on — email, SMS, instant message or voice each get their own attack name",
+      "vocabulary": ["Email", "Short Message Service (SMS)", "Instant messaging (IM)", "Phishing", "Vishing", "Smishing"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.2-1", "b-2.2-8"] },
+        { "artefact": "jealarue-exam90", "items": ["2.23", "2.32"] }
+      ]
+    },
+    {
+      "id": "C-020",
+      "domain": "d2",
+      "statement": "Impersonation operates at three levels of specificity: a fabricated role or pretext, a specific executive's authority over payments, or a whole brand's identity",
+      "vocabulary": ["Impersonation", "Business email compromise", "Pretexting", "Brand impersonation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.2-10"] },
+        { "artefact": "jealarue-exam90", "items": ["2.11"] }
+      ]
+    },
+    {
+      "id": "C-021",
+      "domain": "d2",
+      "statement": "Some vectors never contact the target directly — they poison something the target trusts: a mistyped domain name, a site the target's sector visits, or the beliefs the target holds",
+      "vocabulary": ["Typosquatting", "Watering hole", "Misinformation/disinformation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.2-9", "b-2.2-11", "b-2.2-12"] },
+        { "artefact": "jealarue-exam90", "items": ["2.3", "2.20"] }
+      ]
+    },
+    {
+      "id": "C-022",
+      "domain": "d2",
+      "statement": "Payload-carrying vectors that are not messages — images, files, voice calls, removable devices — plus whether the vulnerable software must be reached through an installed client or is exposed agentlessly",
+      "vocabulary": ["Image-based", "File-based", "Voice call", "Removable device", "Client-based vs. agentless"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.2-2", "b-2.2-3"] }
+      ]
+    },
+    {
+      "id": "C-023",
+      "domain": "d2",
+      "statement": "Attack surface created by leaving things on, open, or as shipped: unsupported software the vendor no longer fixes, unsecured network media, open service ports and default credentials",
+      "vocabulary": ["Unsupported systems and applications", "Wireless", "Wired", "Bluetooth", "Open service ports", "Default credentials"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.2-4", "b-2.2-5", "b-2.2-6"] }
+      ]
+    },
+    {
+      "id": "C-024",
+      "domain": "d2",
+      "statement": "The supply chain is both vector and vulnerability: trusted third parties are a path into you, the compromise is located at a specific link — service, hardware or software provider — and a malicious update weaponises the trusted delivery channel itself",
+      "vocabulary": ["Supply chain", "Managed service providers (MSPs)", "Vendors", "Suppliers", "Service provider", "Hardware provider", "Software provider", "Malicious update"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.2-7", "b-2.3-3", "b-2.3-9"] },
+        { "artefact": "jealarue-exam90", "items": ["2.18"] }
+      ]
+    },
+    {
+      "id": "C-025",
+      "domain": "d2",
+      "statement": "Memory and timing flaws break an assumption the code silently made: writing past an intended boundary, injecting into process memory, or two operations racing between time-of-check and time-of-use",
+      "vocabulary": ["Memory injection", "Buffer overflow", "Race conditions", "Time-of-check (TOC)", "Time-of-use (TOU)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.3-1", "b-2.3-2"] },
+        { "artefact": "jealarue-exam90", "items": ["2.30"] }
+      ]
+    },
+    {
+      "id": "C-026",
+      "domain": "d2",
+      "statement": "The two classic web flaws are separated by who executes the injected content: the database runs it in SQL injection, the victim's browser runs it in cross-site scripting",
+      "vocabulary": ["Structured Query Language injection (SQLi)", "Cross-site scripting (XSS)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.3-5"] },
+        { "artefact": "jealarue-exam90", "items": ["2.6", "2.7"] }
+      ]
+    },
+    {
+      "id": "C-027",
+      "domain": "d2",
+      "statement": "Platform vulnerabilities live below the application: flaws in the operating system, in firmware you cannot patch, and in end-of-life or legacy systems no one may patch any longer",
+      "vocabulary": ["Operating system (OS)-based", "Firmware", "End-of-life", "Legacy"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.3-4", "b-2.3-6"] }
+      ]
+    },
+    {
+      "id": "C-028",
+      "domain": "d2",
+      "statement": "Virtualization vulnerabilities break the isolation the hypervisor is supposed to guarantee — a guest escaping to the host, or one tenant reading another through reused resources",
+      "vocabulary": ["Virtual machine (VM) escape", "Resource reuse"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.3-7"] },
+        { "artefact": "jealarue-exam90", "items": ["2.15"] }
+      ]
+    },
+    {
+      "id": "C-029",
+      "domain": "d2",
+      "statement": "Hygiene-class vulnerabilities come from how a system is set up rather than its code: cloud-specific weaknesses, weak or misused cryptography, plain misconfiguration, and platform restrictions the user removed by side loading or jailbreaking",
+      "vocabulary": ["Cloud-specific", "Cryptographic", "Misconfiguration", "Side loading", "Jailbreaking"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.3-8", "b-2.3-10", "b-2.3-11", "b-2.3-12"] }
+      ]
+    },
+    {
+      "id": "C-030",
+      "domain": "d2",
+      "statement": "A zero-day has no patch, no signature and no warning — the defining property is that defenders learn of it from its exploitation",
+      "vocabulary": ["Zero-day"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.3-13"] },
+        { "artefact": "jealarue-exam90", "items": ["2.19"] }
+      ]
+    },
+    {
+      "id": "C-031",
+      "domain": "d2",
+      "statement": "Malware families are named from what the code does — encrypts and extorts, hides at kernel level, replicates on its own, logs keys, waits for a trigger — never from what the stem calls it",
+      "vocabulary": ["Ransomware", "Trojan", "Worm", "Spyware", "Bloatware", "Virus", "Keylogger", "Logic bomb", "Rootkit"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-1"] },
+        { "artefact": "comptia-practice-v7", "items": ["2.1"] },
+        { "artefact": "jealarue-exam90", "items": ["2.1", "2.2"] }
+      ]
+    },
+    {
+      "id": "C-032",
+      "domain": "d2",
+      "statement": "Some attacks need the attacker's body or hardware near the target: physical brute force, cloning an RFID credential, or manipulating the target's environment",
+      "vocabulary": ["Brute force", "Radio frequency identification (RFID) cloning", "Environmental"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-2"] }
+      ]
+    },
+    {
+      "id": "C-033",
+      "domain": "d2",
+      "statement": "Volumetric attacks are told apart by how the volume is manufactured — amplified or reflected through third parties — and DNS attacks target name resolution rather than the host that answers to the name",
+      "vocabulary": ["Distributed denial-of-service (DDoS)", "Amplified", "Reflected", "Domain Name System (DNS) attacks"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-3", "b-2.4-4"] },
+        { "artefact": "jealarue-exam90", "items": ["2.21", "2.22"] }
+      ]
+    },
+    {
+      "id": "C-034",
+      "domain": "d2",
+      "statement": "An on-path attacker sits between two parties and relays or alters their traffic, on the wire or over the air — the position, not any specific tool, is what defines the attack",
+      "vocabulary": ["On-path", "Wireless"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-5"] },
+        { "artefact": "jealarue-exam90", "items": ["2.8", "2.13"] }
+      ]
+    },
+    {
+      "id": "C-035",
+      "domain": "d2",
+      "statement": "Application-layer attack techniques are told apart by mechanism: what is injected, whose privilege is gained, which request is forged, which path is traversed",
+      "vocabulary": ["Injection", "Buffer overflow", "Replay", "Privilege escalation", "Forgery", "Directory traversal"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-7"] },
+        { "artefact": "jealarue-exam90", "items": ["2.24", "2.26"] }
+      ]
+    },
+    {
+      "id": "C-036",
+      "domain": "d2",
+      "statement": "Attacks on authentication material and its cryptography: spraying and brute force look identical in a log until you count accounts versus attempts, replay reuses captured material, and downgrade, collision and birthday attacks break the protecting crypto instead of the secret",
+      "vocabulary": ["Spraying", "Brute force", "Credential replay", "Downgrade", "Collision", "Birthday"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-6", "b-2.4-8", "b-2.4-9"] },
+        { "artefact": "jealarue-exam90", "items": ["2.9"] }
+      ]
+    },
+    {
+      "id": "C-037",
+      "domain": "d2",
+      "statement": "Indicators come in families: account-state evidence (lockout, concurrent sessions, impossible travel), resource evidence (consumption, inaccessibility, blocked content), and logging evidence — where missing or out-of-cycle logs are themselves the indicator",
+      "vocabulary": ["Account lockout", "Concurrent session usage", "Impossible travel", "Resource consumption", "Resource inaccessibility", "Blocked content", "Out-of-cycle logging", "Missing logs", "Published/documented"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.4-10", "b-2.4-11", "b-2.4-12"] }
+      ]
+    },
+    {
+      "id": "C-038",
+      "domain": "d2",
+      "statement": "Segmentation splits the network so a compromise cannot travel; isolation cuts a system off entirely — the same containment judgment at two severities",
+      "vocabulary": ["Segmentation", "Isolation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.5-1", "b-2.5-4"] },
+        { "artefact": "jealarue-exam90", "items": ["2.10", "3.12", "3.20"] }
+      ]
+    },
+    {
+      "id": "C-039",
+      "domain": "d2",
+      "statement": "Access mitigations express who may do what: an ACL states permissions per object, and least privilege grants only what the role requires so a compromised account reaches less",
+      "vocabulary": ["Access control list (ACL)", "Permissions", "Least privilege"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.5-2", "b-2.5-7"] },
+        { "artefact": "jealarue-exam90", "items": ["1.1"] }
+      ]
+    },
+    {
+      "id": "C-040",
+      "domain": "d2",
+      "statement": "Two mitigations make the intended state the enforced state: an application allow list defaults to denying executables, and configuration enforcement keeps deployed systems matching the approved configuration instead of merely documenting it",
+      "vocabulary": ["Application allow list", "Configuration enforcement"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.5-3", "b-2.5-8"] },
+        { "artefact": "jealarue-exam90", "items": ["4.18", "4.33"] }
+      ]
+    },
+    {
+      "id": "C-041",
+      "domain": "d2",
+      "statement": "Hardening is a checklist of removals and additions: endpoint protection and host-based defences go on, unnecessary software, open ports and default passwords come off",
+      "vocabulary": ["Hardening techniques", "Installation of endpoint protection", "Host-based firewall", "Host-based intrusion prevention system (HIPS)", "Disabling ports/protocols", "Default password changes", "Removal of unnecessary software"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.5-10"] },
+        { "artefact": "jealarue-exam90", "items": ["2.14"] }
+      ]
+    },
+    {
+      "id": "C-042",
+      "domain": "d2",
+      "statement": "Lifecycle mitigations act over time: patching closes known holes on a cadence, encryption plus monitoring make stolen data useless and its movement visible, and decommissioning retires a system so it stops being attack surface",
+      "vocabulary": ["Patching", "Encryption", "Monitoring", "Decommissioning"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-2.5-5", "b-2.5-6", "b-2.5-9"] }
+      ]
+    },
+    {
+      "id": "C-043",
+      "domain": "d3",
+      "statement": "In someone else's cloud, the responsibility matrix — not a service-model acronym — states who secures what, and the split moves with how much the provider manages: the customer always keeps identity, data classification and tenant configuration",
+      "vocabulary": ["Cloud", "Responsibility matrix", "Third-party vendors"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-1"] },
+        { "artefact": "jealarue-exam90", "items": ["3.1", "3.21"] }
+      ]
+    },
+    {
+      "id": "C-044",
+      "domain": "d3",
+      "statement": "Where the workload runs and who controls it are architecture decisions: on-premises versus hybrid doubles what must be secured, and centralising or distributing control changes where a failure or compromise lands",
+      "vocabulary": ["On-premises", "Hybrid considerations", "Centralized vs. decentralized"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-2", "b-3.1-8"] },
+        { "artefact": "jealarue-exam90", "items": ["3.16"] }
+      ]
+    },
+    {
+      "id": "C-045",
+      "domain": "d3",
+      "statement": "Three code-shaped architecture choices change what is reviewable and what is patchable: infrastructure defined as code, serverless functions with no server to harden, and many small services instead of one large one",
+      "vocabulary": ["Infrastructure as code (IaC)", "Serverless", "Microservices"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-3", "b-3.1-4", "b-3.1-5"] }
+      ]
+    },
+    {
+      "id": "C-046",
+      "domain": "d3",
+      "statement": "Separation by physics is not separation by configuration: an air gap removes the path entirely, while logical segmentation depends on the correctness of whatever enforces it",
+      "vocabulary": ["Physical isolation", "Air-gapped", "Logical segmentation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-6"] },
+        { "artefact": "jealarue-exam90", "items": ["3.12"] }
+      ]
+    },
+    {
+      "id": "C-047",
+      "domain": "d3",
+      "statement": "Software-defined networking centralises the control plane in a controller that programs the forwarding devices — the controller decides, the devices forward, and confusing the two planes is the classic error",
+      "vocabulary": ["Software-defined networking (SDN)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-7"] },
+        { "artefact": "jealarue-exam90", "items": ["3.9", "3.25"] }
+      ]
+    },
+    {
+      "id": "C-048",
+      "domain": "d3",
+      "statement": "Containers share the host kernel while virtual machines isolate at the hypervisor — which is why the two have different isolation strength, density and patching consequences",
+      "vocabulary": ["Containerization", "Virtualization"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-9"] },
+        { "artefact": "jealarue-exam90", "items": ["3.19"] }
+      ]
+    },
+    {
+      "id": "C-049",
+      "domain": "d3",
+      "statement": "IoT, ICS/SCADA, RTOS and embedded systems cannot be treated like servers, and the blueprint's own comparison axes say why — above all inability to patch, plus power, compute, availability and ease of recovery — so their protection is compensating by design",
+      "vocabulary": ["IoT", "Industrial control systems (ICS)/supervisory control and data acquisition (SCADA)", "Real-time operating system (RTOS)", "Embedded systems", "Availability", "Resilience", "Cost", "Responsiveness", "Scalability", "Ease of deployment", "Risk transference", "Ease of recovery", "Patch availability", "Inability to patch", "Power", "Compute"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.1-10", "b-3.1-11"] }
+      ]
+    },
+    {
+      "id": "C-050",
+      "domain": "d3",
+      "statement": "Where a device sits determines what it can see and protect: placement, security zones and connectivity define the attack surface a control covers, and selecting the effective control means matching it to the stated requirement, not the most capable product",
+      "vocabulary": ["Device placement", "Security zones", "Attack surface", "Connectivity", "Selection of effective controls"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.2-1", "b-3.2-9"] }
+      ]
+    },
+    {
+      "id": "C-051",
+      "domain": "d3",
+      "statement": "Failure mode is a design choice with no universal answer: fail-open preserves availability and fail-closed preserves control, and which is right flips with whether the asset is a door or a firewall",
+      "vocabulary": ["Failure modes", "Fail-open", "Fail-closed"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.2-2"] }
+      ]
+    },
+    {
+      "id": "C-052",
+      "domain": "d3",
+      "statement": "Network appliances are chosen by the job they do, and by mode of presence: an inline active device can block what a passive tap can only report — the IPS/IDS split in one property",
+      "vocabulary": ["Active vs. passive", "Inline vs. tap/monitor", "Jump server", "Proxy server", "Intrusion prevention system (IPS)/intrusion detection system (IDS)", "Load balancer", "Sensors"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.2-3", "b-3.2-4"] },
+        { "artefact": "jealarue-exam90", "items": ["3.10"] }
+      ]
+    },
+    {
+      "id": "C-053",
+      "domain": "d3",
+      "statement": "Port security authenticates the endpoint before the switch port carries its traffic — 802.1X and EAP put an identity check at the point of physical or wireless attachment",
+      "vocabulary": ["Port security", "802.1X", "Extensible Authentication Protocol (EAP)"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.2-5"] }
+      ]
+    },
+    {
+      "id": "C-054",
+      "domain": "d3",
+      "statement": "Firewall variants are separated by the layer they understand: transport-layer filtering, application-aware next-generation inspection, a web application firewall reading HTTP payloads, and unified threat management bundling functions into one box",
+      "vocabulary": ["Web application firewall (WAF)", "Unified threat management (UTM)", "Next-generation firewall (NGFW)", "Layer 4/Layer 7"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.2-6"] },
+        { "artefact": "jealarue-exam90", "items": ["3.3", "3.4"] }
+      ]
+    },
+    {
+      "id": "C-055",
+      "domain": "d3",
+      "statement": "Carrying private traffic across networks you do not own: VPN tunnelling secured by TLS or IPSec for remote access and site-to-site links, and the cloud-era overlay — SD-WAN choosing paths, SASE adding the security stack at the edge",
+      "vocabulary": ["Virtual private network (VPN)", "Remote access", "Tunneling", "Transport Layer Security (TLS)", "Internet protocol security (IPSec)", "Software-defined wide area network (SD-WAN)", "Secure access service edge (SASE)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.2-7", "b-3.2-8"] },
+        { "artefact": "jealarue-exam90", "items": ["3.6", "3.17", "3.18", "3.23", "3.24"] }
+      ]
+    },
+    {
+      "id": "C-056",
+      "domain": "d3",
+      "statement": "What the data is decides how it must be handled: its type carries an obligation (regulated, trade secret, intellectual property, legal, financial), its classification label demands a handling level, and human- versus non-human-readable is a separate property again",
+      "vocabulary": ["Regulated", "Trade secret", "Intellectual property", "Legal information", "Financial information", "Human- and non-human-readable", "Sensitive", "Confidential", "Public", "Restricted", "Private", "Critical"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.3-1", "b-3.3-2", "b-3.3-3"] },
+        { "artefact": "jealarue-exam90", "items": ["5.27"] }
+      ]
+    },
+    {
+      "id": "C-057",
+      "domain": "d3",
+      "statement": "Data exists in three states — at rest, in transit, in use — and each state needs a different control, so naming the state a scenario describes is the whole answer",
+      "vocabulary": ["Data at rest", "Data in transit", "Data in use"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.3-4"] },
+        { "artefact": "comptia-practice-v7", "items": ["3.1"] }
+      ]
+    },
+    {
+      "id": "C-058",
+      "domain": "d3",
+      "statement": "Data sovereignty asks whose law applies to the bytes, and geolocation asks where they physically are — data can be safe, legal and still in the wrong country",
+      "vocabulary": ["Data sovereignty", "Geolocation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.3-5"] }
+      ]
+    },
+    {
+      "id": "C-059",
+      "domain": "d3",
+      "statement": "Methods that make data unusable if taken are told apart by mechanism and reversibility: encryption reverses with a key, hashing never reverses, masking and tokenization substitute, and obfuscation — steganography included — hides rather than transforms",
+      "vocabulary": ["Encryption", "Hashing", "Masking", "Tokenization", "Obfuscation", "Steganography", "Data masking"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.3-6", "b-1.4-8"] },
+        { "artefact": "jealarue-exam90", "items": ["3.2", "3.5"] }
+      ]
+    },
+    {
+      "id": "C-060",
+      "domain": "d3",
+      "statement": "The other family of data protections stops the data being reached at all: geographic restrictions, segmentation, and permission restrictions act on access, not on the bytes",
+      "vocabulary": ["Geographic restrictions", "Segmentation", "Permission restrictions"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.3-7"] }
+      ]
+    },
+    {
+      "id": "C-061",
+      "domain": "d3",
+      "statement": "More than one machine has two different meanings — load balancing spreads work, clustering survives failure — and recovery sites are priced by readiness: hot, warm, cold, geographically dispersed",
+      "vocabulary": ["Load balancing vs. clustering", "Hot", "Warm", "Cold", "Geographic dispersion"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.4-1", "b-3.4-2"] },
+        { "artefact": "jealarue-exam90", "items": ["3.8"] }
+      ]
+    },
+    {
+      "id": "C-062",
+      "domain": "d3",
+      "statement": "Continuity is an input problem before it is a technology problem: platform diversity and multi-cloud avoid one vendor's failure, continuity of operations keeps the business running without IT, and capacity planning covers people and infrastructure as well as technology",
+      "vocabulary": ["Platform diversity", "Multi-cloud systems", "Continuity of operations", "Capacity planning", "People", "Technology", "Infrastructure"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.4-3", "b-3.4-4", "b-3.4-5"] }
+      ]
+    },
+    {
+      "id": "C-063",
+      "domain": "d3",
+      "statement": "A recovery plan is proven at four increasing levels of realism and cost: talk it through at a tabletop, fail over for real, simulate the event, or run parallel processing continuously",
+      "vocabulary": ["Tabletop exercises", "Fail over", "Simulation", "Parallel processing"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.4-6"] }
+      ]
+    },
+    {
+      "id": "C-064",
+      "domain": "d3",
+      "statement": "Surviving data loss and power loss are designed, not improvised: backup decisions — onsite/offsite, frequency, encryption, snapshots, replication, journaling — determine what can be restored, and UPS versus generators covers minutes versus days",
+      "vocabulary": ["Onsite/offsite", "Frequency", "Encryption", "Snapshots", "Recovery", "Replication", "Journaling", "Generators", "Uninterruptible power supply (UPS)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-3.4-7", "b-3.4-8"] },
+        { "artefact": "comptia-practice-v7", "items": ["3.2"] }
+      ]
+    },
+    {
+      "id": "C-065",
+      "domain": "d4",
+      "statement": "A secure baseline is a three-verb lifecycle — establish, deploy, maintain — applied across the whole hardening-target list, and continuous monitoring against it is what surfaces drift",
+      "vocabulary": ["Secure baselines", "Establish", "Deploy", "Maintain", "Hardening targets", "Mobile devices", "Workstations", "Switches", "Routers", "Cloud infrastructure", "Servers", "ICS/SCADA", "Embedded systems", "RTOS", "IoT devices"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.1-1", "b-4.1-2"] },
+        { "artefact": "jealarue-exam90", "items": ["4.1"] }
+      ]
+    },
+    {
+      "id": "C-066",
+      "domain": "d4",
+      "statement": "Managing the mobile and wireless estate: who owns the device decides what MDM may enforce (BYOD, COPE, CYOD), the radio in use changes the exposure, and coverage is designed with site surveys and heat maps before it is secured",
+      "vocabulary": ["Mobile device management (MDM)", "Bring your own device (BYOD)", "Corporate-owned, personally enabled (COPE)", "Choose your own device (CYOD)", "Cellular", "Wi-Fi", "Bluetooth", "Site surveys", "Heat maps"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.1-3", "b-4.1-4", "b-4.1-5"] }
+      ]
+    },
+    {
+      "id": "C-067",
+      "domain": "d4",
+      "statement": "The wireless security stack is layered: WPA3 protects the air, and AAA with RADIUS decides who authenticates — cryptographic protocols and authentication protocols are separate choices doing separate jobs",
+      "vocabulary": ["Wi-Fi Protected Access 3 (WPA3)", "AAA/Remote Authentication Dial-In User Service (RADIUS)", "Cryptographic protocols", "Authentication protocols"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.1-6"] },
+        { "artefact": "jealarue-exam90", "items": ["4.10"] }
+      ]
+    },
+    {
+      "id": "C-068",
+      "domain": "d4",
+      "statement": "Application security spans build time and run time: input validation, secure cookies, static analysis and code signing before release; sandboxing and monitoring to contain and watch unknown code after it",
+      "vocabulary": ["Input validation", "Secure cookies", "Static code analysis", "Code signing", "Sandboxing", "Monitoring"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.1-7", "b-4.1-8"] },
+        { "artefact": "jealarue-exam90", "items": ["2.27"] }
+      ]
+    },
+    {
+      "id": "C-069",
+      "domain": "d4",
+      "statement": "You cannot protect what is not on the list: security decisions start at acquisition, every asset gets a named owner and a classification, and tracking, inventory and enumeration keep the list true",
+      "vocabulary": ["Acquisition/procurement process", "Assignment/accounting", "Ownership", "Classification", "Monitoring/asset tracking", "Inventory", "Enumeration"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.2-1", "b-4.2-2", "b-4.2-3"] }
+      ]
+    },
+    {
+      "id": "C-070",
+      "domain": "d4",
+      "statement": "Ending an asset's life without leaking it is a three-way discrimination: sanitization removes the data, destruction removes the medium, certification proves which one happened — with retention obligations deciding what may be removed at all",
+      "vocabulary": ["Disposal/decommissioning", "Sanitization", "Destruction", "Certification", "Data retention"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.2-4"] },
+        { "artefact": "jealarue-exam90", "items": ["5.2"] }
+      ]
+    },
+    {
+      "id": "C-071",
+      "domain": "d4",
+      "statement": "Finding weaknesses by looking: vulnerability scans (credentialed scans see more), static and dynamic code analysis, package monitoring — and then deciding whether the finding is real, where a false negative costs more than a false positive",
+      "vocabulary": ["Vulnerability scan", "Static analysis", "Dynamic analysis", "Package monitoring", "Confirmation", "False positive", "False negative"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.3-1", "b-4.3-2", "b-4.3-7"] },
+        { "artefact": "jealarue-exam90", "items": ["4.6"] }
+      ]
+    },
+    {
+      "id": "C-072",
+      "domain": "d4",
+      "statement": "Learning about weaknesses from outside means grading the source: open-source intelligence, proprietary feeds, information-sharing organizations and the dark web differ in reliability, timeliness and cost",
+      "vocabulary": ["Threat feed", "Open-source intelligence (OSINT)", "Proprietary/third-party", "Information-sharing organization", "Dark web"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.3-3"] },
+        { "artefact": "jealarue-exam90", "items": ["4.23"] }
+      ]
+    },
+    {
+      "id": "C-073",
+      "domain": "d4",
+      "statement": "Finding weaknesses by attacking or by invitation: a penetration test exploits and chains what a scan only identifies, a responsible disclosure program lets outsiders report safely, and a bug bounty pays uncontracted researchers — scoped engagement versus open invitation is the discriminator",
+      "vocabulary": ["Penetration testing", "Responsible disclosure program", "Bug bounty program"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.3-4", "b-4.3-5"] },
+        { "artefact": "comptia-practice-v7", "items": ["4.2"] },
+        { "artefact": "jealarue-exam90", "items": ["4.35"] }
+      ]
+    },
+    {
+      "id": "C-074",
+      "domain": "d4",
+      "statement": "CVE names the vulnerability and CVSS scores its severity — but the same score ranks differently in two organisations, because exposure factor, environmental variables, industry impact and risk tolerance are what prioritise the queue",
+      "vocabulary": ["Common Vulnerability Scoring System (CVSS)", "Common Vulnerability Enumeration (CVE)", "Prioritize", "Vulnerability classification", "Exposure factor", "Environmental variables", "Industry/organizational impact", "Risk tolerance"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.3-8", "b-4.3-9"] },
+        { "artefact": "jealarue-exam90", "items": ["2.17", "4.21"] }
+      ]
+    },
+    {
+      "id": "C-075",
+      "domain": "d4",
+      "statement": "Responding to a finding and proving the response: patching is one option among insurance, segmentation and compensating controls — a recorded, owned exception is a legitimate answer — and the loop closes only with rescanning, audit, verification and reporting",
+      "vocabulary": ["Patching", "Insurance", "Segmentation", "Compensating controls", "Exceptions and exemptions", "Rescanning", "Audit", "Verification", "Reporting"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.3-10", "b-4.3-11", "b-4.3-12"] },
+        { "artefact": "jealarue-exam90", "items": ["4.13", "4.26"] }
+      ]
+    },
+    {
+      "id": "C-076",
+      "domain": "d4",
+      "statement": "Monitoring watches systems, applications and infrastructure through a pipeline — aggregation, alerting, scanning, reporting, archiving — fed by telemetry from antivirus, DLP, SNMP traps, NetFlow and vulnerability scanners as ongoing inputs",
+      "vocabulary": ["Monitoring computing resources", "Systems", "Applications", "Infrastructure", "Log aggregation", "Alerting", "Scanning", "Reporting", "Archiving", "Antivirus", "Data loss prevention (DLP)", "Simple Network Management Protocol (SNMP) traps", "NetFlow", "Vulnerability scanners"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.4-1", "b-4.4-2", "b-4.4-7", "b-4.4-8", "b-4.4-9"] }
+      ]
+    },
+    {
+      "id": "C-077",
+      "domain": "d4",
+      "statement": "What happens after the alert fires is its own discipline: response, remediation and validation, quarantine of the affected asset — and alert tuning, because an accurate alert nobody reads protects nothing",
+      "vocabulary": ["Alert response and remediation/validation", "Quarantine", "Alert tuning"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.4-3"] }
+      ]
+    },
+    {
+      "id": "C-078",
+      "domain": "d4",
+      "statement": "Configuration compliance can be machine-read: SCAP expresses it, benchmarks supply the prescriptive target configuration, and agent versus agentless decides whether the tool needs software on the host",
+      "vocabulary": ["Security Content Automation Protocol (SCAP)", "Benchmarks", "Agents/agentless"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.4-4", "b-4.4-5"] },
+        { "artefact": "jealarue-exam90", "items": ["4.40"] }
+      ]
+    },
+    {
+      "id": "C-079",
+      "domain": "d4",
+      "statement": "A SIEM's job is correlation: many single-signal sources become one timeline, which is what lets a pattern invisible in any one log — lateral movement, a distributed spray — become visible",
+      "vocabulary": ["Security information and event management (SIEM)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.4-6"] },
+        { "artefact": "jealarue-exam90", "items": ["4.2", "4.28", "4.29"] }
+      ]
+    },
+    {
+      "id": "C-080",
+      "domain": "d4",
+      "statement": "A firewall rule is intent expressed as configuration: source, destination, port, protocol and action must each be right — direction alone can be the whole answer — and screened subnets place exposure by design",
+      "vocabulary": ["Rules", "Access lists", "Ports/protocols", "Screened subnets"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.5-1"] },
+        { "artefact": "comptia-practice-v7", "items": ["4.1"] }
+      ]
+    },
+    {
+      "id": "C-081",
+      "domain": "d4",
+      "statement": "Detection controls are chosen by what they match on: IDS/IPS on signatures and trends, file integrity monitoring on a file changing when it should not, user behavior analytics on the account acting wrong rather than the malware acting at all",
+      "vocabulary": ["IDS/IPS", "Trends", "Signatures", "File integrity monitoring", "User behavior analytics"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.5-2", "b-4.5-8", "b-4.5-12"] },
+        { "artefact": "jealarue-exam90" }
+      ]
+    },
+    {
+      "id": "C-082",
+      "domain": "d4",
+      "statement": "Choosing and enforcing the secure variant: protocol selection brings its port and transport with it, and OS-level mechanisms — Group Policy, SELinux — enforce the configuration from inside the host",
+      "vocabulary": ["Protocol selection", "Port selection", "Transport method", "Group Policy", "SELinux"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.5-4", "b-4.5-5"] },
+        { "artefact": "jealarue-exam90", "items": ["4.20", "4.25"] }
+      ]
+    },
+    {
+      "id": "C-083",
+      "domain": "d4",
+      "statement": "Email authentication is three records asserting three different things — SPF who may send, DKIM that the message was not altered, DMARC what to do when the first two fail — with the gateway as the enforcement point",
+      "vocabulary": ["Sender Policy Framework (SPF)", "DomainKeys Identified Mail (DKIM)", "Domain-based Message Authentication Reporting and Conformance (DMARC)", "Gateway"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.5-7"] }
+      ]
+    },
+    {
+      "id": "C-084",
+      "domain": "d4",
+      "statement": "The enterprise edge controls are told apart by the question each answers: web and DNS filtering decide what may be reached, NAC decides whether a device may join, DLP decides what may leave, EDR/XDR watch what runs on and beyond the endpoint",
+      "vocabulary": ["Web filter", "Agent-based", "Centralized proxy", "Universal Resource Locator (URL) scanning", "Content categorization", "Block rules", "Reputation", "DNS filtering", "DLP", "Network access control (NAC)", "Endpoint detection and response (EDR)/extended detection and response (XDR)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.5-3", "b-4.5-6", "b-4.5-9", "b-4.5-10", "b-4.5-11"] },
+        { "artefact": "jealarue-exam90", "items": ["4.17", "4.34", "4.36"] }
+      ]
+    },
+    {
+      "id": "C-085",
+      "domain": "d4",
+      "statement": "The account lifecycle is guarded at both ends — provisioning and de-provisioning — with identity proofing establishing the person is who they claim before identity is issued, and every permission grant carrying downstream implications",
+      "vocabulary": ["Provisioning/de-provisioning user accounts", "Permission assignments and implications", "Identity proofing"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.6-1", "b-4.6-2", "b-4.6-3"] }
+      ]
+    },
+    {
+      "id": "C-086",
+      "domain": "d4",
+      "statement": "Password policy levers are not equally useful — length beats complexity, and forced expiration mostly hurts — and the strongest moves take the password away from the user: managers hide it, passwordless removes it",
+      "vocabulary": ["Length", "Complexity", "Reuse", "Expiration", "Age", "Password managers", "Passwordless"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.6-10", "b-4.6-11"] }
+      ]
+    },
+    {
+      "id": "C-087",
+      "domain": "d4",
+      "statement": "Trusting another organisation's authentication is federation; authenticate-once-reach-many is SSO, carried by LDAP, OAuth or SAML — with interoperability and attestation making the identity systems provably work together",
+      "vocabulary": ["Federation", "Single sign-on (SSO)", "Lightweight Directory Access Protocol (LDAP)", "Open authorization (OAuth)", "Security Assertions Markup Language (SAML)", "Interoperability", "Attestation"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.6-4", "b-4.6-5", "b-4.6-6"] },
+        { "artefact": "jealarue-exam90", "items": ["4.8"] }
+      ]
+    },
+    {
+      "id": "C-088",
+      "domain": "d4",
+      "statement": "Access control models are separated by what decides: the system's labels (mandatory), the owner (discretionary), the job (role-based), a condition (rule-based), or a combination of properties (attribute-based) — with time-of-day restrictions and least privilege as cross-cutting constraints",
+      "vocabulary": ["Mandatory", "Discretionary", "Role-based", "Rule-based", "Attribute-based", "Time-of-day restrictions", "Least privilege"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.6-7"] }
+      ]
+    },
+    {
+      "id": "C-089",
+      "domain": "d4",
+      "statement": "Multifactor means factors from different categories — something you know, have, are, or somewhere you are — so two of the same kind are not MFA, and the implementations (biometrics, hard and soft tokens, security keys) map onto those categories",
+      "vocabulary": ["Something you know", "Something you have", "Something you are", "Somewhere you are", "Biometrics", "Hard/soft authentication tokens", "Security keys"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.6-8", "b-4.6-9"] },
+        { "artefact": "jealarue-exam90", "items": ["4.7", "4.19"] }
+      ]
+    },
+    {
+      "id": "C-090",
+      "domain": "d4",
+      "statement": "Privileged access should exist only when needed: just-in-time permissions, vaulted credentials brokered and recorded per session, and ephemeral credentials that expire instead of persisting between incidents",
+      "vocabulary": ["Just-in-time permissions", "Password vaulting", "Ephemeral credentials"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.6-12"] },
+        { "artefact": "jealarue-exam90", "items": ["4.9", "4.11", "4.38"] }
+      ]
+    },
+    {
+      "id": "C-091",
+      "domain": "d4",
+      "statement": "Automation and orchestration apply at named points in security operations — provisioning users and resources, guard rails, security groups, tickets and escalation, enabling and disabling access, CI and APIs — orchestrated workflows across tools, not a single product",
+      "vocabulary": ["User provisioning", "Resource provisioning", "Guard rails", "Security groups", "Ticket creation", "Escalation", "Enabling/disabling services and access", "Continuous integration and testing", "Integrations and Application programming interfaces (APIs)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.7-1"] },
+        { "artefact": "jealarue-exam90", "items": ["4.4", "4.31"] }
+      ]
+    },
+    {
+      "id": "C-092",
+      "domain": "d4",
+      "statement": "Automation's benefits — efficiency, enforced baselines, reaction time, workforce multiplication — are bought with costs candidates forget: complexity, a possible single point of failure, technical debt, and ongoing supportability",
+      "vocabulary": ["Efficiency/time saving", "Enforcing baselines", "Standard infrastructure configurations", "Scaling in a secure manner", "Employee retention", "Reaction time", "Workforce multiplier", "Complexity", "Cost", "Single point of failure", "Technical debt", "Ongoing supportability"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.7-2", "b-4.7-3"] }
+      ]
+    },
+    {
+      "id": "C-093",
+      "domain": "d4",
+      "statement": "CompTIA's incident-response process has seven steps — preparation, detection, analysis, containment, eradication, recovery, lessons learned — and the tested judgment is which step a described action belongs to",
+      "vocabulary": ["Preparation", "Detection", "Analysis", "Containment", "Eradication", "Recovery", "Lessons learned"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.8-1", "b-4.8-2"] },
+        { "artefact": "comptia-practice-v7", "items": ["4.3"] },
+        { "artefact": "jealarue-exam90", "items": ["4.3", "4.5", "4.24", "4.39"] }
+      ]
+    },
+    {
+      "id": "C-094",
+      "domain": "d4",
+      "statement": "The incident-response plan is rehearsed before the incident: training builds the skill, a tabletop talks the plan through, a simulation exercises it — increasing realism, increasing cost",
+      "vocabulary": ["Training", "Tabletop exercise", "Simulation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.8-3"] }
+      ]
+    },
+    {
+      "id": "C-095",
+      "domain": "d4",
+      "statement": "Two investigations run past the visible incident: root cause analysis finds the mechanism behind the symptom, and threat hunting looks from hypotheses for what detection missed",
+      "vocabulary": ["Root cause analysis", "Threat hunting"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.8-4", "b-4.8-5"] },
+        { "artefact": "jealarue-exam90", "items": ["4.22"] }
+      ]
+    },
+    {
+      "id": "C-096",
+      "domain": "d4",
+      "statement": "Digital forensics is evidence handling that survives challenge: legal hold, a chain of custody recording who handled what and when, acquisition ordered by volatility, preservation, reporting and e-discovery",
+      "vocabulary": ["Legal hold", "Chain of custody", "Acquisition", "Preservation", "Reporting", "E-discovery"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.8-6"] },
+        { "artefact": "jealarue-exam90", "items": ["4.15", "4.16", "4.30"] }
+      ]
+    },
+    {
+      "id": "C-097",
+      "domain": "d4",
+      "statement": "An investigation starts by choosing the log that can answer the question asked — firewall, application, endpoint, OS security, IPS/IDS or network — because each source sees a different layer and cannot testify to the others",
+      "vocabulary": ["Firewall logs", "Application logs", "Endpoint logs", "OS-specific security logs", "IPS/IDS logs", "Network logs"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.9-1"] },
+        { "artefact": "jealarue-exam90", "items": ["4.14", "4.32"] }
+      ]
+    },
+    {
+      "id": "C-098",
+      "domain": "d4",
+      "statement": "Not all investigative sources are logs: metadata is data about the data, and vulnerability scans, automated reports, dashboards and packet captures each answer questions logs cannot",
+      "vocabulary": ["Metadata", "Vulnerability scans", "Automated reports", "Dashboards", "Packet captures"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-4.9-2", "b-4.9-3"] }
+      ]
+    },
+    {
+      "id": "C-099",
+      "domain": "d5",
+      "statement": "Governance documents are ordered by how binding they are — guidelines advise, policies commit, standards specify, procedures instruct — and the named policies, standards and procedures are instances to file under the right class",
+      "vocabulary": ["Guidelines", "Policies", "Standards", "Procedures", "Acceptable use policy (AUP)", "Information security policies", "Business continuity", "Disaster recovery", "Incident response", "Software development lifecycle (SDLC)", "Change management", "Password", "Access control", "Physical security", "Encryption", "Onboarding/offboarding", "Playbooks"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.1-1", "b-5.1-2", "b-5.1-3", "b-5.1-4"] },
+        { "artefact": "jealarue-exam90", "items": ["5.23"] }
+      ]
+    },
+    {
+      "id": "C-100",
+      "domain": "d5",
+      "statement": "External obligations are scoped: regulatory, legal and industry requirements apply at local, national or global reach, and which scope binds decides which rule wins",
+      "vocabulary": ["Regulatory", "Legal", "Industry", "Local/regional", "National", "Global"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.1-5"] }
+      ]
+    },
+    {
+      "id": "C-101",
+      "domain": "d5",
+      "statement": "Governance is maintained, not written once — monitoring and revision keep it live — and who governs is a structure choice: boards, committees, government entities, pooled centrally or distributed",
+      "vocabulary": ["Monitoring and revision", "Boards", "Committees", "Government entities", "Centralized/decentralized"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.1-6", "b-5.1-7"] }
+      ]
+    },
+    {
+      "id": "C-102",
+      "domain": "d5",
+      "statement": "The four data roles are separated by what each may decide: the owner is accountable, the controller decides purpose and means, the processor acts on the controller's instruction, the custodian keeps it safe day to day",
+      "vocabulary": ["Owners", "Controllers", "Processors", "Custodians/stewards"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.1-8"] }
+      ]
+    },
+    {
+      "id": "C-103",
+      "domain": "d5",
+      "statement": "A risk must be found before it can be assessed, and assessment cadence is itself a design choice: ad hoc, one-time, recurring, or continuous",
+      "vocabulary": ["Risk identification", "Ad hoc", "Recurring", "One-time", "Continuous"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-1", "b-5.2-2"] }
+      ]
+    },
+    {
+      "id": "C-104",
+      "domain": "d5",
+      "statement": "Qualitative and quantitative analysis are two honesty regimes: one ranks by judged probability, likelihood and impact, the other computes from measured inputs — and pretending to the second without the data is the classic failure",
+      "vocabulary": ["Qualitative", "Quantitative", "Probability", "Likelihood", "Exposure factor", "Impact"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-3", "b-5.2-5"] },
+        { "artefact": "jealarue-exam90", "items": ["5.18"] }
+      ]
+    },
+    {
+      "id": "C-105",
+      "domain": "d5",
+      "statement": "The three quantitative quantities compose: single loss expectancy per occurrence, annualized rate of occurrence per year, and their product — the annualized loss expectancy — is what a control's cost is weighed against",
+      "vocabulary": ["Single loss expectancy (SLE)", "Annualized rate of occurrence (ARO)", "Annualized loss expectancy (ALE)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-4"] },
+        { "artefact": "jealarue-exam90", "items": ["5.5", "5.22"] }
+      ]
+    },
+    {
+      "id": "C-106",
+      "domain": "d5",
+      "statement": "The risk register is a living tracking artefact — risks with owners, key risk indicators and thresholds — not a historical record and not a place for operational configuration detail",
+      "vocabulary": ["Risk register", "Key risk indicators", "Risk owners", "Risk threshold"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-6"] },
+        { "artefact": "jealarue-exam90", "items": ["5.14", "5.21"] }
+      ]
+    },
+    {
+      "id": "C-107",
+      "domain": "d5",
+      "statement": "Tolerance is how much risk is bearable, appetite is how much is wanted — and appetite is stated as a posture: expansionary, conservative, or neutral",
+      "vocabulary": ["Risk tolerance", "Risk appetite", "Expansionary", "Conservative", "Neutral"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-7", "b-5.2-8"] },
+        { "artefact": "jealarue-exam90", "items": ["5.3"] }
+      ]
+    },
+    {
+      "id": "C-108",
+      "domain": "d5",
+      "statement": "The four risk treatments — transfer, accept, avoid, mitigate — plus the discipline of acceptance done properly: a recorded exception or exemption with an owner, not a shrug",
+      "vocabulary": ["Transfer", "Accept", "Avoid", "Mitigate", "Exemption", "Exception"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-9", "b-5.2-10"] },
+        { "artefact": "jealarue-exam90", "items": ["5.3", "5.6", "5.28"] }
+      ]
+    },
+    {
+      "id": "C-109",
+      "domain": "d5",
+      "statement": "Telling the business what the risk position is: risk reporting, the business impact analysis that identifies critical processes, and the four recovery metrics — tolerable downtime, tolerable data loss, time to repair, time between failures",
+      "vocabulary": ["Risk reporting", "Business impact analysis", "Recovery time objective (RTO)", "Recovery point objective (RPO)", "Mean time to repair (MTTR)", "Mean time between failures (MTBF)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.2-11", "b-5.2-12"] },
+        { "artefact": "jealarue-exam90", "items": ["3.14", "4.27", "5.24"] }
+      ]
+    },
+    {
+      "id": "C-110",
+      "domain": "d5",
+      "statement": "A vendor is assessed before it is trusted: penetration testing, a right-to-audit clause, evidence of internal audits, independent assessments, and supply chain analysis are the instruments — each proving something the others cannot",
+      "vocabulary": ["Penetration testing", "Right-to-audit clause", "Evidence of internal audits", "Independent assessments", "Supply chain analysis"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.3-1"] },
+        { "artefact": "jealarue-exam90", "items": ["5.8", "5.13"] }
+      ]
+    },
+    {
+      "id": "C-111",
+      "domain": "d5",
+      "statement": "Choosing and keeping vendors honestly: due diligence before selection, conflict of interest as the independence check, and vendor monitoring with questionnaires as trust measured on an ongoing basis",
+      "vocabulary": ["Due diligence", "Conflict of interest", "Vendor monitoring", "Questionnaires"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.3-2", "b-5.3-4"] },
+        { "artefact": "jealarue-exam90", "items": ["5.25"] }
+      ]
+    },
+    {
+      "id": "C-112",
+      "domain": "d5",
+      "statement": "Seven agreement types do seven jobs: SLA commits to measurable service levels, MOU states non-binding intent, MOA records agreement, MSA frames the relationship, WO/SOW scopes the work, NDA protects what is shared, BPA governs partners",
+      "vocabulary": ["Service-level agreement (SLA)", "Memorandum of agreement (MOA)", "Memorandum of understanding (MOU)", "Master service agreement (MSA)", "Work order (WO)/statement of work (SOW)", "Non-disclosure agreement (NDA)", "Business partners agreement (BPA)"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.3-3"] },
+        { "artefact": "jealarue-exam90", "items": ["5.1", "5.12", "5.16", "5.26"] }
+      ]
+    },
+    {
+      "id": "C-113",
+      "domain": "d5",
+      "statement": "The rules of engagement fix a third-party test's terms and boundaries before it starts — distinct from the contractual clause that permits auditing and the diligence that selected the vendor",
+      "vocabulary": ["Rules of engagement"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.3-5"] },
+        { "artefact": "comptia-practice-v7", "items": ["5.1"] }
+      ]
+    },
+    {
+      "id": "C-114",
+      "domain": "d5",
+      "statement": "Compliance reporting has an audience — internal or external — and non-compliance costs more than the fine: sanctions, reputational damage, loss of license, contractual impacts",
+      "vocabulary": ["Compliance reporting", "Internal", "External", "Fines", "Sanctions", "Reputational damage", "Loss of license", "Contractual impacts"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.4-1", "b-5.4-2"] }
+      ]
+    },
+    {
+      "id": "C-115",
+      "domain": "d5",
+      "statement": "Compliance is proven continuously, not annually: monitoring with due diligence and due care, attestation and acknowledgement, internal and external checks, and automation doing the watching",
+      "vocabulary": ["Compliance monitoring", "Due diligence/care", "Attestation and acknowledgement", "Internal and external", "Automation"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.4-3"] }
+      ]
+    },
+    {
+      "id": "C-116",
+      "domain": "d5",
+      "statement": "Privacy obligations are scoped by jurisdiction — and can follow the data subject rather than the organisation's location — with the roles separated: the subject the data is about, the controller deciding, the processor acting",
+      "vocabulary": ["Legal implications", "Local/regional", "National", "Global", "Data subject", "Controller vs. processor", "Ownership"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.4-4", "b-5.4-5"] },
+        { "artefact": "jealarue-exam90", "items": ["5.9", "5.19", "5.27"] }
+      ]
+    },
+    {
+      "id": "C-117",
+      "domain": "d5",
+      "statement": "You must know what personal data you hold and for how long — data inventory and retention — and the data subject's erasure right means holding it forever is not an option",
+      "vocabulary": ["Data inventory and retention", "Right to be forgotten"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.4-6", "b-5.4-7"] },
+        { "artefact": "jealarue-exam90", "items": ["5.2"] }
+      ]
+    },
+    {
+      "id": "C-118",
+      "domain": "d5",
+      "statement": "Attestation asserts compliance formally, and audits examine it at three levels of independence — self-assessment, internal with an audit committee, independent external or regulatory examination — including audits of the process rather than the system",
+      "vocabulary": ["Attestation", "Internal", "Compliance", "Audit committee", "Self-assessments", "External", "Regulatory", "Examinations", "Assessment", "Independent third-party audit", "System/process audit"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.5-1", "b-5.5-2", "b-5.5-3", "b-4.3-6"] },
+        { "artefact": "jealarue-exam90", "items": ["5.7", "5.20"] }
+      ]
+    },
+    {
+      "id": "C-119",
+      "domain": "d5",
+      "statement": "Offensive testing has shapes — physical, offensive, defensive, integrated — and a knowledge dial: known, partially known, or unknown environment, which sets what the test can prove",
+      "vocabulary": ["Penetration testing", "Physical", "Offensive", "Defensive", "Integrated", "Known environment", "Partially known environment", "Unknown environment"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.5-4", "b-5.5-5"] },
+        { "artefact": "jealarue-exam90" }
+      ]
+    },
+    {
+      "id": "C-120",
+      "domain": "d5",
+      "statement": "Reconnaissance is split by touch: passive gathering leaves no trace on the target, active gathering probes it — and choosing passive is a deliberate stealth-versus-depth trade",
+      "vocabulary": ["Reconnaissance", "Passive", "Active"],
+      "priority": "normal",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.5-6"] }
+      ]
+    },
+    {
+      "id": "C-121",
+      "domain": "d5",
+      "statement": "A phishing campaign trains recognition and response — and observed user behaviour gets one of three diagnoses with three different responses: risky, unexpected, or unintentional, only the first implying intent",
+      "vocabulary": ["Campaigns", "Recognizing a phishing attempt", "Responding to reported suspicious messages", "Risky", "Unexpected", "Unintentional"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.6-1", "b-5.6-2"] },
+        { "artefact": "jealarue-exam90", "items": ["2.28"] }
+      ]
+    },
+    {
+      "id": "C-122",
+      "domain": "d5",
+      "statement": "Security awareness is a programme with a lifecycle — developed, executed, reported on and monitored, delivered initially and then recurringly — carrying guidance and the named training topics to the people who need them",
+      "vocabulary": ["Policy/handbooks", "Situational awareness", "Insider threat", "Password management", "Removable media and cables", "Social engineering", "Operational security", "Hybrid/remote work environments", "Reporting and monitoring", "Initial", "Recurring", "Development", "Execution"],
+      "priority": "high",
+      "sources": [
+        { "artefact": "comptia-sy0701-objectives", "items": ["b-5.6-3", "b-5.6-4", "b-5.6-5", "b-5.6-6"] },
+        { "artefact": "jealarue-exam90", "items": ["5.11", "5.15", "5.29"] }
+      ]
+    }
+  ]
+}

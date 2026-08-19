@@ -1,0 +1,225 @@
+{
+  "$comment": "The 35 practitioner rules behind the weak-rule report, derived at S2 from derivation/source-ccas-recap.md (Artefact B over the official prep-course recap). Module numbering is the COURSE's, which maps 1:1 to blueprint domains in a permuted order — see the mapping table in derivation/source-ccas-blueprint.md. Titles and glosses are original wording, not source text: this file ships to users. Every bank item carries a syllabus_rule id (manifest layers.syllabus_rules is true).",
+  "version": "0.1.0",
+  "modules": {
+    "1": "Product & Model Selection",
+    "2": "Prompting",
+    "3": "Output Evaluation",
+    "4": "Workflow Integration",
+    "5": "Configuration",
+    "6": "Governance",
+    "7": "Troubleshooting"
+  },
+  "rules": [
+    {
+      "id": "1.01",
+      "module": "1",
+      "title": "Choose the entry point before you write the prompt",
+      "gloss": "Chat, Projects, Artifacts and Research answer four different problems — one-off work, recurring work with stable context, deliverable outputs, and work needing current multi-source information. The surface you pick constrains every later choice in the session."
+    },
+    {
+      "id": "1.02",
+      "module": "1",
+      "title": "Four capability layers, four distinct jobs",
+      "gloss": "Projects carry context, Skills define repeatable procedures, Code Execution verifies computation, Memory persists continuity. Match the layer to the problem the task actually has; combining them is fine, substituting one for another is not."
+    },
+    {
+      "id": "1.03",
+      "module": "1",
+      "title": "Match the model tier to what the task demands",
+      "gloss": "Haiku for structured high-volume work, Sonnet for most professional work, Opus where quality outranks speed. Capability is not a free upgrade — paying for the top tier on straightforward work spends cost and latency for nothing."
+    },
+    {
+      "id": "1.04",
+      "module": "1",
+      "title": "Context is a budget",
+      "gloss": "Long conversations degrade as the budget fills, gradually enough to look like a model failure. Decide between restarting, summarising and persisting before quality visibly drops, not after."
+    },
+    {
+      "id": "1.05",
+      "module": "1",
+      "title": "Variation is inherent, so review must be structural",
+      "gloss": "Every feature, including a configured Skill, produces different output run to run. Because output varies by design, evaluation belongs in the workflow as a step, not as a reaction to a bad result."
+    },
+    {
+      "id": "2.01",
+      "module": "2",
+      "title": "Structure carries a prompt, not cleverness",
+      "gloss": "Role, context, task, constraints and format cover almost every professional request. Run the five components as a checklist before sending anything that matters; clever phrasing does not replace a missing component."
+    },
+    {
+      "id": "2.02",
+      "module": "2",
+      "title": "Context is the component you will forget",
+      "gloss": "Claude cannot see what exists only in your head. Generic output is diagnosed as a context gap first and as a model limitation last."
+    },
+    {
+      "id": "2.03",
+      "module": "2",
+      "title": "Decompose complex work into ordered, checkable steps",
+      "gloss": "Each step must produce a result you can check before the next step consumes it, and the step everything else rests on is built first."
+    },
+    {
+      "id": "2.04",
+      "module": "2",
+      "title": "Iterate on the component that failed",
+      "gloss": "Read the output as a diagnostic, change the one thing it points at, and stop when rounds stop improving the result — persistence past that point means the problem is not in the wording."
+    },
+    {
+      "id": "2.05",
+      "module": "2",
+      "title": "Match the strategy to the task type",
+      "gloss": "Analysis wants constraints; brainstorming wants latitude. Decide deliberately where you need control and where you need range, because a prompt cannot maximise both."
+    },
+    {
+      "id": "3.01",
+      "module": "3",
+      "title": "Accountability stays with you",
+      "gloss": "You own every claim in what you ship, whether you wrote it or Claude did. That non-delegable ownership is why evaluation carries the most weight of any skill in this credential."
+    },
+    {
+      "id": "3.02",
+      "module": "3",
+      "title": "Evaluate against three references, every time",
+      "gloss": "Check the output against the requirements, the source material and professional standards. The reference set never changes; only the depth of review is calibrated to what is at stake."
+    },
+    {
+      "id": "3.03",
+      "module": "3",
+      "title": "Plausible is not verified",
+      "gloss": "Fabricated specifics, confident uncertainty and completeness gaps all read as competent work. Learn the three shapes so you can spot them, because fluency and confidence are not accuracy signals."
+    },
+    {
+      "id": "3.04",
+      "module": "3",
+      "title": "Build verification into the prompt",
+      "gloss": "Permit an explicit \"I don't know\", restrict claims to the supplied sources, and require citations you can audit. Prevention at request time is cheaper than reconstruction at review time."
+    },
+    {
+      "id": "3.05",
+      "module": "3",
+      "title": "Know the review thresholds in advance",
+      "gloss": "Stakes, reversibility, audience and regulatory exposure decide when human review is mandatory. Set the line before the moment arrives, and make sure the reviewer is qualified and can see the evidence."
+    },
+    {
+      "id": "3.06",
+      "module": "3",
+      "title": "Pick the output format by reliability",
+      "gloss": "When numbers must be right, compute them rather than generate them as prose. Format is a reliability decision before it is a presentation decision."
+    },
+    {
+      "id": "4.01",
+      "module": "4",
+      "title": "Delegate deliberately; do not automate indiscriminately",
+      "gloss": "The value in a workflow comes from choosing which steps Claude performs. Handing the whole thing over removes the checkpoints that made it trustworthy."
+    },
+    {
+      "id": "4.02",
+      "module": "4",
+      "title": "Claude is a requirements-analysis partner",
+      "gloss": "Feed it messy inputs and get structured, traceable, testable needs that other people can act on. The output's checkability is what makes this step safe to delegate."
+    },
+    {
+      "id": "4.03",
+      "module": "4",
+      "title": "Build plans on verified numbers",
+      "gloss": "Pair synthesis with code execution so the figures underneath a plan are computed rather than generated. That pairing is a design decision, not a check added at the end."
+    },
+    {
+      "id": "4.04",
+      "module": "4",
+      "title": "Map every step against reversibility, stakes and accountability",
+      "gloss": "Those three criteria classify each step as AI-appropriate, human-retained or collaborative. The verdict is three-way; the middle one is the common answer."
+    },
+    {
+      "id": "4.05",
+      "module": "4",
+      "title": "Communicate limits as clearly as value",
+      "gloss": "State capability claims together with the human review gates that make them safe. Accurate limits earn and keep stakeholder trust; overstatement is what loses it. Recognising the edge of your scope and escalating is part of the job."
+    },
+    {
+      "id": "5.01",
+      "module": "5",
+      "title": "Configuration is leverage",
+      "gloss": "Set up once and benefit on every conversation. A configured environment is what separates operating Claude from merely using it, and the investment is justified by how often the work recurs."
+    },
+    {
+      "id": "5.02",
+      "module": "5",
+      "title": "Match each need to the right mechanism",
+      "gloss": "Instructions govern behaviour, knowledge supplies facts, Skills define procedures, scoped Memory holds continuity. Putting a need in the wrong mechanism produces a configuration that looks complete and does not hold."
+    },
+    {
+      "id": "5.03",
+      "module": "5",
+      "title": "Know each connector's boundary",
+      "gloss": "Connectors extend Claude's reach up to a capability edge. Knowing where that edge is prevents misrouted fixes: a request that fails at the boundary is a scope problem, not a prompt problem."
+    },
+    {
+      "id": "5.04",
+      "module": "5",
+      "title": "Write standing instructions precisely",
+      "gloss": "Vague standing instructions fail silently — nothing errors and nothing changes. Write them so their effect on an output can be observed and tested."
+    },
+    {
+      "id": "5.05",
+      "module": "5",
+      "title": "Maintain configurations or watch quality decay",
+      "gloss": "Instructions, knowledge, Skills versions and Memory all age against a changing world. Schedule reviews, because the decay arrives without a warning signal."
+    },
+    {
+      "id": "6.01",
+      "module": "6",
+      "title": "Governance is a practitioner skill",
+      "gloss": "Responsible use is exercised one decision at a time by the person doing the work. The policy document bounds the call; it does not make it."
+    },
+    {
+      "id": "6.02",
+      "module": "6",
+      "title": "Screen use cases with the delegation criteria",
+      "gloss": "Reversibility, consequence, human element and accountability classify a use case as appropriate, appropriate-with-review, or inappropriate. Most real cases land in the middle."
+    },
+    {
+      "id": "6.03",
+      "module": "6",
+      "title": "A Skill is software",
+      "gloss": "Evaluate its source and its permissions before enabling it, exactly as you would for any installed software. Extending capability is a supply-chain decision, not a convenience toggle."
+    },
+    {
+      "id": "6.04",
+      "module": "6",
+      "title": "Classify data before it enters a feature",
+      "gloss": "Establish the sensitivity first, then match the handling — private sessions, memory controls, and removing identifiers before use. Classification precedes the upload, not the incident."
+    },
+    {
+      "id": "6.05",
+      "module": "6",
+      "title": "Ethical risk hides in ordinary outputs",
+      "gloss": "Evaluate bias, fairness and disclosure as part of routine review rather than reserving them for obviously sensitive work, and reason ambiguous cases through against the criteria."
+    },
+    {
+      "id": "7.01",
+      "module": "7",
+      "title": "Underperformance has discoverable causes",
+      "gloss": "Run the diagnostic sequence — specification, context, feature, configuration — in order, before blaming the tool."
+    },
+    {
+      "id": "7.02",
+      "module": "7",
+      "title": "Isolate before you fix",
+      "gloss": "Name whether the failure is the prompt, the context, the feature choice or an expectation mismatch. The named cause selects the fix, and an expectation mismatch is a legitimate diagnosis."
+    },
+    {
+      "id": "7.03",
+      "module": "7",
+      "title": "Every disappointing output is data",
+      "gloss": "Translate the critique into one specific adjustment, then capture that adjustment as an instruction or Skill so the fix persists beyond the session."
+    },
+    {
+      "id": "7.04",
+      "module": "7",
+      "title": "Optimise deliberately",
+      "gloss": "Instrument the workflow, find the friction, promote the fix into configuration, and measure the gain. Optimising without a baseline produces a claim nobody can check."
+    }
+  ]
+}

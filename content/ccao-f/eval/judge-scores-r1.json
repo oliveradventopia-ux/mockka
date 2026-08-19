@@ -1,0 +1,1104 @@
+{
+  "$comment": "S5 judge rubric - ccao-f round 1. exam-examiner (fresh session, never authored this bank), 2026-08-18. Protocol: methodology/05-eval-rubric.md #judge. Every item was scored on all six dimensions AFTER writing the strongest honest case FOR each distractor; that argued-FOR pass is recorded per item in `case` rather than discarded. Thresholds applied: no dimension <=2 anywhere (zero rubric bounces); every item carrying any 3 joins the Gate 2 sample. The two bounces below are OVERLAP-screen bounces (methodology/05 #overlap), not rubric bounces - both items pass the six dimensions and both reproduce vendor sample-stem prose. See eval/overlap-report.md.",
+  "round": 1,
+  "summary": {
+    "items_scored": 81,
+    "dimensions_at_or_below_2": 0,
+    "rubric_bounces": 0,
+    "overlap_bounces": 2,
+    "items_with_any_3": [
+      "ccao-f-d1-q06",
+      "ccao-f-d2-q16",
+      "ccao-f-d2-q27",
+      "ccao-f-d3-q29",
+      "ccao-f-d3-q35",
+      "ccao-f-d3-q36",
+      "ccao-f-d7-q75"
+    ],
+    "score_distribution_by_dimension": {
+      "1": {
+        "5": 80,
+        "4": 1
+      },
+      "2": {
+        "5": 61,
+        "4": 19,
+        "3": 1
+      },
+      "3": {
+        "5": 75,
+        "4": 6
+      },
+      "4": {
+        "5": 81
+      },
+      "5": {
+        "5": 32,
+        "4": 42,
+        "3": 7
+      },
+      "6": {
+        "5": 81
+      }
+    },
+    "gate2_sample_size": 10
+  },
+  "items": [
+    {
+      "id": "ccao-f-d1-q01",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - team-wide endorsement is real evidence most practitioners act on; C - register is the only signal a non-expert can read off a draft; D - 'detailed = better' is genuinely taught. All lose to fitness-for-purpose on the concept's own terms. Dim2 4: D self-signposts as dogma by saying 'accepted best practice' out loud. FLAG: this item's key was visible to the examiner before the blind form was built (see blind-solve.json) - Gate 2 reads it as unverified."
+    },
+    {
+      "id": "ccao-f-d1-q02",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - a senior role does change register, and executives do get better drafts that way; D - hand-reformatting is what the associate would actually do tonight; E - self-review catches real errors. All fail: only constraints and format own a length breach and a shape breach. Two symptoms mapping onto exactly two missing components makes the MR pair unusually determinate, hence dim5 4."
+    },
+    {
+      "id": "ccao-f-d1-q03",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - tier upgrades demonstrably improve generic output sometimes; C - hand-editing local detail is a working process; D - the officer's conclusion is a reasonable inference from three bad runs. Dim2 4: D is the recognisable give-up shape and is eliminable without engaging the scenario."
+    },
+    {
+      "id": "ccao-f-d1-q04",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - more explicit instructions really do improve single-prompt output; C - a pipeline genuinely gives per-stage attribution, which is what the officer wants; D - fluent memos pass most reviews. Dim2 4: D (fluency-as-evidence) is defeated by the stem's own admission that memos are wrong. Redundancy note: same decomposition move as d1-q06."
+    },
+    {
+      "id": "ccao-f-d1-q05",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a polished early deliverable is what actually keeps a client engaged, and the stem plants that pressure; B - requirements really are clearer later; D - one pass keeps a study coherent. Genuine good-vs-best: A is the answer a real project lead gives under client pressure, and only the dependency argument beats it."
+    },
+    {
+      "id": "ccao-f-d1-q06",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: A - correcting outputs is what the coordinator does today and it works; B - tightening wording is the cheapest intervention; C - 'prompts rot with reuse' is a belief people hold. Dim3 4: the item repeats d1-q04's discrimination (single opaque prompt -> decompose, rule 2.03) with different wardrobe; C-006 and C-004 are separately worded but test one move. Dim5 3: A/B/C are all visibly non-structural, so the key is reachable by elimination without the decomposition concept. Gate 2: read with d1-q04 and seat only one on a form."
+    },
+    {
+      "id": "ccao-f-d1-q07",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - improving on every front at once is faster if it works; C - a praised prompt from another team is real evidence; D - hand-writing a policy summary is a defensible fallback. B is strong because the stem says the agent already did whole-prompt rewrites, so the reader must connect swings to confounding."
+    },
+    {
+      "id": "ccao-f-d1-q08",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - more elaborate wording is the intuitive next round and has worked before; C - a stronger tier does reduce fabrication rates; D - five failed rounds is real evidence of a ceiling. A is the live temptation the item is built on; only 'improvement stopped at round three' plus 'no data ever attached' defeats it."
+    },
+    {
+      "id": "ccao-f-d1-q09",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - finer definitions are the obvious response to boundary errors; B - self-marking is used in real triage systems; D - a daily human re-sort is a working control. Good-vs-best: A is the answer most practitioners give, and only 'definitions are already thorough and clear-cut cases pass' points at examples instead."
+    },
+    {
+      "id": "ccao-f-d1-q10",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - constraint discipline is genuinely taught as best practice; B - reusing last year's winning prompt is standard fundraising practice; C - dropping constraints does restore range. Dim2 4: A announces its own dogma ('accepted best practice')."
+    },
+    {
+      "id": "ccao-f-d1-q11",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - an authoritative briefing is what was asked for and it reads finished; C - many people believe rates are refreshed into the model; D - publish-then-check quarterly is a real editorial policy. C and D are both strong: C is a widespread technical misconception and D is a defensible governance compromise. Only 'research task before drafting task' settles it."
+    },
+    {
+      "id": "ccao-f-d2-q12",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - triaging review depth by consequence is exactly what good teams do, and B looks like that; C - reference selection by available time is honest resource management; D - post-hoc sampling is standard QA. The trap is real: B and C both sound like calibration, and the discrimination is that depth flexes while the reference set does not."
+    },
+    {
+      "id": "ccao-f-d2-q13",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - every figure and feature was verified, which is the definition of done in most shops; C - asking the model for its own omissions surfaces real gaps sometimes; D - client questions do catch gaps. A is the strongest tempter in d2: the item's whole force is that accuracy and completeness are different checks."
+    },
+    {
+      "id": "ccao-f-d2-q14",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - AI-assistance disclosures are becoming standard practice; B - withdrawing the tool does end the exposure; D - legal sign-off genuinely moves risk in many firms. Dim2 4: B is the recognisable refuse-the-mandate shape. D is the strong one - upstream sign-off is a real corporate reflex."
+    },
+    {
+      "id": "ccao-f-d2-q15",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a stated high confidence is information; B - a re-read by the model does catch some errors; C - hedging is a real compliance tactic for uncertain figures. C is genuinely tempting for a regulated letter, and it loses because clients still act on the letter."
+    },
+    {
+      "id": "ccao-f-d2-q16",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: A - polish plus stated confidence is what most reviewers accept; C - a self-flag pass is a cheap extra net; D - people do assume uncertainty arrives flagged. Dim3 4 and dim5 3: this is d2-q15's discrimination a second time (rule 3.03, model states high confidence + polished output -> validate against an authoritative source), with A and C mirroring q15's A and B; a candidate who solves q15 gets q16 free. Gate 2: read the pair together and seat only one on a form."
+    },
+    {
+      "id": "ccao-f-d2-q17",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - platform safeguards do exist and people rely on them; C - a quarterly audit is a real governance instrument and finds cross-document patterns a per-draft review misses; D - community feedback is the ground truth on framing. C is a strong, defensible answer; it loses only on being detective rather than preventative."
+    },
+    {
+      "id": "ccao-f-d2-q18",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - instructing for currency is the intuitive fix and costs nothing; B - the register really does match the official schedule; C - waiting for a fresher model is a real procurement instinct. A is the classic novice fix and the item is built to defeat it."
+    },
+    {
+      "id": "ccao-f-d2-q19",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - thoroughness instructions do shift output; C - a post-draft fact-check against the pack is genuinely the strongest verification control on the list; E - confidence scores are used in real pipelines. Textbook good-vs-best: C is correct practice and loses only to the stem's 'built in at request time'. That is the item's whole discrimination and it is a fair one."
+    },
+    {
+      "id": "ccao-f-d2-q20",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - two-run agreement is a real self-consistency heuristic used in production; B - more context does reduce misreads; D - hand-verification quarterly is a working control. A is a genuinely sophisticated wrong answer, which is what makes the compute-don't-generate discrimination worth testing."
+    },
+    {
+      "id": "ccao-f-d2-q21",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - fluency is what a skim actually measures and teams do use it; B - tier-based review relaxation is a rule people really write; D - deadline is the factor that decides in practice. All three are rules a real team would draft, which is exactly why the advance-threshold concept is needed to reject them."
+    },
+    {
+      "id": "ccao-f-d2-q22",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - 'a human in the loop' is a defensible reading of most policies and the intern is a human; C - disclosure is a real substitute in some orgs; D - model self-verification plus a signature is a two-layer check. B is an excellent tempter because it is literally true of the current process."
+    },
+    {
+      "id": "ccao-f-d2-q23",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the source was verified and adaptation is presented as cosmetic, which is exactly the assumption practitioners make; B - full re-evaluation is the conservative answer and is never wrong on safety; D - asking the model to confirm preservation is cheap. A is the real-world error and B is the over-correction; the key threads between them."
+    },
+    {
+      "id": "ccao-f-d2-q24",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - fluency is a proxy for reader impact and the meeting is a reading event; C - team consensus is real evidence of persuasiveness; D - matching a competitor's register is a live commercial instinct. Dim2 4: D is thin next to A and C."
+    },
+    {
+      "id": "ccao-f-d2-q25",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - closer proofreading does cut transcription errors; B - redundant statement is a real safety technique in specs; C - bolding is exactly what a studio would try first. Three plausible incremental fixes against one structural one."
+    },
+    {
+      "id": "ccao-f-d2-q26",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - 5/5 is a real result and small teams ship on less; B - more samples is the standard response to a small trial; D - complaint-driven monitoring is how most rollouts actually run. A and B are both what a competent lead would say; the representativeness concept is the only thing that beats them."
+    },
+    {
+      "id": "ccao-f-d2-q27",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: B - the teammate's position is one many users hold, that identical inputs should give identical outputs; C - withdrawal is defensible for regulated member letters; D - hand-aligning to the approved template genuinely fixes both grains today. Dim5 3: A is the only constructive option and its compound phrasing (structural review + measured bound) marks it; the shape carries the item more than the concept does. Dim2 4 held up rather than 3 because the stem voices B and C through characters, which is honest distractor sourcing."
+    },
+    {
+      "id": "ccao-f-d2-q28",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - 96% beats the team's own stated target, which is the strongest formal argument any distractor makes in this bank; C - crew confirmation is a real belt-and-braces practice; D - fix-and-ship is the pragmatic call. A is excellent: the item forces severity-class reasoning against an explicitly satisfied numeric threshold."
+    },
+    {
+      "id": "ccao-f-d3-q29",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a paste-ready snippet is a genuinely good workaround and cheap; B - more context per session does help; C - a peer firm's practice is evidence. Dim5 3 and dim3 4: the key is a near-verbatim restatement of syllabus rule 1.01's title while A/B/C are all concrete tactics, so the rule-shaped option is identifiable without engaging the scenario - and the item asks the candidate to recognise the rule rather than apply it (the key names no surface). Dim2 4: A is strong, B and C are weak. Gate 2."
+    },
+    {
+      "id": "ccao-f-d3-q30",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - surfaces do feel interchangeable to new users; C - a Project is the right answer for a lot of museum work and is the sophisticated-sounding choice; D - built-in knowledge covers peer institutions in general terms. C is the real tempter: it is correct advice for the wrong task shape."
+    },
+    {
+      "id": "ccao-f-d3-q31",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the teammate's pipeline removes recurring toil and is technically feasible; B - handing to IT is normal org behaviour; D - board visibility is a real currency in a garden's development office. A is a genuine judgment call that only frequency-plus-review-need settles."
+    },
+    {
+      "id": "ccao-f-d3-q32",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - Memory carrying month-to-month handling is a plausible reading of 'the same way every month'; C - two-run agreement is a real check; E - meticulousness instructions do change behaviour marginally. B is a well-built wrong-layer trap that maps onto the stem's first need almost exactly."
+    },
+    {
+      "id": "ccao-f-d3-q33",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - never under-serving a workload is defensible risk posture; C - minimal spend is a real mandate; D - measured trials beat vendor guidance in principle. Dim5 4: the item needs the tier names, so part of the work is recall rather than judgment - fair for a foundations exam but it lowers the pitch."
+    },
+    {
+      "id": "ccao-f-d3-q34",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a capability margin above a bar is standard engineering conservatism; B - side-by-side polish is the evidence the team actually gathered; C - 'the mid tier is the recommended default' is a real recommendation and the exam itself teaches it. C is a first-rate tempter: correct doctrine applied after a measurement that overrides it. NOTE: bounced on the overlap screen, not on the rubric - see bounces[]."
+    },
+    {
+      "id": "ccao-f-d3-q35",
+      "scores": {
+        "1": 5,
+        "2": 3,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: B - people do believe the strongest model is also the fastest; C - batching more rows per request is a genuine throughput technique; D - maximum capability as prudence is a real organisational posture. Dim2 3: B contradicts the stem's own 'turnaround on bulk jobs is slow', C does not answer the routing question at all, and D is naked dogma - each is eliminable without engaging the scenario, leaving A uncontested. Dim5 3 follows. No dimension <=2, so this is a Gate 2 flag, not a bounce; the fix if Gate 2 wants one is to rebuild B and C as defensible routing positions."
+    },
+    {
+      "id": "ccao-f-d3-q36",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: A - silent model swaps are a belief many users hold and vendors do ship changes; B - forceful phrasing does change compliance at the margin; D - abandoning the tool for planning is the teammate's real conclusion. Dim5 3: only C offers a mechanism, so the answer is reachable by elimination; the gradual-degradation concept is not actually required."
+    },
+    {
+      "id": "ccao-f-d3-q37",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - waiting for a visible drop is what nearly everyone does and it conserves effort; C - a clean restart is the purist answer; D - long context windows genuinely do hold a lot. A is a strong, honest position and the key beats it only on 'decide before quality slips'. Good-vs-best."
+    },
+    {
+      "id": "ccao-f-d3-q38",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - total recall is the most common user misconception and fits 'some preferences carry over'; B - rebuilding from documents each session is a defensible discipline; C - restating rules daily is what the secretary does now. A is a well-chosen misconception; B and C are weaker."
+    },
+    {
+      "id": "ccao-f-d4-q39",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a readable summary is what most managers ask for and it is genuinely useful; C - a full process design is what the folder is ultimately for; D - a narrative that reads complete looks like a finished requirements doc. C is the strong one - it over-delegates in a way that feels ambitious rather than wrong."
+    },
+    {
+      "id": "ccao-f-d4-q40",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - consistent reliability is the evidence practitioners actually use; B - peer practice is real benchmarking; D - repetitive-therefore-delegable is close to true and is widely taught. Dim2 4: D announces itself with 'always'."
+    },
+    {
+      "id": "ccao-f-d4-q41",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - generate-then-fact-check is a legitimate, widely used process and would catch the same errors; B - remembered utilisation is how many plans get built; C - more data does improve estimates. A is genuinely defensible and loses only on the design-time-vs-check-time distinction the concept names. Good-vs-best."
+    },
+    {
+      "id": "ccao-f-d4-q42",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - the coordinator lives in the workflow and that experience is real evidence; C - blanket automation guarantees coverage of the true sink; D - the volunteer survey is an existing measurement instrument. B is a strong tempter because dismissing practitioner intuition feels wrong until 'nothing has been measured' is weighed."
+    },
+    {
+      "id": "ccao-f-d4-q43",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the manager's proposal recovers real hours and the drafts have been strong; B - a thorough end review is a legitimate quality model used across publishing; D - filtering review by draft quality is a common triage. B is the best distractor: a real design that fails only on compounding stage errors."
+    },
+    {
+      "id": "ccao-f-d4-q44",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 4,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - improving everywhere at once is faster when time is short; C - hand-rewriting is the safe fallback; D - deferring to next quarter is a real portfolio decision. Dim3 4: this is the third bank instance of rule 2.04's single-component iteration (with d1-q07 and, in feedback form, d7-q79); the item is sound alone, but selection must not seat all three on one form."
+    },
+    {
+      "id": "ccao-f-d4-q45",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - a consultant's end-to-end automation is a real proposal with real economics; C - demo impact is a live franchise motivator; D - keeping the tool out avoids the question. B is strong; C and D are thin, hence dim5 4."
+    },
+    {
+      "id": "ccao-f-d4-q46",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a two-bin sort is what most teams actually build and it is operationally simpler; B - staff aversion is a real prioritisation signal; C - an expert's published mapping saves work. A is a genuinely attractive answer that the three-way-verdict concept has to defeat."
+    },
+    {
+      "id": "ccao-f-d4-q47",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - catching errors immediately after release is a real operational control and fast; C - default-clear timeouts are shipped in real approval systems to prevent stalls; D - monthly log review is a standard audit control. C and D are both real production designs; they lose on gate semantics (position and staffing), which is a fair and non-obvious discrimination."
+    },
+    {
+      "id": "ccao-f-d4-q48",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - adaptive approaches genuinely help with heterogeneous filings; B - agentic designs are where tooling is heading; D - a pilot demonstration is evidence. A is the strong one; B is signposted dogma."
+    },
+    {
+      "id": "ccao-f-d4-q49",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - best-of-n with rubric scoring is a real and effective technique; C - demonstrating rigour to leadership has real value; D - five drafts for a human to choose among is the classic 'reasonable middle'. D is an excellent distractor because compromise usually is the right instinct, and here it multiplies review load against a stated requirement."
+    },
+    {
+      "id": "ccao-f-d4-q50",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: C - omitting limits does raise approval odds and is what many rollout decks do; D - impressive samples are how executives are actually persuaded; E - a full-automation commitment is the kind of promise programmes really make. C is the live political temptation."
+    },
+    {
+      "id": "ccao-f-d4-q51",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the lead has the skills and credentials were once provided, so building it is the responsive answer; C - escalating the whole request is the cautious reading of scope; D - quiet lapse avoids conflict. C is the strongest: over-escalation looks like prudence, and the item requires knowing both polarities are errors."
+    },
+    {
+      "id": "ccao-f-d5-q52",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - deferring setup to a slack period is standard capacity management; B - the peer's negative experience is direct evidence; D - non-billable time is a genuine constraint in a billing consultancy. D is a strong, very real objection."
+    },
+    {
+      "id": "ccao-f-d5-q53",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - expanding the instructions is what almost everyone tries next and it sometimes works; C - a configuration that ignores what it was given does look defective; D - hand-correcting keeps triage moving. B is the real-world default and the item needs the four-mechanism map to beat it. Strong."
+    },
+    {
+      "id": "ccao-f-d5-q54",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a fifth rewrite is what four failures usually provoke; C - stacking connectors sometimes does find one with the permission; D - inferring an outage from repeated failure is ordinary reasoning. Dim2 4: D is a weak invented mechanism next to A."
+    },
+    {
+      "id": "ccao-f-d5-q55",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - maximum material genuinely improves retrieval recall, which is a real engineering trade; B - internal provenance is what most teams treat as sufficient; C - a staleness banner is a real disclosure control. A is a sophisticated wrong answer (recall-vs-precision) and C is the disclosure-instead-of-fix trap. Good-vs-best."
+    },
+    {
+      "id": "ccao-f-d5-q56",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - people do assume newer documents win; B - deleting the superseded manual is the pragmatic fix most teams would apply today; C - a merged summary removes the conflict at the surface. B is genuinely strong and loses only because the manual still governs other scopes."
+    },
+    {
+      "id": "ccao-f-d5-q57",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the teammate's inference from fresh dates is ordinary and superficially sound; B - a monthly re-upload cadence is a real maintenance practice; D - a caveat is a real risk disclosure. B is the best distractor: a plausible process improvement that never touches the actual defect."
+    },
+    {
+      "id": "ccao-f-d5-q58",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - emphatic phrasing does shift model behaviour in practice; C - asking the model whether it followed an instruction is a cheap check people run; D - batching instruction work into a quarterly overhaul is normal planning. B is the real trap; C and D are thinner."
+    },
+    {
+      "id": "ccao-f-d5-q59",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a cover page travelling with the files is an inventive and superficially elegant fix; B - stripping the phrase post-generation works today; C - emphatic restatement is the current habit made stronger. A is a genuinely creative distractor that lands squarely in the wrong layer."
+    },
+    {
+      "id": "ccao-f-d5-q60",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - complaint-driven maintenance is how most configurations are actually maintained; C - periodic rebuilds guarantee freshness; D - abandoning configuration removes the decay surface. A is strong; C and D are recognisable over-correction and give-up shapes."
+    },
+    {
+      "id": "ccao-f-d5-q61",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the output improved and unannounced improvements avoid debate, which is a real political calculation; B - a standing disclaimer is a light-touch control; D - batching into an annual review is normal change management. A is the honest temptation the item is built on."
+    },
+    {
+      "id": "ccao-f-d6-q62",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a blanket candidate-data exclusion is a defensible conservative policy reading; B - asking the model to apply the policy is fast and the policy is short; C - internal circulation genuinely lowers exposure. A and C are both real positions; the three-way verdict is what the item tests."
+    },
+    {
+      "id": "ccao-f-d6-q63",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the policy permits AI drafting for member communications, so A is literally compliant; C - routing uncovered cases to compliance is exactly what a careful practitioner in a regulated culture would do; D - a disclosure footer is a real practice. C is genuinely defensible and loses only on 'every bulletin', which converts a practitioner skill into a queue. Good-vs-best."
+    },
+    {
+      "id": "ccao-f-d6-q64",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - upload-now-remediate-later is precisely what a board deadline produces and it is a real risk decision; B - a model check is fast and feels like diligence; E - a confidentiality instruction is a control people genuinely rely on. E is a strong wrong-layer distractor."
+    },
+    {
+      "id": "ccao-f-d6-q65",
+      "scores": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - 'organizational policy restricts sharing regulated personal data with external tools' can honestly be read as prohibiting the file's involvement altogether, making the by-hand summary the compliant answer; C - a no-retention instruction is a control many teams accept; D - confidentiality marking is standard handling. Dim1 4: B's best case is defeated only by reading the restriction as attaching to the regulated identifiers rather than to the work, which the concept supports but the stem does not spell out - the narrowest dim-1 margin in the bank. NOTE: bounced on the overlap screen for reproducing vendor sample-stem prose; the dim-1 margin should be widened in the same rework - see bounces[]."
+    },
+    {
+      "id": "ccao-f-d6-q66",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a single enterprise agreement is exactly what most firms treat as making surfaces equivalent; B - clearing Memory afterwards is a real remediation; C - excerpting is genuine data minimisation. All three are controls a competent researcher would propose; only 'where the data comes to rest' orders them. Strong item."
+    },
+    {
+      "id": "ccao-f-d6-q67",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a full internal history is genuinely valuable for tracing and the team says so; B - switching logging off is the maximal privacy answer; D - restricting access to two supervisors is a real, standard control. D is the strongest and fails only because retention, not readership, is the question."
+    },
+    {
+      "id": "ccao-f-d6-q68",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the site manager's local-risk argument is coherent and he owns the site; C - asking the model to interpret the policy is fast under a Monday deadline; D - waiting for the scheduled review respects the process. A is a strong pull because the risk argument is not obviously wrong - only the authority to grant the exception is."
+    },
+    {
+      "id": "ccao-f-d6-q69",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - thousands of installs is real-world evidence of safety; B - enable-and-watch is a legitimate staged-adoption pattern; C - banning community Skills is a defensible secretariat policy. B is the strong distractor: monitoring output is real diligence aimed at the wrong risk."
+    },
+    {
+      "id": "ccao-f-d6-q70",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - newer releases usually are better and the group wanting to move today is half the team; C - freezing regulator-facing assessments is a defensible compliance posture; D - refreshing instructions during the migration is efficient and tempting. D is a well-built confounded-change trap and C is a real governance position."
+    },
+    {
+      "id": "ccao-f-d6-q71",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - splitting the paperwork is the practical evasion people actually reach for; B - quiet compliance protects a major referral relationship; D - a flat refusal holds the policy line and is the safest-looking answer. D is genuinely defensible - the key beats it only by adding the permitted alternative and the log. Good-vs-best."
+    },
+    {
+      "id": "ccao-f-d6-q72",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - discomfort is a real ethical signal and 'when in doubt, don't' is sound; C - another region's approval is precedent within the same organisation; D - escalating ambiguous cases is exactly what an ethics committee exists for. D is strong and defensible; the key wins because the criteria answer it today and the reasoning must be recorded."
+    },
+    {
+      "id": "ccao-f-d6-q73",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - inviting challenges to sound decisions is a real institutional fear; B - a signature is genuine accountability and many registrars would stop there; C - disclose-on-request is a common policy. B is the strong tempter because the signature is real accountability, just not the whole obligation."
+    },
+    {
+      "id": "ccao-f-d7-q74",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - a tier bump is the fastest test of a capability hypothesis; B - a vendor ticket is the right move if the model really did change; D - doing all three fixes at once resolves it today. D is a live competitor (it is what a pressured clerk does) and A is a real hypothesis, which is what keeps dim5 at 4 despite the key restating the rule's sequence."
+    },
+    {
+      "id": "ccao-f-d7-q75",
+      "scores": {
+        "1": 5,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 3,
+        "6": 5
+      },
+      "case": "Argued FOR: B - sampling settings do change repetitive output where they are exposed; C - hand-adding two fields keeps jobs moving; D - reusing last month's successful fix is ordinary pattern-matching. Dim2 4: B has no mechanism connecting it to two consistently absent fields, and the rationale itself says so - eliminable without engaging the scenario. Dim3 4 and dim5 3: the key restates rule 7.02's title, so the item tests recognition of 'isolate first' rather than performing an isolation, and the rule-shaped option is identifiable by shape. Gate 2."
+    },
+    {
+      "id": "ccao-f-d7-q76",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - three weeks of gains suggest a fourth week would close the gap; B - a stronger tier is the standard next lever; C - self-scored mail-readiness is a real triage idea. Expectation mismatch is a genuinely non-obvious diagnosis and every distractor is what a competent officer would try. Best-pitched item in d7."
+    },
+    {
+      "id": "ccao-f-d7-q77",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: A - the combination demonstrably works and shipping it to other report types is pragmatic; C - the tier move is the largest lever and a reasonable prior; D - asking the model is cheap. A is very strong: it is true, useful and still the wrong answer to 'what worked', which is the attribution point."
+    },
+    {
+      "id": "ccao-f-d7-q78",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - decomposing until a request passes is a widely used workaround under deadline; B - the same summary worked last quarter, so a product regression is a fair hypothesis; D - the bureau owns its policy configuration and Thursday is real. A and D are both realistic deadline behaviours."
+    },
+    {
+      "id": "ccao-f-d7-q79",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 4,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: B - asking for higher quality is what the assistant would write; C - a three-part revision covers all bases; D - wider circulation gathers better feedback. Dim3 4: this is the third bank appearance of the single-named-change move (with d1-q07 and d4-q44), here in feedback clothing; sound alone, but a selection constraint."
+    },
+    {
+      "id": "ccao-f-d7-q80",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 4,
+        "6": 5
+      },
+      "case": "Argued FOR: A - posting in team chat shares the fix immediately at zero cost and is what most teams do; B - tacit spread is the status quo; C - a rebuild around the new phrasing is thorough. A is a strong, realistic answer that fails only on 'searchable' not being 'by default'."
+    },
+    {
+      "id": "ccao-f-d7-q81",
+      "scores": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "case": "Argued FOR: B - asking the team whether it feels faster is a real and cheap readout; C - stacking a tier change maximises the reported gain, which is what a director wants; D - having Claude estimate the saving is fast and produces a number for the board. D is an excellent distractor: it produces exactly the artefact the director asked for, from nothing."
+    }
+  ],
+  "bounces": [
+    {
+      "id": "ccao-f-d3-q34",
+      "bounce": 1,
+      "trigger": "overlap-screen",
+      "failing_dimensions": {},
+      "rubric_scores_at_bounce": {
+        "1": 5,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "judge_case": "The item passes the six-dimension rubric cleanly (it is one of the better-pitched items in the bank). It bounces under methodology/05-eval-rubric.md #overlap, which is a separate trigger: the stem reproduces verbatim an 8-word clause that derivation/source-ccas-guide-samples.md records as a direct quotation from the vendor's published sample-question stems - \"speed and cost matter more than deep reasoning\" (that doc, item-craft section, 'The stem states the constraint that decides the item'). That is source stem prose, not a canonical vocabulary term, so it is outside the Artefact B bounded exception and outside 'incidental technical phrases'. The repo hard rule (CLAUDE.md, anti-dumps) is 'never reproduce source or live-exam text'; the fact that the guide is public does not license reproducing its item wording.",
+      "defect_class": "source-phrase-reuse",
+      "required_fix": "Re-express the constraint clause in the bank's own words while keeping the same decision content - e.g. state the workload's properties (short, structured, thousands per term, turnaround and unit cost are what the office optimises) without borrowing the vendor's phrasing. Do not weaken the stem's stated constraint; the item's good-vs-best pitch depends on it. No other change is indicated - dimensions 1-6 all scored 5."
+    },
+    {
+      "id": "ccao-f-d6-q65",
+      "bounce": 1,
+      "trigger": "overlap-screen",
+      "failing_dimensions": {},
+      "rubric_scores_at_bounce": {
+        "1": 4,
+        "2": 5,
+        "3": 5,
+        "4": 5,
+        "5": 5,
+        "6": 5
+      },
+      "judge_case": "Same trigger as d3-q34 and from the same passage: the stem opens 'Organizational policy restricts sharing regulated personal data with external tools', reproducing verbatim the 7-word clause that derivation/source-ccas-guide-samples.md quotes from a vendor sample-question stem. Source stem prose, outside the vocabulary exception. Secondary, non-blocking finding to fix in the same pass: dimension 1 scored 4 rather than 5 because option B (do the summary by hand) survives on a strict reading of that same borrowed clause - if the policy restricts the data reaching an external tool at all, abstention is compliant. The concept (remove identifiers before use) settles it, but the stem never says the restriction attaches to the identifiers rather than the file.",
+      "defect_class": "source-phrase-reuse",
+      "required_fix": "Re-express the policy clause in the bank's own words, and while doing so close B's opening by making the restriction's object explicit - e.g. that policy bars regulated identifiers from leaving the team's systems, while the claim narrative itself is not restricted. That single rewrite discharges both the overlap bounce and the dimension-1 margin."
+    }
+  ],
+  "gate2_sample": [
+    {
+      "id": "ccao-f-d1-q01",
+      "reason": "blind-solve independence: the key was visible to the examiner before the keyless form was built (schema-discovery read). The 'match' carries no evidential weight; needs a human solve."
+    },
+    {
+      "id": "ccao-f-d1-q04",
+      "reason": "redundancy pair with d1-q06 (same rule 2.03 decompose-the-opaque-prompt move). Rule on the pair; selection must not seat both."
+    },
+    {
+      "id": "ccao-f-d1-q06",
+      "reason": "dim5=3 (elimination-solvable), dim3=4 (repeats d1-q04's discrimination)."
+    },
+    {
+      "id": "ccao-f-d2-q15",
+      "reason": "redundancy pair with d2-q16 (same rule 3.03 self-reported-confidence move). Rule on the pair; selection must not seat both."
+    },
+    {
+      "id": "ccao-f-d2-q16",
+      "reason": "dim5=3, dim3=4, dim2=4 - solving d2-q15 gives this item free."
+    },
+    {
+      "id": "ccao-f-d2-q27",
+      "reason": "dim5=3: the key is the only constructive option and its compound phrasing marks it."
+    },
+    {
+      "id": "ccao-f-d3-q29",
+      "reason": "dim5=3, dim3=4: the key is a near-verbatim restatement of syllabus rule 1.01's title against three concrete tactics."
+    },
+    {
+      "id": "ccao-f-d3-q35",
+      "reason": "dim2=3 and dim5=3: two of three distractors are eliminable without engaging the scenario (one contradicts the stem's own facts). Worst-scoring item in the bank; still no dimension <=2."
+    },
+    {
+      "id": "ccao-f-d3-q36",
+      "reason": "dim5=3: only the key offers a mechanism, so elimination substitutes for the context-budget concept."
+    },
+    {
+      "id": "ccao-f-d7-q75",
+      "reason": "dim5=3, dim3=4, dim2=4: key restates rule 7.02's title; option B has no mechanism in the scenario."
+    }
+  ],
+  "selection_constraints_for_s6": [
+    "Do not seat both ccao-f-d1-q04 and ccao-f-d1-q06 on the same form (one decomposition discrimination).",
+    "Do not seat both ccao-f-d2-q15 and ccao-f-d2-q16 on the same form (one self-reported-confidence discrimination).",
+    "Seat at most two of ccao-f-d1-q07 / ccao-f-d4-q44 / ccao-f-d7-q79 on one form (all three are the single-named-change move under rule 2.04/7.03, in different domains).",
+    "Prefer the dim5=5 items when a domain's quota allows a choice; the seven dim5=3 items are the weakest-pitched in the bank."
+  ]
+}

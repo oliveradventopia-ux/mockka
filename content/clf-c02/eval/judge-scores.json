@@ -1,0 +1,872 @@
+{
+ "$comment": "S5 judge rubric ROUND 2 (methodology/05-eval-rubric.md #judge), post-bounce re-eval. exam-examiner, fresh session, 2026-08-18. Round 1 preserved at eval/judge-scores-r1.json (versioning-by-suffix, aif-c01 precedent). Scope of the rework under judgment: commit 168ae1f restated item 1.10's stem as constraints and re-glossed keyed option C with an off-stem mechanism detail; options A, B, D unchanged; rationale rewritten. METHOD: all 68 items re-read in full and every distractor argued FOR before scoring, INDEPENDENTLY of round 1 - the round-2 grid was formed first (including an independent re-measurement of stem/option content-word overlap across the whole bank) and only then compared with round 1. Outcome of that comparison: 373 of 408 dimension scores identical; 32 single-point differences across 26 items reconciled to round 1's published calibration statement (each recorded in that item's `case`; three of them touched the 3/4 boundary - 1.07 dim 2, 2.04 dim 2 and dim 5 - and none changed Gate 2 sample membership); 3 differences HELD as round-2 deltas (1.10 dim 2 and dim 5, the verified rework; 4.08 dim 4, a round-1 miss). The `case` field this round records the delta or reconciliation judgment; the full round-1 distractor cases remain in the r1 file and were re-checked against the current option text. RESULT: zero dimensions <=2 anywhere - NO BOUNCES in round 2. Dimension-5 distribution moved from 20x5 / 39x4 / 8x3 / 1x2 (round 1) to 20x5 / 40x4 / 8x3 / 0x2. Gate 2 auto-flags from 3s: 10 items.",
+ "round": 2,
+ "examiner": "exam-examiner",
+ "date": "2026-08-18",
+ "summary": {
+  "items": 68,
+  "score_distribution": {
+   "1": {
+    "5": 66,
+    "4": 2
+   },
+   "2": {
+    "4": 27,
+    "5": 38,
+    "3": 3
+   },
+   "3": {
+    "5": 68
+   },
+   "4": {
+    "5": 58,
+    "4": 10
+   },
+   "5": {
+    "4": 40,
+    "5": 20,
+    "3": 8
+   },
+   "6": {
+    "5": 65,
+    "4": 3
+   }
+  },
+  "items_with_any_3": [
+   "1.05",
+   "1.07",
+   "1.09",
+   "2.01",
+   "2.04",
+   "2.05",
+   "2.06",
+   "2.19",
+   "3.11",
+   "3.14"
+  ],
+  "items_with_any_score_le_2": [],
+  "bounces_this_round": 0
+ },
+ "items": [
+  {
+   "id": "1.01",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.02",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.04",
+   "scores": {
+    "1": 4,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 1, dim 2 and dim 5 (round-2 first pass 5/5/5). Round 1 is right: the Well-Architected Tool is a real instrument that survives on framing rather than on being wrong (dim 1 = 4), the support-case option is the weaker of the three (dim 2 = 4), and Framework-vs-Tool is a near-neighbour resolved on recall rather than a surface pointing away (dim 5 = 4). The round-2 blind solve recorded MEDIUM confidence on this item - the only medium in the bank - which is independent evidence for the dim-1 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.05",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 4
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 6 (first pass 5). The zoning-department wardrobe is decorative: no detail of it bears on which pillars are named; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.06",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4, on a suspected \"recover from disruption\" stem/key echo). Withdrawn on measurement: the keyed option shares 4 content words with the stem while distractor A shares 5 and D shares 3, so the echo is not a key-selecting cue - the fake-pillar option D absorbs the same words. Dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.07",
+   "scores": {
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). Round 1 is right and this crosses the 3/4 boundary: all three distractors carry absolutist riders (\"only adds confusion\", \"every system ... rewritten\", \"in all cases ... universally recommended\"), so the moderate-option heuristic eliminates them without engaging the scenario. Dim 2 = 3. Item is in the Gate 2 sample either way; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.08",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.09",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 4
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 6 (first pass 5). Decorative wardrobe, same reading as 1.05; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.10",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "REWORKED ITEM - scored fresh under \u00a7bounce (full rubric, new blind solve, no partial credit). Argued FOR each distractor against the new stem: B (one-time bulk export restored during a scheduled overnight outage) is the strongest and is now a real competitor - it is the ordinary way a data tier is moved, and it is defeated only by reading the two constraints together (a window of minutes, and no write lost); D (rebuild in a different engine as part of the move) is a genuine migration strategy that a team carrying an old schema really does propose, and loses as unrequested re-architecture; A (defer the move, accept a stale copy) is a real portfolio-sequencing answer and loses because every stated constraint keeps applying while it waits. ROUND-1 DEFECT VERIFIED FIXED: the stem now states constraints only (round-the-clock writes, minutes-long cutover, no write lost) and no longer states the mechanism, and keyed option C carries an off-stem mechanism detail (ongoing change capture applied to the target). Re-measured stem/key content-word overlap: key = 1 shared word, the LOWEST of the four options (max distractor 3, option D) - inverted from round 1's 9-vs-4 key-high margin, so the string-match route is gone and the item now requires the constraint-to-strategy mapping that concept C-010 names. Dim 5 2 -> 4 (a near-neighbour resolved on recall, not a surface giveaway; not 5 because 'no write may be lost' is a fairly direct signpost once the option set is known). Dim 2 3 -> 4 (B and D compete properly now that the stem no longer pre-commits; A is the weaker of the three). Rationale rewritten with the key named and distractor A re-argued on its own terms - dim 4 holds at 5. BOUNCE CLEARED."
+  },
+  {
+   "id": "1.11",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.12",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 5/5). Option E carries an absolutist rider (\"for every service\") and the item resolves once the BYOL/patching boundary is recalled; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.13",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). The invented \"conversion model\" in A is a real cloud-licensing misconception (E05 inversion), not a self-defeating option; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "1.14",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.15",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "1.16",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). The CFO framing points at the customer's own volume and at commitment discounts, both offered as options - the surface points away from provider-side scale. Dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.01",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 4
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 6 (first pass 5). Decorative wardrobe; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.02",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). Option E (the customer signing the report that certifies AWS infrastructure) is eliminable without engaging the boundary; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). Shared-vs-inherited is a genuine good-vs-best pair and option D is a strong near-neighbour; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.04",
+   "scores": {
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 4/3 - the same two values as round 1, swapped between the dimensions). Round 1 assigns them correctly: option C (\"no party patches the engine\") is self-defeating on its face, which is a dim-2 3; what remains after A and C fall is a real B-vs-D discrimination on the RDS boundary, which is a dim-5 4. Item is in the Gate 2 sample either way; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.05",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.06",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.07",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). The stem plants CloudWatch dashboards as a live decoy and Config-vs-CloudTrail is the real discrimination; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.08",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). The Security Hub option (\"posture scores stand in for the compliance report\") is the weaker of the three; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.09",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.10",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). \"Encryption removes the need to identify the objects\" is a real compliance misconception, not a self-defeating option; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.11",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). The IAM-is-Regional option is a strong trap that the surface does not resolve; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.12",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.13",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 4/4). A read-only policy attached to root is wrong for a structural reason a candidate must know, and split-credential dual control is a real (misapplied) security idea; 5/5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.14",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 5). The billing-access lure is strong but resolves once the root-only list is recalled; dim 5 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "2.15",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.16",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.17",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.18",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.19",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.20",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "2.21",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). Config-vs-Trusted-Advisor is a genuine near-neighbour pair and the stem contrasts standing exposures with live attacks; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.01",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 4). Runbook, four-eyes review and interactive CLI are all real process answers pointing away from IaC; dim 5 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.02",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.04",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). \"Move to larger instances in the current Availability Zone so a failure is absorbed\" is close to self-defeating; dim 2 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.05",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.06",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.07",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.08",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.09",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.10",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.11",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 3,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.12",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.13",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.14",
+   "scores": {
+    "1": 5,
+    "2": 3,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.15",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.16",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). Storage Gateway, bucket lifecycle and \"managed services already back up for you\" are three distinct real misconceptions; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.17",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.18",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.19",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 5). Amazon Connect is off-axis enough to be eliminable without engaging the delivery-shape question; dim 2 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.20",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 and dim 5 (first pass 4/4). EventBridge is a real routing service offered in the wrong category rather than a weak option, and the SNS lure genuinely points away from a bulk-email service; 5/5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.21",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "3.22",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 5 (first pass 5). AppStream is a strong lure but the persistent-state requirement resolves it on recall; dim 5 = 4; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "3.23",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.01",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.02",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.03",
+   "scores": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor before scoring. The round-2 pass first reached a different value on dim 2 (first pass 4). Tagging offered as a data-transfer line item is a real category confusion; dim 2 = 5 stands; reconciled to the round-1 value under the published calibration (\u00a7calibration, eval-report round 1), which covers this case. No threshold boundary crossed by the reconciliation unless noted."
+  },
+  {
+   "id": "4.04",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.05",
+   "scores": {
+    "1": 4,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.06",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.07",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR every distractor against the current option text before scoring; the round-1 case (eval/judge-scores-r1.json) was re-checked and stands. Scores unchanged."
+  },
+  {
+   "id": "4.08",
+   "scores": {
+    "1": 5,
+    "2": 4,
+    "3": 5,
+    "4": 4,
+    "5": 4,
+    "6": 5
+   },
+   "case": "Re-argued FOR each distractor: A (AWS Prescriptive Guidance) is the strongest - it is real published material and a volunteer administrator would plausibly look there first; it loses because the question has already outrun what was written in advance. D (buy a plan for one question) is a real instinct defeated by the stem's no-urgency, no-budget framing. B (Trust and Safety) is off-axis and eliminable without engaging, which caps dim 2 at 4. ROUND-2 DELTA, HELD AGAINST ROUND 1: dim 4 lowered 5 -> 4. rationale.correct argues the principle as 'what the community question-and-answer service is for' and never names AWS re:Post, so a candidate revising from the rationale alone cannot carry the service name back to their study material. This is the same house-style gap round 1 recorded on nine items (2.06, 2.19, 3.14, 3.17, 3.19, 3.20, 3.21, 3.22, 3.23); 4.08 was missed there. Evidence for ratchet proposal 2 is therefore 10 items, not 9. Not a bounce - a 4 ships."
+  }
+ ],
+ "bounces": [],
+ "bounce_resolution": {
+  "1.10": "RESOLVED (commit 168ae1f), verified on this tree. Round-1 record: defect_class answer-surface-cue (stem-restatement variant), dim 5 = 2, dim 2 = 3 noted; required fix was two edits - restate the stem as constraint rather than mechanism, and re-gloss keyed option C with an off-stem mechanism detail, keeping A, B and D. Both edits landed and nothing else in the item changed. Independent re-measurement on this tree: stem/keyed-option content-word overlap is now 1 (was 9), the lowest of the four options, against a maximum of 3 for any distractor (was 4) - the key-high margin that defined the defect is inverted. Fresh round-2 blind solve of the reworked item: answered C at high confidence, reasoning recorded pre-key as 'minutes of cutover with zero lost writes requires ongoing replication/change capture, not a bulk export' - i.e. solved from the constraints, which is the concept the item is built on. Full re-score 5/4/5/5/4/5, no dimension <=2, bounce cleared. 1.10 is carried into the Gate 2 sample as a bounce survivor so a human confirms the fix. Ratchet: the stem-key-word-match validator check proposed by round 1 (eval-report round 1 \u00a78.1) remains unimplemented and outside this session's ownership; until it lands, this defect class is caught only by examiner measurement."
+ }
+}

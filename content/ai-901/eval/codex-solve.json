@@ -1,0 +1,44 @@
+{
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner. This file carries BOTH rounds, marked by section: rounds[0] = round 1 (2026-08-18), rounds[1] = round 2 (2026-08-18, post-bounce re-eval). Status is unchanged: the instrument is unavailable on this machine.",
+  "status": "advisory_skipped",
+  "rounds": [
+    {
+      "status": "advisory_skipped",
+      "round": 1,
+      "attempts": [
+        {
+          "n": 1,
+          "action": "which codex / codex --version in the session shell",
+          "result": "codex not found — no binary on PATH"
+        },
+        {
+          "n": 2,
+          "action": "located bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex (newest of four installed extension versions); ran `codex login status`, then one `codex exec` probe",
+          "result": "login status: Not logged in; exec probe failed 401 Unauthorized (Missing bearer or basic authentication) against api.openai.com/v1/responses after 5 reconnect attempts — unchanged since the aif-c01 round-1 probe on 2026-08-16"
+        }
+      ],
+      "reason": "No Codex CLI authentication is available to this session, and establishing it would require an interactive `codex login` / account credential outside the examiner's authority (project free-first rule: no account signups without Oliver's approval).",
+      "consequence": "Per methodology/05 #codex a missing advisory instrument is noted, not blocking. S5 round 1 proceeds on the Claude blind solve alone; no three-way Claude/Codex/key disagreement matrix exists for this round, and the Gate 2 sample was assembled WITHOUT the cross-model signal. This matters more than usual here: the blind solve returned 56/56 at high confidence, and because author and examiner share Claude weights a convergent blind spot — both preferring the same wrong reading — cannot be excluded by that number. The compensating control is the Gate 2 deep read, which should treat the sampled items as adjudication-grade rather than confirmation-grade.",
+      "retry_path": "If Oliver authenticates the Codex CLI (`codex login`, or a ChatGPT sign-in that exposes CLI auth), re-run the cross-solve on the same keyless form before Gate 2 sign-off. The keyless-form generation command is recorded in eval/blind-solve.json $comment and in derivation/eval-report.md."
+    },
+    {
+      "round": 2,
+      "status": "advisory_skipped",
+      "attempts": [
+        {
+          "n": 1,
+          "action": "which codex / codex --version in the session shell",
+          "result": "codex not found - no binary on PATH"
+        },
+        {
+          "n": 2,
+          "action": "located the bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.5810.52044-darwin-arm64/bin/macos-aarch64/codex and ran `codex login status`",
+          "result": "Not logged in - unchanged since the round-1 probe hours earlier and since the aif-c01 round-1 probe on 2026-08-16. No exec probe was issued this round: an unauthenticated CLI cannot answer, and a second 401 adds no information."
+        }
+      ],
+      "reason": "No Codex CLI authentication is available to this session; establishing it needs an interactive `codex login` outside the examiner's authority (project free-first rule: no account signups without Oliver's approval).",
+      "consequence": "Per #codex a missing advisory instrument is noted, not blocking. Round 2 proceeds on the Claude blind solve alone; no three-way Claude/Codex/key disagreement matrix exists for either round, and the Gate 2 sample carries no cross-model column. This matters specifically here because the round-2 blind solve again returned 56/56: a convergent author/examiner blind spot cannot be excluded by that number, and the compensating control is the Gate 2 human deep read, which should be run as adjudication rather than confirmation. The round-1 report already recorded the concrete evidence for that discount - the round's two strongest findings (d2-q41, d2-q38) were both items the blind solve answered correctly at high confidence and were caught only by the argue-FOR pass.",
+      "retry_path": "If Oliver authenticates the Codex CLI, re-run the cross-solve on the same keyless form before Gate 2 sign-off. The keyless-form generation command is recorded in eval/blind-solve.json $comment."
+    }
+  ]
+}

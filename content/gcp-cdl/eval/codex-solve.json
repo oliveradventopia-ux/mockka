@@ -1,0 +1,28 @@
+{
+  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, gcp-cdl ROUND 2, 2026-08-18. The instrument is still unavailable in this session, as it has been for aif-c01 (both rounds), az-900, clf-c02, sy0-701, ccao-f (both rounds) and gcp-cdl round 1. The same record is summarized inline in eval/blind-solve.json -> codex_cross_solve, where methodology/05 asks for the matrix to live; this file is the per-exam house convention and the two must not diverge. Round 1's record is preserved verbatim under rounds[0].",
+  "round": 2,
+  "status": "advisory_skipped",
+  "attempts": [
+    {
+      "n": 1,
+      "action": "`which codex` on PATH, plus `ls ~/.codex/auth.json` as the cheap auth probe",
+      "result": "codex not found on PATH; ~/.codex/auth.json: No such file or directory"
+    },
+    {
+      "n": 2,
+      "action": "located the newest bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex and ran `codex login status`",
+      "result": "\"Not logged in\". No exec probe was spent: the auth check is dispositive and the round-1 record already documents the 401 that follows."
+    }
+  ],
+  "reason": "No Codex CLI authentication is available to this session. The VS Code extension's auth is not exposed to the CLI, and establishing it requires an interactive `codex login` by Oliver - outside the examiner's authority under the project free-first rule (no account signups or spend without Oliver's approval). One probe pair was budgeted and no more.",
+  "consequence": "Per methodology/05 #codex a missing advisory instrument is noted, not blocking. S5 round 2 proceeds on the Claude blind solve alone: no three-way Claude/Codex/key disagreement matrix exists for either round, and the Gate 2 sample was assembled WITHOUT any cross-model signal. That matters here because the bank has now returned 83/83 at high confidence twice, from two independent fresh sessions - but both sessions share Claude weights with the authoring session, so a convergent author/examiner blind spot would be invisible to both. Two single-family agreements are not a substitute for one cross-family disagreement check.",
+  "unblock": "Oliver runs `codex login` once. A standalone cross-solve pass can then feed the same keyless projection through the CLI and fill the matrix without re-running S5; only items where Codex dissents would join the Gate 2 sample.",
+  "rounds": [
+    {
+      "round": 1,
+      "status": "advisory_skipped",
+      "evidence": "codex exec returned HTTP 401 Unauthorized from api.openai.com after 5 reconnect attempts (request id req_717c0bcb895f4113802664bb2d4f514b); ~/.codex/auth.json absent. Full round-1 record retained in git history at commit 23d9d20."
+    }
+  ],
+  "verified_this_session": "Both round-2 probes were re-run by the round-2 examiner on 2026-08-18 and reproduced exactly: `ls ~/.codex/auth.json` -> No such file or directory, and `.../openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex login status` -> \"Not logged in\". No exec probe spent, per the one-probe-pair budget."
+}

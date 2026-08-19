@@ -1,0 +1,130 @@
+{
+  "$comment": "S1/S2 facts (research-manager, 2026-08-16) + S3 authoring contract (exam-author, 2026-08-17, derivation/master-inventory.md). Blueprint facts come from CompTIA Security+ SY0-701 Exam Objectives Version 5.0 (derivation/source-comptia-sy0701-objectives.md), corroborated against the live comptia.org certification page read the same day; provenance and screening are in derivation/sources.md. exam.item_count 90 is the vendor's stated MAXIMUM ('Maximum of 90'), so per-domain exam_items are weight_pct x 90 with largest-remainder rounding (11/20/16/25/18 = 90). GATE-1 RATIFICATIONS PENDING: (a) pass_threshold_pct 70 is NOT used here — the real exam is scaled 100-900 with a 750 pass mark and no public raw conversion; the manifested 81 is a documented linear proxy, (750-100)/(900-100) = 81.25% rounded to 81, chosen over guessing because the scale floor is 100, not 0. Oliver ratifies or replaces it; (b) jealarue-exam90 carries no licence file — classification-only registration flagged in derivation/sources.md; if it fails Gate 1 the build degrades to blueprint + 10 official items (convergence consequence in master-inventory.md); (c) blueprint revision: third-party sites reference a 'Version 6.0' of the objectives document — every secondary description reports identical domains/weights/test details, but the revision string must be confirmed from CompTIA's own download before publication. S3 decisions: bank 122 = 1.36x exam (the size in the 1.3-1.4x band whose largest-remainder allocation 15/27/22/34/24 is tie-free, per LEARNING L-0008; 125 has a d2/d3 boundary tie); the 237 Artefact-B concept rows were merged to 122 family-level concepts (merge-to-fit chosen over weight-proportional selection because the validator's concept-inventory check pins per-domain concept counts to bank_items — merge log in derivation/master-inventory.md); format_mix is 78 SC + 9 MR + 3 SM — MR at 10% (observed 2.8% in the only sizeable source is flagged there as almost certainly below the real paper; CompTIA publishes no ratio), select_count widened to [2,3] because CompTIA uses select-two AND select-three stems (S1 format profile), SM seated one each in d2/d4/d5 at the artefact-named PBQ-approximation seats (indicator classification, log-source mapping, agreement-type mapping); pattern caps E01 0.35 (39-40% of wrong options in both sources — capped to force scenario reasoning in), D03/D04 0.10 registry-standard; E04 acronym-decoy-expansion is banned structurally by omission from authoring.json pattern_extensions; near_duplicate_jaccard 0.4 (ccar-p/aif-c01 precedent); layers.syllabus_rules false because the objectives document IS the syllabus (1:1 domain mapping, Artefact B) and a rules layer would duplicate concepts.json. Authoritative schema: methodology/schema/manifest.schema.json.",
+  "slug": "sy0-701",
+  "title": "CompTIA Security+ (SY0-701)",
+  "vendor": "CompTIA",
+  "status": "in_review",
+  "version": "0.1.0",
+  "blueprint_version": "5.0 (© 2023)",
+  "source_checked_date": "2026-08-16",
+  "exam": {
+    "item_count": 90,
+    "time_limit_minutes": 90,
+    "pass_threshold_pct": 81
+  },
+  "bank": {
+    "item_count": 122
+  },
+  "domains": [
+    {
+      "id": "d1",
+      "title": "General Security Concepts",
+      "weight_pct": 12,
+      "exam_items": 11,
+      "bank_items": 15,
+      "format_mix": { "single_choice": 10, "multiple_response": 1, "scenario_matching": 0 }
+    },
+    {
+      "id": "d2",
+      "title": "Threats, Vulnerabilities, and Mitigations",
+      "weight_pct": 22,
+      "exam_items": 20,
+      "bank_items": 27,
+      "format_mix": { "single_choice": 17, "multiple_response": 2, "scenario_matching": 1 }
+    },
+    {
+      "id": "d3",
+      "title": "Security Architecture",
+      "weight_pct": 18,
+      "exam_items": 16,
+      "bank_items": 22,
+      "format_mix": { "single_choice": 15, "multiple_response": 1, "scenario_matching": 0 }
+    },
+    {
+      "id": "d4",
+      "title": "Security Operations",
+      "weight_pct": 28,
+      "exam_items": 25,
+      "bank_items": 34,
+      "format_mix": { "single_choice": 21, "multiple_response": 3, "scenario_matching": 1 }
+    },
+    {
+      "id": "d5",
+      "title": "Security Program Management and Oversight",
+      "weight_pct": 20,
+      "exam_items": 18,
+      "bank_items": 24,
+      "format_mix": { "single_choice": 15, "multiple_response": 2, "scenario_matching": 1 }
+    }
+  ],
+  "formats": {
+    "single_choice": { "options": 4 },
+    "multiple_response": { "options": 5, "select_count": [2, 3] },
+    "scenario_matching": { "min_options": 3, "min_scenarios": 3, "require_option_reuse": true }
+  },
+  "style": {
+    "locale": "en-US",
+    "emoji": false
+  },
+  "validation": {
+    "pattern_caps": {
+      "D03": 0.1,
+      "D04": 0.1,
+      "E01": 0.35
+    },
+    "near_duplicate_jaccard": 0.4
+  },
+  "layers": {
+    "syllabus_rules": false
+  },
+  "intro": {
+    "about": "CompTIA Security+ (SY0-701) validates the baseline skills a working security professional uses every day: assessing the security posture of an enterprise environment, recommending and implementing the right controls, monitoring and responding to incidents, and operating with an eye on governance, risk and compliance. Exam Objectives Version 5.0 defines five domains: General Security Concepts (12%), Threats, Vulnerabilities, and Mitigations (22%), Security Architecture (18%), Security Operations (28%), and Security Program Management and Oversight (20%).",
+    "audience": "Aimed at early-career security practitioners — security administrators, SOC and help-desk analysts stepping up, systems and network administrators taking on security duties — CompTIA recommends a minimum of two years of IT administration experience with a security focus. Security+ is a vocabulary-dense exam: it rewards candidates who can separate near-neighbour terms (IDS from IPS, containment from eradication, controller from processor) under a described situation, not recite definitions.",
+    "materials": [
+      {
+        "title": "90-question practice form",
+        "description": "Weighted to Exam Objectives Version 5.0 across all five domains and drawn from a 122-item originally-authored bank — matching the vendor's stated maximum of 90 questions in 90 minutes."
+      },
+      {
+        "title": "Three question formats, with performance-based questions approximated",
+        "description": "Single choice and select-two/select-three multiple response match the real multiple-choice mechanics. The real exam's interactive performance-based questions (PBQs) are approximated as scenario-matching and configuration-reading items — the format coverage note below carries the full disclosure."
+      },
+      {
+        "title": "Review dashboard and rationales",
+        "description": "Per-domain scoring against an 81% threshold (a documented raw-score proxy for the real exam's scaled 750-of-900 pass mark), plus an explanation for the key and every distractor on submission, phrased in the objectives' own vocabulary so a miss traces back to your study material."
+      }
+    ],
+    "official_resources": [
+      {
+        "label": "CompTIA Security+ — official certification page",
+        "url": "https://www.comptia.org/en-us/certifications/security/"
+      },
+      {
+        "label": "CompTIA Security+ (V7) practice questions — free, no sign-in",
+        "url": "https://www.comptia.org/en-us/certifications/security/practice-questions/"
+      }
+    ],
+    "disclaimer": "An independent, originally-authored study tool for personal exam preparation — not affiliated with, endorsed by, or connected to CompTIA, Inc. or Pearson VUE. \"CompTIA\", \"Security+\" and \"CompTIA Security+\" are trademarks of CompTIA, Inc. Every question was written clean-room from documented derivation artefacts against the public exam objectives, with prior practice sets analyzed for classification only, exactly as this package's provenance records state. Nothing here is drawn from the live SY0-701 item bank: real exam content is confidential under the CompTIA Candidate Agreement, and CompTIA's own Authorized Materials Use Policy revokes certifications earned with brain-dump material — so never share live questions here, for your own certification's sake as much as ours."
+  },
+  "format_coverage": "The real SY0-701 exam uses a maximum of 90 questions in 90 minutes and two item classes: multiple-choice (including select-two and select-three stems) and performance-based questions (PBQs). CompTIA publishes no count or weighting for PBQs. This mock supports three formats and approximates as follows. Multiple choice with one correct response maps exactly to single_choice, four options, as in every item of CompTIA's own free practice set. Select-two and select-three multiple choice map exactly to multiple_response (five options, all-or-nothing; the stem states the count). Performance-based questions are NOT supported: a PBQ is an interactive simulation — building a firewall ruleset, dragging controls onto a topology, classifying log lines, completing a matrix — and Mockka has no simulation surface. PBQ reasoning is approximated two ways here, both of them demonstrated by CompTIA's own sample set: as scenario_matching where the task is genuinely a mapping (investigative questions onto log sources; situations onto agreement types; observed indicators onto attacks), and as scenario-led single_choice over candidate configurations where the task has one defensible outcome — CompTIA's own sampler does exactly this with an access-list item whose four options are the same rule with source/destination and permit/deny transformed. The consequence, stated plainly: the underlying judgment is rehearsed, the interaction is not. You will meet the drag-and-drop and configuration-editor interfaces for the first time in the real exam, and the real paper's PBQs typically carry more marks per item than a multiple-choice question. Note also that the vendor states 'maximum of 90' questions, so a live form may be shorter than this mock, and the real pass mark is 750 on a 100-900 scale — the 81% threshold here is a linear proxy for that scaled mark, not a vendor-published raw percentage.",
+  "provenance": {
+    "sources": [
+      {
+        "id": "comptia-sy0701-objectives",
+        "type": "public_blueprint",
+        "citation": "CompTIA Security+ SY0-701 Certification Exam: Exam Objectives, Version 5.0, © 2023 CompTIA, Inc. Published by the certification owner; read in full 2026-08-16 and verified byte-identical across CompTIA's own Contentful CDN and an authorised partner mirror (sha256 64e5a75d…, 21 pages). Supplies the domain list and weights, the 28 objectives and their enumerated vocabulary, test details and the acronym list. Distilled to derivation/source-comptia-sy0701-objectives.md."
+      },
+      {
+        "id": "comptia-practice-v7",
+        "type": "public_practice_set",
+        "citation": "CompTIA, Inc., official free 'Security+ Practice Test (V7)' — 10 questions with answer key, published at comptia.org with no paywall and no sign-in, accessed 2026-08-16. Used under the clean-room rule for analytical classification only — per-item concept mapping and distractor-pattern frequencies in derivation/source-comptia-practice-v7.md. No text reused."
+      },
+      {
+        "id": "jealarue-exam90",
+        "type": "public_practice_set",
+        "citation": "jealarue, SY0-701 practice-exam data in the public GitHub repository jealarue/exam90 (145 items), accessed 2026-08-16. No licence file — author retains copyright; registered on a public-publication basis and flagged for Gate 1. Dump-screened against the official sample corpus and the recalled-item corpus with the evidence recorded. Used under the clean-room rule for analytical classification only — derivation/source-jealarue-exam90.md. No text reused."
+      }
+    ],
+    "nda_statement": "This package contains no live exam content. Nothing here is drawn from the SY0-701 item bank, and no question reproduces an item encountered in a real sitting. Actual exam content is confidential and protected by the CompTIA Candidate Agreement; CompTIA's own Authorized Materials Use Policy states that candidates who prepare with unauthorised 'brain dump' material have their certifications revoked and are suspended from future testing. Sources whose items trace back to candidate recall of a live sitting were screened out at intake and are listed with evidence in derivation/sources.md. This is an independent study tool: it is not affiliated with, endorsed by, or connected to CompTIA, Inc. or Pearson VUE. \"CompTIA\", \"Security+\" and \"CompTIA Security+\" are trademarks of CompTIA, Inc."
+  }
+}

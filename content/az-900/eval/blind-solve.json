@@ -1,0 +1,855 @@
+{
+  "$comment": "S5 round 1 blind solve - az-900. Examiner: exam-examiner, fresh session (authored nothing in this bank; independence precondition of methodology/05-eval-rubric.md #independence checked and met). Date 2026-08-18 (SGT). Keyless form generated from questions.json by stripping answer, rationale, distractor_patterns, primary_concept, secondary_concepts, keywords, theme and vertical - keeping only id, domain, type, question, options / matching_options / scenarios and select_count. Every item was answered with confidence and a one-line reasoning BEFORE any key, rationale or metadata was read. Codex advisory cross-solve is advisory-skipped this round (see codex_cross_solve below); per methodology/05-eval-rubric.md #codex a missing advisory instrument is recorded, not blocking.",
+  "slug": "az-900",
+  "round": 1,
+  "date": "2026-08-18",
+  "bank_commit": "f649943",
+  "accuracy": {
+    "items": 65,
+    "matched": 65,
+    "missed": 0,
+    "confidence": {
+      "high": 64,
+      "medium": 1,
+      "low": 0
+    }
+  },
+  "codex_cross_solve": {
+    "status": "advisory-skipped",
+    "attempts": [
+      {
+        "probe": "which codex",
+        "result": "not on PATH"
+      },
+      {
+        "probe": "~/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex --version",
+        "result": "codex-cli 0.148.0-alpha.9"
+      },
+      {
+        "probe": "codex login status",
+        "result": "Not logged in"
+      },
+      {
+        "probe": "codex exec (single trivial prompt)",
+        "result": "401 Unauthorized - Missing bearer or basic authentication in header (api.openai.com/v1/responses)"
+      }
+    ],
+    "reason": "The bundled CLI exists but has no authenticated session. Establishing one requires an interactive login outside this session's authority (free-first rule: no signups or account actions without Oliver).",
+    "consequence": "No three-way Claude/Codex/key disagreement matrix this round. The Gate 2 sample carries no cross-model signal, so a convergent blind spot shared by author and examiner (both Claude) is NOT excluded by the 65/65 agreement below. The Gate 2 human deep read is the compensating control.",
+    "retry_path": "If Oliver runs `codex login` before sign-off, re-feed the same keyless form (regenerable from questions.json by the strip described in $comment) and populate items[].codex before Gate 2."
+  },
+  "items": [
+    {
+      "id": "1.01",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Cloud computing is on-demand compute/storage/network delivered over the internet from provider-operated capacity; colocation, shared hosting and on-prem virtualization are not.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.02",
+      "chosen": "B,D",
+      "keyed": "B,D",
+      "confidence": "high",
+      "reasoning": "Under PaaS the customer always keeps information/data and accounts/identities; OS, runtime/middleware and physical security sit with the provider.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.03",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Single-tenant dedicated environment is a private cloud regardless of whether a third party hosts and operates the facility.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.04",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Records legally pinned on-premises plus a seasonal public burst is the textbook hybrid pattern.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.05",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Consumption-based means no upfront purchase, charges tracking actual use, and a bill that falls when usage stops.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.06",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Selling owned hardware and renting monthly services is precisely the CapEx-to-OpEx shift.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Flat, continuous, predictable 24/7 load is the canonical reserved-term case; spot suits interruptible work, not a core ledger.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.08",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Checkpointed, resumable, deadline-free batch is the canonical interruptible/spot-capacity workload.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.09",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Serverless removes infrastructure duties but never the customer's code, its configuration and its data.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.10",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "High availability = redundant components so the service survives a component failure, expressed as an uptime target; backup and monitoring are different concerns.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.11",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "A 45x burst within minutes then shrink back is horizontal scale-out/in; a vertical resize cannot elastically meet that shape.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.12",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Reliability is recovering from failure and continuing; predictability is knowing performance and cost in advance - option A is the same pair swapped.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.13",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "The security benefit is inherited platform capability (policy, patch currency, network protection), not a transfer of accountability.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.14",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Manageability = administering the estate remotely through the platform's own tooling and automation.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.15",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "In IaaS the customer owns the guest OS and everything above it; the provider owns physical hosts, storage, network and hypervisor.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.16",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Developers writing their own app with nobody on OS/runtime/middleware is the PaaS definition; SaaS would mean not writing it at all.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.17",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Licensing a finished product and configuring only features and users is SaaS - least responsibility and least control.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "1.18",
+      "chosen": {
+        "s1": "C",
+        "s2": "A",
+        "s3": "B",
+        "s4": "C"
+      },
+      "keyed": {
+        "s1": "C",
+        "s2": "A",
+        "s3": "B",
+        "s4": "C"
+      },
+      "confidence": "high",
+      "reasoning": "Finished product configured by seats = SaaS; vendor-pinned OS patch level the customer must control = IaaS; deploy custom code with no runtime/middleware duty = PaaS; licensed ready-to-use accounting = SaaS.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.01",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A region is a set of datacenters on a low-latency network; region pairs sit at distance for replication and receive updates sequentially, not simultaneously.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.02",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "A sovereign region is a nationally isolated Azure instance with its own boundary for government/residency obligations, not a customer-built private cloud.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.03",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Surviving loss of a whole datacenter including power and cooling needs availability zones; availability sets only protect within one datacenter.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.04",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A resource belongs to exactly one resource group, and resources may live in regions other than their group's location.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.05",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "The subscription is the billing and access boundary; multiple subscriptions can trust a single Entra tenant so identities stay shared.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.06",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Management groups sit above subscriptions and inherit assignments to current and future subscriptions - least ongoing effort at forty subscriptions.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Custom OS configuration = VM, portable packaged image = container, event-triggered snippet = Functions.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.08",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Identical instances whose count rises and falls automatically is the Virtual Machine Scale Sets definition; availability sets do not change instance count.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.09",
+      "chosen": "A,C",
+      "keyed": "A,C",
+      "confidence": "high",
+      "reasoning": "A VM cannot exist without an OS managed disk and a NIC attached to a virtual network; public IP, Bastion and availability set are optional (and a public IP is excluded here).",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.10",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Push code and let the platform run OS, patching and web plumbing, without adopting images, is the managed web app (App Service) option.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.11",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "A virtual network is isolated by default, its subnets route to each other automatically, and Azure DNS is an Azure resource managed like any other.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.12",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Constant traffic with predictable latency and no public-internet path is exactly ExpressRoute's private circuit; VPN options ride the internet.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.13",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "A private endpoint gives the service a private address inside the VNet reached over the Microsoft backbone, allowing public access to be disabled.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.14",
+      "chosen": {
+        "s1": "C",
+        "s2": "A",
+        "s3": "D",
+        "s4": "B",
+        "s5": "C"
+      },
+      "keyed": {
+        "s1": "C",
+        "s2": "A",
+        "s3": "D",
+        "s4": "B",
+        "s5": "C"
+      },
+      "confidence": "high",
+      "reasoning": "Massive unstructured objects = Blob; SMB/UNC shared drive = Files; persistent volume attached to a VM = Disk; small transient messages = Queue; large write-once binary exports = Blob.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.15",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Tier choice follows access frequency over the data's lifetime - hot while read constantly, then cool/archive - not the data's importance.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.16",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Redundancy should match replaceability: regenerable telemetry can drop to LRS while irreplaceable contract records stay geo-redundant.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.17",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Continuous synchronization between an on-premises Windows file server and Azure Files is Azure File Sync; AzCopy and Storage Explorer are one-off transfer tools.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.18",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "900 TB against a 40 TB window is the offline case - physically ship Data Box appliances.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.19",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Legacy domain-join and older domain protocols without running domain controllers is Microsoft Entra Domain Services.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.20",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Proving who you are (password plus one-time code) is authentication; deciding what you may see (own branch only) is authorization.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.21",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "External identities / B2B collaboration lets partners work using accounts they already own, with no account creation in the host tenant.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.22",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Conditional Access evaluates signals such as device state and location at sign-in and requires an extra control before granting access.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.23",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Azure RBAC assignments are additive and inherited downward: Reader over the subscription plus Contributor on one group yields read everywhere, write in that group.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.24",
+      "chosen": "C,E",
+      "keyed": "C,E",
+      "confidence": "high",
+      "reasoning": "Zero Trust's own principles are verify explicitly and least-privilege/just-in-time access; trusted internal network and a doubled perimeter are the model it replaces, and layered defence is defence-in-depth.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "2.25",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "medium",
+      "reasoning": "Posture assessment plus threat protection plus regulatory compliance is Microsoft Defender for Cloud - but option C is that product's own former name, so I am picking on current canonical vocabulary rather than on a clean conceptual separation.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.01",
+      "chosen": "A,D",
+      "keyed": "A,D",
+      "confidence": "high",
+      "reasoning": "Deallocation stops compute metering only: provisioned managed disks and a reserved public IP keep billing on their own meters.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.02",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Reads crossing a region boundary all day is outbound data transfer, which meters on its own line; ingress and resource groups are not billed.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.03",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Estimating a not-yet-deployed workload's monthly cost from proposed services, sizes and regions is the pricing calculator; cost analysis only reads charges already incurred.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.04",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Explaining charges already incurred by resource, service and date is cost analysis.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.05",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Being warned while spend climbs toward an agreed ceiling is a budget with consumption alerts.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.06",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Tags carry cost attribution across resource groups that do not match the reporting dimension, and cost reports group by tag without rebuilding the estate.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.07",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Discovering, mapping, classifying and tracking data as it moves is Microsoft Purview; Defender for Cloud handles infrastructure posture, which the stem excludes.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.08",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Refusing non-compliant deployments at creation time is Azure Policy with an allowed-locations rule; locks block deletion or change, not region choice.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.09",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Azure Policy evaluates existing resources for compliance state as well as denying future non-compliant deployments - one control answers both asks.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.10",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "A delete lock refuses deletion for every principal, including owners, until the lock is deliberately removed.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.11",
+      "chosen": {
+        "s1": "C",
+        "s2": "A",
+        "s3": "B",
+        "s4": "C"
+      },
+      "keyed": {
+        "s1": "C",
+        "s2": "A",
+        "s3": "B",
+        "s4": "C"
+      },
+      "confidence": "high",
+      "reasoning": "Region restriction and mandatory tag enforcement are Azure Policy; delete protection above owner rights is a resource lock; read-but-not-change is an RBAC role assignment.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.12",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "The portal's strength is visual exploration and ad-hoc inspection; repetitive builds and bulk changes belong in code or CLI, and screenshots are not a definition.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.13",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Nothing installed, no stored credentials, already signed in to the browser is Azure Cloud Shell.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.14",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Inventorying and governing on-premises and other-cloud servers with Azure tooling, without moving them, is Azure Arc.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.15",
+      "chosen": "B,E",
+      "keyed": "B,E",
+      "confidence": "high",
+      "reasoning": "IaC buys repeatable identical deployments from one declaration and a versioned, reviewable artifact; it does not remove approvals, transfer responsibility, or self-heal drift unattended.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.16",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Portal, CLI and scripts all submit to Azure Resource Manager, the single control plane where RBAC and policy are enforced.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.17",
+      "chosen": "B",
+      "keyed": "B",
+      "confidence": "high",
+      "reasoning": "Personalized, prioritized recommendations across cost, security, reliability and operations derived from the actual estate is Azure Advisor.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.18",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Service Health is subscription-scoped platform incident and maintenance reporting; the public status page is not scoped, and resource health covers one resource.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.19",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "One platform collecting and correlating metrics and logs across the whole estate and acting on them is Azure Monitor; Log Analytics and Application Insights are parts of it.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.20",
+      "chosen": "A",
+      "keyed": "A",
+      "confidence": "high",
+      "reasoning": "Interrogating already-collected log data interactively and refining the query is Log Analytics.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.21",
+      "chosen": "D",
+      "keyed": "D",
+      "confidence": "high",
+      "reasoning": "Threshold detection plus automatic remediation is an Azure Monitor alert rule with an action; dashboards and scheduled reads are human-in-the-loop.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    },
+    {
+      "id": "3.22",
+      "chosen": "C",
+      "keyed": "C",
+      "confidence": "high",
+      "reasoning": "Infrastructure metrics are normal but in-application requests and page usage are in question - that is Application Insights.",
+      "match": true,
+      "codex": {
+        "chosen": null,
+        "status": "advisory-skipped"
+      }
+    }
+  ]
+}

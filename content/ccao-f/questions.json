@@ -2651,10 +2651,10 @@
       "type": "single_choice",
       "question": "An audit coordinator at a food safety auditing firm improved the firm's report drafts in one afternoon: the prompt was rewritten, a knowledge file of past audit reports was added, and the Project was moved to a higher model tier. The drafts are visibly better, and the partners want to know what worked so it can be applied to the other report types. What should the coordinator do?",
       "options": {
-        "A": "Report that the combination works, as the three changes together produced the better drafts",
+        "A": "Report that the combination works, as the three changes together produced the better drafts the partners saw",
         "B": "Rebuild the baseline and reintroduce the three changes one at a time to see which carries the gain",
-        "C": "Credit the tier move, as a model change is the largest of the three levers pulled that afternoon",
-        "D": "Ask Claude which of the three changes improved its drafts, and pass that answer to the partners"
+        "C": "Credit the tier move, as a model change is by far the largest of the three levers pulled that afternoon",
+        "D": "Ask Claude which of the three changes improved its drafts, and pass that answer straight to the partners"
       },
       "answer": "B",
       "distractor_patterns": {
@@ -2753,10 +2753,10 @@
       "type": "single_choice",
       "question": "A scheduler at a landscaping services franchise finds a phrasing that makes Claude include crew size and equipment in every route-plan summary, which the earlier phrasing kept dropping. It works reliably. Six other schedulers across the franchise hit the same problem every week. What should be done with the fix?",
       "options": {
-        "A": "Post the working phrasing in the team chat, where any scheduler can search for it later",
-        "B": "Leave it as know-how, since the schedulers who need it will work the phrasing out as they go",
+        "A": "Post the working phrasing in the team chat, where any of the other schedulers can search for it later",
+        "B": "Leave it as know-how, since the schedulers who need it will work the phrasing out for themselves",
         "C": "Rebuild the route-planning Project from scratch around the new phrasing",
-        "D": "Write it into the Project instructions or a Skill, so every scheduler gets it by default"
+        "D": "Write it into the Project instructions or a Skill, so that every scheduler gets it by default"
       },
       "answer": "D",
       "distractor_patterns": {

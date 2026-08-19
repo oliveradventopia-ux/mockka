@@ -190,7 +190,7 @@ test('a scenario-matching item mapping scenarios to options in listed order is f
 
 /* -------------------------------------------------------- answer-length-cue */
 
-test('a keyed option far longer than every distractor trips the error tier (warn level this wave)', () => {
+test('a keyed option far longer than every distractor trips the error tier', () => {
   const bank = [
     sc('long1', 'B', {
       A: 'Provision a self-managed cluster for the workload',
@@ -203,9 +203,12 @@ test('a keyed option far longer than every distractor trips the error tier (warn
     }),
   ];
   const got = findings(scratch(bank), 'answer-length-cue');
-  // One length finding (error tier) + one rider finding ("since" only in the key).
+  // One length finding (error tier, promoted 2026-08-19) + one rider finding
+  // ("since" only in the key), which stays warn until the seven-bank rework wave.
   assert.equal(got.length, 2);
-  assert.ok(got.every((f) => f.level === 'warn'));
+  const byTier = Object.fromEntries(got.map((f) => [f.level, f]));
+  assert.ok(byTier.error, 'the over-150% ratio finding is error tier');
+  assert.ok(byTier.warn, 'the rider finding remains warn tier');
   const messages = got.map((f) => f.message).join('\n');
   assert.match(messages, /long1: keyed option is \d+% the length of the longest distractor \(error-tier bound 150%\)/);
   assert.match(messages, /long1: only the keyed option carries a justification rider/);

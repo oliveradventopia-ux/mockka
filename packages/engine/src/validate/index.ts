@@ -863,9 +863,13 @@ const CHECKS: Check[] = [
           const ratio = keyLen / maxD;
           const pct = Math.round(ratio * 100);
           if (ratio > errR) {
+            // Promoted warn -> error 2026-08-19: ccar-p was the last violator and
+            // its trim wave landed, so every bank clears this bound. The rank
+            // statistic (key-length-rank-share) stays warn until the seven-bank
+            // rework wave; see ADR-0006.
             report(
               'answer-length-cue',
-              'warn',
+              'error',
               `${q.id}: keyed option is ${pct}% the length of the longest distractor ` +
                 `(error-tier bound ${Math.round(errR * 100)}%) — trim the key's justification ` +
                 'riders into rationale.correct, or argue the distractors up to parity',

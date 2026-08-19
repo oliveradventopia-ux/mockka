@@ -16,7 +16,7 @@
       "options": {
         "A": "Computing spend becomes a fixed annual fee that stays flat no matter how much capacity the company consumes",
         "B": "Up-front purchases of owned capacity are replaced with on-demand resources that are started and stopped as demand requires",
-        "C": "AWS takes over responsibility for operating and securing everything the company runs, including its applications and data",
+        "C": "AWS takes over responsibility for operating and securing everything the company runs, including its applications, data and configuration",
         "D": "The strongest argument is that most large suppliers in the building trade have already moved their systems to the cloud"
       },
       "answer": "B",
@@ -221,7 +221,7 @@
       "question": "The board of an agricultural seed distributor has approved a move to AWS and assumes this means shutting the data center and moving every system in a single weekend cutover. What should the IT director explain about how organizations adopt the cloud?",
       "options": {
         "A": "Adoption follows a chosen strategy: the organization selects among cloud adoption strategies and sequences workloads deliberately",
-        "B": "A single undifferentiated cutover is correct, since running cloud and data-center systems side by side only adds confusion",
+        "B": "A single undifferentiated cutover is correct, since running cloud and data-center systems side by side only adds cost and confusion",
         "C": "Adoption should be postponed until every system has been rewritten for the cloud, and then completed in one final step",
         "D": "Every system must be moved unchanged first in all cases, because that is the universally recommended migration practice"
       },
@@ -632,7 +632,7 @@
       "question": "A community college district's auditor insists that every control in the security plan name exactly one owner. The district's cloud lead objects, pointing to patch management, where AWS patches the platform beneath the workload and the district patches its own guest instances. What does the shared responsibility model say about controls of this kind?",
       "options": {
         "A": "They are shared controls: AWS and the customer each carry the control at a different layer",
-        "B": "They belong to AWS, whose patching of the underlying platform also covers the guest instances",
+        "B": "They belong to AWS, whose patching of the platform also covers the guest instances",
         "C": "They should be recorded as exceptions and disclosed to the auditor as controls without an owner",
         "D": "They are inherited controls, which the customer takes over in full on the day it adopts the platform"
       },
@@ -1007,7 +1007,7 @@
         "A": "Closing the AWS account and changing the registered account name and email address",
         "B": "Creating IAM users and attaching the managed policies each laboratory team needs",
         "C": "Viewing the account's bills and downloading the monthly invoices for the finance team",
-        "D": "Deleting an Amazon S3 bucket that holds the lab's archived certification records"
+        "D": "Deleting an Amazon S3 bucket that still holds the lab's archived certification records"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -1107,7 +1107,7 @@
         "A": "Each employee record is copied into IAM, which becomes the firm's system of record",
         "B": "Employees sign in against the corporate directory, which stays where the identity lives",
         "C": "The firm has to replace its corporate directory with an AWS-hosted one before sign-in works",
-        "D": "Federating removes the need to define AWS permissions for the employees who sign in"
+        "D": "Federating removes the need to define AWS permissions for each of the employees who sign in"
       },
       "answer": "B",
       "distractor_patterns": {
@@ -1177,7 +1177,7 @@
       "question": "An exhibition stand builder has one part-time security engineer who wants a standing source of AWS's own written analysis of new security features and practices, as reading material rather than an answer to a specific question. Which destination fits that need?",
       "options": {
         "A": "The AWS Knowledge Center, which answers the questions AWS customers ask most often",
-        "B": "The AWS Security Center, the landing page gathering bulletins and compliance material",
+        "B": "The AWS Security Center, the landing page gathering bulletins, advisories and compliance material",
         "C": "A case raised in AWS Support Center, answered in writing by an AWS support engineer",
         "D": "The AWS Security Blog, where AWS publishes its analysis of security features and practices"
       },
@@ -1191,7 +1191,7 @@
         "correct": "Among the security-related documentation that AWS provides, each destination answers a different need. Ongoing analysis of new features and practices, written by AWS and published as reading material, is what the blog carries - which is what a single engineer keeping current actually wants.",
         "distractors": {
           "A": "The AWS Knowledge Center is organized around frequently asked questions, so it answers a question already formed rather than supplying reading.",
-          "B": "The AWS Security Center gathers bulletins and compliance material, which is reference rather than the running commentary described.",
+          "B": "The AWS Security Center gathers bulletins, advisories and compliance material, which is reference rather than the running commentary described.",
           "C": "Opening a case routes a specific problem to a support engineer, and no case is open here; it also puts a wait in front of public material."
         }
       }
@@ -1277,7 +1277,7 @@
       "options": {
         "A": "Write a runbook listing each console step in order so every build is done the same way",
         "B": "Define the stack as infrastructure as code (IaC) and deploy the same template per contract",
-        "C": "Keep building in the AWS Management Console and have a second engineer review each result",
+        "C": "Keep building in the AWS Management Console and have a second engineer review each finished stack",
         "D": "Use the AWS CLI interactively for each build, which is quicker than clicking through screens"
       },
       "answer": "B",
@@ -1514,7 +1514,7 @@
       "type": "single_choice",
       "question": "A home appliance insurer runs its claims database as a self-administered engine on Amazon EC2. Two of its three database administrators are leaving, and the remaining one spends most of each week on patching, backup verification, and failover drills. The engine and the application stay as they are. What changes if the insurer moves to a managed database service?",
       "options": {
-        "A": "Nothing operationally: patching, backups, and failover stay with the insurer on any service",
+        "A": "Nothing operationally: patching, backups, and failover drills stay with the insurer on any service",
         "B": "The insurer keeps those duties and gains a console that makes each of them quicker to do",
         "C": "The claims application has to be rewritten for the managed engine before it can move",
         "D": "AWS takes over patching, backup, and availability work, and the insurer keeps data and access"
@@ -1548,7 +1548,7 @@
       "type": "single_choice",
       "question": "An ice cream distribution company stores freezer telemetry from its delivery trucks as key-value records: hundreds of millions of tiny items, written constantly, always read back by a single key, with no joins and no reporting across them. Which database service fits the workload?",
       "options": {
-        "A": "Amazon RDS, whose relational engines can hold the records in one wide table",
+        "A": "Amazon RDS, whose relational engines can hold the records in a wide table",
         "B": "Amazon Aurora, which scales the same relational engine further than a standard instance",
         "C": "Amazon DynamoDB, a NoSQL service built for key-value records at this volume",
         "D": "Amazon ElastiCache, holding the telemetry in memory so each key is read quickly"
@@ -1584,7 +1584,7 @@
         "A": "AWS SCT to convert the schema, then AWS DMS to move the case records across",
         "B": "AWS DMS alone, which converts the schema as part of moving the records across",
         "C": "AWS Backup, restoring a backup of the office database into the new engine",
-        "D": "AWS Storage Gateway, presenting the office database files to the new engine"
+        "D": "AWS Storage Gateway, presenting the office database files directly to the new engine"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -1795,7 +1795,7 @@
       "options": {
         "A": "AWS Backup, which centralizes backup policy and reporting across those services",
         "B": "AWS Storage Gateway, which gives the kitchen servers a cached path to cloud storage",
-        "C": "Amazon S3 lifecycle policies on a bucket that each of the three teams copies into",
+        "C": "Amazon S3 lifecycle policies on a bucket that the three teams copy into",
         "D": "Managed services, whose backups AWS already takes and retains on the account's behalf"
       },
       "answer": "A",
@@ -2281,7 +2281,7 @@
         "A": "AWS Marketplace, where the chain subscribes to the migration software it needs",
         "B": "AWS Professional Services, or a partner from the AWS Partner Network",
         "C": "AWS Business Support, whose engineers deliver the migration under the plan",
-        "D": "AWS Trusted Advisor, whose recommendations stand in for a delivery plan"
+        "D": "AWS Trusted Advisor, whose recommendations replace a delivery plan"
       },
       "answer": "B",
       "distractor_patterns": {

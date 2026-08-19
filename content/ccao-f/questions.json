@@ -16,8 +16,8 @@
       "type": "single_choice",
       "question": "A banquet sales coordinator at a hotel banquet and catering sales office is setting up a prompt that will draft proposals for wedding clients. A colleague shares a long template prompt admired across the team for its confident, polished wording, and the coordinator must decide what standard to judge a prompt against before adopting one. Which standard is the most appropriate?",
       "options": {
-        "A": "Judge a prompt by whether the proposals it produces are fit for the business purpose the team needs",
-        "B": "Adopt the shared template on the strength of the results colleagues across the team vouch for",
+        "A": "Judge a prompt by its proposals, since fitness for the team's business purpose is the standard",
+        "B": "Adopt the shared template on the strength of the results colleagues across the team have vouched for",
         "C": "Judge the prompt by how confident and polished the drafts it returns sound on a first read",
         "D": "Prefer the longest, most detailed prompt available, since detailed prompts are accepted best practice"
       },
@@ -228,7 +228,7 @@
       "options": {
         "A": "Read the draft as a diagnostic, identify the one component it points at, and change only that",
         "B": "Rewrite the role, context, and format lines together so the next round improves on every front at once",
-        "C": "Swap in a prompt another team praises for its policy summaries and run that one instead",
+        "C": "Swap in a prompt another team praises for its policy summaries and run that one for this round instead",
         "D": "Stop iterating and write the summary by hand, treating the over-long draft as the tool's ceiling"
       },
       "answer": "A",
@@ -328,9 +328,9 @@
       "type": "single_choice",
       "question": "A development associate at an orchestra development office uses one heavily constrained prompt template — fixed structure, fixed tone, fixed length — for every task. It performs well on donor-report analysis, but when the associate uses it to brainstorm next season's fundraising campaign themes, every run returns the same three predictable ideas. What is the most appropriate adjustment?",
       "options": {
-        "A": "Keep maximum constraints on every task, as tightly specified prompts are accepted best practice",
-        "B": "Reuse whichever prompt produced last year's most admired campaign and adapt its wording",
-        "C": "Drop the constraints from every task's prompt so that no request is over-specified again",
+        "A": "Keep maximum constraints on every task, as tightly specified prompts are accepted best practice everywhere",
+        "B": "Reuse whichever prompt produced last year's most admired campaign and adapt its wording for this one",
+        "C": "Drop the constraints from every task's prompt, leaving the donor-report analysis as open as the brainstorming",
         "D": "Keep the constraints for the analysis work and grant the brainstorming prompt deliberate latitude"
       },
       "answer": "D",

@@ -2136,7 +2136,7 @@
       "question": "A resourcing coordinator at a recruitment process outsourcing provider wants Claude to summarize interview notes into a shortlist brief for the client's hiring manager. The provider's AI policy permits candidate-related work but requires every use case to be screened first, and the team has been treating that screen as a yes-or-no gate. How should the coordinator screen this use case?",
       "options": {
         "A": "Rule it inappropriate, as any work touching candidate material is off limits to AI",
-        "B": "Ask Claude to weigh the use case against the provider's policy and adopt the verdict it returns",
+        "B": "Ask Claude to weigh the use case against the provider's AI policy and treat the verdict it returns as the screening result",
         "C": "Approve it outright, as the briefs stay inside the account team and no candidate reads one",
         "D": "Score it on reversibility, consequence, human element and accountability, and land it as appropriate-with-review"
       },
@@ -2279,9 +2279,9 @@
       "question": "A research associate at an executive search firm discusses candidate dossiers with Claude across several surfaces during one search: a shared team workspace with Memory switched on, a connector into the firm’s document store, and a personal chat. The dossiers include compensation histories and references given in confidence. Which consideration should decide where this work happens?",
       "options": {
         "A": "Whether the surfaces sit under the firm's single enterprise agreement, which makes them equivalent",
-        "B": "Whether Memory can be cleared at the end of the search, once the dossiers have been discussed",
+        "B": "Whether Memory can be cleared at the end of the search, once all the dossiers have been discussed",
         "C": "Whether pasting short excerpts instead of whole dossiers keeps the volume of data low",
-        "D": "Where the dossier content comes to rest on each surface — retention, Memory, connector scope"
+        "D": "Where dossier content rests on each surface, since retention, Memory and connector scope differ"
       },
       "answer": "D",
       "distractor_patterns": {

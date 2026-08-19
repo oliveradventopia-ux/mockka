@@ -95,17 +95,16 @@ test('ccar-p surfaces its 27 known priority/convergence divergences as warnings,
   assert.equal(result.ok, true);
 });
 
-test('ccar-p runs every check except the publication preflight (status is in_review)', () => {
+test('ccar-p runs every check including the publication preflight (status is published)', () => {
   const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
   const result = validateExam(pkg, registry);
 
   // Check-count parity: everything the original hardcoded validate.mjs
   // enforced runs here as a manifest-driven check, plus the provenance layer.
-  // publication-preflight is gated on status === 'published'.
-  assert.deepEqual(
-    result.checksRun,
-    ALL_CHECKS.filter((c) => c !== 'publication-preflight'),
-  );
+  // ccar-p was published on 2026-08-19, so publication-preflight runs too —
+  // the full inventory with nothing gated out.
+  assert.deepEqual(result.checksRun, ALL_CHECKS);
+  assert.equal(result.ok, true);
 });
 
 test('intro presence ratchet: silent on draft, warn on in_review, error at the published preflight', () => {
@@ -195,9 +194,16 @@ test('a missing theme fails when authoring.json declares a theme set', () => {
   assert.match(messages, new RegExp(`${first.id.replace('.', '\\.')}: missing theme`));
 });
 
-test('a published package without eval artifacts fails the preflight', () => {
+test('a published package without eval artifacts fails the preflight', (t) => {
   const pkg = loadExam(join(ROOT, 'content'), 'ccar-p');
-  const published = { ...pkg, manifest: { ...pkg.manifest, status: 'published' as const } };
+  // Point the package at an empty scratch dir so the on-disk artifacts are
+  // genuinely absent. Every shipped package now carries them, so this test
+  // must construct the missing-artifact case rather than borrow it.
+  const published = {
+    ...pkg,
+    dir: scratchEvalDir(t, {}),
+    manifest: { ...pkg.manifest, status: 'published' as const },
+  };
   const result = validateExam(published, registry);
 
   assert.equal(result.ok, false);

@@ -36,7 +36,7 @@ pnpm validate     # validate all content packages (or: pnpm validate <slug>)
 pnpm typecheck    # tsc --noEmit
 pnpm test         # node --test (engine + contrast tests)
 pnpm build        # next build (prerenders every exam)
-pnpm gate         # validate + typecheck + test + build — run before any push
+pnpm gate         # validate + typecheck + test + exploit-scan + build — run before any push
 ```
 
 ## Testing

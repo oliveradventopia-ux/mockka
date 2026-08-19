@@ -2147,7 +2147,7 @@
         "A": "The incident should be recorded and brought to the next governance meeting for a decision on remediation",
         "B": "The model tier is the constraint, and a more capable model would have recognised the caller was not the account holder",
         "C": "The system prompt should state the identity-verification rule more emphatically than it currently does",
-        "D": "Safety is a stack of layers rather than a setting: training covers broad harm and never saw this utility's identity-verification rules, so that rule was enforced in no layer at all — which is the silent failure the layered model exists to prevent"
+        "D": "Safety is a stack of layers, not a setting: this rule was enforced in no layer at all"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2185,7 +2185,7 @@
       "options": {
         "A": "The retrieval corpus should be restricted to documents authored inside the operator's own organisation",
         "B": "Screening was applied at the wrong stage and should be relocated to the retrieval step instead",
-        "C": "The guarded path has only one of its three control points: input screening and tool-call authorization answer different questions from output screening, and the harm travelled the tool-call path, which was ungoverned",
+        "C": "The guarded path has only one of its three control points, and the harm travelled an ungoverned one",
         "D": "The output screening policy was too permissive and should be extended to cover shipment cancellations"
       },
       "answer": "C",
@@ -2221,7 +2221,7 @@
       "question": "A facilities management firm's maintenance assistant answers from a corpus that includes method statements supplied by contractors. A security review finds that one method statement contains text directing the assistant to disclose its configuration, and the assistant partially complied. Which design principle does this violate?",
       "options": {
         "A": "System prompts must be held encrypted so their contents cannot be disclosed",
-        "B": "Retrieved content is untrusted input: it must be structurally delimited as data and never granted instruction-level authority",
+        "B": "Retrieved content is untrusted input: data only, never instruction-level authority",
         "C": "A retrieval corpus must contain only documents authored inside the organisation",
         "D": "Retrieval must be suspended for any document that contains imperative sentences"
       },
@@ -2261,7 +2261,7 @@
         "B": "Set the temperature to zero so the assistant does not act on adversarial content",
         "C": "Place every irreversible operation behind an explicit approval gate that fails closed when the approval is absent",
         "D": "Move to a more capable model, since more capable models are not susceptible to injection",
-        "E": "Scope the tool surface to least privilege, so that amendment and unblinding are not available to the assistant's own credentials at all"
+        "E": "Scope the tool surface to least privilege"
       },
       "select_count": 2,
       "answer": [
@@ -2300,7 +2300,7 @@
       "question": "An online lender deploys an assistant that drafts responses to borrower complaints. The regulator's requirement is that no incorrect financial commitment reaches a borrower. Which TWO controls most directly address that requirement? (Select TWO)",
       "options": {
         "A": "Training complaint handlers to write better prompts for the assistant",
-        "B": "An output guardrail that blocks any commitment expressed outside approved policy language from being produced at all",
+        "B": "An output guardrail blocking commitments outside approved policy language",
         "C": "A standing disclaimer on each response noting that any figures given are indicative",
         "D": "Mandatory human review and approval before any drafted response is sent to a borrower",
         "E": "Logging every draft to a warehouse for review each quarter"
@@ -2396,7 +2396,7 @@
       "type": "single_choice",
       "question": "A municipal authority's procurement assistant can draft supplier correspondence, update internal records, and raise purchase orders below a delegated value threshold. The authority wants human oversight without slowing every interaction. Where should the approval gate sit?",
       "options": {
-        "A": "Before irreversible or high-impact external actions such as raising a purchase order, while low-risk drafting and internal record updates proceed automatically",
+        "A": "Before irreversible or high-impact external actions, letting low-risk steps proceed",
         "B": "Before any action the assistant itself flags as uncertain, with the assistant deciding which those are",
         "C": "After the purchase order has been raised, so that a reviewer can check it retrospectively",
         "D": "Before every action the assistant takes, so that nothing at all happens without approval"
@@ -2435,7 +2435,7 @@
       "type": "single_choice",
       "question": "A social services department is asked how it will demonstrate that its benefits-eligibility assistant treats applicants fairly. The team's position is that fairness is a property of the underlying model and therefore the provider's responsibility. What is wrong with that position?",
       "options": {
-        "A": "Unequal outcomes arise at points the department itself controls — the corpus, prompt framing, examples and routing — so fairness has to be instrumented locally, with every decision logged so that an explanation can be reconstructed",
+        "A": "Prompt framing and routing are department-controlled, so fairness is instrumented locally",
         "B": "The department should require a fairness certification from the provider before the assistant is deployed",
         "C": "Nothing — fairness originates in training data, which the department has no ability to influence",
         "D": "The department should publish the model's technical specification so that applicants can assess it for themselves"
@@ -2472,7 +2472,7 @@
       "type": "single_choice",
       "question": "A staffing agency's CV-screening assistant is found to score candidates from certain postcodes systematically lower than others. Names, ages and demographic fields had already been excluded from its input. What does this outcome most likely indicate, and what should follow?",
       "options": {
-        "A": "Proxy variables such as postcode can encode protected characteristics, so the response is structured bias evaluation across demographic slices, remediation of what it finds, and ongoing fairness monitoring",
+        "A": "Proxy variables such as postcode encode protected characteristics; evaluate bias across slices",
         "B": "The assistant is functioning as designed, since no protected attribute was supplied to it",
         "C": "The base model's training data is responsible and nothing can be addressed at the application layer",
         "D": "Scores should be withheld from recruiters so that the disparity cannot influence their decisions"
@@ -2512,7 +2512,7 @@
       "options": {
         "A": "Add a clause to the privacy notice stating that consultations may be analysed for quality purposes",
         "B": "Reduce the retention period the analytics platform applies to the transcripts it holds",
-        "C": "Apply data minimisation: redact or pseudonymise personal data before it leaves the system boundary, retaining only what the monitoring purpose actually requires",
+        "C": "Apply data minimisation: pseudonymise personal data before it leaves the boundary",
         "D": "Encrypt the transcripts in transit to the analytics platform"
       },
       "answer": "C",
@@ -2549,7 +2549,7 @@
       "options": {
         "A": "Which adoption metrics will be reported to the board once advisers are using it",
         "B": "Whether advisers can export the assistant's answers into client-facing reports",
-        "C": "Whether every component in the data path — the model, retrieval, logging and any subprocessor — meets the applicable obligations, with the agreements in place before client data flows through any of them",
+        "C": "Whether every subprocessor in the data path meets the obligations, agreed in advance",
         "D": "Whether the assistant cites the source record behind each figure it quotes"
       },
       "answer": "C",
@@ -2587,7 +2587,7 @@
         "A": "A named owner for each control, so that responsibility for it sits with a person rather than with a document",
         "B": "A copy of the architecture document lodged with the regulator in advance of the audit",
         "C": "A legal opinion confirming that the regulation applies to the charity in the first place",
-        "D": "A living evidence artifact for each control, revalidated over time, because an auditor accepts proof that a control is operating rather than a description of it",
+        "D": "A living evidence artifact per control, revalidated",
         "E": "A summary of the regulation circulated to everyone working in fundraising"
       },
       "select_count": 2,

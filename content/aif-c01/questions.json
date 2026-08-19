@@ -1222,9 +1222,9 @@
       "type": "single_choice",
       "question": "A municipal water utility has built retrieval over its maintenance manuals: documents are chunked and embedded, and the team must now choose where the embeddings will be stored and searched. The team already operates PostgreSQL databases and wants to stay close to that skill set. Which choice fits?",
       "options": {
-        "A": "Amazon RDS for PostgreSQL with vector search capability, one of the AWS vector-store options",
+        "A": "Amazon RDS for PostgreSQL with vector search capability, selected from the AWS vector-store options on operational grounds so that the team keeps the database it already runs",
         "B": "No store at all: regenerate embeddings on demand at query time, comparing the query against each document as it is read",
-        "C": "Whichever store the chosen embedding model dictates, since the embedding model determines the database it must be paired with",
+        "C": "Whichever store the chosen embedding model dictates — Amazon OpenSearch Service for one model, Amazon Aurora for another — since the embedding model determines the database it must be paired with",
         "D": "Amazon DynamoDB, since a key-value table can hold the embedding arrays alongside each chunk's identifier"
       },
       "answer": "A",
@@ -1290,8 +1290,8 @@
       "type": "single_choice",
       "question": "A property management firm already runs a chatbot that answers tenant questions well. A vendor is now pitching an AI agent for maintenance handling, and the operations director asks what an agent would actually add. What is the accurate answer?",
       "options": {
-        "A": "An AI agent's addition is retrieval: connecting the chatbot to live work-order records so answers draw on current data rather than static documentation",
-        "B": "An AI agent completes a multi-step task by orchestrating tool and API calls against the systems where the work happens",
+        "A": "An AI agent's addition is retrieval: connecting the chatbot to live work-order records through Amazon Bedrock Knowledge Bases so answers draw on current data rather than static documentation",
+        "B": "An AI agent completes a multi-step task by orchestrating tool and API calls against the systems where the work happens, so that the sequence of actions runs through to an outcome",
         "C": "An AI agent's contribution is operating without human oversight, so the maintenance queue would run with no staff involvement at all",
         "D": "An AI agent is a larger, more capable model, so its main contribution is answering harder maintenance questions than the current chatbot can"
       },
@@ -1444,8 +1444,8 @@
       "type": "single_choice",
       "question": "Three teams at an airport ground-operations company edit their shared assistant's production prompt directly in a console. After a quality regression, nobody can say which wording change caused it, when it was made, or how to restore the previous behavior. What practice fixes this class of failure?",
       "options": {
-        "A": "A weekly regression test of the assistant, so that the next quality drop is noticed within days of the change that caused it",
-        "B": "Prompt versioning through Amazon Bedrock Prompt Management, so prompt changes are tracked, compared, and rolled back like code",
+        "A": "Weekly regression testing of the assistant through Amazon Bedrock Model Evaluation, so that the next quality drop is noticed within days of the change that caused it",
+        "B": "Prompt versioning through Amazon Bedrock Prompt Management, so that prompt changes are tracked, compared, and rolled back exactly like code",
         "C": "Restricting prompt edits to a single senior engineer, so that changes become rare and the other two teams submit wording requests instead",
         "D": "A shared log where each team records its prompt changes after making them, so future regressions can be traced by reading the entries"
       },
@@ -1687,9 +1687,9 @@
       "type": "single_choice",
       "question": "A pension fund administrator's RAG assistant answers member questions. The retriever scores well on its retrieval benchmark and the model scores well on its own benchmarks, yet end-to-end answers to real member questions are frequently wrong. What is the evaluation lesson?",
       "options": {
-        "A": "Re-index the document store more frequently, since strong components with wrong answers usually indicate the retrieval content has gone stale",
+        "A": "Re-index the Amazon OpenSearch Service document store more frequently, since strong components with wrong answers usually indicate the retrieval content has gone stale",
         "B": "Re-run each component's benchmark with larger test sets, since the existing scores were probably measured on samples too small to trust",
-        "C": "Evaluate the application, not the components: judge the RAG pipeline end to end on real member questions",
+        "C": "Evaluate the application, not the components: judge the RAG pipeline end to end — chunking, retrieval, prompt assembly, and generation together — on real member questions",
         "D": "Add a notice that answers are informational only, so wrong answers carry less consequence while component scores remain the quality measure"
       },
       "answer": "C",

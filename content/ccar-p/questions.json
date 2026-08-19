@@ -2067,7 +2067,7 @@
       "options": {
         "A": "A retrieval failure — the certificate does exist and the lookup did not locate it",
         "B": "A prompt failure — the instructions were not specific enough about the required output format",
-        "C": "A hallucination: content fabricated rather than grounded in the tool result",
+        "C": "A hallucination: content fabricated, not grounded in the tool result",
         "D": "A model mismatch — certificate verification exceeds what this model tier handles reliably"
       },
       "answer": "C",
@@ -3032,7 +3032,7 @@
       "question": "An insurance broker's first assistant has been live for two quarters and the sponsor is considering funding a second project. Which TWO belong in the outcome document that justifies that expansion? (Select TWO)",
       "options": {
         "A": "A list of every prompt revision made during the build",
-        "B": "The reuse note recording which components, patterns and controls the next project can inherit",
+        "B": "The reuse note listing what the next project can inherit",
         "C": "The before metric captured prior to launch",
         "D": "The number of requests the assistant has served since it went live",
         "E": "A statement that the project completed on schedule and within its budget"
@@ -3111,7 +3111,7 @@
       "question": "A games studio has rolled AI-assisted coding tools out across its engineering team. Early adopters each configured their tooling differently, and the result is inconsistent code style and several engineers solving the same problems separately. What is the most effective enablement step?",
       "options": {
         "A": "Restrict the tooling to the most senior engineers until sensible conventions have emerged",
-        "B": "Establish a shared, version-controlled baseline of project configuration and standards that every engineer's tooling inherits, reserving personal configuration for genuine individual preference",
+        "B": "Establish a shared, version-controlled baseline of project configuration and standards",
         "C": "Adopt whichever configuration the most productive engineer uses and roll it out across the studio",
         "D": "Let each engineer keep their own configuration, since productivity tooling is a personal matter"
       },
@@ -3153,7 +3153,7 @@
         "B": "Which development environment each team will standardise on",
         "C": "Which delivery team will pilot the tooling first",
         "D": "Model and budget guardrails bounding what each team is able to consume",
-        "E": "How Skills will be distributed by scope — org-provisioned for everyone, plugins for group and organisation targeting with versioned updates and rollback, project Skills for a single team, API Skills for programmatic reuse"
+        "E": "Skills distribution: org-provisioned, plugins, project Skills, API Skills"
       },
       "select_count": 2,
       "answer": [
@@ -3195,7 +3195,7 @@
         "A": "The tooling suits some working styles and not others, so usage is best left to individual preference",
         "B": "The high adopters should be moved into a central team that does this work on behalf of everyone else",
         "C": "Licences should be withdrawn from the engineers who are not using the tooling fully, to concentrate the spend",
-        "D": "Access without enablement stalls at basic chat: adoption has to be engineered through a champion per team who proves the workflow, rolled out in batches so the gain standardises rather than staying with a few individuals"
+        "D": "Access without enablement stalls; use a champion per team, in batches"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -3230,7 +3230,7 @@
       "options": {
         "A": "The tooling produces lower-quality code than human authors and its use should be restricted to non-production repositories",
         "B": "Requiring a second reviewer on every AI-authored change would resolve the discrepancy",
-        "C": "Reviewers are extending unwarranted trust to changes that arrive fluent, well-formatted and confidently explained, so review is least rigorous exactly where its scrutiny is most needed",
+        "C": "Reviewers extend unwarranted trust to changes that arrive fluent and confidently explained",
         "D": "The incident figures are confounded by AI-authored changes being more numerous, and no action is warranted until the volumes are normalised"
       },
       "answer": "C",
@@ -3266,10 +3266,10 @@
       "type": "multiple_response",
       "question": "A financial technology platform team wants to scale AI-assisted development across the organisation without introducing operational risk. Which TWO practices best support that goal? (Select TWO)",
       "options": {
-        "A": "Maintain shared configuration, prompt standards and reusable workflows in version control so that teams inherit proven practice",
+        "A": "Keep shared configuration and prompt standards in version control",
         "B": "Adopt each new AI development tool as it is released, so the organisation stays current",
         "C": "Prohibit engineers from editing generated code, so that its provenance stays unambiguous",
-        "D": "Constrain what automated tooling is permitted to execute — allowed commands, protected branches, approval gates for destructive actions",
+        "D": "Constrain what automated tooling may execute",
         "E": "Give the tooling unrestricted credentials so that friction does not slow adoption down"
       },
       "select_count": 2,
@@ -3309,7 +3309,7 @@
       "type": "single_choice",
       "question": "A retailer's production agent has begun taking unexpected actions on a subset of requests. The on-call engineer's instinct is to rewrite the system prompt immediately. What should happen first?",
       "options": {
-        "A": "Inspect traces of the affected sessions — inputs, retrieved context, tool calls and outputs — to connect the symptoms to their architecture cause before changing anything",
+        "A": "Inspect traces of the affected sessions to connect symptoms to their architecture cause",
         "B": "Disable the agent and return the workload to manual handling until the cause is known",
         "C": "Rewrite the system prompt, since prompt defects are the most common cause of unexpected agent behaviour",
         "D": "Roll back to the model version the agent ran on two quarters ago as a precaution"

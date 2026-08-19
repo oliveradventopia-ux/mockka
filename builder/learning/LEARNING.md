@@ -258,3 +258,17 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - why: L-0025 recorded the shared-index hazard between lanes; this is the coordinator's version of the same mistake, and worse, because the thing that changed was the criterion the lane was being judged by.
 - how to apply: the statement "no other lane is running" is a commitment by the coordinator, not a status report. Either hold the tree still for that lane's duration, put concurrent work in a worktree, or tell the lane exactly what may move under it and instruct it to re-measure at HEAD before reporting.
 - enforce: note → rule.
+
+## L-0041 · A rank histogram is an edit budget, not a percentage target
+- date: 2026-08-20 · agent: exam-author (ceiling-fix lane) · scope: local · tier: methodology
+- lesson: the key's length rank = the count of options strictly longer than it, so the four rank counts sum to the single-choice item count and one rank step costs exactly one distractor edit — down = lengthen a shorter option past the key, up = trim a longer one below it. A key that is already shortest can ONLY be moved by a trim, so an inverse-cue bank (clf-c02) needs the opposite tool from a second-longest bank (ai-901, gcp-cdl). Budgeting the flips as integers against both bank and form denominators before authoring landed all three exams on the first pass.
+- why: treating the statistic as a percentage to be driven down invites per-item rank targeting, which is what created the rank-2 cluster (L-0038). Treating it as a fixed-sum histogram makes the work countable and the stopping point obvious.
+- how to apply: stop when the best length rank equals the best fixed letter — `blind = max(letter, rank) + MR + SM`, and MR/SM cannot move without answer changes, so below the letter floor further length work buys nothing.
+- enforce: note → check (candidate: have `tools/exploit-scan.mjs` print the per-rank histogram and the letter floor so a lane sees its budget without a private script).
+
+## L-0042 · Verify a bank's JSON round-trip before scripting a whole-file write
+- date: 2026-08-20 · agent: exam-author (ceiling-fix lane) · scope: local · tier: process
+- lesson: the eight content banks are not formatted alike — ai-901 and clf-c02 round-trip byte-identically through `JSON.stringify(bank, null, 2)`, while gcp-cdl ships `keywords`/`distractor_patterns` prettier-compact on one line. The same 14-option edit produced a 15/15-line diff when spliced as text and an 836/187-line diff when re-serialized.
+- why: a re-serialization diff buries the semantic change, defeats review, and (as the ccar-p upstream port found, L-0029) can mask a hand-edit anomaly.
+- how to apply: splice option text rather than rewriting the file, or assert `print(parse(x)) === x` before writing.
+- enforce: note → check (candidate: a formatting assertion in `pnpm validate`, or a `tools/edit-option.mjs` that splices).

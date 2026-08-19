@@ -1056,9 +1056,9 @@
       "question": "An events coordinator at a botanical garden drafts sponsor thank-you letters with Claude about twice a quarter, and the events manager reviews each letter before it goes out. A teammate proposes commissioning an automated agent pipeline connected to the sponsor database so the letters generate and send themselves. What is the most appropriate response?",
       "options": {
         "A": "Adopt the proposal and build the automated pipeline with the database connection",
-        "B": "Hand the entire letters task to the IT team so they can decide how to build and own it",
+        "B": "Hand the entire letters task to the IT team so they can decide how to build it and own it from there",
         "C": "Keep the letters in the interactive surface with the manager's review, and skip the automation",
-        "D": "Adopt the automation for the visibility it gives the office when the sponsor board hears of it"
+        "D": "Adopt the automation for the visibility it gives the office when the sponsor board hears of the change"
       },
       "answer": "C",
       "distractor_patterns": {
@@ -1200,7 +1200,7 @@
       "options": {
         "A": "Route straightforward bulk work to a lighter tier and reserve the top tier for tasks that need it",
         "B": "Keep the routing: the top tier also completes bulk work faster, so there is no trade-off to manage",
-        "C": "Keep the routing and pack more attendee rows into each request so fewer requests are needed",
+        "C": "Keep the routing and pack more attendee rows into each request, cutting the number of requests the queue carries",
         "D": "Keep the routing, as maximum capability for everything is the prudent default for a serious program"
       },
       "answer": "A",
@@ -1233,9 +1233,9 @@
       "question": "A sales planner at a craft brewery cooperative has kept one continuous Claude conversation running all week for seasonal planning — uploads, drafts, and revisions all in the same thread. By Friday the responses are noticeably weaker and earlier instructions are being dropped, and a teammate concludes the model itself has degraded. What is the most likely explanation?",
       "options": {
         "A": "The model was silently swapped for a weaker version partway through the week",
-        "B": "The requests need to be phrased more forcefully for the model to keep taking them seriously",
+        "B": "The requests need to be phrased more forcefully for the model to keep taking the week's instructions seriously",
         "C": "The week-long conversation has been filling its finite context, degrading output gradually as it fills",
-        "D": "The tool is unsuited to planning work, and the seasonal plan should be finished by hand"
+        "D": "The tool is unsuited to sustained planning work, and the seasonal plan should be finished by hand from here"
       },
       "answer": "C",
       "distractor_patterns": {

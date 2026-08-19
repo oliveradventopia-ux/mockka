@@ -2317,7 +2317,7 @@
         "A": "The platform provider's internal logs, requested through a support case, since API-call history on managed endpoints belongs to the provider's side of the relationship",
         "B": "Amazon CloudWatch metrics for the endpoints, since the invocation-count graphs will show what happened during the window",
         "C": "AWS CloudTrail, whose event history records the API activity against the endpoints, including caller identity and timing, across the window in question",
-        "D": "AWS Config, whose timeline for the affected resources shows how their configurations changed over the same period"
+        "D": "AWS Config, whose configuration timeline for the affected Amazon SageMaker model endpoints shows how their settings changed over the same period"
       },
       "answer": "C",
       "distractor_patterns": {

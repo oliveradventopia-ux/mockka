@@ -254,7 +254,12 @@ written to be ratified retroactively *at this gate*, so all six land here):
   `builder/learning/LEARNING.md`, because this dispatch and the S5 one were both scoped to
   `content/ai-901/**`. It needs a session that owns `builder/`.
 
-## What Oliver signs
+## What Oliver signs — **SUPERSEDED 2026-08-20**
+
+> He signed it. `derivation/signoff.md` now records PASS on every preflight row,
+> the adjudication decisions, the waiver block and a **PUBLISH** decision dated
+> 2026-08-20. Preflight item 5 (README) is closed by the file, not waived. The
+> paragraph below is the pre-signature statement, kept for the record.
 
 `derivation/signoff.md` is pre-filled with the evidence hashes and this sample list;
 verdict columns, the adjudication decisions and the PUBLISH / DO-NOT-PUBLISH decision are
@@ -262,3 +267,51 @@ blank and his. Preflight item 5 (README) must close before the `published` flip 
 PUBLISH decision with item 5 open needs either the README landed first or an explicit
 waiver line, per methodology/06 ("a sign-off with any preflight verdict at `fail` and no
 covering waiver is not a sign-off").
+
+---
+
+## Gate 2 final pass — 2026-08-20 (re-pin · corrected S5b standard · README closed · sign-off)
+
+**Re-pinned to the shipping revision.** `content/ai-901/questions.json` @ **`d1eb0e8`** — blob `85a0898bac`, sha256 `beb99f0c051ede9a…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated.
+
+### Content pass landed after the 2026-08-19 re-pin
+
+- `a8c7f4e test every length rank, not just the extremes; permute ai-901 keys`
+- `d1eb0e8 argue ai-901 distractors to length parity across all four ranks`
+
+**a key-letter permutation plus 11 distractor option strings on 7 items.** The `answer` field moved on 40 items (35 single-choice + 5 multiple-response) and the 3 scenario-matching items were deranged; **no key's text changed on any item**, so keys were re-lettered, not re-decided. Stems, `rationale.correct`, the `distractor_patterns` multiset and the item-id set (56 in / 56 out) are byte-identical; one item (`d1-q01`) had a distractor rationale rewritten to match its rewritten option, which is the correct pairing.
+
+**Items touched:** `d1-q01`, `d1-q02`, `d1-q16`, `d1-q19`, `d2-q25` (seated) · `d2-q29`, `d2-q38` (reserve).
+
+Every rewritten option was re-read against the rationale that refutes it. Where a rationale was left unchanged, the distractor's proposition was unchanged too — the edits move length, not meaning — so each refutation still lands on the string it now faces. No distractor was argued into co-correctness; dimensions 1 and 2 stand for the touched items.
+
+### Preflight rows restated on this revision
+
+| # | Check | Verdict | Evidence at 2026-08-20 |
+|---|---|---|---|
+| 3 | Validator green | **PASS** | `pnpm validate ai-901` → **35 checks, 0 errors, 0 warnings** on `d1eb0e8` — zero warnings *(at `published`. The same tree reports 34 at `in_review`: `publication-preflight` is `when: status === 'published'` and runs only after the flip.)* |
+| 4 | Eval thresholds, incl. the S5b ceiling | **PASS** | Re-stated below and in `derivation/eval-report.md` §s5b-final. Both scopes clear the corrected ceiling. |
+| 5 | Per-exam README statements | **CLOSED — PASS** | `content/ai-901/README.md` now exists and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). *This row read **OPEN — not written** in every previous version of this sheet; it is closed by the file, not waived.* No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. |
+
+### S5b re-stated against the corrected ceiling
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 56 | **25.00%** (14/56) | ≤ 30.17% (random 22.35%) | **0.600** | ≥ 0.522 | **PASS** |
+| form-a | 42 | **23.81%** (10/42) | ≤ 28.97% (random 21.46%) | **0.605** | ≥ 0.525 | **PASS** |
+
+**The previously pinned revision `b3851b9`, re-measured with the corrected instrument, does not clear the ceiling:** bank 33.93% (FAIL, k_req 0.545) · form-a 33.33% (FAIL, k_req 0.552). That is the honest statement of why this exam needed another content pass, and it is stated here rather than left implicit — the earlier sheet's PASS was produced by an instrument that could not see interior length ranks.
+
+The two corrections to the instrument — the ceiling now computed by the machine rather than by hand against a pass-mark `ok`, and interior length ranks now inside the committed strategy set — are written out in full in `derivation/eval-report.md` §s5b-final. The **bar is unchanged**; the machine now enforces it and the attacker is stronger.
+
+### Deep-read sample
+
+**Extended 33 → 36 items.** Added by the 2026-08-19 pass: `d1-q02`, `d1-q19`, `d2-q29`. Every item that pass touched is now in the sample; the remainder were already in it.
+
+### Residuals a reader should see
+
+- **the 2026-08-19 ceiling FAIL is CLEARED, by content work — not by a change of bar.** That sheet recorded form-a blind 30.95% against a ceiling of 28.97% and referred it to Oliver as the one exam of the six that did not clear. The bar is unchanged (28.97%); the bank was fixed. Measured on the shipping revision the form scores 23.81%.
+- **key-letter permutation** (`a8c7f4e`, `tools/permute-keys.mjs`): `eval/blind-solve.json`'s recorded letters no longer map to the shipping bank, exactly as for `aif-c01`. The file remains a valid record of the round-2 judgment; the deep read is the control.
+- **stem-echo**, uninstrumented: 32.4% bank / 38.5% form against 25% chance — the highest form figure of the seven.
+- Gate-1 decisions **D5** (Microsoft sign-in for the official practice assessment) and **D6** (`kittoyeah-ai901-prep` distillation) remain open. Neither is a preflight item; both are source-coverage improvements for a future round.
+- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.

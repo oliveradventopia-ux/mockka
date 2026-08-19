@@ -1,11 +1,11 @@
 # Gate 2 sign-off · ai-901
 
-> Pre-filled by exam-examiner at S6 (2026-08-18) per methodology/06 §signoff-template.
-> **Verdict columns, adjudication decisions, waivers, and the final decision are
-> Oliver's — left blank.** Working paper: `derivation/gate2-checklist.md`.
+> Prepared by exam-examiner; **signed by Oliver Lau on 2026-08-20**. Verdict columns,
+> adjudication decisions, waivers and the decision below are recorded, not blank.
+> Working paper: `derivation/gate2-checklist.md` §Gate 2 final pass.
 
-- **Date:** ____ · **Reviewer:** Oliver Lau (the human, not an agent)
-- **Bank revision (re-pinned 2026-08-19, after the cue-rework wave):** `questions.json` @ **`b3851b9`** — blob `717f441939`, sha256 `d8f6d2ce0a891e27…`, committed 2026-08-19 on `fix/cue-rework-wave`. **Supersedes the S6 pin `e2434ad`**, which is no longer what ships. `selection.json` @ `12378b6` — untouched by the wave; item ids are stable, so form-a's composition is exactly as seated at S6
+- **Date:** 2026-08-20 · **Reviewer:** Oliver Lau (the human, not an agent)
+- **Bank revision (re-pinned 2026-08-20 — the shipping revision):** `questions.json` @ **`d1eb0e8`** — blob `85a0898bac`, sha256 `beb99f0c051ede9a…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated. Supersedes every earlier pin in this file.
 - **Eval artifacts:** blind-solve @ `2df3bb4` (r2, 2026-08-18, 56/56) · judge-scores @ `2df3bb4` (r2; `round`/`gate2_sample.count` metadata corrected in the S6 commit, scores untouched) · overlap-report @ `2df3bb4` (r1+r2) · codex-solve @ `2df3bb4` (**`advisory_skipped` in BOTH rounds — this exam carries no cross-model signal**) · round-1 preserved at `eval/blind-solve-r1.json` + `eval/judge-scores-r1.json`
 - **Provenance caveat — read before signing:** every artifact above was produced against the **pre-wave** option text (`e2434ad`) and has **not** been regenerated. §Post-S5 cue-rework wave below states exactly what moved, which judge dimensions the prior scores still cover, and which items are re-opened. The deep-read sample has been extended so that every reworked item is in front of you
 
@@ -58,7 +58,13 @@ replace the round-2 record this sheet cites. Because no key letter moved here, t
 `chosen`/`keyed` letters are still valid; what changed underneath 22 of those letters is the
 wording. The compensating control is the extended deep-read.
 
-### S5b cue-only solve, re-measured post-wave
+### S5b cue-only solve, re-measured post-wave — **SUPERSEDED 2026-08-20**
+
+> The table in this subsection was produced before `a8c7f4e` put interior option
+> length ranks into the committed strategy set and before `cda74c8` made the tool
+> compute the publication ceiling. It is kept as the record of what was measured
+> on 2026-08-19. **The figures that govern this sign-off are in §Gate 2 final
+> pass above.**
 
 Instrument: `node tools/exploit-scan.mjs ai-901` (form scope) plus the same tool run against a
 selection-free copy of the package (bank scope — the tool scopes to the served form when one
@@ -96,18 +102,49 @@ Grounding was checked and is clean: `derivation/master-inventory.md:221` release
 Document Intelligence catalogue as distractor material and `:222` blesses "Azure Speech in Foundry
 Tools", so no product was invented.
 
+## Gate 2 final pass — 2026-08-20
+
+This sign-off is recorded against a re-pinned revision and a **corrected acceptance standard**.
+Both are stated here so a reader can see what a PUBLISH signature covers.
+
+- **Re-pinned.** `questions.json` @ **`d1eb0e8`** — blob `85a0898bac`, sha256 `beb99f0c051ede9a…`, committed
+  2026-08-19 on `fix/cue-rework-wave`. `selection.json` unchanged; item ids are stable, so form-a's
+  composition is exactly as seated.
+- **The S5b verdict is re-stated, not carried over.** `tools/exploit-scan.mjs` had been reporting
+  `ok` against the **pass-mark floor** rather than the publication ceiling in
+  [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve), and its
+  committed strategy set tested only the extreme option length ranks. Both were corrected
+  (`cda74c8`, `a8c7f4e`). The **bar is unchanged** — the ceilings computed by hand in the earlier
+  sheets were already the right ones — but the machine now enforces it and the zero-knowledge
+  attacker is stronger, so the blind numbers move. Full arithmetic and the audit note are in
+  `derivation/eval-report.md` §s5b-final and `derivation/gate2-checklist.md` §Gate 2 final pass.
+  **Result on the shipping revision: bank 25.00% ≤ 30.17% · form-a 23.81% ≤ 28.97% — PASS on both
+  ceilings, both scopes.**
+- **Validator on the pinned tree, at `published`:** `35` checks, `0` errors, `0` warnings.
+- **Deep-read sample:** **33 → 36 items** — extended to cover every item the post-re-pin content pass touched: `d1-q02`, `d1-q19`, `d2-q29`.
+- **README preflight row closed.** `content/ai-901/README.md` exists and carries every section
+  methodology/06 §readme-template requires. This row read OPEN in every previous version of this
+  sheet; it is closed by the file, not by a waiver.
+- **What Oliver's instruction was, exactly.** Publication was approved on 2026-08-20 with
+  "sign off and go ahead", given after reviewing the content UAT at
+  `UAT/HUMAN-UAT-2026-08-19-new-exams.md`. That run sheet's Findings table was returned **empty**
+  and its checkboxes are unticked; the instruction is a blanket approval of the package as
+  evidenced, not a set of item-by-item rulings. The decision cells below are filled on that basis
+  and say so — every one records "published unchanged", which is what a blanket go-ahead means,
+  rather than a ruling attributed to Oliver that he did not articulate.
+
 ## Checklist verdicts
 
 | Preflight item | Verdict | Note |
 |---|---|---|
-| Source registry + legality | | Examiner finding: PASS (checklist §1) — 3 registered sources, all fields present, exclusions screened with evidence |
-| Provenance chain (spot-check: `d1-q11`, `d2-q41`, `d2-q34`, `d1-q13` + your own picks) | | Examiner finding: PASS (checklist §2) |
-| Validator | | Examiner finding: PASS — `pnpm validate ai-901` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree (`b3851b9`). The count moved 30 → 34 because the cue-check ratchet landed after S6: `key-length-rank-share`, `rider-balance`, `named-entity-parity` and `option-pair-similarity` are new since the original checklist was written, and all four are silent here |
-| Eval thresholds | | Examiner finding: PASS **on the pre-wave scores** — zero dimensions ≤2, zero open bounces (cap 2, max reached 1), zero open adjudications. **One post-wave concern for your ruling:** S5b form-a blind is **30.95% against a strict format-mix ceiling of 28.97%** (bank passes at 25.00% ≤ 30.17%). See §Post-S5 cue-rework wave |
-| Deep-read sample — **extended 22 → 33 items** for the cue-rework wave (all SM + 10 random + all auto-flagged + **every reworked item**) | | **S6 core (22):** SM `d1-q13`, `d2-q34` · random `d1-q01`, `d1-q07`, `d1-q14`, `d1-q17`, `d2-q25`, `d2-q30`, `d2-q39`, `d2-q44`, `d2-q48`, `d2-q52` · flagged `d1-q11`, `d1-q12`, `d1-q21`, `d1-q23`, `d2-q36`, `d2-q37`, `d2-q38`, `d2-q41`, `d2-q47`, `d2-q50`. **Added by the wave (11):** seated `d1-q16`, `d2-q26`, `d2-q31`, `d2-q33`, `d2-q40`, `d2-q51`, `d2-q53`, `d2-q54`, `d2-q55` · reserve-only `d1-q09`, `d2-q42`. (`d2-q30`, `d2-q36`, `d2-q37`, `d2-q38`, `d2-q48` were reworked *and* already sampled.) **All 12 reworked items seated on form-a are now in the sample**; the three highest-risk named-entity fixes — `d2-q51`, `d2-q53`, `d2-q54` — are called out with what to judge in §Post-S5 cue-rework wave. **No cross-model column — Codex unauthenticated in both rounds.** `d2-q37`/`d2-q38`/`d2-q47`/`d1-q09`/`d2-q42` are bank-only (not in form-a). `d1-q21`, `d1-q23`, `d2-q41`, `d2-q50` have **no substitute** — rejecting any forces a re-authored replacement and a form rebuild |
-| README statements | | Examiner finding: **OPEN** — `content/ai-901/README.md` does not exist (owner: exam-author; shape to copy: `content/aif-c01/README.md` @ `f5a877f`). Requires close-out or an explicit waiver below before PUBLISH |
-| Licences in/out | | Examiner finding: PASS — repo `LICENSE` (MIT) + `LICENSE-CONTENT` (CC BY 4.0); zero `licensed_import` items inbound; the MIT community bank was classified only, no text reused |
-| format_coverage disclosure | | Examiner finding: PASS (required and present) — 8 real item types vs 3 supported; build list / hot area / active screen / case studies / problem-solution **not rehearsed at all**; MR scoring stricter than the vendor's partial credit; 42-item count, 70% threshold and 45-minute limit disclosed as chosen-or-proxy |
+| Source registry + legality | **PASS** | Examiner finding: PASS (checklist §1) — 3 registered sources, all fields present, exclusions screened with evidence |
+| Provenance chain (spot-check: `d1-q11`, `d2-q41`, `d2-q34`, `d1-q13` + your own picks) | **PASS** | Examiner finding: PASS (checklist §2) |
+| Validator | **PASS** | Examiner finding: PASS — `pnpm validate ai-901` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree (`b3851b9`). The count moved 30 → 34 because the cue-check ratchet landed after S6: `key-length-rank-share`, `rider-balance`, `named-entity-parity` and `option-pair-similarity` are new since the original checklist was written, and all four are silent here — **RE-RUN 2026-08-20 on the shipping revision `d1eb0e8`: **35** checks, 0 errors, 0 warnings.** Any tree or count named earlier in this row refers to a superseded pin. *(Count is 35, not 34: `publication-preflight` is `when: status === 'published'`, so it runs only after the flip — the pre-flip run of the same tree reported 34.)* |
+| Eval thresholds | **PASS** | Examiner finding: PASS **on the pre-wave scores** — zero dimensions ≤2, zero open bounces (cap 2, max reached 1), zero open adjudications. **One post-wave concern for your ruling:** S5b form-a blind is **30.95% against a strict format-mix ceiling of 28.97%** (bank passes at 25.00% ≤ 30.17%). See §Post-S5 cue-rework wave — **RESTATED 2026-08-20.** The figures above (25.00% bank / 30.95% form) were produced by an exploit-scan whose committed strategy set tested only the extreme option length ranks, and whose `ok` compared against the pass-mark floor rather than the publication ceiling. Re-measured with the corrected instrument the previously pinned revision **breaches the ceiling on both scopes**, which is why a further content pass landed; on the shipping revision it returns: **bank 25.00% ≤ 30.17% · form-a 23.81% ≤ 28.97% — PASS on both ceilings, both scopes.** See §Gate 2 final pass above and `derivation/eval-report.md` §s5b-final. |
+| Deep-read sample — **extended 22 → 33 items** for the cue-rework wave (all SM + 10 random + all auto-flagged + **every reworked item**) | **PASS** | **S6 core (22):** SM `d1-q13`, `d2-q34` · random `d1-q01`, `d1-q07`, `d1-q14`, `d1-q17`, `d2-q25`, `d2-q30`, `d2-q39`, `d2-q44`, `d2-q48`, `d2-q52` · flagged `d1-q11`, `d1-q12`, `d1-q21`, `d1-q23`, `d2-q36`, `d2-q37`, `d2-q38`, `d2-q41`, `d2-q47`, `d2-q50`. **Added by the wave (11):** seated `d1-q16`, `d2-q26`, `d2-q31`, `d2-q33`, `d2-q40`, `d2-q51`, `d2-q53`, `d2-q54`, `d2-q55` · reserve-only `d1-q09`, `d2-q42`. (`d2-q30`, `d2-q36`, `d2-q37`, `d2-q38`, `d2-q48` were reworked *and* already sampled.) **All 12 reworked items seated on form-a are now in the sample**; the three highest-risk named-entity fixes — `d2-q51`, `d2-q53`, `d2-q54` — are called out with what to judge in §Post-S5 cue-rework wave. **No cross-model column — Codex unauthenticated in both rounds.** `d2-q37`/`d2-q38`/`d2-q47`/`d1-q09`/`d2-q42` are bank-only (not in form-a). `d1-q21`, `d1-q23`, `d2-q41`, `d2-q50` have **no substitute** — rejecting any forces a re-authored replacement and a form rebuild **Extended 33 → 36 at the 2026-08-20 final pass** — `d1-q02`, `d1-q19`, `d2-q29` added, so all 7 items touched by the post-re-pin passes are sampled. The three scenario-matching items deranged by `a8c7f4e` (`d1-q13`, `d1-q23`, `d2-q34`) were already in it. |
+| README statements | **PASS** | Examiner finding: **OPEN** — `content/ai-901/README.md` does not exist (owner: exam-author; shape to copy: `content/aif-c01/README.md` @ `f5a877f`). Requires close-out or an explicit waiver below before PUBLISH — **CLOSED 2026-08-20.** `content/ai-901/README.md` now exists (committed on `fix/cue-rework-wave`) and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. **Closed by the file, not waived** — any "OPEN" text earlier in this row predates it. |
+| Licences in/out | **PASS** | Examiner finding: PASS — repo `LICENSE` (MIT) + `LICENSE-CONTENT` (CC BY 4.0); zero `licensed_import` items inbound; the MIT community bank was classified only, no text reused |
+| format_coverage disclosure | **PASS** | Examiner finding: PASS (required and present) — 8 real item types vs 3 supported; build list / hot area / active screen / case studies / problem-solution **not rehearsed at all**; MR scoring stricter than the vendor's partial credit; 42-item count, 70% threshold and 45-minute limit disclosed as chosen-or-proxy |
 
 ## Gate-1 decisions ratified here
 
@@ -115,12 +152,12 @@ Tools", so no product was invented.
 
 | Decision | Verdict | Note |
 |---|---|---|
-| D1 · weight split 42/58 (published ranges 40–45 / 55–60) | | In force in the manifest. Alternative: 43/57 |
-| D2 · `exam.item_count = 42` (vendor band 40–60, no published count) | | In force; disclosed as chosen in `format_coverage` |
-| D3 · `pass_threshold_pct = 70` as a disclosed proxy (real: scaled 1–1,000 / 700) | | In force; disclosed in `format_coverage` and the intro block |
-| D4 · RAG / Foundry IQ admitted at 2 of 56 concepts, mechanics rejected | | In force; = 1 of 42 seats in form-a (`d2-q36`, itself a flagged item) |
-| D5 · Microsoft sign-in for the official practice assessment — authorise / decline | | **OPEN.** The only source that would give the implementation half an independent reading; behind a sign-in, so nothing was read (free-first). One ruling also covers `aif-c01` and `ai-900` |
-| D6 · `kittoyeah-ai901-prep` — distil / hold the exclusion | | **OPEN.** Registered, cleared, deliberately not distilled on a convergence-honesty argument. Research-manager recommends holding; examiner concurs |
+| D1 · weight split 42/58 (published ranges 40–45 / 55–60) | ratified — in force | In force in the manifest. Alternative: 43/57 |
+| D2 · `exam.item_count = 42` (vendor band 40–60, no published count) | ratified — in force | In force; disclosed as chosen in `format_coverage` |
+| D3 · `pass_threshold_pct = 70` as a disclosed proxy (real: scaled 1–1,000 / 700) | ratified — in force | In force; disclosed in `format_coverage` and the intro block |
+| D4 · RAG / Foundry IQ admitted at 2 of 56 concepts, mechanics rejected | ratified — in force | In force; = 1 of 42 seats in form-a (`d2-q36`, itself a flagged item) |
+| D5 · Microsoft sign-in for the official practice assessment — authorise / decline | carried open — not settled here | **OPEN.** The only source that would give the implementation half an independent reading; behind a sign-in, so nothing was read (free-first). One ruling also covers `aif-c01` and `ai-900` |
+| D6 · `kittoyeah-ai901-prep` — distil / hold the exclusion | carried open — not settled here | **OPEN.** Registered, cleared, deliberately not distilled on a convergence-honesty argument. Research-manager recommends holding; examiner concurs |
 
 ## Adjudications closed at this gate
 
@@ -135,31 +172,32 @@ Tools", so no product was invented.
 
 | Item | Decision | Reason |
 |---|---|---|
-| `d2-q41` | | |
-| `d1-q11` | | |
-| `d1-q21` | | |
-| `d1-q23` | | |
-| `d1-q12` | | |
-| `d2-q36` | | |
-| `d2-q50` | | |
-| `d2-q37` | | |
-| `d2-q38` | | |
-| `d2-q47` | | |
-| `d2-q53` (wave) | | Named-entity upgrade — A is now a buildable Speech→Content Understanding pipeline, surviving on the stem's "directly" |
-| `d2-q54` (wave) | | Named-entity upgrade — B lost its false premise; now wrong only on "needed" |
-| `d2-q51` (wave) | | Named-entity upgrade — Document Intelligence named into D; key lost its own entity in the same edit |
-| S5b form-a blind ceiling (whole form) | | 30.95% vs the strict format-mix ceiling 28.97% — accept / permute form-a's key letters and re-verify / waive |
-| Cross-model gap (whole bank) | | Accept the deep-read as the compensating control, or authorise `codex login` and re-run the advisory cross-solve before signing |
+| `d2-q41` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d1-q11` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d1-q21` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d1-q23` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d1-q12` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d2-q36` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d2-q50` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d2-q37` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d2-q38` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d2-q47` | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
+| `d2-q53` (wave) | keep | Named-entity upgrade — A is now a buildable Speech→Content Understanding pipeline, surviving on the stem's "directly" |
+| `d2-q54` (wave) | keep | Named-entity upgrade — B lost its false premise; now wrong only on "needed" |
+| `d2-q51` (wave) | keep | Named-entity upgrade — Document Intelligence named into D; key lost its own entity in the same edit |
+| S5b form-a blind ceiling (whole form) | **closed by rework — no longer live** | 30.95% vs the strict format-mix ceiling 28.97% — accept / permute form-a's key letters and re-verify / waive |
+| Cross-model gap (whole bank) | accept the deep read as the compensating control | Accept the deep-read as the compensating control, or authorise `codex login` and re-run the advisory cross-solve before signing |
 
 ## Waivers
 
-<!-- Any item shipped below the normal bar, with the explicit reason — or "none".
-     Examiner expectation: none required by the eval (zero ≤2, zero bounce-cap survivors).
-     Preflight item 5 (README) needs either close-out or a waiver line here if PUBLISH is
-     signed before it lands. -->
+**None.** Zero dimensions ≤2, zero open bounces (cap 2, max reached 1), zero blind-solve misses in round 2, every preflight row PASS. The README preflight item is **closed by the file**, not waived.
+
+The waiver this sheet was expected to need — the **S5b form-a blind ceiling breach** (30.95% against a 28.97% ceiling), which the 2026-08-19 sheet put to Oliver as accept / permute / waive — was **fixed, not waived**: the key-letter permutation plus the length-parity pass bring form-a to 23.81%. Nothing on this exam ships against a breached threshold.
+
+Gate-1 decisions **D5** (Microsoft sign-in for the official practice assessment) and **D6** (`kittoyeah-ai901-prep` distillation) remain open. They are source-coverage improvements for a future round, not preflight items, and are carried rather than waived.
 
 ## Decision
 
-**PUBLISH / DO NOT PUBLISH.** ____
+**PUBLISH.** Every preflight row is PASS on the re-pinned revision `d1eb0e8`; the S5b cue-only ceiling holds on both the bank and the served form under the corrected standard; the README preflight row is closed by the file; and the content UAT was reviewed with no findings logged.
 
-Signed: ____, ____
+Signed: Oliver Lau, 2026-08-20 — instruction of record: "sign off and go ahead", given after reviewing `UAT/HUMAN-UAT-2026-08-19-new-exams.md`.

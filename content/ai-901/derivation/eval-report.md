@@ -500,3 +500,54 @@ form; what remains is the *letter* cue — `always B` scores 12/34 = 35.3%, iden
 post-wave, because ai-901's keys were never permuted while `aif-c01` and `az-900` took a
 `permute-keys` pass in the same wave. Options for Oliver: accept · permute form-a's SC key letters
 and re-verify · waive with the reason recorded in `signoff.md`.
+
+---
+
+## S5b · re-measured at the Gate 2 final pass (2026-08-20) {#s5b-final}
+
+Instrument: `node tools/exploit-scan.mjs ai-901 --json` for form-a scope, and the same tool run against a selection-free copy of the package for bank scope (the tool scopes to the served form whenever a `selection.json` form exists, so bank scope has to be produced deliberately). Bank revision under measurement: `questions.json` @ **`d1eb0e8`** (blob `85a0898bac`, sha256 `beb99f0c051ede9a…`).
+
+**These numbers supersede the S5b table above.**
+
+### What was corrected in the standard, and what that does to this exam
+
+Two corrections landed on the instrument between the 2026-08-19 re-pin and this pass. Both are
+changes to **how the number is produced and judged**, and they are recorded here rather than
+silently folded into the table, so the audit trail shows the standard was corrected — not that
+the number moved on its own.
+
+1. **`tools/exploit-scan.mjs` was reporting `ok` against the pass-mark floor, not the publication
+   ceiling** (`cda74c8`). The tool's exit status only ever asked "can a zero-knowledge attacker
+   reach the pass mark?" — the [1.35 × random / 0.85 × k_req@random ceiling](../../../methodology/05-eval-rubric.md#cue-only-solve) was computed by hand at S5b and never by
+   the machine. It now computes `random`, `blindCeiling`, `kReq`, `kReqFloor` and `ceilingOk`
+   itself and exits non-zero on a breach.
+2. **The committed strategy set now tests every option length rank, not just the extremes**
+   (`a8c7f4e`). The previous set scored "pick the longest" and "pick the shortest"; the standard
+   parity fix — lift one thin distractor above a rank-1 key — parks keys on rank 2, which reads
+   clean on an argmax check and hands the attacker the same free win one rank in. Every package's
+   S5b section already carried that gap as an explicit *"Residual: the instrument does not test
+   interior length ranks"* table. **That residual is no longer a residual: it is the measured
+   number.** This is why the blind figures below are higher than the ones the 2026-08-19 sheets
+   recorded even where the bank did not change.
+
+The **bar itself is unchanged.** The hand-computed ceilings in the earlier sheets were already
+against the correct 1.35×/0.85× standard, with the strict format-mix `random` rather than the
+rubric's 25% worked-example simplification. What changed is that the machine now enforces it and
+the attacker is stronger.
+
+### The re-stated verdict
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 56 | **25.00%** (14/56) | ≤ 30.17% (random 22.35%) | **0.600** | ≥ 0.522 | **PASS** |
+| form-a | 42 | **23.81%** (10/42) | ≤ 28.97% (random 21.46%) | **0.605** | ≥ 0.525 | **PASS** |
+
+**The previously pinned revision `b3851b9`, re-measured with the corrected instrument, does not clear the ceiling:** bank 33.93% (FAIL, k_req 0.545) · form-a 33.33% (FAIL, k_req 0.552). That is the honest statement of why this exam needed another content pass, and it is stated here rather than left implicit — the earlier sheet's PASS was produced by an instrument that could not see interior length ranks.
+
+### Residuals carried to Gate 2
+
+- **the 2026-08-19 ceiling FAIL is CLEARED, by content work — not by a change of bar.** That sheet recorded form-a blind 30.95% against a ceiling of 28.97% and referred it to Oliver as the one exam of the six that did not clear. The bar is unchanged (28.97%); the bank was fixed. Measured on the shipping revision the form scores 23.81%.
+- **key-letter permutation** (`a8c7f4e`, `tools/permute-keys.mjs`): `eval/blind-solve.json`'s recorded letters no longer map to the shipping bank, exactly as for `aif-c01`. The file remains a valid record of the round-2 judgment; the deep read is the control.
+- **stem-echo**, uninstrumented: 32.4% bank / 38.5% form against 25% chance — the highest form figure of the seven.
+- Gate-1 decisions **D5** (Microsoft sign-in for the official practice assessment) and **D6** (`kittoyeah-ai901-prep` distillation) remain open. Neither is a preflight item; both are source-coverage improvements for a future round.
+- **No cross-model eval column exists for this bank**, in any round. The Codex CLI on this machine is bundled inside the VS Code extension and is not logged in, so the advisory cross-solve was `advisory_skipped` throughout. Author and examiner share a model family, so no blind-solve score — however clean — excludes a convergent blind spot. The deep-read sample is the compensating control, and this is a standing gap, not a finding against the bank.

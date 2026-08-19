@@ -2281,7 +2281,7 @@
         "A": "Whether the surfaces sit under the firm's single enterprise agreement, which makes them equivalent",
         "B": "Whether Memory can be cleared at the end of the search, once all the dossiers have been discussed",
         "C": "Whether pasting short excerpts instead of whole dossiers keeps the volume of data low",
-        "D": "Where dossier content rests on each surface, since retention, Memory and connector scope differ"
+        "D": "Where the dossier content comes to rest on each surface — retention, Memory, connector scope"
       },
       "answer": "D",
       "distractor_patterns": {

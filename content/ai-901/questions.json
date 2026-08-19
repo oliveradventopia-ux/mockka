@@ -890,7 +890,7 @@
       "type": "single_choice",
       "question": "A laboratory instrument servicing firm turns engineers' free-text visit notes into service records with a deployed model. The model reliably picks out the right facts — instrument, fault, parts fitted, calibration result — but writes them as flowing paragraphs, while the maintenance system needs a fixed layout with each field on its own line and units appended. Which correction fits the failure?",
       "options": {
-        "A": "Put two or three worked examples of a finished service record into the prompt, showing the exact layout wanted.",
+        "A": "Put two or three worked examples of a finished service record into the prompt, so that the exact layout wanted is shown.",
         "B": "Ask the model to work through its reasoning step by step before it writes the service record out.",
         "C": "Fine-tune a copy of the model on several thousand past service records taken from the maintenance system.",
         "D": "Ask the engineers to write their visit notes in the required field-per-line layout so the model can copy that shape through."
@@ -1446,7 +1446,7 @@
         "A": "Replace the agent with Azure Speech in Foundry Tools, which recognizes the keeper's request and speaks a reply straight back.",
         "B": "Add recognition in front of the agent and have keepers read the agent's answer from the handset screen.",
         "C": "Instruct the agent to phrase its answers so that they sound natural when a keeper reads them aloud.",
-        "D": "Compose Speech recognition and Speech synthesis around the agent, so speech reaches it and its answer returns as audio."
+        "D": "Compose Speech recognition and Speech synthesis around the agent, so that speech reaches it and its answer returns as audio."
       },
       "answer": "D",
       "distractor_patterns": {
@@ -1844,8 +1844,8 @@
       "type": "single_choice",
       "question": "An agricultural equipment dealership handles warranty claims that arrive as a mix: a typed email from the farm, a scanned service sheet, a photograph of the failed component, and a voicemail from the field technician. A draft architecture proposes four separate services, one per kind of content. Which assessment is correct?",
       "options": {
-        "A": "One tool in Foundry Tools spans all four content types, so a service per kind of content is not needed.",
-        "B": "Four services are needed, as Azure AI Vision, Azure Speech and a document product each serve one content type.",
+        "A": "One tool in Foundry Tools spans all four content types, so that a service per kind of content is not needed.",
+        "B": "Four services are needed: Azure AI Vision for the photograph, Azure Speech for the voicemail, and document products for the rest.",
         "C": "Everything should be converted into documents first, so that one document service can handle the claim.",
         "D": "The email and the service sheet should be handled automatically and the photograph and voicemail sent to staff."
       },
@@ -1879,7 +1879,7 @@
       "options": {
         "A": "Improve extraction accuracy further before the compliance register can reasonably be expected to benefit from the extracted values.",
         "B": "Have engineers check every extracted value against the certificate before they key it into the register.",
-        "C": "Pass the extracted values into the compliance register the contractor already runs, so the process consumes them.",
+        "C": "Pass the extracted values into the compliance register the contractor already runs, so that the process consumes them.",
         "D": "Hold the extracted values in a new store that reports on how much of the certificate estate is covered."
       },
       "answer": "C",

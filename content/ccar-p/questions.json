@@ -2684,7 +2684,7 @@
       "question": "During discovery for a regional railway's incident-reporting assistant, an operations manager says the team would really like it to feel fast. The architect notes this down in the manager's own words and moves on. What should have happened instead?",
       "options": {
         "A": "The remark should be set aside, because a feeling is not something a requirement can be written against",
-        "B": "The preference should be translated into a constraint — a stated response-time target with the assumption behind it labelled — and written as a requirement row the design can be traced to",
+        "B": "The preference should be translated into a constraint, written as a traceable requirement row",
         "C": "Recording it verbatim is correct, since discovery exists to capture what stakeholders actually say",
         "D": "The remark should be passed to the sponsor to decide how it ranks against the other requests"
       },
@@ -2766,7 +2766,7 @@
         "A": "Defer the verdict until the heritage cases can be made to work, so a single clean answer can be given",
         "B": "Feasible as scoped, with heritage applications handled by the assistant and simply reviewed more carefully than the rest",
         "C": "Not feasible, since a substantial share of the caseload falls outside what the assistant can assess",
-        "D": "Feasible with constraints, documenting the load-bearing boundary condition — heritage-listed applications route to human assessment — so the limit is explicit and can be revisited"
+        "D": "Feasible with constraints, documenting the load-bearing boundary condition explicitly"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2801,7 +2801,7 @@
       "type": "single_choice",
       "question": "During discovery, a retail bank's executive sponsor states that the assistant must be 100% accurate before it can launch. What is the most effective response from the architect?",
       "options": {
-        "A": "Explain that these systems are probabilistic, then work with the sponsor to define measurable acceptance criteria and an error-handling strategy proportionate to the business risk",
+        "A": "Explain that these systems are probabilistic, then define measurable acceptance criteria",
         "B": "Agree to the requirement and add further testing phases until measured accuracy reaches 100%",
         "C": "Propose a smaller and more tightly constrained model so that there is less scope for error",
         "D": "Decline the engagement, since the requirement as stated cannot be satisfied"
@@ -2837,7 +2837,7 @@
       "question": "A waste management company's finance director instructs the team to use the cheapest available model for a routing assistant whose output feeds regulatory emissions reporting. Internal testing shows the cheapest tier has a materially higher error rate on this task. What is the architect's most professional course of action?",
       "options": {
         "A": "Use the more capable model and absorb the difference elsewhere in the budget so the reporting stays sound",
-        "B": "Present the trade-off in three elements including the reversal cost — error rate, downstream rework and regulatory exposure set against the saving — recommend a position, and let the accountable stakeholder decide with full information",
+        "B": "Present the trade-off in three elements including the reversal cost, then let the owner decide",
         "C": "Comply with the instruction and record the concern in the project risk register so that it is documented",
         "D": "Escalate above the finance director to the audit committee, given the regulatory exposure involved"
       },
@@ -2877,7 +2877,7 @@
         "A": "Commit to sub-second responses for demonstrations, and explain the production difference once the system is live",
         "B": "Remove the retrieval and reasoning steps so that the stated target becomes achievable",
         "C": "Accept the sub-second requirement and expect optimisation work to close the gap before launch",
-        "D": "Present the latency breakdown, negotiate an SLA the pipeline can actually honour, and propose streaming and progress indicators so the experience feels responsive within it"
+        "D": "Present the latency breakdown, negotiate an honourable SLA, and propose streaming indicators"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2913,7 +2913,7 @@
       "type": "multiple_response",
       "question": "A hospital trust's clinical documentation assistant has been live for a quarter. The team has dashboards and alerting, but when a metric moves nobody is certain what is supposed to happen next. Which TWO measures close that gap? (Select TWO)",
       "options": {
-        "A": "SLA thresholds set from their real sources — the clinical service standard and the supplier contract — rather than chosen to sit just above current performance",
+        "A": "SLA thresholds set from their real sources, not from current performance",
         "B": "A decision layer that maps each signal to a trigger action and to a named owner who acts on it",
         "C": "More granular dashboards, broken down by ward and by document type",
         "D": "A weekly meeting at which the team reviews whatever the dashboards happened to show",
@@ -2955,7 +2955,7 @@
       "type": "single_choice",
       "question": "Two months after launch, a football club's sponsor is visibly losing interest in its supporter-services assistant. The fortnightly report shows token spend, latency and uptime and nothing else. Which change would most improve stakeholder alignment?",
       "options": {
-        "A": "Report against the business success criteria agreed at discovery — staff hours saved, enquiry resolution rate — with the technical metrics as supporting detail, using a translation layer that maps one to the other",
+        "A": "Report against the business success criteria agreed at discovery, via a translation layer",
         "B": "Replace the report with an open dashboard the sponsor can consult whenever they wish",
         "C": "Increase the reporting frequency from fortnightly to weekly so momentum is maintained",
         "D": "Add further technical metrics so that the report is more thorough and complete"
@@ -2995,7 +2995,7 @@
       "options": {
         "A": "The full history of prompt drafts explored during development, so the team can see what was tried",
         "B": "A prioritised backlog of the features that were considered but not built",
-        "C": "Architecture decision records explaining the key trade-offs and the alternatives that were rejected, operational runbooks, and evaluation baselines the team can re-run",
+        "C": "Architecture decision records with rejected alternatives, runbooks, and re-runnable eval baselines",
         "D": "Direct access to the consultancy's engineers for six months of follow-up questions"
       },
       "answer": "C",
@@ -3033,7 +3033,7 @@
       "options": {
         "A": "A list of every prompt revision made during the build",
         "B": "The reuse note recording which components, patterns and controls the next project can inherit",
-        "C": "The before metric captured prior to launch, so the improvement can be stated as a comparison rather than as an assertion",
+        "C": "The before metric captured prior to launch",
         "D": "The number of requests the assistant has served since it went live",
         "E": "A statement that the project completed on schedule and within its budget"
       },
@@ -3073,7 +3073,7 @@
       "type": "single_choice",
       "question": "Midway through building a film production company's scheduling assistant, stakeholders keep adding requests: new data sources, further user groups, additional output formats. Which practice best manages this while preserving the working relationship?",
       "options": {
-        "A": "Assess each request against the agreed success criteria and scope baseline, make the impact visible before accepting it, and re-baseline timeline, cost and risk with sponsor sign-off when accepted changes materially alter the plan",
+        "A": "Assess each request against the scope baseline, then re-baseline cost and risk with sponsor sign-off",
         "B": "Add every request to a second-phase backlog without assessing whether any of them belong in this one",
         "C": "Decline all changes until the originally agreed scope has shipped",
         "D": "Absorb the requests without comment, since accommodating stakeholders is what keeps them engaged"

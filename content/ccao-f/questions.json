@@ -1439,7 +1439,7 @@
         "A": "Instrument the workflow to find where the time actually goes, then aim Claude at the friction that shows up",
         "B": "Proceed on the coordinator's recollection of the scheduling back-and-forth, which comes from living inside the workflow daily",
         "C": "Automate the whole volunteer workflow at once so every possible time sink is covered",
-        "D": "Delegate the scheduling emails now and watch the quarterly volunteer survey afterwards for any sign of improvement"
+        "D": "Delegate the scheduling emails now and watch the quarterly volunteer survey afterward for any sign of improvement"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -1539,7 +1539,7 @@
       "question": "An operations manager at a landscaping services franchise is bringing Claude into the quoting workflow: site notes are summarized, materials are itemized, prices are calculated against the rate card, and a franchise owner approves each quote before it is sent. A consultant proposes automating the workflow end to end, approval included. What is the most appropriate design?",
       "options": {
         "A": "Choose the steps Claude performs and keep the owner's approval checkpoint in place",
-        "B": "Automate every step including the approval, so quotes leave the system without anyone looking",
+        "B": "Automate every step including the approval, so quotes leave the system without a manual pause",
         "C": "Automate whichever steps will make the demonstration most impressive at the franchise convention",
         "D": "Keep Claude out of the quoting workflow entirely so the question of automation never arises"
       },

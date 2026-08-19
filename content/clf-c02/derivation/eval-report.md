@@ -455,3 +455,52 @@ rounds), and a 100% blind score on a foundational bank is weak evidence of key c
 manifest mix (`selection.json` is still empty, which is why `pnpm validate clf-c02` reports two
 selection failures), then the Gate 2 checklist, then Oliver's sign-off before any `manifest.status`
 flip.
+
+---
+
+## S5b · re-measured at the Gate 2 final pass (2026-08-20) {#s5b-final}
+
+Instrument: `node tools/exploit-scan.mjs clf-c02 --json` for form-a scope, and the same tool run against a selection-free copy of the package for bank scope (the tool scopes to the served form whenever a `selection.json` form exists, so bank scope has to be produced deliberately). Bank revision under measurement: `questions.json` @ **`793dde2`** (blob `cb76d1e9ae`, sha256 `8eb8213c81458f18…`).
+
+**These numbers supersede the S5b table above.**
+
+### What was corrected in the standard, and what that does to this exam
+
+Two corrections landed on the instrument between the 2026-08-19 re-pin and this pass. Both are
+changes to **how the number is produced and judged**, and they are recorded here rather than
+silently folded into the table, so the audit trail shows the standard was corrected — not that
+the number moved on its own.
+
+1. **`tools/exploit-scan.mjs` was reporting `ok` against the pass-mark floor, not the publication
+   ceiling** (`cda74c8`). The tool's exit status only ever asked "can a zero-knowledge attacker
+   reach the pass mark?" — the [1.35 × random / 0.85 × k_req@random ceiling](../../../methodology/05-eval-rubric.md#cue-only-solve) was computed by hand at S5b and never by
+   the machine. It now computes `random`, `blindCeiling`, `kReq`, `kReqFloor` and `ceilingOk`
+   itself and exits non-zero on a breach.
+2. **The committed strategy set now tests every option length rank, not just the extremes**
+   (`a8c7f4e`). The previous set scored "pick the longest" and "pick the shortest"; the standard
+   parity fix — lift one thin distractor above a rank-1 key — parks keys on rank 2, which reads
+   clean on an argmax check and hands the attacker the same free win one rank in. Every package's
+   S5b section already carried that gap as an explicit *"Residual: the instrument does not test
+   interior length ranks"* table. **That residual is no longer a residual: it is the measured
+   number.** This is why the blind figures below are higher than the ones the 2026-08-19 sheets
+   recorded even where the bank did not change.
+
+The **bar itself is unchanged.** The hand-computed ceilings in the earlier sheets were already
+against the correct 1.35×/0.85× standard, with the strict format-mix `random` rather than the
+rubric's 25% worked-example simplification. What changed is that the machine now enforces it and
+the attacker is stronger.
+
+### The re-stated verdict
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 68 | **25.00%** (17/68) | ≤ 29.87% (random 22.13%) | **0.600** | ≥ 0.523 | **PASS** |
+| form-a | 50 | **26.00%** (13/50) | ≤ 30.14% (random 22.32%) | **0.595** | ≥ 0.522 | **PASS** |
+
+**No S5b ceiling verdict has ever been recorded for this package** — S5 and S6 both closed before the cue-only-solve instrument existed, and this exam was not part of the 2026-08-19 cue-rework wave, so the table above is the first one. **The previously pinned revision `168ae1f`, re-measured with the corrected instrument, does not clear the ceiling on the scope that ships:** bank 29.41% (a 0.46-point PASS, k_req 0.577) · **form-a 32.00% — FAIL** against a 30.14% ceiling, k_req 0.559. The served form was the breach, and the bank was half a point off it. That is the honest statement of why this exam needed a content pass, and it is stated here rather than left implicit.
+
+### Residuals carried to Gate 2
+
+- **2 `named-entity-parity` warnings** (bank 41%, form 43%) — **untouched by the length work and still open.** The option naming the most proper-noun AWS services is the key more often than chance. Closing this needs real sibling service names written into distractors, which is authoring work in a separate lane, not an examiner edit. It is a warn, not an error, and the combined S5b consequence is inside the ceiling on both scopes.
+- **stem-echo**, uninstrumented: 36.1% bank / 35.7% form against 25% chance.
+- **No cross-model eval column exists for this bank**, in any round. The Codex CLI on this machine is bundled inside the VS Code extension and is not logged in, so the advisory cross-solve was `advisory_skipped` throughout. Author and examiner share a model family, so no blind-solve score — however clean — excludes a convergent blind spot. The deep-read sample is the compensating control, and this is a standing gap, not a finding against the bank.

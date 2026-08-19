@@ -142,9 +142,59 @@ waiver required by the eval**. Round-1's `1.01` blind-independence process flag 
    examiner declined to trade measured item quality or blueprint coverage for a cosmetic repeat —
    say so if you want it re-shuffled, or ask the author for more verticals.
 
-## What Oliver signs
+## What Oliver signs — **SUPERSEDED 2026-08-20**
+
+> He signed it. `derivation/signoff.md` now records PASS on every preflight row,
+> the adjudication decisions, the waiver block and a **PUBLISH** decision dated
+> 2026-08-20. Preflight item 5 (README) is closed by the file, not waived. The
+> paragraph below is the pre-signature statement, kept for the record.
 
 `derivation/signoff.md` is pre-filled with the evidence hashes and this sample list; verdict
 columns and the PUBLISH / DO-NOT-PUBLISH decision are blank and his. Preflight item 5 (README)
 must close before the `published` flip. The flip itself is Oliver's — the examiner stops at
 `in_review`.
+
+---
+
+## Gate 2 final pass — 2026-08-20 (re-pin · corrected S5b standard · README closed · sign-off)
+
+**Re-pinned to the shipping revision.** `content/clf-c02/questions.json` @ **`793dde2`** — blob `cb76d1e9ae`, sha256 `8eb8213c81458f18…`, committed 2026-08-20 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated.
+
+### Content pass landed after the 2026-08-19 re-pin
+
+- `793dde2 even out clf-c02 key length ranks in both directions`
+
+**12 distractor option strings on 12 items**, six seated and six reserve-only. Every edit is a length adjustment to the same proposition — some lengthened, some shortened — so no distractor's claim changed. Stems, keys, `answer` fields, `rationale.correct` and the `distractor_patterns` multiset are byte-identical; one item (`2.19`) had its distractor rationale rewritten to match.
+
+**Items touched:** 2.03, 3.01, 3.08, 3.09, 3.16, 4.07 (seated) · 1.01, 1.07, 2.14, 2.17, 2.19, 3.10 (reserve).
+
+Every rewritten option was re-read against the rationale that refutes it. Where a rationale was left unchanged, the distractor's proposition was unchanged too — the edits move length, not meaning — so each refutation still lands on the string it now faces. No distractor was argued into co-correctness; dimensions 1 and 2 stand for the touched items.
+
+### Preflight rows restated on this revision
+
+| # | Check | Verdict | Evidence at 2026-08-20 |
+|---|---|---|---|
+| 3 | Validator green | **PASS** | `pnpm validate clf-c02` → **35 checks, 0 errors, 2 warnings** on `793dde2` — both are `named-entity-parity` (bank 11/27 = 41%, form-a 9/21 = 43%, against a 40% warn bound and 25% chance) — untouched by the length work and carried below *(at `published`. The same tree reports 34 at `in_review`: `publication-preflight` is `when: status === 'published'` and runs only after the flip.)* |
+| 4 | Eval thresholds, incl. the S5b ceiling | **PASS** | Re-stated below and in `derivation/eval-report.md` §s5b-final. Both scopes clear the corrected ceiling. |
+| 5 | Per-exam README statements | **CLOSED — PASS** | `content/clf-c02/README.md` now exists and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). *This row read **OPEN — not written** in every previous version of this sheet; it is closed by the file, not waived.* No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. |
+
+### S5b re-stated against the corrected ceiling
+
+| scope | n | blind (this revision) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 68 | **25.00%** (17/68) | ≤ 29.87% (random 22.13%) | **0.600** | ≥ 0.523 | **PASS** |
+| form-a | 50 | **26.00%** (13/50) | ≤ 30.14% (random 22.32%) | **0.595** | ≥ 0.522 | **PASS** |
+
+**No S5b ceiling verdict has ever been recorded for this package** — S5 and S6 both closed before the cue-only-solve instrument existed, and this exam was not part of the 2026-08-19 cue-rework wave, so the table above is the first one. **The previously pinned revision `168ae1f`, re-measured with the corrected instrument, does not clear the ceiling on the scope that ships:** bank 29.41% (a 0.46-point PASS, k_req 0.577) · **form-a 32.00% — FAIL** against a 30.14% ceiling, k_req 0.559. The served form was the breach, and the bank was half a point off it. That is the honest statement of why this exam needed a content pass, and it is stated here rather than left implicit.
+
+The two corrections to the instrument — the ceiling now computed by the machine rather than by hand against a pass-mark `ok`, and interior length ranks now inside the committed strategy set — are written out in full in `derivation/eval-report.md` §s5b-final. The **bar is unchanged**; the machine now enforces it and the attacker is stronger.
+
+### Deep-read sample
+
+**Extended 22 → 32 items.** Added by the 2026-08-20 pass: 1.01, 2.03, 2.14, 2.17, 3.01, 3.08, 3.09, 3.10, 3.16, 4.07. Every item that pass touched is now in the sample; the remainder were already in it.
+
+### Residuals a reader should see
+
+- **2 `named-entity-parity` warnings** (bank 41%, form 43%) — **untouched by the length work and still open.** The option naming the most proper-noun AWS services is the key more often than chance. Closing this needs real sibling service names written into distractors, which is authoring work in a separate lane, not an examiner edit. It is a warn, not an error, and the combined S5b consequence is inside the ceiling on both scopes.
+- **stem-echo**, uninstrumented: 36.1% bank / 35.7% form against 25% chance.
+- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.

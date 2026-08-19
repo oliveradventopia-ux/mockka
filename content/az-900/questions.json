@@ -258,7 +258,7 @@
       "type": "single_choice",
       "question": "A genealogy research service rebuilds its historical-records search index in a batch job that checkpoints its progress and can resume cleanly after being stopped. The rebuild has no deadline. Which way of buying compute fits this job?",
       "options": {
-        "A": "A one-year reserved term, so the rebuild is never at risk of interruption",
+        "A": "A one-year reserved term booked up front, so the rebuild is never at risk of interruption",
         "B": "Standard on-demand rates, as interruptible capacity is unsuitable for production workloads",
         "C": "Interruptible spare capacity at the lowest compute price, accepting possible eviction",
         "D": "Additional parallel machines at standard rates, so the rebuild finishes before any interruption"
@@ -294,7 +294,7 @@
       "options": {
         "A": "Nothing at all, as serverless moves every responsibility, including the code, to the platform",
         "B": "Choosing instance sizes and a scaling schedule so the notification code has capacity at peak",
-        "C": "Patching the operating system images that the notification code runs on",
+        "C": "Patching and updating the operating system images that the notification code runs on",
         "D": "The notification code itself, its configuration, and the data it works with"
       },
       "answer": "D",
@@ -1315,7 +1315,7 @@
       "options": {
         "A": "Both steps are part of authentication, which finishes only once the inventory scope has been applied",
         "B": "The sign-in with a second factor is authentication; the branch-inventory limit is authorization",
-        "C": "The sign-in step is the authorization, and the branch-inventory limit is the authentication",
+        "C": "The sign-in step is the authorization, and the branch-inventory limit imposed afterwards is the authentication",
         "D": "The one-time code makes this passwordless authentication, which also grants the branch permissions"
       },
       "answer": "B",
@@ -1630,7 +1630,7 @@
       "question": "A print and signage shop's Azure invoice rose by roughly a fifth last month, and no new project was approved in that period. The owner wants to know which resources and which services carried the rise, and on which days it showed up, before changing anything about the estate. Which capability answers that?",
       "options": {
         "A": "Cost analysis, slicing the charges already incurred by resource, by service and over time",
-        "B": "The pricing calculator, priced for the same services at the sizes the shop runs today",
+        "B": "The pricing calculator, priced for the same services at the sizes and regions the shop runs today",
         "C": "A budget for next month set at the previous month's total, with an alert as consumption approaches it",
         "D": "A tagging scheme applied across the estate so future charges can be attributed to a department"
       },
@@ -1700,7 +1700,7 @@
         "A": "Reorganize the estate so that every business unit's resources sit in resource groups belonging to that unit alone",
         "B": "Apply a business-unit tag to each resource so that the monthly cost report can be grouped by that tag",
         "C": "Give each unit a role assignment over the resources it owns, and report each unit's costs per assignment",
-        "D": "Split each shared resource group's monthly charge evenly between the business units that use it"
+        "D": "Split each shared resource group's monthly charge evenly between the four business units that draw on it"
       },
       "answer": "B",
       "distractor_patterns": {
@@ -1768,7 +1768,7 @@
         "A": "Apply a lock at each subscription so that resources cannot be created in the regions that are not approved",
         "B": "Withdraw deployment rights from the practice engineers and route every deployment through the central team",
         "C": "Assign a policy that permits only the two approved regions, so that a deployment elsewhere is refused",
-        "D": "Report monthly on resources by region and remove anything found outside the two approved ones"
+        "D": "Report monthly on resources by region and remove anything found deployed outside the two approved regions"
       },
       "answer": "C",
       "distractor_patterns": {

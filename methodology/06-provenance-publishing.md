@@ -33,10 +33,15 @@ evidence attached — it is the working paper for [Gate 2](00-pipeline.md#pipeli
    advisory matrix or the recorded note that Codex was unavailable), `eval/judge-scores.json`,
    `eval/overlap-report.md` all exist for this bank revision; no dimension ≤2 anywhere; every
    confident miss adjudicated; bounce cap respected; the Gate 2 sample list assembled
-   ([`05-eval-rubric.md`](05-eval-rubric.md#handoff)).
+   ([`05-eval-rubric.md`](05-eval-rubric.md#handoff)). **And the S5b cue-only ceiling holds**
+   ([`05-eval-rubric.md#cue-only-solve`](05-eval-rubric.md#cue-only-solve)): blind ≤ 1.35 × random
+   AND k_req ≥ 0.85 × k_req@random, for the bank and every served form, with the numbers recorded
+   in the eval report.
    *[machine: `publication-preflight` — existence, parseability, the
    [artifact shapes](05-eval-rubric.md#artifact-shapes), no dimension ≤2, every miss
-   adjudicated; bounce cap + Gate 2 sample assembly are examiner checklist]*
+   adjudicated; `tools/exploit-scan.mjs` (CI + the root `gate` script) — the S5b hard floor,
+   exit 1 whenever any exam is blind-passable; bounce cap, Gate 2 sample assembly, and the S5b
+   1.35×/0.85× ceiling arithmetic are examiner checklist]*
 5. **Per-exam README statements present** — see the [template](#readme-template) below: provenance,
    independence, NDA, non-affiliation, licence. *[examiner checklist — the manifest-level
    `nda_statement` is machine-checked by `provenance-sources`]*

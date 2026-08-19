@@ -1800,8 +1800,8 @@
       "question": "A city parking authority's citizen chatbot must stay on parking topics — no election questions, no legal advice — and must block profanity and personal data in both prompts and responses. One engineer proposes retraining the model until the unwanted behaviors disappear. What is the right control?",
       "options": {
         "A": "Fine-tuning the unwanted topics and content out of the model, so the policy lives permanently in the weights themselves",
-        "B": "Amazon Bedrock Guardrails, enforcing content and topic policy at the boundary where prompts enter and outputs leave",
-        "C": "A system-prompt instruction listing the prohibited topics and content, relying on the model to follow the instruction on every interaction",
+        "B": "Amazon Bedrock Guardrails, enforcing content and topic policy at the boundary where prompts enter and outputs leave, so that the policy sits outside the model",
+        "C": "A system-prompt instruction stored in Amazon Bedrock Prompt Management listing the prohibited topics and content, relying on the model to follow the instruction on every interaction",
         "D": "Replacing free-text chat with a fixed menu of approved canned responses, so off-topic content becomes impossible by construction"
       },
       "answer": "B",
@@ -1903,7 +1903,7 @@
       "options": {
         "A": "The validation set is unrepresentatively hard — re-draw the validation split until the two scores align, then reassess whether any problem remains",
         "B": "The model is underfitting — it is too simple to capture the task, which is why the two scores diverge, and more capacity will close the gap",
-        "C": "The model is overfitting — it memorized training-image specifics instead of the general pattern, which is why the two scores diverge",
+        "C": "The model is overfitting — it memorized training-image specifics instead of the general pattern, which is why the training and validation scores diverge so sharply",
         "D": "The gap is camera noise — live lenses and lighting degrade inputs relative to the training images, and the scores will converge as the hardware is maintained"
       },
       "answer": "C",
@@ -1935,8 +1935,8 @@
       "type": "single_choice",
       "question": "A mortgage origination firm's pre-qualification model reports 90% aggregate accuracy. A community advocacy group alleges the model performs worse for applicants from certain neighborhoods, and the firm must actually find out. How is bias like this discovered in practice?",
       "options": {
-        "A": "Subgroup analysis of per-group accuracy, label-quality analysis of the historical decisions, and human audits through Amazon A2I",
-        "B": "Enabling drift monitoring on the production model, since a bias problem of this kind would register as distribution drift in the monitoring dashboards",
+        "A": "Subgroup analysis of per-group accuracy, label-quality analysis of the historical decisions, and human audits through Amazon A2I, so that group-level performance becomes visible",
+        "B": "Enabling Amazon SageMaker Model Monitor on the production model, since a bias problem of this kind would register as distribution drift in the monitoring dashboards",
         "C": "Recomputing aggregate accuracy on a fresh sample of applications, since a sound overall number on new data would settle the allegation",
         "D": "Publishing the model's aggregate accuracy and methodology in a transparency report, so external parties can see the firm has nothing to hide"
       },
@@ -1972,7 +1972,7 @@
         "A": "Publishing the architecture and training-data description satisfies both requests, since a system that is fully documented is by that fact explainable",
         "B": "A notice that lending decisions involve an AI system, added to all decline letters, addresses the regulator's underlying concern in both requests",
         "C": "Neither request can be met for a model of this complexity, so the bank should seek a supervisory exemption rather than attempt either response",
-        "D": "These are different properties needing different artifacts: transparency accounts for the system, explainability for the individual decision"
+        "D": "These are different properties needing different artifacts rather than one document: transparency accounts for the system, explainability for the individual decision"
       },
       "answer": "D",
       "distractor_patterns": {
@@ -2005,7 +2005,7 @@
       "options": {
         "A": "Deferral until the model can be replaced by a fully open source alternative, since meaningful explainability artifacts are not possible before then",
         "B": "Amazon SageMaker Model Cards stating the model's purpose and limitations, with SageMaker Clarify surfacing bias findings and feature attributions",
-        "C": "AWS KMS encryption of the model artifacts and CloudTrail logging of every API call, establishing a complete audited record around the model",
+        "C": "AWS KMS encryption of the model artifacts, AWS CloudTrail logging of every API call, and AWS Config tracking configuration changes, establishing a complete audited record around the model",
         "D": "A public trust page describing the company's commitment to responsible AI, professionally written to reassure applicants and regulators"
       },
       "answer": "B",

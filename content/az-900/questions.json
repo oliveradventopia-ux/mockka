@@ -1597,7 +1597,7 @@
       "options": {
         "A": "Cost analysis over the firm's existing estate and its two years of invoices, filtered to the services the new platform would be built from",
         "B": "A budget set at the amount the board is willing to fund, with alerts as consumption approaches that line",
-        "C": "The pricing calculator, configured with the proposed services, sizes and regions and priced as a monthly total",
+        "C": "The pricing calculator, configured with the proposed services, sizes and regions so that the design is priced as a monthly total",
         "D": "A total-cost-of-ownership comparison against what the firm currently spends on print production"
       },
       "answer": "C",
@@ -1698,7 +1698,7 @@
       "question": "A stadium operations company charges its cloud costs back to four business units. Its resource groups are organized by environment — production, staging, test — and several of them hold resources belonging to more than one unit. Finance needs each unit's monthly share, and the operations team has ruled out rebuilding the estate.",
       "options": {
         "A": "Reorganize the estate so that every business unit's resources sit in resource groups belonging to that unit alone",
-        "B": "Apply a business-unit tag to each resource and group the monthly cost report by that tag",
+        "B": "Apply a business-unit tag to each resource so that the monthly cost report can be grouped by that tag",
         "C": "Give each unit a role assignment over the resources it owns, and report each unit's costs per assignment",
         "D": "Split each shared resource group's monthly charge evenly between the business units that use it"
       },
@@ -1767,7 +1767,7 @@
       "options": {
         "A": "Apply a lock at each subscription so that resources cannot be created in the regions that are not approved",
         "B": "Withdraw deployment rights from the practice engineers and route every deployment through the central team",
-        "C": "Assign a policy that permits only the two approved regions, so a deployment elsewhere is refused",
+        "C": "Assign a policy that permits only the two approved regions, so that a deployment elsewhere is refused",
         "D": "Report monthly on resources by region and remove anything found outside the two approved ones"
       },
       "answer": "C",

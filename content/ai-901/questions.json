@@ -1022,7 +1022,7 @@
       "type": "single_choice",
       "question": "A glass manufacturer's production manager wants to know whether a model can make sense of the plant's shift handover notes, which are terse and full of local abbreviations, before asking for budget. There is no application yet and no developer free for three weeks. Which route answers the question soonest without prejudging it?",
       "options": {
-        "A": "Wait for a developer to become free and have a small client written against the deployment in three weeks.",
+        "A": "Wait three weeks for a developer to become free, then have a small client written against the deployment with the Foundry SDK.",
         "B": "Commission a fine-tune on two years of handover notes so the model is judged on plant vocabulary.",
         "C": "Try the deployed model interactively in the Foundry portal, pasting in real handover notes and reading what comes back.",
         "D": "Ask the shift supervisors whether they believe a model could make sense of the way they write handovers."
@@ -1055,7 +1055,7 @@
       "type": "single_choice",
       "question": "A horticulture nursery has a model deployed and has confirmed in the portal that it answers growers' pest-treatment questions well. The nursery now wants growers to ask those questions from inside the stock app they already use on the packing line, without opening a browser. What does that step involve?",
       "options": {
-        "A": "Exporting the tested portal conversation and embedding it in the stock app as a saved script of answers.",
+        "A": "Exporting the tested Foundry portal conversation and embedding it in the stock app as a saved script of answers.",
         "B": "Writing code with the Foundry SDK that connects to the deployment, sends the prompts and handles the responses.",
         "C": "Deploying a second copy of the model for the stock app so that portal testing and packing-line traffic stay apart.",
         "D": "Adding every grower as a user of the portal so they can chat with the deployed model from the packing line."
@@ -1128,7 +1128,7 @@
       "options": {
         "A": "Reuse it unchanged: any client that can send a prompt to a deployment drives an agent in the same way.",
         "B": "Reuse it and paste the agent's instructions and tool descriptions into every request the client sends.",
-        "C": "Keep staff working in the portal, as an agent cannot be reached from an application the estate writes.",
+        "C": "Keep staff working in the Foundry portal, as an agent cannot be reached from an application the estate writes with the Foundry SDK.",
         "D": "Write a client for the agent with the Foundry SDK, addressing the agent that already carries its instructions and tools."
       },
       "answer": "D",
@@ -1304,7 +1304,7 @@
       "type": "single_choice",
       "question": "A school district already runs an agent that answers staff questions and raises tickets through its connected tools. The district now wants parent messages classified by topic and by how upset the writer sounds, so the agent can prioritize what it raises. A developer proposes doing that classification in the mail gateway and passing only the result to the agent. Which design fits what the district asked for?",
       "options": {
-        "A": "Classify in the mail gateway before the agent is involved, and pass the topic and tone through as fields.",
+        "A": "Classify in the mail gateway before the agent is involved, and pass the topic and the tone through to the agent as fields.",
         "B": "Describe in the agent's instructions how to judge topic and tone, so it forms both judgments as it reads.",
         "C": "Stand up a second agent whose only job is classification and have the two agents exchange messages.",
         "D": "Attach Azure Language text analysis to the agent as a capability it calls when a message needs classifying."
@@ -1372,7 +1372,7 @@
       "question": "A mobile network operator runs an incident bridge on which engineers speak status updates and hear updates read back to them. The application has to take dictated updates as text and read the consolidated status out in one consistent voice across every region. How is that speech work implemented on this platform?",
       "options": {
         "A": "Azure Speech in Foundry Tools provides Speech recognition and Speech synthesis as capabilities the application configures and calls.",
-        "B": "A deployed chat model is prompted to transcribe each update and to write the consolidated status in a speaking style.",
+        "B": "A chat model deployed in Microsoft Foundry is prompted to transcribe each update and to write the consolidated status in a speaking style.",
         "C": "Speech behavior is set through the deployment's inference parameters, alongside settings such as temperature.",
         "D": "The portal playground carries out the recognition and the speaking for applications while they are running."
       },
@@ -1443,7 +1443,7 @@
       "type": "single_choice",
       "question": "A zoological park has an agent that books veterinary slots and logs feeding records through its connected tools. Keepers work with both hands occupied and want to speak their requests to that agent and hear its answers, without stopping to type. How is that built?",
       "options": {
-        "A": "Replace the agent with a speech capability that recognizes the keeper's request and speaks a reply back.",
+        "A": "Replace the agent with Azure Speech in Foundry Tools, which recognizes the keeper's request and speaks a reply straight back.",
         "B": "Add recognition in front of the agent and have keepers read the agent's answer from the handset screen.",
         "C": "Instruct the agent to phrase its answers so that they sound natural when a keeper reads them aloud.",
         "D": "Compose Speech recognition and Speech synthesis around the agent, so speech reaches it and its answer returns as audio."
@@ -1745,10 +1745,10 @@
       "type": "single_choice",
       "question": "An automotive parts distributor receives supplier delivery notes as files in dozens of house layouts. Its warehouse system needs the part number, quantity, batch and delivery date from each note as values it can book straight into stock, and the goods-in team currently keys them by hand. Which implementation route fits?",
       "options": {
-        "A": "Prompt a deployed chat model with the text of each note and ask it to list the four values in order.",
-        "B": "Use Azure Content Understanding in Foundry Tools, which returns the named values the warehouse system books.",
+        "A": "Prompt a chat model deployed in Microsoft Foundry with the text of each note and ask it to list the four values in order.",
+        "B": "Send each note to Content Understanding, which returns the named values the warehouse system books into stock.",
         "C": "Have goods-in staff paste each note into the portal playground and copy the four values into the system.",
-        "D": "Read the characters off each note and write parsing rules per supplier layout over the resulting page text."
+        "D": "Use Azure AI Document Intelligence to read the characters off each note, then write parsing rules per supplier layout over the page text."
       },
       "answer": "B",
       "distractor_patterns": {
@@ -1811,7 +1811,7 @@
       "type": "single_choice",
       "question": "A chemical plant's safety team holds recorded toolbox talks and helmet-camera walkdowns. Auditors want the hazards raised, the equipment referred to and who was present as values in the safety register. The team's plan is to transcribe the recordings with a separate speech step, then extract from the transcripts. Which route does the platform support directly?",
       "options": {
-        "A": "Transcribe every recording with a speech capability first, then run extraction over the transcripts that result.",
+        "A": "Transcribe every recording with Azure Speech in Foundry Tools first, then run extraction over the transcripts with Content Understanding.",
         "B": "Extract from the toolbox talks and have the safety team watch the walkdowns and note the values by hand.",
         "C": "Keep only the recordings and their metadata, as recorded media cannot yield named values for a register.",
         "D": "Send the recordings to Azure Content Understanding in Foundry Tools, which handles audio and video as content types."
@@ -1845,7 +1845,7 @@
       "question": "An agricultural equipment dealership handles warranty claims that arrive as a mix: a typed email from the farm, a scanned service sheet, a photograph of the failed component, and a voicemail from the field technician. A draft architecture proposes four separate services, one per kind of content. Which assessment is correct?",
       "options": {
         "A": "One tool in Foundry Tools spans all four content types, so a service per kind of content is not needed.",
-        "B": "Four services are needed, as each content type is served by a different product on the platform.",
+        "B": "Four services are needed, as Azure AI Vision, Azure Speech and a document product each serve one content type.",
         "C": "Everything should be converted into documents first, so that one document service can handle the claim.",
         "D": "The email and the service sheet should be handled automatically and the photograph and voicemail sent to staff."
       },

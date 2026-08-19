@@ -916,19 +916,31 @@ const CHECKS: Check[] = [
       const warnB = knobOr(v?.key_length_rank_warn_share, KEY_LENGTH_RANK_WARN_SHARE);
       const errB = Math.max(knobOr(v?.key_length_rank_error_share, KEY_LENGTH_RANK_ERROR_SHARE), warnB);
 
+      // Every rank, not just the extremes. Bounding argmax/argmin alone taught
+      // the 2026-08-19 rework wave to park keys at SECOND-longest: az-900 came
+      // out at 52% on rank 2 while both extremes read clean, and "take the
+      // second-longest" then scored 46% blind — worse than the 42% the wave was
+      // fixing (L-0038). A rank cue is a rank cue wherever it sits.
+      const RANK_LABELS = ['longest', '2nd longest', '3rd longest', '4th longest', '5th longest'];
       for (const scope of cueScopes(pkg)) {
-        for (const dir of ['longest', 'shortest'] as const) {
+        const maxOpts = Math.max(
+          0,
+          ...scope.questions
+            .filter((q) => q.type === 'single_choice')
+            .map((q) => Object.keys(q.options ?? {}).length),
+        );
+        for (let rank = 0; rank < maxOpts; rank++) {
           let hits = 0;
           let of = 0;
           for (const q of scope.questions) {
             if (q.type !== 'single_choice' || typeof q.answer !== 'string') continue;
             const ks = Object.keys(q.options ?? {});
-            if (ks.length < 2) continue;
+            if (ks.length < 2 || rank >= ks.length) continue;
             const len = (k: string) => (q.options?.[k] ?? '').trim().length;
-            const winner = ks.reduce((a, b) =>
-              dir === 'longest' ? (len(b) > len(a) ? b : a) : (len(b) < len(a) ? b : a),
-            );
-            // Strict rank only: a tie at the extreme is not a rank cue.
+            const ordered = [...ks].sort((a, b) => len(b) - len(a));
+            const winner = ordered[rank];
+            if (winner === undefined) continue;
+            // Strict rank only: a tie at this rank is not a rank cue.
             if (ks.filter((k) => len(k) === len(winner)).length !== 1) continue;
             of += 1;
             if (winner === q.answer) hits += 1;
@@ -937,13 +949,14 @@ const CHECKS: Check[] = [
           const share = hits / of;
           const bound = share > errB ? 'error-tier' : share > warnB ? 'warn-tier' : null;
           if (bound) {
+            const label = RANK_LABELS[rank] ?? `#${rank + 1} longest`;
             report(
               'key-length-rank-share',
               'warn',
-              `[${scope.label}] the key is the strict ${dir} option in ${hits}/${of} single-choice items ` +
+              `[${scope.label}] the key is the strict ${label} option in ${hits}/${of} single-choice items ` +
                 `(${Math.round(share * 100)}%, ${bound} bound ` +
                 `${Math.round((bound === 'error-tier' ? errB : warnB) * 100)}%, chance 25%) — ` +
-                'length rank gives items away even at ratio ~1.0; redistribute key lengths across the option band',
+                'length rank gives items away at any rank, not just the extremes; redistribute key lengths across the option band',
             );
           }
         }

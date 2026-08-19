@@ -14,22 +14,22 @@
       "type": "single_choice",
       "question": "A rural broadband provider is preparing a model that ranks incoming fault reports so engineers are dispatched to the most disruptive outages first. Its dispatch history is dense for town streets and thin for outlying farms, and the regulator has asked the provider to show that the ranking is fair. Which action addresses the fairness consideration for this solution?",
       "options": {
-        "A": "Publish a notice on the customer portal explaining that the order of engineer dispatch is decided with the help of an AI system.",
-        "B": "Compare how the model ranks town faults against outlying-farm faults of the same type, and report the gap between the two.",
-        "C": "Encrypt the stored dispatch history and limit access to the ranking data to the operations team who run the dispatch desk.",
+        "A": "Compare how the model ranks town faults against outlying-farm faults of the same type, and report the gap between the two.",
+        "B": "Encrypt the stored dispatch history and limit access to the ranking data to the operations team who run the dispatch desk.",
+        "C": "Publish a notice on the customer portal explaining that the order of engineer dispatch is decided with the help of an AI system.",
         "D": "Review a weekly sample of closed jobs to see whether any farm customers have complained about how long they waited."
       },
-      "answer": "B",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "D09",
-        "C": "E04",
+        "B": "E04",
+        "C": "D09",
         "D": "D08"
       },
       "rationale": {
         "correct": "A fairness consideration asks where a solution could hand out attention or accuracy unevenly across groups of people, and the only way to answer it is to measure the outcome for each group. Ranking town faults beside outlying-farm faults of the same type turns the responsible AI question into a number the regulator can read.",
         "distractors": {
-          "A": "Telling customers that an AI system orders dispatch discharges transparency. It describes the mechanism to people without revealing whether farms consistently wait longer than towns.",
-          "C": "Encrypting the history and limiting access is a privacy and security control. It protects the data behind the ranking and says nothing about how the ranking treats each group.",
+          "B": "Encrypting the history and limiting access is a privacy and security control. It protects the data behind the ranking and says nothing about how the ranking treats each group.",
+          "C": "Telling customers that an AI system orders dispatch discharges transparency. It describes the mechanism to people without revealing whether farms consistently wait longer than towns.",
           "D": "Complaints surface only after people have already waited, and the customers who wait longest are often the least likely to complain, so the gap stays invisible."
         }
       }
@@ -47,23 +47,23 @@
       "type": "single_choice",
       "question": "A ferry operator counts boarding passengers with a vision model so that no sailing exceeds its licensed capacity. The model was built on images captured in clear weather at the main terminal. On the exposed northern route, fog and spray leave the camera images washed out for part of the year. Which measure addresses the reliability and safety consideration here?",
       "options": {
-        "A": "Retrain the counting model every quarter on the most recent boarding footage captured across all of the routes.",
+        "A": "Install a second camera at every gate so that more images of each boarding passenger reach the model.",
         "B": "Display the counted figure on a screen at the gate with a note that the number is produced by an AI system.",
         "C": "Detect when image quality drops below what the model needs and hand the count to gate staff until it recovers.",
-        "D": "Install a second camera at every gate so that more images of each boarding passenger reach the model."
+        "D": "Retrain the counting model every quarter on the most recent boarding footage captured across all of the routes."
       },
       "answer": "C",
       "distractor_patterns": {
-        "A": "D10",
+        "A": "D03",
         "B": "D09",
-        "D": "D03"
+        "D": "D10"
       },
       "rationale": {
         "correct": "A reliability and safety consideration asks how the solution behaves when conditions fall outside what it was built for, and what catches it when they do. Fog and spray are exactly that condition, so the responsible AI answer is a detected quality floor with a manual fallback behind it, not a model that keeps counting through weather it cannot see.",
         "distractors": {
-          "A": "A retraining cadence improves the model between refreshes and leaves every foggy sailing in the gap unprotected. The failure arrives with the weather, not with the calendar.",
+          "A": "More cameras capture more of the same degraded images. Adding capture volume does not give the model a usable view when spray has washed the scene out.",
           "B": "Showing the figure and its origin at the gate is a transparency measure. Passengers learn where the number came from and the vessel can still be loaded past its licensed capacity.",
-          "D": "More cameras capture more of the same degraded images. Adding capture volume does not give the model a usable view when spray has washed the scene out."
+          "D": "A retraining cadence improves the model between refreshes and leaves every foggy sailing in the gap unprotected. The failure arrives with the weather, not with the calendar."
         }
       }
     },
@@ -80,23 +80,23 @@
       "type": "single_choice",
       "question": "A dental practice group is building an assistant that answers clinicians' questions from the group's clinical notes. The clinical director is comfortable that the notes are held on the group's own systems and asks what else the privacy and security consideration requires before the assistant is opened to all sixteen practices. Which answer is correct?",
       "options": {
-        "A": "Display a privacy statement in each waiting room describing how patient notes are used by the new assistant.",
+        "A": "Ask reception staff to strip patient names out of any note before they paste it into the assistant's window.",
         "B": "Give the assistant the notes from every practice so its answers stay consistent wherever a clinician asks.",
-        "C": "Ask reception staff to strip patient names out of any note before they paste it into the assistant's window.",
-        "D": "Scope which notes the assistant can reach for each role, and test whether crafted questions pull patient detail out of it."
+        "C": "Scope which notes the assistant can reach for each role, and test whether crafted questions pull patient detail out of it.",
+        "D": "Display a privacy statement in each waiting room describing how patient notes are used by the new assistant."
       },
-      "answer": "D",
+      "answer": "C",
       "distractor_patterns": {
-        "A": "D09",
+        "A": "D18",
         "B": "D13",
-        "C": "D18"
+        "D": "D09"
       },
       "rationale": {
         "correct": "A privacy and security consideration asks what data the solution holds, who can reach it, and how it resists attempts to pull that data back out through the model itself. Role-scoped reach answers the second question and adversarial questioning answers the third, which is the part a responsible AI review of storage location never touches.",
         "distractors": {
-          "A": "A waiting-room statement tells patients what happens to their notes. It is a transparency measure and it changes nothing about who can reach the notes through the assistant.",
+          "A": "Asking reception staff to redact by hand puts the control on the busiest people in the practice, and the notes the assistant already holds are untouched by anything typed into its window.",
           "B": "Handing every practice's notes to one assistant widens exposure to reach a consistency goal. Any single crafted question can now surface a patient from a practice the clinician never worked at.",
-          "C": "Asking reception staff to redact by hand puts the control on the busiest people in the practice, and the notes the assistant already holds are untouched by anything typed into its window."
+          "D": "A waiting-room statement tells patients what happens to their notes. It is a transparency measure and it changes nothing about who can reach the notes through the assistant."
         }
       }
     },
@@ -113,23 +113,23 @@
       "type": "single_choice",
       "question": "A hearing-aid retail chain replaces its appointment line with a voice assistant that books fittings. In the pilot, callers with profound hearing loss and callers whose speech is affected by a stroke abandon the call far more often than other callers, and the chain has to decide what to do before the national rollout. Which action addresses the inclusiveness consideration?",
       "options": {
-        "A": "Restrict the voice assistant to callers who have completed a short hearing questionnaire on the chain's website first.",
-        "B": "Add a line to the booking page warning that the voice assistant may misunderstand some callers on the first attempt.",
-        "C": "Test the assistant with callers who have hearing loss and affected speech, and add a text booking route where it fails.",
-        "D": "Raise the microphone sensitivity of the voice assistant so that quieter and less distinct callers are picked up."
+        "A": "Add a line to the booking page warning that the voice assistant may misunderstand some callers on the first attempt.",
+        "B": "Restrict the voice assistant to callers who have completed a short hearing questionnaire on the chain's website first.",
+        "C": "Raise the microphone sensitivity of the voice assistant so that quieter and less distinct callers are picked up.",
+        "D": "Test the assistant with callers who have hearing loss and affected speech, and add a text booking route where it fails."
       },
-      "answer": "C",
+      "answer": "D",
       "distractor_patterns": {
-        "A": "D16",
-        "B": "D09",
-        "D": "D04"
+        "A": "D09",
+        "B": "D16",
+        "C": "D04"
       },
       "rationale": {
         "correct": "An inclusiveness consideration asks whether the solution can actually be used by people across abilities and circumstances, not only by the callers it was convenient to build for. Testing with the affected callers is what turns that responsible AI question into evidence, and an alternative booking route is what makes the service usable for the people the voice path still fails.",
         "distractors": {
-          "A": "Gating the assistant behind a website questionnaire removes the callers who struggle instead of serving them, and it assumes the same people can complete a web form unaided.",
-          "B": "A warning on the booking page tells callers that they may not be understood. Being told about a barrier in advance does not get the appointment booked.",
-          "D": "Microphone sensitivity is a capture setting. It changes what the audio picks up and does nothing for a caller whose speech the model cannot resolve into words."
+          "A": "A warning on the booking page tells callers that they may not be understood. Being told about a barrier in advance does not get the appointment booked.",
+          "B": "Gating the assistant behind a website questionnaire removes the callers who struggle instead of serving them, and it assumes the same people can complete a web form unaided.",
+          "C": "Microphone sensitivity is a capture setting. It changes what the audio picks up and does nothing for a caller whose speech the model cannot resolve into words."
         }
       }
     },
@@ -146,23 +146,23 @@
       "type": "single_choice",
       "question": "A charity's fundraising team launches a chat assistant that answers donor questions about how gifts are spent. Donors reach it from the donation page and many assume they are chatting to the supporter care team. Trustees ask what the transparency consideration obliges the charity to do. Which action is it?",
       "options": {
-        "A": "Tell donors at the start of the chat that they are talking to an AI assistant and what it is not able to answer.",
-        "B": "Keep a signed record of every answer the assistant gives so the board can hold a named trustee to account for it.",
-        "C": "Publish the size of the model behind the assistant and the volume of text it was trained on in the annual report.",
-        "D": "Have a fundraiser read a month of conversations and correct any answer that gave donors the wrong impression."
+        "A": "Keep a signed record of every answer the assistant gives so the board can hold a named trustee to account for it.",
+        "B": "Publish the size of the model behind the assistant and the volume of text it was trained on in the annual report.",
+        "C": "Have a fundraiser read a month of conversations and correct any answer that gave donors the wrong impression.",
+        "D": "Tell donors at the start of the chat that they are talking to an AI assistant and what it is not able to answer."
       },
-      "answer": "A",
+      "answer": "D",
       "distractor_patterns": {
-        "B": "E04",
-        "C": "E08",
-        "D": "D07"
+        "A": "E04",
+        "B": "E08",
+        "C": "D07"
       },
       "rationale": {
         "correct": "A transparency consideration asks what users must be told about how the system works, what its limits are, and that they are dealing with an AI system at all. Donors who believe they reached supporter care have been told none of it, so the responsible AI obligation is discharged at the start of the conversation.",
         "distractors": {
-          "B": "A signed record with a named owner is an accountability instrument. It settles who answers for a misleading reply and still leaves the donor believing they were talking to a person.",
-          "C": "Model size and training volume are implementation figures. Donors cannot use either to understand what the assistant can and cannot tell them about their gift.",
-          "D": "Reading a month of conversations afterwards catches misleading answers once donors have already acted on them, which is a detection step and not a disclosure."
+          "A": "A signed record with a named owner is an accountability instrument. It settles who answers for a misleading reply and still leaves the donor believing they were talking to a person.",
+          "B": "Model size and training volume are implementation figures. Donors cannot use either to understand what the assistant can and cannot tell them about their gift.",
+          "C": "Reading a month of conversations afterwards catches misleading answers once donors have already acted on them, which is a detection step and not a disclosure."
         }
       }
     },
@@ -179,23 +179,23 @@
       "type": "single_choice",
       "question": "A coastal port authority ranks containers for physical inspection with a model, and inspectors work the ranked list from the top down. A mis-declared cargo passed through the port unopened, and the authority's board wants to know what the accountability consideration requires of the arrangement. Which answer is correct?",
       "options": {
-        "A": "Have the model return a written explanation of the factors behind each container's position on the ranked list.",
+        "A": "Log every ranking the model produced and every inspector response to it, so the record can be examined afterwards.",
         "B": "Name the officer who owns the inspection decision and set out the governance through which that decision is reviewed.",
-        "C": "Log every ranking the model produced and every inspector response to it, so the record can be examined afterwards.",
-        "D": "Move container ranking to a specialist cargo-risk supplier whose service already carries an assurance certificate."
+        "C": "Move container ranking to a specialist cargo-risk supplier whose service already carries an assurance certificate.",
+        "D": "Have the model return a written explanation of the factors behind each container's position on the ranked list."
       },
       "answer": "B",
       "distractor_patterns": {
-        "A": "E04",
-        "C": "D07",
-        "D": "D15"
+        "A": "D07",
+        "C": "D15",
+        "D": "E04"
       },
       "rationale": {
         "correct": "An accountability consideration asks who remains answerable for the outcome and through what governance, which is a different question from what the system is able to explain about itself. A responsible AI answer names the human owner of the inspection decision and the forum that reviews it, so the mis-declared cargo has somewhere to land.",
         "distractors": {
-          "A": "An explanation of the ranking factors serves transparency. It helps an inspector understand the list and leaves the question of who answers for an unopened container unanswered.",
-          "C": "A log preserves evidence for whoever eventually looks. It supports a review without creating the owner or the forum that would hold one.",
-          "D": "Handing the ranking to a supplier moves the work outward. The port authority still admits the cargo, so the answerability it was asked about has not moved anywhere."
+          "A": "A log preserves evidence for whoever eventually looks. It supports a review without creating the owner or the forum that would hold one.",
+          "C": "Handing the ranking to a supplier moves the work outward. The port authority still admits the cargo, so the answerability it was asked about has not moved anywhere.",
+          "D": "An explanation of the ranking factors serves transparency. It helps an inspector understand the list and leaves the question of who answers for an unopened container unanswered."
         }
       }
     },
@@ -214,27 +214,27 @@
       "question": "A maritime insurer flags claims for manual review with a deployed model. Broker associations are pressing the insurer to publish the exact weight the model places on each factor so brokers can see why a claim was flagged. The insurer's fraud team says a broker holding those weights could shape a claim to sit just under the flag. Select TWO statements that correctly describe the obligations in play.",
       "options": {
         "A": "Telling brokers that a model flags claims, what it broadly weighs, and how to contest a flag discharges the transparency obligation.",
-        "B": "Publishing the exact weights is required, as transparency outranks the other responsible AI considerations whenever they meet.",
-        "C": "Withholding the exact weights serves the privacy and security consideration, which is the obligation pulling the other way here.",
-        "D": "The conflict disappears once the insurer names a claims officer who is accountable for every flagged claim.",
-        "E": "Raising the flagging threshold so fewer claims are flagged removes the need to explain the model's weights."
+        "B": "Withholding the exact weights serves the privacy and security consideration, which is the obligation pulling the other way here.",
+        "C": "The conflict disappears once the insurer names a claims officer who is accountable for every flagged claim.",
+        "D": "Raising the flagging threshold so fewer claims are flagged removes the need to explain the model's weights.",
+        "E": "Publishing the exact weights is required, as transparency outranks the other responsible AI considerations whenever they meet."
       },
       "select_count": 2,
       "answer": [
         "A",
-        "C"
+        "B"
       ],
       "distractor_patterns": {
-        "B": "D14",
-        "D": "E04",
-        "E": "D05"
+        "C": "E04",
+        "D": "D05",
+        "E": "D14"
       },
       "rationale": {
         "correct": "One design decision can engage two responsible AI principles at once and they can pull in opposite directions. Here transparency obliges the insurer to tell brokers that a model flags claims, what it broadly weighs and how to contest a flag, while privacy and security is the obligation that argues for holding the exact weights back. Naming both is what the judgment consists of.",
         "distractors": {
-          "B": "No responsible AI principle carries a standing rank over the others. Applying transparency as a rule that always wins is what hands the fraud team's objection away unexamined.",
-          "D": "Naming an accountable claims officer discharges accountability. It settles who answers for a flag and leaves the question of what may be published exactly where it was.",
-          "E": "Moving the threshold changes how many claims are flagged. The brokers whose claims are still flagged are owed the same explanation, so the obligation is untouched."
+          "C": "Naming an accountable claims officer discharges accountability. It settles who answers for a flag and leaves the question of what may be published exactly where it was.",
+          "D": "Moving the threshold changes how many claims are flagged. The brokers whose claims are still flagged are owed the same explanation, so the obligation is untouched.",
+          "E": "No responsible AI principle carries a standing rank over the others. Applying transparency as a rule that always wins is what hands the fraud team's objection away unexamined."
         }
       }
     },
@@ -251,23 +251,23 @@
       "type": "single_choice",
       "question": "An archival film restoration studio drafts catalog entries for restored reels with a deployed generative model. For one 1954 documentary the model wrote a fluent entry naming a director of photography who worked on no such film, and the studio's own records were never connected to the model. A restorer asks how that sentence came to exist. Which explanation is correct?",
       "options": {
-        "A": "The model held a copy of its training material and returned the row that most closely matched the reel's title.",
-        "B": "The model looked the credit up in a reference collection at request time and returned the nearest available match.",
-        "C": "The model produced the entry one token at a time, picking each from patterns it learned during pre-training.",
-        "D": "The model sorted the reel into a genre class and completed the credit fields from the typical values of that class."
+        "A": "The model produced the entry one token at a time, picking each from patterns it learned during pre-training.",
+        "B": "The model sorted the reel into a genre class and completed the credit fields from the typical values of that class.",
+        "C": "The model held a copy of its training material and returned the row that most closely matched the reel's title.",
+        "D": "The model looked the credit up in a reference collection at request time and returned the nearest available match."
       },
-      "answer": "C",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "D19",
-        "B": "E06",
-        "D": "E03"
+        "B": "E03",
+        "C": "D19",
+        "D": "E06"
       },
       "rationale": {
         "correct": "Large language models break input into tokens and produce output one token at a time, choosing each from patterns learned during pre-training and not from a stored record of anything they were shown. Tokenization and next-token selection are the whole mechanism, which is exactly why a fluent, specific and entirely unsupported credit can appear.",
         "distractors": {
-          "A": "A generative model does not carry its training material as retrievable rows. Treating the output as a lookup makes the invented credit look like a data fault that could be corrected in a table.",
-          "B": "Looking a fact up at request time describes a grounded solution connected to a source. This deployment had no such connection, so nothing was consulted when the entry was written.",
-          "D": "Sorting an item into a class and filling fields from it describes a classification pipeline. The model was not classifying the reel; it was continuing text."
+          "B": "Sorting an item into a class and filling fields from it describes a classification pipeline. The model was not classifying the reel; it was continuing text.",
+          "C": "A generative model does not carry its training material as retrievable rows. Treating the output as a lookup makes the invented credit look like a data fault that could be corrected in a table.",
+          "D": "Looking a fact up at request time describes a grounded solution connected to a source. This deployment had no such connection, so nothing was consulted when the entry was written."
         }
       }
     },
@@ -285,22 +285,22 @@
       "question": "A genealogy research service uses a deployed model to answer researchers' questions about transcribed parish registers. Two complaints recur: the model sometimes states a baptism date that appears in no register, and when a very long register is pasted in as one request, details from its opening pages stop showing up in the answers. Which explanation covers both complaints?",
       "options": {
         "A": "Both follow from how the model works: output is generated from learned patterns, and one request can only attend to a fixed amount of text.",
-        "B": "Both indicate that the service has outgrown its model and needs one trained on a broader body of genealogical material.",
+        "B": "Both are effects of the sampling settings on the deployment and resolve once the temperature is turned down.",
         "C": "The invented dates are transcription faults in the parish registers, and the missing detail is the request timing out part-way through the answer.",
-        "D": "Both are effects of the sampling settings on the deployment and resolve once the temperature is turned down."
+        "D": "Both indicate that the service has outgrown its model and needs one trained on a broader body of genealogical material."
       },
       "answer": "A",
       "distractor_patterns": {
-        "B": "D03",
+        "B": "D04",
         "C": "D19",
-        "D": "D04"
+        "D": "D03"
       },
       "rationale": {
         "correct": "Two limits follow directly from the mechanism behind Large language models: output can be fluent, specific and entirely unsupported, and there is a fixed amount of text the model can attend to in one request. A stated baptism date that no register holds is the first limit, and opening pages dropping out of a very long request is the second, so one explanation covers both prompts.",
         "distractors": {
-          "B": "More training material would change what the model knows and neither limit is a knowledge gap. A broader model invents dates just as fluently and still attends to a fixed amount of text.",
+          "B": "Sampling settings move how varied the wording is. They do not create a record the model never had, and they do not extend how much text one request can attend to.",
           "C": "Transcription faults would put the wrong date in the register itself, and the answers stay complete rather than truncating, so nothing here points at a request that failed to finish.",
-          "D": "Sampling settings move how varied the wording is. They do not create a record the model never had, and they do not extend how much text one request can attend to."
+          "D": "More training material would change what the model knows and neither limit is a knowledge gap. A broader model invents dates just as fluently and still attends to a fixed amount of text."
         }
       }
     },
@@ -317,23 +317,23 @@
       "type": "single_choice",
       "question": "A corporate travel management firm wants travelers to photograph a paper taxi receipt in the expense app and ask a question about it in the same step, such as whether the fare is claimable under their client's policy. The firm's platform team has to pick the model capability the feature needs before any code is written. Which one is it?",
       "options": {
-        "A": "A chat and text generation model, with the traveler typing the fare and date from the receipt into the app first.",
-        "B": "An embeddings model that turns the photographed receipt into a vector so the app can find similar past receipts.",
-        "C": "An image generation model prompted with the policy wording so it renders the receipt in a readable format.",
-        "D": "A multimodal model that takes the photograph and the traveler's typed question together in one request."
+        "A": "An embeddings model that turns the photographed receipt into a vector so the app can find similar past receipts.",
+        "B": "A multimodal model that takes the photograph and the traveler's typed question together in one request.",
+        "C": "A chat and text generation model, with the traveler typing the fare and date from the receipt into the app first.",
+        "D": "An image generation model prompted with the policy wording so it renders the receipt in a readable format."
       },
-      "answer": "D",
+      "answer": "B",
       "distractor_patterns": {
-        "A": "D18",
-        "B": "E01",
-        "C": "E02"
+        "A": "E01",
+        "C": "D18",
+        "D": "E02"
       },
       "rationale": {
         "correct": "Generative AI models are chosen by the capability the requirement needs, and this requirement puts an image and a question in the same request. A multimodal model is the capability class that accepts more than one input type, which is what lets the traveler photograph the receipt and ask about it in one step.",
         "distractors": {
-          "A": "Text generation over typed values works only once the traveler has done the reading. It meets the requirement by moving the hard part of it onto the person holding the receipt.",
-          "B": "Embeddings place content in a vector space for comparison. Finding similar receipts is a real capability of that model class and it answers no question about this client's policy.",
-          "C": "Image generation produces new visual content from a description. Nothing in this requirement asks for a new image; the image already exists and has to be read."
+          "A": "Embeddings place content in a vector space for comparison. Finding similar receipts is a real capability of that model class and it answers no question about this client's policy.",
+          "C": "Text generation over typed values works only once the traveler has done the reading. It meets the requirement by moving the hard part of it onto the person holding the receipt.",
+          "D": "Image generation produces new visual content from a description. Nothing in this requirement asks for a new image; the image already exists and has to be read."
         }
       }
     },
@@ -350,22 +350,22 @@
       "type": "single_choice",
       "question": "A craft brewery is putting its first generative feature into its trade-order portal and has picked a model in Microsoft Foundry. A developer tells the project group that deploying the model is simply switching it on, and that everything worth deciding is decided later in the client code. Which correction should the group hear?",
       "options": {
-        "A": "Deployment only places the model files inside the project, and every meaningful choice is made by the calling application.",
-        "B": "A deployment carries its own options for how the model is made available, and those options are settled when it is deployed.",
-        "C": "Deployment settles nothing at all: the model's behavior comes entirely from the inference parameters sent on each request.",
+        "A": "Deployment settles nothing at all: the model's behavior comes entirely from the inference parameters sent on each request.",
+        "B": "Deployment only places the model files inside the project, and every meaningful choice is made by the calling application.",
+        "C": "A deployment carries its own options for how the model is made available, and those options are settled when it is deployed.",
         "D": "The choices belong to the model catalog, where the brewery compares the available models before picking one to work with."
       },
-      "answer": "B",
+      "answer": "C",
       "distractor_patterns": {
-        "A": "D19",
-        "C": "E07",
+        "A": "E07",
+        "B": "D19",
         "D": "E09"
       },
       "rationale": {
         "correct": "A model has to be deployed in Microsoft Foundry before anything can use it, and the deployment is not a single fixed act: it carries deployment options about how that model is made available. Treating it as an on switch hides decisions that are made at deployment time and are awkward to revisit once the portal is live.",
         "distractors": {
-          "A": "A deployment is what makes a model callable, not a file drop. Describing it as storage leaves the project group expecting choices in the client code that were already made.",
-          "C": "Inference parameters are real and they shape each response. They sit around a deployment that already exists and cannot make one available in the first place.",
+          "A": "Inference parameters are real and they shape each response. They sit around a deployment that already exists and cannot make one available in the first place.",
+          "B": "A deployment is what makes a model callable, not a file drop. Describing it as storage leaves the project group expecting choices in the client code that were already made.",
           "D": "The model catalog is where a model is compared and chosen. It is a different surface from the deployment that publishes the chosen model for use."
         }
       }
@@ -383,23 +383,23 @@
       "type": "single_choice",
       "question": "A cinema exhibition chain generates a short blurb for each film from the distributor's synopsis. Marketing needs the same synopsis to produce the same blurb every time it is regenerated, because the wording is printed on foyer cards and reused by twelve venues. Today the same request returns differently worded blurbs. Which change produces the behavior marketing asked for?",
       "options": {
-        "A": "Lower the temperature on the requests so the model's token choices vary far less from one run to the next.",
-        "B": "Raise the maximum output tokens on the requests so the model always has room to finish the blurb it started.",
-        "C": "Move the house style rules into the system prompt so every request to the deployment carries the same wording rules.",
-        "D": "Deploy a second copy of the model for marketing and cache the first blurb each film receives from the deployment."
+        "A": "Move the house style rules into the system prompt so every request to the deployment carries the same wording rules.",
+        "B": "Deploy a second copy of the model for marketing and cache the first blurb each film receives from the deployment.",
+        "C": "Raise the maximum output tokens on the requests so the model always has room to finish the blurb it started.",
+        "D": "Lower the temperature on the requests so the model's token choices vary far less from one run to the next."
       },
-      "answer": "A",
+      "answer": "D",
       "distractor_patterns": {
-        "B": "E07",
-        "C": "E06",
-        "D": "D01"
+        "A": "E06",
+        "B": "D01",
+        "C": "E07"
       },
       "rationale": {
         "correct": "Inference behavior is governed by configuration parameters set around the deployment, and each parameter moves output in a stated direction. Repeatable wording for identical prompts is what a lower temperature produces, so the judgment is picking the parameter whose stated direction matches the behavior asked for.",
         "distractors": {
-          "B": "The output length ceiling governs how much the model may produce. A longer allowance does not make two runs of the same request agree on their wording.",
-          "C": "House style in the system prompt makes every blurb sound like the chain. Two runs under the same style rules still land on different sentences.",
-          "D": "A second deployment with a cache in front of it freezes the first answer for each film and adds a copy of the model to run. The variation is still there the moment a blurb is regenerated."
+          "A": "House style in the system prompt makes every blurb sound like the chain. Two runs under the same style rules still land on different sentences.",
+          "B": "A second deployment with a cache in front of it freezes the first answer for each film and adds a copy of the model to run. The variation is still there the moment a blurb is regenerated.",
+          "C": "The output length ceiling governs how much the model may produce. A longer allowance does not make two runs of the same request agree on their wording."
         }
       }
     },
@@ -418,10 +418,10 @@
       "type": "scenario_matching",
       "question": "A waste collection services operator has five AI proposals from five different depots and wants each one named as an AI workload before any product or route is chosen. Match each proposal to the workload class it belongs to. Options may be used more than once.",
       "matching_options": [
-        "Information extraction",
         "Speech",
-        "Text and natural language",
-        "Computer vision"
+        "Information extraction",
+        "Computer vision",
+        "Text and natural language"
       ],
       "scenarios": [
         {
@@ -470,22 +470,22 @@
       "question": "A bicycle-share operator already drafts nightly rebalancing plans with a deployed generative model: an analyst pastes in the docking telemetry and the model returns a written plan. The operations lead has been told the next step is agentic AI and assumes it means moving to a larger, better-writing model. Which statement corrects that assumption?",
       "options": {
         "A": "An agentic solution writes longer and better structured rebalancing plans than a model answering a single prompt.",
-        "B": "An agentic solution is a model given a much larger context so that a whole night of docking telemetry fits in one request.",
-        "C": "An agentic solution pursues the rebalancing goal across steps and acts on it, booking the van and issuing the move orders.",
-        "D": "An agentic solution is a model fine-tuned on the operator's own history of overnight rebalancing decisions."
+        "B": "An agentic solution is a model fine-tuned on the operator's own history of overnight rebalancing decisions.",
+        "C": "An agentic solution is a model given a much larger context so that a whole night of docking telemetry fits in one request.",
+        "D": "An agentic solution pursues the rebalancing goal across steps and acts on it, booking the van and issuing the move orders."
       },
-      "answer": "C",
+      "answer": "D",
       "distractor_patterns": {
         "A": "E11",
-        "B": "D03",
-        "D": "E06"
+        "B": "E06",
+        "C": "D03"
       },
       "rationale": {
         "correct": "Agentic AI is its own workload class and not a larger generative model. The distinguishing property of AI agents is that the solution pursues a goal across steps and takes actions, so booking the van and issuing the move orders is the change of class, while better prose is a change of degree.",
         "distractors": {
           "A": "Better written plans are a change in output quality within the same rung. The analyst still reads the plan and still does everything the plan describes.",
-          "B": "A larger context lets one request hold more telemetry. The solution still answers and stops, which is the property that keeps it outside the agentic class.",
-          "D": "Fine-tuning adapts a model to the operator's own style of plan. It changes what the model produces and never gives it a step to take."
+          "B": "Fine-tuning adapts a model to the operator's own style of plan. It changes what the model produces and never gives it a step to take.",
+          "C": "A larger context lets one request hold more telemetry. The solution still answers and stops, which is the property that keeps it outside the agentic class."
         }
       }
     },
@@ -502,23 +502,23 @@
       "type": "single_choice",
       "question": "An independent bookstore chain collects several thousand customer reviews a month across its shops. The buying team does not want to read the reviews. It wants reviews that discuss the same thing to sit together in one index, and it wants to see month by month which subjects are rising across the shops. Which text analysis technique produces that?",
       "options": {
-        "A": "Summarization of each review, so the buying team can read a condensed version of what every customer wrote.",
+        "A": "Sentiment analysis of each review, so the team receives a polarity score showing how positive each customer was.",
         "B": "Entity detection over each review, so the team receives the people, places and organizations that each one names.",
-        "C": "Sentiment analysis of each review, so the team receives a polarity score showing how positive each customer was.",
-        "D": "Keyword extraction over each review, so the team receives the salient terms that the review is actually about."
+        "C": "Keyword extraction over each review, so the team receives the salient terms that the review is actually about.",
+        "D": "Summarization of each review, so the buying team can read a condensed version of what every customer wrote."
       },
-      "answer": "D",
+      "answer": "C",
       "distractor_patterns": {
-        "A": "E05",
+        "A": "E01",
         "B": "E07",
-        "C": "E01"
+        "D": "E05"
       },
       "rationale": {
         "correct": "Keyword extraction returns the salient terms a text is about, which is what a business wants when it needs to index, route or trend content instead of reading a condensed version of it. Grouping reviews that discuss the same thing and watching which subjects rise month by month are both built on those terms, so this is the text analysis output the requirement names.",
         "distractors": {
-          "A": "Summarization returns shorter prose that preserves the substance of each review. It is still something to read, and thousands of short reads do not make an index.",
+          "A": "A polarity score says how the customer felt. It sorts reviews by mood without saying what any of them discussed.",
           "B": "Entity detection returns typed spans naming real things. Authors and shop names are useful and they are not the same as the subjects a review is about.",
-          "C": "A polarity score says how the customer felt. It sorts reviews by mood without saying what any of them discussed."
+          "D": "Summarization returns shorter prose that preserves the substance of each review. It is still something to read, and thousands of short reads do not make an index."
         }
       }
     },
@@ -535,23 +535,23 @@
       "type": "single_choice",
       "question": "A heritage museum has already transcribed its donor correspondence, so the full text of every letter is held as text in the collections system. The collection holds a separate catalog record for each individual, each institution and each location it documents, and it files correspondence by year. Curators need every letter to surface which of those records it refers to, so the letter can be linked to each one. Which technique returns that?",
       "options": {
-        "A": "Keyword extraction over each letter, returning the terms the letter is most about, ranked by how strongly they stand out.",
-        "B": "Entity detection over each letter, returning typed spans for the people, places, organizations and dates it names.",
-        "C": "Summarization of each letter, returning a short account of what the correspondent was writing to say.",
-        "D": "Optical character recognition over each letter, returning the words on the page in the order they appear."
+        "A": "Entity detection over each letter, returning typed spans for the people, places, organizations and dates it names.",
+        "B": "Optical character recognition over each letter, returning the words on the page in the order they appear.",
+        "C": "Keyword extraction over each letter, returning the terms the letter is most about, ranked by how strongly they stand out.",
+        "D": "Summarization of each letter, returning a short account of what the correspondent was writing to say."
       },
-      "answer": "B",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "E05",
-        "C": "E07",
-        "D": "E12"
+        "B": "E12",
+        "C": "E05",
+        "D": "E07"
       },
       "rationale": {
         "correct": "Entity detection returns typed spans naming real things in the text, such as people, places, organizations, dates and quantities, which is a different output from a list of the terms that happen to be salient. Typed spans are what the collections system can match against catalog records, so this is the text analysis the linking work needs.",
         "distractors": {
-          "A": "Salient terms describe what a letter is about. They arrive untyped, so nothing tells the collections system which of them is a person and which is a place.",
-          "C": "A short account of the letter is prose for a curator to read. It carries no values the catalog can link against.",
-          "D": "Reading characters off a page is the step that produced the transcripts the museum already holds. Running it again returns the same text and no typed values."
+          "B": "Reading characters off a page is the step that produced the transcripts the museum already holds. Running it again returns the same text and no typed values.",
+          "C": "Salient terms describe what a letter is about. They arrive untyped, so nothing tells the collections system which of them is a person and which is a place.",
+          "D": "A short account of the letter is prose for a curator to read. It carries no values the catalog can link against."
         }
       }
     },
@@ -568,22 +568,22 @@
       "type": "single_choice",
       "question": "A specialty coffee roasting subscription receives long written feedback from members. Most messages praise the roast and criticize the delivery in the same paragraph, and the current per-message score comes back neutral. The roastery wants to see how members feel about each thing they commented on. Which use of sentiment analysis meets that?",
       "options": {
-        "A": "Sentiment analysis at the level of each aspect a member commented on, so roast and delivery carry their own polarity.",
-        "B": "Sentiment analysis at the level of the whole message, with the resulting scores averaged across each week of feedback.",
-        "C": "Keyword extraction over the feedback, returning the terms that members use most often when they write to the roastery.",
+        "A": "Keyword extraction over the feedback, returning the terms that members use most often when they write to the roastery.",
+        "B": "Sentiment analysis at the level of each aspect a member commented on, so roast and delivery carry their own polarity.",
+        "C": "Sentiment analysis at the level of the whole message, with the resulting scores averaged across each week of feedback.",
         "D": "A classification model trained on past feedback to sort each incoming message into a happy or an unhappy pile."
       },
-      "answer": "A",
+      "answer": "B",
       "distractor_patterns": {
-        "B": "E05",
-        "C": "E07",
+        "A": "E07",
+        "C": "E05",
         "D": "E03"
       },
       "rationale": {
         "correct": "Sentiment analysis returns polarity, and the granularity matters: one score for a whole document answers a different question from a score attached to each thing the writer commented on. A message praising the roast and criticizing the delivery only stops reading as neutral when the text analysis is done per aspect.",
         "distractors": {
-          "B": "A document-level score is exactly what is coming back neutral today, and averaging those scores over a week hides the split even more thoroughly.",
-          "C": "The terms members use are already fairly obvious to the roastery. Knowing that delivery is discussed says nothing about whether members are happy with it.",
+          "A": "The terms members use are already fairly obvious to the roastery. Knowing that delivery is discussed says nothing about whether members are happy with it.",
+          "C": "A document-level score is exactly what is coming back neutral today, and averaging those scores over a week hides the split even more thoroughly.",
           "D": "Sorting whole messages into two piles is a coarser version of the score that is already failing, and a mixed message has no correct pile."
         }
       }
@@ -603,21 +603,21 @@
       "options": {
         "A": "Keyword extraction across the reports, returning the terms that recur most often in what employers wrote.",
         "B": "Entity detection across the reports, returning the employers, qualifications and dates that each report names.",
-        "C": "Summarization of each report, returning shorter prose that preserves the substance of what the employer said.",
-        "D": "Sentiment analysis of each report, returning a polarity score for how positive the employer was about the placement."
+        "C": "Sentiment analysis of each report, returning a polarity score for how positive the employer was about the placement.",
+        "D": "Summarization of each report, returning shorter prose that preserves the substance of what the employer said."
       },
-      "answer": "C",
+      "answer": "D",
       "distractor_patterns": {
         "A": "E05",
         "B": "E07",
-        "D": "E01"
+        "C": "E01"
       },
       "rationale": {
         "correct": "Summarization returns shorter prose that preserves the substance of the original, which is what a reader needs when the goal is to act on the content instead of cataloging what it mentions. The head of faculty has to plan a term from what employers said, and that is a reading task made shorter, not a set of tags.",
         "distractors": {
           "A": "Recurring terms show what employers kept mentioning. They do not carry the judgment an employer made about a placement, which is the part the planning turns on.",
           "B": "Typed spans for employers, qualifications and dates are catalog values. The head of faculty already knows who wrote and about what course.",
-          "D": "A polarity score ranks the reports by mood. It shows where to look without saying what the employer actually asked the college to change."
+          "C": "A polarity score ranks the reports by mood. It shows where to look without saying what the employer actually asked the college to change."
         }
       }
     },
@@ -634,23 +634,23 @@
       "type": "single_choice",
       "question": "A driving school network asks instructors to record a spoken debrief in the car at the end of each lesson. Head office wants those debriefs held as searchable text in the pupil record, so that the existing text tools can index them and pull out the terms instructors keep raising. Which capability produces what head office needs?",
       "options": {
-        "A": "Speech synthesis over the debriefs, so each pupil receives a spoken version of the instructor's comments.",
+        "A": "Speech recognition over the debriefs, producing a transcript of each one that head office can then index.",
         "B": "A multimodal model that describes the driving scene recorded by the dashboard camera during each lesson.",
         "C": "Keyword extraction run over the recordings, returning the terms the instructor used during the spoken debrief.",
-        "D": "Speech recognition over the debriefs, producing a transcript of each one that head office can then index."
+        "D": "Speech synthesis over the debriefs, so each pupil receives a spoken version of the instructor's comments."
       },
-      "answer": "D",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "E01",
         "B": "E02",
-        "C": "E12"
+        "C": "E12",
+        "D": "E01"
       },
       "rationale": {
         "correct": "Speech recognition takes audio in and produces text out, so it is the capability a scenario needs whenever the useful artifact is a transcript that something else will then read. Head office wants indexing and term extraction over the debriefs, and both of those run on text that only speech work can produce from a recording.",
         "distractors": {
-          "A": "Synthesis runs the other way, turning text into audio. It gives the pupil something to listen to and leaves head office with no text at all.",
           "B": "Describing the driving scene is vision work on a different input. The instructor's spoken judgment is the content head office asked about.",
-          "C": "Extracting terms is the right ambition applied at the wrong point: a text technique has no input until the audio has been recognized."
+          "C": "Extracting terms is the right ambition applied at the wrong point: a text technique has no input until the audio has been recognized.",
+          "D": "Synthesis runs the other way, turning text into audio. It gives the pupil something to listen to and leaves head office with no text at all."
         }
       }
     },
@@ -668,21 +668,21 @@
       "question": "A national parks service publishes each trailhead's safety notice as text in its visitor app, where the wording is already held and edited. Visitors with low vision have asked to hear the notice for the trail they are standing at, on their own phone, without waiting for a ranger. Which capability delivers that?",
       "options": {
         "A": "Speech recognition in the app, so a ranger reading the notice aloud can be captured for the visitor to keep.",
-        "B": "Speech synthesis in the app, so the stored wording of the notice is produced as audio the visitor can hear.",
-        "C": "Optical character recognition in the app, so the words on the trailhead sign are returned to the visitor as text.",
+        "B": "Optical character recognition in the app, so the words on the trailhead sign are returned to the visitor as text.",
+        "C": "Speech synthesis in the app, so the stored wording of the notice is produced as audio the visitor can hear.",
         "D": "Translation of the notice in the app, so the visitor reads it on screen in whichever language they have set."
       },
-      "answer": "B",
+      "answer": "C",
       "distractor_patterns": {
         "A": "E01",
-        "C": "E12",
+        "B": "E12",
         "D": "E02"
       },
       "rationale": {
         "correct": "Speech synthesis takes text in and produces audio out, so it is the capability a scenario needs whenever a person has to hear something instead of reading it. The parks service already holds the notice as text, which is the input this speech capability consumes.",
         "distractors": {
           "A": "Recognition turns audio into text. It needs a ranger to speak first, which is the wait the visitors asked to avoid, and it produces something to read.",
-          "C": "Reading the characters off the physical sign produces text the service already holds and edits, so the step returns the visitor to where they started.",
+          "B": "Reading the characters off the physical sign produces text the service already holds and edits, so the step returns the visitor to where they started.",
           "D": "Translation changes the language of the notice on the screen. A visitor who cannot read the screen is no better served in any language."
         }
       }
@@ -700,28 +700,28 @@
       "type": "multiple_response",
       "question": "A quarry wants one camera feed over its loading bay to do two things: confirm which product each haul truck is carrying, and count how many trucks are waiting in the bay at any moment. A single overall description of the scene has already been trialed and did not support either job. Select TWO outputs the vision work has to produce.",
       "options": {
-        "A": "A caption describing what is happening in the loading bay at the moment the frame was taken.",
-        "B": "A label for the product visible in the bed of a truck in the frame.",
-        "C": "A generated image of a correctly loaded truck for the bay operator to compare against.",
-        "D": "A timestamp written into each frame of the recorded loading-bay footage.",
-        "E": "Located instances of each truck within the frame, so the waiting trucks can be counted."
+        "A": "Located instances of each truck within the frame, so the waiting trucks can be counted.",
+        "B": "A caption describing what is happening in the loading bay at the moment the frame was taken.",
+        "C": "A timestamp written into each frame of the recorded loading-bay footage.",
+        "D": "A label for the product visible in the bed of a truck in the frame.",
+        "E": "A generated image of a correctly loaded truck for the bay operator to compare against."
       },
       "select_count": 2,
       "answer": [
-        "B",
-        "E"
+        "A",
+        "D"
       ],
       "distractor_patterns": {
-        "A": "E05",
-        "C": "E02",
-        "D": "E08"
+        "B": "E05",
+        "C": "E08",
+        "E": "E02"
       },
       "rationale": {
         "correct": "What a vision model can be asked to report about an image differs by granularity, and the business need picks the granularity. Computer vision tasks and techniques here split cleanly: confirming the product carried is a label for what is in the frame, and counting waiting trucks needs each truck located as its own instance. One requirement therefore buys two different outputs.",
         "distractors": {
-          "A": "A description of the scene is the granularity that was already trialed. It reads well and it neither names the product reliably nor separates one truck from another.",
-          "C": "Producing a reference image is generation rather than analysis. It gives the operator something to look at and reports nothing about the trucks in the bay.",
-          "D": "A frame timestamp is a recording detail. It helps someone find the footage later and answers neither of the two questions the quarry asked."
+          "B": "A description of the scene is the granularity that was already trialed. It reads well and it neither names the product reliably nor separates one truck from another.",
+          "C": "A frame timestamp is a recording detail. It helps someone find the footage later and answers neither of the two questions the quarry asked.",
+          "E": "Producing a reference image is generation rather than analysis. It gives the operator something to look at and reports nothing about the trucks in the bay."
         }
       }
     },
@@ -738,23 +738,23 @@
       "type": "single_choice",
       "question": "A fashion resale platform is preparing a seasonal campaign for garment styles it has not yet taken in stock, so no seller photographs of them exist. The marketing team wants studio-style visuals produced from written descriptions of each style. Which capability class does that campaign work need?",
       "options": {
-        "A": "An image analysis call over the platform's existing seller photographs, describing what each garment in them is.",
-        "B": "An optical character recognition call over the seller photographs, reading the brand and size from the garment labels.",
-        "C": "An image generation model, producing new visuals from the written description of each garment style.",
-        "D": "A model fine-tuned on the platform's own photographs so that searches return closer visual matches to a style."
+        "A": "An image generation model, producing new visuals from the written description of each garment style.",
+        "B": "A model fine-tuned on the platform's own photographs so that searches return closer visual matches to a style.",
+        "C": "An image analysis call over the platform's existing seller photographs, describing what each garment in them is.",
+        "D": "An optical character recognition call over the seller photographs, reading the brand and size from the garment labels."
       },
-      "answer": "C",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "E02",
-        "B": "E01",
-        "D": "E06"
+        "B": "E06",
+        "C": "E02",
+        "D": "E01"
       },
       "rationale": {
         "correct": "Image generation is a separate capability class from image analysis, and the two sit on opposite sides of computer vision: image-generation models produce new visual content from a description, while analysis reports on visual content that already exists. The campaign needs visuals of garments the platform has never held, so nothing existing can be reported on and only the generative class can serve it.",
         "distractors": {
-          "A": "Describing existing seller photographs reports on stock the platform already has. The campaign is about styles it has not taken in, so there is nothing to describe.",
-          "B": "Reading labels off photographs returns text from images that exist. It is useful cataloging work and produces no campaign visual.",
-          "D": "Fine-tuning for closer visual matches improves retrieval over the existing library. Better search still cannot surface a photograph that was never taken."
+          "B": "Fine-tuning for closer visual matches improves retrieval over the existing library. Better search still cannot surface a photograph that was never taken.",
+          "C": "Describing existing seller photographs reports on stock the platform already has. The campaign is about styles it has not taken in, so there is nothing to describe.",
+          "D": "Reading labels off photographs returns text from images that exist. It is useful cataloging work and produces no campaign visual."
         }
       }
     },
@@ -773,10 +773,10 @@
       "type": "scenario_matching",
       "question": "A household moving services company is consolidating five separate backlogs into one information extraction project, and the project lead has to state the content type each backlog presents before any extraction is configured. Match each backlog to its content type. Options may be used more than once.",
       "matching_options": [
-        "Video",
-        "Text",
+        "Images",
         "Audio",
-        "Images"
+        "Video",
+        "Text"
       ],
       "scenarios": [
         {
@@ -857,22 +857,22 @@
       "type": "single_choice",
       "question": "A postal sorting operation runs an assistant that answers staff questions about handling rules. Today every question is sent with a long block of text setting out the assistant's role, its tone and what it must never advise on. When a busy operator forgets to paste that block, the assistant answers in marketing tone and volunteers guidance on opening damaged items. Which change fixes this properly?",
       "options": {
-        "A": "Keep the block where it is and have the client application paste it in front of every question an operator types.",
+        "A": "Move the role, tone and prohibitions into the system prompt and leave the operator's question as the user prompt.",
         "B": "Fine-tune the deployment on past answers so the role and tone are learned and no instruction text is needed at all.",
-        "C": "Move the role, tone and prohibitions into the system prompt and leave the operator's question as the user prompt.",
+        "C": "Keep the block where it is and have the client application paste it in front of every question an operator types.",
         "D": "Lower the temperature on the deployment so the assistant stops volunteering guidance nobody asked it for."
       },
-      "answer": "C",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "D05",
         "B": "E06",
+        "C": "D05",
         "D": "D04"
       },
       "rationale": {
         "correct": "Standing behavior — persona, boundaries and rules that must hold on every turn — belongs in the system prompt, while the user prompt carries the request that changes from turn to turn. Splitting them that way means an operator cannot omit the rules, because the rules are no longer part of what an operator types.",
         "distractors": {
-          "A": "Pasting the block automatically hides the symptom in one client. The rules still travel as part of each request, so any other caller can drop them again.",
           "B": "Fine-tuning teaches a style and cannot express a hard prohibition that has to hold on every turn. It is also a heavy answer to a placement problem.",
+          "C": "Pasting the block automatically hides the symptom in one client. The rules still travel as part of each request, so any other caller can drop them again.",
           "D": "Temperature governs how varied the wording is. A steadier voice offering the same prohibited guidance is not the correction this needs."
         }
       }
@@ -890,23 +890,23 @@
       "type": "single_choice",
       "question": "A laboratory instrument servicing firm turns engineers' free-text visit notes into service records with a deployed model. The model reliably picks out the right facts — instrument, fault, parts fitted, calibration result — but writes them as flowing paragraphs, while the maintenance system needs a fixed layout with each field on its own line and units appended. Which correction fits the failure?",
       "options": {
-        "A": "Put two or three worked examples of a finished service record into the prompt, so that the exact layout wanted is shown.",
-        "B": "Ask the model to work through its reasoning step by step before it writes the service record out.",
+        "A": "Ask the engineers to write their visit notes in the required field-per-line layout so the model can copy that shape through.",
+        "B": "Put two or three worked examples of a finished service record into the prompt, so that the exact layout wanted is shown.",
         "C": "Fine-tune a copy of the model on several thousand past service records taken from the maintenance system.",
-        "D": "Ask the engineers to write their visit notes in the required field-per-line layout so the model can copy that shape through."
+        "D": "Ask the model to work through its reasoning step by step before it writes the service record out."
       },
-      "answer": "A",
+      "answer": "B",
       "distractor_patterns": {
-        "B": "E07",
+        "A": "D18",
         "C": "E06",
-        "D": "D18"
+        "D": "E07"
       },
       "rationale": {
         "correct": "Worked examples inside the user prompt are the low-effort correction when the model understands the task but returns the wrong shape, format or register of answer. The facts are already right here, so the prompts need to show the layout wanted instead of describing it.",
         "distractors": {
-          "B": "Step-by-step reasoning helps a task that breaks down partway through a chain of steps. Nothing in this task is going wrong on the way to the answer.",
+          "A": "Asking engineers to write in the target layout moves the work back onto the people the tool exists to help, and free-text notes are the input the firm actually has.",
           "C": "Fine-tuning on thousands of records is a heavy way to fix a layout, and it commits the firm to retraining whenever the maintenance system changes a field.",
-          "D": "Asking engineers to write in the target layout moves the work back onto the people the tool exists to help, and free-text notes are the input the firm actually has."
+          "D": "Step-by-step reasoning helps a task that breaks down partway through a chain of steps. Nothing in this task is going wrong on the way to the answer."
         }
       }
     },
@@ -924,22 +924,22 @@
       "question": "A shipping container leasing firm has a deployed model compute off-hire settlements: apply the daily rate for the hire period, subtract the free days, add damage charges, then apply the customer's discount band. The layout of the answer is always right, and the figure is often wrong — most commonly the discount has been applied before the damage charges. Which correction fits this failure?",
       "options": {
         "A": "Add three worked examples of finished settlements to the prompt so the model can see the shape of a good answer.",
-        "B": "Raise the maximum output tokens so the model has room to complete the whole settlement in one response.",
-        "C": "Split the settlement into four separate requests, one per rule, and have the client application add up the results.",
-        "D": "Ask the model to work through the settlement step by step in the stated order before it gives the final figure."
+        "B": "Ask the model to work through the settlement step by step in the stated order before it gives the final figure.",
+        "C": "Raise the maximum output tokens so the model has room to complete the whole settlement in one response.",
+        "D": "Split the settlement into four separate requests, one per rule, and have the client application add up the results."
       },
-      "answer": "D",
+      "answer": "B",
       "distractor_patterns": {
         "A": "E07",
-        "B": "D03",
-        "C": "D01"
+        "C": "D03",
+        "D": "D01"
       },
       "rationale": {
         "correct": "Asking the model to work through its reasoning step by step is the correction for a task that fails partway through a multi-step chain, which is a different failure from returning the wrong format. The layout is already correct and the order of operations is what slips, so the prompts have to make that order explicit work.",
         "distractors": {
           "A": "Worked examples correct the shape of an answer. The shape here is already right, and an example of a correct total does not stop the next settlement from applying the discount early.",
-          "B": "A longer output allowance would matter if answers were being cut short. These answers finish; they finish with the wrong number.",
-          "C": "Four requests plus client-side arithmetic rebuilds the calculation outside the model and adds moving parts to maintain for a fault that lives in the ordering."
+          "C": "A longer output allowance would matter if answers were being cut short. These answers finish; they finish with the wrong number.",
+          "D": "Four requests plus client-side arithmetic rebuilds the calculation outside the model and adds moving parts to maintain for a fault that lives in the ordering."
         }
       }
     },
@@ -956,23 +956,23 @@
       "type": "single_choice",
       "question": "An orchard cooperative's developer has chosen a chat model from the catalog in the Foundry portal, written the grading-advice client and configured it with the project's address and credentials. Every call comes back saying the model cannot be found, and the project itself is reachable. Which explanation is correct?",
       "options": {
-        "A": "The chosen model has to be added to the project as a connection before any client can reach the catalog entry.",
-        "B": "The chosen model has not been deployed, and a model can only be called once a deployment of it exists.",
+        "A": "The chosen model has not been deployed, and a model can only be called once a deployment of it exists.",
+        "B": "The project needs a larger quota before a model of that size will accept requests from outside the portal.",
         "C": "The chosen model has to be exercised in the portal playground first, which is what enables calls from code.",
-        "D": "The project needs a larger quota before a model of that size will accept requests from outside the portal."
+        "D": "The chosen model has to be added to the project as a connection before any client can reach the catalog entry."
       },
-      "answer": "B",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "E09",
+        "B": "D03",
         "C": "D19",
-        "D": "D03"
+        "D": "E09"
       },
       "rationale": {
         "correct": "A model has to be deployed in the Foundry portal before anything can interact with it, so a scenario where nobody can call the model yet is a deployment step that has not happened. Choosing a model from the catalog records an intention; the deployment is what publishes it for use.",
         "distractors": {
-          "A": "Connections attach external resources to a project. They are a real part of the portal and none of them turns a catalog listing into something callable.",
+          "B": "Quota governs how much traffic a live deployment may take. A model that was never deployed has no traffic to limit.",
           "C": "The playground is a place to try a model that has already been deployed. Using it is optional and it grants nothing to code.",
-          "D": "Quota governs how much traffic a live deployment may take. A model that was never deployed has no traffic to limit."
+          "D": "Connections attach external resources to a project. They are a real part of the portal and none of them turns a catalog listing into something callable."
         }
       }
     },
@@ -990,21 +990,21 @@
       "question": "A district heating utility ran its fault-triage pilot inside the portal, and engineers are happy with the answers. The utility now wants its field-service mobile app, which runs outside the portal on the engineers' handsets, to use the same deployed model. What does the app have to be pointed at?",
       "options": {
         "A": "The endpoint the deployment exposes, configured in the app with that endpoint's address and credentials.",
-        "B": "The catalog entry for the chosen model, which the app queries by model name whenever an engineer asks.",
-        "C": "A copy of the model files downloaded into the app so each handset answers without a network round trip.",
+        "B": "A copy of the model files downloaded into the app so each handset answers without a network round trip.",
+        "C": "The catalog entry for the chosen model, which the app queries by model name whenever an engineer asks.",
         "D": "Nothing further: an app owned by the same subscription reaches a deployment automatically once it exists."
       },
       "answer": "A",
       "distractor_patterns": {
-        "B": "E09",
-        "C": "E06",
+        "B": "E06",
+        "C": "E09",
         "D": "D19"
       },
       "rationale": {
         "correct": "Anything deployed in Foundry is reached through an endpoint, and Microsoft Foundry endpoints are what an application outside the portal actually talks to. Pointing the field-service app at the deployment's endpoint and configuring its credentials is the step that turns a portal pilot into something the handsets can use.",
         "distractors": {
-          "B": "The catalog is where models are compared and chosen. It lists what could be deployed and serves no traffic from an application.",
-          "C": "Running the model on the handset is a different delivery model altogether and is not what a Foundry deployment provides.",
+          "B": "Running the model on the handset is a different delivery model altogether and is not what a Foundry deployment provides.",
+          "C": "The catalog is where models are compared and chosen. It lists what could be deployed and serves no traffic from an application.",
           "D": "Sharing a subscription grants no automatic route. Without a configured endpoint the app has no address to send a request to."
         }
       }
@@ -1022,23 +1022,23 @@
       "type": "single_choice",
       "question": "A glass manufacturer's production manager wants to know whether a model can make sense of the plant's shift handover notes, which are terse and full of local abbreviations, before asking for budget. There is no application yet and no developer free for three weeks. Which route answers the question soonest without prejudging it?",
       "options": {
-        "A": "Wait three weeks for a developer to become free, then have a small client written against the deployment with the Foundry SDK.",
+        "A": "Ask the shift supervisors whether they believe a model could make sense of the way they write handovers.",
         "B": "Commission a fine-tune on two years of handover notes so the model is judged on plant vocabulary.",
         "C": "Try the deployed model interactively in the Foundry portal, pasting in real handover notes and reading what comes back.",
-        "D": "Ask the shift supervisors whether they believe a model could make sense of the way they write handovers."
+        "D": "Wait three weeks for a developer to become free, then have a small client written against the deployment with the Foundry SDK."
       },
       "answer": "C",
       "distractor_patterns": {
-        "A": "D15",
+        "A": "D12",
         "B": "E06",
-        "D": "D12"
+        "D": "D15"
       },
       "rationale": {
         "correct": "The Foundry portal offers a place to try a deployed model interactively before any application exists, which is the right route when the question is whether the model can do the job at all. Real handover notes pasted in produce the evidence the budget conversation needs, and nothing has to be built to get it.",
         "distractors": {
-          "A": "Waiting three weeks postpones a question that can be answered today, and it spends developer time before anyone knows whether the answer is yes.",
+          "A": "Supervisors' expectations are informed opinion about their own writing. They are not a test of what the model does with it.",
           "B": "A fine-tune is a commitment made before the basic question has been answered, and two years of notes cost real effort to prepare.",
-          "D": "Supervisors' expectations are informed opinion about their own writing. They are not a test of what the model does with it."
+          "D": "Waiting three weeks postpones a question that can be answered today, and it spends developer time before anyone knows whether the answer is yes."
         }
       }
     },
@@ -1057,21 +1057,21 @@
       "options": {
         "A": "Exporting the tested Foundry portal conversation and embedding it in the stock app as a saved script of answers.",
         "B": "Writing code with the Foundry SDK that connects to the deployment, sends the prompts and handles the responses.",
-        "C": "Deploying a second copy of the model for the stock app so that portal testing and packing-line traffic stay apart.",
-        "D": "Adding every grower as a user of the portal so they can chat with the deployed model from the packing line."
+        "C": "Adding every grower as a user of the portal so they can chat with the deployed model from the packing line.",
+        "D": "Deploying a second copy of the model for the stock app so that portal testing and packing-line traffic stay apart."
       },
       "answer": "B",
       "distractor_patterns": {
         "A": "E06",
-        "C": "D01",
-        "D": "E09"
+        "C": "E09",
+        "D": "D01"
       },
       "rationale": {
         "correct": "The Foundry SDK is what turns a deployed model into part of an application: a lightweight chat client application is code that connects to the deployment, sends the prompts and handles what comes back. That code is the whole of the step between a model that works in the portal and one growers can use where they work.",
         "distractors": {
           "A": "A portal conversation is a transcript of one session. Replaying saved answers cannot respond to a question a grower has not asked before.",
-          "C": "A second deployment separates traffic and writes none of the code the stock app needs, so the growers are no closer to asking anything.",
-          "D": "Giving growers portal access sends them to a browser and an authoring surface, which is precisely what the nursery asked to avoid."
+          "C": "Giving growers portal access sends them to a browser and an authoring surface, which is precisely what the nursery asked to avoid.",
+          "D": "A second deployment separates traffic and writes none of the code the stock app needs, so the growers are no closer to asking anything."
         }
       }
     },
@@ -1088,28 +1088,28 @@
       "type": "multiple_response",
       "question": "An electronics repair franchise is building a single-agent solution in the portal to help branch staff diagnose faults and order parts. The project plan lists writing the agent's instructions and connecting its tools, then marks the build complete and hands the agent to the branches. Select TWO statements that correct the plan.",
       "options": {
-        "A": "Testing the agent in the portal is part of creating it, not a separate exercise the branches take on afterward.",
-        "B": "An agent that has instructions and connected tools is finished, and any remaining checks belong to the branches.",
-        "C": "Testing can be satisfied by having the author of the agent's instructions read them through once more.",
-        "D": "The agent has to be exercised in the portal against the kind of requests branch staff will really send.",
-        "E": "Testing here means measuring how quickly the agent's tool calls return inside the portal session."
+        "A": "Testing here means measuring how quickly the agent's tool calls return inside the portal session.",
+        "B": "Testing can be satisfied by having the author of the agent's instructions read them through once more.",
+        "C": "An agent that has instructions and connected tools is finished, and any remaining checks belong to the branches.",
+        "D": "Testing the agent in the portal is part of creating it, not a separate exercise the branches take on afterward.",
+        "E": "The agent has to be exercised in the portal against the kind of requests branch staff will really send."
       },
       "select_count": 2,
       "answer": [
-        "A",
-        "D"
+        "D",
+        "E"
       ],
       "distractor_patterns": {
-        "B": "D15",
-        "C": "D20",
-        "E": "D08"
+        "A": "D08",
+        "B": "D20",
+        "C": "D15"
       },
       "rationale": {
         "correct": "Creating a single-agent solution in the portal includes testing it there, so a plan that treats the agent as finished once it is defined has skipped a step the task itself names. To create and test means exercising the agent against realistic branch requests before anyone in a branch depends on it.",
         "distractors": {
-          "B": "Declaring the build complete at definition hands an untested agent to the people least able to judge it, and it postpones the step that would have found the problems.",
-          "C": "A re-read by the person who wrote the instructions is anchored to the assumptions that produced them, so it cannot see what those assumptions missed.",
-          "E": "Tool-call timings describe how quickly the agent responds. Speed is worth knowing and says nothing about whether the diagnosis was right."
+          "A": "Tool-call timings describe how quickly the agent responds. Speed is worth knowing and says nothing about whether the diagnosis was right.",
+          "B": "A re-read by the person who wrote the instructions is anchored to the assumptions that produced them, so it cannot see what those assumptions missed.",
+          "C": "Declaring the build complete at definition hands an untested agent to the people least able to judge it, and it postpones the step that would have found the problems."
         }
       }
     },
@@ -1161,8 +1161,8 @@
       "question": "A sports stadium operations team has four AI requests to fund this quarter and has to pick the rung each one needs: over-reaching costs more to build and run, and under-reaching cannot meet the requirement. Match each request to the rung it needs. Options may be used more than once.",
       "matching_options": [
         "An agent that calls tools",
-        "A model answering from a prompt",
-        "Several agents coordinated"
+        "Several agents coordinated",
+        "A model answering from a prompt"
       ],
       "scenarios": [
         {
@@ -1205,23 +1205,23 @@
       "type": "single_choice",
       "question": "A geothermal energy operator's agent answers drilling-procedure questions for well-site crews. Reviewers find the answers are sound general industry practice but do not follow the operator's own approved procedures, and a crew supervisor cannot tell which procedure any answer came from. Which change addresses both findings?",
       "options": {
-        "A": "Connect the agent to a knowledge base built from the approved procedures, so answers draw on them and cite them.",
-        "B": "Add a line to the agent's instructions telling it to answer only from the operator's approved procedures.",
-        "C": "Fine-tune the model behind the agent on the operator's library of approved drilling procedures.",
-        "D": "Have a senior drilling engineer check each answer against the approved procedures before a crew acts on it."
+        "A": "Have a senior drilling engineer check each answer against the approved procedures before a crew acts on it.",
+        "B": "Connect the agent to a knowledge base built from the approved procedures, so answers draw on them and cite them.",
+        "C": "Add a line to the agent's instructions telling it to answer only from the operator's approved procedures.",
+        "D": "Fine-tune the model behind the agent on the operator's library of approved drilling procedures."
       },
-      "answer": "A",
+      "answer": "B",
       "distractor_patterns": {
-        "B": "D06",
-        "C": "E06",
-        "D": "D07"
+        "A": "D07",
+        "C": "D06",
+        "D": "E06"
       },
       "rationale": {
         "correct": "An agent is grounded in an organization's own content by connecting it to a knowledge base, so its answers are drawn from approved material and carry citations back to it. Knowledge bases are what make grounded, citation-backed responses possible, which is what lets a supervisor see which procedure an answer rests on.",
         "distractors": {
-          "B": "An instruction states the intent at the prompt layer while leaving the agent with no approved procedure to read, so it keeps answering from general practice.",
-          "C": "Fine-tuning shapes how the model writes and leaves no trace a supervisor can follow back to a numbered procedure.",
-          "D": "Expert review catches wrong answers one at a time after they are written, and it makes the crew wait for the reviewer every time."
+          "A": "Expert review catches wrong answers one at a time after they are written, and it makes the crew wait for the reviewer every time.",
+          "C": "An instruction states the intent at the prompt layer while leaving the agent with no approved procedure to read, so it keeps answering from general practice.",
+          "D": "Fine-tuning shapes how the model writes and leaves no trace a supervisor can follow back to a numbered procedure."
         }
       }
     },
@@ -1238,23 +1238,23 @@
       "type": "single_choice",
       "question": "An inland waterway freight operator has an assistant that answers crews' navigation-rule questions from the operator's own rulebook. A review of a month of answers finds them clear, confident and well written, and finds that a small share of them state a bridge clearance limit that appears nowhere in the rulebook, with nothing in the answer showing where it came from. Which reading of this review is correct?",
       "options": {
-        "A": "The answers are acceptable while they read clearly, as fluency is what crews actually judge an assistant on when they are under way.",
-        "B": "A fluent answer is not a grounded answer, and one that cannot be traced to the rulebook is the failure grounding prevents.",
-        "C": "The invented limits will fall away once crews are trained to ask the assistant more precisely worded questions.",
-        "D": "Lowering the temperature on the deployment will stop the assistant stating limits the rulebook does not contain."
+        "A": "Lowering the temperature on the deployment will stop the assistant stating limits the rulebook does not contain.",
+        "B": "The invented limits will fall away once crews are trained to ask the assistant more precisely worded questions.",
+        "C": "A fluent answer is not a grounded answer, and one that cannot be traced to the rulebook is the failure grounding prevents.",
+        "D": "The answers are acceptable while they read clearly, as fluency is what crews actually judge an assistant on when they are under way."
       },
-      "answer": "B",
+      "answer": "C",
       "distractor_patterns": {
-        "A": "D11",
-        "C": "D18",
-        "D": "D04"
+        "A": "D04",
+        "B": "D18",
+        "D": "D11"
       },
       "rationale": {
         "correct": "A grounded answer and a fluent answer are different things: output that reads well but cannot be traced back to the content it was supposed to draw on is exactly the failure grounding exists to prevent. The review's own finding — a clearance limit in no rulebook, with nothing to trace it to — is the case for grounded, citation-backed responses.",
         "distractors": {
-          "A": "Confidence is the property that makes an unsupported clearance limit dangerous on a bridge approach, so fluency cannot be the standard the answers are judged against.",
-          "C": "Better-worded questions ask crews to work around the assistant, and a well-worded question can be answered with an invented limit just as fluently.",
-          "D": "Temperature governs how varied the wording is. Steadier phrasing of an unsupported limit leaves the crew with the same untraceable number."
+          "A": "Temperature governs how varied the wording is. Steadier phrasing of an unsupported limit leaves the crew with the same untraceable number.",
+          "B": "Better-worded questions ask crews to work around the assistant, and a well-worded question can be answered with an invented limit just as fluently.",
+          "D": "Confidence is the property that makes an unsupported clearance limit dangerous on a bridge approach, so fluency cannot be the standard the answers are judged against."
         }
       }
     },
@@ -1271,23 +1271,23 @@
       "type": "single_choice",
       "question": "A veterinary hospital group is building an application over incoming referral letters. It has to route each letter by the service the referring vet is asking for, flag letters where the vet has expressed concern about waiting time, and link the practices named in the letter to records. A developer proposes one call per letter asking a general model to handle all of it. What does building this application actually involve?",
       "options": {
-        "A": "One call per letter with the whole job described in the prompt, and the routing, the flag and the links read out of the reply text.",
-        "B": "One deployment per requirement, with every letter routed through all three deployments in turn.",
-        "C": "Choosing which technique the application calls for each stage of the work, then handling the structured result each returns.",
-        "D": "Extracting the fields from each letter first, then deciding which technique to run based on what came back."
+        "A": "Choosing which technique the application calls for each stage of the work, then handling the structured result each returns.",
+        "B": "Extracting the fields from each letter first, then deciding which technique to run based on what came back.",
+        "C": "One deployment per requirement, with every letter routed through all three deployments in turn.",
+        "D": "One call per letter with the whole job described in the prompt, and the routing, the flag and the links read out of the reply text."
       },
-      "answer": "C",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "D02",
-        "B": "D01",
-        "D": "E12"
+        "B": "E12",
+        "C": "D01",
+        "D": "D02"
       },
       "rationale": {
         "correct": "Building a lightweight application that includes text analysis means picking which technique the application actually calls for each stage of the work, then handling the structured result it returns. Routing, flagging concern and linking named practices are three different asks, and each has a technique whose output the application can act on.",
         "distractors": {
-          "A": "One prose reply that has to be read apart by the application removes the structure the application depends on, and it merges three asks into one instruction.",
-          "B": "A deployment per requirement adds machinery the work does not need. The requirement is a choice of technique, not a fleet of models.",
-          "D": "Deciding the technique after extracting fields inverts the order: the technique is what produces the structured result in the first place."
+          "B": "Deciding the technique after extracting fields inverts the order: the technique is what produces the structured result in the first place.",
+          "C": "A deployment per requirement adds machinery the work does not need. The requirement is a choice of technique, not a fleet of models.",
+          "D": "One prose reply that has to be read apart by the application removes the structure the application depends on, and it merges three asks into one instruction."
         }
       }
     },
@@ -1304,23 +1304,23 @@
       "type": "single_choice",
       "question": "A school district already runs an agent that answers staff questions and raises tickets through its connected tools. The district now wants parent messages classified by topic and by how upset the writer sounds, so the agent can prioritize what it raises. A developer proposes doing that classification in the mail gateway and passing only the result to the agent. Which design fits what the district asked for?",
       "options": {
-        "A": "Classify in the mail gateway before the agent is involved, and pass the topic and the tone through to the agent as fields.",
+        "A": "Stand up a second agent whose only job is classification and have the two agents exchange messages.",
         "B": "Describe in the agent's instructions how to judge topic and tone, so it forms both judgments as it reads.",
-        "C": "Stand up a second agent whose only job is classification and have the two agents exchange messages.",
-        "D": "Attach Azure Language text analysis to the agent as a capability it calls when a message needs classifying."
+        "C": "Attach Azure Language text analysis to the agent as a capability it calls when a message needs classifying.",
+        "D": "Classify in the mail gateway before the agent is involved, and pass the topic and the tone through to the agent as fields."
       },
-      "answer": "D",
+      "answer": "C",
       "distractor_patterns": {
-        "A": "E12",
+        "A": "D01",
         "B": "D02",
-        "C": "D01"
+        "D": "E12"
       },
       "rationale": {
         "correct": "Text analysis can be attached to an agent as a capability the agent uses when it needs it, instead of being a separate service the application calls before the agent ever runs. Attaching Azure Language to the agent keeps the judgment inside the agent's own work, which is what lets AI agents decide what to raise and in what order.",
         "distractors": {
-          "A": "Classifying in the gateway fixes the order in advance and runs on every message whether the agent needs the judgment or not.",
+          "A": "A second agent to classify messages is a coordination problem invented to avoid attaching a capability to the agent that already exists.",
           "B": "Instructions can describe how to judge tone, and doing so drops a dedicated capability in favor of prose the agent has to reinterpret each time.",
-          "C": "A second agent to classify messages is a coordination problem invented to avoid attaching a capability to the agent that already exists."
+          "D": "Classifying in the gateway fixes the order in advance and runs on every message whether the agent needs the judgment or not."
         }
       }
     },
@@ -1337,23 +1337,23 @@
       "type": "single_choice",
       "question": "An aged-care operator has bedside devices on which residents speak requests such as asking what is for lunch or to have a nurse called. The current design records the audio, sends it to a recognition step, and sends the resulting text on to a model. The team wants to respond to spoken prompts with a deployed multimodal model instead. What changes?",
       "options": {
-        "A": "The recognition step stays in front, and the multimodal model reads the transcript it produces.",
-        "B": "The audio goes to the deployed multimodal model itself, so no separate recognition step sits in front of it.",
+        "A": "Multimodal describes the model speaking its answers as well as writing them, while its input stays text.",
+        "B": "The recognition step stays in front, and the multimodal model reads the transcript it produces.",
         "C": "The multimodal model has to be fine-tuned on recordings of residents before it will accept audio at all.",
-        "D": "Multimodal describes the model speaking its answers as well as writing them, while its input stays text."
+        "D": "The audio goes to the deployed multimodal model itself, so no separate recognition step sits in front of it."
       },
-      "answer": "B",
+      "answer": "D",
       "distractor_patterns": {
-        "A": "E12",
-        "C": "E06",
-        "D": "D19"
+        "A": "D19",
+        "B": "E12",
+        "C": "E06"
       },
       "rationale": {
         "correct": "A deployed multimodal model can respond to spoken prompts directly, which means the audio goes to the model itself instead of through a separate transcription step first. Removing that step is the whole change: one request carries the resident's spoken words to the model that answers them.",
         "distractors": {
-          "A": "Keeping recognition in front describes the design the operator already has. The transcription step is exactly what the change removes.",
-          "C": "Fine-tuning adapts a model to particular material and is not what makes a multimodal model able to take audio in.",
-          "D": "Accepting more than one input type is the property in question here. Reading the term as an output style leaves the recording pipeline in place."
+          "A": "Accepting more than one input type is the property in question here. Reading the term as an output style leaves the recording pipeline in place.",
+          "B": "Keeping recognition in front describes the design the operator already has. The transcription step is exactly what the change removes.",
+          "C": "Fine-tuning adapts a model to particular material and is not what makes a multimodal model able to take audio in."
         }
       }
     },
@@ -1371,23 +1371,23 @@
       "type": "single_choice",
       "question": "A mobile network operator runs an incident bridge on which engineers speak status updates and hear updates read back to them. The application has to take dictated updates as text and read the consolidated status out in one consistent voice across every region. How is that speech work implemented on this platform?",
       "options": {
-        "A": "Azure Speech in Foundry Tools provides Speech recognition and Speech synthesis as capabilities the application configures and calls.",
+        "A": "The portal playground carries out the recognition and the speaking for applications while they are running.",
         "B": "A chat model deployed in Microsoft Foundry is prompted to transcribe each update and to write the consolidated status in a speaking style.",
         "C": "Speech behavior is set through the deployment's inference parameters, alongside settings such as temperature.",
-        "D": "The portal playground carries out the recognition and the speaking for applications while they are running."
+        "D": "Azure Speech in Foundry Tools provides Speech recognition and Speech synthesis as capabilities the application configures and calls."
       },
-      "answer": "A",
+      "answer": "D",
       "distractor_patterns": {
+        "A": "E09",
         "B": "E01",
-        "C": "E07",
-        "D": "E09"
+        "C": "E07"
       },
       "rationale": {
         "correct": "Azure Speech in Foundry Tools is the dedicated route for speech work, implementing recognition and synthesis as capabilities an application configures and calls instead of behavior prompted out of a model. A consistent voice across regions is a configuration the application sets, which is what this route gives it.",
         "distractors": {
+          "A": "The playground is a place for a person to try things interactively. It is not a component a running application calls.",
           "B": "A chat model prompted to transcribe is a general capability aimed at a job the platform already performs directly, and nothing in it produces audio to hear.",
-          "C": "Inference parameters shape a model's text output. They sit around a model deployment and configure no speech capability.",
-          "D": "The playground is a place for a person to try things interactively. It is not a component a running application calls."
+          "C": "Inference parameters shape a model's text output. They sit around a model deployment and configure no speech capability."
         }
       }
     },
@@ -1404,28 +1404,28 @@
       "type": "multiple_response",
       "question": "A rail freight terminal is adding spoken interaction to its yard app: shunters speak instructions over a noisy radio channel and hear confirmations read back. Both supported routes are open to the terminal, and it must decide between Azure Speech in Foundry Tools and a deployed multimodal model. Select TWO requirements that point to the dedicated speech capability.",
       "options": {
-        "A": "The terminal wants one deployment to carry both the spoken exchange and its reasoning about the yard plan.",
-        "B": "The terminal would rather configure the route in a portal than write and maintain prompts for it.",
+        "A": "Recognition has to be tuned to the yard's shunting vocabulary and answer within a predictable time.",
+        "B": "The terminal wants one deployment to carry both the spoken exchange and its reasoning about the yard plan.",
         "C": "The confirmation voice has to sound identical on every yard radio, under the terminal's own control.",
         "D": "The terminal expects to add image checks of wagon seals to the same exchange later in the year.",
-        "E": "Recognition has to be tuned to the yard's shunting vocabulary and answer within a predictable time."
+        "E": "The terminal would rather configure the route in a portal than write and maintain prompts for it."
       },
       "select_count": 2,
       "answer": [
-        "C",
-        "E"
+        "A",
+        "C"
       ],
       "distractor_patterns": {
-        "A": "E07",
-        "B": "E09",
-        "D": "E02"
+        "B": "E07",
+        "D": "E02",
+        "E": "E09"
       },
       "rationale": {
         "correct": "Speech has two supported routes on this platform, and a stated constraint decides between them. Control over how the voice sounds and recognition tuned to a specific vocabulary with predictable latency are what Azure Speech in Foundry Tools is configured and called for, so both of those requirements point away from prompting a general model.",
         "distractors": {
-          "A": "Carrying the exchange and the reasoning in one deployment is a real constraint and it argues the other way, toward the multimodal model route.",
-          "B": "A preference for portal configuration describes how the team likes to work. It is not a property of the spoken interaction the yard needs.",
-          "D": "Adding image checks to the same exchange is about how many input types one route must accept, which again favors the multimodal model."
+          "B": "Carrying the exchange and the reasoning in one deployment is a real constraint and it argues the other way, toward the multimodal model route.",
+          "D": "Adding image checks to the same exchange is about how many input types one route must accept, which again favors the multimodal model.",
+          "E": "A preference for portal configuration describes how the team likes to work. It is not a property of the spoken interaction the yard needs."
         }
       }
     },
@@ -1443,23 +1443,23 @@
       "type": "single_choice",
       "question": "A zoological park has an agent that books veterinary slots and logs feeding records through its connected tools. Keepers work with both hands occupied and want to speak their requests to that agent and hear its answers, without stopping to type. How is that built?",
       "options": {
-        "A": "Replace the agent with Azure Speech in Foundry Tools, which recognizes the keeper's request and speaks a reply straight back.",
+        "A": "Instruct the agent to phrase its answers so that they sound natural when a keeper reads them aloud.",
         "B": "Add recognition in front of the agent and have keepers read the agent's answer from the handset screen.",
-        "C": "Instruct the agent to phrase its answers so that they sound natural when a keeper reads them aloud.",
+        "C": "Replace the agent with Azure Speech in Foundry Tools, which recognizes the keeper's request and speaks a reply straight back.",
         "D": "Compose Speech recognition and Speech synthesis around the agent, so that speech reaches it and its answer returns as audio."
       },
       "answer": "D",
       "distractor_patterns": {
-        "A": "E11",
+        "A": "D05",
         "B": "D02",
-        "C": "D05"
+        "C": "E11"
       },
       "rationale": {
         "correct": "Creating a speech-capable agent means composing recognition and synthesis around an agent, so that a spoken request reaches the agent's reasoning and the agent's answer comes back as audio. The agent keeps its tools and its judgment; speech is wrapped around it at both ends.",
         "distractors": {
-          "A": "A speech capability on its own hears and speaks and books nothing. Dropping the agent takes the tools and the reasoning out of the solution.",
+          "A": "Answers written to be read aloud still have to be read by somebody. The wording changes and no audio is produced.",
           "B": "Recognition alone solves half the problem and leaves keepers reading a screen, which is the position their occupied hands put them in already.",
-          "C": "Answers written to be read aloud still have to be read by somebody. The wording changes and no audio is produced."
+          "C": "A speech capability on its own hears and speaks and books nothing. Dropping the agent takes the tools and the reasoning out of the solution."
         }
       }
     },
@@ -1476,23 +1476,23 @@
       "type": "single_choice",
       "question": "A textile manufacturer processes tens of thousands of short supplier messages a month, needing a polarity score and the key terms from each. A trial that prompts a general-purpose model returns good results, and the trial also shows per-message cost and response time above what the ordering system can absorb, with the reply shape varying enough to break the parser twice a week. Which route fits the requirement?",
       "options": {
-        "A": "Keep the general-purpose model and shorten the prompt so that each message costs less to process.",
-        "B": "Keep the general-purpose model and run the messages overnight in one batch to spread the cost out.",
-        "C": "Use the purpose-built text analysis capability, which performs this task at lower cost in a consistent shape.",
-        "D": "Fine-tune a general-purpose model on past supplier messages so it answers the same task more cheaply."
+        "A": "Keep the general-purpose model and run the messages overnight in one batch to spread the cost out.",
+        "B": "Use the purpose-built text analysis capability, which performs this task at lower cost in a consistent shape.",
+        "C": "Fine-tune a general-purpose model on past supplier messages so it answers the same task more cheaply.",
+        "D": "Keep the general-purpose model and shorten the prompt so that each message costs less to process."
       },
-      "answer": "C",
+      "answer": "B",
       "distractor_patterns": {
-        "A": "D05",
-        "B": "E06",
-        "D": "D19"
+        "A": "E06",
+        "C": "D19",
+        "D": "D05"
       },
       "rationale": {
         "correct": "Inside a capability there is a build-or-buy decision, and a purpose-built capability that already performs the task can beat prompting a general-purpose model when cost, latency or consistency dominate the requirement. All three dominate here, which is what settles it against Generative AI models for this stage of the work.",
         "distractors": {
-          "A": "A shorter prompt trims part of the per-message cost and leaves the response time and the varying reply shape exactly where they are.",
-          "B": "Batching overnight moves when the work happens. The ordering system needs the scores as messages arrive, so the delay is the requirement being dropped.",
-          "D": "Fine-tuning adapts a model to the manufacturer's material and does not make a general-purpose model cheaper per message to call."
+          "A": "Batching overnight moves when the work happens. The ordering system needs the scores as messages arrive, so the delay is the requirement being dropped.",
+          "C": "Fine-tuning adapts a model to the manufacturer's material and does not make a general-purpose model cheaper per message to call.",
+          "D": "A shorter prompt trims part of the per-message cost and leaves the response time and the varying reply shape exactly where they are."
         }
       }
     },
@@ -1509,23 +1509,23 @@
       "type": "single_choice",
       "question": "A water testing laboratory takes sample results by phone from field samplers. Every call is to be classified by the contaminant the sampler names and flagged when the sampler states a reading outside the expected range, and the laboratory has chosen Azure Language text analysis to do both. A design document shows the classification step reading the call audio, with a transcript produced afterward for the archive. Which correction does the design need?",
       "options": {
-        "A": "Recognition has to run first, and only then can a text technique be applied to its output.",
-        "B": "Both steps can run against the audio at once, with their two results joined before the record is written.",
-        "C": "The archive transcript is optional, because the text step is able to work from the recorded call directly.",
-        "D": "The order is immaterial as long as both steps have finished before the record reaches the archive."
+        "A": "Both steps can run against the audio at once, with their two results joined before the record is written.",
+        "B": "Recognition has to run first, and only then can a text technique be applied to its output.",
+        "C": "The order is immaterial as long as both steps have finished before the record reaches the archive.",
+        "D": "The archive transcript is optional, because the text step is able to work from the recorded call directly."
       },
-      "answer": "A",
+      "answer": "B",
       "distractor_patterns": {
-        "B": "E12",
-        "C": "D19",
-        "D": "D02"
+        "A": "E12",
+        "C": "D02",
+        "D": "D19"
       },
       "rationale": {
         "correct": "A voice workload runs in a fixed order: the audio is turned into text first, and only then can any text technique be applied to it. A lightweight application that includes text analysis over recorded calls has no input at all until speech recognition has produced one, so a design that classifies before it recognizes is classifying nothing.",
         "distractors": {
-          "B": "Running both at once assumes the classifier has an input while the audio is still audio. There is nothing for it to read until recognition finishes.",
-          "C": "Treating the transcript as optional leaves a text analysis service with nothing to read: the chosen route takes text, not audio, so the archive copy is the load-bearing part of the design.",
-          "D": "Order is the whole constraint here. Two steps that both finish in the wrong sequence still produce a classification with no text behind it."
+          "A": "Running both at once assumes the classifier has an input while the audio is still audio. There is nothing for it to read until recognition finishes.",
+          "C": "Order is the whole constraint here. Two steps that both finish in the wrong sequence still produce a classification with no text behind it.",
+          "D": "Treating the transcript as optional leaves a text analysis service with nothing to read: the chosen route takes text, not audio, so the archive copy is the load-bearing part of the design."
         }
       }
     },
@@ -1543,22 +1543,22 @@
       "question": "A building inspection firm sends surveyors out with a tablet. A surveyor photographs a wall defect and needs a written opinion, phrased for the inspection report, on whether the pattern looks more like water ingress or settlement cracking. Which implementation produces that?",
       "options": {
         "A": "Send the photograph to an image generation model together with the report wording as its prompt.",
-        "B": "Supply the photograph inside the prompt to a deployed multimodal model and ask the question the report needs.",
-        "C": "Run character reading over the photograph and describe the defect from whatever text is found on the wall.",
-        "D": "Have the surveyor describe the defect in words on the tablet and send only that description to the model."
+        "B": "Have the surveyor describe the defect in words on the tablet and send only that description to the model.",
+        "C": "Supply the photograph inside the prompt to a deployed multimodal model and ask the question the report needs.",
+        "D": "Run character reading over the photograph and describe the defect from whatever text is found on the wall."
       },
-      "answer": "B",
+      "answer": "C",
       "distractor_patterns": {
         "A": "E02",
-        "C": "E05",
-        "D": "D18"
+        "B": "D18",
+        "D": "E05"
       },
       "rationale": {
         "correct": "Visual input can be supplied inside a prompt to a deployed multimodal model, and what comes back is a natural-language answer about the image shaped by what the prompt asked for. Interpret visual input in prompts is exactly this shape of work: the photograph and the surveyor's question travel together, and the answer arrives in the register the report needs.",
         "distractors": {
           "A": "An image generation model produces pictures from descriptions. Sending it a photograph and a report style yields another image and no opinion.",
-          "C": "Reading characters returns any text printed on the surface. A crack carries no writing, so this returns nothing about the defect.",
-          "D": "A written description sends the model the surveyor's own judgment. The photograph, which is the evidence in question, never reaches the model."
+          "B": "A written description sends the model the surveyor's own judgment. The photograph, which is the evidence in question, never reaches the model.",
+          "D": "Reading characters returns any text printed on the surface. A crack carries no writing, so this returns nothing about the defect."
         }
       }
     },
@@ -1575,23 +1575,23 @@
       "type": "single_choice",
       "question": "A printing and packaging firm's design studio has one deployed multimodal model that its app uses to read photographs of finished cartons for quality notes. A client has now asked for concept visuals of carton designs that have never been produced, worked up from a written brief. What does the app have to call for this new work?",
       "options": {
-        "A": "The same multimodal deployment that reads carton photographs, sending it the written brief instead of a photograph.",
-        "B": "The same multimodal deployment, asked to describe an existing carton in enough detail for the client to picture it.",
-        "C": "A retrieval step over the studio's photograph library, returning the closest existing carton to the written brief.",
-        "D": "An image generation model with the written brief, which is a different model class from the one that reads images."
+        "A": "An image generation model with the written brief, which is a different model class from the one that reads images.",
+        "B": "A retrieval step over the studio's photograph library, returning the closest existing carton to the written brief.",
+        "C": "The same multimodal deployment, asked to describe an existing carton in enough detail for the client to picture it.",
+        "D": "The same multimodal deployment that reads carton photographs, sending it the written brief instead of a photograph."
       },
-      "answer": "D",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "E01",
-        "B": "E02",
-        "C": "E06"
+        "B": "E06",
+        "C": "E02",
+        "D": "E01"
       },
       "rationale": {
         "correct": "New images are produced by generative models from a description of what is wanted, which is a different call with a different model class from anything that reads an existing image. Image generation models are what Create new visual outputs by using generative models refers to, and the studio has no image to read because the carton has never been produced.",
         "distractors": {
-          "A": "The deployment that reads cartons analyzes images that exist. Feeding it a brief asks a reading capability to produce a picture.",
-          "B": "A detailed description of an existing carton is prose about the wrong carton. The client asked to see a design that has not been made.",
-          "C": "Retrieval returns the nearest thing already photographed, which is by definition not the new design the brief describes."
+          "B": "Retrieval returns the nearest thing already photographed, which is by definition not the new design the brief describes.",
+          "C": "A detailed description of an existing carton is prose about the wrong carton. The client asked to see a design that has not been made.",
+          "D": "The deployment that reads cartons analyzes images that exist. Feeding it a brief asks a reading capability to produce a picture."
         }
       }
     },
@@ -1609,22 +1609,22 @@
       "question": "A university's facilities team already produces still signage graphics from written briefs with an image model. The safety office now wants a short moving demonstration of the laboratory evacuation route for the induction module, worked up from a written description of the route rather than filmed on site. Which capability class serves that?",
       "options": {
         "A": "The existing image model, generating a run of stills that the induction module plays one after another.",
-        "B": "The multimodal deployment that reads campus photographs, prompted to produce the demonstration clip.",
+        "B": "A phone recording of a walk along the route, with a model writing captions over the resulting footage.",
         "C": "A video generation model, which is the capability class for moving visual output made from a description.",
-        "D": "A phone recording of a walk along the route, with a model writing captions over the resulting footage."
+        "D": "The multimodal deployment that reads campus photographs, prompted to produce the demonstration clip."
       },
       "answer": "C",
       "distractor_patterns": {
         "A": "E05",
-        "B": "E01",
-        "D": "E02"
+        "B": "E02",
+        "D": "E01"
       },
       "rationale": {
         "correct": "Video generation models are taught as their own capability alongside image generation, so a requirement for moving visual output is served by a different model class from the one that produces stills. Create new visual outputs by using generative models covers both, and the safety office asked for movement worked up from a description.",
         "distractors": {
           "A": "A run of stills played in sequence is the stills capability stretched past what it produces, and the module still has no moving demonstration.",
-          "B": "The deployment that reads campus photographs reports on images that exist. Prompting it for a clip asks an analysis capability to generate one.",
-          "D": "Filming the route is what the safety office ruled out, and captioning footage describes a video without producing one."
+          "B": "Filming the route is what the safety office ruled out, and captioning footage describes a video without producing one.",
+          "D": "The deployment that reads campus photographs reports on images that exist. Prompting it for a clip asks an analysis capability to generate one."
         }
       }
     },
@@ -1641,23 +1641,23 @@
       "type": "single_choice",
       "question": "A paper mill is specifying a maintenance app with two visual requirements: judge from an operator's photograph whether a reel wrap fault is a crease or a tear, and produce an illustrative picture of a correctly wrapped reel for the printed guide. A developer proposes one visual model for the whole app. Which assessment is correct?",
       "options": {
-        "A": "The two requirements travel in opposite directions, so the app needs one model class to read images and another to produce them.",
+        "A": "The guide illustration should be made by cropping the clearest wrapped-reel photograph in the mill's archive.",
         "B": "One multimodal deployment covers both requirements, as reading an image and producing a new one are the same visual capability at heart.",
         "C": "The app should generate a picture of each fault type and compare the operator's photograph against them.",
-        "D": "The guide illustration should be made by cropping the clearest wrapped-reel photograph in the mill's archive."
+        "D": "The two requirements travel in opposite directions, so the app needs one model class to read images and another to produce them."
       },
-      "answer": "A",
+      "answer": "D",
       "distractor_patterns": {
+        "A": "E06",
         "B": "D19",
-        "C": "D01",
-        "D": "E06"
+        "C": "D01"
       },
       "rationale": {
         "correct": "Analyzing images and generating them sit in the same area of computer vision work but are opposite directions of travel, so a solution that needs both needs two model classes and not one that does everything visual. Judging a photographed fault is analysis; the guide illustration is what Create new visual outputs by using generative models describes.",
         "distractors": {
+          "A": "A cropped archive photograph is a real illustration of a real reel. It is retrieval from what exists, which is the direction the guide requirement does not need.",
           "B": "Reading and producing images are separate capability classes. Treating them as one leaves the app specified against a model that cannot do half of its job.",
-          "C": "Generating a reference picture per fault type and comparing against it adds a production step and a comparison step to work a single analysis call already does.",
-          "D": "A cropped archive photograph is a real illustration of a real reel. It is retrieval from what exists, which is the direction the guide requirement does not need."
+          "C": "Generating a reference picture per fault type and comparing against it adds a production step and a comparison step to work a single analysis call already does."
         }
       }
     },
@@ -1674,23 +1674,23 @@
       "type": "single_choice",
       "question": "An offshore wind maintenance operator has technicians photograph blade leading edges at every visit. A proof of concept sends a photograph to a deployed multimodal model and gets back a well-written paragraph about the erosion visible in it. Six weeks on, the work order system still receives nothing from the proof of concept. What is the application missing?",
       "options": {
-        "A": "A larger multimodal deployment, so that the paragraphs are detailed enough for planners to rely on.",
+        "A": "A store holding each paragraph with its photograph, ready for review at the next maintenance window.",
         "B": "A planner who reads each paragraph and types the erosion severity into the work order system.",
-        "C": "A store holding each paragraph with its photograph, ready for review at the next maintenance window.",
+        "C": "A larger multimodal deployment, so that the paragraphs are detailed enough for planners to rely on.",
         "D": "A prompt stating the judgment the work order needs, and code turning the answer into a work order value."
       },
       "answer": "D",
       "distractor_patterns": {
-        "A": "D03",
+        "A": "D15",
         "B": "D18",
-        "C": "D15"
+        "C": "D03"
       },
       "rationale": {
         "correct": "A lightweight application that includes vision capabilities carries the work end to end: it gets the image in, sends it with a prompt that states what is wanted, and turns the answer into something the business process can act on. The proof of concept stops at the paragraph, so the missing parts are the stated judgment and the step that lands it in the work order system.",
         "distractors": {
-          "A": "A larger deployment writes a better paragraph. Nothing about paragraph quality moves a value into the work order system.",
+          "A": "Storing paragraphs beside photographs preserves the output for later. The work order still waits, now with a tidy archive behind it.",
           "B": "A planner retyping severity makes the operator's own staff the integration, and it scales with the number of photographs rather than with the fleet.",
-          "C": "Storing paragraphs beside photographs preserves the output for later. The work order still waits, now with a tidy archive behind it."
+          "C": "A larger deployment writes a better paragraph. Nothing about paragraph quality moves a value into the work order system."
         }
       }
     },
@@ -1707,28 +1707,28 @@
       "type": "multiple_response",
       "question": "A construction site's gate camera has to do two jobs as each delivery arrives: capture the permit number printed on the windscreen docket, and count the pallets stacked on the flatbed. A trial that asked for one description of the gate scene returned a fluent paragraph carrying neither the permit number nor a count. Select TWO tasks the vision pipeline needs.",
       "options": {
-        "A": "A caption of the windscreen area as each delivery arrives at the gate.",
-        "B": "Character reading over the windscreen docket, so the permit number arrives as text.",
-        "C": "Classification of each arriving flatbed as a compliant or a non-compliant delivery.",
-        "D": "Located instances of each pallet on the flatbed, so the pallets can be counted.",
-        "E": "Character reading over the windscreen docket for the permit number and the pallet count together."
+        "A": "Character reading over the windscreen docket, so the permit number arrives as text.",
+        "B": "A caption of the windscreen area as each delivery arrives at the gate.",
+        "C": "Character reading over the windscreen docket for the permit number and the pallet count together.",
+        "D": "Classification of each arriving flatbed as a compliant or a non-compliant delivery.",
+        "E": "Located instances of each pallet on the flatbed, so the pallets can be counted."
       },
       "select_count": 2,
       "answer": [
-        "B",
-        "D"
+        "A",
+        "E"
       ],
       "distractor_patterns": {
-        "A": "E05",
-        "C": "E02",
-        "E": "D02"
+        "B": "E05",
+        "C": "D02",
+        "D": "E02"
       },
       "rationale": {
         "correct": "One visual requirement often needs more than one distinct visual task in the same pipeline: describing a scene, locating instances in it and reading the characters on it are separate asks that a single call does not cover. Computer vision tasks and techniques split this gate into reading the docket and locating each pallet, which is why a lightweight application that includes vision capabilities here makes two calls and not one.",
         "distractors": {
-          "A": "A caption of the windscreen area describes in prose what is displayed there. The permit number has to arrive as a value the gate log can hold, and a description of the docket is not one.",
-          "C": "A compliant or non-compliant verdict for the whole vehicle is a single label over the whole image. It answers neither of the gate's two questions: the permit number is still unread and the pallets are still uncounted.",
-          "E": "The docket is the delivery's paperwork. Reading a count off it reports what was loaded on paper, while the gate's second job is counting the pallets that actually arrived on the flatbed."
+          "B": "A caption of the windscreen area describes in prose what is displayed there. The permit number has to arrive as a value the gate log can hold, and a description of the docket is not one.",
+          "C": "The docket is the delivery's paperwork. Reading a count off it reports what was loaded on paper, while the gate's second job is counting the pallets that actually arrived on the flatbed.",
+          "D": "A compliant or non-compliant verdict for the whole vehicle is a single label over the whole image. It answers neither of the gate's two questions: the permit number is still unread and the pallets are still uncounted."
         }
       }
     },
@@ -1745,22 +1745,22 @@
       "type": "single_choice",
       "question": "An automotive parts distributor receives supplier delivery notes as files in dozens of house layouts. Its warehouse system needs the part number, quantity, batch and delivery date from each note as values it can book straight into stock, and the goods-in team currently keys them by hand. Which implementation route fits?",
       "options": {
-        "A": "Prompt a chat model deployed in Microsoft Foundry with the text of each note and ask it to list the four values in order.",
-        "B": "Send each note to Content Understanding, which returns the named values the warehouse system books into stock.",
-        "C": "Have goods-in staff paste each note into the portal playground and copy the four values into the system.",
+        "A": "Send each note to Content Understanding, which returns the named values the warehouse system books into stock.",
+        "B": "Have goods-in staff paste each note into the portal playground and copy the four values into the system.",
+        "C": "Prompt a chat model deployed in Microsoft Foundry with the text of each note and ask it to list the four values in order.",
         "D": "Use Azure AI Document Intelligence to read the characters off each note, then write parsing rules per supplier layout over the page text."
       },
-      "answer": "B",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "E01",
-        "C": "E09",
+        "B": "E09",
+        "C": "E01",
         "D": "E05"
       },
       "rationale": {
         "correct": "Information is pulled out of documents and forms with Azure Content Understanding in Foundry Tools, which returns the named values a business process needs instead of a rendering of the page. Extract information from documents is the task this tool exists for, and named values are what the warehouse system can book without a person in the middle.",
         "distractors": {
-          "A": "A prompted chat model can list values and gives no guarantee about the shape it returns them in, which is the part the stock booking depends on.",
-          "C": "The playground is an interactive surface for a person. Pasting notes into it keeps every delivery dependent on someone doing the copying.",
+          "B": "The playground is an interactive surface for a person. Pasting notes into it keeps every delivery dependent on someone doing the copying.",
+          "C": "A prompted chat model can list values and gives no guarantee about the shape it returns them in, which is the part the stock booking depends on.",
           "D": "Page text plus parsing rules per layout is the maintenance burden the tool removes, and every new supplier layout adds another rule set."
         }
       }
@@ -1778,23 +1778,23 @@
       "type": "single_choice",
       "question": "A metal recycling yard has weighbridge operators photograph the hazard placard and the container identity plate on each incoming skip. The yard system needs the placard code and the container identity as values. The project team assumes a separate image service is required, as this content arrives as photographs and not as documents. Which route is correct?",
       "options": {
-        "A": "Send the photographs for vision analysis and parse the placard code out of the description that comes back.",
+        "A": "Stand up a separate image extraction service for photographs and keep Content Understanding for paperwork.",
         "B": "Have the weighbridge operator read the placard code off the photograph and type it into the yard system.",
         "C": "Send the photographs to Content Understanding, which extracts information from images as well as documents.",
-        "D": "Stand up a separate image extraction service for photographs and keep Content Understanding for paperwork."
+        "D": "Send the photographs for vision analysis and parse the placard code out of the description that comes back."
       },
       "answer": "C",
       "distractor_patterns": {
-        "A": "E05",
+        "A": "D01",
         "B": "D18",
-        "D": "D01"
+        "D": "E05"
       },
       "rationale": {
         "correct": "The same tool covers Extract information from images by using Content Understanding, so a photographed label, sign or plate is handled by the extraction path and not by a separate image service. The content type changes and the path does not: the yard still asks for named values and still receives them.",
         "distractors": {
-          "A": "A description of the photograph is prose about a placard. Parsing a code out of prose reintroduces exactly the fragile step extraction removes.",
+          "A": "A second service per content type doubles what the yard runs and maintains to reach an extraction path it already has.",
           "B": "Typing the code keeps the weighbridge waiting on a person at the busiest point of the yard, which is the work the photographs were meant to remove.",
-          "D": "A second service per content type doubles what the yard runs and maintains to reach an extraction path it already has."
+          "D": "A description of the photograph is prose about a placard. Parsing a code out of prose reintroduces exactly the fragile step extraction removes."
         }
       }
     },
@@ -1812,22 +1812,22 @@
       "question": "A chemical plant's safety team holds recorded toolbox talks and helmet-camera walkdowns. Auditors want the hazards raised, the equipment referred to and who was present as values in the safety register. The team's plan is to transcribe the recordings with a separate speech step, then extract from the transcripts. Which route does the platform support directly?",
       "options": {
         "A": "Transcribe every recording with Azure Speech in Foundry Tools first, then run extraction over the transcripts with Content Understanding.",
-        "B": "Extract from the toolbox talks and have the safety team watch the walkdowns and note the values by hand.",
-        "C": "Keep only the recordings and their metadata, as recorded media cannot yield named values for a register.",
-        "D": "Send the recordings to Azure Content Understanding in Foundry Tools, which handles audio and video as content types."
+        "B": "Send the recordings to Azure Content Understanding in Foundry Tools, which handles audio and video as content types.",
+        "C": "Extract from the toolbox talks and have the safety team watch the walkdowns and note the values by hand.",
+        "D": "Keep only the recordings and their metadata, as recorded media cannot yield named values for a register."
       },
-      "answer": "D",
+      "answer": "B",
       "distractor_patterns": {
         "A": "E12",
-        "B": "D16",
-        "C": "D19"
+        "C": "D16",
+        "D": "D19"
       },
       "rationale": {
         "correct": "The same tool can Extract information from audio and video, which means recorded media is a content type the extraction path handles instead of a job that has to be transcribed elsewhere first. Sending the talks and the walkdowns straight to the tool removes a stage the team had planned to build and maintain.",
         "distractors": {
           "A": "A separate transcription stage in front is a real design and an unnecessary one here, adding a component whose output the extraction path did not require.",
-          "B": "Handling the audio automatically and the video by hand abandons half the auditors' requirement and puts the slowest content type on the safety team.",
-          "C": "Declaring recorded media unusable writes off content the platform extracts from directly, leaving the register incomplete by choice."
+          "C": "Handling the audio automatically and the video by hand abandons half the auditors' requirement and puts the slowest content type on the safety team.",
+          "D": "Declaring recorded media unusable writes off content the platform extracts from directly, leaving the register incomplete by choice."
         }
       }
     },
@@ -1844,23 +1844,23 @@
       "type": "single_choice",
       "question": "An agricultural equipment dealership handles warranty claims that arrive as a mix: a typed email from the farm, a scanned service sheet, a photograph of the failed component, and a voicemail from the field technician. A draft architecture proposes four separate services, one per kind of content. Which assessment is correct?",
       "options": {
-        "A": "One tool in Foundry Tools spans all four content types, so that a service per kind of content is not needed.",
+        "A": "The email and the service sheet should be handled automatically and the photograph and voicemail sent to staff.",
         "B": "Four services are needed: Azure AI Vision for the photograph, Azure Speech for the voicemail, and document products for the rest.",
-        "C": "Everything should be converted into documents first, so that one document service can handle the claim.",
-        "D": "The email and the service sheet should be handled automatically and the photograph and voicemail sent to staff."
+        "C": "One tool in Foundry Tools spans all four content types, so that a service per kind of content is not needed.",
+        "D": "Everything should be converted into documents first, so that one document service can handle the claim."
       },
-      "answer": "A",
+      "answer": "C",
       "distractor_patterns": {
+        "A": "D16",
         "B": "E09",
-        "C": "E12",
-        "D": "D16"
+        "D": "E12"
       },
       "rationale": {
         "correct": "One tool spans all four content types, so a solution facing mixed content does not need a different service per modality — that unifying claim is what the four parallel extraction tasks state together. Content Understanding takes the email, the scanned sheet, the photograph and the voicemail on the same path and returns the claim's values from each.",
         "distractors": {
+          "A": "Automating the easy half and routing the rest to staff leaves the two content types that arrive from the field as manual work forever.",
           "B": "A product per content type is how the work used to be split. It multiplies what the dealership integrates and pays for to reach the same values.",
-          "C": "Converting everything into documents inserts a conversion stage in front of a tool that already accepts the original content types.",
-          "D": "Automating the easy half and routing the rest to staff leaves the two content types that arrive from the field as manual work forever."
+          "D": "Converting everything into documents inserts a conversion stage in front of a tool that already accepts the original content types."
         }
       }
     },
@@ -1877,22 +1877,22 @@
       "type": "single_choice",
       "question": "A fire-safety compliance contractor has extraction running over inspection certificates, and a spot check confirms the values it returns are accurate. Engineers still read each certificate and key the same values into the compliance register, and the pilot review reports no time saved anywhere in the process. What does the application still have to do?",
       "options": {
-        "A": "Improve extraction accuracy further before the compliance register can reasonably be expected to benefit from the extracted values.",
-        "B": "Have engineers check every extracted value against the certificate before they key it into the register.",
-        "C": "Pass the extracted values into the compliance register the contractor already runs, so that the process consumes them.",
+        "A": "Pass the extracted values into the compliance register the contractor already runs, so that the process consumes them.",
+        "B": "Improve extraction accuracy further before the compliance register can reasonably be expected to benefit from the extracted values.",
+        "C": "Have engineers check every extracted value against the certificate before they key it into the register.",
         "D": "Hold the extracted values in a new store that reports on how much of the certificate estate is covered."
       },
-      "answer": "C",
+      "answer": "A",
       "distractor_patterns": {
-        "A": "D05",
-        "B": "D07",
+        "B": "D05",
+        "C": "D07",
         "D": "D01"
       },
       "rationale": {
         "correct": "A lightweight application with information extraction capabilities submits the content, receives the extracted values and passes them into whatever the business already does with those values, which is where the capability earns anything. Field extraction and mapping has already produced accurate values here, so the unbuilt part is the hand-off into the register.",
         "distractors": {
-          "A": "Accuracy is already confirmed by the spot check. More of it changes nothing while every value is still being keyed in by hand.",
-          "B": "Adding a check in front of the keying makes the manual step longer. The engineer is still the path between the extraction and the register.",
+          "B": "Accuracy is already confirmed by the spot check. More of it changes nothing while every value is still being keyed in by hand.",
+          "C": "Adding a check in front of the keying makes the manual step longer. The engineer is still the path between the extraction and the register.",
           "D": "A coverage report is a new thing to look at. The register the contractor is audited against remains exactly as empty as it was."
         }
       }
@@ -1912,21 +1912,21 @@
       "options": {
         "A": "Raise the confidence threshold on the extraction so that the poor results are discarded automatically.",
         "B": "Sort the archive by content type first, then run the extraction configured for each type against its own group.",
-        "C": "Configure one extraction that covers every field found across all four kinds of document in the archive.",
-        "D": "Run each configuration over the whole archive in turn and keep whichever run returns the most fields."
+        "C": "Run each configuration over the whole archive in turn and keep whichever run returns the most fields.",
+        "D": "Configure one extraction that covers every field found across all four kinds of document in the archive."
       },
       "answer": "B",
       "distractor_patterns": {
         "A": "D04",
-        "C": "D01",
-        "D": "D03"
+        "C": "D03",
+        "D": "D01"
       },
       "rationale": {
         "correct": "A mixed archive is sorted by content type before any type-specific extraction runs, because extraction configured for one kind of document produces nothing useful when it is handed another kind. Classifying first is what gives Azure Content Understanding in Foundry Tools a group whose Field extraction and mapping configuration actually matches the pages in it.",
         "distractors": {
           "A": "A higher threshold hides the bad results instead of producing good ones, and the consent letters end up excluded rather than extracted.",
-          "C": "One configuration covering every field across four document kinds asks each page to be matched against fields it never contains, which is the fault repeated at greater scale.",
-          "D": "Running every configuration over everything and keeping the fullest result trades a sorting step for repeated processing and a guess about which run was right."
+          "C": "Running every configuration over everything and keeping the fullest result trades a sorting step for repeated processing and a guess about which run was right.",
+          "D": "One configuration covering every field across four document kinds asks each page to be matched against fields it never contains, which is the fault repeated at greater scale."
         }
       }
     }

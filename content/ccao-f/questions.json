@@ -1824,7 +1824,7 @@
       "options": {
         "A": "Move the vendor directory into knowledge, define the triage procedure as a Skill, keep instructions for behavior",
         "B": "Expand the instructions to hold the full directory plus the procedure spelled out in more detail",
-        "C": "Report the Project as defective, as a configured Project should follow whatever it has been given",
+        "C": "Report the Project as defective, as a configured Project is supposed to follow whatever material it has been given",
         "D": "Leave the configuration alone and correct each mis-triaged work order by hand as it appears"
       },
       "answer": "A",
@@ -1965,9 +1965,9 @@
       "question": "A funding coordinator at an apprenticeship training provider re-uploaded the Project's entire folder of funding-rule PDFs last week, so every file shows a fresh date. A teammate points to those dates as proof the Project's knowledge is current. The coordinator knows one agency revised its rules two months ago. What is the most appropriate response?",
       "options": {
         "A": "Agree with the teammate: files uploaded last week are current by any reasonable standard",
-        "B": "Re-upload the folder monthly from now on so the file dates never age more than a few weeks",
+        "B": "Re-upload the whole folder every month from now on so no file date ever ages more than a few weeks",
         "C": "Check the content against the agency's current rules — a fresh upload timestamp is not provenance",
-        "D": "Keep the files as they are and add a caveat to outputs that funding rules may have changed"
+        "D": "Keep the files as they are and add a standing caveat to outputs that funding rules may have changed"
       },
       "answer": "C",
       "distractor_patterns": {
@@ -2001,7 +2001,7 @@
         "A": "Rewrite the instruction into precise, testable rules whose effect on a draft can be observed",
         "B": "Strengthen the wording — \"always make every response truly compelling\" — so the model takes it seriously",
         "C": "Ask Claude whether it has been following the instruction, and close the matter if it says yes",
-        "D": "Leave it for now and put a full instructions overhaul on next quarter's improvement list"
+        "D": "Leave it for now and put a full instructions overhaul on next quarter's process improvement list"
       },
       "answer": "A",
       "distractor_patterns": {

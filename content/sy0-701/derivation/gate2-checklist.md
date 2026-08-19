@@ -6,6 +6,16 @@ built in this S6 commit). `manifest.status` is now **`in_review`** — the flip 
 `published` is Oliver's alone and must be recorded first in `derivation/signoff.md`.
 Verdict columns in the sign-off are blank; this checklist pre-fills the evidence.
 
+> **Re-pinned 2026-08-19 after the post-S6 cue-rework wave.** The bank under review is now
+> `content/sy0-701/questions.json` @ **`d92c587`** (blob `22dad062f1`, sha256
+> `9c7911cc8a71bd14…`) on `fix/cue-rework-wave` — **not** `4090ed3`, which this checklist
+> originally pinned. `selection.json` is unchanged (item ids are stable). The eval artifacts in
+> `eval/` still date from `eacb373` and were produced against the **pre-wave option text**;
+> `derivation/signoff.md` §Post-S5 cue-rework wave states what moved, what the prior judge
+> scores still cover, the re-measured S5b numbers, and how the deep-read sample was extended
+> (27 → **42 items**). Validator count also moved 30 → **34 checks** (four cue checks landed
+> after S6; all silent). `manifest.status` is still `in_review` — nothing was flipped.
+
 ## Exam form built at this stage
 
 `selection.json` form-a — **90 items**: d1 11 (10 SC + 1 MR + 0 SM) · d2 20 (17+2+1) ·
@@ -30,7 +40,7 @@ BE · BCE · AD · CE · AC · ACE · AC · CE · BCE — no constant.
 |---|---|---|---|
 | 1 | Source registry complete, with licence basis | **PASS (one residual risk, carried from Gate 1)** | `derivation/sources.md` §Registered sources: 3 entries, each with type, author, URL, `date_accessed` 2026-08-16, licence/permission basis and usage constraint. §Blueprint authenticity records the sha256 (`64e5a75d…`, 191,074 B, 21 pp) and the byte-identical partner-mirror cross-check; the exclusions table records the ExamTopics corpus + mirrors, five self-declared dump repos, the Hamada-khairi MIT repo, a recall-lineage repo and the Quizlet/Anki class, each with evidence. Machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` green. **Residual:** `jealarue-exam90` has **no licence file** — author retains copyright; basis is public GitHub publication + classification-only use (Gate 1 decision 1; open decision 6 below, and read it with the concentration finding under this table) |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree. S6 spot-check, seven chains re-walked by hand across all five domains and both priorities — C-001 (d1-q01) → `b-1.1-1` + jealarue 1.4/1.12; C-041 (d2-q26 MR) → `b-2.5-10` + jealarue 2.14; C-064 (d3-q22 MR) → `b-3.4-7`/`-8` + practice-v7 3.2; C-097 (d4-q33 SM) → `b-4.9-1` + jealarue 4.14/4.32; C-112 (d5-q14 SM) → `b-5.3-3` + jealarue 5.1/5.12/5.16/5.26; and the two blueprint-only normal fills C-088 (d4-q24) → `b-4.6-7`, C-115 (d5-q17) → `b-5.4-3`. All resolve to registered ids with a derivation doc |
-| 3 | Validator green | **PASS** | `pnpm validate sy0-701` → **30 checks, 0 errors, 0 warnings** on this tree (status `in_review`, selection built). Zero warnings is the correct state here, not luck: priorities are computed rather than asserted, so `concept-convergence` has nothing to flag. The aif-c01 ratchet checks `key-position-distribution` and `answer-length-cue` are both green — they were engineered against before authoring (bank keys A 28 / B 26 / C 29 / D 27; keyed-option length median 0.97× the longest distractor) |
+| 3 | Validator green | **PASS** | `pnpm validate sy0-701` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree `d92c587` (status `in_review`, selection built). *Count corrected 2026-08-19 from "30 checks"; the four cue checks that landed after S6 are all silent.* Zero warnings is the correct state here, not luck: priorities are computed rather than asserted, so `concept-convergence` has nothing to flag. The aif-c01 ratchet checks `key-position-distribution` and `answer-length-cue` are both green — they were engineered against before authoring (bank keys A 28 / B 26 / C 29 / D 27; keyed-option length median 0.97× the longest distractor) |
 | 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (122 items, **121/122**, 120 high / 2 medium confidence, one confident miss `d4-q02` carrying `adjudication: legitimately_hard`, `adjudication_status: open_proposed` → the single open adjudication), `eval/judge-scores.json` (122 items × 6 dimensions, distractor cases argued FOR each option before scoring, **zero dimensions ≤2**, no `bounces[]`), `eval/overlap-report.md` (no finding), `eval/codex-solve.json` (`status: advisory_skipped`, four probes recorded). Bounce cap (2) untouched — **no item has ever bounced; this is the first Mockka bank to clear round 1 clean**. Full reasoning: `derivation/eval-report.md` |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/sy0-701/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template — provenance, prior art, NDA, non-affiliation, licence). The manifest's machine-checked `nda_statement` and the intro `disclaimer` already carry the substance, including CompTIA's Authorized Materials Use Policy; what is missing is the human-facing package README that cites them, plus the **prior-art credit** the template demands for the two practice sets (CompTIA's own free V7 sampler and `jealarue/exam90`, both classification-only). **Owner: exam-author** — the examiner does not author package content beyond its `eval/` + `selection.json` surface. Does not block `in_review`. **Model to copy: `content/aif-c01/README.md`** |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0, content) exist at root; the per-package restatement folds into item 5. Inbound: **zero `licensed_import` items** — the string does not occur anywhere in the package; `licensed-import-license` green with nothing to discharge. All three registered sources are read-only inputs (one blueprint distillation, two classification-only annotations), never imported text. The `jealarue-exam90` permission question is item 1's residual, not an import obligation |
@@ -53,10 +63,29 @@ must be rebuilt on a different criterion**. (The Gate 1 checklist states 68; the
 on the merged rows is 72 — the difference is counting method, and 72 is the number that
 governs selection.)
 
-## Gate 2 deep-read sample — 27 items (19 seated on form-a)
+## Gate 2 deep-read sample — **42 items** (was 27; 28 seated on form-a)
 
 Per methodology/05 §handoff (every auto-flagged item + the open adjudication) ∪
-`/exam-publish` step 3 (all scenario-matching + 10 random). The three lists are disjoint.
+`/exam-publish` step 3 (all scenario-matching + 10 random) ∪ **every item touched by the
+2026-08-19 cue-rework wave** (added at the re-pin). The lists are disjoint — and the S6 sample
+and the wave set turned out to be **fully disjoint**, which is exactly why the extension matters
+here: before it, not one reworked item was in front of Oliver.
+
+**D · Wave extension (15 new items).** All 9 reworked items seated on form-a are now in the
+sample, plus the 6 reserve-only reworked items, because publication covers the bank:
+
+| Added | On form? | Wave edit | What to judge |
+|---|---|---|---|
+| `d4-q16` | yes | `option-pair-similarity` fix: A/B trigram Jaccard 100% → 0% by adding two words | **Needs a ruling, not just a read.** A is now the only entry phrased "deny **traffic** from … **on every** port and protocol" while B/C/D all read "…from 198.51.100.0/24 to 10.20.0.15…": a 3-vs-1 surface singleton that lets a candidate eliminate the E05 transposition trap without engaging direction. The metric cannot see dotted quads (it drops tokens ≤3 chars after stripping punctuation), so a per-item waiver beats the cosmetic reword |
+| `d4-q19` | yes | distractor reworded ("own hosts" → "own sending hosts") | The key still carries 5 proper-noun tokens against 3/3/0 — an acronym-expansion-policy artefact, not an item defect |
+| `d1-q05`, `d2-q23`, `d3-q04`, `d4-q01`, `d5-q07`, `d5-q19`, `d5-q23` | yes | length / near-duplicate parity | distractor argued up — check it did not become co-correct |
+| `d1-q11`, `d3-q09`, `d4-q05`, `d4-q21`, `d5-q04`, `d5-q22` | **no** (reserve) | length parity (`d1-q11` D gained "March") | bank coverage; rejecting a reserve item is free. Note `d1-q11` is why the bank `named-entity` rate appears to fall — it is a **denominator artifact**, hits stayed at 9 |
+
+Not one of the 17 edited strings is a keyed option — the key text a candidate sees is exactly what
+S5 round 1 judged. **The pairing that tells you which items need human reading:** all 17 distractor
+rewrites left their `rationale.distractors` entry **byte-identical**, so each is refuted by an
+argument written against the pre-wave string. All 17 pairs were re-read at this gate and still
+land, but no validator check covers this surface.
 
 **A · Auto-flagged + adjudication (14 — the S5 sample, unchanged).** 6 are seated; 8 are
 reserve-only and can be judged last, since rejecting them costs the form nothing:

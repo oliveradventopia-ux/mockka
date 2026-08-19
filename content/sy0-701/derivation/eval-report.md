@@ -204,3 +204,66 @@ Second occurrence across exams should promote it from warning to error.
 flags travel to Gate 2 as decisions, not defects. The two standing provenance questions
 (`jealarue-exam90` licence, blueprint revision string) and the missing cross-model signal are the
 open items on the publication path, and none of them is an authoring defect.
+
+---
+
+## S5b · cue-only solve — re-measured after the cue-rework wave (2026-08-19) {#s5b}
+
+Recorded per [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve),
+which requires the blind score, `k_req` and the ceiling verdict for the **bank and each served
+form**. The wave (`d92c587` on `fix/cue-rework-wave`) changed option text only, so these
+numbers **supersede** any cue figures earlier in this report; the S5 §1 blind solve and the judge
+scores were produced against the pre-wave text and were not regenerated (see
+`derivation/gate2-checklist.md` §Post-S5 cue-rework wave).
+
+Instrument: `node tools/exploit-scan.mjs sy0-701` for form scope, and the same tool run against a
+selection-free copy of the package for bank scope — it scopes to the served form when a
+`selection.json` form exists, so bank scope must be produced deliberately. `random` is the
+format-mix expected guess score (single_choice 1/options, multiple_response 1/C(options, |key|),
+scenario_matching 1/options^scenarios, all graded all-or-nothing), which is **stricter** than the
+rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre-wave → post-wave) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 122 | 38.52% → **27.05%** (33/122) | ≤ 31.43% (random 23.28%) | **0.7396** | ≥ 0.6395 (k_req@random 0.7523) | **PASS** |
+| form-a | 90 | 35.56% → **26.67%** (24/90) | ≤ 30.61% (random 22.67%) | **0.7409** | ≥ 0.6411 (k_req@random 0.7543) | **PASS** |
+
+Per-cue rates on the shipping revision (chance 25% each):
+
+- **bank** — key-longest-rank 29/99 (29.3%) · key-shortest-rank 18/98 (18.4%) · named-entity 9/26 (34.6%) · rider-marks-key 0/6 (0.0%)
+- **form-a** — key-longest-rank 20/71 (28.2%) · key-shortest-rank 14/70 (20.0%) · named-entity 7/21 (33.3%) · rider-marks-key 0/4 (0.0%)
+
+### Residual: the instrument does not test interior length ranks
+
+`key-length-rank-share` and `exploit-scan`'s `key-longest-rank`/`key-shortest-rank` bound only
+rank 1 and rank last, and the standard parity fix — lift one thin distractor above a rank-1 key —
+lands the key deterministically on **rank 2**. Measuring all four ranks by hand on the shipping
+revision:
+
+| scope | key length-rank distribution | best single-rank strategy | rank-aware blind |
+|---|---|---|---|
+| bank | {1:31, 2:33, 3:26, 4:20} | rank 2: 33/110 (30.0%) | 35/122 = **28.69%** |
+| form-a | {1:22, 2:22, 3:19, 4:15} | rank 1: 22/78 (28.2%) | 24/90 = **26.67%** |
+
+"Rank-aware blind" substitutes the best interior rank for the tool's longest-option strategy. It is
+**not** the S5b number — the committed strategy set is the instrument of record — but it is the
+honest upper bound on what a rank-aware test-wise candidate scores, and Gate 2 should see it.
+
+### Residual: the uninstrumented stem-echo cue
+
+No validator check and no exploit-scan strategy measures option↔stem content-word overlap, and the
+wave's own fix mechanism (appending a purpose clause written from the stem's words to lift a key
+off the shortest rank) inflates it. Share of single-choice items where the key is the strict
+maximum-overlap option, chance 25%: bank 29.6 → 28.2%, form-a 25.5 → 25.0% — it
+**fell**.
+
+### Verdict carried to Gate 2
+
+**PASS on both ceilings, both scopes, with the widest headroom of the six** (threshold 81%, so
+`k_req` 0.74 against a 0.64 floor). Two residuals, neither gating. (1) The **rider channel is fully
+inverted and was left untouched**: `rider-marks-key` is 0/6 on bank and 0/4 on form — 0% against
+25% chance, i.e. every rider in the bank sits on a distractor, which is the E2 elimination cue
+`exploit-scan` exists to warn about. Sibling lanes seated a key-side rider in this same wave
+(`ccao-f`, `ai-901`); sy0-701 did not. (2) `named-entity` reads 34.6% bank / 33.3% form, the
+highest of the six — driven in part by an acronym-expansion policy that makes DMARC-style keys
+intrinsically entity-heaviest (`d4-q19`'s key carries 5 proper-noun tokens against 3/3/0).

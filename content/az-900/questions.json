@@ -1595,10 +1595,10 @@
       "type": "single_choice",
       "question": "An outdoor advertising firm has board approval to design a campaign-imagery platform, and nothing has been deployed for it. The firm already runs a substantial Azure estate with two years of invoices behind it, and the finance director wants a defensible monthly figure for the proposed platform before a single resource is created. Which approach produces that figure?",
       "options": {
-        "A": "A budget set at the amount the board is willing to fund, with alerts as consumption approaches that line",
+        "A": "A budget for the proposed platform set at the amount the board is willing to fund, with alerts as consumption approaches that line",
         "B": "The pricing calculator, configured with the proposed services, sizes and regions so that the design is priced as a monthly total",
         "C": "Cost analysis over the firm's existing estate and its two years of invoices, filtered to the services the new platform would be built from",
-        "D": "A total-cost-of-ownership comparison against what the firm currently spends on print production"
+        "D": "A total-cost-of-ownership comparison against what the firm currently spends on print production for its campaigns"
       },
       "answer": "B",
       "distractor_patterns": {
@@ -1800,9 +1800,9 @@
       "question": "A wind farm maintenance company adopted a standard this year: every resource carries an owner tag and sits in one of its approved regions. Most of the estate predates the standard. Leadership wants both a list of which existing resources fall short of it and assurance that the same standard holds for everything deployed from now on.",
       "options": {
         "A": "Assign the policy at the subscription and read its compliance state, which evaluates existing resources as well as new ones",
-        "B": "Because a policy takes effect only on deployments made after it is assigned, redeploy the older resources through a template that meets the standard",
-        "C": "Azure Advisor's operational excellence recommendations, read across the whole of the existing estate",
-        "D": "An alert rule that fires whenever a resource is found sitting outside the standard the company adopted"
+        "B": "Because a policy takes effect only on deployments made after it is assigned, redeploy the older resources through a compliant template",
+        "C": "Azure Advisor's operational excellence recommendations, read across the whole of the estate that predates the standard",
+        "D": "An alert rule that fires whenever a resource is found outside the approved regions or without the owner tag the standard requires"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -2056,9 +2056,9 @@
       "type": "single_choice",
       "question": "A cruise line's operations team changes its Azure estate from three directions: the portal, a deployment pipeline that calls the command line, and scripts run by administrators. An auditor asks how one set of permissions and policy rules can possibly hold when three different surfaces are issuing the changes.",
       "options": {
-        "A": "Standardize on one surface and withdraw the other two, leaving a single path by which the estate can be changed",
-        "B": "Enable a separate log on each of the three surfaces and reconcile those logs with one another every month",
-        "C": "Each surface — the portal, Azure CLI and Azure PowerShell — applies its own copy of the permission and policy rules, so the three configurations have to be kept aligned",
+        "A": "Standardize on the portal alone and withdraw the command line and the scripts, leaving a single path by which the estate can be changed",
+        "B": "Enable a separate log on each of the three surfaces and reconcile those logs with one another at the end of every month",
+        "C": "Each surface — the portal, Azure CLI and Azure PowerShell — applies its own copy of the permission and policy rules, which have to be kept aligned",
         "D": "Every one of those surfaces sends its request to Azure Resource Manager, the control plane where permissions and policy are applied"
       },
       "answer": "D",
@@ -2158,10 +2158,10 @@
       "type": "single_choice",
       "question": "An orchestra and concert hall runs ticketing, door access and building-sensor workloads across many Azure resources. Each team reads its own resource's telemetry in isolation, and when ticketing slowed last week nobody could line that up against what the rest of the estate was doing. The venue wants one place that collects metrics and logs from all of those resources and can act on what they show.",
       "options": {
-        "A": "Log Analytics on its own, as the workspace in which collected log data is queried",
+        "A": "Log Analytics on its own, as the workspace in which the collected log data is stored and queried",
         "B": "Azure Monitor, the platform that collects, correlates and acts on telemetry from the whole estate",
         "C": "Application Insights, as the telemetry surface for what happens inside the ticketing application's own code",
-        "D": "A portal dashboard for each team, pinned with the charts for that team's own resources"
+        "D": "A portal dashboard for each team, pinned with the charts and alert tiles for that team's own resources"
       },
       "answer": "B",
       "distractor_patterns": {
@@ -2261,9 +2261,9 @@
       "question": "A motorcycle dealership network's booking site is slow for some customers, while every metric on the virtual machines, disks and network beneath it sits well inside normal. The team needs to see which requests inside the booking application are failing or running long, and which pages customers actually reach.",
       "options": {
         "A": "Application Insights, the application surface of the telemetry platform, which reports request failures and usage",
-        "B": "Log Analytics queries over the platform logs already collected from those same resources",
-        "C": "Move the booking site onto a larger virtual machine size with faster disks and more memory so that the slow requests complete sooner",
-        "D": "Azure Monitor metrics for the underlying virtual machines and disks, read over a longer window"
+        "B": "Log Analytics queries over the platform logs already collected from those same virtual machines and disks",
+        "C": "Move the booking site onto a larger virtual machine size with faster disks and more memory so that slow requests complete sooner",
+        "D": "Azure Monitor metrics for the underlying virtual machines and disks, read over a longer window than the team has tried"
       },
       "answer": "A",
       "distractor_patterns": {

@@ -7,6 +7,18 @@ the flip to `published` is Oliver's alone, recorded first in `derivation/signoff
 Verdict columns in the sign-off are left for Oliver; this checklist pre-fills the
 evidence.
 
+> **Re-pinned 2026-08-19 after the post-S6 cue-rework wave.** The bank under review is now
+> `content/az-900/questions.json` @ **`9c1adb4`** (blob `6fe6673ef2`, sha256
+> `65074281b8e48039…`) on `fix/cue-rework-wave` — **not** `f649943`/blob `4d5d227`, which this
+> checklist originally pinned. `selection.json` is unchanged (item ids are stable). The eval
+> artifacts in `eval/` still date from `c14fd1a` and were produced against the **pre-wave option
+> text**; this exam also took a **key-letter permutation**, so `eval/blind-solve.json`'s letters
+> no longer map to the shipping bank. `derivation/signoff.md` §Post-S5 cue-rework wave states
+> what moved, what the prior judge scores still cover, the re-measured S5b numbers, and how the
+> deep-read sample was extended (30 → **40 items**). Validator count also moved 30 → **34
+> checks** (four cue checks landed after S6; all silent). `manifest.status` is still
+> `in_review` — nothing was flipped.
+
 ## Exam form built at this stage
 
 `selection.json` form-a — **50 items**: d1 14 (12 SC + 1 MR + 1 SM) · d2 19 (16+2+1) ·
@@ -22,7 +34,7 @@ Selection did **not** use the BO-1 echo flag as a criterion — see open decisio
 |---|---|---|---|
 | 1 | Source registry complete, with licence basis | **PASS (one residual risk, carried from Gate 1)** | `derivation/sources.md` §Registered sources: 5 entries, each with type, author, URL, `date_accessed` 2026-08-16, licence/permission basis and usage constraint; §Excluded records the ExamTopics corpus + nine mirrors, the Ditectrev dump, two MIT repos that re-host it, a paywalled bank — screened by content, method recorded. Machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` green. **Residual:** `insidecloud-az900` carries no named individual author (`[UNVERIFIED]`) and no licence statement — basis is free public publication + classification-only use (Gate 1 check 5; open decision 6 below) |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree. S6 spot-check, chains re-walked by hand: C-001→`az900-studyguide` b-1.1-1 + `ms-learn` 1.1; C-043 (2.25)→b-2.4-8 + `insidecloud` 2.22/2.48/2.49; C-054 (3.11 SM)→b-3.2-2/3 + `ms-learn` 3.4/3.5 + `insidecloud` 3.13/3.14/3.20; C-057 (3.14)→b-3.3-3 + `ms-learn` 3.6; C-062 (3.19)→b-3.4-3 + `tutorialsdojo` 3.1 + `insidecloud` 3.11. All resolve to registered ids with a derivation doc |
-| 3 | Validator green | **PASS** | `pnpm validate az-900` → **30 checks, 0 errors, 5 warnings** on this tree (status `in_review`, selection built). The 5 warnings are `concept-convergence` on C-001, C-012, C-057, C-058, C-061 — the *exactly five intended* same-author WARNs ratified at Gate 1 (checklist check 7b: two Microsoft artefacts count as one author, so these concepts are hand-set `priority: normal` while the machine computes `high`). Any different WARN set would be a defect. Ratchet checks `key-position-distribution` + `answer-length-cue` (born from aif-c01 round 1) both green |
+| 3 | Validator green | **PASS** | `pnpm validate az-900` → **34 checks, 0 errors, 5 warnings** on the re-pinned tree `9c1adb4` (*count corrected 2026-08-19 from "30 checks"; the four cue checks that landed after S6 are all silent*) (status `in_review`, selection built). The 5 warnings are `concept-convergence` on C-001, C-012, C-057, C-058, C-061 — the *exactly five intended* same-author WARNs ratified at Gate 1 (checklist check 7b: two Microsoft artefacts count as one author, so these concepts are hand-set `priority: normal` while the machine computes `high`). Any different WARN set would be a defect. Ratchet checks `key-position-distribution` + `answer-length-cue` (born from aif-c01 round 1) both green |
 | 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (65/65, 64 high / 1 medium confidence, **zero misses → zero open adjudications**), `eval/judge-scores.json` (65 items × 6 dimensions, 65 written distractor cases, **zero dimensions ≤2**, `bounces: []`), `eval/overlap-report.md` (process-control pass). Bounce cap untouched — no item has ever bounced. The Codex advisory record lives **inside** `blind-solve.json` → `codex_cross_solve` (aif-c01 used a separate `codex-solve.json`; both satisfy methodology/06 item 4, which asks for the matrix *or* the recorded unavailability note) |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/az-900/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template — provenance, prior art, NDA, non-affiliation, licence). The manifest's machine-checked `nda_statement` and the intro `disclaimer` both exist and already carry the substance; what is missing is the human-facing package README that cites them. **Owner: exam-author** — the examiner does not author package content beyond its `eval/` + `selection.json` surface. Does not block `in_review`. **Model to copy: `content/aif-c01/README.md`**, which landed after that exam's S6 (commit `f5a877f`) and follows the §readme-template sections |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0, content) exist at root; the per-package restatement folds into item 5. Inbound: **zero `licensed_import` items** — no occurrence anywhere in the package's JSON; `licensed-import-license` green with nothing to discharge. All five registered sources are read-only classification inputs, never imported text |
@@ -36,10 +48,32 @@ program-level 40–60 band, `pass_threshold_pct: 70` is a raw-score proxy for th
 All three are stated in the manifest `$comment`, the intro page and `format_coverage`;
 `time_limit_minutes: 45` is the vendor's real exam time kept against the modelled 50 items.
 
-## Gate 2 deep-read sample — 30 items (25 on form-a)
+## Gate 2 deep-read sample — **40 items** (was 30; 39 on form-a)
 
 Per methodology/05 §handoff (every auto-flagged item) ∪ `/exam-publish` step 3 (all
-scenario-matching + 10 random). The three lists are disjoint.
+scenario-matching + 10 random) ∪ **every item touched by the 2026-08-19 cue-rework wave**
+(added at the re-pin). The lists are disjoint.
+
+**D · Wave extension (10 new items).** All 19 reworked items seated on form-a are now in the
+sample, plus the 1 reserve-only reworked item not already flagged, because publication covers
+the bank:
+
+| Added | Seated? | Wave edit | What to judge |
+|---|---|---|---|
+| 2.17 | yes | **named entity** — Data Box distractor now ships "into Azure Files on a repeating schedule" | B echoes the stem's own target and survives only on "repeating schedule" vs "continuously" |
+| 3.16 | yes | **named entity** — distractor C enumerates "the portal, Azure CLI and Azure PowerShell" | Check the enumeration is not doing the discriminating work |
+| 2.08 | yes | **named entity** — "managed instances" → "managed Windows desktops" | Confirm the added word creates no give-away contrast |
+| 3.03, 3.08 | yes | **key-side** justification riders seated | The rider must add argument, not surface — this is the stem-echo mechanism |
+| 1.04, 1.08, 1.09, 2.01, 2.07, 2.20 | yes | distractor length parity | distractor argued up — check it did not become co-correct |
+| 2.18 | **no** (reserve) | AzCopy named into a distractor | bank coverage; rejecting a reserve item is free |
+
+Already both reworked and sampled: 1.15, 1.18, 2.08, 2.14, 2.17, 3.04, 3.06, 3.11, 3.18, 3.19,
+3.22 (3.06 is also a key-side rider seat).
+
+**The pairing that tells you which items need human reading.** All 20 distractor rewrites in this
+wave left their `rationale.distractors` entry **byte-identical** — the refutation was written
+against the pre-wave string. Every pair was re-read at this gate and all 20 still land, but no
+validator check covers this surface.
 
 **A · Auto-flagged (17 — every item carrying any dimension-3 score; a 3 ships only if this
 deep-read accepts it).** 12 are seated on form-a; 5 are reserve-only and can be judged

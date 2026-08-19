@@ -142,3 +142,69 @@ Two decisions are genuinely Oliver's, not the examiner's:
 
 Open, carried forward: the Codex cross-solve remains unauthenticated, so the Gate 2 sample carries
 no cross-model signal.
+
+---
+
+## S5b · cue-only solve — re-measured after the cue-rework wave (2026-08-19) {#s5b}
+
+Recorded per [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve),
+which requires the blind score, `k_req` and the ceiling verdict for the **bank and each served
+form**. The wave (`9c1adb4` on `fix/cue-rework-wave`) changed option text only, so these
+numbers **supersede** any cue figures earlier in this report; the S5 §1 blind solve and the judge
+scores were produced against the pre-wave text and were not regenerated (see
+`derivation/gate2-checklist.md` §Post-S5 cue-rework wave).
+
+Instrument: `node tools/exploit-scan.mjs az-900` for form scope, and the same tool run against a
+selection-free copy of the package for bank scope — it scopes to the served form when a
+`selection.json` form exists, so bank scope must be produced deliberately. `random` is the
+format-mix expected guess score (single_choice 1/options, multiple_response 1/C(options, |key|),
+scenario_matching 1/options^scenarios, all graded all-or-nothing), which is **stricter** than the
+rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre-wave → post-wave) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 65 | 43.08% → **24.62%** (16/65) | ≤ 30.69% (random 22.73%) | **0.6020** | ≥ 0.5200 (k_req@random 0.6117) | **PASS** |
+| form-a | 50 | 42% → **24%** (12/50) | ≤ 29.77% (random 22.05%) | **0.6053** | ≥ 0.5229 (k_req@random 0.6151) | **PASS** |
+
+Per-cue rates on the shipping revision (chance 25% each):
+
+- **bank** — key-longest-rank 13/53 (24.5%) · key-shortest-rank 12/50 (24.0%) · named-entity 5/17 (29.4%) · rider-marks-key 3/21 (14.3%)
+- **form-a** — key-longest-rank 9/39 (23.1%) · key-shortest-rank 9/38 (23.7%) · named-entity 3/12 (25.0%) · rider-marks-key 3/15 (20.0%)
+
+### Residual: the instrument does not test interior length ranks
+
+`key-length-rank-share` and `exploit-scan`'s `key-longest-rank`/`key-shortest-rank` bound only
+rank 1 and rank last, and the standard parity fix — lift one thin distractor above a rank-1 key —
+lands the key deterministically on **rank 2**. Measuring all four ranks by hand on the shipping
+revision:
+
+| scope | key length-rank distribution | best single-rank strategy | rank-aware blind |
+|---|---|---|---|
+| bank | {1:14, 2:26, 3:4, 4:13} | rank 2: 26/57 (45.6%) | 27/65 = **41.54%** |
+| form-a | {1:10, 2:22, 3:0, 4:10} | rank 2: 22/42 (52.4%) | 23/50 = **46.00%** |
+
+"Rank-aware blind" substitutes the best interior rank for the tool's longest-option strategy. It is
+**not** the S5b number — the committed strategy set is the instrument of record — but it is the
+honest upper bound on what a rank-aware test-wise candidate scores, and Gate 2 should see it.
+
+### Residual: the uninstrumented stem-echo cue
+
+No validator check and no exploit-scan strategy measures option↔stem content-word overlap, and the
+wave's own fix mechanism (appending a purpose clause written from the stem's words to lift a key
+off the shortest rank) inflates it. Share of single-choice items where the key is the strict
+maximum-overlap option, chance 25%: bank 40.0 → 33.3%, form-a 45.5 → 36.4% — it
+**fell**.
+
+### Verdict carried to Gate 2
+
+**PASS on the instrument of record, with the largest interior-rank residual of the six reworked
+exams.** The wave did what it claimed on the measured cues (blind 42% → 24% on form, 43% → 25% on
+bank; all five cue checks silent). But the fix method has a deterministic signature: lifting one
+distractor above each rank-1 key moved 13 items from rank 1 to rank 2, and the shortest-rank
+counter-measure vacated rank 3 entirely — form-a's distribution is `{1:10, 2:22, 3:0, 4:10}`.
+"Rank by length, take the second-longest" therefore scores **22/42 = 52.4%** on form-a SC and
+**46.00%** combined, which is *above* the 42% the wave was fixing and well above the 29.77%
+ceiling. This is an instrument gap, not an item defect and not a validator failure: no check and no
+committed strategy bounds interior ranks. The ask for Oliver is a methodology decision — add a
+rank-*distribution* statistic (all four ranks vs uniform) to `exploit-scan`, and rule on whether
+az-900 ships in the meantime. Nothing here bounces an item.

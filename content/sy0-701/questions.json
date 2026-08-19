@@ -2786,7 +2786,7 @@
       "type": "single_choice",
       "question": "A fire safety inspection agency must stop all traffic reaching its inspection report server at 10.20.0.15 from a hostile network range, 198.51.100.0/24, named by its regional threat partner. The perimeter firewall evaluates access list entries in order and applies the first match. Which entry implements the requirement?",
       "options": {
-        "A": "deny from 10.20.0.15 to 198.51.100.0/24 for any port and protocol",
+        "A": "deny traffic from 10.20.0.15 to 198.51.100.0/24 on every port and protocol",
         "B": "deny from 198.51.100.0/24 to 10.20.0.15 for any port and protocol",
         "C": "deny from 198.51.100.0/24 to 10.20.0.15 for tcp port 443 only",
         "D": "permit from 198.51.100.0/24 to 10.20.0.15 and log every matching packet"
@@ -3682,7 +3682,7 @@
       "question": "A ski resort's lift ticketing system fails in a way that costs 40,000 dollars in refunds and lost sales each time it happens, and the resort's records show it happening twice a season. A vendor offers a redundant ticketing gateway for 50,000 dollars a year. Which comparison should decide the purchase?",
       "options": {
         "A": "The annualized loss expectancy of 80,000 dollars against the 50,000 dollars a year",
-        "B": "The single loss expectancy of 40,000 dollars against the 50,000 dollars a year",
+        "B": "The single loss expectancy of 40,000 dollars for one failure against the 50,000 dollars a year",
         "C": "The annualized rate of occurrence against the vendor's service-level commitment",
         "D": "The 40,000 dollars an outage costs against the resort's total revenue for a season"
       },

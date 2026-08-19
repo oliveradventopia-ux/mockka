@@ -398,9 +398,9 @@
       "question": "A program coordinator at an apprenticeship training provider uses Claude to draft employer progress reports, some routine and some feeding funding decisions. The coordinator is writing the team's standing evaluation step for these drafts and wants it to hold for both kinds of report. Which evaluation discipline is the most appropriate?",
       "options": {
         "A": "Check each draft against the requirements, the source material, and professional standards, varying only depth of review",
-        "B": "Pass the routine drafts on how complete and well organized they read, saving real checks for the funding reports",
+        "B": "Pass the routine drafts on how complete and well organized they read, and save the full reference check for the funding reports",
         "C": "Pick which of the three references to check on each draft according to the time available that week",
-        "D": "Send all drafts out and review a weekly sample of them against the source material after the fact"
+        "D": "Send all drafts out and review a weekly sample of them against the source material after they have gone"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -601,9 +601,9 @@
       "type": "single_choice",
       "question": "A broker at an import customs brokerage asks Claude which duty classifications apply to a client's new product line. Several relevant classifications were revised two months ago, and the broker knows rulings in this area change frequently. What is the most appropriate way to get a usable answer?",
       "options": {
-        "A": "Add an instruction telling the model to make certain every classification it lists is current and accurate",
+        "A": "Add an instruction telling the model to make certain every classification it lists is current and accurate before answering",
         "B": "Use the model's answer as given, as it is written in the same assured register as the official schedule",
-        "C": "Postpone the classification work until a model version with more recent training becomes available",
+        "C": "Postpone the classification work until a model version trained beyond the recent revisions becomes available",
         "D": "Supply the current rulings or retrieve them from an authoritative current source, then validate the answer against them"
       },
       "answer": "D",
@@ -851,8 +851,8 @@
       "type": "single_choice",
       "question": "A studio manager at a packaging design studio has Claude turn client briefs into production specifications — dimensions, materials, finishes — delivered as flowing prose. The production team re-keys the values into their system, and transcription errors keep surfacing at the printer. Which change is the most appropriate?",
       "options": {
-        "A": "Keep the prose format and proofread each specification more carefully before handoff",
-        "B": "Ask for longer prose descriptions in which every dimension is stated twice for safety",
+        "A": "Keep the prose format and proofread each specification more carefully before it goes to the printer",
+        "B": "Ask for longer prose descriptions in which every dimension, material and finish is stated twice for safety",
         "C": "Have the key values printed in bold within the prose so they stand out when re-keyed",
         "D": "Deliver the specifications as structured data whose fields the production system takes directly"
       },
@@ -885,8 +885,8 @@
       "type": "single_choice",
       "question": "An operations lead at a specialty coffee importer built a Claude workflow that summarizes supplier contracts for the buying team. It was tested on five sample contracts the team wrote for the trial, every summary passed, and the lead plans to roll it out. Real supplier contracts arrive scanned, sometimes incomplete, and occasionally with clauses that contradict each other. What should happen before rollout?",
       "options": {
-        "A": "Proceed: five passes out of five is a strong evaluation result for a workflow of this size",
-        "B": "Extend the trial by writing five more sample contracts in the same style and testing those",
+        "A": "Proceed: five passes out of five is a strong evaluation result for a summarization workflow of this size",
+        "B": "Extend the trial by writing five more sample contracts in the same style and testing the workflow on those",
         "C": "Rebuild the evaluation sample from real supplier contracts, including incomplete and contradictory ones",
         "D": "Roll out now and monitor the buying team's complaints to find any summary problems"
       },
@@ -919,7 +919,7 @@
       "type": "single_choice",
       "question": "A member services lead at a credit union runs the same Claude request for rate-explanation letters twice and gets noticeably different letters; one draft also describes the same fee two ways in different paragraphs. One teammate wants it reported as a product defect; another says nothing can be done. What is the most appropriate response?",
       "options": {
-        "A": "Treat variation as inherent: add a structural review step and set a measured consistency bound the letters must meet",
+        "A": "Treat variation as inherent, since it is by design: add a structural review step and a measured consistency bound",
         "B": "File a defect report, since repeated runs of the same request should return identical letters",
         "C": "Withdraw Claude from member letters, as output that varies between runs cannot be used safely",
         "D": "Keep both grains of inconsistency in check by hand-aligning each letter to the latest approved template after generation"

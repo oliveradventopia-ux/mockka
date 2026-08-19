@@ -121,6 +121,31 @@ export interface ExamManifest {
      *  tier); bounded to [1.05, 1.5] and [1.2, 2.0], warn <= error. */
     answer_length_ratio_warn?: number;
     answer_length_ratio_error?: number;
+    /** E1 knobs (`key-length-rank-share`): max share of single_choice items
+     *  whose key is the STRICT longest (or, two-sided, strict shortest)
+     *  option, computed over the bank and every selection form. Optional —
+     *  defaults 0.35 (warn tier) / 0.45 (error tier); bounded to
+     *  [0.25, 0.45] and [0.35, 0.55], warn <= error. (L-0021's proposed 0.40
+     *  was wrong — it misses aif-c01's measured 38.6%.) */
+    key_length_rank_warn_share?: number;
+    key_length_rank_error_share?: number;
+    /** E2 knobs (`rider-balance`): two-sided band on the share of
+     *  rider-carrying options attached to the key (chance 0.25). Optional —
+     *  defaults 0.10 (floor) / 0.45 (ceiling); bounded to [0.02, 0.2] and
+     *  [0.3, 0.6] (the ranges cannot cross). */
+    rider_balance_min_share?: number;
+    rider_balance_max_share?: number;
+    /** E3 knobs (`named-entity-parity`): max share of qualifying items whose
+     *  single most-entity-naming option is the key. Optional — defaults 0.40
+     *  (warn tier) / 0.55 (error tier); bounded to [0.3, 0.55] and
+     *  [0.4, 0.7], warn <= error. */
+    named_entity_parity_warn_share?: number;
+    named_entity_parity_error_share?: number;
+    /** E6 knobs (`option-pair-similarity`): intra-item option-pair shingle
+     *  jaccard tiers. Optional — defaults 0.6 (warn tier) / 0.75 (error
+     *  tier); bounded to [0.4, 0.75] and [0.6, 0.9], warn <= error. */
+    option_pair_jaccard_warn?: number;
+    option_pair_jaccard_error?: number;
   };
   layers: {
     /** When true, syllabus-rules.json must exist and coverage checks run. */

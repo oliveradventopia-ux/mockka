@@ -130,6 +130,38 @@
         "answer_length_ratio_error": {
           "$comment": "BD-2 knob: error-tier length ratio. Default 1.5.",
           "type": "number", "minimum": 1.2, "maximum": 2
+        },
+        "key_length_rank_warn_share": {
+          "$comment": "E1 knob (key-length-rank-share): warn-tier max share of SC items whose key is the strict longest/shortest option. Default 0.35; bounds mirror the validator's.",
+          "type": "number", "minimum": 0.25, "maximum": 0.45
+        },
+        "key_length_rank_error_share": {
+          "$comment": "E1 knob: error-tier rank share. Default 0.45.",
+          "type": "number", "minimum": 0.35, "maximum": 0.55
+        },
+        "rider_balance_min_share": {
+          "$comment": "E2 knob (rider-balance): floor of the key share among rider-carrying options (chance 0.25). Default 0.10.",
+          "type": "number", "minimum": 0.02, "maximum": 0.2
+        },
+        "rider_balance_max_share": {
+          "$comment": "E2 knob: ceiling of the key share among rider-carrying options. Default 0.45.",
+          "type": "number", "minimum": 0.3, "maximum": 0.6
+        },
+        "named_entity_parity_warn_share": {
+          "$comment": "E3 knob (named-entity-parity): warn-tier max share of qualifying items whose single most-entity-naming option is the key. Default 0.40.",
+          "type": "number", "minimum": 0.3, "maximum": 0.55
+        },
+        "named_entity_parity_error_share": {
+          "$comment": "E3 knob: error-tier share. Default 0.55.",
+          "type": "number", "minimum": 0.4, "maximum": 0.7
+        },
+        "option_pair_jaccard_warn": {
+          "$comment": "E6 knob (option-pair-similarity): warn-tier intra-item option-pair shingle jaccard. Default 0.6.",
+          "type": "number", "minimum": 0.4, "maximum": 0.75
+        },
+        "option_pair_jaccard_error": {
+          "$comment": "E6 knob: error-tier jaccard. Default 0.75.",
+          "type": "number", "minimum": 0.6, "maximum": 0.9
         }
       }
     },

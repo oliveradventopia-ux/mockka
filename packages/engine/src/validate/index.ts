@@ -150,6 +150,27 @@ const MR_KEY_SET_MAX_SHARE: Knob = { default: 0.5, min: 0.25, max: 0.75 };
 const ANSWER_LENGTH_RATIO_WARN: Knob = { default: 1.25, min: 1.05, max: 1.5 };
 const ANSWER_LENGTH_RATIO_ERROR: Knob = { default: 1.5, min: 1.2, max: 2 };
 
+// E1/E2/E3/E6 knobs (adversarial cue sweep 2026-08-19, ADR-0006 follow-up):
+// calibrated against all eight live banks by tools/exploit-scan.mjs — the
+// committed instrument that both measured these defaults and gates CI (it
+// exits 1 when any exam is blind-passable). Same bounds discipline as above:
+// defaults + ranges are code so no knob can neuter its check (L-0002).
+//
+// key-length-rank tiers: warn 0.35 / error 0.45. L-0021 proposed 0.40 — that
+// number was WRONG: the sweep measured aif-c01's strict-shortest key share at
+// 38.6%, which a 0.40 bound misses; 0.35 catches 7/8 live banks (clf-c02 is
+// the only clean one) against a 25% chance rate.
+const KEY_LENGTH_RANK_WARN_SHARE: Knob = { default: 0.35, min: 0.25, max: 0.45 };
+const KEY_LENGTH_RANK_ERROR_SHARE: Knob = { default: 0.45, min: 0.35, max: 0.55 };
+// rider-balance band around chance (0.25). The knob bounds guarantee
+// min (<= 0.2) < max (>= 0.3), so no cross-pair ordering assertion is needed.
+const RIDER_BALANCE_MIN_SHARE: Knob = { default: 0.1, min: 0.02, max: 0.2 };
+const RIDER_BALANCE_MAX_SHARE: Knob = { default: 0.45, min: 0.3, max: 0.6 };
+const NAMED_ENTITY_PARITY_WARN_SHARE: Knob = { default: 0.4, min: 0.3, max: 0.55 };
+const NAMED_ENTITY_PARITY_ERROR_SHARE: Knob = { default: 0.55, min: 0.4, max: 0.7 };
+const OPTION_PAIR_JACCARD_WARN: Knob = { default: 0.6, min: 0.4, max: 0.75 };
+const OPTION_PAIR_JACCARD_ERROR: Knob = { default: 0.75, min: 0.6, max: 0.9 };
+
 /** Below these counts a share bound is sampling noise, not a signal. */
 const MIN_SC_ITEMS_FOR_SHARE = 8;
 const MIN_MR_ITEMS_FOR_SHARE = 4;
@@ -159,11 +180,54 @@ const MIN_SM_LISTED_ORDER_PREFIX = 3;
  *  length the ratio is noise (ccar-p calibration 2026-08-16: zero items with
  *  ratio > 1.5 and a keyed option under 50 chars). */
 const MIN_KEY_LENGTH_FOR_RATIO = 40;
-/** Justification riders that stylistically mark a keyed option (BD-2). */
+/** Justification riders that stylistically mark a keyed option (BD-2).
+ *  Deliberately NARROW — this list feeds the per-item rule in
+ *  `answer-length-cue` only, and L-0018 blesses "instead of" as key-safe
+ *  contrast phrasing per item. The bank-level balance check below uses the
+ *  widened list. */
 const RIDER = /\b(?:since|because|rather than)\b/i;
+/** The widened marker list for the bank-level `rider-balance` check (E2).
+ *  Aggregate balance is a different question from per-item marking: ANY
+ *  marker phrase concentrated on one side of the key/distractor split is a
+ *  cue, including the per-item-safe contrast forms. */
+const RIDER_BALANCE =
+  /\b(?:since|because|rather than|instead of|so that|to ensure|in order to|whereas)\b/i;
+/** Proper-noun/product tokens (E3): a capitalised token of >= 3 chars.
+ *  Options start with a capital, so first words match too — the statistic
+ *  uses the DIFFERENTIAL (exactly one option holding the max count), which
+ *  the sentence-initial noise cancels out of. Same regex as
+ *  tools/exploit-scan.mjs (the calibration instrument) — keep in lock-step. */
+const NAMED_ENTITY = /\b[A-Z][A-Za-z0-9]{2,}/g;
+/** Below this many rider-carrying options a balance share is sampling noise. */
+const MIN_RIDER_OPTIONS_FOR_BALANCE = 8;
+/** Below this many qualifying items a named-entity share is sampling noise
+ *  (the sweep's calibration floor). */
+const MIN_NE_ITEMS_FOR_PARITY = 6;
 
 const knobOr = (val: number | undefined, k: Knob): number =>
   typeof val === 'number' && val >= k.min && val <= k.max ? val : k.default;
+
+/** E7 scope plumbing: aggregate cue statistics run over the bank AND each
+ *  selection form, and every finding names its scope — candidates sit a
+ *  form, and a balanced bank can still serve a skewed paper. Per-item cue
+ *  findings stay bank-scoped (every form item is a bank item, so the bank
+ *  pass subsumes the forms). */
+interface CueScope {
+  label: string;
+  questions: Question[];
+}
+function cueScopes(pkg: ExamPackage): CueScope[] {
+  const bank = pkg.bank.questions ?? [];
+  const byId = new Map(bank.map((q) => [q.id, q]));
+  const scopes: CueScope[] = [{ label: 'bank', questions: bank }];
+  for (const form of pkg.selection.forms ?? []) {
+    const items = form.items
+      .map((id) => byId.get(id))
+      .filter((q): q is Question => q !== undefined);
+    if (items.length > 0) scopes.push({ label: `form ${form.id}`, questions: items });
+  }
+  return scopes;
+}
 
 // ---------------------------------------------------------------- checks
 
@@ -216,6 +280,14 @@ const CHECKS: Check[] = [
         ['mr_key_set_max_share', m.validation?.mr_key_set_max_share, MR_KEY_SET_MAX_SHARE],
         ['answer_length_ratio_warn', m.validation?.answer_length_ratio_warn, ANSWER_LENGTH_RATIO_WARN],
         ['answer_length_ratio_error', m.validation?.answer_length_ratio_error, ANSWER_LENGTH_RATIO_ERROR],
+        ['key_length_rank_warn_share', m.validation?.key_length_rank_warn_share, KEY_LENGTH_RANK_WARN_SHARE],
+        ['key_length_rank_error_share', m.validation?.key_length_rank_error_share, KEY_LENGTH_RANK_ERROR_SHARE],
+        ['rider_balance_min_share', m.validation?.rider_balance_min_share, RIDER_BALANCE_MIN_SHARE],
+        ['rider_balance_max_share', m.validation?.rider_balance_max_share, RIDER_BALANCE_MAX_SHARE],
+        ['named_entity_parity_warn_share', m.validation?.named_entity_parity_warn_share, NAMED_ENTITY_PARITY_WARN_SHARE],
+        ['named_entity_parity_error_share', m.validation?.named_entity_parity_error_share, NAMED_ENTITY_PARITY_ERROR_SHARE],
+        ['option_pair_jaccard_warn', m.validation?.option_pair_jaccard_warn, OPTION_PAIR_JACCARD_WARN],
+        ['option_pair_jaccard_error', m.validation?.option_pair_jaccard_error, OPTION_PAIR_JACCARD_ERROR],
       ];
       for (const [key, val, k] of cueKnobs) {
         if (val === undefined) continue; // optional — the coded default applies
@@ -226,13 +298,23 @@ const CHECKS: Check[] = [
           );
         }
       }
-      const alw = m.validation?.answer_length_ratio_warn;
-      const ale = m.validation?.answer_length_ratio_error;
-      if (typeof alw === 'number' && typeof ale === 'number' && alw > ale) {
-        err(
-          `manifest.validation.answer_length_ratio_warn ${alw} exceeds answer_length_ratio_error ${ale} — ` +
-            'the warn tier must sit at or below the error tier',
-        );
+      const tierPairs: [string, number | undefined, string, number | undefined][] = [
+        ['answer_length_ratio_warn', m.validation?.answer_length_ratio_warn,
+          'answer_length_ratio_error', m.validation?.answer_length_ratio_error],
+        ['key_length_rank_warn_share', m.validation?.key_length_rank_warn_share,
+          'key_length_rank_error_share', m.validation?.key_length_rank_error_share],
+        ['named_entity_parity_warn_share', m.validation?.named_entity_parity_warn_share,
+          'named_entity_parity_error_share', m.validation?.named_entity_parity_error_share],
+        ['option_pair_jaccard_warn', m.validation?.option_pair_jaccard_warn,
+          'option_pair_jaccard_error', m.validation?.option_pair_jaccard_error],
+      ];
+      for (const [wk, wv, ek, ev] of tierPairs) {
+        if (typeof wv === 'number' && typeof ev === 'number' && wv > ev) {
+          err(
+            `manifest.validation.${wk} ${wv} exceeds ${ek} ${ev} — ` +
+              'the warn tier must sit at or below the error tier',
+          );
+        }
       }
       if (typeof m.layers?.syllabus_rules !== 'boolean') err('manifest.layers.syllabus_rules missing');
       if (!m.provenance) err('manifest.provenance missing');
@@ -643,76 +725,101 @@ const CHECKS: Check[] = [
     name: 'key-position-distribution',
     run({ pkg, report }) {
       // BD-1 key-position-constant (aif-c01 S5 round 1): a constant key
-      // position/letter lets test-wiseness beat the bank — aif-c01 shipped 67/67
-      // items keyed first. WARN level this wave, deliberately: calibrated
-      // 2026-08-16 against shipped ccar-p, which carries the same latent defect
-      // (SC key "B" = 53/59 = 90% share, MR set A+B = 15/21 = 71%, 5/5 SM items
-      // in listed order) — an error level would redline a shipped bank whose
-      // content is outside this lane's ownership. Promote to error once the
-      // key-rebalance content waves land (04-validation.md#adding-a-check
-      // step 4); never weaken or remove — the ratchet turns one way.
+      // position/letter lets test-wiseness beat the bank — aif-c01 shipped
+      // 67/67 items keyed first; ccar-p shipped SC key B = 53/59 with 5/5 SM
+      // items in listed order. ERROR level since 2026-08-19: ccar-p — the only
+      // violator — was rebalanced upstream (seeded permutation) and re-imported,
+      // so the share bounds and the k=0 listed-order rule hold on every live
+      // bank; the ratchet turned per 04-validation.md#adding-a-check step 4 and
+      // never turns back.
+      //
+      // Two E-class extensions from the 2026-08-19 adversarial cue sweep:
+      // - E7 scope: the share bounds run per scope (bank + every selection
+      //   form) and each finding names its scope — candidates sit a form, and
+      //   a balanced bank can still serve a skewed paper. Same ERROR level:
+      //   no live bank trips at either scope today.
+      // - E4 rotation: the SM listed-order rule generalises to rotations —
+      //   scenario i mapping to matching_options[(i + k) % L] is the same
+      //   walk-the-list exploit with an offset. k=0 keeps the ERROR level
+      //   (the original rule); k>0 is NEW detection this wave and reports at
+      //   WARN — 4 live items (aif-c01 2.04/3.09, az-900 1.18/3.11) map at
+      //   k=2, and an error tier today would redline banks whose rework is
+      //   next wave's scope. Promote with that wave; never weaken.
+      const err = (msg: string) => report('key-position-distribution', 'error', msg);
       const warn = (msg: string) => report('key-position-distribution', 'warn', msg);
       const v = pkg.manifest.validation;
-      const questions = pkg.bank.questions ?? [];
 
-      // Single choice: no letter may carry an outsized share of the keys.
-      const sc = questions.filter(
-        (q) => q.type === 'single_choice' && typeof q.answer === 'string',
-      );
-      if (sc.length >= MIN_SC_ITEMS_FOR_SHARE) {
-        const bound = knobOr(v?.key_letter_max_share, KEY_LETTER_MAX_SHARE);
-        const hist = new Map<string, number>();
-        for (const q of sc) hist.set(q.answer as string, (hist.get(q.answer as string) ?? 0) + 1);
-        for (const [letter, n] of [...hist.entries()].sort()) {
-          const share = n / sc.length;
-          if (share > bound) {
-            warn(
-              `key letter ${letter} carries ${n}/${sc.length} single-choice items ` +
-                `(${Math.round(share * 100)}%, bound ${Math.round(bound * 100)}%) — a candidate who ` +
-                'spots the favourite letter scores without knowledge; permute option letters ' +
-                '(answer, distractor_patterns and rationale.distractors keys move together)',
-            );
+      for (const scope of cueScopes(pkg)) {
+        // Single choice: no letter may carry an outsized share of the keys.
+        const sc = scope.questions.filter(
+          (q) => q.type === 'single_choice' && typeof q.answer === 'string',
+        );
+        if (sc.length >= MIN_SC_ITEMS_FOR_SHARE) {
+          const bound = knobOr(v?.key_letter_max_share, KEY_LETTER_MAX_SHARE);
+          const hist = new Map<string, number>();
+          for (const q of sc) hist.set(q.answer as string, (hist.get(q.answer as string) ?? 0) + 1);
+          for (const [letter, n] of [...hist.entries()].sort()) {
+            const share = n / sc.length;
+            if (share > bound) {
+              err(
+                `[${scope.label}] key letter ${letter} carries ${n}/${sc.length} single-choice items ` +
+                  `(${Math.round(share * 100)}%, bound ${Math.round(bound * 100)}%) — a candidate who ` +
+                  'spots the favourite letter scores without knowledge; permute option letters ' +
+                  '(answer, distractor_patterns and rationale.distractors keys move together)',
+              );
+            }
+          }
+        }
+
+        // Multiple response: the exact key set must vary across items.
+        const mr = scope.questions.filter(
+          (q) => q.type === 'multiple_response' && Array.isArray(q.answer),
+        );
+        if (mr.length >= MIN_MR_ITEMS_FOR_SHARE) {
+          const bound = knobOr(v?.mr_key_set_max_share, MR_KEY_SET_MAX_SHARE);
+          const hist = new Map<string, number>();
+          for (const q of mr) {
+            const set = [...(q.answer as string[])].sort().join('+');
+            hist.set(set, (hist.get(set) ?? 0) + 1);
+          }
+          for (const [set, n] of [...hist.entries()].sort()) {
+            const share = n / mr.length;
+            if (share > bound) {
+              err(
+                `[${scope.label}] multiple-response key set {${set}} carries ${n}/${mr.length} items ` +
+                  `(${Math.round(share * 100)}%, bound ${Math.round(bound * 100)}%) — vary which ` +
+                  'letters key multiple-response items',
+              );
+            }
           }
         }
       }
 
-      // Multiple response: the exact key set must vary across items.
-      const mr = questions.filter(
-        (q) => q.type === 'multiple_response' && Array.isArray(q.answer),
-      );
-      if (mr.length >= MIN_MR_ITEMS_FOR_SHARE) {
-        const bound = knobOr(v?.mr_key_set_max_share, MR_KEY_SET_MAX_SHARE);
-        const hist = new Map<string, number>();
-        for (const q of mr) {
-          const set = [...(q.answer as string[])].sort().join('+');
-          hist.set(set, (hist.get(set) ?? 0) + 1);
-        }
-        for (const [set, n] of [...hist.entries()].sort()) {
-          const share = n / mr.length;
-          if (share > bound) {
-            warn(
-              `multiple-response key set {${set}} carries ${n}/${mr.length} items ` +
-                `(${Math.round(share * 100)}%, bound ${Math.round(bound * 100)}%) — vary which ` +
-                'letters key multiple-response items',
-            );
-          }
-        }
-      }
-
-      // Scenario matching: detect the listed-order mapping (scenario i answers
-      // matching_options[i]) — the SM face of the same constant-position leak.
-      for (const q of questions) {
+      // Scenario matching (per item, bank-scoped): detect the rotated
+      // listed-order mapping — scenario i answering matching_options[(i+k) % L].
+      for (const q of pkg.bank.questions ?? []) {
         if (q.type !== 'scenario_matching') continue;
         const opts = q.matching_options ?? [];
         const scen = q.scenarios ?? [];
         const n = Math.min(scen.length, opts.length);
         if (n < MIN_SM_LISTED_ORDER_PREFIX) continue;
-        const listed = scen.slice(0, n).every((s, i) => (q.answer ?? {})[s.id] === opts[i]);
-        if (listed) {
-          warn(
-            `${q.id}: the first ${n} scenarios map to matching options in listed order — ` +
-              'permute the matching_options list or the scenario order',
-          );
+        for (let k = 0; k < opts.length; k++) {
+          const rotated = scen
+            .slice(0, n)
+            .every((s, i) => (q.answer ?? {})[s.id] === opts[(i + k) % opts.length]);
+          if (!rotated) continue;
+          if (k === 0) {
+            err(
+              `${q.id}: the first ${n} scenarios map to matching options in listed order — ` +
+                'permute the matching_options list or the scenario order',
+            );
+          } else {
+            warn(
+              `${q.id}: the first ${n} scenarios map to matching options in listed order rotated by ${k} — ` +
+                'a rotation is the same walk-the-list exploit with an offset; re-map to an acyclic assignment',
+            );
+          }
+          break; // one offset per item is the finding
         }
       }
     },
@@ -723,12 +830,21 @@ const CHECKS: Check[] = [
     run({ pkg, report }) {
       // BD-2 answer-surface-cue (aif-c01 S5 round 1): "pick the longest, most
       // hedged option" solved 51/57 SC items with zero domain knowledge. Both
-      // tiers report WARN this wave, deliberately: ccar-p calibration
-      // 2026-08-16 — keyed option longest in 55/59 SC items, median ratio 1.56,
-      // 33 items above the 1.5 tier — the shipped bank has the same latent
-      // defect and its content is outside this lane's ownership. Promote the
-      // tiers to warn/error once the shape-parallelism content waves land;
-      // never weaken the thresholds to fit content.
+      // tiers still report WARN, deliberately — and the promotion is PINNED to
+      // the ccar-p trim lane (fix/ccar-p-answer-cues): the key permutation
+      // fixed position, but the served form still keyed the longest option in
+      // 41/44 SC items at the 2026-08-19 sweep; the trim wave is landing in
+      // per-domain batches (d1–d3 committed, d4–d7 in flight). Promote BOTH
+      // tiers to warn/error the moment that lane completes and `pnpm validate`
+      // shows zero findings of this class — never weaken the thresholds to
+      // fit content. (`key-position-distribution` promoted alone, 2026-08-19,
+      // because its violator was already fixed.)
+      //
+      // KNOWN LIMITS, owned by the sweep's companion checks: the ratio is a
+      // MAGNITUDE bound and blind to rank (`key-length-rank-share` owns the
+      // argmax/argmin statistic — E1/L-0030), and the per-item rider rule
+      // below is ONE-SIDED and manufactured a distractor-side rider cue
+      // (`rider-balance` owns the two-sided aggregate — E2/L-0031).
       const v = pkg.manifest.validation;
       const warnR = knobOr(v?.answer_length_ratio_warn, ANSWER_LENGTH_RATIO_WARN);
       const errR = Math.max(knobOr(v?.answer_length_ratio_error, ANSWER_LENGTH_RATIO_ERROR), warnR);
@@ -771,6 +887,213 @@ const CHECKS: Check[] = [
             `${q.id}: only the keyed option carries a justification rider (since/because/rather than) — ` +
               'a reliable key marker; the argument belongs in rationale.correct',
           );
+        }
+      }
+    },
+  },
+
+  {
+    name: 'key-length-rank-share',
+    run({ pkg, report }) {
+      // E1 (adversarial cue sweep 2026-08-19): length RANK, not magnitude.
+      // The six post-aif-c01 banks hold median key/longest-distractor ratios
+      // of 0.97–1.01 — perfect answer-length-cue compliance — while the key
+      // is the strict LONGEST option in 35–52% of items (chance 25%, p<0.05
+      // in five of six). The magnitude ratio cannot see this; the rank share
+      // can. Two-sided: a strict-SHORTEST key is the same exploit inverted
+      // (the L-0021 overshoot — aif-c01 landed at 38.6% shortest after its
+      // trim wave). NO length floor on purpose: rank is magnitude-free, and
+      // answer-length-cue's 40-char ratio floor exempted 26% of sy0-701's
+      // items from any length check at all.
+      // WARN level this wave (Oliver's scope call: ccar-p rework now, the
+      // other seven exams next wave — an error tier today would block them);
+      // promote per 04-validation.md#adding-a-check step 4, never weaken.
+      const v = pkg.manifest.validation;
+      const warnB = knobOr(v?.key_length_rank_warn_share, KEY_LENGTH_RANK_WARN_SHARE);
+      const errB = Math.max(knobOr(v?.key_length_rank_error_share, KEY_LENGTH_RANK_ERROR_SHARE), warnB);
+
+      for (const scope of cueScopes(pkg)) {
+        for (const dir of ['longest', 'shortest'] as const) {
+          let hits = 0;
+          let of = 0;
+          for (const q of scope.questions) {
+            if (q.type !== 'single_choice' || typeof q.answer !== 'string') continue;
+            const ks = Object.keys(q.options ?? {});
+            if (ks.length < 2) continue;
+            const len = (k: string) => (q.options?.[k] ?? '').trim().length;
+            const winner = ks.reduce((a, b) =>
+              dir === 'longest' ? (len(b) > len(a) ? b : a) : (len(b) < len(a) ? b : a),
+            );
+            // Strict rank only: a tie at the extreme is not a rank cue.
+            if (ks.filter((k) => len(k) === len(winner)).length !== 1) continue;
+            of += 1;
+            if (winner === q.answer) hits += 1;
+          }
+          if (of < MIN_SC_ITEMS_FOR_SHARE) continue;
+          const share = hits / of;
+          const bound = share > errB ? 'error-tier' : share > warnB ? 'warn-tier' : null;
+          if (bound) {
+            report(
+              'key-length-rank-share',
+              'warn',
+              `[${scope.label}] the key is the strict ${dir} option in ${hits}/${of} single-choice items ` +
+                `(${Math.round(share * 100)}%, ${bound} bound ` +
+                `${Math.round((bound === 'error-tier' ? errB : warnB) * 100)}%, chance 25%) — ` +
+                'length rank gives items away even at ratio ~1.0; redistribute key lengths across the option band',
+            );
+          }
+        }
+      }
+    },
+  },
+
+  {
+    name: 'rider-balance',
+    run({ pkg, report }) {
+      // E2 (adversarial cue sweep 2026-08-19): the one-sided per-item rider
+      // rule in answer-length-cue ("only the key must not carry a rider")
+      // taught authoring to evacuate riders into distractors — a rider now
+      // marks a DISTRACTOR 57/59 times across the six new banks (p=2e-06), a
+      // STRONGER elimination cue than the one the rule killed (L-0031: a
+      // one-sided check manufactures its inverse). This check bounds the
+      // balance two-sidedly on the WIDENED marker list (RIDER_BALANCE): among
+      // rider-carrying options, the share attached to the key must sit inside
+      // [min, max] around chance (25%). Statistic ported from
+      // tools/exploit-scan.mjs `rider-marks-key` — the calibration
+      // instrument; keep them in lock-step.
+      // WARN level this wave (Oliver's scope call — see key-length-rank-share).
+      const v = pkg.manifest.validation;
+      const minB = knobOr(v?.rider_balance_min_share, RIDER_BALANCE_MIN_SHARE);
+      const maxB = knobOr(v?.rider_balance_max_share, RIDER_BALANCE_MAX_SHARE);
+
+      for (const scope of cueScopes(pkg)) {
+        let hits = 0;
+        let of = 0;
+        for (const q of scope.questions) {
+          if (q.type !== 'single_choice' || typeof q.answer !== 'string') continue;
+          const withRider = Object.keys(q.options ?? {}).filter((k) =>
+            RIDER_BALANCE.test(q.options?.[k] ?? ''),
+          );
+          if (withRider.length === 0) continue;
+          of += withRider.length;
+          if (withRider.includes(q.answer)) hits += 1;
+        }
+        if (of < MIN_RIDER_OPTIONS_FOR_BALANCE) continue;
+        const share = hits / of;
+        if (share < minB) {
+          report(
+            'rider-balance',
+            'warn',
+            `[${scope.label}] a justification/contrast rider marks the key in only ${hits}/${of} ` +
+              `rider-carrying options (${Math.round(share * 100)}%, floor ${Math.round(minB * 100)}%, ` +
+              'chance 25%) — riders have been evacuated into distractors, an elimination cue ' +
+              '(rule out every rider option for free); spread markers across keys and distractors alike',
+          );
+        } else if (share > maxB) {
+          report(
+            'rider-balance',
+            'warn',
+            `[${scope.label}] a justification/contrast rider marks the key in ${hits}/${of} ` +
+              `rider-carrying options (${Math.round(share * 100)}%, ceiling ${Math.round(maxB * 100)}%, ` +
+              'chance 25%) — the self-justifying-key cue; the argument belongs in rationale.correct',
+          );
+        }
+      }
+    },
+  },
+
+  {
+    name: 'named-entity-parity',
+    run({ pkg, report }) {
+      // E3 (adversarial cue sweep 2026-08-19): when exactly one option names
+      // the most proper-noun product/service tokens, that option is the key
+      // 9/9 = 100% of the time on ai-901 (p=4e-6), 75% on aif-c01, 61% on
+      // gcp-cdl, 50% on az-900 — the dominant tell for vendor certifications,
+      // and it will recur on every future AWS/Azure/GCP exam. Previously
+      // unmeasured entirely. Floor: ≥6 qualifying items (below that the share
+      // is sampling noise). Statistic ported from tools/exploit-scan.mjs
+      // `named-entity` — the calibration instrument; keep them in lock-step.
+      // WARN level this wave (Oliver's scope call — see key-length-rank-share).
+      const v = pkg.manifest.validation;
+      const warnB = knobOr(v?.named_entity_parity_warn_share, NAMED_ENTITY_PARITY_WARN_SHARE);
+      const errB = Math.max(
+        knobOr(v?.named_entity_parity_error_share, NAMED_ENTITY_PARITY_ERROR_SHARE),
+        warnB,
+      );
+
+      for (const scope of cueScopes(pkg)) {
+        let hits = 0;
+        let of = 0;
+        for (const q of scope.questions) {
+          if (q.type !== 'single_choice' || typeof q.answer !== 'string') continue;
+          const ks = Object.keys(q.options ?? {});
+          const counts = ks.map(
+            (k) => [k, ((q.options?.[k] ?? '').match(NAMED_ENTITY) ?? []).length] as const,
+          );
+          const max = Math.max(0, ...counts.map(([, c]) => c));
+          if (max === 0) continue;
+          const top = counts.filter(([, c]) => c === max);
+          if (top.length !== 1) continue;
+          of += 1;
+          if (top[0]![0] === q.answer) hits += 1;
+        }
+        if (of < MIN_NE_ITEMS_FOR_PARITY) continue;
+        const share = hits / of;
+        const bound = share > errB ? 'error-tier' : share > warnB ? 'warn-tier' : null;
+        if (bound) {
+          report(
+            'named-entity-parity',
+            'warn',
+            `[${scope.label}] the single option naming the most proper-noun entities is the key in ` +
+              `${hits}/${of} qualifying single-choice items (${Math.round(share * 100)}%, ${bound} bound ` +
+              `${Math.round((bound === 'error-tier' ? errB : warnB) * 100)}%, chance 25%) — ` +
+              'name concrete products/services in every option or in none; specificity parity is part of ' +
+              'surface parity (03-authoring-guide.md#surface-parity)',
+          );
+        }
+      }
+    },
+  },
+
+  {
+    name: 'option-pair-similarity',
+    run({ pkg, report }) {
+      // E6 (adversarial cue sweep 2026-08-19): an intra-item option pair with
+      // shingle-jaccard ≥ 0.6 contains the key 9/11 times in the live banks —
+      // and whether or not it does, a near-duplicate pair collapses a 4-way
+      // item into a 2-way guess. Reuses the near-duplicate-stems shingle
+      // machinery on option text. Per-item, so the bank pass subsumes the
+      // forms (E7 note: no per-form re-run needed for per-item findings).
+      // WARN level this wave (Oliver's scope call — see key-length-rank-share).
+      const v = pkg.manifest.validation;
+      const warnJ = knobOr(v?.option_pair_jaccard_warn, OPTION_PAIR_JACCARD_WARN);
+      const errJ = Math.max(knobOr(v?.option_pair_jaccard_error, OPTION_PAIR_JACCARD_ERROR), warnJ);
+
+      for (const q of pkg.bank.questions ?? []) {
+        if (q.type === 'scenario_matching') continue;
+        const entries = Object.entries(q.options ?? {}).map(([k, text]) => ({
+          k,
+          s: shingles(text),
+        }));
+        for (let i = 0; i < entries.length; i++) {
+          for (let j = i + 1; j < entries.length; j++) {
+            const a = entries[i]!;
+            const b = entries[j]!;
+            if (a.s.size === 0 && b.s.size === 0) continue;
+            const inter = [...a.s].filter((x) => b.s.has(x)).length;
+            const jaccard = inter / (a.s.size + b.s.size - inter || 1);
+            const bound = jaccard >= errJ ? 'error-tier' : jaccard >= warnJ ? 'warn-tier' : null;
+            if (bound) {
+              report(
+                'option-pair-similarity',
+                'warn',
+                `${q.id}: options ${a.k} and ${b.k} are ${Math.round(jaccard * 100)}% similar ` +
+                  `(${bound} bound ${Math.round((bound === 'error-tier' ? errJ : warnJ) * 100)}%) — ` +
+                  'a near-duplicate pair collapses the item to a two-way guess (the key sits in such a ' +
+                  'pair 9/11 times in the sweep); differentiate one option or rebuild it from a different pattern',
+              );
+            }
+          }
         }
       }
     },

@@ -851,7 +851,7 @@
         "A": "Virtual machines for the ordering app, containers for the packaged API, Azure Functions for the webhook code",
         "B": "Containers for all three workloads, as container images standardize operations across every environment",
         "C": "Virtual machines for all three workloads, sized generously so that each has headroom to grow into",
-        "D": "Azure Functions for the ordering app, virtual machines for the webhook code, and containers for the API"
+        "D": "Azure Functions for the ordering app, Azure virtual machines for the webhook code, and containers for the packaged API"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -882,8 +882,8 @@
       "type": "single_choice",
       "question": "A car rental fleet operator's reservation web tier runs on identical virtual machines, and the instance count should rise and fall automatically as booking demand moves. Which construct provides this?",
       "options": {
-        "A": "An availability set that spreads the reservation tier across update domains and fault domains",
-        "B": "Azure Virtual Desktop, which delivers managed instances to reservation staff on demand",
+        "A": "An availability set that spreads the reservation tier across update domains and fault domains within the datacenter",
+        "B": "Azure Virtual Desktop, which delivers managed Windows desktops to reservation staff on demand",
         "C": "Virtual Machine Scale Sets running identical managed instances that grow and shrink with demand",
         "D": "A single larger VM size with capacity for the peak, avoiding instance-count changes entirely"
       },
@@ -1214,7 +1214,7 @@
         "A": "Azure File Sync, keeping the on-premises share and Azure Files continuously synchronized",
         "B": "AzCopy, scripted from the command line to copy the share's contents into Azure",
         "C": "Azure Storage Explorer, used to browse and transfer the project folders graphically",
-        "D": "Azure Data Box appliances, shipping the file server's contents to Azure on a schedule"
+        "D": "Azure Data Box appliances, shipping the file server's contents into Azure Files on a repeating schedule"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -1245,7 +1245,7 @@
       "type": "single_choice",
       "question": "A glass recycling plant must move 900 TB of furnace-sensor archives into Azure within six weeks, and its site uplink can carry at most 40 TB in that window while still serving daily traffic. Which migration path fits?",
       "options": {
-        "A": "Run the transfer over the wire with Azure Migrate, compressing the archives until they fit the uplink",
+        "A": "Run the transfer over the wire with Azure Migrate and the AzCopy command line, compressing the archives until they fit the uplink",
         "B": "Order a faster uplink for the site and stream the archives once the new line is installed",
         "C": "Ship the archives on Azure Data Box appliances, as the wire cannot carry the volume in the time available",
         "D": "Send a 40 TB sample of the archives now and defer the remainder to the following quarters"
@@ -2057,7 +2057,7 @@
       "question": "A cruise line's operations team changes its Azure estate from three directions: the portal, a deployment pipeline that calls the command line, and scripts run by administrators. An auditor asks how one set of permissions and policy rules can possibly hold when three different surfaces are issuing the changes.",
       "options": {
         "A": "Every one of those surfaces sends its request to Azure Resource Manager, the control plane where permissions and policy are applied",
-        "B": "Each surface applies its own copy of the permission and policy rules, so the three configurations have to be kept aligned",
+        "B": "Each surface — the portal, Azure CLI and Azure PowerShell — applies its own copy of the permission and policy rules, so the three configurations have to be kept aligned",
         "C": "Standardize on one surface and withdraw the other two, leaving a single path by which the estate can be changed",
         "D": "Enable a separate log on each of the three surfaces and reconcile those logs with one another every month"
       },
@@ -2124,10 +2124,10 @@
       "type": "single_choice",
       "question": "Midway through a tournament an e-sports league's match service stops responding. Before touching its own code, the league wants to establish whether Azure is having an incident that affects the services and regions its own subscription depends on.",
       "options": {
-        "A": "The public Azure status view, which reports incidents affecting the platform overall",
+        "A": "The public Azure Status page, which reports incidents affecting the platform overall",
         "B": "Resource health for the match service's virtual machine, which reports that one machine's own health",
         "C": "Azure Service Health, which reports incidents and planned maintenance for this subscription's services and regions",
-        "D": "An alert on the match service's response time, which fires whenever responses slow beyond the threshold"
+        "D": "An alert rule on the match service's response time, which fires whenever responses slow beyond the configured threshold"
       },
       "answer": "C",
       "distractor_patterns": {

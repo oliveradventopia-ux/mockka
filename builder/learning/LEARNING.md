@@ -136,6 +136,7 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: after trimming keyed-option riders bank-wide, the key is now shortest-or-tied in 25/57 SC items (~44% vs ~25% uniform) — trim toward the middle of the option-length band, not the floor.
 - why: `answer-length-cue` bounds the longest-key cue only; a never-longest/mostly-shortest key is a weaker but real elimination heuristic (rule out the longest option for free).
 - how to apply: next authoring wave drifts key lengths back toward parity; consider a warn-tier inverse bound in `answer-length-cue` (e.g. key strictly-shortest share ≤ 40%).
+- enforce: check → **IMPLEMENTED 2026-08-19** as `key-length-rank-share` (two-sided strict-longest/strict-shortest rank share over bank + each form, no length floor; warn-tier 0.35 / error-tier 0.45, both reported warn this wave). **The entry's proposed 0.40 bound was WRONG:** the adversarial sweep measured aif-c01's strict-shortest share at 38.6% — a 0.40 bound misses the very bank that motivated this lesson — while 0.35 catches 7/8 live banks against a 25% chance rate (clf-c02 is the only clean one). Threshold numbers proposed in a learning entry are hypotheses; calibrate against the full measured population before coding them (see L-0030).
 
 ## L-0022 · The per-exam README has no owning stage — preflight item 5 arrives unowned
 - date: 2026-08-16 · agent: exam-examiner · scope: local · tier: methodology/publishing
@@ -184,3 +185,17 @@ reconcile (templates/harness/learn-loop.md#routing). Entry schema:
 - lesson: the public repo's `data/questions.json` carries idiosyncratic per-node layout (inline scenario objects >80 chars, multiline options, one 10-space-indent anomaly at 1.06's distractors) — no width-rule or normalizing printer can reproduce it; `JSON.stringify` churned 1683 lines for a 616-line semantic change. The fix: parse recording raw scalar text + per-entry whitespace, require `print(parse(x)) === x` byte-identical BEFORE trusting the printer with modified data, then re-stringify only values that changed.
 - why: a symmetric 616/616 diff (vs 1683/797) is the difference between a reviewable surgical PR on a public artifact and formatting noise burying a correctness change; the round-trip refusal caught the anomaly that eyeballing the format rules missed.
 - how to apply: before rewriting any JSON/config file not produced by a known serializer, prove the byte round-trip first and make the writer refuse on divergence; if round-trip fails, upgrade the layout model — never "close enough" it.
+
+## L-0030 · Surface-cue checks must constrain rank, not just magnitude
+- date: 2026-08-19 · agent: tech-manager · scope: local · tier: validator/authoring
+- lesson: a magnitude bound (key/longest-distractor length ratio) can read perfectly compliant while the RANK statistic still gives every item away — bound the argmax/argmin form (WHO is the extreme), not just how extreme.
+- why: the adversarial sweep measured median length ratios of 0.97–1.01 across all six post-aif-c01 banks (perfect `answer-length-cue` compliance) while the key was the strict LONGEST option in 35–52% of items (chance 25%, p<0.05 in five of six) — authors optimise to the measured quantity and the defect migrates to the nearest unmeasured neighbour; magnitude checks also need noise floors (MIN_KEY_LENGTH_FOR_RATIO=40 exempted 26% of sy0-701's items) that rank statistics don't.
+- how to apply: when bounding a continuous surface feature, ship the rank/argmax bound alongside the magnitude bound, floor-free, computed over the bank AND each served form.
+- enforce: check (`key-length-rank-share`, warn this wave → error next content wave).
+
+## L-0031 · A one-sided cue rule manufactures its own inverse cue
+- date: 2026-08-19 · agent: tech-manager · scope: local · tier: validator/authoring
+- lesson: a surface rule stated one-sidedly ("only the key must not carry X") creates an optimisation gradient toward the unmeasured side — authoring evacuated riders into distractors, and a rider now marks a DISTRACTOR 57/59 times (p=2e-06), a STRONGER elimination cue than the one the rule killed.
+- why: authors (human or LLM) optimise against the stated check, not the underlying symmetry; the check defines "compliant", so the habit displaces rather than dissolves — the same mechanism as L-0030, seen from the rule-design side.
+- how to apply: state every surface-feature rule as a two-sided balance around chance with a sampling floor, and pair any per-item rule with an aggregate distribution bound; when writing a new cue check, ask "what does gaming this check produce?" and bound that too.
+- enforce: check (`rider-balance`, widened marker list, two-sided [0.10, 0.45] band, warn this wave → error next content wave).

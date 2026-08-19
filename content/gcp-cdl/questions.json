@@ -590,7 +590,7 @@
         "A": "All three are non-relational: only fixed rows and columns count as relational",
         "B": "Relational for accounts, object storage for the media, non-relational for the catalog",
         "C": "Relational for accounts and the catalog, with object storage for the media",
-        "D": "Non-relational for accounts and the catalog, with object storage for the media"
+        "D": "Non-relational for the accounts as well as the catalog, keeping media files in object storage"
       },
       "answer": "B",
       "distractor_patterns": { "A": "D19", "C": "E07", "D": "E05" },

@@ -295,3 +295,66 @@ with evidence references; verdicts and the decision are blank, Oliver's.
 Gate 2.** Open before `published`: (1) Oliver's deep-read + sign-off; (2) the
 package README (exam-author); (3) optional — Codex auth for the cross-model
 column; (4) separately, the ccar-p decision.
+
+---
+
+## S5b · cue-only solve — re-measured after the cue-rework wave (2026-08-19) {#s5b}
+
+Recorded per [methodology/05 §cue-only-solve](../../../methodology/05-eval-rubric.md#cue-only-solve),
+which requires the blind score, `k_req` and the ceiling verdict for the **bank and each served
+form**. The wave (`f0bf8bc` on `fix/cue-rework-wave`) changed option text only, so these
+numbers **supersede** any cue figures earlier in this report; the S5 §1 blind solve and the judge
+scores were produced against the pre-wave text and were not regenerated (see
+`derivation/gate2-checklist.md` §Post-S5 cue-rework wave).
+
+Instrument: `node tools/exploit-scan.mjs aif-c01` for form scope, and the same tool run against a
+selection-free copy of the package for bank scope — it scopes to the served form when a
+`selection.json` form exists, so bank scope must be produced deliberately. `random` is the
+format-mix expected guess score (single_choice 1/options, multiple_response 1/C(options, |key|),
+scenario_matching 1/options^scenarios, all graded all-or-nothing), which is **stricter** than the
+rubric's 25% worked-example simplification.
+
+| scope | n | blind (pre-wave → post-wave) | ceiling (1.35 × random) | k_req | floor (0.85 × k_req@random) | verdict |
+|---|---|---|---|---|---|---|
+| bank | 67 | 23.88% → **23.88%** (16/67) | ≤ 30.14% (random 22.32%) | **0.6059** | ≥ 0.5217 (k_req@random 0.6138) | **PASS** |
+| form-a | 50 | 24% → **22%** (11/50) | ≤ 28.91% (random 21.41%) | **0.6154** | ≥ 0.5255 (k_req@random 0.6183) | **PASS** |
+
+Per-cue rates on the shipping revision (chance 25% each):
+
+- **bank** — key-longest-rank 14/54 (25.9%) · key-shortest-rank 15/53 (28.3%) · named-entity 4/15 (26.7%) · rider-marks-key 11/73 (15.1%)
+- **form-a** — key-longest-rank 9/37 (24.3%) · key-shortest-rank 9/37 (24.3%) · named-entity 4/14 (28.6%) · rider-marks-key 10/53 (18.9%)
+
+### Residual: the instrument does not test interior length ranks
+
+`key-length-rank-share` and `exploit-scan`'s `key-longest-rank`/`key-shortest-rank` bound only
+rank 1 and rank last, and the standard parity fix — lift one thin distractor above a rank-1 key —
+lands the key deterministically on **rank 2**. Measuring all four ranks by hand on the shipping
+revision:
+
+| scope | key length-rank distribution | best single-rank strategy | rank-aware blind |
+|---|---|---|---|
+| bank | {1:15, 2:16, 3:9, 4:17} | rank 4: 17/57 (29.8%) | 18/67 = **26.87%** |
+| form-a | {1:10, 2:12, 3:7, 4:11} | rank 2: 12/40 (30.0%) | 13/50 = **26.00%** |
+
+"Rank-aware blind" substitutes the best interior rank for the tool's longest-option strategy. It is
+**not** the S5b number — the committed strategy set is the instrument of record — but it is the
+honest upper bound on what a rank-aware test-wise candidate scores, and Gate 2 should see it.
+
+### Residual: the uninstrumented stem-echo cue
+
+No validator check and no exploit-scan strategy measures option↔stem content-word overlap, and the
+wave's own fix mechanism (appending a purpose clause written from the stem's words to lift a key
+off the shortest rank) inflates it. Share of single-choice items where the key is the strict
+maximum-overlap option, chance 25%: bank 40.0 → 42.5%, form-a 32.1 → 35.7% — it
+**rose**.
+
+### Verdict carried to Gate 2
+
+**PASS on both ceilings, both scopes — and the only exam of the six whose stem-echo cue rose on
+both scopes.** At 42.5% bank / 35.7% form against 25% chance, stem echo is now the strongest
+surface statistic in this bank, stronger than any of the five instrumented cue checks after the
+wave. It is uninstrumented by construction, so it is a residual for Oliver (instrument gap), not an
+item bounce. Note also that this exam took a **key-letter permutation** (`f0bf8bc`,
+`tools/permute-keys.mjs` seed 1) in the same wave — 46 items' `answer` field moved — which is why
+`eval/blind-solve.json`'s recorded letters no longer align with the bank even for items whose text
+never changed.

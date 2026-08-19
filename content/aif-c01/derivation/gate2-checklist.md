@@ -6,13 +6,24 @@ bank revision (rework commits `ea967ce` + `1b1596c`; S5 round 2 artifacts in `ev
 recorded first in `derivation/signoff.md`. Verdict columns in the sign-off are left
 for Oliver; this checklist pre-fills the evidence.
 
+> **Re-pinned 2026-08-19 after the post-S6 cue-rework wave.** The bank under review is now
+> `content/aif-c01/questions.json` @ **`f0bf8bc`** (blob `31101a184a`, sha256
+> `d6f79f96c82359e9…`) on `fix/cue-rework-wave` — **not** `1b1596c`, which this checklist
+> originally pinned. `selection.json` is unchanged (item ids are stable). The eval artifacts
+> in `eval/` still date from `79026d8` and were produced against the **pre-wave option text**;
+> this exam also took a **key-letter permutation**, so `eval/blind-solve.json`'s letters no
+> longer map to the shipping bank. `derivation/signoff.md` §Post-S5 cue-rework wave states what
+> moved, what the prior judge scores still cover, and how the deep-read sample was extended
+> (19 → **27 items**). Validator count also moved 29 → **34 checks** (cue checks landed after
+> S6; all silent). `manifest.status` is still `in_review` — nothing was flipped.
+
 ## The 7 preflight checks (methodology/06 §preflight), with evidence
 
 | # | Check | Examiner finding | Evidence |
 |---|---|---|---|
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` + manifest provenance block: 3 sources (public_blueprint, 2× public_practice_set), each with author, URL basis, access date 2026-08-16, licence/permission basis; machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` green |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree; spot-checked at eval: 1.09→C-009, 2.11→C-025, 5.04→C-062 chains resolve to registry + derivation docs |
-| 3 | Validator green | **PASS** | `pnpm validate aif-c01` → 29 checks, **0 errors, 0 warnings** (run on this tree with selection built and status in_review; output in eval-report round 2). Includes the two new ratchet checks `key-position-distribution` + `answer-length-cue`, both green |
+| 3 | Validator green | **PASS** | `pnpm validate aif-c01` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree `f0bf8bc` (selection built, status in_review). *Count corrected 2026-08-19: this row read "29 checks" against `1b1596c`; the cue-check ratchet landed after S6 and every cue check is silent here.* Includes the original ratchet checks `key-position-distribution` + `answer-length-cue`, both green |
 | 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: 67/67, zero adjudications open), `eval/judge-scores.json` (r2: zero dimensions ≤2, zero open bounces; bounce cap respected — every item at bounce ≤1), `eval/overlap-report.md` (r2 section: pass), `eval/codex-solve.json` (advisory_skipped recorded — see sample note below). Round-1 artifacts preserved as `*-r1.json` |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/aif-c01/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template; the manifest's machine-checked `nda_statement` exists, but the README's provenance/independence/prior-art/non-affiliation/licence sections are human-facing and missing). **Owner: exam-author** (examiner does not author package content beyond its eval/selection surface). Does not block `in_review` |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0) exist at root; must also be stated in the package README (folds into item 5). Inbound: zero `licensed_import` items in this bank — `licensed-import-license` green with nothing to discharge |
@@ -29,9 +40,28 @@ exam intro page.
 ## Gate 2 deep-read sample
 
 Per methodology/05 §handoff + /exam-publish step 3: **all scenario-matching + 10
-random + every auto-flagged item.** Total sample: **19 items** (3 SM + 10 random +
-3 auto-flags + 3 standing content notes; no double-counting — the lists below are
-disjoint).
+random + every auto-flagged item** — **extended 2026-08-19 to + every item touched by the
+cue-rework wave.** Total sample: **27 items** (was 19: 3 SM + 10 random + 3 auto-flags +
+3 standing content notes; no double-counting — the lists below are disjoint).
+
+**Wave extension (8 new items).** All 11 reworked items seated on form-a are now in the
+sample, plus the 2 reserve-only reworked items, because publication covers the bank:
+
+| Added | Seated? | Wave edit | What to judge |
+|---|---|---|---|
+| 4.06 | yes | **named entity** — D became "Enabling Amazon SageMaker Model Monitor…" | Real Model Monitor + Clarify does bias drift; D is saved only by its own "distribution drift" premise. Co-correct or not? |
+| 3.18 | **no** (reserve) | **named entity** — A became "Re-index the Amazon OpenSearch Service document store…" | The stem never establishes an OpenSearch store; A is now eliminable as scenario-fiction. Rejecting a reserve item is free |
+| 3.05 | yes | **named entity** in C + key elaborated with a stem-derived purpose clause | Check the key's appended clause is not the giveaway (this is the stem-echo mechanism) |
+| 3.07, 4.02, 4.05, 4.07 | yes | key-side elaboration (lift the key off the shortest rank) | The elaboration must add argument, not surface |
+| 4.08, 5.08 | yes | distractor length/entity parity | distractor argued up — check it did not become co-correct |
+| 3.11 | **no** (reserve) | key-side elaboration + entities | bank coverage only |
+
+Already both reworked and sampled: 1.08, 2.04, 3.05, 3.09, 4.06.
+
+**The pairing that tells you which items need human reading.** All 8 distractor rewrites in
+this wave left their `rationale.distractors` entry **byte-identical** — the refutation was
+written against the pre-wave string. Every pair was re-read at this gate and all 8 still land,
+but no validator check covers this surface.
 
 **Auto-flagged (round-2 3s — a 3 ships only if this deep-read accepts it):**
 

@@ -122,8 +122,8 @@
       "type": "single_choice",
       "question": "A statute requires a municipal tax office to keep taxpayer records on infrastructure it operates itself, inside its own facility. During the annual filing season, the office's public web portal needs far more capacity than it owns. Which cloud deployment model do these constraints force?",
       "options": {
-        "A": "A private cloud only, sized so that filing-season demand is met from owned capacity all year round",
-        "B": "A sovereign region, which satisfies government obligations without changing where the records are kept",
+        "A": "A private cloud only, sized so that peak filing-season demand is met from owned capacity all year round",
+        "B": "A sovereign region for public-sector tenants, which satisfies government obligations without moving where the records are kept",
         "C": "A hybrid cloud that keeps records on the office's own infrastructure and bursts portal capacity to a public cloud",
         "D": "A full public cloud migration, moving the records and the filing-season portal off-premises to modernize the whole estate at once"
       },
@@ -498,8 +498,8 @@
       "options": {
         "A": "The operating system and everything above it: patching, runtime, middleware, and the application's data",
         "B": "Replacing failed physical disks and network cards beneath its virtual machines through a hardware support contract",
-        "C": "Hardening the hypervisor, as maximum control extends to the virtualization layer",
-        "D": "Only the application code, with the guest operating system patched by the provider"
+        "C": "Hardening the hypervisor beneath the machines, as maximum control extends to the virtualization layer",
+        "D": "Only the estimating application's code, with the guest operating system patched and updated by the provider"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -646,8 +646,8 @@
       "options": {
         "A": "A region is a set of datacenters connected by a low-latency network, often paired with a distant region for replication and sequenced updates",
         "B": "A region is a set of nearby datacenters, and platform updates roll out to both members of a regional pair simultaneously so the two members stay identical",
-        "C": "A region is a single large datacenter building, and its partner is the identical building next door for fast failover",
-        "D": "A region is defined by the subscription that deploys into it, so each customer draws its own regional boundaries"
+        "C": "A region is a single large datacenter building, and its partner is the identical building next door on the same campus, ready for fast failover",
+        "D": "A region is defined by the subscription that deploys into it, so each customer draws its own boundaries around the datacenters it uses"
       },
       "answer": "A",
       "distractor_patterns": {
@@ -814,9 +814,9 @@
       "type": "single_choice",
       "question": "A mining equipment supplier has grown to forty Azure subscriptions across its business units. A governance lead must apply one compliance requirement to every subscription, current and future, with the least ongoing effort. Where should the assignment be applied?",
       "options": {
-        "A": "To every resource group across all the subscriptions, keeping the assignment as close to resources as possible",
-        "B": "To each of the subscriptions in turn today, and again to each new subscription as it is created",
-        "C": "Into the platform onboarding runbook that every project team is required to read and follow",
+        "A": "To every resource group across all forty subscriptions, keeping the assignment as close to the resources as possible",
+        "B": "To each of the forty subscriptions in turn today, and again to each new subscription as the business units create them",
+        "C": "Into the platform onboarding runbook that every project team is required to read before it deploys",
         "D": "At a management group above the subscriptions, so the assignment inherits down to every current and future one"
       },
       "answer": "D",
@@ -1177,10 +1177,10 @@
       "type": "single_choice",
       "question": "A bicycle-share operator stores two datasets: dock telemetry that the bikes can regenerate at any time, and irreplaceable trip-history records that anchor its city contracts. The current default replicates both geo-redundantly. What should the redundancy review conclude?",
       "options": {
-        "A": "Keep both datasets geo-redundant, as maximum redundancy is always the safest choice",
+        "A": "Keep both datasets geo-redundant across paired regions, as maximum redundancy is always the safest choice",
         "B": "Drop the regenerable telemetry to locally redundant storage and keep the irreplaceable records geo-redundant",
         "C": "The redundancy rungs differ only in price, as every option survives the same failure classes at different speeds",
-        "D": "Move both datasets down to locally redundant storage so the account's costs fall together"
+        "D": "Move both datasets down to locally redundant storage so the operator's monthly storage bill falls for both of them"
       },
       "answer": "B",
       "distractor_patterns": {
@@ -1415,9 +1415,9 @@
       "type": "single_choice",
       "question": "At an orchestra and concert hall, an engineer holds the Reader role on the whole subscription and the Contributor role on one resource group inside it. A colleague claims the subscription-level Reader overrides the narrower grant, leaving the engineer unable to change anything. What is the real effect?",
       "options": {
-        "A": "The colleague is right: the broadest scope wins, and every narrower assignment is ignored",
+        "A": "The colleague is right: the broadest scope wins, and every narrower assignment inside it is simply ignored",
         "B": "The assignments combine as a union: read across the subscription, write within that one resource group and its resources",
-        "C": "The most restrictive assignment applies everywhere, so the engineer is effectively read-only across the estate",
+        "C": "The most restrictive of the two assignments applies everywhere, so the engineer is effectively read-only across the estate",
         "D": "Contributor on the resource group flows upward through the hierarchy, making the engineer a Contributor on the whole subscription"
       },
       "answer": "B",

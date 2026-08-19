@@ -66,7 +66,7 @@
         "A": "Ship the product as open source software",
         "B": "Build the product on an open standard",
         "C": "Support deployment across multiple cloud providers",
-        "D": "Publish integration APIs for the product"
+        "D": "Publish documented integration APIs for the product"
       },
       "answer": "A",
       "distractor_patterns": { "B": "E05", "C": "E06", "D": "D06" },
@@ -482,7 +482,7 @@
       "question": "A customs brokerage receives declaration files from thirty carriers, each using its own country codes, date formats and commodity labels. A team now runs every file through a step that normalizes the codes, drops duplicate line items and rejects malformed rows before anything is written to the brokerage's store. Which stage of the data supply chain is that team working in?",
       "options": {
         "A": "Data collection, the stage that brings the declarations in from the carriers",
-        "B": "Data governance, the stage that decides who may alter a commodity label",
+        "B": "Data governance, the stage that decides who may alter a commodity label or code",
         "C": "Data activation, with each report mapping the carrier codes as it needs them",
         "D": "Data processing, the stage that turns raw declarations into a usable form"
       },
@@ -492,7 +492,7 @@
         "correct": "Normalizing codes, removing duplicates and rejecting malformed rows is data processing: the stage of the data supply chain that turns what was collected into something later stages can rely on. Data collection has already finished, and data storage, data analysis and data activation all come after.",
         "distractors": {
           "A": "Data collection is the stage that already completed here, because the declaration files arrived from the carriers before this team touched them.",
-          "B": "Deciding who may alter a commodity label is data governance, an ongoing process that runs alongside the whole supply chain instead of occupying a stage in it.",
+          "B": "Deciding who may alter a commodity label or code is data governance, an ongoing process that runs alongside the whole supply chain instead of occupying a stage in it.",
           "C": "Mapping each carrier's codes inside every report moves the same work to data activation and repeats it for every consumer, leaving the store full of the inconsistencies processing exists to remove."
         }
       }
@@ -614,7 +614,7 @@
       "question": "An architectural design practice keeps every completed project's drawing set in Cloud Storage. Once a building is handed over, its set is opened only if a defect claim arrives, which for any given project happens perhaps once or twice in a decade, yet professional indemnity rules require the practice to keep every set for fifteen years. The sets are large. Which storage class should the handed-over sets use?",
       "options": {
         "A": "Standard, so the drawings are available the moment a defect claim arrives",
-        "B": "Nearline, the class priced for data that is read about once a month",
+        "B": "Nearline, the storage class priced for data that is read about once a month",
         "C": "Whatever class the practice's other buckets use, to keep billing lines consistent",
         "D": "Archive, the class priced for data retained for years and rarely read"
       },
@@ -668,7 +668,7 @@
         "A": "Refactor the scheduling application onto a cloud-native database to lift the vendor constraint",
         "B": "Retain the server in the basement and revisit once the vendor certifies a change",
         "C": "Migrate the database as it is onto a managed service running the same engine",
-        "D": "Modernize onto an analytics product so route history can be queried at scale"
+        "D": "Modernize onto an analytics product so the full route history can be queried at scale"
       },
       "answer": "C",
       "distractor_patterns": { "A": "E04", "B": "D15", "D": "E06" },
@@ -850,7 +850,7 @@
         "A": "Customer support, where cases are resolved end to end instead of routed to a person",
         "B": "Workforce productivity, where staff finish routine work faster with assistance",
         "C": "Operations, where the scheduling and stock systems are the ones being changed",
-        "D": "Sales experiences, where the goodwill credit is an offer made to retain a customer"
+        "D": "Sales experiences, where the goodwill credit is an offer made to retain an unhappy customer"
       },
       "answer": "A",
       "distractor_patterns": { "B": "E05", "C": "E06", "D": "E07" },
@@ -1005,7 +1005,7 @@
       "type": "single_choice",
       "question": "A microfinance lender wants an AI capability that competitors cannot simply buy: its own loan-performance history is the asset, and the board says the capability must be built on it. The lender employs two experienced data scientists and has set no launch date. Which factor should dominate its choice of AI approach?",
       "options": {
-        "A": "Implementation speed, so a capability reaches the field as early as possible",
+        "A": "Implementation speed, so a new capability reaches the field as early as possible",
         "B": "Technical expertise requirements, keeping the approach inside a small team's reach",
         "C": "Potential for business differentiation, which the lender's own history can buy",
         "D": "Development effort, taking whichever approach is cheapest to build and run"
@@ -1086,7 +1086,7 @@
         "A": "The Vision API, which extracts information from documents and images",
         "B": "Gemini through the Agent Platform API, which handles broad generative work",
         "C": "The Cloud Translation API, so summaries reach the regulator in its language",
-        "D": "A classification model trained on past notes to predict a severity band"
+        "D": "A classification model trained on past field notes to predict a severity band"
       },
       "answer": "B",
       "distractor_patterns": { "A": "E01", "C": "E06", "D": "E07" },
@@ -1110,7 +1110,7 @@
       "question": "An office furniture rental firm holds ten years of its own inspection photographs, each labeled with the damage grade an assessor gave it, and wants new photographs graded the same way. The work would be done by two business analysts who are comfortable with data and have never trained a model. Which route fits both the data and the expertise?",
       "options": {
         "A": "Agent Studio on Agent Platform, assembling an agent over the photograph library",
-        "B": "The Vision API, which recognizes objects and text in images out of the box",
+        "B": "The Vision API, which recognizes common objects and text in images out of the box",
         "C": "Hiring a machine learning engineer to build a custom model from scratch",
         "D": "AutoML on Agent Platform, training a custom model on the labeled photographs"
       },
@@ -1187,7 +1187,7 @@
       "type": "single_choice",
       "question": "A parcel locker network's board has approved a cloud program and asked the IT director for a completion date. The estate grew through three acquisitions, and nobody holds a list of what runs where or what depends on what. A supplier has offered to start moving servers next week. What should happen first?",
       "options": {
-        "A": "Move the least critical servers first, so the program shows visible progress",
+        "A": "Move the least critical servers first, so the program shows the board visible progress",
         "B": "Pick one migration path and apply it consistently to every server in the estate",
         "C": "Run discovery and assessment to inventory the workloads and their dependencies",
         "D": "Give the supplier a date and refine the plan as the servers are being moved"
@@ -1476,7 +1476,7 @@
       "question": "A waste management utility has bid for a municipal contract whose terms require the collection data to stay on the rival cloud the council already uses, while the utility's own analytics stay on Google Cloud. The utility will not run two analytics stacks. Which capability lets its analysts query the data held on the other provider?",
       "options": {
         "A": "BigQuery Omni, which runs BigQuery analytics against data in other clouds",
-        "B": "Cloud Interconnect, giving a private link between the two environments",
+        "B": "Cloud Interconnect, giving a private network link between the two environments",
         "C": "A scheduled copy of the other cloud's data into BigQuery every night",
         "D": "GKE Enterprise, which manages Kubernetes clusters across both cloud providers"
       },
@@ -1737,7 +1737,7 @@
       "options": {
         "A": "Sensitive Data Protection must be enabled first, so records are found and encrypted",
         "B": "Nothing needs buying: data stored on Google Cloud is encrypted at rest by default",
-        "C": "A firewall rule must be applied so only the chain's systems can read the records",
+        "C": "A firewall rule must be applied first so only the chain's systems can read the records",
         "D": "Encryption applies once each bucket is tagged as holding sensitive records"
       },
       "answer": "B",
@@ -1814,7 +1814,7 @@
       "question": "A motorway toll operator's security team learns about new attack techniques only when its own monitoring catches one in progress. The team wants insight into what is coming before it arrives, and asks what Google Threat Intelligence would add. What is the accurate answer?",
       "options": {
         "A": "It detects threats inside the operator's estate faster than current monitoring does",
-        "B": "It certifies the operator's controls against an external security standard",
+        "B": "It certifies the operator's controls against a recognized external security standard",
         "C": "It gives proactive insight into threats from three different kinds of source",
         "D": "It scores each threat with a severity index published by an industry consortium"
       },
@@ -1866,7 +1866,7 @@
       "question": "A heavy-equipment leasing firm's security team has two requests on its desk. The rental business wants its new customer-facing AI assistant protected from hostile prompts. The security team itself wants its analysts to triage alerts faster with AI assistance. Which pairing meets both requests?",
       "options": {
         "A": "Gemini in Google Security Operations for the assistant, and AI Protection for triage",
-        "B": "Model Armor for both requests, as the offering that covers anything involving AI",
+        "B": "Model Armor for both requests, as the single offering that covers anything involving AI",
         "C": "Cloud Armor for the assistant, and Google Security Command Center for alert triage",
         "D": "Model Armor for the assistant, and Gemini in Google Security Operations for triage"
       },
@@ -2156,7 +2156,7 @@
       "question": "A recycling cooperative's collection app measures the share of booking requests completed in under one second. Its platform team has committed internally to holding that share above a stated level, and the cooperative's contract with the councils it serves promises a credit if the share falls below a lower level. Which terms name those three things, in that order?",
       "options": {
         "A": "Service level agreement, service level objective, service level indicator",
-        "B": "Saturation, latency and traffic, the signals that each of these measures",
+        "B": "Saturation, latency and traffic, the signals that each of these terms measures",
         "C": "All three are service level objectives, differing only in who is told",
         "D": "Service level indicator, service level objective, service level agreement"
       },

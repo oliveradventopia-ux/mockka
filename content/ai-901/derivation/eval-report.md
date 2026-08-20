@@ -19,7 +19,7 @@ Owner: exam-examiner. Artifacts: [`eval/blind-solve.json`](../eval/blind-solve.j
 | | |
 |---|---|
 | Blind solve | **56/56 (100%)**, all high confidence, **0 misses, 0 open adjudications** |
-| Codex cross-solve | **advisory_skipped** — CLI unauthenticated, fourth exam running |
+| Codex cross-solve | **advisory_skipped** at the time — CLI unauthenticated, fourth exam running. **Run 2026-08-20: form-a 42/42 agreement, 0 disagreements** (§Cross-model column) |
 | Judge rubric | 56 items × 6 dimensions, every distractor argued FOR before scoring |
 | **Bounces** | **5 items** (round 1 of max 2): `d1-q15`, `d1-q16`, `d1-q24`, `d2-q44`, `d2-q50` |
 | Gate 2 sample | **9 items** (8 carrying a 3, plus `d1-q12` referred on a dim1 4) |
@@ -71,6 +71,13 @@ cannot establish is the absence of a convergent blind spot. The evidence that th
 answered correctly and confidently.** They were found by the argue-FOR step, not by solving.
 
 ## 2 · Codex advisory cross-solve (`eval/codex-solve.json`)
+
+> **SUPERSEDED 2026-08-20 — the instrument ran.** Everything in this section is the accurate
+> record of what was true at the time: the `codex` CLI was unauthenticated and the advisory
+> cross-solve did not run. It was authenticated on 2026-08-20 and
+> `node tools/codex-crosssolve.mjs ai-901` returned **42/42 agreement, 0 disagreements,
+> 0 unparsed** on the served form. The result and its limits are in §Cross-model column at the end
+> of this report; the paragraphs below are kept as history, not as current status.
 
 `advisory_skipped`. `codex` is not on PATH; the only binary on this machine is bundled inside the
 VS Code ChatGPT extension (`openai.chatgpt-26.810.52044-darwin-arm64`, codex-cli 0.148.0-alpha.9),
@@ -249,7 +256,7 @@ bank. Where the blind solve is clean, the argue-FOR pass *is* the eval.
 **Round 1: PASS WITH BOUNCES.** 51 of 56 items ship as scored. Five return to exam-author with
 score reports. Nine go to Gate 2 for a human deep read, led by `d2-q41`. No status flip may occur
 until round 2 clears the bounces and Oliver signs off — and the sign-off record should note that
-this round carries **no cross-model signal**.
+this round carries **no cross-model signal**. *(Superseded 2026-08-20: the cross-solve ran post-sign-off — form-a 42/42, 0 disagreements. §Cross-model column.)*
 
 **Next action:** exam-author reworks `d1-q15`, `d1-q16`, `d1-q24`, `d2-q44`, `d2-q50` per their
 bounce records. Round 2 = fresh blind solve on the five reworked items + full re-score of the bank,
@@ -278,7 +285,7 @@ and `eval/judge-scores.json` (the current bank revision) and round 1 is preserve
 | | |
 |---|---|
 | Blind solve | **56/56 (100%)**, 55 high / 1 medium, **0 misses, 0 open adjudications** |
-| Codex cross-solve | **advisory_skipped** (round 2) — CLI still unauthenticated |
+| Codex cross-solve | **advisory_skipped** (round 2) — CLI still unauthenticated at the time. **Run 2026-08-20: form-a 42/42 agreement, 0 disagreements** (§Cross-model column) |
 | Judge rubric | 56 items × 6 dimensions; the 5 reworked items re-scored fresh with new argue-FOR cases |
 | **Bounces** | **0** — every round-1 bounce resolved on its indicted dimension; no item reaches the cap of 2 |
 | Gate 2 sample | **10 items** (8 carrying a 3 + `d1-q12` referred + `d2-q50` contamination referral) |
@@ -343,6 +350,13 @@ correctness. Round 1 demonstrated the point concretely: its two strongest findin
 pass. Both remain open as Gate 2 flags in this round.
 
 ## 3 · Codex advisory cross-solve (`eval/codex-solve.json`)
+
+> **SUPERSEDED 2026-08-20 — the instrument ran.** Everything in this section is the accurate
+> record of what was true at the time: the `codex` CLI was unauthenticated and the advisory
+> cross-solve did not run. It was authenticated on 2026-08-20 and
+> `node tools/codex-crosssolve.mjs ai-901` returned **42/42 agreement, 0 disagreements,
+> 0 unparsed** on the served form. The result and its limits are in §Cross-model column at the end
+> of this report; the paragraphs below are kept as history, not as current status.
 
 **`advisory_skipped` again.** `codex` is not on PATH; the only binary on this machine is bundled
 inside the VS Code ChatGPT extension and `codex login status` reports *Not logged in* — unchanged
@@ -436,7 +450,8 @@ remaining dimension is 5 (five 3s) and every one of those items is in the Gate 2
 **Next action:** S6 — selection (`selection.json`, manifest mix 42 = d1 18 / d2 24; SC/MR/SM per
 domain 14+2+2 / 20+3+1; 14 reserve-only concepts), publication preflight per `methodology/06`, and
 the Gate 2 checklist. The sign-off record must note that this exam carries **no cross-model signal
-in either round**, and that `d2-q50`'s blind-solve evidence is contaminated by disclosure.
+in either round** *(superseded 2026-08-20 — the cross-solve ran after the sign-off: form-a 42/42,
+0 disagreements; §Cross-model column)*, and that `d2-q50`'s blind-solve evidence is contaminated by disclosure.
 
 ---
 
@@ -550,4 +565,80 @@ the attacker is stronger.
 - **key-letter permutation** (`a8c7f4e`, `tools/permute-keys.mjs`): `eval/blind-solve.json`'s recorded letters no longer map to the shipping bank, exactly as for `aif-c01`. The file remains a valid record of the round-2 judgment; the deep read is the control.
 - **stem-echo**, uninstrumented: 32.4% bank / 38.5% form against 25% chance — the highest form figure of the seven.
 - Gate-1 decisions **D5** (Microsoft sign-in for the official practice assessment) and **D6** (`kittoyeah-ai901-prep` distillation) remain open. Neither is a preflight item; both are source-coverage improvements for a future round.
-- **No cross-model eval column exists for this bank**, in any round. The Codex CLI on this machine is bundled inside the VS Code extension and is not logged in, so the advisory cross-solve was `advisory_skipped` throughout. Author and examiner share a model family, so no blind-solve score — however clean — excludes a convergent blind spot. The deep-read sample is the compensating control, and this is a standing gap, not a finding against the bank.
+- **The cross-model eval column now exists — run 2026-08-20, after the sign-off.** Every S5 round of this bank recorded `advisory_skipped`, and that history stands; the Codex CLI was authenticated on 2026-08-20 and the advisory cross-solve finally ran on the served form: **42/42 agreement with the answer key, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Read it exactly as far as it goes — §Cross-model column below states what it licenses and what it does not. It is evidence that the **keys** hold up to a solver from another model family that did not write them; it is **not** evidence about co-correctness, distractor plausibility or pitch, and the deep-read sample remains the control for those. 14 reserve-only items were not solved and carry no cross-model column.
+
+## Cross-model column — the advisory cross-solve, run 2026-08-20
+
+> Added **after** the Gate 2 sign-off and the publication flip. It changes no verdict, no score, no
+> threshold and no `manifest.status`. It is evidence appended to a decision already recorded.
+
+### What ran
+
+The `codex` CLI was authenticated on 2026-08-20 (ChatGPT auth — no per-request billing, so nothing
+about this run required cost approval), and the [§codex](../../../methodology/05-eval-rubric.md#codex)
+instrument that every round of this package recorded as `advisory_skipped` was finally executed:
+`node tools/codex-crosssolve.mjs ai-901`. The tool renders each item of the **served form**
+stem-and-options only — no answer, no rationale, no `distractor_patterns`, no concept metadata —
+batches them through `codex exec` to a different model family, normalises single-choice,
+multiple-response and scenario-matching replies, and diffs against the key.
+
+| | |
+|---|---|
+| Scope | `form-a` — **42 of 56 bank items** (14 reserve-only items not solved) |
+| Answered | 42 |
+| Agreed with the key | **42/42 — 100%** |
+| Disagreed | **0** |
+| Unparsed | 0 |
+| Artifact | `eval/codex-solve.json` @ `d9da399` |
+
+The same run covered **465/465 items across all eight exams with zero disagreements**.
+
+### What this licenses
+
+A solver from a different model family — one that did not author these items and never saw the key —
+chose the keyed option on every item of the served form. That is real evidence for one specific
+claim: **the answer keys are defensible to an outsider.** The failure mode §codex exists to catch,
+our author and our examiner sharing Claude weights *and* sharing a confident misreading, which no
+Claude-side blind score can exclude, did not fire on a single served item.
+
+Per §codex the only enforcement attached to this instrument is that a disagreement adds the item to
+the Gate 2 human sample. There were none, so **the sample is unchanged**.
+
+### What this does not license
+
+- **Not dimension 1 (co-correctness).** The solver reports its *best* option. It was never asked
+  whether a second option is also defensible — a bank in which every item had two right answers
+  would return exactly this result.
+- **Not dimension 2 (distractor plausibility) or dimension 5 (pitch).** A transparently weak
+  distractor and a quietly co-correct one both produce agreement.
+- **Not proof against a shared surface read.** This is the argument
+  [§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) already makes about the blind solve:
+  100% is evidence for key correctness exactly as much as it is evidence the surface leaks (L-0020).
+  Two capable models agreeing may mean both read the subject — or that both read the same
+  regularity. What stops that from being circular **here** is that the surface is measured
+  independently and sits at chance: `tools/exploit-scan.mjs` puts the zero-knowledge attacker at
+  **23.81% on form-a against a 28.97% ceiling**, inside the publication ceiling on both scopes.
+  Surface at chance *and* cross-family agreement on the key is a meaningful pair; neither number
+  carries the finding alone.
+- **Not bank-wide.** The run was form-scope: 14 reserve-only items were never shown to the
+  cross-solver and carry no cross-model column.
+- **Not fully reproducible as recorded.** `eval/codex-solve.json` names the solver
+  `codex-cli (ChatGPT auth)` but records no resolved model id, no run timestamp and no bank
+  revision; items were answered in batches of ten rather than independently; and unlike §1 the
+  solver returns an answer with **no confidence grade and no reasoning line**, so no cross-solve
+  answer could have been adjudicated even if it had disagreed. Logged as a requirement for the next
+  run in [methodology/05 §codex-interpretation](../../../methodology/05-eval-rubric.md#codex-interpretation).
+
+### The compensating control, restated
+
+Every sheet in this package named the Gate 2 human deep read as the compensating control against a
+convergent author/examiner blind spot. That statement now splits in two, and the split is the point:
+
+- **Partly discharged — key correctness.** An independent model family reached the same key on
+  every served item. The deep read no longer carries that load by itself.
+- **Fully intact — co-correctness.** The cue-rework wave rewrote 28 distractor strings across 21 items specifically to make them
+  *more* plausible (7 of them, on 6 items, gained a product name the item did not previously carry — `d2-q30`, `d2-q40`, `d2-q42`, `d2-q51` (twice), `d2-q53`, `d2-q54`). A cross-solve that agrees with the key cannot tell you whether one of
+  those upgraded distractors has become defensible too, because agreeing with the key is what it
+  does either way. Judge dimensions 1 and 2 stay re-opened on exactly the items the wave touched,
+  the deep-read sample is still the only instrument pointed at them, and the questions are itemised
+  in [`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

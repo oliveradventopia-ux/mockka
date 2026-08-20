@@ -41,7 +41,7 @@ BE · BCE · AD · CE · AC · ACE · AC · CE · BCE — no constant.
 | 1 | Source registry complete, with licence basis | **PASS (one residual risk, carried from Gate 1)** | `derivation/sources.md` §Registered sources: 3 entries, each with type, author, URL, `date_accessed` 2026-08-16, licence/permission basis and usage constraint. §Blueprint authenticity records the sha256 (`64e5a75d…`, 191,074 B, 21 pp) and the byte-identical partner-mirror cross-check; the exclusions table records the ExamTopics corpus + mirrors, five self-declared dump repos, the Hamada-khairi MIT repo, a recall-lineage repo and the Quizlet/Anki class, each with evidence. Machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` green. **Residual:** `jealarue-exam90` has **no licence file** — author retains copyright; basis is public GitHub publication + classification-only use (Gate 1 decision 1; open decision 6 below, and read it with the concentration finding under this table) |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree. S6 spot-check, seven chains re-walked by hand across all five domains and both priorities — C-001 (d1-q01) → `b-1.1-1` + jealarue 1.4/1.12; C-041 (d2-q26 MR) → `b-2.5-10` + jealarue 2.14; C-064 (d3-q22 MR) → `b-3.4-7`/`-8` + practice-v7 3.2; C-097 (d4-q33 SM) → `b-4.9-1` + jealarue 4.14/4.32; C-112 (d5-q14 SM) → `b-5.3-3` + jealarue 5.1/5.12/5.16/5.26; and the two blueprint-only normal fills C-088 (d4-q24) → `b-4.6-7`, C-115 (d5-q17) → `b-5.4-3`. All resolve to registered ids with a derivation doc |
 | 3 | Validator green | **PASS** | `pnpm validate sy0-701` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree `d92c587` (status `in_review`, selection built). *Count corrected 2026-08-19 from "30 checks"; the four cue checks that landed after S6 are all silent.* Zero warnings is the correct state here, not luck: priorities are computed rather than asserted, so `concept-convergence` has nothing to flag. The aif-c01 ratchet checks `key-position-distribution` and `answer-length-cue` are both green — they were engineered against before authoring (bank keys A 28 / B 26 / C 29 / D 27; keyed-option length median 0.97× the longest distractor) |
-| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (122 items, **121/122**, 120 high / 2 medium confidence, one confident miss `d4-q02` carrying `adjudication: legitimately_hard`, `adjudication_status: open_proposed` → the single open adjudication), `eval/judge-scores.json` (122 items × 6 dimensions, distractor cases argued FOR each option before scoring, **zero dimensions ≤2**, no `bounces[]`), `eval/overlap-report.md` (no finding), `eval/codex-solve.json` (`status: advisory_skipped`, four probes recorded). Bounce cap (2) untouched — **no item has ever bounced; this is the first Mockka bank to clear round 1 clean**. Full reasoning: `derivation/eval-report.md` |
+| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (122 items, **121/122**, 120 high / 2 medium confidence, one confident miss `d4-q02` carrying `adjudication: legitimately_hard`, `adjudication_status: open_proposed` → the single open adjudication), `eval/judge-scores.json` (122 items × 6 dimensions, distractor cases argued FOR each option before scoring, **zero dimensions ≤2**, no `bounces[]`), `eval/overlap-report.md` (no finding), `eval/codex-solve.json` (`status: advisory_skipped`, four probes recorded). **SINCE RUN — 2026-08-20, after the sign-off: form-a 90/90 agreement with the key, 0 disagreements, 0 unparsed (`eval/codex-solve.json` @ `d9da399`). Advisory, so nothing on this row moves; see §Cross-model column for what the agreement licenses (keys) and what it does not (co-correctness, plausibility, pitch).** Bounce cap (2) untouched — **no item has ever bounced; this is the first Mockka bank to clear round 1 clean**. Full reasoning: `derivation/eval-report.md` |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/sy0-701/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template — provenance, prior art, NDA, non-affiliation, licence). The manifest's machine-checked `nda_statement` and the intro `disclaimer` already carry the substance, including CompTIA's Authorized Materials Use Policy; what is missing is the human-facing package README that cites them, plus the **prior-art credit** the template demands for the two practice sets (CompTIA's own free V7 sampler and `jealarue/exam90`, both classification-only). **Owner: exam-author** — the examiner does not author package content beyond its `eval/` + `selection.json` surface. Does not block `in_review`. **Model to copy: `content/aif-c01/README.md`** |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0, content) exist at root; the per-package restatement folds into item 5. Inbound: **zero `licensed_import` items** — the string does not occur anywhere in the package; `licensed-import-license` green with nothing to discharge. All three registered sources are read-only inputs (one blueprint distillation, two classification-only annotations), never imported text. The `jealarue-exam90` permission question is item 1's residual, not an import obligation |
 | 7 | Intro block complete + `format_coverage` disclosure where required | **PASS** | `intro-presence` green: all five fields present (`about`, `audience`, 3 × `materials`, 2 × https `official_resources`, `disclaimer`). `format_coverage` **is required** — the Artefact A format analysis shows the real exam carries performance-based questions on top of the supported three — and is present and specific: MC-one-correct → `single_choice` (four options, as in every item of CompTIA's own sampler); select-two/select-three → `multiple_response` (five options, all-or-nothing, count stated in the stem); **PBQs explicitly NOT supported**, approximated two ways (genuine mappings → `scenario_matching`; one-defensible-outcome configuration reading → scenario-led `single_choice`), with the consequence stated plainly: "the underlying judgment is rehearsed, the interaction is not." Two further divergences disclosed in the same field: "maximum of 90" means a live form may be shorter, and the 81% bar is a linear proxy for the scaled 750-of-900 mark |
@@ -135,6 +135,11 @@ dim-1 three) → the three SM items → one representative of each policy class 
 dim-5, `d2-q13` for dim-2) → the ten random → the rest of list A only if a policy ruling
 comes back "unacceptable".
 
+> **SUPERSEDED 2026-08-20 — the instrument ran.** The paragraph below is the accurate record of
+> what was true at the time. The `codex` CLI was authenticated on 2026-08-20 and the cross-solve
+> returned **90/90 agreement, 0 disagreements, 0 unparsed** on form-a. See §Cross-model column at
+> the end of this sheet for the result and, more importantly, for what it does and does not license.
+
 ## Codex status (cross-model signal)
 
 **Absent this round — the fourth consecutive exam on this machine.**
@@ -177,7 +182,7 @@ required by the eval.** The 13-item quality tail in list A is a set of decisions
    A rekey does not touch form-a (the item is reserved) but does change the bank and would
    need a fresh eval entry for the touched item.
 4. **`d5-q16`** — the bank's only dim-1 three (contested best answer). Accept, or bounce.
-5. **Codex cross-solve** — sign off without a cross-model column, or run `codex login` first
+5. ~~**Codex cross-solve** — sign off without a cross-model column, or run `codex login` first~~ — **CLOSED 2026-08-20 by the run itself** (90/90 agreement, post-sign-off; §Cross-model column). Note it cannot see the `d4-q16` surface-parity defect at all.
    and have the matrix filled in (no S5 re-run needed).
 6. **Gate 1 decisions carried forward** — ratified 2026-08-17 by batch "Approve all", with
    that sign-off expressly allowing amendment at Gate 2:
@@ -263,4 +268,32 @@ The two corrections to the instrument — the ceiling now computed by the machin
 - **named-entity 34.6% bank / 33.3% form** against 25% chance — the highest of the seven, under the validator's 40% warn bound but the cue most worth a future countermeasure.
 - **stem-echo**, uninstrumented: 29.4% bank / 26.1% form against 25% chance — the lowest of the seven.
 - `d4-q16` still needs a **ruling, not a read** (3-vs-1 surface singleton the `option-pair-similarity` metric cannot see); `d4-q02` is the one confident blind-solve miss, adjudicated `legitimately_hard` with `adjudication_status: open_proposed`.
-- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.
+- **The cross-model eval column now exists** — `advisory_skipped` in every S5 round of this package, but the Codex CLI was authenticated on 2026-08-20 and the run landed: served form, **90/90 agreement, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Advisory by design; it did not block then and does not license anything now. It discharges the **key-correctness** half of the convergent-blind-spot worry and leaves the **co-correctness** half fully open — the deep read is still the only control there, and 32 reserve-only items were not solved at all. §Cross-model column below has the reasoning.
+
+## Cross-model column — arrived 2026-08-20, after the sign-off
+
+The `codex` CLI was authenticated on 2026-08-20 and `node tools/codex-crosssolve.mjs sy0-701` ran the
+S5 [§codex](../../../methodology/05-eval-rubric.md#codex) advisory cross-solve that every round of
+this package had recorded as `advisory_skipped`: **form-a, 90 items, 90/90 agreement with the
+answer key, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Wave-wide: 465/465 across the
+eight exams.
+
+**It arrived after the sign-off and changes nothing on this sheet.** Codex results are advisory and
+never blocking; their only enforcement is that a disagreement joins the Gate 2 sample, and there
+were none — so the sample, the verdicts and `manifest.status` all stand exactly as recorded.
+
+**Read it precisely.**
+
+| Now carried by evidence | Still carried only by the human deep read |
+|---|---|
+| The **answer keys** are defensible to a solver that did not write them and never saw the key. The convergent author/examiner misreading §codex exists to catch did not fire on any served item | **Co-correctness** (dim 1) of 17 distractor strings on 15 items the wave argued *up*; **distractor plausibility** (dim 2); **difficulty pitch** (dim 5). The cross-solver reports its best option and was never asked whether a second one also works |
+| | The 32 reserve-only bank items — out of scope of a form-scope run |
+
+Agreement is not clearance. By the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) uses to refuse a 100% blind solve as
+proof of unexploitability, two capable models agreeing could mean both read the same surface. What
+makes this agreement meaningful rather than circular is that the surface is measured separately and
+is at chance — S5b blind **26.67% on form-a against a 30.61% ceiling**. The pair is the finding.
+
+The item-level questions this leaves for Oliver are collected in
+[`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

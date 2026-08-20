@@ -7,7 +7,7 @@
 - **Date:** 2026-08-20 · **Reviewer:** Oliver Lau (the human, not an agent)
 - **Bank revision (re-pinned 2026-08-20 — the shipping revision):** `questions.json` @ **`dd5f1f6`** — blob `6d8581ecca`, sha256 `ee0230b0454c22a3…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated. Supersedes every earlier pin in this file.
 - **Provenance caveat — read before signing:** the eval artifacts below were produced against the **pre-wave** option text (`d7cb9e4`) and have **not** been regenerated. See §Post-S5 cue-rework wave for exactly what moved, what the prior judge scores still cover, the re-measured S5b numbers, and how the deep-read sample was extended (22 → **37 items**)
-- **Eval artifacts:** blind-solve @ `301c065` (r2, 2026-08-18, sha256 `87eea8968d50…`) · judge-scores @ `301c065` (r2, sha256 `0c1707018243…`) · overlap-report @ `301c065` (r2, sha256 `faaa62547ead…`) · codex-solve @ `301c065` (`advisory_skipped`, 3 attempts across 2 rounds, sha256 `2c5e736932a8…`) · round-1 preserved at `eval/*-r1.json` / `eval/overlap-report-r1.md`
+- **Eval artifacts:** blind-solve @ `301c065` (r2, 2026-08-18, sha256 `87eea8968d50…`) · judge-scores @ `301c065` (r2, sha256 `0c1707018243…`) · overlap-report @ `301c065` (r2, sha256 `faaa62547ead…`) · codex-solve @ `301c065` (`advisory_skipped`, 3 attempts across 2 rounds, sha256 `2c5e736932a8…`) · round-1 preserved at `eval/*-r1.json` / `eval/overlap-report-r1.md` · **codex-solve RE-RUN @ `d9da399` (2026-08-20, after this sign-off) — form-a 60/60 agreement with the key, 0 disagreements, 0 unparsed; see §Addendum A for what that does and does not license**
 
 ## Post-S5 cue-rework wave (2026-08-19) — the proportional re-open
 
@@ -141,7 +141,7 @@ Both are stated here so a reader can see what a PUBLISH signature covers.
 | Provenance chain (spot-check: C-004/`d1-q04`, C-027/`d2-q27`, C-051/`d4-q51`, C-065/`d6-q65` + your own picks) | **PASS** | Examiner finding: PASS (checklist §2) — machine chain green on this tree; 0 `licensed_import` items |
 | Validator | **PASS** | Examiner finding: PASS — `pnpm validate ccao-f` → **37 checks, 0 errors, 34 warnings** on the re-pinned tree (`dd5f1f6`). *Count corrected 2026-08-19: this row read "33 checks"; four cue checks landed after S6 and all four are silent here.* All 34 warnings are still the single `concept-convergence` family-convention class, enumerated and dispositioned in checklist §3 — **RE-RUN 2026-08-20 on the shipping revision `dd5f1f6`: **38** checks, 0 errors, 34 warnings.** Any tree or count named earlier in this row refers to a superseded pin. *(Count is 38, not 37: `publication-preflight` is `when: status === 'published'`, so it runs only after the flip — the pre-flip run of the same tree reported 37.)* |
 | Eval thresholds | **PASS** | Examiner finding: PASS **on the pre-wave scores** — 81/81 blind (r2), zero dimensions ≤2, `bounces: []`, zero open adjudications, bounce cap respected. **S5b re-measured on the shipping revision: PASS on both ceilings, both scopes** (bank blind 24.69% ≤ 31.50%, k_req 0.6282 ≥ 0.5396; form-a 25.00% ≤ 30.71%, k_req 0.6267 ≥ 0.5419), with the cleanest key length-rank distribution of the six reworked exams — **RESTATED 2026-08-20.** The figures above (24.69% bank / 25.00% form) came from the weaker pre-`a8c7f4e` strategy set. The bank is byte-identical, the bar is unchanged, and the corrected instrument returns: **bank 27.16% ≤ 31.50% · form-a 26.67% ≤ 30.71% — PASS on both ceilings, both scopes.** See §Gate 2 final pass above and `derivation/eval-report.md` §s5b-final. |
-| Deep-read sample — **extended 22 → 37 items** for the cue-rework wave (0 SM + 10 random + all auto-flagged + **every reworked item**) | **PASS** | **S6 core (22).** Flagged & seated: `d1-q01, d1-q02, d1-q03, d1-q04, d2-q15, d2-q25, d2-q27, d3-q29, d3-q32, d3-q34, d3-q35, d3-q36, d4-q50, d6-q65, d6-q73` · random: `d1-q09, d2-q18, d2-q26, d4-q42, d5-q56, d6-q67, d7-q74`. **Added by the wave (15):** seated `d1-q07, d1-q10, d2-q12, d3-q31, d4-q45, d4-q48, d4-q49, d4-q51, d5-q53, d5-q57, d5-q58, d6-q62, d7-q77, d7-q80` · reserve-only `d6-q66`. (`d1-q01, d2-q18, d2-q25, d2-q26, d2-q27, d3-q35, d3-q36, d4-q42` were reworked *and* already sampled.) **All 22 reworked items seated on form-a are now in the sample.** This wave introduced **zero new capitalised tokens**, so there is no named-entity risk tier here; the risk to judge is the overclaim-intensifier class — `d1-q10` A, `d4-q48` B, `d7-q77` C — and the closest co-correctness call, `d2-q12` B. **No cross-model column — Codex unauthenticated in both rounds** Unchanged at 37 at the 2026-08-20 final pass — no content pass landed after the re-pin. |
+| Deep-read sample — **extended 22 → 37 items** for the cue-rework wave (0 SM + 10 random + all auto-flagged + **every reworked item**) | **PASS** | **S6 core (22).** Flagged & seated: `d1-q01, d1-q02, d1-q03, d1-q04, d2-q15, d2-q25, d2-q27, d3-q29, d3-q32, d3-q34, d3-q35, d3-q36, d4-q50, d6-q65, d6-q73` · random: `d1-q09, d2-q18, d2-q26, d4-q42, d5-q56, d6-q67, d7-q74`. **Added by the wave (15):** seated `d1-q07, d1-q10, d2-q12, d3-q31, d4-q45, d4-q48, d4-q49, d4-q51, d5-q53, d5-q57, d5-q58, d6-q62, d7-q77, d7-q80` · reserve-only `d6-q66`. (`d1-q01, d2-q18, d2-q25, d2-q26, d2-q27, d3-q35, d3-q36, d4-q42` were reworked *and* already sampled.) **All 22 reworked items seated on form-a are now in the sample.** This wave introduced **zero new capitalised tokens**, so there is no named-entity risk tier here; the risk to judge is the overclaim-intensifier class — `d1-q10` A, `d4-q48` B, `d7-q77` C — and the closest co-correctness call, `d2-q12` B. **Cross-model column now present** — Codex ran 2026-08-20, after this sign-off: form-a 60/60 agreement, 0 disagreements. It vouches for the **keys**, not for the co-correctness of the reworked distractors, which is what this sample is for (§Addendum A). Unchanged at 37 at the 2026-08-20 final pass — no content pass landed after the re-pin. |
 | README statements | **PASS** | Examiner finding: **OPEN** — `content/ccao-f/README.md` does not exist (owner: exam-author). Requires close-out or an explicit waiver below before PUBLISH — **CLOSED 2026-08-20.** `content/ccao-f/README.md` now exists (committed on `fix/cue-rework-wave`) and carries every section methodology/06 §readme-template requires: provenance and independence, prior art, NDA statement, non-affiliation with the named trademark holder, and the outbound licence pair (content CC BY 4.0 / code MIT). No `licensed_import` items exist in this bank, so the template's Licensed-content section is correctly absent. **Closed by the file, not waived** — any "OPEN" text earlier in this row predates it. |
 | Licences in/out | **PASS** | Examiner finding: PASS — repo `LICENSE` (MIT) + `LICENSE-CONTENT` (CC BY 4.0) outbound; no `licensed_import` items inbound. Beecham MIT repo is classification-only, no text reused |
 | format_coverage disclosure | **PASS** | Examiner finding: PASS — real exam is MC+MR only, so this is a **subset** disclosure (scenario_matching deliberately 0); MR shape/share and the 72% threshold both disclosed as house decisions / translation |
@@ -201,10 +201,43 @@ Both are stated here so a reader can see what a PUBLISH signature covers.
 
 **None.** Zero dimensions ≤2, zero open bounces, zero blind-solve misses in either round, every preflight row PASS. The README preflight item is **closed by the file**, not waived.
 
-Accepted-not-waived residuals: the 34 Gate-1-ratified `concept-convergence` warnings; clean-room finding **F-3** (the Artefact A doc quotes vendor stems as craft evidence — no vendor text reaches the bank); `d7-q75`, the bank's weakest item, which is **reserved off form-a** and therefore ships in the bank but is not served; and the absent cross-model column.
+Accepted-not-waived residuals: the 34 Gate-1-ratified `concept-convergence` warnings; clean-room finding **F-3** (the Artefact A doc quotes vendor stems as craft evidence — no vendor text reaches the bank); `d7-q75`, the bank's weakest item, which is **reserved off form-a** and therefore ships in the bank but is not served; and the absent cross-model column — **the last of which is now partly closed: the cross-solve ran 2026-08-20, after this sign-off, returning form-a 60/60 agreement with 0 disagreements (§Addendum A). It corroborates the keys and says nothing about the 36 distractors this wave argued up; `d7-q75` is reserve-only and was not solved at all.**
 
 ## Decision
 
 **PUBLISH.** Every preflight row is PASS on the re-pinned revision `dd5f1f6`; the S5b cue-only ceiling holds on both the bank and the served form under the corrected standard; the README preflight row is closed by the file; and the content UAT was reviewed with no findings logged.
 
 Signed: Oliver Lau, 2026-08-20 — instruction of record: "sign off and go ahead", given after reviewing `UAT/HUMAN-UAT-2026-08-19-new-exams.md`.
+
+---
+
+## Addendum A — cross-model column, recorded 2026-08-20 after the sign-off
+
+**This addendum adds evidence to the decision above. It does not change it.** The verdict, the
+checklist verdicts, the adjudications, the waivers and `manifest.status` are exactly as signed.
+
+The `codex` CLI was authenticated on 2026-08-20 (ChatGPT auth, no per-request billing), so the S5
+advisory cross-solve recorded as `advisory_skipped` throughout this package's history has now run.
+`node tools/codex-crosssolve.mjs ccao-f` served form-a keyless to a different model family and diffed
+the answers against the key: **60/60 agreement, 0 disagreements, 0 unparsed**
+(`eval/codex-solve.json` @ `d9da399`; wave-wide 465/465 across the eight exams).
+[Methodology/05 §codex](../../../methodology/05-eval-rubric.md#codex) makes a disagreement the only
+thing that acts — it adds the item to the Gate 2 sample. There were none, so nothing was added and
+nothing was re-opened.
+
+**What it strengthens.** The decision above was taken with the cross-model column absent and the
+human deep read named as the compensating control. An independent model family has now reached the
+same key on every served item, so the **key-correctness** half of that control is corroborated
+rather than resting on a same-family blind solve.
+
+**What it does not touch.** It says nothing about co-correctness, distractor plausibility or pitch:
+the cross-solver reports its best option and was never asked whether a second option also holds.
+This wave rewrote 36 distractor strings across 22 items specifically to be *more* plausible, and that is precisely the risk a key-agreeing cross-solve is blind to. The deep read remains the sole control there. And by the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) makes about the blind solve, agreement
+between two capable models could in principle mean both read the same surface rather than the
+subject; it reads as evidence about the subject here only because the surface is measured
+separately and is at chance (S5b form-a **26.67% ≤ 30.71%**). The 21 reserve-only items were
+not solved at all.
+
+Full reasoning: [`eval-report.md`](eval-report.md) §Cross-model column. The human-only questions
+this leaves open across the wave: [`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

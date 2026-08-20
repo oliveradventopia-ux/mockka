@@ -1,32 +1,52 @@
 {
   "$comment": "S5 advisory cross-solve. A different model family sits the keyless exam; disagreements go to the Gate 2 sample. Advisory only — never blocks a gate.",
-  "slug": "gcp-cdl",
+  "slug": "ccar-p",
   "scope": "form",
   "solver": "codex-cli (ChatGPT auth)",
-  "items": 60,
-  "answered": 60,
-  "agreed": 60,
+  "items": 63,
+  "answered": 63,
+  "agreed": 63,
   "disagreed": 0,
   "unparsed": 0,
   "agreement_rate": 1,
   "disagreements": [],
   "results": [
     {
-      "id": "gcp-cdl-d1-03",
+      "id": "1.01",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "1.03",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "single augmented LLM call",
+        "s2": "fixed workflow",
+        "s3": "autonomous agent",
+        "s4": "multi-agent system",
+        "s5": "single augmented LLM call"
+      },
+      "raw": "s1=3, s2=2, s3=4, s4=1, s5=3",
+      "agrees": true
+    },
+    {
+      "id": "1.04",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d1-04",
+      "id": "1.05",
       "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
+      "codex": "D",
+      "raw": "D",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d1-06",
+      "id": "1.06",
       "type": "multiple_response",
       "codex": [
         "A",
@@ -36,383 +56,94 @@
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d1-07",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d1-09",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d1-10",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d1-11",
+      "id": "1.07",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d1-13",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d1-14",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d1-15",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-02",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-04",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-05",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-06",
-      "type": "multiple_response",
-      "codex": [
-        "B",
-        "E"
-      ],
-      "raw": "B,E",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-07",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-08",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-09",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-11",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-12",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-13",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d2-15",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-01",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-02",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-03",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-05",
+      "id": "1.10",
       "type": "multiple_response",
       "codex": [
         "A",
-        "D"
+        "C"
       ],
-      "raw": "A,D",
+      "raw": "A,C",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d3-07",
+      "id": "1.11",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d3-08",
+      "id": "1.12",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d3-09",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-10",
+      "id": "1.13",
       "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d3-11",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-13",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d3-15",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d4-01",
+      "id": "1.15",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d4-02",
+      "id": "2.01",
       "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
+      "codex": "D",
+      "raw": "D",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d4-03",
+      "id": "2.02",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d4-06",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d4-07",
+      "id": "2.04",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d4-08",
-      "type": "multiple_response",
-      "codex": [
-        "C",
-        "E"
-      ],
-      "raw": "C,E",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d4-09",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d4-10",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d4-11",
+      "id": "2.05",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d4-13",
+      "id": "2.07",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d4-14",
+      "id": "2.08",
       "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d5-01",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-02",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-03",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-04",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-07",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-08",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-09",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-12",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-13",
-      "type": "multiple_response",
-      "codex": [
-        "B",
-        "D"
-      ],
-      "raw": "B,D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-14",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d5-15",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d6-01",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "gcp-cdl-d6-02",
+      "id": "2.10",
       "type": "multiple_response",
       "codex": [
         "A",
@@ -422,31 +153,375 @@
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d6-03",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
+      "id": "2.11",
+      "type": "multiple_response",
+      "codex": [
+        "B",
+        "E"
+      ],
+      "raw": "B,E",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d6-05",
+      "id": "3.01",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "E"
+      ],
+      "raw": "C,E",
+      "agrees": true
+    },
+    {
+      "id": "3.02",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d6-06",
+      "id": "3.04",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
       "agrees": true
     },
     {
-      "id": "gcp-cdl-d6-07",
+      "id": "3.05",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.06",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "3.07",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.08",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "3.09",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "MCP server",
+        "s2": "direct API integration",
+        "s3": "agent-to-agent protocol",
+        "s4": "MCP server",
+        "s5": "direct API integration"
+      },
+      "raw": "s1=3, s2=2, s3=1, s4=3, s5=2",
+      "agrees": true
+    },
+    {
+      "id": "3.10",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "D"
+      ],
+      "raw": "C,D",
+      "agrees": true
+    },
+    {
+      "id": "3.13",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "3.15",
+      "type": "multiple_response",
+      "codex": [
+        "D",
+        "E"
+      ],
+      "raw": "D,E",
+      "agrees": true
+    },
+    {
+      "id": "3.16",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "4.01",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "4.02",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "E"
+      ],
+      "raw": "A,E",
+      "agrees": true
+    },
+    {
+      "id": "4.03",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "golden-dataset evaluation",
+        "s2": "LLM-as-judge with human calibration",
+        "s3": "canary release with A/B comparison",
+        "s4": "adversarial test suite",
+        "s5": "golden-dataset evaluation"
+      },
+      "raw": "s1=4, s2=3, s3=1, s4=2, s5=4",
+      "agrees": true
+    },
+    {
+      "id": "4.04",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "4.05",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "4.06",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "4.07",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "4.10",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "4.11",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "B"
+      ],
+      "raw": "A,B",
+      "agrees": true
+    },
+    {
+      "id": "4.12",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "5.01",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "5.02",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "5.03",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "5.05",
+      "type": "multiple_response",
+      "codex": [
+        "B",
+        "D"
+      ],
+      "raw": "B,D",
+      "agrees": true
+    },
+    {
+      "id": "5.06",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "preventative guardrail",
+        "s2": "human-in-the-loop review",
+        "s3": "monitoring and audit",
+        "s4": "preventative guardrail",
+        "s5": "monitoring and audit"
+      },
+      "raw": "s1=2, s2=1, s3=3, s4=2, s5=3",
+      "agrees": true
+    },
+    {
+      "id": "5.07",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "5.09",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "5.10",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "5.12",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "D"
+      ],
+      "raw": "A,D",
+      "agrees": true
+    },
+    {
+      "id": "6.01",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "discovery",
+        "s2": "design",
+        "s3": "handoff",
+        "s4": "monitoring and iteration",
+        "s5": "discovery"
+      },
+      "raw": "s1=3, s2=1, s3=4, s4=2, s5=3",
+      "agrees": true
+    },
+    {
+      "id": "6.02",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "6.04",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "6.05",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "6.06",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "6.08",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "B"
+      ],
+      "raw": "A,B",
+      "agrees": true
+    },
+    {
+      "id": "6.09",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "6.10",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "6.11",
+      "type": "multiple_response",
+      "codex": [
+        "B",
+        "C"
+      ],
+      "raw": "B,C",
+      "agrees": true
+    },
+    {
+      "id": "7.02",
+      "type": "multiple_response",
+      "codex": [
+        "D",
+        "E"
+      ],
+      "raw": "D,E",
+      "agrees": true
+    },
+    {
+      "id": "7.03",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "7.04",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "7.06",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
       "agrees": true
     }
   ]

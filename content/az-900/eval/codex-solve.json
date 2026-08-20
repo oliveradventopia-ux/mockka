@@ -1,6 +1,6 @@
 {
   "$comment": "S5 advisory cross-solve. A different model family sits the keyless exam; disagreements go to the Gate 2 sample. Advisory only — never blocks a gate.",
-  "slug": "clf-c02",
+  "slug": "az-900",
   "scope": "form",
   "solver": "codex-cli (ChatGPT auth)",
   "items": 50,
@@ -12,34 +12,55 @@
   "disagreements": [],
   "results": [
     {
+      "id": "1.01",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
       "id": "1.02",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "D"
+      ],
+      "raw": "C,D",
+      "agrees": true
+    },
+    {
+      "id": "1.03",
       "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
-      "id": "1.03",
+      "id": "1.04",
       "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
+      "codex": "C",
+      "raw": "C",
       "agrees": true
     },
     {
       "id": "1.05",
-      "type": "multiple_response",
-      "codex": [
-        "B",
-        "D"
-      ],
-      "raw": "B,D",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
       "agrees": true
     },
     {
       "id": "1.06",
       "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "1.07",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
       "agrees": true
     },
     {
@@ -51,16 +72,6 @@
     },
     {
       "id": "1.09",
-      "type": "multiple_response",
-      "codex": [
-        "A",
-        "C"
-      ],
-      "raw": "A,C",
-      "agrees": true
-    },
-    {
-      "id": "1.10",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
@@ -74,100 +85,102 @@
       "agrees": true
     },
     {
-      "id": "1.13",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "1.14",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
       "id": "1.15",
       "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
+      "codex": "A",
+      "raw": "A",
       "agrees": true
     },
     {
       "id": "1.16",
       "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "1.17",
+      "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
-      "id": "2.02",
-      "type": "multiple_response",
-      "codex": [
-        "A",
-        "D"
-      ],
-      "raw": "A,D",
+      "id": "1.18",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Software as a service (SaaS)",
+        "s2": "Infrastructure as a service (IaaS)",
+        "s3": "Platform as a service (PaaS)",
+        "s4": "Software as a service (SaaS)"
+      },
+      "raw": "s1=3, s2=2, s3=1, s4=3",
       "agrees": true
     },
     {
-      "id": "2.03",
+      "id": "2.01",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "2.04",
+      "id": "2.03",
       "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
-      "id": "2.06",
+      "id": "2.04",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
       "agrees": true
     },
     {
-      "id": "2.07",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "2.08",
+      "id": "2.05",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
       "agrees": true
     },
     {
-      "id": "2.09",
+      "id": "2.06",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "2.07",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "2.10",
+      "id": "2.08",
       "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "2.09",
+      "type": "multiple_response",
+      "codex": [
+        "D",
+        "E"
+      ],
+      "raw": "D,E",
       "agrees": true
     },
     {
       "id": "2.11",
-      "type": "multiple_response",
-      "codex": [
-        "B",
-        "E"
-      ],
-      "raw": "B,E",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
       "agrees": true
     },
     {
@@ -178,7 +191,62 @@
       "agrees": true
     },
     {
-      "id": "2.13",
+      "id": "2.14",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Azure Blob Storage",
+        "s2": "Azure Files",
+        "s3": "Azure Disk Storage",
+        "s4": "Azure Queue Storage",
+        "s5": "Azure Blob Storage"
+      },
+      "raw": "s1=2, s2=4, s3=3, s4=1, s5=2",
+      "agrees": true
+    },
+    {
+      "id": "2.15",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "2.16",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "2.17",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "2.20",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "2.22",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "2.23",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "2.24",
       "type": "multiple_response",
       "codex": [
         "C",
@@ -188,87 +256,66 @@
       "agrees": true
     },
     {
-      "id": "2.15",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "2.16",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "2.20",
+      "id": "2.25",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "2.21",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
       "id": "3.01",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "C"
+      ],
+      "raw": "A,C",
       "agrees": true
     },
     {
       "id": "3.03",
       "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
+      "codex": "B",
+      "raw": "B",
       "agrees": true
     },
     {
       "id": "3.04",
-      "type": "multiple_response",
-      "codex": [
-        "A",
-        "E"
-      ],
-      "raw": "A,E",
-      "agrees": true
-    },
-    {
-      "id": "3.05",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "3.06",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "3.07",
+      "id": "3.06",
       "type": "single_choice",
       "codex": "B",
       "raw": "B",
       "agrees": true
     },
     {
-      "id": "3.08",
+      "id": "3.07",
       "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
+      "id": "3.08",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
       "id": "3.09",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "3.10",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
@@ -276,23 +323,18 @@
     },
     {
       "id": "3.11",
-      "type": "multiple_response",
-      "codex": [
-        "B",
-        "C"
-      ],
-      "raw": "B,C",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Azure Policy",
+        "s2": "A resource lock",
+        "s3": "Azure role-based access control (RBAC)",
+        "s4": "Azure Policy"
+      },
+      "raw": "s1=2, s2=1, s3=3, s4=2",
       "agrees": true
     },
     {
-      "id": "3.12",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "3.13",
+      "id": "3.14",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
@@ -300,34 +342,6 @@
     },
     {
       "id": "3.15",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "3.16",
-      "type": "single_choice",
-      "codex": "A",
-      "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "3.17",
-      "type": "single_choice",
-      "codex": "C",
-      "raw": "C",
-      "agrees": true
-    },
-    {
-      "id": "3.18",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
-      "agrees": true
-    },
-    {
-      "id": "3.19",
       "type": "multiple_response",
       "codex": [
         "A",
@@ -337,55 +351,45 @@
       "agrees": true
     },
     {
-      "id": "3.20",
+      "id": "3.16",
       "type": "single_choice",
       "codex": "D",
       "raw": "D",
       "agrees": true
     },
     {
-      "id": "4.01",
+      "id": "3.17",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
       "agrees": true
     },
     {
-      "id": "4.02",
+      "id": "3.19",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.20",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.21",
       "type": "single_choice",
       "codex": "C",
       "raw": "C",
       "agrees": true
     },
     {
-      "id": "4.04",
-      "type": "single_choice",
-      "codex": "D",
-      "raw": "D",
-      "agrees": true
-    },
-    {
-      "id": "4.05",
+      "id": "3.22",
       "type": "single_choice",
       "codex": "A",
       "raw": "A",
-      "agrees": true
-    },
-    {
-      "id": "4.06",
-      "type": "multiple_response",
-      "codex": [
-        "C",
-        "E"
-      ],
-      "raw": "C,E",
-      "agrees": true
-    },
-    {
-      "id": "4.07",
-      "type": "single_choice",
-      "codex": "B",
-      "raw": "B",
       "agrees": true
     }
   ]

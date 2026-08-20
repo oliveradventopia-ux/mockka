@@ -1,20 +1,693 @@
 {
-  "$comment": "S5 Codex advisory cross-solve (methodology/05-eval-rubric.md #codex), sy0-701 round 1, 2026-08-18. Attempted once and skipped: the codex CLI is not on PATH, and the binary bundled with the VS Code ChatGPT extension reports 'Not logged in' and fails 401 Unauthorized on `codex exec`. Establishing auth needs an interactive `codex login` by Oliver; the examiner does not sign in or sign up (free-first rule, CLAUDE.md). Per #codex, a missing advisory instrument is recorded and not blocking: the Gate 2 sample for this exam carries NO cross-model signal, and derivation/eval-report.md and the Gate 2 checklist say so.",
-  "status": "advisory_skipped",
-  "round": 1,
-  "attempted_at": "2026-08-18",
-  "attempts": [
+  "$comment": "S5 advisory cross-solve. A different model family sits the keyless exam; disagreements go to the Gate 2 sample. Advisory only — never blocks a gate.",
+  "slug": "sy0-701",
+  "scope": "form",
+  "solver": "codex-cli (ChatGPT auth)",
+  "items": 90,
+  "answered": 90,
+  "agreed": 90,
+  "disagreed": 0,
+  "unparsed": 0,
+  "agreement_rate": 1,
+  "disagreements": [],
+  "results": [
     {
-      "binary": "~/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex",
-      "version": "codex-cli 0.148.0-alpha.9",
-      "login_status": "Not logged in",
-      "exec_result": "401 Unauthorized: Missing bearer or basic authentication in header (wss and https transports, 5 reconnect attempts)"
+      "id": "d1-q01",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d1-q02",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d1-q04",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d1-q05",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d1-q06",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d1-q07",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d1-q08",
+      "type": "multiple_response",
+      "codex": [
+        "B",
+        "E"
+      ],
+      "raw": "B,E",
+      "agrees": true
+    },
+    {
+      "id": "d1-q10",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d1-q12",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d1-q14",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d1-q15",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d2-q01",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d2-q02",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d2-q05",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d2-q06",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d2-q09",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d2-q10",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d2-q11",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d2-q13",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d2-q15",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d2-q16",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d2-q18",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d2-q19",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d2-q20",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d2-q21",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d2-q22",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d2-q23",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d2-q24",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d2-q25",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Account-state indicator",
+        "s2": "Resource indicator",
+        "s3": "Logging indicator",
+        "s4": "Account-state indicator",
+        "s5": "Logging indicator"
+      },
+      "raw": "s1=2, s2=1, s3=3, s4=2, s5=3",
+      "agrees": true
+    },
+    {
+      "id": "d2-q26",
+      "type": "multiple_response",
+      "codex": [
+        "B",
+        "C",
+        "E"
+      ],
+      "raw": "B,C,E",
+      "agrees": true
+    },
+    {
+      "id": "d2-q27",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "D"
+      ],
+      "raw": "A,D",
+      "agrees": true
+    },
+    {
+      "id": "d3-q01",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d3-q02",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d3-q04",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d3-q05",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d3-q06",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d3-q07",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d3-q10",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d3-q11",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d3-q12",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d3-q13",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d3-q14",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d3-q15",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d3-q17",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d3-q19",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d3-q21",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d3-q22",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "E"
+      ],
+      "raw": "C,E",
+      "agrees": true
+    },
+    {
+      "id": "d4-q01",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d4-q03",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q04",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "C"
+      ],
+      "raw": "A,C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q06",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d4-q07",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d4-q08",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q09",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d4-q10",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d4-q11",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d4-q14",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d4-q15",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q16",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d4-q17",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d4-q18",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d4-q19",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q20",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "C",
+        "E"
+      ],
+      "raw": "A,C,E",
+      "agrees": true
+    },
+    {
+      "id": "d4-q23",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d4-q24",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q25",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d4-q26",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "C"
+      ],
+      "raw": "A,C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q27",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d4-q29",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d4-q31",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d4-q32",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d4-q33",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Firewall logs",
+        "s2": "OS-specific security logs",
+        "s3": "Application logs",
+        "s4": "Endpoint logs",
+        "s5": "Firewall logs"
+      },
+      "raw": "s1=1, s2=4, s3=2, s4=3, s5=1",
+      "agrees": true
+    },
+    {
+      "id": "d5-q01",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d5-q06",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d5-q07",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d5-q08",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d5-q09",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d5-q10",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d5-q11",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d5-q12",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "E"
+      ],
+      "raw": "C,E",
+      "agrees": true
+    },
+    {
+      "id": "d5-q13",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d5-q14",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Service-level agreement (SLA)",
+        "s2": "Non-disclosure agreement (NDA)",
+        "s3": "Memorandum of understanding (MOU)",
+        "s4": "Statement of work (SOW)",
+        "s5": "Service-level agreement (SLA)"
+      },
+      "raw": "s1=1, s2=3, s3=2, s4=4, s5=1",
+      "agrees": true
+    },
+    {
+      "id": "d5-q15",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d5-q17",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d5-q18",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "d5-q19",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d5-q20",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "d5-q21",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "d5-q23",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "d5-q24",
+      "type": "multiple_response",
+      "codex": [
+        "B",
+        "C",
+        "E"
+      ],
+      "raw": "B,C,E",
+      "agrees": true
     }
-  ],
-  "path_checks": [
-    "`which codex` -> not found",
-    "bundled binaries present under ~/.vscode/extensions/openai.chatgpt-* (4 versions); newest and oldest both unauthenticated"
-  ],
-  "unblock": "Oliver runs `codex login` once in an interactive terminal; S5 can then be re-run for the cross-model matrix without re-authoring anything.",
-  "items": []
+  ]
 }

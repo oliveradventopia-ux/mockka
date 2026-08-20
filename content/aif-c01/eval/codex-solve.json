@@ -1,25 +1,404 @@
 {
-  "$comment": "S5 Codex advisory cross-solve record (methodology/05-eval-rubric.md #codex). exam-examiner, 2026-08-16. Covers round 1 (attempts 1-2) and round 2 (attempt 3): the instrument remains unavailable in both rounds.",
-  "status": "advisory_skipped",
-  "attempts": [
+  "$comment": "S5 advisory cross-solve. A different model family sits the keyless exam; disagreements go to the Gate 2 sample. Advisory only — never blocks a gate.",
+  "slug": "aif-c01",
+  "scope": "form",
+  "solver": "codex-cli (ChatGPT auth)",
+  "items": 50,
+  "answered": 50,
+  "agreed": 50,
+  "disagreed": 0,
+  "unparsed": 0,
+  "agreement_rate": 1,
+  "disagreements": [],
+  "results": [
     {
-      "n": 1,
-      "action": "command -v codex (login shell and interactive shell)",
-      "result": "codex not on PATH; no binary in /opt/homebrew/bin, ~/.local/bin, or npm globals"
+      "id": "1.01",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
     },
     {
-      "n": 2,
-      "action": "located bundled binary /Users/oliverlau/.vscode/extensions/openai.chatgpt-26.810.52044-darwin-arm64/bin/macos-aarch64/codex (codex-cli 0.148.0-alpha.9); ran `codex login status` then `codex exec --skip-git-repo-check -s read-only` probe",
-      "result": "login status: Not logged in; exec probe failed: 401 Unauthorized (Missing bearer or basic authentication) against api.openai.com/v1/responses after 5 reconnect attempts"
+      "id": "1.02",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
     },
     {
-      "n": 3,
-      "round": 2,
-      "action": "round-2 re-attempt (2026-08-16, post-rework re-eval): same bundled binary openai.chatgpt-26.810.52044 codex-cli 0.148.0-alpha.9; `codex login status` then one `codex exec --skip-git-repo-check` probe",
-      "result": "login status: Not logged in; exec probe failed: 401 Unauthorized against api.openai.com/v1/responses after 5 reconnect attempts — unchanged since round 1"
+      "id": "1.06",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "C"
+      ],
+      "raw": "A,C",
+      "agrees": true
+    },
+    {
+      "id": "1.07",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "1.08",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Amazon Transcribe",
+        "s2": "Amazon Polly",
+        "s3": "Amazon Comprehend",
+        "s4": "Amazon Translate",
+        "s5": "Amazon Transcribe"
+      },
+      "raw": "s1=4, s2=2, s3=3, s4=1, s5=4",
+      "agrees": true
+    },
+    {
+      "id": "1.09",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "1.10",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "1.12",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "1.13",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "1.14",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "2.01",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "2.03",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "2.04",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Transformer-based large language model",
+        "s2": "Diffusion model",
+        "s3": "Multi-modal model",
+        "s4": "Transformer-based large language model",
+        "s5": "Diffusion model"
+      },
+      "raw": "s1=1, s2=3, s3=2, s4=1, s5=3",
+      "agrees": true
+    },
+    {
+      "id": "2.05",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "2.07",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "2.08",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "2.09",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "E"
+      ],
+      "raw": "A,E",
+      "agrees": true
+    },
+    {
+      "id": "2.11",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "2.12",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "2.13",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "2.15",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "2.16",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "B"
+      ],
+      "raw": "A,B",
+      "agrees": true
+    },
+    {
+      "id": "3.02",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.03",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "3.04",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "3.05",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.06",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "3.07",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "3.09",
+      "type": "scenario_matching",
+      "codex": {
+        "s1": "Zero-shot prompting",
+        "s2": "Few-shot prompting",
+        "s3": "Chain-of-thought prompting",
+        "s4": "Prompt template",
+        "s5": "Zero-shot prompting"
+      },
+      "raw": "s1=3, s2=1, s3=4, s4=2, s5=3",
+      "agrees": true
+    },
+    {
+      "id": "3.10",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "3.12",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "3.13",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "3.14",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "D"
+      ],
+      "raw": "C,D",
+      "agrees": true
+    },
+    {
+      "id": "3.16",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "3.17",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "3.19",
+      "type": "multiple_response",
+      "codex": [
+        "C",
+        "E"
+      ],
+      "raw": "C,E",
+      "agrees": true
+    },
+    {
+      "id": "4.01",
+      "type": "multiple_response",
+      "codex": [
+        "D",
+        "E"
+      ],
+      "raw": "D,E",
+      "agrees": true
+    },
+    {
+      "id": "4.02",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "4.04",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "4.05",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "4.06",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "4.07",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "4.08",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "5.01",
+      "type": "single_choice",
+      "codex": "D",
+      "raw": "D",
+      "agrees": true
+    },
+    {
+      "id": "5.02",
+      "type": "multiple_response",
+      "codex": [
+        "A",
+        "D"
+      ],
+      "raw": "A,D",
+      "agrees": true
+    },
+    {
+      "id": "5.03",
+      "type": "single_choice",
+      "codex": "B",
+      "raw": "B",
+      "agrees": true
+    },
+    {
+      "id": "5.04",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
+    },
+    {
+      "id": "5.06",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "5.08",
+      "type": "single_choice",
+      "codex": "C",
+      "raw": "C",
+      "agrees": true
+    },
+    {
+      "id": "5.09",
+      "type": "single_choice",
+      "codex": "A",
+      "raw": "A",
+      "agrees": true
     }
-  ],
-  "reason": "No Codex CLI authentication is available to this session and establishing it would require an interactive OAuth login / account credential outside the examiner's authority (project free-first rule: no account signups without Oliver's approval).",
-  "consequence": "Per methodology/05 #codex, a missing advisory instrument is noted, not blocking: S5 proceeds on the Claude blind solve alone, no 3-way disagreement matrix exists for this round, and the Gate 2 human sample was assembled WITHOUT the cross-model signal. Because author and examiner share Claude weights, a convergent-blind-spot miskey (both preferring the same wrong reading) cannot be excluded by this round's 67/67 blind-solve agreement; the Gate 2 deep-read sample is the compensating control and should weight adjudication-grade scrutiny accordingly.",
-  "retry_path": "If Oliver authenticates the Codex CLI (codex login, or ChatGPT sign-in in the VS Code extension exposing CLI auth), re-run the cross-solve on the same keyless form before Gate 2 sign-off; the keyless-form generation command is recorded in derivation/eval-report.md."
+  ]
 }

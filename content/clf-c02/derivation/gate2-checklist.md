@@ -28,7 +28,7 @@ reserve-only concepts. Full method + every hand-adjustment is in `selection.json
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` §Registered sources: 5 sources (2 `public_blueprint`, 3 `public_practice_set`), each row carrying type, author, URL, `date_accessed` 2026-08-16, licence/permission basis and usage constraint; manifest `provenance.sources[]` matches. Machine checks `provenance-sources`, `concept-source-registry`, `source-derivation-link` green. Two registry facts a human should re-read: `aws-official-question-set` is registered **content-never-accessed** (account wall) and carries zero inventory weight; `tss-mckenzie` + `tss-declute` are recorded as **one voice, not two** (same item pool) and priority was computed on that basis |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree (68 concepts, 68 items, 1:1). Spot-check for your own re-run: `1.03`→C-003→{clf-blueprint, tss-declute, tss-mckenzie}, `2.16`→C-032→{clf-blueprint, tss-mckenzie}, `3.15`→C-052→{clf-blueprint, tss-declute, tss-mckenzie}, `4.06`→C-066→{clf-blueprint, tss-mckenzie} — each resolves to a registry row and a `derivation/source-*.md` distillation |
 | 3 | Validator green | **PASS** | `pnpm validate clf-c02` → **30 checks, 0 errors, 0 warnings**, run on this tree with `selection.json` built and `status: in_review`. The two selection failures the S5 report predicted (`selection-shape`, `selection-format-mix`) are closed by this form. No warn-level report to disposition |
-| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **68/68**, 67 high-confidence + 1 medium (`1.04`), zero misses → zero adjudications open), `eval/judge-scores.json` (r2: **zero dimensions ≤2**, 10 items carrying a 3, `bounces_this_round: 0`, `bounce_resolution` records `1.10`), `eval/overlap-report.md` (r1 + r2 delta: 15 shared 8-gram shingles, all in rationales, none in a stem or option; `1.10` matches zero), `eval/codex-solve.json` (**advisory_skipped**, re-probed — see the cross-model note below). Round-1 artifacts preserved as `eval/*-r1.json`. Bounce cap (2) never approached: one item bounced once, cleared |
+| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **68/68**, 67 high-confidence + 1 medium (`1.04`), zero misses → zero adjudications open), `eval/judge-scores.json` (r2: **zero dimensions ≤2**, 10 items carrying a 3, `bounces_this_round: 0`, `bounce_resolution` records `1.10`), `eval/overlap-report.md` (r1 + r2 delta: 15 shared 8-gram shingles, all in rationales, none in a stem or option; `1.10` matches zero), `eval/codex-solve.json` (**advisory_skipped**, re-probed — see the cross-model note below). **SINCE RUN — 2026-08-20, after the sign-off: form-a 50/50 agreement with the key, 0 disagreements, 0 unparsed (`eval/codex-solve.json` @ `d9da399`). Advisory, so nothing on this row moves; see §Cross-model column for what the agreement licenses (keys) and what it does not (co-correctness, plausibility, pitch).** Round-1 artifacts preserved as `eval/*-r1.json`. Bounce cap (2) never approached: one item bounced once, cleared |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/clf-c02/README.md` does not exist. Required before the `published` flip (template: methodology/06 §readme-template; worked reference now exists at `content/aif-c01/README.md`). The manifest's machine-checked `nda_statement` and the intro `disclaimer` are both present and complete, but the README's provenance / prior-art / non-affiliation / licence sections are human-facing and missing. **Owner: exam-author** — the examiner does not author package content beyond its eval/selection surface. Does not block `in_review` |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0) exist at root; the package-level statement folds into item 5. Inbound: **zero `licensed_import` items** in this bank — every item is originally authored, all three practice sources were used classification-only under the clean-room rule, and `licensed-import-license` is green with nothing to discharge |
 | 7 | `format_coverage` disclosure present where required | **PASS** | The Artefact A format analysis (`derivation/sources.md` §Format profile) finds CLF-C02 uses exactly two item types, both 1:1 on Mockka formats — the real exam's formats are a **strict subset**, so the manifest's `format_coverage` states 100% coverage rather than an approximation, plus the two fidelity caveats it must not hide: MR items wider than choose-2-of-5 are permitted by the blueprint but uncalibrated by the corpus (80/80 observed items are 2-of-5), and the 18% MR share is an authoring judgment inside a 14–30% source band, not a measurement. `scenario_matching` is set to 0 in every domain and must never be used for this exam |
@@ -86,6 +86,11 @@ so if you want a 23rd item it is that one.
 **10 random (deterministic rule, documented: seated form-a ids sorted, every 5th starting at
 index 0; when a pick is already in the flagged list, take the next unsampled seated id):**
 `1.02`, `1.11`, `1.15`, `2.07`, `2.11`, `2.20`, `3.05`, `3.12`, `3.17`, `4.02`.
+
+> **SUPERSEDED 2026-08-20 — the instrument ran.** The paragraph below is the accurate record of
+> what was true at the time. The `codex` CLI was authenticated on 2026-08-20 and the cross-solve
+> returned **50/50 agreement, 0 disagreements, 0 unparsed** on form-a. See §Cross-model column at
+> the end of this sheet for the result and, more importantly, for what it does and does not license.
 
 **Cross-model signal: ABSENT — the single largest residual risk in this eval.**
 `eval/codex-solve.json` records `advisory_skipped` in **both** S5 rounds and re-probed in
@@ -197,4 +202,32 @@ The two corrections to the instrument — the ceiling now computed by the machin
 
 - **2 `named-entity-parity` warnings** (bank 41%, form 43%) — **untouched by the length work and still open.** The option naming the most proper-noun AWS services is the key more often than chance. Closing this needs real sibling service names written into distractors, which is authoring work in a separate lane, not an examiner edit. It is a warn, not an error, and the combined S5b consequence is inside the ceiling on both scopes.
 - **stem-echo**, uninstrumented: 36.1% bank / 35.7% form against 25% chance.
-- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.
+- **The cross-model eval column now exists** — `advisory_skipped` in every S5 round of this package, but the Codex CLI was authenticated on 2026-08-20 and the run landed: served form, **50/50 agreement, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Advisory by design; it did not block then and does not license anything now. It discharges the **key-correctness** half of the convergent-blind-spot worry and leaves the **co-correctness** half fully open — the deep read is still the only control there, and 18 reserve-only items were not solved at all. §Cross-model column below has the reasoning.
+
+## Cross-model column — arrived 2026-08-20, after the sign-off
+
+The `codex` CLI was authenticated on 2026-08-20 and `node tools/codex-crosssolve.mjs clf-c02` ran the
+S5 [§codex](../../../methodology/05-eval-rubric.md#codex) advisory cross-solve that every round of
+this package had recorded as `advisory_skipped`: **form-a, 50 items, 50/50 agreement with the
+answer key, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Wave-wide: 465/465 across the
+eight exams.
+
+**It arrived after the sign-off and changes nothing on this sheet.** Codex results are advisory and
+never blocking; their only enforcement is that a disagreement joins the Gate 2 sample, and there
+were none — so the sample, the verdicts and `manifest.status` all stand exactly as recorded.
+
+**Read it precisely.**
+
+| Now carried by evidence | Still carried only by the human deep read |
+|---|---|
+| The **answer keys** are defensible to a solver that did not write them and never saw the key. The convergent author/examiner misreading §codex exists to catch did not fire on any served item | **Co-correctness** (dim 1) of 12 distractor strings on 12 items the wave argued *up*; **distractor plausibility** (dim 2); **difficulty pitch** (dim 5). The cross-solver reports its best option and was never asked whether a second one also works |
+| | The 18 reserve-only bank items — out of scope of a form-scope run |
+
+Agreement is not clearance. By the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) uses to refuse a 100% blind solve as
+proof of unexploitability, two capable models agreeing could mean both read the same surface. What
+makes this agreement meaningful rather than circular is that the surface is measured separately and
+is at chance — S5b blind **26.00% on form-a against a 30.14% ceiling**. The pair is the finding.
+
+The item-level questions this leaves for Oliver are collected in
+[`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

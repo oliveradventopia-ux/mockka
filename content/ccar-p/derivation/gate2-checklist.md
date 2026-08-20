@@ -20,7 +20,7 @@ Owner: exam-examiner. **Decision authority is Oliver's** — nothing here flips
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` registers all 3 sources with type + licence basis + derivation artefact. Machine: `provenance-sources`, `concept-source-registry`, `source-derivation-link` all `[pass]`. **Examiner note:** registry rows carry type/licence/artefact but **not** per-row author, URL and date-accessed — the registry-field completeness half of item 1 is partial. Non-blocking for `in_review`; see Residuals. |
 | 2 | Every concept source-attributed | **PASS** | The join chain resolves for all 85 items: question → `primary_concept` → `concept.sources[]` → registry → derivation doc. `concept-source-registry` + `source-derivation-link` `[pass]` on this exact tree. 0 licensed imports in the bank. |
 | 3 | Validator green | **PASS** | `pnpm validate ccar-p` — 37 checks, **0 errors**, 31 warnings, PASS. All 31 warnings read and dispositioned below. |
-| 4 | Eval artifacts present, thresholds met, S5b ceilings hold | **PASS** | All three artifacts exist for this bank revision. No dimension ≤2 (bounces 0). Every confident miss adjudicated (there are none — 85/85). Bounce cap respected (0 of 2 used). Gate 2 sample assembled (22 items). S5b: bank blind 22.35% ≤ 26.78% and k_req 0.678 ≥ 0.585; form-a blind 23.81% ≤ 26.60% and k_req 0.672 ≥ 0.585. Codex matrix absent — recorded as advisory-skipped in `blind-solve.json` and `eval-report.md` §2. |
+| 4 | Eval artifacts present, thresholds met, S5b ceilings hold | **PASS** | All three artifacts exist for this bank revision. No dimension ≤2 (bounces 0). Every confident miss adjudicated (there are none — 85/85). Bounce cap respected (0 of 2 used). Gate 2 sample assembled (22 items). S5b: bank blind 22.35% ≤ 26.78% and k_req 0.678 ≥ 0.585; form-a blind 23.81% ≤ 26.60% and k_req 0.672 ≥ 0.585. Codex matrix absent at S6 — recorded as advisory-skipped in `blind-solve.json` and `eval-report.md` §2. **SINCE RUN — 2026-08-20, after the sign-off: form-a 63/63 agreement with the key, 0 disagreements, 0 unparsed (`eval/codex-solve.json` @ `d9da399`). Advisory, so nothing on this row moves; see §Cross-model column for what the agreement licenses (keys) and what it does not (co-correctness, plausibility, pitch).** |
 | 5 | Per-exam README statements | **OPEN** | `content/ccar-p/README.md` **does not exist**. The five required statements (provenance, independence, NDA, non-affiliation, licence) are present in substance across `manifest.intro.disclaimer`, `manifest.provenance.nda_statement` and `derivation/sources.md`, but not in the required per-exam README form. Owner: **exam-author** (L-0022; `content/aif-c01/README.md` is the worked example). **Blocks the `published` flip only** — not `in_review`. |
 | 6 | Licences recorded both directions | **PASS** | Outbound: `LICENSE-CONTENT` (CC BY 4.0) + `LICENSE` (MIT) at repo root; the per-exam restatement rides with item 5. Inbound: **n/a** — 0 `licensed_import` items; `licensed-import-license` `[pass]`. |
 | 7 | Intro page complete + `format_coverage` where required | **PASS** | `manifest.intro` present with all five fields; `intro-presence` `[pass]`. `format_coverage` **not required**: the Artefact A format analysis (`derivation/purcell-distillation.md` §Format mix observed) records only the three supported formats — 44 single_choice / 14 multiple_response / 5 scenario_matching — so the real profile does not exceed what the engine serves. |
@@ -74,10 +74,16 @@ None of the 31 is error-tier; the validator is green at 0 errors.
 
 ## Residual risks Oliver should see before signing
 
+> **SUPERSEDED 2026-08-20 — the instrument ran.** The paragraph below is the accurate record of
+> what was true at the time. The `codex` CLI was authenticated on 2026-08-20 and the cross-solve
+> returned **63/63 agreement, 0 disagreements, 0 unparsed** on form-a. See §Cross-model column at
+> the end of this sheet for the result and, more importantly, for what it does and does not license.
+
 1. **No cross-model check exists for this round.** `codex` is unauthenticated on this machine, so
    the convergent-miss detector — the protocol's strongest miskey signal — did not run. A 100%
    single-family blind solve is exactly the situation that signal exists to audit. If this matters
    to you, `codex login` then re-run the cross-solve against the same keyless form before signing.
+   **Done 2026-08-20, after the sign-off: 63/63 agreement, 0 disagreements. See §Cross-model column.**
 2. **S5b headroom is real but modest.** form-a blind 23.81% against a 26.60% ceiling — about 1.8
    items of slack. Any content or membership change to this bank should re-run
    `node tools/exploit-scan.mjs ccar-p` **before** it lands.
@@ -92,3 +98,31 @@ None of the 31 is error-tier; the validator is green at 0 errors.
 5. **The trim wave is one round old and unreviewed by a human.** 69 keyed options were shortened
    by a machine-assisted pass. S5 found no damage beyond 5.11, but the deep-read sample is
    weighted toward the items that pass judged closest.
+
+## Cross-model column — arrived 2026-08-20, after the sign-off
+
+The `codex` CLI was authenticated on 2026-08-20 and `node tools/codex-crosssolve.mjs ccar-p` ran the
+S5 [§codex](../../../methodology/05-eval-rubric.md#codex) advisory cross-solve that every round of
+this package had recorded as `advisory_skipped`: **form-a, 63 items, 63/63 agreement with the
+answer key, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Wave-wide: 465/465 across the
+eight exams.
+
+**It arrived after the sign-off and changes nothing on this sheet.** Codex results are advisory and
+never blocking; their only enforcement is that a disagreement joins the Gate 2 sample, and there
+were none — so the sample, the verdicts and `manifest.status` all stand exactly as recorded.
+
+**Read it precisely.**
+
+| Now carried by evidence | Still carried only by the human deep read |
+|---|---|
+| The **answer keys** are defensible to a solver that did not write them and never saw the key. The convergent author/examiner misreading §codex exists to catch did not fire on any served item | **Co-correctness** (dim 1) of nothing (this exam was not in the wave) the wave argued *up*; **distractor plausibility** (dim 2); **difficulty pitch** (dim 5). The cross-solver reports its best option and was never asked whether a second one also works |
+| | The 22 reserve-only bank items — out of scope of a form-scope run |
+
+Agreement is not clearance. By the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) uses to refuse a 100% blind solve as
+proof of unexploitability, two capable models agreeing could mean both read the same surface. What
+makes this agreement meaningful rather than circular is that the surface is measured separately and
+is at chance — S5b blind **23.81% on form-a against a 26.60% ceiling**. The pair is the finding.
+
+The item-level questions this leaves for Oliver are collected in
+[`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

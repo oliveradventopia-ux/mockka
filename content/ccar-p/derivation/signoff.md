@@ -45,7 +45,7 @@ item id → decision (keep / rekey / waiver / replace) → one-line reason.)*
 | 7.03 | dim 5 = 3 — sharpest clipped-key/rider-bearing-distractor register gap | | |
 | 7.05 | dim 5 = 3 — both keys recoverable by rider elimination alone (bank only) | | |
 | — | blind-solve adjudications | **none** | blind solve was 85/85; the queue is empty |
-| — | cross-model disagreements | **none recorded** | Codex advisory-skipped — unauthenticated CLI, no matrix built this round |
+| — | cross-model disagreements | **none recorded** | Codex advisory-skipped at S5 — unauthenticated CLI, no matrix built this round. **Re-run 2026-08-20 after this sign-off: 63/63 agreement, 0 disagreements, so still none to add** (§Addendum A) |
 | — | bounce-cap survivors | **none** | 0 bounces; the cap was not touched |
 
 ### Decisions also requested at this gate
@@ -53,7 +53,7 @@ item id → decision (keep / rekey / waiver / replace) → one-line reason.)*
 | question | decision | reason |
 |---|---|---|
 | Seating residual: 6 of 8 unseated high-priority concepts have a free swap; the examiner left the recap-only seats in place. Confirm or overturn? | | |
-| Re-run the Codex cross-solve before publishing (requires `codex login`), or accept this round without a cross-model check? | | |
+| Re-run the Codex cross-solve before publishing (requires `codex login`), or accept this round without a cross-model check? | accepted without the check | Published 2026-08-19 with no cross-model column. **The check was then run on 2026-08-20 — 63/63 agreement, 0 disagreements — which corroborates the decision rather than changing it.** §Addendum A |
 | README (preflight item 5) + source-registry fields (item 1) — route to exam-author now, or accept `in_review` and close them before the published flip? | | |
 
 ### Waivers
@@ -93,3 +93,36 @@ Recorded at sign-off:
   named-entity-parity) are documented next-wave scope, not defects blocking this gate.
 - Form seating left as the examiner built it: 39 of 47 high-priority concepts seated; the six
   available swaps were not taken because they would displace recap-only concepts.
+
+---
+
+## Addendum A — cross-model column, recorded 2026-08-20 after the sign-off
+
+**This addendum adds evidence to the decision above. It does not change it.** The verdict, the
+checklist verdicts, the adjudications, the waivers and `manifest.status` are exactly as signed.
+
+The `codex` CLI was authenticated on 2026-08-20 (ChatGPT auth, no per-request billing), so the S5
+advisory cross-solve recorded as `advisory_skipped` throughout this package's history has now run.
+`node tools/codex-crosssolve.mjs ccar-p` served form-a keyless to a different model family and diffed
+the answers against the key: **63/63 agreement, 0 disagreements, 0 unparsed**
+(`eval/codex-solve.json` @ `d9da399`; wave-wide 465/465 across the eight exams).
+[Methodology/05 §codex](../../../methodology/05-eval-rubric.md#codex) makes a disagreement the only
+thing that acts — it adds the item to the Gate 2 sample. There were none, so nothing was added and
+nothing was re-opened.
+
+**What it strengthens.** The decision above was taken with the cross-model column absent and the
+human deep read named as the compensating control. An independent model family has now reached the
+same key on every served item, so the **key-correctness** half of that control is corroborated
+rather than resting on a same-family blind solve.
+
+**What it does not touch.** It says nothing about co-correctness, distractor plausibility or pitch:
+the cross-solver reports its best option and was never asked whether a second option also holds.
+This exam was not in the cue-rework wave, so no distractor here was argued up; the standing dimension-5 flags and item 5.11's accepted narrowing are untouched by this run. The deep read remains the sole control there. And by the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) makes about the blind solve, agreement
+between two capable models could in principle mean both read the same surface rather than the
+subject; it reads as evidence about the subject here only because the surface is measured
+separately and is at chance (S5b form-a **23.81% ≤ 26.60%**). The 22 reserve-only items were
+not solved at all.
+
+Full reasoning: [`eval-report.md`](eval-report.md) §Cross-model column. The human-only questions
+this leaves open across the wave: [`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

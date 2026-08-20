@@ -100,8 +100,14 @@ The author and the judge share Claude weights, so a convergent blind spot — au
 both preferring the same wrong reading — is invisible to a single-family eval. The cross-model
 check (plan Decision 9):
 
-1. Feed the **same keyless form** to the `codex` CLI (the `/codex` skill wraps it; see the
-   project brief's second-opinions section) and collect its answers.
+1. Feed the **same keyless form** to the `codex` CLI and collect its answers. **The instrument
+   exists and is runnable: `node tools/codex-crosssolve.mjs <slug>` [`--batch N`] [`--bank`].**
+   It renders each item stem-and-options only — no key, no rationale, no pattern tags, no concept
+   metadata — batches them through `codex exec`, normalises all three answer formats (single
+   choice, multiple response, scenario matching), diffs against the key, and writes
+   `eval/codex-solve.json`. Default scope is the **served form** when a `selection.json` exists;
+   `--bank` covers the whole bank. Free at the point of use under ChatGPT auth — no API spend,
+   so it needs no cost approval.
 2. Build the **three-way disagreement matrix** per item — Claude's blind answer, Codex's answer,
    the key:
 
@@ -116,11 +122,44 @@ check (plan Decision 9):
 3. **ANY disagreement in any combination → the item is auto-added to the Gate 2 human sample.**
    That is the entire enforcement: Codex results are **advisory, never a blocker by themselves**
    (Stellar rule — a cross-model opinion routes to a human; it does not gate a pipeline). Record
-   the matrix in `eval/blind-solve.json` alongside the Claude solve.
+   the matrix in `eval/blind-solve.json` alongside the Claude solve, or in `eval/codex-solve.json`
+   where the tool writes it.
 
 If the `codex` CLI is unavailable in the session, record that fact in the eval report and
 proceed — an advisory instrument that is missing is noted, not blocking. Gate 2 then samples
 without the cross-model signal, and says so.
+
+### How to read agreement — the interpretation rule {#codex-interpretation}
+
+**Agreement is not clearance.** A future examiner reading a clean cross-solve must not treat it
+as a dimension score, a pass, or a substitute for any part of the Gate 2 deep read. The rule:
+
+| The cross-solve **is** evidence about | The cross-solve is **not** evidence about |
+|---|---|
+| **Key correctness** — whether the keyed option is defensible to a solver that did not write the item and never saw the key | **Dimension 1 · co-correctness** — the solver reports its *best* option, and was never asked whether a second option is also defensible |
+| The **specific decorrelation failure** this instrument exists to catch: author and examiner sharing weights *and* sharing a confident misreading | **Dimension 2 · distractor plausibility** — a distractor can be transparently weak or quietly co-correct and produce the same agreement |
+| | **Dimension 5 · difficulty pitch** — a capable model's answer says nothing about where a human candidate sits |
+
+**And agreement can be circular.** By the same argument [§1b](#cue-only-solve) uses to refuse a
+100% blind solve as proof of unexploitability (L-0020): two capable models agreeing may mean both
+read the subject, or may mean **both read the same surface**. The cross-solve cannot distinguish
+those on its own. What breaks the circularity is that the **cue instruments measure that surface
+independently** — `tools/exploit-scan.mjs` scores a zero-knowledge attacker who has only the
+surface. So the finding that carries weight is the *conjunction*:
+
+> surface signal at or near chance (S5b inside the publication ceiling) **AND** cross-family
+> agreement on the key ⇒ the agreement is about the subject, not the surface.
+
+Either half alone proves nothing. Record both numbers together in the eval report, or neither.
+
+**Record with the result, every time:** the scope (form vs bank — a form-scope run leaves every
+reserve-only item without a cross-model column, and the report must say how many), the exact
+invocation, and — a gap in the 2026-08-20 wave worth closing — the **resolved model id, the run
+timestamp, and the bank revision solved**, none of which `tools/codex-crosssolve.mjs` currently
+writes into `eval/codex-solve.json`. Also note the instrument's own limits: items are batched, so
+answers are not independently drawn per item; and unlike [§1](#blind-solve) the solver returns an
+answer only — **no confidence grade and no reasoning line** — so a cross-solve answer can never be
+adjudicated the way a blind-solve miss can.
 
 ## 3 · The judge rubric — six dimensions {#judge}
 

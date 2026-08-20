@@ -6,7 +6,7 @@
 
 - **Date:** 2026-08-20 · **Reviewer:** Oliver Lau (the human, not an agent)
 - **Bank revision (re-pinned 2026-08-20 — the shipping revision):** `questions.json` @ **`d8632ef`** — blob `7ff8e81027`, sha256 `9bab1e6c6890e2a4…`, committed 2026-08-19 on `fix/cue-rework-wave`. `selection.json` is unchanged and item ids are stable, so form-a's composition is exactly as seated. Supersedes every earlier pin in this file.
-- **Eval artifacts:** blind-solve @ `c14fd1a` (r1, 2026-08-18, blob `2f46266`) · judge-scores @ `c14fd1a` (r1, blob `d3fb86d`) · overlap-report @ `c14fd1a` (r1, blob `6cc559b`) · Codex advisory record inline in `blind-solve.json` → `codex_cross_solve` (advisory-skipped, unauthenticated CLI)
+- **Eval artifacts:** blind-solve @ `c14fd1a` (r1, 2026-08-18, blob `2f46266`) · judge-scores @ `c14fd1a` (r1, blob `d3fb86d`) · overlap-report @ `c14fd1a` (r1, blob `6cc559b`) · Codex advisory record inline in `blind-solve.json` → `codex_cross_solve` (advisory-skipped, unauthenticated CLI) · **codex-solve RE-RUN @ `d9da399` (2026-08-20, after this sign-off) — form-a 50/50 agreement with the key, 0 disagreements, 0 unparsed; see §Addendum A for what that does and does not license**
 - **Provenance caveat — read before signing:** every artifact above was produced against the **pre-wave** option text (`f649943`) and has **not** been regenerated. This exam additionally took a **key-letter permutation** in the wave, so `eval/blind-solve.json`'s recorded letters no longer align with the bank even for items whose text never changed — see §Post-S5 cue-rework wave for exactly what moved, what the prior judge scores still cover, and how the deep-read sample was extended (30 → **40 items**)
 
 ## Post-S5 cue-rework wave (2026-08-19) — the proportional re-open
@@ -173,7 +173,7 @@ Both are stated here so a reader can see what a PUBLISH signature covers.
 | Scenario-matching read: 1.18 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
 | Scenario-matching read: 2.14 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
 | Scenario-matching read: 3.11 | keep | Published unchanged. The examiner's recorded finding stands, no dimension is ≤2, no rework was requested, and Oliver's 2026-08-20 instruction was to sign off and go ahead. |
-| Codex cross-solve absent (no cross-model signal this round) | accept — residual | Codex CLI unauthenticated throughout; advisory by design, never blocking. The deep read is the compensating control. |
+| Codex cross-solve absent (no cross-model signal this round) | accept — residual | Codex CLI unauthenticated throughout; advisory by design, never blocking. The deep read is the compensating control. **Post-sign-off (2026-08-20) the cross-solve ran: form-a 50/50 agreement, 0 disagreements** — the key-correctness half of that control is now corroborated, the co-correctness half is not. §Addendum A |
 | **Interior key length-rank (whole form)** | **closed by rework — no longer live** | form-a is `{1:10, 2:22, 3:0, 4:10}` — "take the second-longest" scores 22/42 SC = 52.4% (46.00% combined), *above* the 42% the wave was fixing. Instrument gap, not an item defect: accept · re-balance ranks · waive |
 | 2.17 (wave) | keep | Data Box distractor now names Azure Files, echoing the stem's target; survives on "on a repeating schedule" vs "continuously" |
 | 3.16 (wave) | keep | Distractor C now enumerates "the portal, Azure CLI and Azure PowerShell" — check the enumeration does not make C the specific-looking option |
@@ -191,3 +191,36 @@ The one item that would have needed a waiver at the last gate — the 52.4% rank
 **PUBLISH.** Every preflight row is PASS on the re-pinned revision `d8632ef`; the S5b cue-only ceiling holds on both the bank and the served form under the corrected standard; the README preflight row is closed by the file; and the content UAT was reviewed with no findings logged.
 
 Signed: Oliver Lau, 2026-08-20 — instruction of record: "sign off and go ahead", given after reviewing `UAT/HUMAN-UAT-2026-08-19-new-exams.md`.
+
+---
+
+## Addendum A — cross-model column, recorded 2026-08-20 after the sign-off
+
+**This addendum adds evidence to the decision above. It does not change it.** The verdict, the
+checklist verdicts, the adjudications, the waivers and `manifest.status` are exactly as signed.
+
+The `codex` CLI was authenticated on 2026-08-20 (ChatGPT auth, no per-request billing), so the S5
+advisory cross-solve recorded as `advisory_skipped` throughout this package's history has now run.
+`node tools/codex-crosssolve.mjs az-900` served form-a keyless to a different model family and diffed
+the answers against the key: **50/50 agreement, 0 disagreements, 0 unparsed**
+(`eval/codex-solve.json` @ `d9da399`; wave-wide 465/465 across the eight exams).
+[Methodology/05 §codex](../../../methodology/05-eval-rubric.md#codex) makes a disagreement the only
+thing that acts — it adds the item to the Gate 2 sample. There were none, so nothing was added and
+nothing was re-opened.
+
+**What it strengthens.** The decision above was taken with the cross-model column absent and the
+human deep read named as the compensating control. An independent model family has now reached the
+same key on every served item, so the **key-correctness** half of that control is corroborated
+rather than resting on a same-family blind solve.
+
+**What it does not touch.** It says nothing about co-correctness, distractor plausibility or pitch:
+the cross-solver reports its best option and was never asked whether a second option also holds.
+This wave rewrote 44 distractor strings across 22 items specifically to be *more* plausible, and that is precisely the risk a key-agreeing cross-solve is blind to. The deep read remains the sole control there. And by the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) makes about the blind solve, agreement
+between two capable models could in principle mean both read the same surface rather than the
+subject; it reads as evidence about the subject here only because the surface is measured
+separately and is at chance (S5b form-a **24.00% ≤ 29.77%**). The 15 reserve-only items were
+not solved at all.
+
+Full reasoning: [`eval-report.md`](eval-report.md) §Cross-model column. The human-only questions
+this leaves open across the wave: [`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).

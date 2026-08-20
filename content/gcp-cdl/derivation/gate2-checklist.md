@@ -23,7 +23,7 @@ sign-off are left for Oliver; this checklist pre-fills the evidence.
 | 1 | Source registry complete, with licence basis | **PASS** | `derivation/sources.md` §Registered sources: 5 entries (2× `public_blueprint`, 2× `public_practice_set`, 1× `public_syllabus`), each carrying type, named author, URL, `date_accessed` 2026-08-16, licence/permission basis and usage constraint. The 5th (`google-skills-cdl-path`) is registered **metadata-only, content never accessed** — registered so the gap is visible, contributing nothing to the inventory (Gate-1 decision 1, still open below). Excluded-source screening is recorded with evidence, not just its outcome (dump corpus checked by content, ids 1/9/13 for whizlabs). Machine: `provenance-sources`, `concept-source-registry`, `source-derivation-link` all green |
 | 2 | Every concept source-attributed (join chain resolves) | **PASS** | Validator `concept-source-registry` + `source-derivation-link` green on this exact tree (83/83 concepts attributed). Spot-checked by hand at S6: `d1-04`→C-004→{guide, samples}, `d3-11`→C-041→{guide, whizlabs}, `d5-09`→C-069→{guide, samples, whizlabs}, `d6-01`→C-076→{guide, samples} — every artefact id resolves to a registry entry **and** to an existing `derivation/source-*.md`. Zero `licensed_import` items in the bank: all 83 are originally authored |
 | 3 | Validator green | **PASS** | `pnpm validate gcp-cdl` → **34 checks, 0 errors, 0 warnings** on the re-pinned tree `56c9db4` with `form-a` built (*count corrected 2026-08-19 from "30 checks"; the four cue checks that landed after S6 are all silent*). Before S6 the only failures were `selection-shape` (8) + `selection-format-mix` (12) on the empty placeholder form; both now pass, as do `selection-concept-uniqueness`, `key-position-distribution` and `answer-length-cue`. Nothing was dispositioned as an accepted warning — there are none |
-| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **83/83**, high confidence on all 83, zero misses ⇒ empty adjudication queue), `eval/judge-scores.json` (r2: 498 dimension scores — 404 fives / 81 fours / **13 threes across 12 items**, **zero ≤2**, zero open bounces), `eval/overlap-report.md` (r2: zero findings; r1 finding O-1 discharged), `eval/codex-solve.json` (`advisory_skipped` — see the cross-model note below). Round-1 artifacts preserved as `*-r1.*`. Bounce ledger: r1 = 1 bounce (`d4-10`), r2 = 0; no item above bounce 1, cap (2) respected, **no waiver required**. Machine dry-run of `publication-preflight` (it only runs at `status: published`) returns clean on every clause except the sign-off file itself, which is Oliver's half |
+| 4 | Eval artifacts present, thresholds met | **PASS** | `eval/blind-solve.json` (r2: **83/83**, high confidence on all 83, zero misses ⇒ empty adjudication queue), `eval/judge-scores.json` (r2: 498 dimension scores — 404 fives / 81 fours / **13 threes across 12 items**, **zero ≤2**, zero open bounces), `eval/overlap-report.md` (r2: zero findings; r1 finding O-1 discharged), `eval/codex-solve.json` (`advisory_skipped` — see the cross-model note below). **SINCE RUN — 2026-08-20, after the sign-off: form-a 60/60 agreement with the key, 0 disagreements, 0 unparsed (`eval/codex-solve.json` @ `d9da399`). Advisory, so nothing on this row moves; see §Cross-model column for what the agreement licenses (keys) and what it does not (co-correctness, plausibility, pitch).** Round-1 artifacts preserved as `*-r1.*`. Bounce ledger: r1 = 1 bounce (`d4-10`), r2 = 0; no item above bounce 1, cap (2) respected, **no waiver required**. Machine dry-run of `publication-preflight` (it only runs at `status: published`) returns clean on every clause except the sign-off file itself, which is Oliver's half |
 | 5 | Per-exam README statements present | **OPEN — not written** | `content/gcp-cdl/README.md` does not exist (`content/aif-c01/README.md` is the worked precedent). Required before the `published` flip: provenance/independence, licensed-content (n/a here), prior-art credit (Google's own sample set + Whizlabs, both classification-only), NDA, non-affiliation with Google LLC, licence. The manifest's machine-checked `nda_statement` **is** present and complete, and the `intro.disclaimer` carries the candidate-facing version — the missing artefact is the repo-facing README. **Owner: exam-author** (the examiner does not author package content beyond its eval/selection surface). Does not block `in_review` |
 | 6 | Licences recorded, both directions | **PASS (outbound), PASS (inbound, vacuous)** | Outbound: repo `LICENSE` (MIT, code) + `LICENSE-CONTENT` (CC BY 4.0, content) exist at root; the per-package statement folds into item 5. Inbound: **zero `licensed_import` items** — every item is originally authored, so `licensed-import-license` is green with nothing to discharge, and no attribution obligation exists to satisfy. Both practice sources are `classification-only` under the clean-room rule and are credited as prior art, not licensed in |
 | 7 | `format_coverage` disclosure present where required | **PASS** | The Artefact A/B format analysis says the real exam uses exactly **two** formats (multiple choice, multiple select) — a *subset* of Mockka's three, so nothing on the real paper goes unrepresented. The manifest's `format_coverage` says exactly that, and additionally discloses the two soft spots: the ~10% multiple-select share is Mockka's judgment (vendor publishes no split; the official 29-item sample set is 100% single choice), and the 60-item/70% build is the published 50–60 upper bound plus a Mockka pass standard (Google publishes pass/fail only). `manifest.intro` is complete (all five fields); `intro-presence` green |
@@ -107,6 +107,11 @@ index 0):** `d1-03`, `d1-11`, `d2-05`, `d2-12`, `d3-05`, `d3-13`, `d4-07`, `d4-1
   Google sample item. Recorded as a watch, not a finding (standard TCO vocabulary; the guide's
   own b-6.1-1 carries the same concept in canonical terms). It landed in the random 10 by the
   rule above, so it is in the sample twice over — read it with the artefact line side by side.
+
+> **SUPERSEDED 2026-08-20 — the instrument ran.** The paragraph below is the accurate record of
+> what was true at the time. The `codex` CLI was authenticated on 2026-08-20 and the cross-solve
+> returned **60/60 agreement, 0 disagreements, 0 unparsed** on form-a. See §Cross-model column at
+> the end of this sheet for the result and, more importantly, for what it does and does not license.
 
 **Cross-model signal — ABSENT, and this is the one gap Gate 2 cannot close from the artifacts.**
 `eval/codex-solve.json` records `advisory_skipped` for **both rounds**: `codex` is not on PATH,
@@ -235,4 +240,32 @@ The two corrections to the instrument — the ceiling now computed by the machin
 - **stem-echo**, uninstrumented: 23.4% bank / 30.3% form against 25% chance — the only exam of the seven where the bank figure sits below chance.
 - the `d5-12` C product-name note ("Google Security Command Center" vs the canonical name) and the `d3-10` C E08-fiction note both stand as recorded — low-severity, non-gating, and both items are in the deep-read sample.
 - the **S1 artefact scrub** remains open — recorded as this exam's round-1 root cause, and a process item rather than a bank defect.
-- **No cross-model eval column, in any round** — the Codex CLI on this machine is bundled in the VS Code extension and unauthenticated, so the advisory cross-solve was `advisory_skipped` throughout. Advisory by design; it never blocks. The consequence to hold onto is that author and examiner share a model family, so a convergent blind spot is not excluded by any blind score — the deep read is the compensating control.
+- **The cross-model eval column now exists** — `advisory_skipped` in every S5 round of this package, but the Codex CLI was authenticated on 2026-08-20 and the run landed: served form, **60/60 agreement, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Advisory by design; it did not block then and does not license anything now. It discharges the **key-correctness** half of the convergent-blind-spot worry and leaves the **co-correctness** half fully open — the deep read is still the only control there, and 23 reserve-only items were not solved at all. §Cross-model column below has the reasoning.
+
+## Cross-model column — arrived 2026-08-20, after the sign-off
+
+The `codex` CLI was authenticated on 2026-08-20 and `node tools/codex-crosssolve.mjs gcp-cdl` ran the
+S5 [§codex](../../../methodology/05-eval-rubric.md#codex) advisory cross-solve that every round of
+this package had recorded as `advisory_skipped`: **form-a, 60 items, 60/60 agreement with the
+answer key, 0 disagreements, 0 unparsed** (`eval/codex-solve.json`). Wave-wide: 465/465 across the
+eight exams.
+
+**It arrived after the sign-off and changes nothing on this sheet.** Codex results are advisory and
+never blocking; their only enforcement is that a disagreement joins the Gate 2 sample, and there
+were none — so the sample, the verdicts and `manifest.status` all stand exactly as recorded.
+
+**Read it precisely.**
+
+| Now carried by evidence | Still carried only by the human deep read |
+|---|---|
+| The **answer keys** are defensible to a solver that did not write them and never saw the key. The convergent author/examiner misreading §codex exists to catch did not fire on any served item | **Co-correctness** (dim 1) of 36 distractor strings on 27 items the wave argued *up*; **distractor plausibility** (dim 2); **difficulty pitch** (dim 5). The cross-solver reports its best option and was never asked whether a second one also works |
+| | The 23 reserve-only bank items — out of scope of a form-scope run |
+
+Agreement is not clearance. By the same argument
+[§1b](../../../methodology/05-eval-rubric.md#cue-only-solve) uses to refuse a 100% blind solve as
+proof of unexploitability, two capable models agreeing could mean both read the same surface. What
+makes this agreement meaningful rather than circular is that the surface is measured separately and
+is at chance — S5b blind **25.00% on form-a against a 31.72% ceiling**. The pair is the finding.
+
+The item-level questions this leaves for Oliver are collected in
+[`content/GATE2-HUMAN-ONLY.md`](../../GATE2-HUMAN-ONLY.md).
